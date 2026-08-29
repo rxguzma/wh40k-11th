@@ -1,0 +1,115 @@
+name: Patch CSV
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: Path under the repo (example data/orks/Units.csv)
+        required: true
+        type: string
+      id_column:
+        description: Header of the row-id column (example Unit_ID). Leave blank to use the first column.
+        required: false
+        type: string
+      row_id:
+        description: Row key (example BURNA_BOYZ)
+        required: true
+        type: string
+      column:
+        description: Header to change (example Points_Cost_2)
+        required: true
+        type: string
+      value:
+        description: New cell value
+        required: true
+        type: string
+      column_2:
+        description: Optional second header on the same row
+        required: false
+        type: string
+      value_2:
+        description: Optional second value
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Patch CSV cell
+        env:
+          FILE: ${{ inputs.file }}
+          ID_COLUMN: ${{ inputs.id_column }}
+          ROW_ID: ${{ inputs.row_id }}
+          COLUMN: ${{ inputs.column }}
+          VALUE: ${{ inputs.value }}
+          COLUMN_2: ${{ inputs.column_2 }}
+          VALUE_2: ${{ inputs.value_2 }}
+        run: |
+          python3 <<'PY'
+          import csv, os, sys
+          from pathlib import Path
+
+          path = Path(os.environ['FILE'])
+          if path.is_absolute() or '..' in path.parts:
+              sys.exit('file path must be a relative path with no ..')
+          if not str(path).startswith('data/') or path.suffix.lower() != '.csv':
+              sys.exit('file must be a .csv under data/')
+          if not path.is_file():
+              sys.exit(f'missing {path}')
+
+          rows = list(csv.reader(path.read_text(encoding='utf-8').splitlines()))
+          if not rows:
+              sys.exit('empty csv')
+          header = rows[0]
+          id_col = os.environ.get('ID_COLUMN', '').strip() or header[0]
+          if id_col not in header:
+              sys.exit(f'id column not in header: {id_col}')
+          i_id = header.index(id_col)
+
+          updates = [(os.environ['COLUMN'], os.environ.get('VALUE', ''))]
+          col2 = os.environ.get('COLUMN_2', '').strip()
+          if col2:
+              updates.append((col2, os.environ.get('VALUE_2', '')))
+
+          indexes = []
+          for col, _ in updates:
+              if col not in header:
+                  sys.exit(f'column not in header: {col}')
+              indexes.append(header.index(col))
+
+          row_id = os.environ['ROW_ID']
+          hits = 0
+          for row in rows[1:]:
+              if not row:
+                  continue
+              while len(row) < len(header):
+                  row.append('')
+              if row[i_id] == row_id:
+                  for idx, (_, val) in zip(indexes, updates):
+                      row[idx] = val
+                  hits += 1
+          if hits != 1:
+              sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
+
+          with path.open('w', newline='', encoding='utf-8') as f:
+              csv.writer(f, lineterminator='\n').writerows(rows)
+          print(f'updated {path} {row_id} {updates}')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "${{ inputs.file }}"
+          if git diff --cached --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git commit -m "Patch ${{ inputs.file }} ${{ inputs.row_id }} ${{ inputs.column }}"
+          git push
