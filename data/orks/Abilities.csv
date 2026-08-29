@@ -454,3 +454,12 @@ COMPOSITION_WAZBOM,Unit Composition (Wazbom Blastajet),"1 Wazbom. Armoured Impac
 This model is equipped with: 1 Armoured Impact; 1 Smasha Gun; 1 Dual Wazbom Mega-kannon."
 DAMAGED_4,Damaged 4,CORE: Damaged 4,CORE: Damaged 4
 MADCAP_ARTILLERY,Madcap Artillery,"After shooting same-type Mek Gunz, apply wobbled / zapped / smashed / grounded.","Madcap Artillery: In your Shooting phase, when this unit has shot, if all ranged weapons equipped by each Mek Gunz model in this unit are the same, select one enemy unit hit by those attacks. That enemy unit has the ability below that matches that weapon's name until the start of your next turn.• Bubblechukka: This unit is wobbled. While a unit is wobbled, if it is attacking, its targets have the benefit of cover against those attacks.• Kustom Mega-kannon: This unit is zapped. While a unit is zapped, that unit has -1 Ld.• Smasha Gun: This unit is smashed. While a unit is smashed, that unit has -2"" M.• Traktor Kannon: This unit is grounded. While a unit is grounded it cannot take to the skies.Place five Grot Crew tokens next to each Mek Gunz model, removing one each time this Mek Gunz model loses a wound (a Mek Gunz model itself is considered to represent its final wound)."
+WARGEAR_OPTIONS_BOYZ,Wargear Options (Boyz),"3 specials per 10: Big Shoota, Rokkit Launcha, Burna. Nobs: Big Choppa (replaces Kustom Choppa + Kombi-skorcha), Power Klaw, or swap Kombi-skorcha for Kombi-rokkit / Kustom Shoota.","WARGEAR OPTIONS:
+• Any number of Nob models can each have their Kustom Choppa and Kombi-skorcha replaced with 1 Big Choppa.
+• Any number of Nob models can each have their Kustom Choppa replaced with 1 Power Klaw.
+• Any number of Nob models can each have their Kombi-skorcha replaced with one of the following: 1 Kombi-rokkit; 1 Kustom Shoota.
+• For every 10 models in this unit, 1 Boy model can have their Shoota replaced with 1 Big Shoota.
+• For every 10 models in this unit, 1 Boy model can have their Shoota replaced with 1 Rokkit Launcha.
+• For every 10 models in this unit, 1 Boy model can have their Shoota replaced with 1 Burna.
+
+This unit can have 3 special weapons per 10 models (Big Shoota, Rokkit Launcha, and Burna)."
