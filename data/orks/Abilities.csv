@@ -143,7 +143,15 @@ TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster/Vehicles,"Tank Hunt
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,
 TANKBUSTAS_WARGEAR,Tankbustas Wargear,Nob with Smash hammer & Pulsa rokkit. 5 Rokkit launcha x CCW,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"If controlling an objective at end of Movement, it is secured.","Thievin' Scavengers: At the end of your Movement phase, if this unit is controlling an objective, that objective is secured."
-THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command: choose- Turbo Engine: Adv or Fallback and Charge- Shokk Attack: Back to Reserves- Pulse Jet: Auto 6"" Adv + Move thru models and Terrain","Throttlerokkit Shokka Engine: In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability. Turbo Engine: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back. Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can use this ability. If you do:- Place this unit in strategic reserves._x0007_- This unit can make an ingress move in your next Movement phase (including in your first turn).Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.;"
+THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command: choose- Turbo Engine: Adv or Fallback and Charge- Shokk Attack: Back to Reserves- Pulse Jet: Auto 6"" Adv + Move thru models and Terrain","In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
+
+Turbo Engine: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back.
+
+Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can use this ability. If you do:
+- Place this unit in strategic reserves.
+- This unit can make an ingress move in your next Movement phase (including in your first turn).
+
+Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features."
 THUNDERING_STAMPEDE,Thundering Stampede,"Aura: friendly Beast Snagga within 6"" +1 to charge rolls.","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls."
 TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport capacity 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.
 TRANSPORT_KILL_RIG,Transport (Kill Rig),Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.
