@@ -1,26 +1,19 @@
 # WH40k 11th companion
 
-Personal table app. Army data still comes from the Google Sheets already wired in the HTML.
+Play URL: https://rxguzma.github.io/wh40k-11th/
 
-## Play URL
+## First publish (one time)
 
-https://rxguzma.github.io/wh40k-11th/
+The companion HTML is ~1.2MB. Chat cannot push that whole file, so drop it once:
 
-Bookmark that on the phone. Rosters stay in the browser (IndexedDB).
+1. Take `WH40k_11th_V12.5.html` from the Grok project.
+2. Open https://github.com/rxguzma/wh40k-11th/upload/main
+3. Upload it as `index.html` (replace the stub).
+4. Settings → Pages → Source: GitHub Actions.
+5. If the first deploy waits for approval, open Actions and approve the `github-pages` environment.
 
-## Loop
+## After that
 
-1. Chat with Grok in this project.
-2. Grok commits the HTML here as `index.html` and bumps `version.json`.
-3. GitHub Pages publishes it.
-4. In the app, open **Roster** and tap **Update app**.
+Chat with Grok → Grok commits → tap **Update app** in Roster.
 
-First time only: GitHub → repo **Settings** → **Pages** → Source **GitHub Actions**. Then run the **Deploy Pages** workflow if the play URL 404s.
-
-## Files
-
-| File | Role |
-| --- | --- |
-| `index.html` | The companion app |
-| `version.json` | What the Update button checks |
-| Spreadsheets | Stay in Google Sheets / this Grok project, not this repo |
+Army data stays in Google Sheets. Rosters stay in the phone browser.

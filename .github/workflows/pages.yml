@@ -22,16 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Assemble companion HTML
-        run: |
-          mkdir -p _site
-          cat parts/*.txt > _site/index.html
-          cp version.json _site/version.json
-          touch _site/.nojekyll
-          wc -c _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: .
       - id: deployment
         uses: actions/deploy-pages@v4
