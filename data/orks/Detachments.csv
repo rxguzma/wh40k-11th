@@ -387,21 +387,21 @@ TARGET: That ORKS WALKER unit.
 
 EFFECT: Your unit has MOBILE."
 orks_blitz_brigade,Orks,Blitz Brigade,ARMY_RULE,orks_blitz_brigade_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,2,,WAGON units re-roll charge rolls and can change Advance rolls to 6.,"Friendly WAGON units can re-roll charge rolls.
 
 When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6."
 orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS,15,,,,WAGON with embarked BIG MEK: ranged [IGNORES COVER]; if riled up also [SUSTAINED HITS 1].,"WAGON unit only. While a BIG MEK model is embarked within this unit:
-• This unit's ranged attacks have [IGNORES COVER].
-• If this unit is riled up, this unit's ranged attacks have [SUSTAINED HITS 1]."
+- This unit's ranged attacks have [IGNORES COVER].
+- If this unit is riled up, this unit's ranged attacks have [SUSTAINED HITS 1]."
 orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_boss_boomer,BOSS BOOMER,,,,,WAGON with embarked WARBOSS gains that WARBOSS's Intimidating Motivation/Keep Huntin' ability.,"WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation/Keep Huntin' ability."
 orks_blitz_brigade,,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_keep_it_runnin_1cp,KEEP IT RUNNIN',,1,,,"End of Fight: unengaged ORKS INFANTRY that could fight, wholly within 6"" of a TRANSPORT it can embark, embarks.","WHEN: End of the Fight phase.
 
@@ -419,13 +419,13 @@ TARGET: That WAGON unit.
 
 EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll."
 orks_kult_of_speed,Orks,Kult of Speed,ARMY_RULE,orks_kult_of_speed_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_kult_of_speed,Orks,Kult of Speed,DETACHMENT_RULE,orks_kult_of_speed_detachment_rule_adrenaline_junkies,ADRENALINE JUNKIES,,,2,Reconnaissance,WARBIKERS have BATTLELINE. SPEED FREEKS Advance/Fall Back: ranged [ASSAULT] this turn and can still charge.,"Friendly WARBIKERS units have BATTLELINE.
@@ -451,28 +451,28 @@ TARGET: That SPEED FREEKS unit.
 
 EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3."
 orks_flyboyz,Orks,Flyboyz,ARMY_RULE,orks_flyboyz_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_flyboyz,Orks,Flyboyz,DETACHMENT_RULE,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,,,2,,ORKS AIRCRAFT ignore Strategic Reserves points cap. Riled up ORKS AIRCRAFT/DEFFKOPTAS ranged +1 to hit.,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
 
 While a friendly ORKS AIRCRAFT/DEFFKOPTAS unit is riled up, this unit's ranged attacks have +1 to hit rolls."
 orks_flyboyz,,Flyboyz,ENHANCEMENT,orks_flyboyz_enhancement_flyboss,FLYBOSS,,,,,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT/DEFFKOPTAS within 6"" are riled up until start of your next turn.","ORKS AIRCRAFT unit only.
-• This unit has CHARACTER.
-• When this unit ends an ingress move, each friendly ORKS AIRCRAFT/DEFFKOPTAS unit within 6"" of this unit is riled up until the start of your next turn."
+- This unit has CHARACTER.
+- When this unit ends an ingress move, each friendly ORKS AIRCRAFT/DEFFKOPTAS unit within 6"" of this unit is riled up until the start of your next turn."
 orks_flyboyz,,Flyboyz,ENHANCEMENT,orks_flyboyz_enhancement_impulsive_recon,IMPULSIVE RECON,,,,,"ORKS AIRCRAFT unit only. In the first Movement phase, this unit can make an ingress move.","ORKS AIRCRAFT unit only. In your first Movement phase, this unit can make an ingress move."
 orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_flyin_headbutt_1cp,FLYIN' HEADBUTT,,1,,,"Any phase: destroyed ORKS AIRCRAFT skips Deadly Demise; one enemy within 12"" takes 8D6, each 4+ = 1 MW; then remove the aircraft.","WHEN: Any phase, when a friendly ORKS AIRCRAFT unit is destroyed, before rolling for any Deadly Demise.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit does not have the Deadly Demise ability. Select one enemy unit within 12"" of your unit and roll eight D6:
-• For each 4+, that enemy unit suffers 1 mortal wound.
+- For each 4+, that enemy unit suffers 1 mortal wound.
 Then remove your unit from the battlefield."
 orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_long_uncontrolled_bursts_1cp,"LONG, UNCONTROLLED BURSTS",,1,,,Shooting: ORKS AIRCRAFT/DEFFKOPTAS re-roll hits vs FLY.,"WHEN: Your Shooting phase, when a friendly ORKS AIRCRAFT/DEFFKOPTAS unit is selected to shoot.
 
@@ -484,5 +484,5 @@ orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_whirligig_evasion_1cp,WHI
 TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
 
 EFFECT: Your unit can make a normal move of:
-• Up to D6"".
-• Or, if your unit is riled up, up to 6""."
+- Up to D6"".
+- Or, if your unit is riled up, up to 6""."
