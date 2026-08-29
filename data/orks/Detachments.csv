@@ -1,12 +1,12 @@
 Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description
 orks_war_horde,Orks,War Horde,ARMY_RULE,orks_war_horde_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_war_horde,Orks,War Horde,DETACHMENT_RULE,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,,,3,Take and Hold,Friendly ORKS melee attacks have [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].
@@ -19,8 +19,8 @@ orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_breakin_heads_1cp,B
 TARGET: That ORKS INFANTRY unit. You can target that unit with this stratagem even though it is battle-shocked.
 
 EFFECT: Roll one D3:
-• Your unit suffers a number of mortal wounds equal to the result.
-• Your unit is no longer battle-shocked."
+- Your unit suffers a number of mortal wounds equal to the result.
+- Your unit is no longer battle-shocked."
 orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_hit_em_harder_1cp,HIT 'EM HARDER,,1,,,Fight: ORKS unit’s melee attacks gain [LETHAL HITS].,"WHEN: Fight phase, when a friendly ORKS unit is selected to fight.
 
 TARGET: That ORKS unit.
