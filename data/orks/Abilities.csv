@@ -13,7 +13,9 @@ CLEAVE 1,CLEAVE 1,Add +1 melee attack per 5 target models,"CLEAVE 1: When determ
 CLEAVE 2,CLEAVE 2,Add +2 attack dice per 5 target models if targeting one unit,"CLEAVE 2: Each time you gather attack dice for this weapon, if you only selected one target for all of this weapon’s attacks, add 2 additional attack dice for every five models that were in the target unit in the Select Targets step, rounding down."
 KOMBI,KOMBI,Choose one profile,"KOMBI: Before selecting targets for this weapon, select one of its eligible profiles to make an attack with."
 CLOSE-QUARTERS,CLOSE-QUARTERS,Can shoot while engaged; must target engaged enemy,"CLOSE-QUARTERS: This weapon can be shot while the bearer’s unit is within Engagement Range, but must target one of those enemy units."
-COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,1-2 Spanners 4-8 Lootas Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon.
+COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Lootas.
+
+Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon."
 DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,Melee vs MONSTER/VEHICLE can re-roll wound rolls.,Da Bigger Dey Iz...: This unit's melee attacks that target a MONSTER/VEHICLE unit can re-roll wound rolls.
 DA_BIGGEST_AND_DA_BEST,Da Biggest and da Best,WAAAGH! = +4 Attacks in -,"Da Biggest and da Best: When you call a Waaagh!, until the start of the next battle round, add 4 to the Attacks characteristic of this model’s - weapons."
 NEW_DA_BIGGEST_AND_DA_BEST,Da Biggest and da Best,In Waaagh!  Melee +4 attacks,"Da Biggest and da Best: While the Waaagh! is active for this unit, this model’s melee weapons have +4 A."
@@ -133,9 +135,15 @@ TRANSPORT_SQUIGGOTH,Transport (Squiggoth),"Transport 10 Orks, Cannot Mega Armour
 TRANSPORT_STOMPA,Transport (Stompa),"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR/JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.
 TRANSPORT_TRUKK,Transport (Trukk),Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA/JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.
 TROPHY_HUNTERS,Trophy Hunters,+1 to charge rolls,Trophy Hunters: This unit has +1 to charge rolls
-UNIT_COMPOSITION_SQUIGHOG_BOYZ,Unit Composition,1 Nob + 3 Squighog Boyz,1-2 Nob On Smasha Squig 3-6 Squighog Boyz Every Nob on Smasha Squig is equipped with: slugga; big choppa; squig jaws. Every Squighog Boy is equipped with: saddlegit weapons; stikka; squig jaws.
-UNIT_COMPOSITION_WARBIKERS,Unit Composition,"1 Boss Nob on Warbike, 2-5 Warbikers; Boss Nob has W4","Unit Composition: 1 Boss Nob on Warbike and 2-5 Warbikers. Every model is equipped with twin dakkagun and close combat weapon. Each Warbiker can be equipped with 1 slugga or 1 choppa. The Boss Nob on Warbike can be equipped with 1 slugga, 1 big choppa, or 1 power klaw. Boss Nob on Warbike has W4."
-UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,UNIT COMPOSITION 1-2 Spanners 4-8 Burna Boyz Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.
+UNIT_COMPOSITION_SQUIGHOG_BOYZ,Unit Composition,1 Nob + 3 Squighog Boyz,"UNIT COMPOSITION: 1-2 Nob On Smasha Squig, 3-6 Squighog Boyz.
+
+Every Nob on Smasha Squig is equipped with: slugga; big choppa; squig jaws. Every Squighog Boy is equipped with: saddlegit weapons; stikka; squig jaws."
+UNIT_COMPOSITION_WARBIKERS,Unit Composition,"1 Boss Nob on Warbike, 2-5 Warbikers; Boss Nob has W4","UNIT COMPOSITION: 1 Boss Nob on Warbike and 2-5 Warbikers.
+
+Every model is equipped with twin dakkagun and close combat weapon. Each Warbiker can be equipped with 1 slugga or 1 choppa. The Boss Nob on Warbike can be equipped with 1 slugga, 1 big choppa, or 1 power klaw. Boss Nob on Warbike has W4."
+UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Burna Boyz.
+
+Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames."
 WAAAGH_BANNER,Waaagh! Banner,This unit has +1 to charge rolls.,Waaagh! Banner: This unit has +1 to charge rolls.
 WAAAGH_EFFIGY_AURA,Waaagh! Effigy (Aura),"Friendly ORKS within 12"": Add +1 to Battle-shock tests","Waaagh! Effigy (Aura): While a friendly ORKS unit is within 12"" of this model, each time you take a Battle-shock test for that unit, add 1 to that test."
 WAAAGH_ENERGY,Waaagh! Energy,Psyker level 1 – uses listed psychic abilities.,Waaagh! Energy (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section (see left).
@@ -149,22 +157,68 @@ BEASTSCENT,Beastscent (Psychic Level 1),Disembarking unit gets +1 to wound vs MO
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:• On a 3+, that enemy unit suffers D3 mortal wounds.Place two Bomb Squig tokens next to the unit, removing one each time this ability is used."
 BRUTAL_IMPACT,Brutal Impact,If charged this turn: attacks have +1 Damage,"Brutal Impact: If this unit made a charge move this turn, this unit’s attacks have +1D"
 BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units,"Bust ’Em: In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.• Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS]."
-COMPOSITION_BATTLEWAGON,Unit Composition (Battlewagon),1 Battlewagon. Crushin’ Bulk.,UNIT COMPOSITION• 1 Battlewagon modelThis model is equipped with: 1 Crushin' Bulk.WARGEAR OPTIONS• This model can be equipped with 1 Wreckin' Ball.• This model can be equipped with up to 4 Big Shootas.• This model can be equipped with 1 Grabbin' Klaw.
-COMPOSITION_BEAST_SNAGGA_BOYZ,Unit Composition (Beast Snagga Boyz),1-2 Nobs + 9-18 Boys. Optional Thump Gun per 10.,"UNIT COMPOSITION• 1-2 Nob models• 9-18 Beast Snagga Boy modelsEvery Nob is equipped with: 1 Power Snappa; 1 Slugga.Every Beast Snagga Boy is equipped with: 1 Choppa; 1 Slugga.WARGEAR OPTIONS• For every 10 models in this unit, 1 Beast Snagga Boy model can be equipped with 1 Thump Gun."
-COMPOSITION_BREAKA_BOYZ,Unit Composition (Breaka Boyz),1 Nob + 5 Breaka Boyz.,UNIT COMPOSITION• 1 Nob model• 5 Breaka Boy modelsThe Nob is equipped with: 1 Choppa; 1 Rokkit Pistol; 1 Smash Hammer.Every Breaka Boy is equipped with: 1 Smash Hammer.
-COMPOSITION_DEFFKOPTAS,Unit Composition (Deffkoptas),"3-6 Deffkoptas. Choppa, Rokkit Launcha, Slugga, Spinnin’ Blades.","UNIT COMPOSITION• 3-6 Deffkopta modelsEvery model is equipped with: 1 Choppa; 1 Rokkit Launcha; 1 Slugga; 1 Spinnin' Blades.WARGEAR OPTIONS• For every 3 models in this unit, 1 model can have their Rokkit Launcha replaced with 1 Kustom Mega-blasta."
-COMPOSITION_FLASH_GITZ,Unit Composition (Flash Gitz),1 Kaptin + 4-9 Flash Gitz. Choppa + Snazzgun.,UNIT COMPOSITION• 1 Kaptin model• 4-9 Flash Gitz modelsEvery model is equipped with: 1 Choppa; 1 Snazzgun.
-COMPOSITION_GHAZGHKULL,Unit Composition (Ghazghkull Thraka),The Prophet of the Waaagh! Epic Hero Warlord,"SUPREME COMMANDERIf this model is in your army, it must be your WARLORD.UNIT COMPOSITION• 1 Ghazghkull Thraka modelThis model is equipped with: 1 Adamantine ’Eadbutt; 1 Gork’s Klaw; 1 Mork’s Roar."
-COMPOSITION_GRETCHIN,Unit Composition (Gretchin),10-20 Gretchin. Scavenged Shivs + Grot blasta.,UNIT COMPOSITION• 10-20 Gretchin modelsEvery model is equipped with: 1 Scavenged Shivs; 1 Grot blasta.
-COMPOSITION_KILL_RIG,Unit Composition (Kill Rig),"1 Kill Rig. Butcha Boyz, Eavy Lobba, horns, saws, Stikka, Wurrtower.",UNIT COMPOSITION• 1 Kill Rig modelThis model is equipped with: 1 Butcha Boyz; 1 'Eavy Lobba; 1 Savage Horns and Hooves; 1 Saw Blades; 1 Stikka Kannon; 1 Wurrtower.
-COMPOSITION_KOMMANDOS,Unit Composition (Kommandos),1 Nob + 9 Kommandos. Default Choppa + Slugga.,UNIT COMPOSITION• 1 Nob model• 9 Kommando modelsEvery model is equipped with: 1 Choppa; 1 Slugga.
-COMPOSITION_NOBZ,Unit Composition (Nobz),5-10 Nobz. Default Kustom Krumpa + Kustom Shoota.,"UNIT COMPOSITION• 5-10 Nob modelsEvery model is equipped with: 1 Kustom Krumpa; 1 Kustom Shoota.WARGEAR OPTIONS• For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Skorcha and 1 Kustom Choppa.• For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Kustom Big Shoota and 1 Kustom Choppa.• For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Choppa.• For every 5 models in this unit, 1 model can have their Kustom Shoota replaced with 1 Paired Krumpas.• Any number of models can each have their Kustom Shoota replaced with 1 Kombi-rokkit."
-COMPOSITION_SQUIGHOG_BOYZ,Unit Composition (Squighog Boyz),1-2 Nob on Smasha Squig + 3-6 Squighog Boyz.,UNIT COMPOSITION• 1-2 Nob on Smasha Squig models• 3-6 Squighog Boy modelsEvery Nob on Smasha Squig is equipped with: 1 Big Choppa; 1 Slugga; 1 Squig's Jaws.Every Squighog Boy is equipped with: 1 Saddlegit's Shiv; 1 Squig's Jaws; 1 Stikka.
-COMPOSITION_STOMPA,Unit Composition (Stompa),"1 Stompa. 5 Big Shoota, Deffkannon, Mega-choppa, Skorcha, Supa-gatler.",UNIT COMPOSITION• 1 Stompa modelThis model is equipped with: 5 Big Shoota; 1 Deffkannon and Supa-rokkits; 1 Mega-choppa; 1 Skorcha; 1 Supa-gatler.
-COMPOSITION_STORMBOYZ,Unit Composition (Stormboyz),1 Nob + 4-9 Stormboyz.,UNIT COMPOSITION• 1 Nob model• 4-9 Stormboy modelsThe Nob is equipped with: 1 Kustom Choppa; 1 Slugga.Every Stormboy is equipped with: 1 Choppa; 1 Slugga.WARGEAR OPTIONS• The Nob can have their Kustom Choppa replaced with 1 Power Klaw.
-COMPOSITION_TANKBUSTAS,Unit Composition (Tankbustas),1 Nob + 5 Tankbustas. Busta Rokkit Launcha / Gitstikka / Rokkit Pistol.,UNIT COMPOSITION• 1 Nob model• 5 Tankbusta modelsThe Nob is equipped with: 1 Choppa; 2 Rokkit Pistol.Every Tankbusta is equipped with: 1 Busta Rokkit Launcha; 1 Gitstikka.WARGEAR OPTIONS• The Nob can have their Rokkit Pistol replaced with 1 Smash Hammer.• 1 Tankbusta model can be equipped with one of the following:  ◦ 1 Busta Rokkit Launcha  ◦ 1 Pulsa Rokkit
-COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,UNIT COMPOSITION• 1 Biker Nob model• 2-5 Warbiker modelsThe Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit.Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.
-COMPOSITION_WARTRAKK,Unit Composition (Wartrakks),"1-2 Wartrakk. Kustom Choppa, Kustom Shoota, Multi-busta Launcha.",UNIT COMPOSITION• 1-2 Wartrakk modelsEvery model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota; 1 Multi-busta Launcha.
+COMPOSITION_BATTLEWAGON,Unit Composition (Battlewagon),1 Battlewagon. Crushin’ Bulk.,"UNIT COMPOSITION: 1 Battlewagon model.
+
+This model is equipped with: 1 Crushin' Bulk.
+
+WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with up to 4 Big Shootas. This model can be equipped with 1 Grabbin' Klaw."
+COMPOSITION_BEAST_SNAGGA_BOYZ,Unit Composition (Beast Snagga Boyz),1-2 Nobs + 9-18 Boys. Optional Thump Gun per 10.,"UNIT COMPOSITION: 1-2 Nob models, 9-18 Beast Snagga Boy models.
+
+Every Nob is equipped with: 1 Power Snappa; 1 Slugga. Every Beast Snagga Boy is equipped with: 1 Choppa; 1 Slugga.
+
+WARGEAR OPTIONS: For every 10 models in this unit, 1 Beast Snagga Boy model can be equipped with 1 Thump Gun."
+COMPOSITION_BREAKA_BOYZ,Unit Composition (Breaka Boyz),1 Nob + 5 Breaka Boyz.,"UNIT COMPOSITION: 1 Nob model, 5 Breaka Boy models.
+
+The Nob is equipped with: 1 Choppa; 1 Rokkit Pistol; 1 Smash Hammer. Every Breaka Boy is equipped with: 1 Smash Hammer."
+COMPOSITION_DEFFKOPTAS,Unit Composition (Deffkoptas),"3-6 Deffkoptas. Choppa, Rokkit Launcha, Slugga, Spinnin’ Blades.","UNIT COMPOSITION: 3-6 Deffkopta models.
+
+Every model is equipped with: 1 Choppa; 1 Rokkit Launcha; 1 Slugga; 1 Spinnin' Blades.
+
+WARGEAR OPTIONS: For every 3 models in this unit, 1 model can have their Rokkit Launcha replaced with 1 Kustom Mega-blasta."
+COMPOSITION_FLASH_GITZ,Unit Composition (Flash Gitz),1 Kaptin + 4-9 Flash Gitz. Choppa + Snazzgun.,"UNIT COMPOSITION: 1 Kaptin model, 4-9 Flash Gitz models.
+
+Every model is equipped with: 1 Choppa; 1 Snazzgun."
+COMPOSITION_GHAZGHKULL,Unit Composition (Ghazghkull Thraka),The Prophet of the Waaagh! Epic Hero Warlord,"SUPREME COMMANDER: If this model is in your army, it must be your WARLORD.
+
+UNIT COMPOSITION: 1 Ghazghkull Thraka model.
+
+This model is equipped with: 1 Adamantine ’Eadbutt; 1 Gork’s Klaw; 1 Mork’s Roar."
+COMPOSITION_GRETCHIN,Unit Composition (Gretchin),10-20 Gretchin. Scavenged Shivs + Grot blasta.,"UNIT COMPOSITION: 10-20 Gretchin models.
+
+Every model is equipped with: 1 Scavenged Shivs; 1 Grot blasta."
+COMPOSITION_KILL_RIG,Unit Composition (Kill Rig),"1 Kill Rig. Butcha Boyz, Eavy Lobba, horns, saws, Stikka, Wurrtower.","UNIT COMPOSITION: 1 Kill Rig model.
+
+This model is equipped with: 1 Butcha Boyz; 1 'Eavy Lobba; 1 Savage Horns and Hooves; 1 Saw Blades; 1 Stikka Kannon; 1 Wurrtower."
+COMPOSITION_KOMMANDOS,Unit Composition (Kommandos),1 Nob + 9 Kommandos. Default Choppa + Slugga.,"UNIT COMPOSITION: 1 Nob model, 9 Kommando models.
+
+Every model is equipped with: 1 Choppa; 1 Slugga."
+COMPOSITION_NOBZ,Unit Composition (Nobz),5-10 Nobz. Default Kustom Krumpa + Kustom Shoota.,"UNIT COMPOSITION: 5-10 Nob models.
+
+Every model is equipped with: 1 Kustom Krumpa; 1 Kustom Shoota.
+
+WARGEAR OPTIONS: For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Skorcha and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Kustom Big Shoota and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Choppa. For every 5 models in this unit, 1 model can have their Kustom Shoota replaced with 1 Paired Krumpas. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-rokkit."
+COMPOSITION_SQUIGHOG_BOYZ,Unit Composition (Squighog Boyz),1-2 Nob on Smasha Squig + 3-6 Squighog Boyz.,"UNIT COMPOSITION: 1-2 Nob on Smasha Squig models, 3-6 Squighog Boy models.
+
+Every Nob on Smasha Squig is equipped with: 1 Big Choppa; 1 Slugga; 1 Squig's Jaws. Every Squighog Boy is equipped with: 1 Saddlegit's Shiv; 1 Squig's Jaws; 1 Stikka."
+COMPOSITION_STOMPA,Unit Composition (Stompa),"1 Stompa. 5 Big Shoota, Deffkannon, Mega-choppa, Skorcha, Supa-gatler.","UNIT COMPOSITION: 1 Stompa model.
+
+This model is equipped with: 5 Big Shoota; 1 Deffkannon and Supa-rokkits; 1 Mega-choppa; 1 Skorcha; 1 Supa-gatler."
+COMPOSITION_STORMBOYZ,Unit Composition (Stormboyz),1 Nob + 4-9 Stormboyz.,"UNIT COMPOSITION: 1 Nob model, 4-9 Stormboy models.
+
+The Nob is equipped with: 1 Kustom Choppa; 1 Slugga. Every Stormboy is equipped with: 1 Choppa; 1 Slugga.
+
+WARGEAR OPTIONS: The Nob can have their Kustom Choppa replaced with 1 Power Klaw."
+COMPOSITION_TANKBUSTAS,Unit Composition (Tankbustas),1 Nob + 5 Tankbustas. Busta Rokkit Launcha / Gitstikka / Rokkit Pistol.,"UNIT COMPOSITION: 1 Nob model, 5 Tankbusta models.
+
+The Nob is equipped with: 1 Choppa; 2 Rokkit Pistol. Every Tankbusta is equipped with: 1 Busta Rokkit Launcha; 1 Gitstikka.
+
+WARGEAR OPTIONS: The Nob can have their Rokkit Pistol replaced with 1 Smash Hammer. 1 Tankbusta model can be equipped with one of the following: 1 Busta Rokkit Launcha; 1 Pulsa Rokkit."
+COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,"UNIT COMPOSITION: 1 Biker Nob model, 2-5 Warbiker models.
+
+The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun."
+COMPOSITION_WARTRAKK,Unit Composition (Wartrakks),"1-2 Wartrakk. Kustom Choppa, Kustom Shoota, Multi-busta Launcha.","UNIT COMPOSITION: 1-2 Wartrakk models.
+
+Every model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota; 1 Multi-busta Launcha."
 DAMAGED_10,Damaged 10,"While 1-10 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 10
 DAMAGED_6,Damaged 6,"While this model has 1-6 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 6
 DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Operative while within 3"" of friendly Orks Infantry","Da Grand Warlord’s Ladz: While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative."
@@ -199,18 +253,42 @@ WARPATH,Warpath (Psychic Level 1),Melee attacks gain [LETHAL HITS] and [PSYCHIC]
 WURRBOY,Wurrboy (Psyker Level 1),Has the psychic abilities Beastscent and Warpath,Wurrboy (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section (see left).
 TIDE_OF_MUSCLE,Tide of Muscle,If charged this turn: melee attacks have [LETHAL HITS],"Tide of Muscle: In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS]."
 NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,Engaged does not prevent starting an action,Never Too Busy to Fight: Being engaged does not prevent this unit from being eligible to start an action.
-COMPOSITION_BOYZ,Unit Composition (Boyz),1-2 Nobs + 9-18 Boyz.,UNIT COMPOSITION• 1-2 Nob models• 9-18 Boy modelsEvery Nob is equipped with: 1 Kustom Choppa; 1 Kombi-skorcha.Every Boy is equipped with: 1 Choppa; 1 Shoota; 1 Slugga.
+COMPOSITION_BOYZ,Unit Composition (Boyz),1-2 Nobs + 9-18 Boyz.,"UNIT COMPOSITION: 1-2 Nob models, 9-18 Boy models.
+
+Every Nob is equipped with: 1 Kustom Choppa; 1 Kombi-skorcha. Every Boy is equipped with: 1 Choppa; 1 Shoota; 1 Slugga."
 ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Attacks targeting this unit have -1 AP,Arrogant Invulnerability: Attacks that target this unit have -1 AP
 BIG_AN_SHOOTY,Big an’ Shooty,Ranged attacks can re-roll hit rolls of 1,Big an’ Shooty: This unit’s ranged attacks can re-roll hit rolls of 1.
 BIG_AN_STOMPY,Big an’ Stompy,Melee attacks can re-roll hit rolls of 1,Big an’ Stompy: This unit’s melee attacks can re-roll hit rolls of 1.
-COMPOSITION_DEFF_DREAD,Unit Composition (Deff Dread),"1 Deff Dread. Big Shoota, Dread Klaws, Skorcha.",UNIT COMPOSITION• 1 Deff Dread modelThis model is equipped with: 1 Big Shoota; 1 Dread Klaws; 1 Skorcha.WARGEAR OPTIONS• This model's Big Shoota can be replaced with one of the following:  ◦ 1 Extra Klaw  ◦ 1 Kustom Mega-blasta  ◦ 1 Rokkit Launcha• This model's Skorcha can be replaced with one of the following:  ◦ 1 Extra Klaw  ◦ 1 Big Shoota  ◦ 1 Kustom Mega-blasta  ◦ 1 Rokkit Launcha
-COMPOSITION_GORKANAUT,Unit Composition (Gorkanaut),"1 Gorkanaut. Deffstorm, 2 Dual Big Shoota, Klaw of Gork, 2 Rokkit, Skorcha.",UNIT COMPOSITION• 1 Gorkanaut modelThis model is equipped with: 1 Deffstorm mega-shoota; 2 Dual Big Shoota; 1 Klaw of Gork; 2 Rokkit Launcha; 1 Skorcha.
-COMPOSITION_GUNWAGON,Unit Composition (Gunwagon),1 Gunwagon. Crushin’ Bulk + Kannon.,UNIT COMPOSITION• 1 Gunwagon modelThis model is equipped with: 1 Crushin' Bulk; 1 Kannon.WARGEAR OPTIONS• This model can be equipped with 1 Wreckin' Ball.• This model can be equipped with 1 Grabbin' Klaw.• This model can be equipped with 1 Lobba.• This model can be equipped with up to 4 Big Shootas.• This model's Kannon can be replaced with one of the following:  ◦ 1 Killkannon  ◦ 1 Zzap Gun.
-COMPOSITION_HUNTA_RIG,Unit Composition (Hunta Rig),"1 Hunta Rig. Butcha Boyz, Eavy Lobba, horns, saws, Stikka Kannon.",UNIT COMPOSITION• 1 Hunta Rig modelThis model is equipped with: 1 Butcha Boyz; 1 'Eavy Lobba; 1 Savage Horns and Hooves; 1 Saw Blades; 1 Stikka Kannon.
-COMPOSITION_KILLA_KANS,Unit Composition (Killa Kans),3-6 Killa Kans. Kan Blasta + Kan Klaw.,UNIT COMPOSITION• 3-6 Killa Kan modelsEvery model is equipped with: 1 Kan Blasta; 1 Kan Klaw.
-COMPOSITION_MEGANOBZ,Unit Composition (Meganobz),2-6 Meganobz. Default Kustom Shoota + Power Klaw.,UNIT COMPOSITION• 2-6 Meganob modelsEvery model is equipped with: 1 Kustom Shoota; 1 Power Klaw.WARGEAR OPTIONS• Any number of models can each have their Power Klaw replaced with 1 Killsaw.• Any number of models can each have their Kustom Shoota replaced with 1 Kombi-weapon.• Any number of models can each have their Power Klaw and Kustom Shoota replaced with Twin Killsaws.
-COMPOSITION_MORKANAUT,Unit Composition (Morkanaut),"1 Morkanaut. 2 Dual Big Shoota, Klaw of Mork, Mega-blasta, Mega-zappa, 2 Rokkit.",UNIT COMPOSITION• 1 Morkanaut modelThis model is equipped with: 2 Dual Big Shoota; 1 Klaw of Mork; 1 Kustom Mega-blasta; 1 Kustom Mega-zappa; 2 Rokkit Launcha.
-COMPOSITION_NAZDREG,Unit Composition (Nazdreg),Epic Hero Mega Armour Warboss with Kustom Blasta X and Moonchewa,"UNIT COMPOSITION• 1 Nazdreg modelThis model is equipped with: 1 Kustom Blasta X; 1 Moonchewa.This model’s Kustom Blasta X weapon has three separate ranged weapon profiles, each of which can be selected to make attacks with."
+COMPOSITION_DEFF_DREAD,Unit Composition (Deff Dread),"1 Deff Dread. Big Shoota, Dread Klaws, Skorcha.","UNIT COMPOSITION: 1 Deff Dread model.
+
+This model is equipped with: 1 Big Shoota; 1 Dread Klaws; 1 Skorcha.
+
+WARGEAR OPTIONS: This model's Big Shoota can be replaced with one of the following: 1 Extra Klaw; 1 Kustom Mega-blasta; 1 Rokkit Launcha. This model's Skorcha can be replaced with one of the following: 1 Extra Klaw; 1 Big Shoota; 1 Kustom Mega-blasta; 1 Rokkit Launcha."
+COMPOSITION_GORKANAUT,Unit Composition (Gorkanaut),"1 Gorkanaut. Deffstorm, 2 Dual Big Shoota, Klaw of Gork, 2 Rokkit, Skorcha.","UNIT COMPOSITION: 1 Gorkanaut model.
+
+This model is equipped with: 1 Deffstorm mega-shoota; 2 Dual Big Shoota; 1 Klaw of Gork; 2 Rokkit Launcha; 1 Skorcha."
+COMPOSITION_GUNWAGON,Unit Composition (Gunwagon),1 Gunwagon. Crushin’ Bulk + Kannon.,"UNIT COMPOSITION: 1 Gunwagon model.
+
+This model is equipped with: 1 Crushin' Bulk; 1 Kannon.
+
+WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with 1 Grabbin' Klaw. This model can be equipped with 1 Lobba. This model can be equipped with up to 4 Big Shootas. This model's Kannon can be replaced with one of the following: 1 Killkannon; 1 Zzap Gun."
+COMPOSITION_HUNTA_RIG,Unit Composition (Hunta Rig),"1 Hunta Rig. Butcha Boyz, Eavy Lobba, horns, saws, Stikka Kannon.","UNIT COMPOSITION: 1 Hunta Rig model.
+
+This model is equipped with: 1 Butcha Boyz; 1 'Eavy Lobba; 1 Savage Horns and Hooves; 1 Saw Blades; 1 Stikka Kannon."
+COMPOSITION_KILLA_KANS,Unit Composition (Killa Kans),3-6 Killa Kans. Kan Blasta + Kan Klaw.,"UNIT COMPOSITION: 3-6 Killa Kan models.
+
+Every model is equipped with: 1 Kan Blasta; 1 Kan Klaw."
+COMPOSITION_MEGANOBZ,Unit Composition (Meganobz),2-6 Meganobz. Default Kustom Shoota + Power Klaw.,"UNIT COMPOSITION: 2-6 Meganob models.
+
+Every model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
+
+WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced with 1 Killsaw. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-weapon. Any number of models can each have their Power Klaw and Kustom Shoota replaced with Twin Killsaws."
+COMPOSITION_MORKANAUT,Unit Composition (Morkanaut),"1 Morkanaut. 2 Dual Big Shoota, Klaw of Mork, Mega-blasta, Mega-zappa, 2 Rokkit.","UNIT COMPOSITION: 1 Morkanaut model.
+
+This model is equipped with: 2 Dual Big Shoota; 1 Klaw of Mork; 1 Kustom Mega-blasta; 1 Kustom Mega-zappa; 2 Rokkit Launcha."
+COMPOSITION_NAZDREG,Unit Composition (Nazdreg),Epic Hero Mega Armour Warboss with Kustom Blasta X and Moonchewa,"UNIT COMPOSITION: 1 Nazdreg model.
+
+This model is equipped with: 1 Kustom Blasta X; 1 Moonchewa. This model’s Kustom Blasta X weapon has three separate ranged weapon profiles, each of which can be selected to make attacks with."
 COMPOSITION_TRUKK,Unit Composition (Trukk),1 Trukk. Dual Big Shoota + Spiked Ram.,UNIT COMPOSITION• 1 Trukk modelThis model is equipped with: 1 Dual Big Shoota; 1 Spiked Ram.WARGEAR OPTIONS• This model's Dual Big Shoota can be replaced with 1 Rokkit Launcha.• This model can be equipped with one of the following:  ◦ 1 Buzzsaw  ◦ 1 Grabbin' Klaw
 DAMAGED_7,Damaged 7,"While 1-7 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 7
 DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1
