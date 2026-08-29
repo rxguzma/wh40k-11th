@@ -112,8 +112,16 @@ TARGET: That ORKS INFANTRY unit.
 
 EFFECT: Your unit’s ranged attacks have [IGNORES COVER]."
 orks_freebooter_krew,,Freebooter Krew,ENHANCEMENT,orks_freebooter_krew_enhancement_razgits_magik_map,Razgit’s Magik Map,25,,,,"ORKS. After deployment, redeploy up to three ORKS INFANTRY; they may go to Reserves regardless of limits.","ORKS model only. After both players have deployed their armies, select up to three ORKS INFANTRY units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves."
-orks_freebooter_krew,,Freebooter Krew,STRATAGEM,orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,Rolling Loot‑Heap,,1,,,SHOOTING: Flash Gitz ranged gain [ANTI‑VEHICLE 4+] for the phase.,"WHEN: Your Shooting phase. TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability."
-orks_more_dakka,,More Dakka!,STRATAGEM,orks_more_dakka_stratagem_speshul_shells_1cp,Speshul Shells,,1,,,SHOOTING: ORKS INFANTRY ranged target within 9″ have AP -1. ,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot. TARGET: That ORKS INFANTRY unit. EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP."
+orks_freebooter_krew,,Freebooter Krew,STRATAGEM,orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,Rolling Loot‑Heap,,1,,,SHOOTING: Flash Gitz ranged gain [ANTI‑VEHICLE 4+] for the phase.,"WHEN: Your Shooting phase.
+
+TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability."
+orks_more_dakka,,More Dakka!,STRATAGEM,orks_more_dakka_stratagem_speshul_shells_1cp,Speshul Shells,,1,,,SHOOTING: ORKS INFANTRY ranged target within 9″ have AP -1. ,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
+
+TARGET: That ORKS INFANTRY unit.
+
+EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP."
 orks_rollin_deff,,Rollin’ Deff,ENHANCEMENT,orks_rollin_deff_enhancement_targetin_gizmos,Targetin’ Gizmos,15,,,,"WAGON. With BIG MEK embarked, ranged attacks IGNORE COVER If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1]."
 orks_freebooter_krew,Orks,Freebooter Krew,ARMY_RULE,orks_freebooter_krew_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
@@ -158,9 +166,21 @@ War Cry (Once per battle, per army): At the start of the Command phase, you can 
 orks_green_tide,Orks,Green Tide,DETACHMENT_RULE,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,,,2,,BOYZ melee [SUSTAINED HITS 1]. Charging ORKS INFANTRY melee [LETHAL HITS: non-MONSTER/VEHICLE].,"In the massive fights that Orks enjoy, the only way to ensure a slice of the action is to fight harder.• Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].• If a friendly ORKS INFANTRY unit made a charge move this turn, that unit's melee attacks have [LETHAL HITS: non-MONSTER/VEHICLE]."
 orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_show_off,FEROCIOUS SHOW-OFF,,,,,"ORKS INFANTRY model only. Melee +1 A, or +2 A if this unit has 11+ models.","This brutal fighter is even more dangerous with a raucous audience of chanting Orks, as he displays his violent abilities as a warning to all.ORKS INFANTRY model only. This model's melee attacks have:• +1 A• Or, if this unit has 11+ models, +2 A."
 orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ,,,,,BOYZ unit only. This unit has 4+ Sv.,"Orks with enough teef – or muscle – can acquire extra scrap iron plates collectively referred to as 'eavy armour, which is battered into shape so that it roughly fits the wearer.BOYZ unit only. This unit has 4+ Sv."
-orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_unbridled_carnage_1cp,UNBRIDLED CARNAGE,,1,,,Fight: charging BOYZ melee +1 A.,"When da Boyz get stuck into the foe, the carnage is wonderful to behold, at least for all their mates.WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.TARGET: That BOYZ unit.EFFECT: Your unit's melee attacks have +1 A."
-orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_mob_mentality_1cp,MOB MENTALITY,,1,,,"Command Battle-shock step: ORKS INFANTRY 13+ models auto-pass Battle-shock for a visible ORKS unit within 12"".","With volleys of wagers, threats, insults, dung and the occasional rock, large mobs bolster the spirits of others in the most Orky ways possible.WHEN: Start of the Battle-shock step of your Command phase.TARGET: One friendly ORKS INFANTRY unit of 13+ models.EFFECT: Select one visible friendly ORKS unit within 12"" of your unit. That unit's battle-shock rolls are automatically successful."
-orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_ere_we_go_1cp,'ERE WE GO,,1,,,Movement: BEAST SNAGGA BOYZ/BOYZ +2 to Advance rolls.,"Orks can put on a surprising turn of speed when the promise of a good face-to-face fight is in the offing.WHEN: Your Movement phase, when a friendly BEAST SNAGGA BOYZ/BOYZ unit is selected to move.TARGET: That BEAST SNAGGA BOYZ/BOYZ unit.EFFECT: Your unit has +2 to advance rolls."
+orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_unbridled_carnage_1cp,UNBRIDLED CARNAGE,,1,,,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
+
+TARGET: That BOYZ unit.
+
+EFFECT: Your unit's melee attacks have +1 A."
+orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_mob_mentality_1cp,MOB MENTALITY,,1,,,"Command Battle-shock step: ORKS INFANTRY 13+ models auto-pass Battle-shock for a visible ORKS unit within 12"".","WHEN: Start of the Battle-shock step of your Command phase.
+
+TARGET: One friendly ORKS INFANTRY unit of 13+ models.
+
+EFFECT: Select one visible friendly ORKS unit within 12"" of your unit. That unit's battle-shock rolls are automatically successful."
+orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_ere_we_go_1cp,'ERE WE GO,,1,,,Movement: BEAST SNAGGA BOYZ/BOYZ +2 to Advance rolls.,"WHEN: Your Movement phase, when a friendly BEAST SNAGGA BOYZ/BOYZ unit is selected to move.
+
+TARGET: That BEAST SNAGGA BOYZ/BOYZ unit.
+
+EFFECT: Your unit has +2 to advance rolls."
 orks_bully_boyz,Orks,Bully Boyz,ARMY_RULE,orks_bully_boyz_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
 • Become riled up, as stated in other rules.
@@ -174,9 +194,26 @@ War Cry (Once per battle, per army): At the start of the Command phase, you can 
 orks_bully_boyz,Orks,Bully Boyz,DETACHMENT_RULE,orks_bully_boyz_detachment_rule_displays_of_savagery,DISPLAYS OF SAVAGERY,,,2,Purge the Foe,Friendly MEGANOBZ/NOBZ melee has [SUSTAINED HITS 1].,"Nobz have a position of dominance to maintain, and do so in vicious eruptions of violence.Friendly MEGANOBZ/NOBZ units' melee attacks have [SUSTAINED HITS 1]."
 orks_bully_boyz,,Bully Boyz,ENHANCEMENT,orks_bully_boyz_enhancement_wimp_kickaz,WIMP-KICKAZ,,,,,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is riled up.,"Any snivelling gitz attempting to back away from a good fight with these arrogant Nobz get a good kicking to see them on their way.NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:• That enemy unit must select the desperate escape mode.• If this unit is riled up, that enemy unit has -1 to the hazard rolls made for that desperate escape."
 orks_bully_boyz,,Bully Boyz,ENHANCEMENT,orks_bully_boyz_enhancement_tellyporta_boss,TELLYPORTA BOSS,25,,,,MEGA ARMOUR model only. This unit (excluding VEHICLE) has Deep Strike.,"This Ork has bullied his way into possession of a mostly functional tellyporta pad, and has so far survived being thrown through the Warp towards the best fights.MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike."
-orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,TOO ARROGANT TO DIE,,1,,,Fight: MEGANOBZ/NOBZ fight-on-death on 4+ (3+ if riled up).,"With bone-headed arrogance, Nobz will carry on killing before their deaths finally dawn on them.WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.TARGET: That MEGANOBZ/NOBZ unit.EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is riled up:• On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
-orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_armed_to_da_teef_1cp,ARMED TO DA TEEF,,1,,,"Shooting or Fight: MEGANOBZ/NOBZ re-roll hit 1s; if riled up, re-roll hits.","Nobz load themselves with all manner of weapons in shows of wealth and influence.WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ/NOBZ unit is selected to attack.TARGET: That MEGANOBZ/NOBZ unit.EFFECT: Your unit's attacks can:• Re-roll hit rolls of 1.• If your unit is riled up, re-roll hit rolls."
-orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_hulking_brutes_1cp,HULKING BRUTES,,1,,,"Opp shooting: MEGANOBZ/NOBZ, S>T ranged -1 to Wound (1CP); or all ranged -1 to Wound (+1CP).","The thick armour and thicker skulls of Nobz make them a daunting prospect to gun down.WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.TARGET: That MEGANOBZ/NOBZ unit.EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.Or +1CP: Ranged attacks that target your unit have -1 to wound rolls."
+orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,TOO ARROGANT TO DIE,,1,,,Fight: MEGANOBZ/NOBZ fight-on-death on 4+ (3+ if riled up).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.
+
+TARGET: That MEGANOBZ/NOBZ unit.
+
+EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is riled up:
+• On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
+orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_armed_to_da_teef_1cp,ARMED TO DA TEEF,,1,,,"Shooting or Fight: MEGANOBZ/NOBZ re-roll hit 1s; if riled up, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ/NOBZ unit is selected to attack.
+
+TARGET: That MEGANOBZ/NOBZ unit.
+
+EFFECT: Your unit's attacks can:
+• Re-roll hit rolls of 1.
+• If your unit is riled up, re-roll hit rolls."
+orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_hulking_brutes_1cp,HULKING BRUTES,,1,,,"Opp shooting: MEGANOBZ/NOBZ, S>T ranged -1 to Wound (1CP); or all ranged -1 to Wound (+1CP).","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.
+
+TARGET: That MEGANOBZ/NOBZ unit.
+
+EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
+
+Or +1CP: Ranged attacks that target your unit have -1 to wound rolls."
 orks_taktikal_brigade,Orks,Taktikal Brigade,ARMY_RULE,orks_taktikal_brigade_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
 • Become riled up, as stated in other rules.
@@ -190,9 +227,21 @@ War Cry (Once per battle, per army): At the start of the Command phase, you can 
 orks_taktikal_brigade,Orks,Taktikal Brigade,DETACHMENT_RULE,orks_taktikal_brigade_detachment_rule_suspiciously_well_organised,SUSPICIOUSLY WELL ORGANISED,,,1,Disruption,STORMBOYZ have BATTLELINE. BOYZ/KOMMANDOS/STORMBOYZ can Fall Back and still charge.,"An un-Orky compulsion for discipline can wrongfoot enemies expecting anarchic disorder.• Friendly STORMBOYZ units have BATTLELINE.• When a friendly BOYZ/KOMMANDOS/STORMBOYZ unit is selected to make a fall-back move, that fall-back move does not prevent that unit from being eligible to declare a charge."
 orks_taktikal_brigade,,Taktikal Brigade,ENHANCEMENT,orks_taktikal_brigade_enhancement_kill_kommanda,KILL KOMMANDA,,,,,"BIG MEK/WARBOSS INFANTRY model only. While part of an attached unit, this model has Infiltrators and Stealth.","Possessed of exceptional kunnin' and a weird obsession with sneakin' about, this powerful Ork leader loves nothing more than creeping through enemy defences before carving a bloody path through their lines.BIG MEK/WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:• Infiltrators• Stealth"
 orks_taktikal_brigade,,Taktikal Brigade,ENHANCEMENT,orks_taktikal_brigade_enhancement_throat_slittas,THROAT-SLITTAS,,,,,KOMMANDOS/STORMBOYZ unit only. Melee has [LETHAL HITS: non-MONSTER/VEHICLE].,"Veterans of the relatively organised butchery of well-protected targets, these distrusted Orks make excellent forward assassins.KOMMANDOS/STORMBOYZ unit only. This unit's melee attacks have [LETHAL HITS: non-MONSTER/VEHICLE]."
-orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_dubious_restraint_1cp,DUBIOUS RESTRAINT,,1,,,Start/end of your Movement: BOYZ/KOMMANDOS/STORMBOYZ controlling an objective secures it.,"A few Orks, particularly those of a rebelliously disciplined outlook, can resist their destructive urges just long enough to prioritise strategic gains.WHEN: Start/end of your Movement phase.TARGET: One friendly BOYZ/KOMMANDOS/STORMBOYZ unit.EFFECT: Select one objective your unit is controlling. That objective is secured."
-orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_mind_mostly_on_the_mission_1cp,MIND MOSTLY ON THE MISSION,,1,,,Movement: BOYZ/KOMMANDOS/STORMBOYZ Advance/Fall Back can still start an action.,"When there's a dirty job needs doing, Orks with strange compulsions get a kick out of causing such trouble sneakily or swiftly.WHEN: Your Movement phase, when a friendly BOYZ/KOMMANDOS/STORMBOYZ unit is selected to make an advance/fall-back move.TARGET: That BOYZ/KOMMANDOS/STORMBOYZ unit.EFFECT: That move does not prevent your unit from being eligible to start an action."
-orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_while_their_backs_are_turned_1cp,WHILE THEIR BACKS ARE TURNED,,1,,,"End of opponent's Movement: unengaged BOYZ/KOMMANDOS/STORMBOYZ that was engaged can Normal move 6"".","With the gitz they were fighting having scarpered, mobs with a plan exploit the sudden lull to press towards whatever target has next caught their eye.WHEN: End of your opponent's Movement phase.TARGET: One friendly unengaged BOYZ/KOMMANDOS/STORMBOYZ unit that was engaged at the start of the phase.EFFECT: Your unit can make a normal move of up to 6""."
+orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_dubious_restraint_1cp,DUBIOUS RESTRAINT,,1,,,Start/end of your Movement: BOYZ/KOMMANDOS/STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
+
+TARGET: One friendly BOYZ/KOMMANDOS/STORMBOYZ unit.
+
+EFFECT: Select one objective your unit is controlling. That objective is secured."
+orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_mind_mostly_on_the_mission_1cp,MIND MOSTLY ON THE MISSION,,1,,,Movement: BOYZ/KOMMANDOS/STORMBOYZ Advance/Fall Back can still start an action.,"WHEN: Your Movement phase, when a friendly BOYZ/KOMMANDOS/STORMBOYZ unit is selected to make an advance/fall-back move.
+
+TARGET: That BOYZ/KOMMANDOS/STORMBOYZ unit.
+
+EFFECT: That move does not prevent your unit from being eligible to start an action."
+orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_while_their_backs_are_turned_1cp,WHILE THEIR BACKS ARE TURNED,,1,,,"End of opponent's Movement: unengaged BOYZ/KOMMANDOS/STORMBOYZ that was engaged can Normal move 6"".","WHEN: End of your opponent's Movement phase.
+
+TARGET: One friendly unengaged BOYZ/KOMMANDOS/STORMBOYZ unit that was engaged at the start of the phase.
+
+EFFECT: Your unit can make a normal move of up to 6""."
 orks_wreckas,Orks,Wreckas,ARMY_RULE,orks_wreckas_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
 • Become riled up, as stated in other rules.
@@ -206,9 +255,22 @@ War Cry (Once per battle, per army): At the start of the Command phase, you can 
 orks_wreckas,Orks,Wreckas,DETACHMENT_RULE,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',,,2,,BREAKA BOYZ/FLASH GITZ/TANKBUSTAS re-roll hit 1s if they or their target are in range of an objective.,"Whether piratical or merely larcenous, Orks with an eye for loot react forcefully to rival claims.In your Shooting phase, when a friendly BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:• That unit is within range of an objective.• The target of that attack is within range of an objective."
 orks_wreckas,,Wreckas,ENHANCEMENT,orks_wreckas_enhancement_kaptins_hat,KAPTIN'S HAT,,,,,"BIG MEK/WARBOSS INFANTRY only. After deployment, redeploy up to 3 ORKS INFANTRY; can go into Strategic Reserves ignoring limits.","This impressively ostentatious piece of headgear signifies that whoever nicked it last controls a fleet of kroozers and invasion landers, ideal for the rapid redeployment of loot-hungry Orks.BIG MEK/WARBOSS INFANTRY model only. When both players have deployed their armies, you can redeploy up to three friendly ORKS INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves."
 orks_wreckas,,Wreckas,ENHANCEMENT,orks_wreckas_enhancement_supa_snazz_dakka,SUPA-SNAZZ DAKKA,,,,,FLASH GITZ unit only. Snazzgun weapons have [RAPID FIRE 1].,"Coils of sparking wires, unstable propellant and throbbing power cells are just some of the extras which Flash Gitz rivet onto their snazzguns to kill the enemy in more over-the-top ways.FLASH GITZ unit only. This unit's Snazzgun weapons have [RAPID FIRE 1]."
-orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_drive_by_bustin_1cp,DRIVE-BY BUSTIN',,1,,,Shooting: ORKS TRANSPORT Firing Deck weapons +1 to hit.,"Ork transports are not the smoothest of rides. However, the best loot-hunters have honed their drive-by volleys of uneven-tracking firepower to the point of deadly accuracy.WHEN: Your Shooting phase, when a friendly ORKS TRANSPORT unit is selected to shoot.TARGET: That ORKS TRANSPORT unit.EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls."
-orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_grab_it_1cp,GRAB IT,,1,,,"After shooting: unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS Normal move 6"" onto an objective; cannot charge this turn.","Wreckin' some gitz is all well and good, but getting the drop on them and then grabbing an opportunity for some loot is even better.WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit has shot.TARGET: That BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit.EFFECT:• Your unit can make a normal move of up to 6"", and must end that move within range of an objective.• Your unit is not eligible to declare a charge until the end of the turn."
-orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,GUN-CRAZY SHOW-OFFS,,1,,,Opp shooting: FLASH GITZ/TANKBUSTAS hit by that enemy can shoot back at only that enemy.,"With a snort of contempt, these Orks decide to show the gitz who just shot at them what real guns are capable of.WHEN: Your opponent's Shooting phase, when an enemy unit has shot.TARGET: One friendly FLASH GITZ/TANKBUSTAS unit hit by those attacks.EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit."
+orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_drive_by_bustin_1cp,DRIVE-BY BUSTIN',,1,,,Shooting: ORKS TRANSPORT Firing Deck weapons +1 to hit.,"WHEN: Your Shooting phase, when a friendly ORKS TRANSPORT unit is selected to shoot.
+
+TARGET: That ORKS TRANSPORT unit.
+
+EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls."
+orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_grab_it_1cp,GRAB IT,,1,,,"After shooting: unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS Normal move 6"" onto an objective; cannot charge this turn.","WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit has shot.
+
+TARGET: That BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit.
+
+EFFECT: • Your unit can make a normal move of up to 6"", and must end that move within range of an objective.
+• Your unit is not eligible to declare a charge until the end of the turn."
+orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,GUN-CRAZY SHOW-OFFS,,1,,,Opp shooting: FLASH GITZ/TANKBUSTAS hit by that enemy can shoot back at only that enemy.,"WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
+
+TARGET: One friendly FLASH GITZ/TANKBUSTAS unit hit by those attacks.
+
+EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit."
 orks_da_big_hunt,Orks,Da Big Hunt,ARMY_RULE,orks_da_big_hunt_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
 • Become riled up, as stated in other rules.
@@ -222,8 +284,16 @@ War Cry (Once per battle, per army): At the start of the Command phase, you can 
 orks_da_big_hunt,Orks,Da Big Hunt,DETACHMENT_RULE,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,,,2,,BEAST SNAGGA attacks that target MONSTER/VEHICLE have +1 AP.,Beast Snaggas fanatically hunt the biggest targets and are experts in finding their weak spots.Friendly BEAST SNAGGA units' attacks that target a MONSTER/VEHICLE unit have +1 AP.
 orks_da_big_hunt,,Da Big Hunt,ENHANCEMENT,orks_da_big_hunt_enhancement_glory_hog,GLORY HOG,,,,,BEAST SNAGGA model only. Fall Back does not prevent this unit from charging.,"When bigger prey is sighted, nothing can keep this hunter from it. With a roar of glee, lesser gitz are swiftly forgotten in his enthusiasm to pile into a greater challenge.BEAST SNAGGA model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to declare a charge."
 orks_da_big_hunt,,Da Big Hunt,ENHANCEMENT,orks_da_big_hunt_enhancement_it_came_from_da_drops,IT CAME FROM DA DROPS,,,,,BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.,The monstrous resilience – and odour – of this Beastboss' hulking mount has inspired many lurid tales of its origin.BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.
-orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_where_dya_fink_youre_going_1cp,WHERE D'YA FINK YOU'RE GOING?,,1,,,Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape; MONSTER/VEHICLE takes extra hazard rolls.,"Beast Snagga victims often make a break for it before the Orks have tired of fighting. Hooked, impaled or ridden down, few survive this flight.WHEN: Your opponent's Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly BEAST SNAGGA unit.TARGET: That BEAST SNAGGA unit.EFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is a MONSTER/VEHICLE unit, that enemy unit makes three additional hazard rolls for each BEAST SNAGGA unit it is engaged with, with -1 from those hazard rolls if that enemy unit is battle-shocked."
-orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_goaded_into_action_1cp,GOADED INTO ACTION,,1,,,"Opp Shooting: unengaged BEAST SNAGGA that lost a wound surge D6"" (re-roll if riled up).","Should attempts to obliterate the Beast Snaggas from afar fail, it is often the foe's last mistake as the hunters turn their baleful attention on them.WHEN: Your opponent's Shooting phase, when an enemy unit has shot.TARGET: One friendly unengaged BEAST SNAGGA unit that lost a wound as a result of those attacks.EFFECT: Your unit can make a surge move of up to D6"". If your unit is riled up, it can re-roll that D6."
+orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_where_dya_fink_youre_going_1cp,WHERE D'YA FINK YOU'RE GOING?,,1,,,Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape; MONSTER/VEHICLE takes extra hazard rolls.,"WHEN: Your opponent's Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly BEAST SNAGGA unit.
+
+TARGET: That BEAST SNAGGA unit.
+
+EFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is a MONSTER/VEHICLE unit, that enemy unit makes three additional hazard rolls for each BEAST SNAGGA unit it is engaged with, with -1 from those hazard rolls if that enemy unit is battle-shocked."
+orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_goaded_into_action_1cp,GOADED INTO ACTION,,1,,,"Opp Shooting: unengaged BEAST SNAGGA that lost a wound surge D6"" (re-roll if riled up).","WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
+
+TARGET: One friendly unengaged BEAST SNAGGA unit that lost a wound as a result of those attacks.
+
+EFFECT: Your unit can make a surge move of up to D6"". If your unit is riled up, it can re-roll that D6."
 orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_instinctive_hunters_1cp,INSTINCTIVE HUNTERS,,1,,,"End of opp Fight: unengaged BEAST SNAGGA within 6"" of a battlefield edge goes into Strategic Reserves.","With a keen eye for tracking their prey, Beast Snaggas will circle around to ambush the luckless gitz from another angle.WHEN: End of your opponent's Fight phase.TARGET: One friendly unengaged BEAST SNAGGA unit within 6"" of a battlefield edge.EFFECT: Place your unit in strategic reserves."
 orks_madcap_meks,Orks,Madcap Meks,ARMY_RULE,orks_madcap_meks_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
 • Re-roll advance rolls.
