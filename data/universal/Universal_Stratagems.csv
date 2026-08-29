@@ -1,9 +1,17 @@
 Detachment_ID,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,Short_Description,Long_Description
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_command_re_roll_new_1cp,Command Re-Roll ,,1.0,"Re-roll one listed roll. Multiple dice: re-roll one die, except Charge rolls.","WHEN: Any phase, just after you make one of the following rolls for a friendly unit or model: Advance roll; Charge roll; Damage roll; Hazard roll; Hit roll; Save roll; Wound roll; a roll to determine the number of attacks generated with a weapon. TARGET: That unit or model. EFFECT: You re-roll that roll. If you are rolling more than one dice together, select one of those dice to re-roll, excluding Charge rolls, which you must re-roll in full."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_epic_challenge_new_1cp,Epic Challenge ,,1.0,CHARACTER: Melee weapons gain PRECISION.,"WHEN: Fight phase, just after a friendly CHARACTER unit is selected to fight. TARGET: That CHARACTER unit. EFFECT: Select one CHARACTER model in your unit. Until the end of the phase, that model’s melee weapons have the [PRECISION] ability."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_fire_overwatch_1cp,Fire Overwatch ,,1.0,"End of enemy Movement: Snap shoot within 24""; Hit only on unmodified 6; no Hit re-rolls.","WHEN: End of your opponent’s Movement phase. 
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_command_re_roll_new_1cp,Command Re-Roll ,,1.0,"Re-roll one listed roll. Multiple dice: re-roll one die, except Charge rolls.","WHEN: Any phase, just after you make one of the following rolls for a friendly unit or model: Advance roll; Charge roll; Damage roll; Hazard roll; Hit roll; Save roll; Wound roll; a roll to determine the number of attacks generated with a weapon.
 
-TARGET: One friendly unengaged unit, excluding TITANIC units. 
+TARGET: That unit or model.
+
+EFFECT: You re-roll that roll. If you are rolling more than one dice together, select one of those dice to re-roll, excluding Charge rolls, which you must re-roll in full."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_epic_challenge_new_1cp,Epic Challenge ,,1.0,CHARACTER: Melee weapons gain PRECISION.,"WHEN: Fight phase, just after a friendly CHARACTER unit is selected to fight.
+
+TARGET: That CHARACTER unit.
+
+EFFECT: Select one CHARACTER model in your unit. Until the end of the phase, that model’s melee weapons have the [PRECISION] ability."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_fire_overwatch_1cp,Fire Overwatch ,,1.0,"End of enemy Movement: Snap shoot within 24""; Hit only on unmodified 6; no Hit re-rolls.","WHEN: End of your opponent’s Movement phase.
+
+TARGET: One friendly unengaged unit, excluding TITANIC units.
 
 EFFECT: Your unit shoots using snap shooting. 
 
@@ -15,10 +23,42 @@ core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_go
 TARGET: One Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover (pg 44)."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_explosives_new_1cp,Explosives,,1.0,EXPLOSIVES/GRENADES: Roll 6D6; each 4+ causes 1 mortal wound.,"WHEN: Your Shooting phase. TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn. EFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8"" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_insane_bravery_new_1cp,Insane Bravery ,,1.0,Once per battle: Automatically pass a Battle-shock roll.,"WHEN: Battle-shock step of your Command phase, just before you make a Battle-shock roll for a friendly unit. TARGET: That unit. EFFECT: That Battle-shock roll is automatically successful. RESTRICTIONS: You cannot use this Stratagem more than once per battle."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_crushing_impact_new_1cp,Crushing Impact,,1.0,MONSTER/VEHICLE charge: Roll D6 equal to T. 1s hurt you; 5+s hurt enemy.,"WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a Charge move. TARGET: That MONSTER/VEHICLE unit. EFFECT: Select one enemy unit engaged with your unit. Select one model in your unit engaged with that enemy unit. Roll a number of D6 equal to the Toughness characteristic of that model: for each 1, your unit suffers 1 mortal wound; for each 5+, that enemy unit suffers 1 mortal wound, to a maximum of 6 mortal wounds per unit."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_rapid_ingress_new_1cp,Rapid Ingress ,,1.0,Strategic Reserves: Make an Ingress move. Not during first battle round.,"WHEN: End of your opponent’s Movement phase. TARGET: One friendly unit that is in Strategic Reserves, excluding AIRCRAFT. EFFECT: Your unit makes an Ingress move. RESTRICTIONS: You cannot use this Stratagem during the first battle round."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_smokescreen_new_1cp,Smokescreen ,,1.0,SMOKE: Target unit and units obscured by it gain Benefit of Cover.,"WHEN: Start of your opponent’s Shooting phase. TARGET: One friendly SMOKE unit. EFFECT: Until the end of the phase, each time an attack targets either your SMOKE unit, or a unit that is not fully visible to the attacking model because of one or more models in your SMOKE unit, the target has the Benefit of Cover against that attack."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_heroic_intervention_new_1cp,Heroic Intervention ,,1.0,Charge nearby enemy. Select Leap to Defend or pay +1CP for Into the Fray.,"WHEN: End of your opponent’s Charge phase. TARGET: One friendly unengaged unit within 12"" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit. EFFECT: Resolve a charge with your unit. Before making the Charge roll, select one mode: Leap to Defend: when selecting charge targets, you can only select enemy units that made a Charge move this phase and are within the maximum distance. Into the Fray: this mode costs +1CP. When making the Charge roll, if the result is greater than 6 after modifiers, change it to 6. When selecting charge targets, you can select any enemy units within 6"" of your unit and within the maximum distance."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_counteroffensive_new_2cp,Counteroffensive,,2.0,Fight next after an enemy unit resolves its attacks.,"WHEN: Fight step of your opponent’s Fight phase, just after an enemy unit has resolved its attacks. TARGET: One friendly unit that is eligible to fight. EFFECT: Until the end of the phase, your unit has the Fights First ability and it must be the next unit you select to fight."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_explosives_new_1cp,Explosives,,1.0,EXPLOSIVES/GRENADES: Roll 6D6; each 4+ causes 1 mortal wound.,"WHEN: Your Shooting phase.
+
+TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn.
+
+EFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8"" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_insane_bravery_new_1cp,Insane Bravery ,,1.0,Once per battle: Automatically pass a Battle-shock roll.,"WHEN: Battle-shock step of your Command phase, just before you make a Battle-shock roll for a friendly unit.
+
+TARGET: That unit.
+
+EFFECT: That Battle-shock roll is automatically successful.
+
+RESTRICTIONS: You cannot use this Stratagem more than once per battle."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_crushing_impact_new_1cp,Crushing Impact,,1.0,MONSTER/VEHICLE charge: Roll D6 equal to T. 1s hurt you; 5+s hurt enemy.,"WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a Charge move.
+
+TARGET: That MONSTER/VEHICLE unit.
+
+EFFECT: Select one enemy unit engaged with your unit. Select one model in your unit engaged with that enemy unit. Roll a number of D6 equal to the Toughness characteristic of that model: for each 1, your unit suffers 1 mortal wound; for each 5+, that enemy unit suffers 1 mortal wound, to a maximum of 6 mortal wounds per unit."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_rapid_ingress_new_1cp,Rapid Ingress ,,1.0,Strategic Reserves: Make an Ingress move. Not during first battle round.,"WHEN: End of your opponent’s Movement phase.
+
+TARGET: One friendly unit that is in Strategic Reserves, excluding AIRCRAFT.
+
+EFFECT: Your unit makes an Ingress move.
+
+RESTRICTIONS: You cannot use this Stratagem during the first battle round."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_smokescreen_new_1cp,Smokescreen ,,1.0,SMOKE: Target unit and units obscured by it gain Benefit of Cover.,"WHEN: Start of your opponent’s Shooting phase.
+
+TARGET: One friendly SMOKE unit.
+
+EFFECT: Until the end of the phase, each time an attack targets either your SMOKE unit, or a unit that is not fully visible to the attacking model because of one or more models in your SMOKE unit, the target has the Benefit of Cover against that attack."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_heroic_intervention_new_1cp,Heroic Intervention ,,1.0,Charge nearby enemy. Select Leap to Defend or pay +1CP for Into the Fray.,"WHEN: End of your opponent’s Charge phase.
+
+TARGET: One friendly unengaged unit within 12"" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.
+
+EFFECT: Resolve a charge with your unit. Before making the Charge roll, select one mode: Leap to Defend: when selecting charge targets, you can only select enemy units that made a Charge move this phase and are within the maximum distance. Into the Fray: this mode costs +1CP. When making the Charge roll, if the result is greater than 6 after modifiers, change it to 6. When selecting charge targets, you can select any enemy units within 6"" of your unit and within the maximum distance."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_counteroffensive_new_2cp,Counteroffensive,,2.0,Fight next after an enemy unit resolves its attacks.,"WHEN: Fight step of your opponent’s Fight phase, just after an enemy unit has resolved its attacks.
+
+TARGET: One friendly unit that is eligible to fight.
+
+EFFECT: Until the end of the phase, your unit has the Fights First ability and it must be the next unit you select to fight."
