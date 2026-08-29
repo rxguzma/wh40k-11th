@@ -130,19 +130,18 @@ SOMETHIN_TO_PROVE,Somethin' to Prove,UNIT melee attacks have +1 to hit.,This uni
 SPECIAL_DOSE,Special Dose,"WAAAGH! = +6"" to Movement","When you call a Waaagh!, until the start of the next battle round, add 6"" to the Move characteristic of models in this model’s unit."
 SPEEDBOSS,Speedboss,Leading = +1 To Hit,"While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll."
 SPIRIT_OF_GORK,Spirit of Gork,"Fight phase = +1 Strength, on 6s + LETHAL HITS","Spirit of Gork (Psychic): At the start of the Fight phase, you can select one friendly Orks unit within 12"" of this model and roll one D6: on a 1, this model suffers D3 mortal wounds; on a 2-5, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit; on a 6, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability."
-SPIRIT_OF_GORK_PSYCHIC,Spirit of Gork (Psychic),"Figth: 2-5 +1 Strenght to Orks within 12""","Spirit of Gork (Psychic): At the start of the Fight phase, you can select one friendly ORKS unit within 12"" of this model and roll one D6: On a 2-5, until the end of the phase, add 1 to the Strength characteristic of - weapons equipped by models in that unit. On a 6, until the end of the phase, add 1 to the Strength characteristic of - weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability. On a 1, this model suffers D3 mortal wounds."
-STOMPIN_FORWARD,Stompin’ Forward,"Move over non-TITANIC models and terrain 4"" or lower","Stompin’ Forward: Each time this model makes a Normal, Advance or Fall Back move, it can move over models, excluding TITANIC models, and terrain features that are 4"" or less in height as if they were not there."
-SUPER_RUNTS,Super Runts,"This unit is riled up. Scavenged Shivs +1 A, WS and S.","Super Runts:
-- This unit is riled up.
+SPIRIT_OF_GORK_PSYCHIC,Spirit of Gork (Psychic),"Figth: 2-5 +1 Strenght to Orks within 12""","At the start of the Fight phase, you can select one friendly ORKS unit within 12"" of this model and roll one D6: On a 2-5, until the end of the phase, add 1 to the Strength characteristic of - weapons equipped by models in that unit. On a 6, until the end of the phase, add 1 to the Strength characteristic of - weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability. On a 1, this model suffers D3 mortal wounds."
+STOMPIN_FORWARD,Stompin’ Forward,"Move over non-TITANIC models and terrain 4"" or lower","Each time this model makes a Normal, Advance or Fall Back move, it can move over models, excluding TITANIC models, and terrain features that are 4"" or less in height as if they were not there."
+SUPER_RUNTS,Super Runts,"This unit is riled up. Scavenged Shivs +1 A, WS and S.","- This unit is riled up.
 - This unit's Scavenged Shivs weapons have +1 A, WS and S."
 SUPPORT_BANNERNOB,Support: Bannernob,"SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, FLASH GITZ, LOOTAS, NOBZ, TANKBUSTAS",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.
 NEW_SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Burna Boyz, Lootas, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Lootas; Nobz; Tankbustas.
 SUPPORT_PAINBOY,Support: Painboy,"SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, LOOTAS, NOBZ, TANKBUSTAS","SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, LOOTAS, NOBZ, TANKBUSTAS"
 SUPPORT_WARBIKERS,Support: Warbikers,Can attach to Warbikers,Support: This model can be attached to Warbikers units.
-TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster/Vehicles,"Tank Hunters: Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll."
+TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster/Vehicles,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll."
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,
 TANKBUSTAS_WARGEAR,Tankbustas Wargear,Nob with Smash hammer & Pulsa rokkit. 5 Rokkit launcha x CCW,
-THIEVIN_SCAVENGERS,Thievin’ Scavengers,"If controlling an objective at end of Movement, it is secured.","Thievin' Scavengers: At the end of your Movement phase, if this unit is controlling an objective, that objective is secured."
+THIEVIN_SCAVENGERS,Thievin’ Scavengers,"If controlling an objective at end of Movement, it is secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured."
 THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
 - Turbo Engine: Adv or Fallback and Charge
 - Shokk Attack: Back to Reserves
@@ -166,13 +165,13 @@ UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,"UNIT CO
 
 Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames."
 WAAAGH_BANNER,Waaagh! Banner,This unit has +1 to charge rolls.,This unit has +1 to charge rolls.
-WAAAGH_EFFIGY_AURA,Waaagh! Effigy (Aura),"Friendly ORKS within 12"": Add +1 to Battle-shock tests","Waaagh! Effigy (Aura): While a friendly ORKS unit is within 12"" of this model, each time you take a Battle-shock test for that unit, add 1 to that test."
+WAAAGH_EFFIGY_AURA,Waaagh! Effigy (Aura),"Friendly ORKS within 12"": Add +1 to Battle-shock tests","While a friendly ORKS unit is within 12"" of this model, each time you take a Battle-shock test for that unit, add 1 to that test."
 WAAAGH_ENERGY,Waaagh! Energy,Psyker level 1 – uses listed psychic abilities.,Waaagh! Energy (psyker level 1): This model has the psychic abilities listed in the Psychic Abilities section (see left).
-WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF Warlord: Warbikers gain Battleline,"Waaagh! Wazdakka: If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword."
+WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF Warlord: Warbikers gain Battleline,"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword."
 WARGEAR_OPTIONS_NEW_BOYZ,Wargear Options - Boyz (New),Boss Nob can replace kustom shoota with kombi-shoota and kombi-rokkit,Wargear Options: The Boss Nob can have its 1 kustom shoota replaced with 1 kombi-shoota and 1 kombi-rokkit.
 WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-blasta.,"For every 3 models in this unit, 1 Deffkopta can have its kopta rokkits replaced with 1 kustom mega-blasta."
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.
-AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","Aerial Manoeuvre: At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
+AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
 AMMO_RUNTS,Ammo Runts,Once per battle: +1 to Hit on ranged attacks,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
 BEASTSCENT,Beastscent (Psychic Level 1),Disembarking unit gets +1 to wound vs MONSTER/VEHICLE (risk battle-shock on 1),"Beastscent (psychic level 1): In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
