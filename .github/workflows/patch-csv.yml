@@ -48,7 +48,8 @@ jobs:
                   sys.exit(f'file must be a .csv under data/: {path}')
               if not path.is_file():
                   sys.exit(f'missing {path}')
-              rows = list(csv.reader(path.read_text(encoding='utf-8').splitlines()))
+              with path.open(encoding='utf-8', newline='') as f:
+                  rows = list(csv.reader(f))
               if not rows:
                   sys.exit(f'empty csv {path}')
               return rows
