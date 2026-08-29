@@ -3,41 +3,9 @@ name: Patch CSV
 on:
   workflow_dispatch:
     inputs:
-      file:
-        description: Path under the repo (example data/orks/Units.csv)
+      patches:
+        description: JSON list of operations. One run, one commit.
         required: true
-        type: string
-      mode:
-        description: update a cell or delete the row
-        required: true
-        type: choice
-        options:
-          - update
-          - delete
-        default: update
-      id_column:
-        description: Header of the row-id column (example Unit_ID). Leave blank to use the first column.
-        required: false
-        type: string
-      row_id:
-        description: Row key (example BURNA_BOYZ)
-        required: true
-        type: string
-      column:
-        description: Header to change (update mode)
-        required: false
-        type: string
-      value:
-        description: New cell value (update mode)
-        required: false
-        type: string
-      column_2:
-        description: Optional second header on the same row
-        required: false
-        type: string
-      value_2:
-        description: Optional second value
-        required: false
         type: string
 
 permissions:
@@ -49,96 +17,126 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Patch CSV
+      - name: Apply patches
         env:
-          FILE: ${{ inputs.file }}
-          MODE: ${{ inputs.mode }}
-          ID_COLUMN: ${{ inputs.id_column }}
-          ROW_ID: ${{ inputs.row_id }}
-          COLUMN: ${{ inputs.column }}
-          VALUE: ${{ inputs.value }}
-          COLUMN_2: ${{ inputs.column_2 }}
-          VALUE_2: ${{ inputs.value_2 }}
+          PATCHES: ${{ inputs.patches }}
         run: |
           python3 <<'PY'
-          import csv, os, sys
+          import csv, json, os, sys
           from pathlib import Path
 
-          path = Path(os.environ['FILE'])
-          if path.is_absolute() or '..' in path.parts:
-              sys.exit('file path must be a relative path with no ..')
-          if not str(path).startswith('data/') or path.suffix.lower() != '.csv':
-              sys.exit('file must be a .csv under data/')
-          if not path.is_file():
-              sys.exit(f'missing {path}')
+          raw = os.environ.get('PATCHES', '').strip()
+          if not raw:
+              sys.exit('patches input is empty')
+          try:
+              ops = json.loads(raw)
+          except json.JSONDecodeError as e:
+              sys.exit(f'patches is not JSON: {e}')
+          if not isinstance(ops, list) or not ops:
+              sys.exit('patches must be a non-empty JSON list')
 
-          rows = list(csv.reader(path.read_text(encoding='utf-8').splitlines()))
-          if not rows:
-              sys.exit('empty csv')
-          header = rows[0]
-          id_col = os.environ.get('ID_COLUMN', '').strip() or header[0]
-          if id_col not in header:
-              sys.exit(f'id column not in header: {id_col}')
-          i_id = header.index(id_col)
-          row_id = os.environ['ROW_ID']
-          mode = os.environ.get('MODE', 'update').strip() or 'update'
+          def decode(val):
+              if val is None:
+                  return ''
+              s = str(val)
+              return s.replace('\\n', '\n')
 
-          if mode == 'delete':
-              kept = [header]
-              hits = 0
-              for row in rows[1:]:
-                  if not row:
-                      continue
-                  if len(row) > i_id and row[i_id] == row_id:
-                      hits += 1
-                      continue
-                  kept.append(row)
-              if hits != 1:
-                  sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
-              out = kept
-              print(f'deleted {path} {row_id}')
-          elif mode == 'update':
-              col = os.environ.get('COLUMN', '').strip()
-              if not col:
-                  sys.exit('column required for update')
-              updates = [(col, os.environ.get('VALUE', ''))]
-              col2 = os.environ.get('COLUMN_2', '').strip()
-              if col2:
-                  updates.append((col2, os.environ.get('VALUE_2', '')))
-              indexes = []
-              for c, _ in updates:
-                  if c not in header:
-                      sys.exit(f'column not in header: {c}')
-                  indexes.append(header.index(c))
+          def load_csv(path):
+              if path.is_absolute() or '..' in path.parts:
+                  sys.exit(f'bad path {path}')
+              if not str(path).startswith('data/') or path.suffix.lower() != '.csv':
+                  sys.exit(f'file must be a .csv under data/: {path}')
+              if not path.is_file():
+                  sys.exit(f'missing {path}')
+              rows = list(csv.reader(path.read_text(encoding='utf-8').splitlines()))
+              if not rows:
+                  sys.exit(f'empty csv {path}')
+              return rows
+
+          files = {}
+          changed = set()
+
+          for i, op in enumerate(ops):
+              if not isinstance(op, dict):
+                  sys.exit(f'op {i} is not an object')
+              path = Path(str(op.get('file', '')).strip())
+              if path not in files:
+                  files[path] = load_csv(path)
+              rows = files[path]
+              header = rows[0]
+              id_col = str(op.get('id_column') or '').strip() or header[0]
+              if id_col not in header:
+                  sys.exit(f'op {i}: id column not in header: {id_col}')
+              i_id = header.index(id_col)
+              row_id = str(op.get('row_id') or '').strip()
+              if not row_id:
+                  sys.exit(f'op {i}: row_id required')
+              mode = str(op.get('mode') or 'update').strip()
+
+              if mode == 'delete':
+                  kept = [header]
+                  hits = 0
+                  for row in rows[1:]:
+                      if not row:
+                          continue
+                      if len(row) > i_id and row[i_id] == row_id:
+                          hits += 1
+                          continue
+                      kept.append(row)
+                  if hits != 1:
+                      sys.exit(f'op {i}: expected 1 row for {row_id!r}, found {hits}')
+                  files[path] = kept
+                  changed.add(path)
+                  print(f'deleted {path} {row_id}')
+                  continue
+
+              if mode != 'update':
+                  sys.exit(f'op {i}: unknown mode {mode}')
+
+              sets = op.get('sets')
+              if not isinstance(sets, dict) or not sets:
+                  sets = {}
+                  if op.get('column'):
+                      sets[str(op['column'])] = op.get('value', '')
+                  if op.get('column_2'):
+                      sets[str(op['column_2'])] = op.get('value_2', '')
+              if not sets:
+                  sys.exit(f'op {i}: update needs sets or column/value')
+
               hits = 0
               for row in rows[1:]:
                   if not row:
                       continue
                   while len(row) < len(header):
                       row.append('')
-                  if row[i_id] == row_id:
-                      for idx, (_, val) in zip(indexes, updates):
-                          row[idx] = val
-                      hits += 1
+                  if row[i_id] != row_id:
+                      continue
+                  for col, val in sets.items():
+                      if col not in header:
+                          sys.exit(f'op {i}: column not in header: {col}')
+                      row[header.index(col)] = decode(val)
+                  hits += 1
               if hits != 1:
-                  sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
-              out = rows
-              print(f'updated {path} {row_id} {updates}')
-          else:
-              sys.exit(f'unknown mode {mode}')
+                  sys.exit(f'op {i}: expected 1 row for {row_id!r}, found {hits}')
+              changed.add(path)
+              print(f'updated {path} {row_id} {list(sets)}')
 
-          with path.open('w', newline='', encoding='utf-8') as f:
-              csv.writer(f, lineterminator='\n').writerows(out)
+          for path, rows in files.items():
+              if path not in changed:
+                  continue
+              with path.open('w', newline='', encoding='utf-8') as f:
+                  csv.writer(f, lineterminator='\n').writerows(rows)
+          print('changed', ' '.join(str(p) for p in sorted(changed)))
           PY
 
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- "${{ inputs.file }}"
+          git add -- data
           if git diff --cached --quiet; then
             echo "No change"
             exit 0
           fi
-          git commit -m "Patch ${{ inputs.file }} ${{ inputs.mode }} ${{ inputs.row_id }}"
+          git commit -m "Patch CSV line items"
           git push
