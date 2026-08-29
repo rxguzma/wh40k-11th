@@ -173,13 +173,13 @@ WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-bla
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.
 AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
 AMMO_RUNTS,Ammo Runts,Once per battle: +1 to Hit on ranged attacks,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
-BEASTSCENT,Beastscent (Psychic Level 1),Disembarking unit gets +1 to wound vs MONSTER/VEHICLE (risk battle-shock on 1),"Beastscent (psychic level 1): In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+BEASTSCENT,Beastscent (Psychic Level 1),Disembarking unit gets +1 to wound vs MONSTER/VEHICLE (risk battle-shock on 1),"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER/VEHICLE unit have +1 to wound rolls until the end of the turn"
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
 - On a 3+, that enemy unit suffers D3 mortal wounds.Place two Bomb Squig tokens next to the unit, removing one each time this ability is used."
-BRUTAL_IMPACT,Brutal Impact,If charged this turn: attacks have +1 Damage,"Brutal Impact: If this unit made a charge move this turn, this unit’s attacks have +1D"
-BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units,"Bust ’Em: In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.
+BRUTAL_IMPACT,Brutal Impact,If charged this turn: attacks have +1 Damage,"If this unit made a charge move this turn, this unit’s attacks have +1D"
+BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units,"In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.
 - Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS]."
 COMPOSITION_BATTLEWAGON,Unit Composition (Battlewagon),1 Battlewagon. Crushin’ Bulk.,"UNIT COMPOSITION: 1 Battlewagon model.
 
@@ -232,26 +232,27 @@ DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Operative while within 3"
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6
 DEEP_STRIKE,Deep Strike,Unit has the Deep Strike ability,CORE: Deep Strike
-DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"Downtrodden: For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model."
+DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model."
 FEEL_NO_PAIN_5,Feel No Pain 5+,CORE: Feel No Pain 5+,CORE: Feel No Pain 5+
-FINDER_KEEPERZ,Finder Keeperz,Shooting: +1 AP if unit or target is on an objective,"Finder Keeperz: In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
+FINDER_KEEPERZ,Finder Keeperz,Shooting: +1 AP if unit or target is on an objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
 - The target of that attack is within range of an objective"
 FIRING_DECK_11,Firing Deck 11,CORE: Firing Deck 11,CORE: Firing Deck 11
-FOUND_EM,Found ’Em!,"Movement: select enemy within 12"" → +3"" detection range until end of turn","Found ’Em!: In your Movement phase, you can select one enemy unit within 12"" of this unit. That unit has +3"" detection range until the end of the turn.Place one Accusatory Grot token next to that enemy unit to remind you."
-GET_OUT_DA_WAY,Get Out da Way!,"While charging, can move through models (except MONSTER/VEHICLE)","Get Out da Way!: While making a charge move, this unit can move through models (excluding MONSTER/VEHICLE models)."
-HIGH_SPEED_CARNAGE,High-speed Carnage,If charged this turn: melee +1 S and +1 D,"High-speed Carnage: If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D."
-IDOL_OF_BELLIGERENCE,Idol of Belligerence,Embarked unit that disembarks becomes riled up until start of your next turn,"Idol of Belligerence: In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is riled up until the start of your next turn."
+FOUND_EM,Found ’Em!,"Movement: select enemy within 12"" → +3"" detection range until end of turn","In your Movement phase, you can select one enemy unit within 12"" of this unit. That unit has +3"" detection range until the end of the turn.
+Place one Accusatory Grot token next to that enemy unit to remind you."
+GET_OUT_DA_WAY,Get Out da Way!,"While charging, can move through models (except MONSTER/VEHICLE)","While making a charge move, this unit can move through models (excluding MONSTER/VEHICLE models)."
+HIGH_SPEED_CARNAGE,High-speed Carnage,If charged this turn: melee +1 S and +1 D,"If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D."
+IDOL_OF_BELLIGERENCE,Idol of Belligerence,Embarked unit that disembarks becomes riled up until start of your next turn,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is riled up until the start of your next turn."
 INFILTRATORS,Infiltrators,CORE: Infiltrators,CORE: Infiltrators
 INVULNERABLE_SAVE_4,Invulnerable Save 4+,INVULNERABLE SAVE 4+,INVULNERABLE SAVE 4+
 INVULNERABLE_SAVE_5,Invulnerable Save 5+,INVULNERABLE SAVE 5+,INVULNERABLE SAVE 5+
 INVULNERABLE_SAVE_6,Invulnerable Save 6+,INVULNERABLE SAVE 6+,INVULNERABLE SAVE 6+
 MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: rile up a number of Orks units equal to current battle round,"Makari, Hoist Dat Banner! (Once per battle, per army): In your Movement phase, you can select a number of friendly ORKS units equal to or less than the current battle round number. Those units are riled up until the start of your next turn.Place one Makari token next to the unit, removing it after this ability is used."
-MOBBED,Mobbed,"After charge: engaged MONSTER/VEHICLE take Battle-shock (-1, or -2 if 13+ models)","Mobbed: When this unit ends a charge move, each enemy MONSTER/VEHICLE unit engaged with this unit makes a battle-shock roll:
+MOBBED,Mobbed,"After charge: engaged MONSTER/VEHICLE take Battle-shock (-1, or -2 if 13+ models)","When this unit ends a charge move, each enemy MONSTER/VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
 - Or with -2 to that battle-shock roll if this unit has 13+ models."
-MOBILE_FORTRESS,Mobile Fortress,Ranged attacks targeting this model have -1 Damage,Mobile Fortress: Ranged attacks targeting this model have -1 D
-NOWHERE_TO_HIDE,Nowhere to Hide,Attacks against hidden units have +1 to hit,Nowhere to Hide: This unit’s attacks that target a hidden unit have +1 to hit rolls.
+MOBILE_FORTRESS,Mobile Fortress,Ranged attacks targeting this model have -1 Damage,Ranged attacks targeting this model have -1 D
+NOWHERE_TO_HIDE,Nowhere to Hide,Attacks against hidden units have +1 to hit,This unit’s attacks that target a hidden unit have +1 to hit rolls.
 PAIRED_KRUMPAS,Paired Krumpas,Kustom Krumpa attacks can re-roll hit and wound rolls,Paired Krumpas: Attacks made with this model’s Kustom Krumpa weapon can re-roll hit rolls and wound rolls.
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"Rokkit Barrage: In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll."
 ROKKIT_CHARGE,Rokkit Charge,"If charged this turn: melee get +1 A, +1 S and [HAZARDOUS]","Rokkit Charge: When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
