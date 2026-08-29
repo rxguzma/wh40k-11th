@@ -63,7 +63,7 @@ KOMMANDOS_WARGEAR,Kommandos Wargear,Nob: Slugga and Power Klaw Kommandos: 2 spes
 Up to 2 Kommandos can each have their slugga and choppa replaced with 1 speshul Kommando shoota and 1 close combat weapon. 1 Kommando’s slugga and choppa can be replaced with 1 breacha ram. 1 Kommando’s slugga and choppa can be replaced with 1 burna and 1 close combat weapon. 1 Kommando’s slugga and choppa can be replaced with 1 rokkit launcha and 1 close combat weapon. This unit can be equipped with 1 bomb squig. This unit can be equipped with 1 distraction grot."
 KRUMPIN_TIME,Krumpin Time,If riled up: +1 to hit rolls in Fight phase,"In the Fight phase, if this unit is riled up, this unit has +1 to hit rolls."
 KUNNIN_INFILTRATOR,Kunnin' Infiltrator,"If hidden and unengaged at end of opponent Fight phase, go to SR.","At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves."
-KUSTOM_FORCE_FIELD,Kustom Force Field,This unit has 4+ InSv against ranged attacks.,Kustom Force Field: This unit has 4+ InSv against ranged attacks.
+KUSTOM_FORCE_FIELD,Kustom Force Field,This unit has 4+ InSv against ranged attacks.,This unit has 4+ InSv against ranged attacks.
 LEADER_BEASTBOSS,Leader: Beastboss,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
 LEADER_BEASTBOSS_ON_SQUIGOSAUR,Leader: Beastboss on Squigosaur,LEADER: SQUIGHOG BOYZ,LEADER: SQUIGHOG BOYZ
 LEADER_BIG_MEK,Leader: Big Mek,"LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
@@ -85,28 +85,28 @@ LEADER_WEIRDBOY,Leader: Weirdboy,"LEADER: BOYZ, BREAKA BOYZ","LEADER: BOYZ, BREA
 LEADER_WURRBOY,Leader: Wurrboy,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
 LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,LEADER: GRETCHIN,LEADER: GRETCHIN
 MAKARI,Makari,"Sv: 2++, W:1, Ld: 8, OC: 1Cannot re-roll Invul Save",
-MEKANIAK,Mekaniak,"End of Movement. Select Vehicle 3"", repair D3 wounds and +1 To Hit.","Mekaniak: At the end of your Movement phase, you can select one friendly ORKS VEHICLE model within 3"" of this model. That VEHICLE model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn."
-MEKBOY,Mekboy,"IF within 3"" of Vehicle = Lone Operative","Mekboy: While this model is within 3"" of one or more friendly ORKS VEHICLE units, this model has the Lone Operative ability."
+MEKANIAK,Mekaniak,"End of Movement. Select Vehicle 3"", repair D3 wounds and +1 To Hit.","At the end of your Movement phase, you can select one friendly ORKS VEHICLE model within 3"" of this model. That VEHICLE model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn."
+MEKBOY,Mekboy,"IF within 3"" of Vehicle = Lone Operative","While this model is within 3"" of one or more friendly ORKS VEHICLE units, this model has the Lone Operative ability."
 MIGHT_IS_RIGHT,Might is Right,"CHARGE this turn, MODEL gets +3 A and +2 S","Might is Right: If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
 - +2 S"
-MONSTER_HUNTERS,Monster Hunters,Re-rolls To Hit vs MONSTER or VEHICLE,"Monster Hunters: Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll."
+MONSTER_HUNTERS,Monster Hunters,Re-rolls To Hit vs MONSTER or VEHICLE,"Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll."
 MONSTER_HUNTERS_BEASTBOSS,Monster Hunters (Beastboss),LEADING Beastsnagga = Re-rolls To Hit vs MONSTER or VEHICLE,"IF Leading Beastsnagga: Monster Hunters: Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll."
 MORE_DAKKA,More Dakka,Ranged attacks have [IGNORES COVER]; if riled up also [SUSTAINED HITS 1].,"More Dakka: This unit's ranged attacks have:
 - [IGNORES COVER]
 - If this unit is riled up, [SUSTAINED HITS 1]"
-NEW_MORE_DAKKA_BIG_MEK_WITH_SHOKK_ATTACK_GUN,More Dakka,Leading a unit: ranged attacks re-roll Hit rolls of 1.,"More Dakka: While this model leads a unit, models in that unit can re-roll Hit rolls of 1 for ranged attacks."
+NEW_MORE_DAKKA_BIG_MEK_WITH_SHOKK_ATTACK_GUN,More Dakka,Leading a unit: ranged attacks re-roll Hit rolls of 1.,"While this model leads a unit, models in that unit can re-roll Hit rolls of 1 for ranged attacks."
 NOB,Nob,Nob has 2 Wounds,Nob has 2 Wounds
 NOB_ON_SMASHA_SQUIG,Nob on Smasha Squig,Nob has 4 Wounds,
 NOB_ON_SMASHA_SQUIG_2,Nob On Smasha Squig,Nob = 4 Wounds,
 NOB_WITH_TANK_HAMMER_5_SMASH_HAMMERS,Nob with Tank Hammer 5 Smash Hammers,Breaka Boyz 6 Wargear,
 ONE_LAST_KILL,One Last Kill,"When destroyed unactivated in Fight phase, 2+ fight then removed.","One Last Kill: In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield."
-PATROL_SQUAD,Patrol Squad,Split into two units,"Patrol Squad: At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models."
+PATROL_SQUAD,Patrol Squad,Split into two units,"At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models."
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"Friendly Orks within 6"": +1 to hit and +1 to wound on melee","Prophet of da Great Waaagh! (Aura): While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
 - +1 to wound rolls"
-PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"PSYCHIC: If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack."
+PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack."
 PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: select MONSTER/VEHICLE within 24"" → +1 AP and [LETHAL HITS] vs it","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER/VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
 - +1 AP
 - [LETHAL HITS]."
