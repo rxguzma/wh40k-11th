@@ -91,6 +91,41 @@ jobs:
                   print(f'deleted {path} {row_id}')
                   continue
 
+              if mode == 'insert':
+                  existing = 0
+                  for row in rows[1:]:
+                      if row and len(row) > i_id and row[i_id] == row_id:
+                          existing += 1
+                  if existing:
+                      sys.exit(f'op {i}: row already exists: {row_id}')
+                  sets = op.get('sets')
+                  if not isinstance(sets, dict) or not sets:
+                      sys.exit(f'op {i}: insert needs sets')
+                  new_row = [''] * len(header)
+                  new_row[i_id] = row_id
+                  for col, val in sets.items():
+                      if col not in header:
+                          sys.exit(f'op {i}: column not in header: {col}')
+                      new_row[header.index(col)] = decode(val)
+                  after = str(op.get('after_row_id') or '').strip()
+                  if after:
+                      placed = False
+                      kept = [header]
+                      for row in rows[1:]:
+                          kept.append(row)
+                          if row and len(row) > i_id and row[i_id] == after:
+                              kept.append(new_row)
+                              placed = True
+                      if not placed:
+                          sys.exit(f'op {i}: after_row_id not found: {after}')
+                      files[path] = kept
+                  else:
+                      rows.append(new_row)
+                      files[path] = rows
+                  changed.add(path)
+                  print(f'inserted {path} {row_id}')
+                  continue
+
               if mode != 'update':
                   sys.exit(f'op {i}: unknown mode {mode}')
 
