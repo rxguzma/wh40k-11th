@@ -2,8 +2,7 @@ Weapon_ID,Weapon Name,"R""",A,WS,St,AP,D,Weapon Abilities
 ATTACK_SQUIG,Attack Squig,-,2,4,4,0,1,EXTRA ATTACKS
 BEAST_SNAGGA_KLAW,Beast Snagga klaw,-,4,3,10,-2,2,"ANTI-MONSTER 4+, ANTI-VEHICLE 4+"
 BEASTCHOPPA,Beastchoppa,-,6,2,6,-1,2,"ANTI-MONSTER 4+, ANTI-VEHICLE 4+"
-BIG_CHOMPAS_JAWS,Big Chompa’s jaws,-,3,3,7,-2,4,"DEVASTATING WOUNDS, EXTRA ATTACKS"
-BIG_CHOMPAS_JAWS,Big Chompa's Jaws,Melee,3,3+,7,-2,4,"ANTI-MONSTER/VEHICLE 3+, EXTRA ATTACKS"
+BIG_CHOMPAS_JAWS,Big Chompa's Jaws,-,3,3+,7,-2,4,"ANTI-MONSTER/VEHICLE 3+, EXTRA ATTACKS"
 BIG_CHOPPA_NOBZ,Big Choppa (Nobz),-,3,3,7,-1,2,
 -,-,-,-,-,-,-,-,
 BIG_CHOPPA_WARBIKERS,Big Choppa,-,3,3,7,-1,2,
@@ -27,8 +26,7 @@ CLOSE_COMBAT_WEAPON_GRETCHIN,Close combat weapon,-,1,5,2,0,1,
 CLOSE_COMBAT_WEAPON_SNAGGA,Close combat weapon (Snagga),-,2,3,5,0,1,
 CLOSE_COMBAT_WEAPON_TANKBUSTAS,Close combat weapon (Tankbustas),-,3,3,5,0,1,
 CUTTIN_FLAMES,Cuttin’ flames,-,2,4,4,-2,1,
-DA_GRABZAPPA,Da Grabzappa,-,5,2,7,-2,2,
-DA_GRABZAPPA,Da Grabzappa,Melee,5,2+,7,-2,2,
+DA_GRABZAPPA,Da Grabzappa,-,5,2+,7,-2,2,
 DEFF_ROLLA,Deff rolla,-,6,3,9,-1,2,
 DEFFGUN,Deffgun,"48""",2,6,8,-1,2,"HEAVY, RAPID FIRE 1"
 DEFFKANNON,Deffkannon,"72""",3D6,5,14,-3,D6,BLAST
