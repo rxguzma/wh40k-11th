@@ -114,7 +114,7 @@ SNAGGED,SNAGGED,Hit MONSTER/VEHICLE: Add +2 to Charge and blocks Overwatch,"SNAG
 SNAGGED_STIKKA_KANNON,Snagged (Stikka kannon),"Hit MONSTER, VEHICLE = +2 to Charge","Snagged: Each time this weapon scores a hit against a MONSTER or VEHICLE unit, until the end of the turn, if the bearer selects that unit as a target of a charge, add 2 to Charge rolls made for the bearer and enemy units cannot use the Fire Overwatch Stratagem to shoot at the bearer."
 SNAGGED_STIKKA_KANNON_2,Snagged Stikka kannon,"Charge +2"" Targetted Monster/Vehicle","Snagged: Each time this weapon scores a hit against an enemy MONSTER or VEHICLE unit, until the end of the turn, if the bearer selects that unit as a target of a charge, add 2 to Charge rolls made for the bearer."
 SNEAKY_SURPRISE,Sneaky Surprise,Cannot be Overwatched,Sneaky Surprise: Enemy units cannot use the Fire Overwatch Stratagem to shoot at this unit.
-SOMETHIN_TO_PROVE,Somethin' to Prove,This unit's melee attacks have +1 to hit rolls.,Somethin' to Prove: This unit's melee attacks have +1 to hit rolls.
+SOMETHIN_TO_PROVE,Somethin' to Prove,UNIT melee attacks have +1 to hit.,Somethin' to Prove: This unit's melee attacks have +1 to hit rolls.
 SPECIAL_DOSE,Special Dose,"WAAAGH! = +6"" to Movement","Special Dose: When you call a Waaagh!, until the start of the next battle round, add 6"" to the Move characteristic of models in this model’s unit."
 SPEEDBOSS,Speedboss,Leading = +1 To Hit,"Speedboss: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll."
 SPIRIT_OF_GORK,Spirit of Gork,"Fight phase = +1 Strength, on 6s + LETHAL HITS","Spirit of Gork (Psychic): At the start of the Fight phase, you can select one friendly Orks unit within 12"" of this model and roll one D6: on a 1, this model suffers D3 mortal wounds; on a 2-5, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit; on a 6, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability."
@@ -291,11 +291,6 @@ This model is equipped with: 2 Dual Big Shoota; 1 Klaw of Mork; 1 Kustom Mega-bl
 COMPOSITION_NAZDREG,Unit Composition (Nazdreg),Epic Hero Mega Armour Warboss with Kustom Blasta X and Moonchewa,"UNIT COMPOSITION: 1 Nazdreg model.
 
 This model is equipped with: 1 Kustom Blasta X; 1 Moonchewa. This model’s Kustom Blasta X weapon has three separate ranged weapon profiles, each of which can be selected to make attacks with."
-COMPOSITION_TRUKK,Unit Composition (Trukk),1 Trukk. Dual Big Shoota + Spiked Ram.,"UNIT COMPOSITION: 1 Trukk model.
-
-This model is equipped with: 1 Dual Big Shoota; 1 Spiked Ram.
-
-WARGEAR OPTIONS: This model's Dual Big Shoota can be replaced with 1 Rokkit Launcha. This model can be equipped with one of the following: 1 Buzzsaw; 1 Grabbin' Klaw."
 DAMAGED_7,Damaged 7,"While 1-7 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 7
 DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1
 DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3
@@ -313,9 +308,6 @@ TRAMPLASAQUIG_CHARGE,Tramplasaquig Charge,Crushing Impact stratagem costs -1 CP 
 TRANSPORT_GORK_MORK,Transport (Gorkanaut/Morkanaut),Transport capacity 12 Orks Infantry (Mega Armour/Jump Pack = 2; no Ghaz),Transport: This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR/JUMP PACK model takes up the space of 2 models.
 TRANSPORT_HUNTA_RIG,Transport (Hunta Rig),Transport capacity 22 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 22 BEAST SNAGGAS INFANTRY models.
 PLACEHOLDER,Placeholder unit,Points only — datasheet not extracted yet,"Placeholder: this unit exists for points tracking. Profile, weapons, and abilities have not been added from a datasheet yet."
-COMPOSITION_BIGBOSS,Unit Composition (Bigboss),1 Bigboss. Big Choppa + Slugga. Support.,"UNIT COMPOSITION: 1 Bigboss model.
-
-This model is equipped with: 1 Big Choppa; 1 Slugga."
 COMPOSITION_BANNERNOB,Unit Composition (Bannernob),1 Bannernob. Kustom Choppa + Shoota. Support.,"UNIT COMPOSITION: 1 Bannernob model.
 
 This model is equipped with: 1 Kustom Choppa; 1 Shoota."
@@ -336,9 +328,6 @@ This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.
 WARGEAR OPTIONS: This model's Kustom Choppa can be replaced with 1 Power Klaw. This model's Kustom Shoota can be replaced with one of the following: 1 Kombi-rokkit; 1 Kombi-skorcha."
 KEEP_HUNTIN,Keep Huntin',"Once per BR: Beast Snagga within 6"" un-shock and riled up.","Keep Huntin' (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit:• Is no longer battle-shocked.• Is riled up until the start of your next turn."
 DODGE_DIS,Dodge Dis!,This unit's attacks have +1 to hit rolls.,Dodge Dis!: This unit's attacks have +1 to hit rolls.
-COMPOSITION_BEASTBOSS,Unit Composition (Beastboss),1 Beastboss. Shoota + Beast Snagga Klaw and Beastchoppa.,"UNIT COMPOSITION: 1 Beastboss model.
-
-This model is equipped with: 1 Shoota; 1 Beast Snagga Klaw and Beastchoppa."
 COMPOSITION_ZODGROD,Unit Composition (Zodgrod),1 Zodgrod. Da Grabzappa + Squigstoppa.,"UNIT COMPOSITION: 1 Zodgrod Wortsnagga model.
 
 This model is equipped with: 1 Da Grabzappa; 1 Squigstoppa."
