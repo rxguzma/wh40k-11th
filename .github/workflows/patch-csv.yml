@@ -7,6 +7,14 @@ on:
         description: Path under the repo (example data/orks/Units.csv)
         required: true
         type: string
+      mode:
+        description: update a cell or delete the row
+        required: true
+        type: choice
+        options:
+          - update
+          - delete
+        default: update
       id_column:
         description: Header of the row-id column (example Unit_ID). Leave blank to use the first column.
         required: false
@@ -16,12 +24,12 @@ on:
         required: true
         type: string
       column:
-        description: Header to change (example Points_Cost_2)
-        required: true
+        description: Header to change (update mode)
+        required: false
         type: string
       value:
-        description: New cell value
-        required: true
+        description: New cell value (update mode)
+        required: false
         type: string
       column_2:
         description: Optional second header on the same row
@@ -41,9 +49,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Patch CSV cell
+      - name: Patch CSV
         env:
           FILE: ${{ inputs.file }}
+          MODE: ${{ inputs.mode }}
           ID_COLUMN: ${{ inputs.id_column }}
           ROW_ID: ${{ inputs.row_id }}
           COLUMN: ${{ inputs.column }}
@@ -71,35 +80,55 @@ jobs:
           if id_col not in header:
               sys.exit(f'id column not in header: {id_col}')
           i_id = header.index(id_col)
-
-          updates = [(os.environ['COLUMN'], os.environ.get('VALUE', ''))]
-          col2 = os.environ.get('COLUMN_2', '').strip()
-          if col2:
-              updates.append((col2, os.environ.get('VALUE_2', '')))
-
-          indexes = []
-          for col, _ in updates:
-              if col not in header:
-                  sys.exit(f'column not in header: {col}')
-              indexes.append(header.index(col))
-
           row_id = os.environ['ROW_ID']
-          hits = 0
-          for row in rows[1:]:
-              if not row:
-                  continue
-              while len(row) < len(header):
-                  row.append('')
-              if row[i_id] == row_id:
-                  for idx, (_, val) in zip(indexes, updates):
-                      row[idx] = val
-                  hits += 1
-          if hits != 1:
-              sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
+          mode = os.environ.get('MODE', 'update').strip() or 'update'
+
+          if mode == 'delete':
+              kept = [header]
+              hits = 0
+              for row in rows[1:]:
+                  if not row:
+                      continue
+                  if len(row) > i_id and row[i_id] == row_id:
+                      hits += 1
+                      continue
+                  kept.append(row)
+              if hits != 1:
+                  sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
+              out = kept
+              print(f'deleted {path} {row_id}')
+          elif mode == 'update':
+              col = os.environ.get('COLUMN', '').strip()
+              if not col:
+                  sys.exit('column required for update')
+              updates = [(col, os.environ.get('VALUE', ''))]
+              col2 = os.environ.get('COLUMN_2', '').strip()
+              if col2:
+                  updates.append((col2, os.environ.get('VALUE_2', '')))
+              indexes = []
+              for c, _ in updates:
+                  if c not in header:
+                      sys.exit(f'column not in header: {c}')
+                  indexes.append(header.index(c))
+              hits = 0
+              for row in rows[1:]:
+                  if not row:
+                      continue
+                  while len(row) < len(header):
+                      row.append('')
+                  if row[i_id] == row_id:
+                      for idx, (_, val) in zip(indexes, updates):
+                          row[idx] = val
+                      hits += 1
+              if hits != 1:
+                  sys.exit(f'expected 1 row for {row_id!r} in {id_col}, found {hits}')
+              out = rows
+              print(f'updated {path} {row_id} {updates}')
+          else:
+              sys.exit(f'unknown mode {mode}')
 
           with path.open('w', newline='', encoding='utf-8') as f:
-              csv.writer(f, lineterminator='\n').writerows(rows)
-          print(f'updated {path} {row_id} {updates}')
+              csv.writer(f, lineterminator='\n').writerows(out)
           PY
 
       - name: Commit
@@ -111,5 +140,5 @@ jobs:
             echo "No change"
             exit 0
           fi
-          git commit -m "Patch ${{ inputs.file }} ${{ inputs.row_id }} ${{ inputs.column }}"
+          git commit -m "Patch ${{ inputs.file }} ${{ inputs.mode }} ${{ inputs.row_id }}"
           git push
