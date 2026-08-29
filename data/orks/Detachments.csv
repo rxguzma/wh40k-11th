@@ -223,21 +223,21 @@ EFFECT: Ranged attacks that target your unit with a S greater than your unit's T
 
 Or +1CP: Ranged attacks that target your unit have -1 to wound rolls."
 orks_taktikal_brigade,Orks,Taktikal Brigade,ARMY_RULE,orks_taktikal_brigade_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_taktikal_brigade,Orks,Taktikal Brigade,DETACHMENT_RULE,orks_taktikal_brigade_detachment_rule_suspiciously_well_organised,SUSPICIOUSLY WELL ORGANISED,,,1,Disruption,STORMBOYZ have BATTLELINE. BOYZ/KOMMANDOS/STORMBOYZ can Fall Back and still charge.,"Friendly STORMBOYZ units have BATTLELINE.
 
 When a friendly BOYZ/KOMMANDOS/STORMBOYZ unit is selected to make a fall-back move, that fall-back move does not prevent that unit from being eligible to declare a charge."
 orks_taktikal_brigade,,Taktikal Brigade,ENHANCEMENT,orks_taktikal_brigade_enhancement_kill_kommanda,KILL KOMMANDA,,,,,"BIG MEK/WARBOSS INFANTRY model only. While part of an attached unit, this model has Infiltrators and Stealth.","BIG MEK/WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:
-• Infiltrators
-• Stealth"
+- Infiltrators
+- Stealth"
 orks_taktikal_brigade,,Taktikal Brigade,ENHANCEMENT,orks_taktikal_brigade_enhancement_throat_slittas,THROAT-SLITTAS,,,,,KOMMANDOS/STORMBOYZ unit only. Melee has [LETHAL HITS: non-MONSTER/VEHICLE].,KOMMANDOS/STORMBOYZ unit only. This unit's melee attacks have [LETHAL HITS: non-MONSTER/VEHICLE].
 orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratagem_dubious_restraint_1cp,DUBIOUS RESTRAINT,,1,,,Start/end of your Movement: BOYZ/KOMMANDOS/STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
 
@@ -255,18 +255,18 @@ TARGET: One friendly unengaged BOYZ/KOMMANDOS/STORMBOYZ unit that was engaged at
 
 EFFECT: Your unit can make a normal move of up to 6""."
 orks_wreckas,Orks,Wreckas,ARMY_RULE,orks_wreckas_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_wreckas,Orks,Wreckas,DETACHMENT_RULE,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',,,2,,BREAKA BOYZ/FLASH GITZ/TANKBUSTAS re-roll hit 1s if they or their target are in range of an objective.,"In your Shooting phase, when a friendly BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
-• That unit is within range of an objective.
-• The target of that attack is within range of an objective."
+- That unit is within range of an objective.
+- The target of that attack is within range of an objective."
 orks_wreckas,,Wreckas,ENHANCEMENT,orks_wreckas_enhancement_kaptins_hat,KAPTIN'S HAT,,,,,"BIG MEK/WARBOSS INFANTRY only. After deployment, redeploy up to 3 ORKS INFANTRY; can go into Strategic Reserves ignoring limits.","BIG MEK/WARBOSS INFANTRY model only. When both players have deployed their armies, you can redeploy up to three friendly ORKS INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves."
 orks_wreckas,,Wreckas,ENHANCEMENT,orks_wreckas_enhancement_supa_snazz_dakka,SUPA-SNAZZ DAKKA,,,,,FLASH GITZ unit only. Snazzgun weapons have [RAPID FIRE 1].,FLASH GITZ unit only. This unit's Snazzgun weapons have [RAPID FIRE 1].
 orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_drive_by_bustin_1cp,DRIVE-BY BUSTIN',,1,,,Shooting: ORKS TRANSPORT Firing Deck weapons +1 to hit.,"WHEN: Your Shooting phase, when a friendly ORKS TRANSPORT unit is selected to shoot.
@@ -278,21 +278,22 @@ orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_grab_it_1cp,GRAB IT,,1,,,
 
 TARGET: That BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit.
 
-EFFECT: • Your unit can make a normal move of up to 6"", and must end that move within range of an objective.
-• Your unit is not eligible to declare a charge until the end of the turn."
+EFFECT:
+- Your unit can make a normal move of up to 6"", and must end that move within range of an objective.
+- Your unit is not eligible to declare a charge until the end of the turn."
 orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,GUN-CRAZY SHOW-OFFS,,1,,,Opp shooting: FLASH GITZ/TANKBUSTAS hit by that enemy can shoot back at only that enemy.,"WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
 
 TARGET: One friendly FLASH GITZ/TANKBUSTAS unit hit by those attacks.
 
 EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit."
 orks_da_big_hunt,Orks,Da Big Hunt,ARMY_RULE,orks_da_big_hunt_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_da_big_hunt,Orks,Da Big Hunt,DETACHMENT_RULE,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,,,2,,BEAST SNAGGA attacks that target MONSTER/VEHICLE have +1 AP.,Friendly BEAST SNAGGA units' attacks that target a MONSTER/VEHICLE unit have +1 AP.
@@ -314,13 +315,13 @@ TARGET: One friendly unengaged BEAST SNAGGA unit within 6"" of a battlefield edg
 
 EFFECT: Place your unit in strategic reserves."
 orks_madcap_meks,Orks,Madcap Meks,ARMY_RULE,orks_madcap_meks_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_madcap_meks,Orks,Madcap Meks,DETACHMENT_RULE,orks_madcap_meks_detachment_rule_unpredictable_genius,UNPREDICTABLE GENIUS,,,2,,"When BIG MEK/MEK GUNZ/MORKANAUT/WAZBOM BLASTAJET puts all ranged attacks into one enemy, roll D6 table.","In your Shooting phase, when all of a friendly BIG MEK/MEK GUNZ/MORKANAUT/WAZBOM BLASTAJET unit's ranged attacks target a single enemy unit, roll one D6:
@@ -334,27 +335,27 @@ D6  RESULT
 6  Runtified: The target unit has -1 T until your unit has shot."
 orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_mekwaaagh_mastermind,MEKWAAAGH! MASTERMIND,,,,,BIG MEK model only. This unit is riled up.,BIG MEK model only. This unit is riled up.
 orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_temperamental_shokka,TEMPERAMENTAL SHOKKA,,,,,"BIG MEK WITH SHOKK ATTACK GUN: on shoot, D6 — 1 Torrent then destroyed; 2-5 +1 A; 6 Sustained Hits 2.","BIG MEK WITH SHOKK ATTACK GUN model only. In your Shooting phase, when this unit is selected to shoot, you can roll one D6:
-• On a 1, this model's Shokk Attack Gun weapon has [TORRENT], and when this unit has shot, this model is destroyed.
-• On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
-• On a 6, this model's Shokk Attack Gun weapon has [SUSTAINED HITS 2]."
+- On a 1, this model's Shokk Attack Gun weapon has [TORRENT], and when this unit has shot, this model is destroyed.
+- On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
+- On a 6, this model's Shokk Attack Gun weapon has [SUSTAINED HITS 2]."
 orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_enhanced_runt_maw,ENHANCED RUNT-MAW,,,,,"BIG MEK WITH SHOKK ATTACK GUN: after shooting, one hit enemy is infested with Snotlings (−1 Leadership).","BIG MEK WITH SHOKK ATTACK GUN model only. When this unit has shot, select one enemy unit hit by those attacks. That unit is infested with Snotlings until the start of your next turn.
-• While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls."
+- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls."
 orks_madcap_meks,,Madcap Meks,STRATAGEM,orks_madcap_meks_stratagem_vindictive_artillerists_1cp,VINDICTIVE ARTILLERISTS,,1,,,"Shooting: MEK GUNZ choose Lethal Hits, or Sustained Hits 1, or Hazardous+Lethal+Sustained 1.","WHEN: Your Shooting phase, when a friendly MEK GUNZ unit is selected to shoot.
 
 TARGET: That MEK GUNZ unit.
 
 EFFECT: Your unit's ranged attacks have:
-• [LETHAL HITS]
-• Or [SUSTAINED HITS 1]
-• Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1]."
+- [LETHAL HITS]
+- Or [SUSTAINED HITS 1]
+- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1]."
 orks_dread_mob,Orks,Dread Mob,ARMY_RULE,orks_dread_mob_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
-• Re-roll advance rolls.
-• Become riled up, as stated in other rules.
+- Re-roll advance rolls.
+- Become riled up, as stated in other rules.
 
 While a unit is riled up:
-• That unit has 5+ InSv.
-• That unit’s ranged attacks have [ASSAULT].
-• When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
+- That unit has 5+ InSv.
+- That unit’s ranged attacks have [ASSAULT].
+- When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
 orks_dread_mob,Orks,Dread Mob,DETACHMENT_RULE,orks_dread_mob_detachment_rule_try_dat_button,TRY DAT BUTTON!,,,2,Purge the Foe,Non-TITANIC ORKS WALKER selected to attack: roll 1D6 or 2D6 (reroll dupes) for +A / +S / +AP; 2D6 = one hazard roll after attacking.,"In your Shooting phase or the Fight phase, when a friendly ORKS WALKER unit (excluding TITANIC units) is selected to attack, you can use this ability. If you do, roll either one D6 or two D6 (keep re-rolling duplicate results). This unit's attacks have the relevant rule(s):
@@ -368,14 +369,14 @@ D6  RESULT
 If you rolled two D6, when this unit has attacked, this unit makes one hazard roll."
 orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_cybork_boosta,CYBORK BOOSTA,,,,,"BIG MEK/MEK model only. This model has +2"" M.","BIG MEK/MEK model only. This model has +2"" M."
 orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_dreadherder,DREADHERDER,,,,,"BIG MEK: within 3"" of friendly ORKS WALKER (not BIG MEK) — Lone Operative; one WALKER within 3"" re-rolls hit 1s.","BIG MEK model only. While this model is within 3"" of a friendly ORKS WALKER unit (excluding BIG MEK units):
-• This model has Lone Operative.
-• In your Shooting phase, you can select one friendly ORKS WALKER unit within 3"" of this model. That unit's attacks can re-roll hit rolls of 1 until the end of the turn."
+- This model has Lone Operative.
+- In your Shooting phase, you can select one friendly ORKS WALKER unit within 3"" of this model. That unit's attacks can re-roll hit rolls of 1 until the end of the turn."
 orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_crazed_rampage_1cp,CRAZED RAMPAGE,,1,,,Fight: non-TITANIC ORKS WALKER fight-on-death on 4+ (+3 if DEFF DREAD).,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
 
 TARGET: That ORKS WALKER unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +3 to the result if your unit has DEFF DREAD:
-• On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
 orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_dread_power_1cp,DREAD POWER,,1,,,Movement: one ORKS WALKER is riled up until the start of your next turn.,"WHEN: Your Movement phase.
 
 TARGET: One friendly ORKS WALKER unit.
