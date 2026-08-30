@@ -1,0 +1,687 @@
+Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description
+FULGURIS_TASK_FORCE,Marines,Fulguris Task Force,DETACHMENT_RULE,FULGURIS_TASK_FORCE_DETACHMENT_RULE_SKYSTRIKE,SKYSTRIKE,,,1,Disruption,"LAND SPEEDER and STORM SPEEDER units gain SPEEDER. 
+First Movement phase: SPEEDER units can make an ingress move.","Friendly LAND SPEEDER/STORM SPEEDER HAILSTRIKE/STORM SPEEDER HAMMERSTRIKE/STORM SPEEDER THUNDERSTRIKE units have SPEEDER.
+
+In your first Movement phase, friendly SPEEDER units can make an ingress move."
+space_marines_shadowmark_talon,Raven Guard,Shadowmark Talon,DETACHMENT_RULE,space_marines_shadowmark_talon_detachment_rule_detachment_rule,Shadow Masters,,,2,Disruption,"Cover & -1 To be Hit
+Aethon: ONCE Free Into the Darkness.","Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack.
+
+Once per battle round, if an AETHON SHAAN model from your army is on the battlefield, you can use the Into Darkness Stratagem for 0CP."
+space_marines_spearpoint_task_force,White Scars,Spearpoint Task Force,DETACHMENT_RULE,space_marines_spearpoint_task_force_detachment_rule_storm_swift_onslaught,Lightning Assault,,,2,Disruption,"Units can charge after Advancing or Falling Back. SUBODEN KHAN can move up to 6"" after destroying an enemy unit in the Fight phase.","ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back.
+
+At the end of the Fight phase, if a SUBODEN KHAN unit from your army destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, that unit can make a Normal move of up to 6"".
+
+RESTRICTIONS: Your army can include WHITE SCARS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+space_marines_stormlance_task_force,Marines,Stormlance Task Force,DETACHMENT_RULE,space_marines_stormlance_task_force_detachment_rule_detachment_rule,Lightning Assault,,,3,Disruption,Advance or Fallback and Charge.,ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back.
+space_marines_blade_of_ultramar,Ultramarines,Blade Of Ultramar,DETACHMENT_RULE,space_marines_blade_of_ultramar_detachment_rule_detachment_rule,MASTERED DOCTRINES,,,3,Priority Assets,"Marneus can select a doctrine a 2nd time
+
+Devastator: Adv and Shoot.
+Tactical: Fallback, Shoot and Charge
+Assault: Adv and Charge.","At the start of your Command phase, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active and its effects apply to all ADEPTUS ASTARTES units from your army. You cannot select a Combat Doctrine you have already selected this battle, unless a friendly Marneus Calgar model is on the battlefield.
+
+Devastator Doctrine: This unit is eligible to shoot in a turn in which it Advanced.
+Tactical Doctrine: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
+Assault Doctrine: This unit is eligible to declare a charge in a turn in which it Advanced."
+DARK_AGE_ARSENAL,Dark Angels,Dark Age Arsenal,DETACHMENT_RULE,DARK_AGE_ARSENAL_DETACHMENT_RULE_INVOCATIONS_OF_ANCIENT_FURY,INVOCATIONS OF ANCIENT FURY,,,1,Priority Assets,Plasma weapon profiles have +1 S.,Friendly ADEPTUS ASTARTES units' weapon profiles with 'Plasma' in their names are plasma weapon profiles. Plasma weapon profiles have +1 S.
+space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,Emperor's Shield,,,2,Priority Assets,"Re-rolls 1s To Wound vs Oath
+Re-roll all To Wound with Lysander","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
+
+Each time a model in a DARNATH LYSANDER unit from your army makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll."
+space_marines_gladius_task_force,Marines,Gladius Task Force,DETACHMENT_RULE,space_marines_gladius_task_force_detachment_rule_detachment_rule,Combat Doctrines,,,3,Priority Assets,"Devastator: Adv and Shoot.
+Tactical: Fallback, Shoot and Charge
+Assault: Adv and Charge.","At the start of your Command phase, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active and its effects apply to all ADEPTUS ASTARTES units from your army. You can only select each Combat Doctrine once per battle.
+
+Devastator Doctrine: This unit is eligible to shoot in a turn in which it Advanced.
+Tactical Doctrine: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
+Assault Doctrine: This unit is eligible to declare a charge in a turn in which it Advanced."
+iron_hands_hammer_of_avernii,Iron Hands,Hammer Of Avernii,DETACHMENT_RULE,iron_hands_hammer_of_avernii_detachment_rule_detachment_rule,CALCULATED ANNIHILATION,,,2,Priority Assets,"Oath Target: Re-roll 1s To Wound
+Caanok: 2nd Oath Target (Visible)","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
+
+Once per battle round, after your Oath of Moment target is destroyed, if a Caanok Var model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes your Oath of Moment target until you select a new one."
+dark_angels_inner_circle_task_force,Dark Angels,Inner Circle Task Force,DETACHMENT_RULE,dark_angels_inner_circle_task_force_detachment_rule_detachment_rule,Vowed Target,,,2,Priority Assets,"Vowed Target (Objective): Defensive (Control) or Aggressive (No Control)
+Deathwing INFANTRY: +1 To Wound (Range or Shoot)","At the start of your Movement phase, select one of the following:
+
+Defensive Footing: Select one objective marker you control. Until the start of your next Movement phase, that objective marker is your Vowed objective marker.
+
+Aggressive Push: Select one or more objective markers you do not control. Until the start of your next Movement phase, each of those objective markers is one of your Vowed objective markers. If a rule refers to a unit or model being within range of your Vowed objective marker, that rule takes effect if that unit or model is within range of one or more of your Vowed objective markers.
+
+Each time a DEATHWING INFANTRY unit from your army makes an attack that targets a unit within range of one or more of your Vowed objective markers, add 1 to the Wound roll."
+dark_angels_wrath_of_the_rock,Dark Angels,Wrath of the Rock,DETACHMENT_RULE,dark_angels_wrath_of_the_rock_detachment_rule_detachment_rule,Dutiful Tenacity,,,3,Priority Assets,INFANTRY and MOUNTED -1 To Wound if weapons higher than Strength,"Each time an attack targets an Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll."
+space_marines_forgefathers_seekers,Salamanders,Forgefather's Seekers,DETACHMENT_RULE,space_marines_forgefathers_seekers_detachment_rule_detachment_rule,Close-range Eradication,,,2,Purge the Foe,"RANGE: ASSAULT and +1 Strength within 12""
+Infernus can Advance + Action OR Shoot and Action","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.
+
+If your army includes VULKAN HE’STAN, during your turn, each INFERNUS SQUAD unit from your army is eligible to do one of the following:
+Start to perform an Action in a turn in which it Advanced.
+Shoot in a turn in which it started to perform an Action."
+dark_angels_lions_blade_task_force,Dark Angels,Lions Blade Task Force,DETACHMENT_RULE,dark_angels_lions_blade_task_force_detachment_rule_detachment_rule,Lion's Blade,,,2,Purge the Foe,"Ravenwing: Desperate Escape -1 when falling back.
+Deathwing: +2 to Charge if Ravenwing in Engagement.","Each time an enemy unit (excluding MONSTERS and VEHICLES) within Engagement Range of one or more RAVENWING units from your army Falls Back, all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those tests.
+
+Each time a DEATHWING unit from your army declares a charge, if one or more targets of that charge are within Engagement Range of one or more RAVENWING units from your army, add 2 to the Charge roll."
+DARKFLIGHT_PURSUIT,Dark Angels,Darkflight Pursuit,DETACHMENT_RULE,DARKFLIGHT_PURSUIT_DETACHMENT_RULE_BLACK_WINGED_VIGILANCE,BLACK-WINGED VIGILANCE,,,1,Recon,RAVENWING FLY units' ranged attacks have [IGNORES COVER].,"Friendly RAVENWING FLY units' ranged attacks have [IGNORES COVER].
+
+RESTRICTIONS: Your army can include DARK ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,DETACHMENT_RULE,space_marines_firestorm_assault_force_detachment_rule_detachment_rule,Close-range Eradication,,,2,Recon,"Range: Get ASSAULT and +1 To Strength within 12""","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack."
+INTERROGATION_CONCLAVE,Dark Angels,Interrogation Conclave,DETACHMENT_RULE,INTERROGATION_CONCLAVE_DETACHMENT_RULE_DREAD_CATECHISM,DREAD CATECHISM,,,1,Recon,"CHAPLAIN: Destroy a unit = Force Battle-shock. Also, -1 LD within 6"".","In the Fight phase, when a friendly CHAPLAIN unit destroys an enemy unit, enemy units within 6"" of that CHAPLAIN unit make a battle-shock roll.
+
+Friendly CHAPLAIN units have the following ability: Sower of Dread (Aura): While an enemy unit is within 6"" of this unit, that enemy unit has -1 Ld."
+LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,DETACHMENT_RULE,LIBRARIUS_CONCLAVE_DETACHMENT_RULE_PSYCHIC_DISCIPLINES,PSYCHIC DISCIPLINES,,,1,Recon,"Start of battle round:
+- Biomancy: +2"" M. 
+- Divination: Re-roll 1s To Hit and To Wound
+- Pyromancy: Ranged within 12"" have +1 AP. 
+- Telekinesis: Enemy Range -1 S. 
+- Telepathy: Ignore modifiers to BS, WS and hits.","At the start of the battle round, select one of the following Psychic Disciplines abilities. Friendly ADEPTUS ASTARTES PSYKER units have that ability until the end of the battle round:
+
+Biomancy Discipline: This unit has +2"" M.
+Divination Discipline: This unit's attacks can re-roll hit rolls of 1 and re-roll wound rolls of 1.
+Pyromancy Discipline: This unit's ranged attacks that target an enemy unit within 12"" of this unit have +1 AP.
+Telekinesis Discipline: Ranged attacks that target this unit have -1 S.
+Telepathy Discipline: This unit's attacks can ignore modifiers to BS, WS and hit rolls."
+SUBVERSION_ASSETS,Marines,Subversion Assets,DETACHMENT_RULE,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,,,1,Recon,"PHOBOS and SCOUT detect a visible enemy within 12"". 
+While detected, enemy has +3"" detection range.","Friendly PHOBOS/SCOUT SQUAD units have the following ability. Transhuman Perception: In your Shooting phase, this unit can select one visible enemy unit within 12"". That enemy unit is detected. While a unit is detected, that unit has +3"" detection range."
+space_marines_vanguard_spearhead,Marines,Vanguard Spearhead,DETACHMENT_RULE,space_marines_vanguard_spearhead_detachment_rule_detachment_rule,Shadow Masters,,,2,Recon,Cover & -1 To be Hit,"Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack."
+space_marines,Marines,,ARMY_RULE,space_marines_army_rule_oath_of_moment,Oath of Moment,,,,,OATH OF MOMENT,OATH OF MOMENT
+dark_angels,Dark Angels,,ARMY_RULE,dark_angels_army_rule_the_unforgiven,The Unforgiven,,,,,The Unforgiven: Adeptus Astartes become Dark Angels.,"The Unforgiven
+If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that units Chapter. For example, Asmodai has both the ADEPTUS ASTARTES and DARK ANGELS Faction keywords, and is therefore from the Dark Angels Chapter.
+You cannot include units from more than one Chapter in your army.
+
+The Ravenwing
+The following ADEPTUS ASTARTES units gain the RAVENWING keyword if they are drawn from the Dark Angels Chapter:
+MOUNTED units VEHICLE units that can FLY
+
+The Deathwing
+The following ADEPTUS ASTARTES units gain the DEATHWING keyword if they are drawn from the Dark Angels Chapter:
+TERMINATOR units
+BLADEGUARD ANCIENT, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD and VANGUARD VETERAN SQUAD WITH JUMP PACKS units
+LAND RAIDER, LAND RAIDER CRUSADER, LAND RAIDER REDEEMER, REPULSOR and REPULSOR EXECUTIONER units
+DREADNOUGHT units"
+space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_adamantine_mantle,Adamantine Mantle,20,,,,-1 to Damage. If Melta or Torrent then Damage is just 1.,"ADEPTUS ASTARTES model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made with a Melta or Torrent weapon, change the Damage characteristic of that attack to 1 instead."
+space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_adept_of_the_codex,Adept of the Codex,20,,,,Tactical doctrine can be ON,"CAPTAIN model only. At the start of your Command phase, if the bearer is on the battlefield, instead of selecting a Combat Doctrine to be active for your army, you can select the Tactical Doctrine. If you do, until the start of your next Command phase, that Combat Doctrine is active for the bearer’s unit only, even if you have already selected that Combat Doctrine to be active for your army this battle."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,ENHANCEMENT,dark_angels_wrath_of_the_rock_enhancement_ancient_weapons,Ancient Weapons,25,,,,"MELEE. Str +2, AP -1, Damage +1","Adeptus Astartes model only. Improve the Strength characteristic of melee weapons equipped by the bearer by 2, and improve the Armour Penetration and Damage characteristics of those weapons by 1."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_armour_of_antoninus,Armour Of Antoninus,20,,,,Save 2+ and 5+ FNP,Artificer Armour:  ADEPTUS ASTARTES model only. The bearer has a Save characteristic of 2+ and the Feel No Pain 5+ ability.
+space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_artificer_armour,Artificer Armour,20,,,,Save 2+ and 5+ FNP,Artificer Armour:  ADEPTUS ASTARTES model only. The bearer has a Save characteristic of 2+ and the Feel No Pain 5+ ability.
+space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_blackwing_shroud,Blackwing Shroud,25,,,,Leading = Infiltrator to Unit,"ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_angels_lions_blade_task_force_enhancement_calibanite_armaments,Calibanite Armaments,15,,,,+1 Damage for bearer only.,ADEPTUS ASTARTES model only. Add 1 to the Damage characteristic of the bearer’s melee weapons.
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_CELERITY,Celerity,35,,,,"PSYKER: Advance & Charge.
+In Biomancy: Advance or Fallback & Charge.","ADEPTUS ASTARTES PSYKER model only. 
+- When this unit is selected to make an advance move, that move does not prevent this unit from being eligible to declare a charge. 
+- When this unit is selected to make a fall-back move, if this unit has the Biomancy Discipline ability, that move does not prevent this unit from being eligible to declare a charge."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_champion_of_humanity,Champion of Humanity,10,,,,"LEADING
+Ignore all Modifiers","TACTICUS model only. While the bearer is leading a unit, models in that unit can ignore any or all modifiers to their characteristics and/or to any roll or test made for them (excluding modifiers to saving throws)."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_champion_of_the_deathwing,Champion of the Deathwing,15,,,,"Deathwing. LETHAL Hits 
+VOWED = LETHAL on 5+.","Champion of the Deathwing: DEATHWING model only. - weapons equipped by the bearer have the [LETHAL HITS] ability, and each time the bearer makes a - attack, if it is within range of your Vowed objective marker, a Critical Hit is scored on an unmodified Hit roll of 5+."
+space_marines_emperors_shield,,Emperor's Shield,ENHANCEMENT,space_marines_emperors_shield_enhancement_champion_of_the_feast,Champion of the Feast,25,,,,"+1 Attacks.
+Once, Unit +1 Attacks also","ADEPTUS ASTARTES model only. Add 1 to the Attacks characteristic of the bearer’s melee weapons. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by other models in the bearer’s unit as well."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_chogorian_huntmaster,Chogorian Huntmaster,25,,,,"MOUNTED. If unit is in Strategic Reserves, treat battle round as one higher when setting up.","CHOGORIAN HUNTMASTER: ADEPTUS ASTARTES MOUNTED model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is."
+space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_coronal_susurrant,Coronal Susurrant,30,,,,Phobos get Lord of Deceipt,"PHOBOS model only. The bearer has the following ability:
+
+Lord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that usage of that Stratagem by 1CP."
+SUBVERSION_ASSETS,,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_DEATH_IN_THE_DARK,Death In The Dark,15,,,,INFANTRY PHOBOS unit only. Attacks targeting a hidden unit have +1 to hit rolls.,INFANTRY PHOBOS unit only. This unit's attacks that target a hidden unit have +1 to hit rolls.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_deathwing_assault,Deathwing Assault,30,,,,Deep Strike Turn 1,"Deathwing Assault: DEATHWING model with the Deep Strike ability only. The bearer’s unit can be set up using the Deep Strike ability in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,ENHANCEMENT,dark_angels_wrath_of_the_rock_enhancement_deathwing_assault,Deathwing Assault,15,,,,Turn 1 Deepstrike,"Deathwing model with the Deep Strike ability only.  The bearer’s unit can be set up using the Deep Strike ability in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules."
+space_marines_emperors_shield,,Emperor's Shield,ENHANCEMENT,space_marines_emperors_shield_enhancement_disciple_of_rhetoricus,Disciple of Rhetoricus,10,,,,"TERMINATOR: +1 OC
+Once, Unit +1 OC also.","ADEPTUS ASTARTES TERMINATOR model only. Improve the Objective Control characteristic of the bearer by 1. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Objective Control characteristic of other models in the bearer’s unit as well."
+DARK_AGE_ARSENAL,,Dark Age Arsenal,ENHANCEMENT,DARK_AGE_ARSENAL_ENHANCEMENT_ENTREATY_OF_PERPETUAL_ARDOUR,Entreaty Of Perpetual Ardour,,,,,HELLBLASTER. Snap shooting hit on 5+.,HELLBLASTER SQUAD only. This unit's snap shooting attacks hit on unmodified hit rolls of 5+.
+space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_execute_and_redeploy,Execute and Redeploy,20,,,,"PHOBOS + SHOOTING
+Shoot + Normal move up to 6"".
+Cannot Charge","Execute and Redeploy: PHOBOS model only. In your Shooting phase, after the bearer’s unit has shot, if that unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6"". If it does, until the end of the turn, that unit is not eligible to declare a charge. This cannot allow the bearer’s unit to move more than once in your Shooting phase."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_eye_of_the_unseen,Eye of the Unseen,10,,,,Gain CP,"Eye of the Unseen: DEATHWING model only. Each time you target the bearer’s unit with a Stratagem, roll one D6, adding 1 if the bearer is within range of your Vowed objective marker: on a 5+, you gain 1CP"
+space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_feinting_withdrawal,Feinting Withdrawal,10,,,,"LEADING 
+Shoot after Fallback","ADEPTUS ASTARTES model only. While the bearer is leading a unit, that unit is eligible to shoot in a turn in which it Fell Back."
+space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_fire_discipline,Fire Discipline,25,,,,"SUSTAIN HITS 1
+Re-roll Adv in Dev doctrine","ADEPTUS ASTARTES model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. In addition, while the bearer’s unit is under the effects of the Devastator Doctrine, you can reroll Advance rolls made for that unit."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_forged_in_battle,Forged in Battle,15,,,,"LEADING 
+Hit or Saving = 6","ADEPTUS ASTARTES model only. While the bearer is leading a unit, once per turn, after making a Hit roll or a saving throw for a model in that unit, you can change the result of that roll to an unmodifed 6."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_angels_lions_blade_task_force_enhancement_fulgus_magna,Fulgus Magna,20,,,,Once. Go back to Strategic Reserves.,"DEATHWING model only. Once per battle, at the end of your opponent’s turn, if the bearer’s unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer’s unit from the battlefield and place it into Strategic Reserves."
+space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_fury_of_the_storm,Fury of the Storm,25,,,,"MELEE + MOUNTED:
+ +1 Strength and AP in Melee.
+ +2 Strength and AP if Charge.","ADEPTUS ASTARTES MOUNTED model only. Improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 1. Each time the bearer ends a Charge move, until the end of the turn, improve the Strength and Armour Penetration characteristics of the bearers melee weapons by 2 instead."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_FUSILLADE,Fusillade,25,,,,"PSYKER: Ranged are [ANTI-MONSTER/VEHICLE 5+]. 
+In Pyromancy: Grants [SUSTAINED HITS 1].","ADEPTUS ASTARTES PSYKER model only. This unit's ranged attacks have [ANTI-MONSTER/VEHICLE 5+]. If this unit has the Pyromancy Discipline ability, this unit's ranged attacks also have [SUSTAINED HITS 1]."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_ghostweave_cloak,Ghostweave Cloak,15,,,,Bearer has Stealth and Lone Op,Ghostweave Cloak: ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.
+space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_hunters_eye,Hunter’s Eye,20,,,,Bearer’s unit ranged weapons gain SUSTAINED HITS 1 and IGNORES COVER.,HUNTER’S EYE: ADEPTUS ASTARTES model only. Ranged weapons equipped by models in the bearer’s unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.
+space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_hunters_instincts,Hunter’s Instincts,25,,,,Arrive from Reserves early,"ADEPTUS ASTARTES model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is."
+space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_hunters_instincts,Hunter’s Instincts,25,,,,"RESERVES + MOUNTED. 
+Arrive early from Strategic Reserves.","ADEPTUS ASTARTES MOUNTED model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is."
+space_marines_forgefathers_seekers,,Forgefather's Seekers,ENHANCEMENT,space_marines_forgefathers_seekers_enhancement_immolator,Immolator,10,,,,Unit gets +1 Attack to Torrent,ADEPTUS ASTARTES model only. Add 1 to the Attacks characteristics of Torrent weapons equipped by models in the bearer’s unit.
+space_marines_emperors_shield,,Emperor's Shield,ENHANCEMENT,space_marines_emperors_shield_enhancement_indomitable_champion,Indomitable Champion,20,,,,TERMINAtOR: Gets back up on 2+.,"ADEPTUS ASTARTES ANCIENT model only. Each time an attack targets the bearer’s unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of the bearer’s unit, subtract 1 from the Wound roll."
+INTERROGATION_CONCLAVE,,Interrogation Conclave,ENHANCEMENT,INTERROGATION_CONCLAVE_ENHANCEMENT_INESCAPABLE_INTERROGATION,Inescapable Interrogation,20,,,,CHAPLAIN: Ranged have [IGNORES COVER].,CHAPLAIN model only. This unit's ranged attacks have [IGNORES COVER].
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,ENHANCEMENT,iron_hands_hammer_of_avernii_enhancement_iron_laurel,Iron Laurel,10,,,,"MELEE. 
+ +1 OC for Bearer
+ +1 OC, ONCE for Unit","Adeptus Astartes model only. Improve the Objective
+Control characteristic of the bearer by 1. Once per
+battle, at the start of any phase, the bearer can use this
+Enhancement. If it does, until the end of the phase,
+add 1 to the Objective Control characteristic of all
+other models in the bearer’s unit as well."
+INTERROGATION_CONCLAVE,,Interrogation Conclave,ENHANCEMENT,INTERROGATION_CONCLAVE_ENHANCEMENT_LIMITLESS_ZEAL,Limitless Zeal,10,,,,CHAPLAIN: +1 to charge.,CHAPLAIN model only. This unit has +1 to charge rolls.
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_angels_lions_blade_task_force_enhancement_lord_of_the_hunt,Lord of the Hunt,15,,,,"Fall back (re-rolling Desperate Escape), shoot and charge.",RAVENWING model only. The bearer’s unit is eligible to shoot and declare a charge in a turn in which it Fell Back and you can re-roll Desperate Escape tests taken for models in the bearer’s unit.
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,ENHANCEMENT,dark_angels_wrath_of_the_rock_enhancement_lord_of_the_ravenwing,Lord of the Ravenwing,10,,,,Ravenwing reroll Advance and Charge,Ravenwing model only. You can re-roll Advance and Charge rolls made for the bearer’s unit.
+space_marines_emperors_shield,,Emperor's Shield,ENHANCEMENT,space_marines_emperors_shield_enhancement_malodraxian_standard,Malodraxian Standard,20,,,,ANCIENT: -1 To Wound to Unit.,"ADEPTUS ASTARTES TERMINATOR model only. The first time the bearer is destroyed, roll one D6 at the end of the phase. On a 2+, set the bearer back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 3 wounds remaining."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,ENHANCEMENT,iron_hands_hammer_of_avernii_enhancement_medusan_roar,Medusan Roar,30,,,,"Within 6"", remove unit if Battle Shock.
+ONCE, remove D3 models.","Adeptus Astartes model only. While an enemy unit (excluding Monsters and Vehicles) is within 6"" of the bearer, each time that unit fails a Battle‑shock test, one model in that unit is destroyed (chosen by its controlling player). Once per battle, when such an enemy unit fails a Battle‑shock test, you can choose for D3 models in that unit to be destroyed in this way instead."
+DARKFLIGHT_PURSUIT,,Darkflight Pursuit,ENHANCEMENT,DARKFLIGHT_PURSUIT_ENHANCEMENT_NIGHTFORGED_BATTERY,Nightforged Battery,,,,,LAND SPEEDER VENGEANCE only. Re-roll weapon Attacks rolls and Hazard rolls.,LAND SPEEDER VENGEANCE unit only. This unit can re-roll rolls to determine the A of a weapon and Hazard rolls.
+space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_oath_of_macragge,Oath Of Macragge,15,,,,"+1 Attack +1 Strength
+ +2 Attack +2 Strength in Assault","Oath Of Macragge: ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_OBFUSCATION,Obfuscation,25,,,,"PSYKER: No Overwatch.
+Telepathy: -3"" detection range.","ADEPTUS ASTARTES PSYKER model only. Enemy units cannot target this unit with snap shooting attacks. If this unit has the Telepathy Discipline ability, this unit has -3"" detection range."
+DARK_AGE_ARSENAL,,Dark Age Arsenal,ENHANCEMENT,DARK_AGE_ARSENAL_ENHANCEMENT_PETITION_OF_STABILITY,Petition Of Stability,,,,,"Plasma attacks have +6"" R.","ADEPTUS ASTARTES unit only. This unit's plasma attacks have +6"" R."
+space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_portents_of_wisdom,Portents of Wisdom,15,,,,"LEADING
+Re-roll Advance","ADEPTUS ASTARTES model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_PRESCIENCE,Prescience,20,,,,"PSYKER, excluding TERMINATOR: Reactive move D6""
+In Divination: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6""."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_shadow_war_veteran,Shadow War Veteran,30,,,,"PHOBOS gets Lord of Deceit (Aura): Within 12"", +1CP for stratagems","Shadow War Veteran: PHOBOS model only. Gain following ability:
+Lord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP."
+SUBVERSION_ASSETS,,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_SHROUD_FIELD,Shroud Field,20,,,,PHOBOS model only. This model has Lone Operative and Stealth.,PHOBOS model only. This model has Lone Operative and Stealth.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_singular_will,Singular Will,20,,,,"+3"" Pile in, Consolidate","Singular Will: DEATHWING model only. Each time the bearer’s unit Piles In or Consolidates, models in that unit can move an additional 3""."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_spearpoint_paragon,Spearpoint Paragon,25,,,," +1 Strength and AP to melee weapons. If the bearer charged, +2 Strength and AP instead.","SPEARPOINT PARAGON: ADEPTUS ASTARTES model only. Improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 1. Each time the bearer ends a Charge move, until the end of the turn, improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 2 instead."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,ENHANCEMENT,iron_hands_hammer_of_avernii_enhancement_spiritus_ferrum,Spiritus Ferrum,25,,,,"MELEE. 
+ +1 Attacks for Bearer
+ +1 Attacks, ONCE for Unit","Adeptus Astartes model only. Add 1 to the Attacks characteristic of the bearer’s melee weapons. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by all other models in the bearer’s unit as well."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_angels_lions_blade_task_force_enhancement_stalwart_champion,Stalwart Champion,15,,,,+1 to OC value,"CAPTAIN, CHAPLAIN or LIEUTENANT model only. While the bearer’s unit is not Battle-shocked, add 1 to the Objective Control characteristic of models in the bearer’s unit."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,ENHANCEMENT,iron_hands_hammer_of_avernii_enhancement_steel_font,Steel Font,15,,,,TERMINATOR. Return 1 destroyed model in COMMAND.,"Adeptus Astartes Terminator model only. While the bearer is leading a unit, in your Command phase, you can return 1 destroyed Bodyguard model to that unit."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_stormseers_wisdom,Stormseers’ Wisdom,15,,,,"While leading a unit, re-roll Advance rolls for that unit.","STORMSEERS’ WISDOM: ADEPTUS ASTARTES model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_student_of_the_codex,Student Of The Codex,20,,,,Tactical doctrine can be ON,"CAPTAIN model only. At the start of your Command phase, if the bearer is on the battlefield, instead of selecting a Combat Doctrine to be active for your army, you can select the Tactical Doctrine. If you do, until the start of your next Command phase, that Combat Doctrine is active for the bearer’s unit only, even if you have already selected that Combat Doctrine to be active for your army this battle."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,ENHANCEMENT,dark_angels_wrath_of_the_rock_enhancement_tempered_in_battle,Tempered in Battle,10,,,,Aura to re-roll LD and Battleshock,"Adeptus Astartes model only. While a friendly Adeptus Astartes unit is within 6"" of this model, you can re-roll Battle-shock and Leadership tests taken for
+that unit."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go to Reserves at end opponent's Fight phase. 
+In Telekinesis: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_the_blade_driven_deep,The Blade Driven Deep,25,,,,Leading = Infiltrator to Unit,"The Blade Driven Deep: ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
+space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_the_honour_vehement,The Honour Vehement,15,,,,"+1 Attack +1 Strength
+ +2 Attack +2 Strength in Assault","The Honour Vehement: ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead."
+DARKFLIGHT_PURSUIT,,Darkflight Pursuit,ENHANCEMENT,DARKFLIGHT_PURSUIT_ENHANCEMENT_THUNDERCOWL_TURBINES,Thundercowl Turbines,,,,,"RAVENWING FLY unit only. In your first Movement phase, this unit can make an ingress move.","RAVENWING FLY unit only. In your first Movement phase, this unit can make an ingress move."
+space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_umbral_raptor,Umbral Raptor,15,,,,Stealth and Lone Op,ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.
+space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_veteran_of_behemoth,Veteran Of Behemoth,25,,,,"SUSTAIN HITS 1
+Re-roll Adv in Dev doctrine","ADEPTUS ASTARTES model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. In addition, while the bearer’s unit is under the effects of the Devastator Doctrine, you can reroll Advance rolls made for that unit."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_war_tempered_artifice,War-tempered Artifice,25,,,,Melee +3 Strength,ADEPTUS ASTARTES INFANTRY model only. Add 3 to the Strength characteristic of the bearer’s melee weapons.
+space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_vanguard_spearhead_stratagem_a_deadly_prize_1cp,A Deadly Prize,,1,,,"Sticky Objective +
+Sabotaged","WHEN: Start of the Command phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.
+
+EFFECT: That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds."
+SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_ADAPTIVE_OPERATIONS,ADAPTIVE OPERATIONS,,1,,,SHOOTING: A PHOBOS or SCOUT SQUAD unit starts an action. That action does not prevent the unit from shooting.,"WHEN: Your Shooting phase, when a friendly PHOBOS/SCOUT SQUAD unit starts an action.
+
+TARGET: That PHOBOS/SCOUT SQUAD unit.
+
+EFFECT: That action does not prevent your unit from being eligible to shoot."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_adaptive_strategy_1cp,Adaptive Strategy,,1,,,Pick a different doctrine for the unit.,"WHEN: Your Command phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle."
+FULGURIS_TASK_FORCE,,Fulguris Task Force,STRATAGEM,FULGURIS_TASK_FORCE_STRATAGEM_ANTI_GRAV_SURGE,ANTI-GRAV SURGE,,1,,,SPEEDER goes to Reserves at end of Enemy Fight.,"WHEN: End of your opponent's Fight phase.
+
+TARGET: One friendly unengaged SPEEDER unit.
+
+EFFECT: Place your unit in strategic reserves."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_armour_of_contempt_1cp,Armour Of Contempt,,1,,,Enemy Shooting/Fight. One ADEPTUS ASTARTES unit worsens incoming AP by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_armour_of_contempt_1cp,Armour Of Contempt,,1,,,Incoming AP is worsen by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_armour_of_contempt_1cp,Armour Of Contempt,,1,,,-1 AP for vs one unit,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_armour_of_contempt_1cp,Armour Of Contempt,,1,,,Incoming AP is worsen by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_armour_of_contempt_1cp,ARMOUR OF CONTEMPT,,1,,,Enemy Shooting or Fight: -1 AP,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_augmetic_fortitude_1cp,AUGMETIC FORTITUDE,,1,,,"ENEMY CHARGE
+VETS
+-1 Damage","WHEN: Your opponent’s Charge phase, just after an enemy unit ends a Charge move.
+
+TARGET: One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within Engagement Range of that enemy unit.
+
+EFFECT: Until the end of the turn, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack."
+space_marines_forgefathers_seekers,,Forgefather's Seekers,STRATAGEM,space_marines_forgefathers_seekers_stratagem_blazing_earth_1cp,Blazing Earth,,1,,,"Torrent Weapons, Enemy -2"" to Charge.","WHEN: Start of your opponent’s Charge phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army equipped with one or more Torrent weapons.
+
+EFFECT: Select one enemy unit (excluding MONSTERS and VEHICLES and units with the FLY keyword) within 12"" of and visible to your unit. Until the end of the phase, each time that enemy unit declares a charge, subtract 2 from the Charge roll (this is not cumulative with any other negative modifiers to that Charge roll)."
+space_marines_stormlance_task_force,,Stormlance Task Force,STRATAGEM,space_marines_stormlance_task_force_stratagem_blitzing_fusillade_1cp,BLITZING FUSILLADE,,1,,,"SHOOTING ANY UNIT 
+ASSAULT or SUSTAIN 1.","WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_burning_vengeance_1cp,Burning Vengeance,,1,,,Disembark and Shoot,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.
+
+TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_vanguard_spearhead_stratagem_calculated_feint_1cp,Calculated Feint,,1,,,"Enemy Charge. Move D6.
+Phobos and Scouts Move 6""","WHEN: Your opponent’s Charge phase, just after an enemy unit declares a charge.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a target of that charge.
+
+EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit.
+
+RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
+SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_CLOAKED_POSITION,CLOAKED POSITION,,1,,,"START OF ENEMY MOVEMENT: One unengaged PHOBOS or SCOUT SQUAD unit has -3"" detection range until the end of the turn.","WHEN: Start of your opponent's Movement phase.
+
+TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
+
+EFFECT: Your unit has -3"" detection range until the end of the turn."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_cogitated_ferocity_1cp,COGITATED FEROCITY,,1,,,"MELEE
+DREADS and VETS
+LETHAL OR SUSTAIN 1","WHEN: Your Fight phase.
+
+TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to fight this phase.
+
+EFFECT: Select either the [SUSTAINED HITS 1] or [LETHAL HITS] abilities. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability"
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_courage_and_honour_1cp,Courage And Honour!,,1,,,"CHARGE +1 To Wound
+with Assault doctrine -1 AP","WHEN: Fight phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Until the end of the phase, - weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.
+
+Lance: When CHARGING, Add +1 To Wound."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_crucible_of_battle_1cp,Crucible Of Battle,,1,,,+1 To Wound,"WHEN: Your Shooting phase or the Fight phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6"", add 1 to the Wound roll."
+FULGURIS_TASK_FORCE,,Fulguris Task Force,STRATAGEM,FULGURIS_TASK_FORCE_STRATAGEM_DATA_LINK_AUGURY,DATA-LINK AUGURY,,1,,,"SPEEDER within 24"". Enemy has +6"" detection until SPEEDER has shot.","WHEN: Your Shooting phase, when a friendly SPEEDER unit is selected to shoot.
+
+TARGET: That SPEEDER unit.
+
+EFFECT: Select one enemy unit within 24"" of your unit. That enemy unit has +6"" detection range until your unit has shot."
+space_marines_emperors_shield,,Emperor's Shield,STRATAGEM,space_marines_emperors_shield_stratagem_disciplined_extermination_1cp,DISCIPLINED EXTERMINATION,,1,,,"RANGE
+TERMINATORS & VETS
+Ignore Cover and AP -1","WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability and improve the Armour Penetration characteristic of such weapons by 1."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dominator_beacon_1cp,DOMINATOR BEACON,,1,,,"MOVEMENT
+DREADS and VETS
+Sticky Objective","WHEN: Your Movement phase.
+
+TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within range of an objective marker you control.
+
+EFFECT: That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the end of a phase."
+space_marines_emperors_shield,,Emperor's Shield,STRATAGEM,space_marines_emperors_shield_stratagem_dropship_extraction_1cp,DROPSHIP EXTRACTION,,1,,,"MELEE
+TERMINATORS only
+Go back to RESERVES","WHEN: End of your opponent’s Fight phase.
+
+TARGET: One ADEPTUS ASTARTES TERMINATOR unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
+
+EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dropship_extraction_1cp,DROPSHIP EXTRACTION,,1,,,"ENEMY FIGHT
+TERMINATOR
+GO BACK TO RESERVES","WHEN: End of your opponent’s Fight phase.
+
+TARGET: One Adeptus Astartes Terminator unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
+
+EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves"
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_duty_unto_death_1cp,DUTY UNTO DEATH,,1,,,"Deathwing ANY: Fight on Death on 4+.
+VOWED OBJ = 3+.","WHEN: Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One DEATHWING unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 if your unit is within range of your Vowed objective marker. On a 4+, do not remove the destroyed model from play; it can fight after the attacking unit has finished making its attacks, and is then removed from play."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_evasive_manoeuvres_1cp,Evasive Manoeuvres,,1,,,Enemy Shooting. MOUNTED or FLY VEHICLE gets -1 to be hit and wounded.,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll."
+INTERROGATION_CONCLAVE,,Interrogation Conclave,STRATAGEM,INTERROGATION_CONCLAVE_STRATAGEM_EXACTING_PUNISHMENT,EXACTING PUNISHMENT,,1,,,CHAPLAIN: Shooting or Fight have [PRECISION].,"WHEN: Your Shooting phase or the Fight phase, when a friendly CHAPLAIN unit is selected to attack.
+
+TARGET: That CHAPLAIN unit.
+
+EFFECT: Your unit's attacks have [PRECISION]."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,Exemplary Vigilance,,1,,,No Cover and -1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well."
+space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_feint_and_thrust_1cp,FEINT AND THRUST,,1,,,"ANY: Fallback Shoot and Charge.
+PHOBOS & SCOUTS: Also Adv.","WHEN: Your Movement phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army.
+
+EFFECT: Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back. 
+
+If it is a PHOBOS or SCOUT SQUAD unit, it is also eligible to shoot and declare a charge in a turn in which it Advanced."
+space_marines_stormlance_task_force,,Stormlance Task Force,STRATAGEM,space_marines_stormlance_task_force_stratagem_full_throttle_2cp,FULL THROTTLE,,2,,,"MOVEMENT: Auto Advance
+9"" Mounted, 6"" for Vehicles (No Walkers)","WHEN: Your Movement phase.
+
+TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.
+
+EFFECT: Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in your unit, or 9"" instead if your unit is MOUNTED."
+space_marines_emperors_shield,,Emperor's Shield,STRATAGEM,space_marines_emperors_shield_stratagem_fury_of_the_first_1cp,FURY OF THE FIRST,,1,,,"RANGE or MELEE
+TERMINATORS & VETS
+ +1 To Hit 
+IF wounded +1 To Wound","WHEN: Your Shooting phase or the Fight phase.
+
+TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot or fight this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is below its Starting Strength, add 1 to the Wound roll as well."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_vanguard_spearhead_stratagem_guerrilla_tactics_1cp,Guerrilla Tactics,,1,,,"End of Enemy Fight. Remove from play.
+Phobos and Scouts: Remove x2.","WHEN: End of your opponent’s Fight phase.
+
+TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army.
+
+EFFECT: Remove those units from the battlefield and place them into Strategic Reserves.
+
+RESTRICTIONS: Each unit selected for this Stratagem must be more than 3"" away from all enemy models."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_honour_the_chapter_1cp,Honour The Chapter,,1,,,"CHARGE +1 To Wound
+with Assault doctrine -1 AP","WHEN: Fight phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Until the end of the phase, - weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.
+
+Lance: When CHARGING, Add +1 To Wound."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_hunters_instincts_1cp,Hunter’s Instincts,,1,,,"Enemy Movement. INFANTRY or MOUNTED within 9"" can make a Normal move up to 6"".","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of that enemy unit. You cannot target a unit that is within Engagement Range of one or more enemy units.
+
+EFFECT: Your unit can make a Normal move of up to 6""."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,STRATAGEM,dark_angels_lions_blade_task_force_stratagem_illuminating_fire_1cp,ILLUMINATING FIRE,,1,,,"Shooting. Ravenwing within 12"" of target. 
+All Deathwing +1 To Wound.","WHEN: Your Shooting phase, just after a RAVENWING unit from your army has selected its targets.
+
+TARGET: That RAVENWING unit.
+
+EFFECT: Select one enemy unit within 12"" of your unit that was selected as the target of one or more of the attacking unit’s attacks. Until the end of the phase, each time a friendly DEATHWING unit makes an attack that targets that enemy unit, add 1 to the Wound roll."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_immolation_protocols_2cp,Immolation Protocols,,2,,,Devastating Wounds,"WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability. 
+
+DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,STRATAGEM,dark_angels_wrath_of_the_rock_stratagem_inescapable_justice_2cp,INESCAPABLE JUSTICE,,2,,,2nd Oath Target,"WHEN: Any phase, just after your Oath of Moment target is destroyed.
+
+TARGET: One Adeptus Astartes Character unit that is on the battlefield.
+
+EFFECT: Select one enemy unit within 12"" and visible to your unit. That enemy unit becomes your Oath of Moment target."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,STRATAGEM,dark_angels_lions_blade_task_force_stratagem_inescapable_wrath_2cp,INESCAPABLE WRATH,,2,,,"End of Enemy Charge: Charge within 6"". 
+Deathwing Infantry and Walkers.","WHEN: End of your opponent’s Charge phase.
+
+TARGET: One DEATHWING INFANTRY or DEATHWING WALKER unit from your army that is within 6"" of one or more enemy units and would be eligible to declare a charge against one or more of those enemy units if it were your Charge phase.
+
+EFFECT: Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.
+
+RESTRICTIONS: Note that even if this charge is successful, your unit does not receive any Charge bonus this turn."
+space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_into_darkness_1cp,INTO DARKNESS,,1,,,Return to Reserves. PHOBOS & SCOUTS return 2 units.,"WHEN: End of your opponent’s Fight phase.
+
+TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
+
+EFFECT: Remove those units from the battlefield and place them into Strategic Reserves."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,STRATAGEM,dark_angels_lions_blade_task_force_stratagem_knights_of_iron_1cp,KNIGHTS OF IRON,,1,,,Moving. Ravenwing move thru terrain.,"WHEN: Your Movement phase or your Charge phase.
+
+TARGET: One RAVENWING unit from your army.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes a Normal, Advance or Charge move, it can move horizontally through terrain features."
+space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_lay_low_the_tyrants_1cp,LAY LOW THE TYRANTS,,1,,,Unit gets PRECISION,"WHEN: Fight phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
+
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,STRATAGEM,dark_angels_wrath_of_the_rock_stratagem_leonine_aggression_1cp,LEONINE AGGRESSION,,1,,,"REACTIVE CHARGE within 3""
+DEATHWING within 6""","WHEN: End of your opponent’s Charge phase.
+
+TARGET: One Adeptus Astartes unit from your army within 3"" of one or more enemy units, or one Deathwing unit from your army within 6"" of one or more enemy units.
+
+EFFECT: Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.
+
+RESTRICTIONS: Note that even if this charge is successful, your unit does not receive any Charge bonus this turn."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,STRATAGEM,dark_angels_wrath_of_the_rock_stratagem_lions_will_1cp,LION’S WILL,,1,,,"In ENGAGEMENT = +1 OC
+Also if you are NOT Deathwing, Ravenwing or Vehicle,  +1 To Hit .","WHEN: Command phase.
+
+TARGET: One Adeptus Astartes unit from your army that is within Engagement Range of one or more enemy units.
+
+EFFECT: Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. 
+
+In addition, until the end of the turn, if your unit does not have the DEATHWING, RAVENWING or VEHICLE keyword, each time a model in your unit makes an attack, add 1 to the Hit roll."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_martial_mastery_1cp,MARTIAL MASTERY,,1,,,"Deathwing INFANTRY (Melee): Re-roll 1s To Wound
+VOWED OBJ = ALL To Wound","WHEN: Fight phase.
+
+TARGET: One DEATHWING INFANTRY unit from your army that has not been selected to fight this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If your unit is within range of your Vowed objective marker, you can re-roll the Wound roll instead."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_mobile_lethality_1cp,Mobile Lethality,,1,,,Movement. Unit can shoot after Advancing or Falling Back.,"WHEN: Your Movement phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army.
+
+EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced or Fell Back."
+DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_NO_SACRIFICE_TOO_GREAT,NO SACRIFICE TOO GREAT,,1,,,Unit's [HAZARDOUS] plasma attacks have +1 S.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+
+TARGET: That ADEPTUS ASTARTES unit.
+
+EFFECT: Your unit's [HAZARDOUS] plasma ranged attacks have +1 S."
+space_marines_emperors_shield,,Emperor's Shield,STRATAGEM,space_marines_emperors_shield_stratagem_obdurate_vengeance_1cp,OBDURATE VENGEANCE,,1,,,"MELEE
+TERMINATORS & VETS
+ +3 Fight on Death","WHEN: Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 3+, do not remove it from play. The destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_only_in_death_does_duty_end_2cp,Only in Death Does Duty End,,2,,,Fight on Death,"WHEN: Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_onslaught_of_fire_1cp,Onslaught Of Fire,,1,,,"Disembark, +1 To Hit","WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 12"", add 1 to the Hit roll. If one or more enemy models are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,STRATAGEM,dark_angels_lions_blade_task_force_stratagem_overpowering_exaction_1cp,OVERPOWERING EXACTION,,1,,,Engagement. Take Battleshock. -1 if Ravenwing or Deathwing.,"WHEN: Command phase or the start of the Fight phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army.
+
+EFFECT: Select one enemy unit within Engagement Range of your unit. That enemy unit must take a Battle-shock test. When doing so, if your unit has the DEATHWING or RAVENWING keyword, subtract 1 from the result.
+
+RESTRICTIONS: You can only use this Stratagem once per battle round."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_practical_tactics_1cp,Practical Tactics,,1,,,"Move D6"" or 6"" if Tactical doctrine.","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: One Adeptus Astartes INFANTRY or Adeptus Astartes MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move.
+
+EFFECT: Your unit can make a Normal move of up to D6"", or a Normal move of up to 6"" instead if it is under the effects of the Tactical Doctrine.
+
+RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
+space_marines_firestorm_assault_force,,Firestorm Assault Force,STRATAGEM,space_marines_firestorm_assault_force_stratagem_rapid_embarkation_1cp,Rapid Embarkation,,1,,,Embark Vehicle,"WHEN: End of the Fight phase.
+
+TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6"" of that TRANSPORT.
+
+EFFECT: Your INFANTRY unit can embark within that TRANSPORT.
+
+RESTRICTIONS: You cannot target an INFANTRY unit that is within Engagement Range of one or more enemy units, that cannot normally embark within that TRANSPORT, or that disembarked from a TRANSPORT this turn."
+space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_raptorial_vigilance_1cp,RAPTORIAL VIGILANCE,,1,,,"React D6"" or PHOBOS & SCOUTS 6""","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move. You cannot target a unit that is within Engagement Range of one or more enemy units.
+
+EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit."
+FULGURIS_TASK_FORCE,,Fulguris Task Force,STRATAGEM,FULGURIS_TASK_FORCE_STRATAGEM_REACTIVE_EVASION,REACTIVE EVASION,,1,,,"SPEEDER reactive moves D3+3"" when enemy moves within 8"".","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged SPEEDER unit.
+
+TARGET: That SPEEDER unit.
+
+EFFECT: Your unit can make a normal move of up to D3+3""."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp,RELIC TELEPORTARIUM,,1,,,"Deathwing with Deepstrike: 6"" Deep Strike","WHEN: Your Movement phase.
+
+TARGET: One DEATHWING unit from your army that is arriving using the Deep Strike ability this phase.
+
+EFFECT: Your unit can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy models.
+
+RESTRICTIONS: Until the end of the turn, your unit is not eligible to declare a charge."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,STRATAGEM,dark_angels_wrath_of_the_rock_stratagem_relics_of_the_dark_age_1cp,RELICS OF THE DARK AGE,,1,,,"INFANTRY and MOUNTED
+SHOOTING = +2 Strength","WHEN: Your Shooting phase.
+
+TARGET: One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit."
+DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_REVELATION_OF_GUILT,REVELATION OF GUILT,,1,,,Unit's plasma attacks +1 To Hit.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+
+TARGET: That ADEPTUS ASTARTES unit.
+
+EFFECT: Your unit's plasma ranged attacks have +1 to hit rolls."
+space_marines_stormlance_task_force,,Stormlance Task Force,STRATAGEM,space_marines_stormlance_task_force_stratagem_ride_hard_ride_fast_1cp,RIDE HARD - RIDE FAST,,1,,,"RANGE + MOUNTED or FLY 
+ -1 To Hit & -1 To Wound.","WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll."
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_ruthless_butchery_1cp,RUTHLESS BUTCHERY,,1,,,"MELEE and RANGE
+DREADS and VETS
++1 To Hit
+IF wounded +1 To Wound","WHEN: Your Shooting phase or the Fight phase.
+
+TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to shoot or fight this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is below Starting Strength, add 1 to the Wound roll as well."
+DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_SEARING_BURSTS,SEARING BURSTS,,1,,,"HELLBLASTER shot, enemy hit by plasma is seared and has -2"" M until next turn.","WHEN: Your Shooting phase, when a friendly HELLBLASTER SQUAD unit has shot.
+
+TARGET: That HELLBLASTER SQUAD unit.
+
+EFFECT: Select one enemy unit hit by your unit's plasma ranged attacks. That enemy unit is seared until the start of your next turn. While a unit is seared, that unit has -2"" M."
+space_marines_stormlance_task_force,,Stormlance Task Force,STRATAGEM,space_marines_stormlance_task_force_stratagem_shock_assault_1cp,SHOCK ASSAULT,,1,,,"CHARGE + MOUNTED
+Gets Lance = +1 To Wound","WHEN: Your Charge phase.
+
+TARGET: One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.
+
+EFFECT: Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.
+
+LANCE: Charge = +1 To Wound."
+DARKFLIGHT_PURSUIT,,Darkflight Pursuit,STRATAGEM,DARKFLIGHT_PURSUIT_STRATAGEM_SKYBORNE_SURVEILLANCE,SKYBORNE SURVEILLANCE,,1,,,"SHOOTING: After a RAVENWING FLY unit has shot, visible enemy units within 6"" have +3"" detection range.","WHEN: Your Shooting phase, when a friendly RAVENWING FLY unit has shot.
+
+TARGET: That RAVENWING FLY unit.
+
+EFFECT: Visible enemy units within 6"" of your unit have +3"" detection range."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_spear_thrust_and_sabre_swing_1cp,Spear Thrust And Sabre Swing,,1,,,Fight. Unit gains LANCE or LETHAL HITS. MOUNTED gets both.,"WHEN: Fight phase.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
+
+EFFECT: Select either the [LANCE] or [LETHAL HITS] ability. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability. If it is a MOUNTED unit, until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] and [LETHAL HITS] abilities instead."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_squad_tactics_1cp,Squad Tactics,,1,,,"Move D6"" or 6"" if Tactical doctrine.","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: One Adeptus Astartes INFANTRY or Adeptus Astartes MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move.
+
+EFFECT: Your unit can make a Normal move of up to D6"", or a Normal move of up to 6"" instead if it is under the effects of the Tactical Doctrine.
+
+RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_storm_of_fire_1cp,Storm Of Fire,,1,,,No Cover and -1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well."
+dark_angels_lions_blade_task_force,,Lions Blade Task Force,STRATAGEM,dark_angels_lions_blade_task_force_stratagem_strength_in_unity_1cp,STRENGTH IN UNITY,,1,,,Figth. -1 To Hit if Ravenwing involved. -1 To Wound if Deathwing.,"WHEN: Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: If that enemy unit is within Engagement Range of one or more RAVENWING units from your army, until the end of the phase, each time a model in that enemy unit makes an attack, subtract 1 from the Hit roll. If that enemy unit is within Engagement Range of one or more DEATHWING units from your army, until the end of the phase, each time a model in that enemy unit makes an attack, if the Strength characteristic of that attack is greater than the Toughness characteristic of the target, subtract 1 from the Wound roll.
+
+RESTRICTIONS: A unit cannot be targeted by this and the Armour of Contempt Stratagem in the same phase."
+SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_STRIKE_FROM_THE_SHADOWS,STRIKE FROM THE SHADOWS,,1,,,"SHOOTING: After a PHOBOS or SCOUT SQUAD unit has shot, its ranged attacks do not prevent the unit from remaining hidden.","WHEN: Your Shooting phase, when a friendly PHOBOS/SCOUT SQUAD unit has shot.
+
+TARGET: That PHOBOS/SCOUT SQUAD unit.
+
+EFFECT: Those ranged attacks do not prevent your unit from being hidden."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_vanguard_spearhead_stratagem_strike_from_the_shadows_1cp,Strike From The Shadows,,1,,,"Shoot 12"" away = +1 BS and -1 AP
+Also, Battle Shock.","WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test."
+space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_stunning_fusillade_1cp,STUNNING FUSILLADE,,1,,,"Enemy 12"" away +1 BS and AP.
+If destroyed model, Battle Shock","WHEN: Your Shooting phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. 
+
+If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test."
+space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_vanguard_spearhead_stratagem_surgical_strikes_2cp,Surgical Strikes,,2,,,Unit gets PRECISION,"WHEN: Fight phase.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
+
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_tactical_foresight_1cp,Tactical Foresight,,1,,,"If Strengths is higher or equal
+-1 To Wound.","WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll."
+dark_angels_wrath_of_the_rock,,Wrath of the Rock,STRATAGEM,dark_angels_wrath_of_the_rock_stratagem_tactical_mastery_1cp,TACTICAL MASTERY,,1,,,"ADVANCE + SHOOT + CHARGE
+If RAVENWING, also if Fell Back","WHEN: Your Movement phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Your unit is eligible to shoot and declare a charge in a turn in which it Advanced. 
+
+If your unit has the RAVENWING keyword, it is also eligible to shoot and declare a charge in a turn in which it Fell Back."
+INTERROGATION_CONCLAVE,,Interrogation Conclave,STRATAGEM,INTERROGATION_CONCLAVE_STRATAGEM_TERRIFYING_ZEAL,TERRIFYING ZEAL,,1,,,"CHAPLAIN: Charge non-MONSTER and non-VEHICLE. Take LD test.  On a failure, -1 To Hit until the end of the turn.","WHEN: Your Charge phase, when a friendly CHAPLAIN unit ends a charge move.
+
+TARGET: That CHAPLAIN unit.
+
+EFFECT: Select one enemy unit, excluding MONSTER and VEHICLE units, engaged with your unit. That enemy unit makes a leadership roll. If that leadership roll fails, that enemy unit's attacks have -1 to hit rolls until the end of the turn."
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_ultramarian_adaptivity_1cp,Ultramarian Adaptivity,,1,,,Pick a different doctrine for the unit.,"WHEN: Your Command phase.
+
+TARGET: One Adeptus Astartes unit from your army.
+
+EFFECT: Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_unmatched_fortitude_1cp,UNMATCHED FORTITUDE,,1,,,Deathwing INFANTRY (Ranged): -1 To be wounded if Higher Strength,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+
+TARGET: One DEATHWING INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than your unit’s Toughness characteristic, subtract 1 from the Wound roll."
+INTERROGATION_CONCLAVE,,Interrogation Conclave,STRATAGEM,INTERROGATION_CONCLAVE_STRATAGEM_WAGES_OF_COWARDICE,WAGES OF COWARDICE,,1,,,"CHAPLAIN in enemy Move: After enemy falls back, Chaplain unit makes a normal move of up to D3+3"".","WHEN: Your opponent's Movement phase, when an enemy unit that was engaged with a friendly CHAPLAIN unit ends a fall-back move, if that CHAPLAIN unit is unengaged.
+
+TARGET: That CHAPLAIN unit.
+
+EFFECT: Your unit can make a normal move of up to D3+3""."
+DARKFLIGHT_PURSUIT,,Darkflight Pursuit,STRATAGEM,DARKFLIGHT_PURSUIT_STRATAGEM_WE_ARE_VENGEANCE,WE ARE VENGEANCE,,1,,,"ENEMY SHOOTING: After an enemy has shot, one targeted unengaged RAVENWING FLY unit can make a normal move of up to D3+3"".","WHEN: Your opponent's Shooting phase, when an enemy unit that targeted a friendly unengaged RAVENWING FLY unit has shot.
+
+TARGET: That RAVENWING FLY unit.
+
+EFFECT: Your unit can make a normal move of up to D3+3""."
+space_marines_stormlance_task_force,,Stormlance Task Force,STRATAGEM,space_marines_stormlance_task_force_stratagem_wind_swift_evasion_1cp,WIND-SWIFT EVASION,,1,,,"INFANTRY or MOUNTED
+Reactive move up to 6"".","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of that enemy unit.
+
+EFFECT: Your unit can make a Normal move of up to 6"".
+
+RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
+DARKFLIGHT_PURSUIT,,Darkflight Pursuit,STRATAGEM,DARKFLIGHT_PURSUIT_STRATAGEM_WINGS_OF_SHADOW,WINGS OF SHADOW,,1,,,"ENEMY SHOOTING: When targeted, one RAVENWING FLY unit has Stealth.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly RAVENWING FLY unit.
+
+TARGET: That RAVENWING FLY unit.
+
+EFFECT: Your unit has Stealth."
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_withdraw_and_regroup_1cp,Withdraw And Regroup,,1,,,End of enemy Fight. MOUNTED or FLY VEHICLE not in Engagement goes into Strategic Reserves.,"WHEN: End of your opponent’s Fight phase.
+
+TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that is not within Engagement Range of one or more enemy units.
+
+EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_wrath_of_the_lion_1cp,WRATH OF THE LION,,1,,,"Deathwing INFANTRY (Charges): Mortals per each model on a 4+ Max 3 Mortals. 
+VOWED OBJ = 3+ Max 3 Mortal Wounds","WHEN: Your Charge phase.
+
+TARGET: One DEATHWING INFANTRY unit from your army that just ended a Charge move.
+
+EFFECT: Select one enemy unit within Engagement Range of your unit and roll one D6 for each model in your unit, adding 1 to the result if that enemy unit is within range of your Vowed objective marker: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 3 mortal wounds)."
+space_marines_emperors_shield,,Emperor's Shield,STRATAGEM,space_marines_emperors_shield_stratagem_wrathful_conquerors_1cp,WRATHFUL CONQUERORS,,1,,,"TERMINATORS & VETS
+Sticky objectives","WHEN: Your Movement phase.
+
+TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within range of an objective marker you control.
+
+EFFECT: That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any phase."
+space_marines_forgefathers_seekers,,Forgefather's Seekers,STRATAGEM,space_marines_forgefathers_seekers_stratagem_wrathful_inferno_1cp,Wrathful Inferno,,1,,,Infantry Shoots after Falls Back.,"WHEN: Your Movement phase, just after an ADEPTUS ASTARTES INFANTRY unit from your army Falls Back.
+
+TARGET: That unit.
+
+EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Fell Back."
