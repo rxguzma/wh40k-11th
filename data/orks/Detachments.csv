@@ -376,3 +376,6 @@ TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, if your unit is riled up, up to 6""."
+
+orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,,,"Destroyed WARBOSS fights on 3+ if not selected to fight (2+ if riled up).","When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is riled up.
+- On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield."
