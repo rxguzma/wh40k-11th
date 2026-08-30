@@ -382,3 +382,14 @@ orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment
 
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,,,,,"INFANTRY WARBOSS. Once per battle, per army: after this model is destroyed, on a 2+ return it with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',,,,,"WARBOSS model only. This model's melee attacks have +1 D.","WARBOSS model only. This model's melee attacks have +1 D."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,,,,,"WARBOSS. A TRANSPORT this unit is embarked within (excluding WALKER) has +2"" M and 5+ InSv.","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
+- +2"" M
+- 5+ InSv."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,,,,,"WARBOSS model only. Re-roll hit rolls of 1.","WARBOSS model only. This model can re-roll hit rolls of 1."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,,,,,"WARBOSS. Once per battle, per army: end of opponent's Movement phase, if unengaged, Normal move up to D6""; if riled up, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
+- Up to D6"".
+- If this unit is riled up, you can re-roll that D6."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,,,,,"WARBOSS model only. Gains Da Gobshot Thunderbuss.","WARBOSS model only. This model has the following weapon:
+Da Gobshot Thunderbuss [LETHAL HITS: non-MONSTER/VEHICLE, RAPID FIRE 6]
+Range 24"", A 6, BS 4+, S 7, AP -2, D 2."
