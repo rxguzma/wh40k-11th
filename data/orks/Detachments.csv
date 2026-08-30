@@ -2,7 +2,8 @@ Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Co
 orks,Orks,,ARMY_RULE,orks_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
 Always: Re-roll Advances
 
-Riled Up: 5++, Assault Ranged, Advance & Charge. Lasts thru end of turn."
+Riled Up: 5++, Assault Ranged, Advance & Charge. Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
 
 Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
