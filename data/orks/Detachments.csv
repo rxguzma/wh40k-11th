@@ -143,7 +143,7 @@ EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.
 orks_rollin_deff,,Rollin’ Deff,ENHANCEMENT,orks_rollin_deff_enhancement_targetin_gizmos,Targetin’ Gizmos,15,,,,"WAGON. With BIG MEK embarked, ranged attacks IGNORE COVER 
 
 If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1]."
-orks_green_tide,Orks,Green Tide,DETACHMENT_RULE,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,,,1,,BOYZ melee [SUSTAINED HITS 1]. Charging ORKS INFANTRY melee [LETHAL HITS: non-MONSTER/VEHICLE].,"Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].
+orks_green_tide,Orks,Green Tide,DETACHMENT_RULE,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,,,1,Take and Hold,BOYZ melee [SUSTAINED HITS 1]. Charging ORKS INFANTRY melee [LETHAL HITS: non-MONSTER/VEHICLE].,"Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].
 
 If a friendly ORKS INFANTRY unit made a charge move this turn, that unit's melee attacks have [LETHAL HITS: non-MONSTER/VEHICLE]."
 orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_show_off,FEROCIOUS SHOW-OFF,,,,,"ORKS INFANTRY model.
