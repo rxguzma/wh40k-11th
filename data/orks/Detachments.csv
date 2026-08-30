@@ -146,7 +146,8 @@ If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a
 orks_green_tide,Orks,Green Tide,DETACHMENT_RULE,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,,,2,,BOYZ melee [SUSTAINED HITS 1]. Charging ORKS INFANTRY melee [LETHAL HITS: non-MONSTER/VEHICLE].,"Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].
 
 If a friendly ORKS INFANTRY unit made a charge move this turn, that unit's melee attacks have [LETHAL HITS: non-MONSTER/VEHICLE]."
-orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_show_off,FEROCIOUS SHOW-OFF,,,,,"ORKS INFANTRY model. Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
+orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_show_off,FEROCIOUS SHOW-OFF,,,,,"ORKS INFANTRY model.
+Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
 - Or, if this unit has 11+ models, +2 A."
 orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ,,,,,BOYZ unit only. This unit has 4+ Sv.,BOYZ unit only. This unit has 4+ Sv.
