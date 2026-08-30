@@ -2,7 +2,7 @@ Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Co
 tyranids_ambush_predators,Tyranids,Ambush Predators,DETACHMENT_RULE,tyranids_ambush_predators_detachment_rule_mindhunger,Mindhunger,,,1,Disruption,DEATHLEAPER/LICTOR/NEUROLICTOR have Deep Strike; LICTOR/NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.,"Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
 
 Friendly LICTOR/NEUROLICTOR units’ attacks that target a CHARACTER unit can re-roll hit rolls of 1."
-tyranids_subterranean_assault,Tyranids,Subterranean Assault,DETACHMENT_RULE,tyranids_subterranean_assault_detachment_rule_detachment_rule,Detachment Rule,,,3,Disruption,"SURPRISE ASSAULT:
+tyranids_subterranean_assault,Tyranids,Subterranean Assault,DETACHMENT_RULE,tyranids_subterranean_assault_detachment_rule_detachment_rule,Surprise Assault,,,3,Disruption,"SURPRISE ASSAULT:
 - Re-rolls 1 To Hit
 - BURROWERS allow 6"" Charge","Each time a Tyranids model from your army makes an attack, re-roll a Hit roll of 1.
 
@@ -11,7 +11,7 @@ Each time a Burrower unit from your army is set up on the battlefield from Reser
 In the Reinforcements step of your Movement phase, when you set up a unit on the battlefield from Reserves, you can set that unit up wholly within 9"" of one of your Tunnel Markers and more than 6"" horizontally away from any enemy units.
 
 If an enemy model (excluding Aircraft) ends any kind of move within 3"" of one of your Tunnel Markers, that Tunnel Marker is removed from the battlefield."
-tyranids_vanguard_onslaught,Tyranids,Vanguard Onslaught,DETACHMENT_RULE,tyranids_vanguard_onslaught_detachment_rule_detachment_rule,Detachment Rule,,,2,Recon,"Vanguard Invaders: Advance and Charge.
+tyranids_vanguard_onslaught,Tyranids,Vanguard Onslaught,DETACHMENT_RULE,tyranids_vanguard_onslaught_detachment_rule_detachment_rule,Vanguard Invaders,,,2,Recon,"Vanguard Invaders: Advance and Charge.
 All units: Fall back and Charge
 
 Deathleaper can be Warlord","TYRANIDS units with this ability are eligible to charge in a turn in which they Fell Back.
@@ -19,7 +19,7 @@ Deathleaper can be Warlord","TYRANIDS units with this ability are eligible to ch
 VANGUARD INVADER units with this ability are eligible to charge in a turn in which they Advanced.
 
 DEATHLEAPER loses the Hunter Organism rule and can be your WARLORD."
-tyranids_invasion_fleet,Tyranids,Invasion Fleet,DETACHMENT_RULE,tyranids_invasion_fleet_detachment_rule_detachment_rule,Detachment Rule,,,3,Take and Hold,"Swarming Instincts: Sustain 1
+tyranids_invasion_fleet,Tyranids,Invasion Fleet,DETACHMENT_RULE,tyranids_invasion_fleet_detachment_rule_detachment_rule,Hyper-adaptations,,,3,Take and Hold,"Swarming Instincts: Sustain 1
 Hyper-Aggression: Lethal Hits
 Hive Predators: Precision","At the start of the first battle round, select one of the following Hyper-adaptations to be active for TYRANIDS units from your army until the end of the battle.
 
@@ -32,8 +32,8 @@ tyranids_talons_of_the_norn_queen,Tyranids,Talons of the Norn Queen,DETACHMENT_R
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,DETACHMENT_RULE,tyranids_warrior_bioform_onslaught_detachment_rule_leader_beasts,Leader‑Beasts,,,1,Take and Hold,"Friendly TYRANID WARRIORS with ranged or melee bio‑weapons gain the TYRANID WARRIORS keyword and become Battleline, and TYRANID WARRIORS, Tyranid Prime with Lash Whip, and Winged Tyranid Prime models have a 5+ invulnerable save.","Friendly TYRANID WARRIORS WITH RANGED BIO‑WEAPONS/TYRANID WARRIORS WITH MELEE BIO‑WEAPONS units have: TYRANID WARRIORS and BATTLELINE.
 
 TYRANID WARRIORS/TYRANID PRIME WITH LASH WHIP/WINGED TYRANID PRIME models from your army have 5+ InSv."
-tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_encircling_horrors,Encircling Horrors,,,,,"In your opponent’s Movement phase, when an enemy ends a move within 8"" of a NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit, that unit can move up to D3+3"".","NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, this unit can make a normal move of up to D3+3""."
-tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_cryptophotaic_camouflage,Cryptophotaic Camouflage,,,,,"VON RYAN’S LEAPERS: −3"" detection range.","VON RYAN’S LEAPERS unit only. This unit has −3"" detection range."
+tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_encircling_horrors,Encircling Horrors,20,,,,"In your opponent’s Movement phase, when an enemy ends a move within 8"" of a NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit, that unit can move up to D3+3"".","NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, this unit can make a normal move of up to D3+3""."
+tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_cryptophotaic_camouflage,Cryptophotaic Camouflage,15,,,,"VON RYAN’S LEAPERS: −3"" detection range.","VON RYAN’S LEAPERS unit only. This unit has −3"" detection range."
 tyranids_ambush_predators,,Ambush Predators,STRATAGEM,tyranids_ambush_predators_stratagem_counterpredation_1cp,Counterpredation,,1,,,FIGHT: Attacks against a hidden unit have +1 Strength and AP.,"WHEN: Fight phase, when a friendly DEATHLEAPER/LICTOR/NEUROLICTOR/VON RYAN’S LEAPERS unit is selected to fight.
 
 TARGET: That unit.
@@ -141,8 +141,8 @@ Go back to Reserves","WHEN: End of your opponent’s Fight phase.
 TARGET: One Tyranids unit or up to two Burrower units from your army that are not within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
-tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_destabilising_predation,Destabilising Predation,,,,,NORN EMISSARY unit only. Ranged attacks have [ANTI‑CHARACTER 2+].,NORN EMISSARY unit only. This unit’s ranged attacks have [ANTI‑CHARACTER 2+].
-tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_synapto_prescience,Synapto Prescience,,,,,NORN ASSIMILATOR unit only. This unit has a 4+ invulnerable save.,NORN ASSIMILATOR unit only. This unit has 4+ InSv.
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_destabilising_predation,Destabilising Predation,20,,,,NORN EMISSARY unit only. Ranged attacks have [ANTI‑CHARACTER 2+].,NORN EMISSARY unit only. This unit’s ranged attacks have [ANTI‑CHARACTER 2+].
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_synapto_prescience,Synapto Prescience,30,,,,NORN ASSIMILATOR unit only. This unit has a 4+ invulnerable save.,NORN ASSIMILATOR unit only. This unit has 4+ InSv.
 tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,STRATAGEM,tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,Catalytic Biofortification,,1,,,"ANY PHASE: When a NORN ASSIMILATOR suffers a mortal wound, that unit has Feel No Pain 4+ against mortal wounds.","WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
 
 TARGET: That NORN ASSIMILATOR unit.
@@ -198,8 +198,8 @@ TARGET: Up to two VANGUARD INVADER units from your army, or one TYRANIDS INFANTR
 EFFECT: Remove the targeted units from the battlefield and place them into Strategic Reserves.
 
 RESTRICTIONS: The targeted units must be more than 3"" away from all enemy units."
-tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. Melee attacks re‑roll wound rolls and have +1 AP.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.
-tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. This unit’s melee attacks have +1 to hit rolls.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,30,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. Melee attacks re‑roll wound rolls and have +1 AP.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,20,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. This unit’s melee attacks have +1 to hit rolls.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.
 tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: When a Tyranid Warriors unit is targeted by an attack with Strength greater than its Toughness, those attacks have –1 to wound rolls.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
 TARGET: That TYRANID WARRIORS unit.
