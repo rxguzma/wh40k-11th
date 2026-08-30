@@ -1,5 +1,11 @@
 Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description
-orks_war_horde,Orks,War Horde,ARMY_RULE,orks_war_horde_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_war_horde,Orks,War Horde,ARMY_RULE,orks_war_horde_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -138,7 +144,13 @@ EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.
 orks_rollin_deff,,Rollin’ Deff,ENHANCEMENT,orks_rollin_deff_enhancement_targetin_gizmos,Targetin’ Gizmos,15,,,,"WAGON. With BIG MEK embarked, ranged attacks IGNORE COVER 
 
 If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1]."
-orks_freebooter_krew,Orks,Freebooter Krew,ARMY_RULE,orks_freebooter_krew_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_freebooter_krew,Orks,Freebooter Krew,ARMY_RULE,orks_freebooter_krew_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -148,7 +160,13 @@ While a unit is riled up:
 - When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
-orks_rollin_deff,Orks,Rollin’ Deff,ARMY_RULE,orks_rollin_deff_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_rollin_deff,Orks,Rollin’ Deff,ARMY_RULE,orks_rollin_deff_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -158,7 +176,13 @@ While a unit is riled up:
 - When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
-orks_more_dakka,Orks,More Dakka!,ARMY_RULE,orks_more_dakka_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_more_dakka,Orks,More Dakka!,ARMY_RULE,orks_more_dakka_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -168,7 +192,13 @@ While a unit is riled up:
 - When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
 War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
-orks_green_tide,Orks,Green Tide,ARMY_RULE,orks_green_tide_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_green_tide,Orks,Green Tide,ARMY_RULE,orks_green_tide_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -200,7 +230,13 @@ orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_ere_we_go_1cp,'E
 TARGET: That BEAST SNAGGA BOYZ/BOYZ unit.
 
 EFFECT: Your unit has +2 to advance rolls."
-orks_bully_boyz,Orks,Bully Boyz,ARMY_RULE,orks_bully_boyz_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_bully_boyz,Orks,Bully Boyz,ARMY_RULE,orks_bully_boyz_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -235,7 +271,13 @@ TARGET: That MEGANOBZ/NOBZ unit.
 EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
 
 Or +1CP: Ranged attacks that target your unit have -1 to wound rolls."
-orks_taktikal_brigade,Orks,Taktikal Brigade,ARMY_RULE,orks_taktikal_brigade_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_taktikal_brigade,Orks,Taktikal Brigade,ARMY_RULE,orks_taktikal_brigade_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -267,7 +309,13 @@ orks_taktikal_brigade,,Taktikal Brigade,STRATAGEM,orks_taktikal_brigade_stratage
 TARGET: One friendly unengaged BOYZ/KOMMANDOS/STORMBOYZ unit that was engaged at the start of the phase.
 
 EFFECT: Your unit can make a normal move of up to 6""."
-orks_wreckas,Orks,Wreckas,ARMY_RULE,orks_wreckas_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_wreckas,Orks,Wreckas,ARMY_RULE,orks_wreckas_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -299,7 +347,13 @@ orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,G
 TARGET: One friendly FLASH GITZ/TANKBUSTAS unit hit by those attacks.
 
 EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit."
-orks_da_big_hunt,Orks,Da Big Hunt,ARMY_RULE,orks_da_big_hunt_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_da_big_hunt,Orks,Da Big Hunt,ARMY_RULE,orks_da_big_hunt_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -327,7 +381,13 @@ orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_instinctive_h
 TARGET: One friendly unengaged BEAST SNAGGA unit within 6"" of a battlefield edge.
 
 EFFECT: Place your unit in strategic reserves."
-orks_madcap_meks,Orks,Madcap Meks,ARMY_RULE,orks_madcap_meks_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_madcap_meks,Orks,Madcap Meks,ARMY_RULE,orks_madcap_meks_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -361,7 +421,13 @@ EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
 - Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1]."
-orks_dread_mob,Orks,Dread Mob,ARMY_RULE,orks_dread_mob_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_dread_mob,Orks,Dread Mob,ARMY_RULE,orks_dread_mob_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -400,7 +466,13 @@ orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_stomping_juggernaut
 TARGET: That ORKS WALKER unit.
 
 EFFECT: Your unit has MOBILE."
-orks_blitz_brigade,Orks,Blitz Brigade,ARMY_RULE,orks_blitz_brigade_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_blitz_brigade,Orks,Blitz Brigade,ARMY_RULE,orks_blitz_brigade_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -432,7 +504,13 @@ orks_blitz_brigade,,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_impendi
 TARGET: That WAGON unit.
 
 EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll."
-orks_kult_of_speed,Orks,Kult of Speed,ARMY_RULE,orks_kult_of_speed_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_kult_of_speed,Orks,Kult of Speed,ARMY_RULE,orks_kult_of_speed_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
@@ -464,7 +542,13 @@ orks_kult_of_speed,,Kult of Speed,STRATAGEM,orks_kult_of_speed_stratagem_speedie
 TARGET: That SPEED FREEKS unit.
 
 EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3."
-orks_flyboyz,Orks,Flyboyz,ARMY_RULE,orks_flyboyz_army_rule_waaagh,WAAAGH!,,,,,"Re-roll Advances; Riled Up (5+ InSv, [ASSAULT] on ranged, Advance & Charge). War Cry: once/battle activate Riled Up until end of next turn.","Friendly ORKS units with this ability can:
+orks_flyboyz,Orks,Flyboyz,ARMY_RULE,orks_flyboyz_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
+Always: Re-roll Advances
+Riled Up: 5++, Assault Ranged, Advance & Charge.
+Lasts thru end of turn.","Army Rule
+At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
+
+Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
 - Become riled up, as stated in other rules.
 
