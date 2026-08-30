@@ -392,3 +392,73 @@ orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgog
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,,,,,"WARBOSS model only. Gains Da Gobshot Thunderbuss.","WARBOSS model only. This model has the following weapon:
 Da Gobshot Thunderbuss [LETHAL HITS: non-MONSTER/VEHICLE, RAPID FIRE 6]
 Range 24"", A 6, BS 4+, S 7, AP -2, D 2."
+
+orks_wurrband,Orks,Wurrband,DETACHMENT_RULE,orks_wurrband_detachment_rule_powers_of_da_waaagh,POWERS OF DA WAAAGH!,,,,,"ORKS PSYKER [PSYCHIC] attacks gain +1 S, plus +1 S per 5 models in/embarked with the unit. ORKS PSYKERS gain Roar of Mork and Visions of Violence.","Friendly ORKS PSYKER models' [PSYCHIC] attacks have:
+- +1 S.
+- +1 S for every 5 models in this unit (or embarked within this model).
+
+Friendly ORKS PSYKER models have the following psychic abilities:
+
+Roar of Mork (psychic level 1): In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+- On a 1, this unit is battle-shocked.
+- Select one enemy unit (excluding MONSTER/VEHICLE units) within 12"" of this unit. That enemy unit makes a battle-shock roll, with -1 from that battle-shock roll for every 10 models in this unit.
+
+Visions of Violence (psychic level 1): At the start of the Fight phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+- On a 1, this unit is battle-shocked.
+- This unit has Fights First."
+orks_wurrband,,Wurrband,ENHANCEMENT,orks_wurrband_enhancement_da_krunch,DA KRUNCH,,,,,ORKS PSYKER model only. Gains Da Krunch.,"ORKS PSYKER model only. This model has the following weapon:
+Da Krunch [BLAST 3, HAZARDOUS, LETHAL HITS, PSYCHIC]
+Range 24"", A 3, BS 4+, S 5, AP -1, D 1."
+orks_wurrband,,Wurrband,ENHANCEMENT,orks_wurrband_enhancement_eadbanger,'EADBANGER,,,,,ORKS PSYKER model only. Gains 'Eadbanger.,"ORKS PSYKER model only. This model has the following weapon:
+'Eadbanger [HAZARDOUS, PRECISION, PSYCHIC]
+Range 24"", A 2, BS 4+, S 6, AP -3, D 1."
+orks_wurrband,,Wurrband,ENHANCEMENT,orks_wurrband_enhancement_warphead,WARPHEAD,,,,,"ORKS PSYKER model only. Psyker level 2, Deadly Demise D6, and can re-roll psychic rolls.","ORKS PSYKER model only. This model:
+- Has psyker level 2.
+- Has Deadly Demise D6.
+- Can re-roll psychic rolls."
+orks_runt_swarm,Orks,Runt Swarm,DETACHMENT_RULE,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,,,,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
+When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action."
+orks_runt_swarm,,Runt Swarm,ENHANCEMENT,orks_runt_swarm_enhancement_extra_sneaky,EXTRA SNEAKY,,,,,"GRETCHIN unit only. This unit has -3"" detection range.","GRETCHIN unit only. This unit has -3"" detection range."
+orks_runt_swarm,,Runt Swarm,ENHANCEMENT,orks_runt_swarm_enhancement_minefield_detail,MINEFIELD DETAIL,,,,,"GRETCHIN unit only. While not embarked, this unit has Scouts 6"".","GRETCHIN unit only. While this unit is not embarked, this unit has Scouts 6""."
+orks_runt_swarm,,Runt Swarm,STRATAGEM,orks_runt_swarm_stratagem_infested_war_zone_2cp,INFESTED WAR ZONE,,2,,,"Any phase: when a GRETCHIN unit is destroyed after an enemy attacks, return an identical unit in Strategic Reserves at starting strength and full wounds.","WHEN: Any phase, when an enemy unit has attacked.
+
+TARGET: One friendly GRETCHIN unit that was just destroyed. You can target that unit with this stratagem even though that unit was just destroyed.
+
+EFFECT: Add a new GRETCHIN unit to your army identical to your destroyed unit, in strategic reserves at its starting strength, with its full wounds remaining."
+orks_runt_swarm,,Runt Swarm,STRATAGEM,orks_runt_swarm_stratagem_scarper_1cp,SCARPER!,,1,,,"Opponent Movement: unengaged GRETCHIN within 8"" of an enemy that ended a move can Normal move D6"", or 6"" if attached.","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged GRETCHIN unit.
+
+TARGET: That GRETCHIN unit.
+
+EFFECT: Your unit can make a normal move of:
+- Up to D6"".
+- Or, up to 6"" instead if your unit is an attached unit."
+orks_runt_swarm,,Runt Swarm,STRATAGEM,orks_runt_swarm_stratagem_grot_shields_1cp,GROT SHIELDS,,1,,,"Opponent Shooting: a nearby GRETCHIN unit can absorb hits against a non-GRETCHIN ORKS INFANTRY unit, suffering 1 mortal wound per intercepted hit.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
+
+TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
+
+EFFECT: When a hit roll for that enemy unit's ranged attacks that target that ORKS unit results in a hit, if a model in your GRETCHIN unit is on the battlefield, end the attack sequence for that attack and your GRETCHIN unit suffers 1 mortal wound."
+orks_shoota_boyz,Orks,Shoota Boyz,DETACHMENT_RULE,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,,,,,"ORKS INFANTRY ranged attacks have [ASSAULT]. While riled up, ranged attacks have +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
+- [ASSAULT].
+- While this unit is riled up, +3"" R."
+orks_shoota_boyz,,Shoota Boyz,ENHANCEMENT,orks_shoota_boyz_enhancement_supa_glowy_fing,SUPA-GLOWY FING,,,,,"ORKS INFANTRY model (excluding MEKBOY): ranged attacks gain [ANTI-INFANTRY 4+], [DEVASTATING WOUNDS], and [SUPA-HAZARDOUS].","ORKS INFANTRY model only (excluding MEKBOY models). This model's ranged attacks have:
+- [ANTI-INFANTRY 4+].
+- [DEVASTATING WOUNDS].
+- [SUPA-HAZARDOUS].
+
+[SUPA-HAZARDOUS]: Each time a unit is selected to shoot, after that unit has resolved all of its attacks, make two hazard rolls for that unit for each [SUPA-HAZARDOUS] weapon you selected in the Select Weapons step."
+orks_shoota_boyz,,Shoota Boyz,ENHANCEMENT,orks_shoota_boyz_enhancement_targetin_squigs,TARGETIN' SQUIGS,,,,,"BIG MEK/BIGBOSS/WARBOSS model only. Ranged attacks excluding [TORRENT] have +3"" R.","BIG MEK/BIGBOSS/WARBOSS model only. This unit's ranged attacks (excluding [TORRENT] attacks) have +3"" R."
+orks_shoota_boyz,,Shoota Boyz,STRATAGEM,orks_shoota_boyz_stratagem_kustom_dakka_1cp,KUSTOM DAKKA,,1,,,Shooting: ORKS INFANTRY ranged attacks get +1 to wound against non-MONSTER/VEHICLE units.,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
+
+TARGET: That ORKS INFANTRY unit.
+
+EFFECT: Your unit's ranged attacks that target a unit (excluding MONSTER/VEHICLE units) have +1 to wound rolls."
+orks_shoota_boyz,,Shoota Boyz,STRATAGEM,orks_shoota_boyz_stratagem_clovin_dakka_1cp,CLOVIN' DAKKA,,1,,,"Shooting: ORKS INFANTRY ranged attacks against a unit within 9"" have +1 AP.","WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
+
+TARGET: That ORKS INFANTRY unit.
+
+EFFECT: Your unit's ranged attacks that target a unit within 9"" have +1 AP."
+orks_shoota_boyz,,Shoota Boyz,STRATAGEM,orks_shoota_boyz_stratagem_never_enough_dakka_1cp,NEVER ENOUGH DAKKA,,1,,,Shooting: ORKS INFANTRY ranged attacks have [SUSTAINED HITS 1].,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
+
+TARGET: That ORKS INFANTRY unit.
+
+EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1]."
