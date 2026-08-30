@@ -1,0 +1,80 @@
+Weapon_ID,Weapon Name,"R""",A,WS,St,AP,D,Weapon Abilities
+ACID_SPRAY_TYRANNOFEX,Acid spray (Tyrannofex),"18""",D6+6,N/A,6,-2,2,TORRENT
+BIO_ELECTRIC_PULSE,Bio-electric pulse,"12""",6,3,5,0,1,SUSTAINED HITS 2
+BIO_PLASMA,Bio-plasma,"12""",D3,4,7,-2,1,"ASSAULT, BLAST"
+BIO_PLASMIC_CANNON,Bio-plasmic cannon,"36""",D6+3,3,9,-3,3,"BLAST, HEAVY"
+BIO_PLASMIC_SCREAM,Bio-plasmic scream,"18""",D6+3,4,8,-2,1,"ASSAULT, BLAST"
+BLINDING_VENOM,Blinding venom,-,1,4,3,0,1,
+BONE_CLEAVER_WITH_LASH_WHIP_AND_RENDING_CLAWS,Bone cleaver with lash whip and rending claws,-,3,3,5,-1,2,
+BONE_SABRES,Bone sabres,-,8,2,9,-2,3,TWIN-LINKED
+BROODLORD_CLAWS_AND_TALONS,Broodlord claws and talons,-,5,2,6,-2,2,"DEVASTATING WOUNDS, TWIN-LINKED"
+CARNIFEX_CRUSHING_CLAWS,Carnifex crushing claws,-,4,4,12,-3,D6+1,
+CARNIFEX_EXTRA_SCYTHING_TALONS,Carnifex extra scything talons,-,2,4,9,-2,3,EXTRA ATTACKS
+CARNIFEX_SCYTHING_TALONS,Carnifex scything talons,-,6,4,9,-2,3,
+CHITIN_BARBED_LIMBS,Chitin-barbed limbs,-,2,4,5,0,1,
+CHITINOUS_CLAWS_AND_TEETH,Chitinous claws and teeth,-,4,4,6,0,1,
+CHITINOUS_CLAWS_AND_TEETH_GAUNTS,Chitinous claws and teeth (Gaunts),-,1,4,3,0,1,
+CHITINOUS_CLAWS_AND_TEETH_HIVE_GUARD,Chitinous claws and teeth (Hive Guard),-,3,4,5,0,1,
+CHITINOUS_CLAWS_AND_TEETH_RIPPERS,Chitinous claws and teeth (Rippers),-,6,5+,2,0,1,SUSTAINED HITS 1
+CHITINOUS_CLAWS_AND_TEETH_ZOANTHROPES,Chitinous claws and teeth (Zoanthropes),-,2,5,3,0,1,
+CRUSHING_CLAWS_AND_RENDING_CLAWS,Crushing claws and rending claws,-,2,4,8,-2,2,TWIN-LINKED
+DEATHSPITTER,Deathspitter,"24""",3,4+,5,-1,1,
+DISTENSIBLE_JAW,Distensible jaw,-,1,3,5,0,3,"ANTI-INFANTRY 4+, DEVASTATING WOUNDS, EXTRA ATTACKS"
+FLAMESPURT,Flamespurt,"12""",D6+1,-,6,-1,1,"IGNORES COVER, TORRENT, TWIN-LINKED"
+FLESHBORER,Fleshborer,"18""",1,4,5,0,1,ASSAULT
+GAPING_MAW_RED_TERROR,Gaping maw (Red Terror),-,1,2+,5,0,D3+2,"EXTRA ATTACKS, DEVASTATING WOUNDS, PRECISION"
+GENESTEALER_CLAWS_AND_TALONS,Genestealer claws and talons,-,4,2,4,-2,1,
+GRASPING_TONGUE,Grasping tongue,"12""",1,3,6,-2,D6+1,PRECISION
+HEAVY_VENOM_CANNON,Heavy venom cannon,"36""",D3,4,9,-2,3,BLAST
+HORMAGAUNT_TALONS,Hormagaunt talons,-,3,4,3,-1,1,
+LEAPERS_TALONS,Leaper’s talons,-,6,3,5,-1,1,
+LICTOR_CLAWS_AND_TALONS,Lictor claws and talons,-,6,2,7,-2,2,PRECISION
+MASSIVE_SCYTHING_TALONS_STRIKE,Massive scything talons (strike),-,4,3,9,-2,D6,
+MASSIVE_SCYTHING_TALONS_STRIKE_MALECEPTOR,Massive scything talons – strike (MALECEPTOR),-,3,3,9,-2,D6+1,
+MASSIVE_SCYTHING_TALONS_SWEEP,Massive scything talons (sweep),-,8,3,7,-1,2,
+MASSIVE_SCYTHING_TALONS_SWEEP_MALECEPTOR,Massive scything talons – sweep (MALECEPTOR),-,6,3,7,-1,2,
+MASSIVE_TOXIC_LASHES_MELEE,Massive toxic lashes (melee),-,12,3,6,-1,2,ANTI-INFANTRY 2+
+MASSIVE_TOXIC_LASHES_RANGE,Massive toxic lashes (range),"9""",2D6,3,6,-1,2,ANTI-INFANTRY 2+
+MAWLOC_SCYTHING_TALONS,Mawloc scything talons,-,16,3,8,-2,1,
+MONSTROUS_BONESWORD_AND_LASH_WHIP,Monstrous bonesword and lash whip,-,6,2,9,-2,3,TWIN-LINKED
+MONSTROUS_RENDING_CLAWS_NORN,Monstrous rending claws (Norn),-,4,2,7,-2,2,EXTRA ATTACKS
+MONSTROUS_SCYTHING_TALONS,Monstrous scything talons,-,4,2,7,-2,2,EXTRA ATTACKS
+MONSTROUS_SCYTHING_TALONS_NORN,Monstrous scything talons (Norn),-,6,2,9,-2,3,
+NEUROTYRANT_CLAWS_AND_LASHES,Neurotyrant claws and lashes,-,6,3,5,0,1,
+OLD_ONE_EYES_CLAWS_AND_TALONS_STRIKE,Old One Eye’s claws and talons (strike),-,6,3,14,-3,D6+1,
+OLD_ONE_EYES_CLAWS_AND_TALONS_SWEEP,Old One Eye’s claws and talons (sweep),-,12,3,6,-1,1,
+PIERCING_CLAWS_AND_TALONS,Piercing claws and talons,-,6,2,6,-2,1,PRECISION
+POWERFUL_LIMBS_EXOCRINE,Powerful limbs (Exocrine),-,3,3,7,0,2,
+POWERFUL_LIMBS_TYRANNOFEX,Powerful limbs (Tyrannofex),-,4,3,8,0,2,
+PRIME_CLAWS_AND_TALONS,Prime claws and talons,-,6,3+,5,-2,2,"ANTI-MONSTER 5+, ANTI-VEHICLE 5+, TWIN-LINKED"
+PRIME_TALONS,Prime talons,-,6,2+,6,-1,2,
+PSYCHIC_OVERLOAD,Psychic overload,"18""",D6+3,3,10,-2,3,"BLAST, PSYCHIC"
+PSYCHIC_SCREAM,Psychic scream,"18""",2D6,N/A,5,-1,2,"IGNORES COVER, PSYCHIC, TORRENT"
+PSYCHIC_TENDRIL_NEUROBLAST,Psychic Tendril – neuroblast,"18""",2D6,2,6,-2,1,"BLAST, PSYCHIC"
+PSYCHIC_TENDRIL_NEUROLANCE,Psychic Tendril – neurolance,"18""",2,2,12,-3,D6,"MELTA 2, PSYCHIC"
+PSYCHIC_TENDRIL_NEUROPARASITE,Psychic Tendril – neuroparasite,"18""",2,2,8,-2,D3,"PRECISION,PSYCHIC"
+PSYCHOCLASTIC_TORRENT,Psychoclastic torrent,"12""",D6,N/A,6,-1,1,"IGNORES COVER, TORRENT"
+RAVENER_CLAWS_AND_TALONS,Ravener claws and talons,-,3,3,5,-2,2,TWIN-LINKED
+RAVENER_HEAVY_CLAWS_AND_TALONS,Ravener heavy claws and talons,-,3,3+,5,-2,2,"ANTI-MONSTER 5+,ANTI-VEHICLE 5+,TWIN-LINKED"
+RAVENOUS_MAW,Ravenous maw,-,14,3,7,-1,2,
+RUPTURE_CANNON,Rupture cannon,"48""",2,3,18,-4,D6+6,HEAVY
+SCREAMER_KILLER_TALONS,Screamer-killer talons,-,10,3,10,-2,3,
+SCYTHING_TALONS_RED_TERROR,Scything talons (Red Terror),-,12,2+,7,-2,2,
+SHOCKCANNON,Shockcannon,"24""",2,3,7,-1,3,ANTI-VEHICLE 2+
+SHOVELLING_CLAWS,Shovelling claws,-,4,3,14,-2,D6+1,
+SPINE_BANKS,Spine banks,"6""",5,4,5,0,1,ASSAULT
+SPINEMAWS_RIPPERS,Spinemaws (Rippers),"6""",4,5+,3,0,1,PISTOL
+SPORE_MINE_LAUNCHER,Spore Mine launcher,"48""",D3,4,6,-1,2,"BLAST, DEVASTATING WOUNDS, HEAVY, INDIRECT FIRE"
+STINGER_SALVOES,Stinger salvoes,"24""",8,3,5,0,1,
+SYNAPTIC_PULSE,Synaptic pulse,"18""",D6+3,N/A,5,-1,2,"PSYCHIC,TORRENT"
+TALONS_AND_BETENTACLED_MAW,Talons and betentacled maw,-,6,3,6,-2,2,"ANTI-PSYKER 4+, DEVASTATING WOUNDS"
+TOXIC_LASHES,Toxic lashes,-,5,3,3,0,1,ANTI-INFANTRY 2+
+TRYGON_SCYTHING_TALONS,Trygon scything talons,-,12,3,9,-2,3,
+TRYGON_SCYTHING_TALONS_TRYGON_PRIME,Trygon scything talons (Trygon Prime),-,12,2,10,-2,3,
+TYRANID_WARRIOR_CLAWS_AND_TALONS,Tyranid Warrior claws and talons,-,5,3+,5,-1,1,
+TYRANID_WARRIOR_CLAWS_AND_TALONS_MELEE_WARRIORS,Tyranid Warrior claws and talons (Melee Warriors),-,6,3,5,-2,1,TWIN-LINKED
+VENOM_BOLT,Venom bolt,"12""",D6+3,N/A,6,-1,1,"ASSAULT, IGNORES COVER, TORRENT"
+WARP_BLAST_FOCUSED_WITCHFIRE,Warp Blast – focused witchfire,"24""",1,3,12,-3,D6+1,"LETHAL HITS, PSYCHIC"
+WARP_BLAST_WITCHFIRE,Warp Blast – witchfire,"24""",D3,3,7,-2,D3,"BLAST, PSYCHIC"
+TOXINJECTOR_HARPOON,Toxinjector harpoon,"12""",2,2+,12,-3,D6+1,HARPOONED
+TOXINJECTOR_HARPOON_MELEE,Toxinjector harpoon,-,4,2+,12,-3,D6+1,EXTRA ATTACKS
