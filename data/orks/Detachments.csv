@@ -379,3 +379,6 @@ EFFECT: Your unit can make a normal move of:
 
 orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,,,"Destroyed WARBOSS fights on 3+ if not selected to fight (2+ if riled up).","When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is riled up.
 - On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield."
+
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,,,,,"INFANTRY WARBOSS. Once per battle, per army: after this model is destroyed, on a 2+ return it with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
+- On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining."
