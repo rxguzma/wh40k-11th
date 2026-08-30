@@ -1,0 +1,217 @@
+Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description
+tyranids_ambush_predators,Tyranids,Ambush Predators,DETACHMENT_RULE,tyranids_ambush_predators_detachment_rule_mindhunger,Mindhunger,,,1,Disruption,DEATHLEAPER/LICTOR/NEUROLICTOR have Deep Strike; LICTOR/NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.,"Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
+
+Friendly LICTOR/NEUROLICTOR units’ attacks that target a CHARACTER unit can re-roll hit rolls of 1."
+tyranids_subterranean_assault,Tyranids,Subterranean Assault,DETACHMENT_RULE,tyranids_subterranean_assault_detachment_rule_detachment_rule,Detachment Rule,,,3,Disruption,"SURPRISE ASSAULT:
+- Re-rolls 1 To Hit
+- BURROWERS allow 6"" Charge","Each time a Tyranids model from your army makes an attack, re-roll a Hit roll of 1.
+
+Each time a Burrower unit from your army is set up on the battlefield from Reserves, place a circular 40mm Tunnel Marker anywhere on the battlefield within 1"" of that unit and more than 3"" horizontally away from all enemy units.
+
+In the Reinforcements step of your Movement phase, when you set up a unit on the battlefield from Reserves, you can set that unit up wholly within 9"" of one of your Tunnel Markers and more than 6"" horizontally away from any enemy units.
+
+If an enemy model (excluding Aircraft) ends any kind of move within 3"" of one of your Tunnel Markers, that Tunnel Marker is removed from the battlefield."
+tyranids_vanguard_onslaught,Tyranids,Vanguard Onslaught,DETACHMENT_RULE,tyranids_vanguard_onslaught_detachment_rule_detachment_rule,Detachment Rule,,,2,Recon,"Vanguard Invaders: Advance and Charge.
+All units: Fall back and Charge
+
+Deathleaper can be Warlord","TYRANIDS units with this ability are eligible to charge in a turn in which they Fell Back.
+
+VANGUARD INVADER units with this ability are eligible to charge in a turn in which they Advanced.
+
+DEATHLEAPER loses the Hunter Organism rule and can be your WARLORD."
+tyranids_invasion_fleet,Tyranids,Invasion Fleet,DETACHMENT_RULE,tyranids_invasion_fleet_detachment_rule_detachment_rule,Detachment Rule,,,3,Take and Hold,"Swarming Instincts: Sustain 1
+Hyper-Aggression: Lethal Hits
+Hive Predators: Precision","At the start of the first battle round, select one of the following Hyper-adaptations to be active for TYRANIDS units from your army until the end of the battle.
+
+Swarming Instincts: Each time a TYRANIDS model with this Hyper-adaptation makes an attack that targets an INFANTRY or SWARM unit, that attack has the [SUSTAINED HITS 1] ability.
+
+Hyper-aggression: Each time a TYRANIDS model with this Hyper-adaptation makes an attack that targets a MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability.
+
+Hive Predators: Each time a TYRANIDS model with this Hyper-adaptation makes an attack that targets a CHARACTER unit, on a Critical Hit, that attack has the [PRECISION] ability."
+tyranids_talons_of_the_norn_queen,Tyranids,Talons of the Norn Queen,DETACHMENT_RULE,tyranids_talons_of_the_norn_queen_detachment_rule_higher_imperatives,Higher Imperatives,,,1,Take and Hold,"Friendly NORN EMISSARY/NORN ASSIMILATOR units: once per battle per unit, in your Command phase, you can make a new selection for its Singular Purpose ability.","Friendly NORN EMISSARY/NORN ASSIMILATOR units have the following ability: Protean Purpose – (Once per battle, per unit) In your Command phase, you can use this ability. If you do, this unit can make a selection for its Singular Purpose ability (this replaces the previous selection)."
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,DETACHMENT_RULE,tyranids_warrior_bioform_onslaught_detachment_rule_leader_beasts,Leader‑Beasts,,,1,Take and Hold,"Friendly TYRANID WARRIORS with ranged or melee bio‑weapons gain the TYRANID WARRIORS keyword and become Battleline, and TYRANID WARRIORS, Tyranid Prime with Lash Whip, and Winged Tyranid Prime models have a 5+ invulnerable save.","Friendly TYRANID WARRIORS WITH RANGED BIO‑WEAPONS/TYRANID WARRIORS WITH MELEE BIO‑WEAPONS units have: TYRANID WARRIORS and BATTLELINE.
+
+TYRANID WARRIORS/TYRANID PRIME WITH LASH WHIP/WINGED TYRANID PRIME models from your army have 5+ InSv."
+tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_encircling_horrors,Encircling Horrors,,,,,"In your opponent’s Movement phase, when an enemy ends a move within 8"" of a NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit, that unit can move up to D3+3"".","NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, this unit can make a normal move of up to D3+3""."
+tyranids_ambush_predators,,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_cryptophotaic_camouflage,Cryptophotaic Camouflage,,,,,"VON RYAN’S LEAPERS: −3"" detection range.","VON RYAN’S LEAPERS unit only. This unit has −3"" detection range."
+tyranids_ambush_predators,,Ambush Predators,STRATAGEM,tyranids_ambush_predators_stratagem_counterpredation_1cp,Counterpredation,,1,,,FIGHT: Attacks against a hidden unit have +1 Strength and AP.,"WHEN: Fight phase, when a friendly DEATHLEAPER/LICTOR/NEUROLICTOR/VON RYAN’S LEAPERS unit is selected to fight.
+
+TARGET: That unit.
+
+EFFECT: Your unit’s attacks that target a hidden unit have +1 Strength and AP."
+tyranids_ambush_predators,,Ambush Predators,STRATAGEM,tyranids_ambush_predators_stratagem_hypersensory_adaptations_1cp,Hypersensory Adaptations,,1,,,"SHOOTING: Select a visible enemy within 12""; it has +6"" detection range until your unit has shot.","WHEN: Start of your Shooting phase.
+
+TARGET: One friendly DEATHLEAPER/LICTOR/NEUROLICTOR/VON RYAN’S LEAPERS unit.
+
+EFFECT: Select one visible enemy unit within 12"" of your unit. That enemy unit has +6"" detection range."
+tyranids_ambush_predators,,Ambush Predators,STRATAGEM,tyranids_ambush_predators_stratagem_scanner_gheist_1cp,Scanner Gheist,,1,,,END OF ENEMY FIGHT: Place one unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit into strategic reserves.,"WHEN: End of your opponent’s Fight phase.
+
+TARGET: One friendly unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit.
+
+EFFECT: Place your unit in strategic reserves."
+tyranids,Tyranids,,ARMY_RULE,tyranids_army_rule,Synapse / Shadow in the Warp,,,,,"Synapse: 6"" of SYNAPSE. Battle-shock on 3D6. Melee +1 S.
+Shadow in the Warp: Once per battle, all enemy Battle-shock. -1 if within 6"" of SYNAPSE.","Army Rule
+SYNAPSE
+While a TYRANIDS unit from your army is within 6"" of one or more friendly SYNAPSE models, that unit is within Synapse Range of that model and of your army.
+
+While a TYRANIDS unit from your army is within Synapse Range of your army:
+- Battle-shock tests are taken on 3D6 instead of 2D6.
+- Melee attacks made by models in that unit have +1 Strength.
+
+SHADOW IN THE WARP
+Once per battle, in either player’s Command phase, if one or more units from your army with this ability are on the battlefield, you can unleash the Shadow in the Warp.
+
+When you do, each enemy unit on the battlefield must take a Battle-shock test. If that unit is within 6"" of one or more SYNAPSE units from your army, subtract 1 from that test."
+tyranids_invasion_fleet,,Invasion Fleet,ENHANCEMENT,tyranids_invasion_fleet_enhancement_adaptive_biology,Adaptive Biology,25,,,,"FNP 5+. If it starts the turn with less than starting wounds, then FNP 4+.","Tyranids model only. The bearer has the Feel No Pain 5+ ability. At the start of any turn, if the bearer has fewer than its starting number of wounds remaining, until the end of the battle, it has the Feel No Pain 4+ ability instead."
+tyranids_invasion_fleet,,Invasion Fleet,ENHANCEMENT,tyranids_invasion_fleet_enhancement_alien_cunning,Alien Cunning,30,,,,"After deployment, up to three units can redeploy. Can also put in Strategic Reserves, regardless of how many units are already in Strategic Reserves.","Tyranids model only. After both players have deployed their armies, select up to three Tyranids units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
+tyranids_invasion_fleet,,Invasion Fleet,ENHANCEMENT,tyranids_invasion_fleet_enhancement_perfectly_adapted,Perfectly Adapted,15,,,,"Each Turn, re-roll one To Hit, To Wound, Damage, Advance, Charge or one Save throw made for the bearer.","Tyranids model only. Once per turn, you can re-roll one Hit roll, one Wound roll, one Damage roll, one Advance roll, one Charge roll or one saving throw made for the bearer."
+tyranids_invasion_fleet,,Invasion Fleet,ENHANCEMENT,tyranids_invasion_fleet_enhancement_synaptic_linchpin,Synaptic Linchpin,20,,,,"Synapse 9""","Tyranids model only. While a friendly Tyranids unit is within 9"" of the bearer, that unit is within Synapse Range of your army."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_adrenal_surge,Adrenal Surge,,2,,,Critical Hits on 5+,"WHEN: Fight phase.
+
+TARGET: Up to two Tyranids units from your army that are within Synapse Range of your army and are eligible to fight, or one other Tyranids unit from your army that is eligible to fight.
+
+EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_death_frenzy,Death Frenzy,,1,,,Fight on Death on 4+,"WHEN: Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making attacks, and is then removed from play."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_endless_swarm,Endless Swarm,,1,,,Bring back Gaunts,"WHEN: Your Command phase.
+
+TARGET: Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other Endless Multitude unit from your army.
+
+EFFECT: Up to D3+3 destroyed models are returned to each of the selected units."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_overrun,Overrun,,1,,,Better Consolidation,"WHEN: Fight phase, just before a Tyranids unit from your army Consolidates.
+
+TARGET: That Tyranids unit.
+
+EFFECT: Until the end of the phase, each time a model in your unit makes a Consolidation move, it can move up to 6"" instead of up to 3"", provided your unit can end its Consolidation move in Unit Coherency and within Engagement Range of one or more enemy units. If your unit is within Synapse Range of your army and not within Engagement Range of any enemy units, instead of making that Consolidation move, it can instead make a Normal move of up to 6""."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_predatory_imperative,Predatory Imperative,,1,,,Extra Hyper-adaptation until next Command phase.,"WHEN: Your Command phase.
+
+TARGET: Up to two TYRANIDS units from your army that are within Synapse Range of your army, or one other TYRANIDS unit from your army.
+
+EFFECT: Select one Hyper-adaptation. Until the start of your next Command phase, that Hyper-adaptation is active for those selected units in addition to any other that may be active for your army.
+
+RESTRICTIONS: You cannot select the same Hyper-adaptation you selected at the start of the first battle round."
+tyranids_invasion_fleet,,Invasion Fleet,STRATAGEM,tyranids_invasion_fleet_stratagem_rapid_regeneration,Rapid Regeneration,,1,,,6+++ or 5+++,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+
+TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, until the end of the phase, models in your unit have the Feel No Pain 5+ ability instead."
+tyranids_subterranean_assault,,Subterranean Assault,ENHANCEMENT,tyranids_subterranean_assault_enhancement_synaptic_strategy,Synaptic Strategy,15,,,,Free Rapid Ingress,"Tyranids model only. Once per battle, you can target the bearer’s unit with the Rapid Ingress stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
+tyranids_subterranean_assault,,Subterranean Assault,ENHANCEMENT,tyranids_subterranean_assault_enhancement_tremor_senses,Tremor Senses,20,,,,3 units redeploy or go to reserves.,"Tyranids model only. After both players have deployed their armies, select up to three friendly Tyranids units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves."
+tyranids_subterranean_assault,,Subterranean Assault,ENHANCEMENT,tyranids_subterranean_assault_enhancement_vanguard_intellect,Vanguard Intellect,15,,,,Deepstrike Turn 1,"Tyranids model with the Deep Strike ability only. The bearer’s unit can be set up using the Deep Strike ability in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules."
+tyranids_subterranean_assault,,Subterranean Assault,ENHANCEMENT,tyranids_subterranean_assault_enhancement_trygon_prime,Trygon Prime,20,,,,"Trygon get SYNAPSE, CHARACTER, +1 Strength and +1 BS. Points and Stat changes are already included in the Trygon Prime profile.","Trygon model only. The bearer gains the Synapse keyword. Improve the Strength and Weapon Skill characteristics of melee weapons equipped by the bearer by 1.
+
+Stat changes are already included in the Trygon Prime profile."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_adaptive_optimisation,Adaptive Optimisation,,1,,,Mawloc & Trygons get SYNAPSE,"WHEN: Command phase.
+
+TARGET: One Mawloc or Trygon unit from your army.
+
+EFFECT: Until the start of your next Command phase, your unit has the Synapse keyword."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_replenishing_swarms,Replenishing Swarms,,1,,,"9"" from Tunnel regain wounds. 
+D3+1 wounds or D3+1 destroyed models.","WHEN: Your Movement phase.
+
+TARGET: One Tyranids unit from your army, wholly within 9"" of one or more Tunnel Markers you placed.
+
+EFFECT: One model in your unit regains up to D3+1 lost wounds, or you can return up to D3+1 destroyed models with a Wounds characteristic of 1 to your unit, with their full wounds remaining, instead."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_enfilading_emergence,Enfilading Emergence,,1,,,"Reinforcements and get 
+SUSTAINED 1 and IGNORES COVER","WHEN: End of your Movement phase.
+
+TARGET: One Tyranids unit from your army that was set up as Reinforcements this turn.
+
+EFFECT: Until the end of your next Fight phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_tunnel_network,Tunnel Network,,1,,,"Move from one Tunnel to another.
+ALWAYS AFTER RAPID INGRESS","WHEN: End of your Movement phase.
+
+TARGET: One Tyranids unit from your army that is wholly within 9"" of one or more of your Tunnel Markers.
+
+EFFECT: Remove your unit from the battlefield and set it up again, wholly within 9"" of another Tunnel Marker you placed, and more than 6"" horizontally away from all enemy units.
+
+RULES: See SEQUENCING. Rapid Ingress will happen before this."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_swarming_assault,Swarming Assault,,1,,,"Reinforcements and MONSTERS 
+ALL units within 6"" re-roll charges","WHEN: Your Charge phase.
+
+TARGET: One Tyranids Monster unit from your army that was set up as Reinforcements this turn.
+
+EFFECT: Until the end of the phase, friendly Tyranids units within 6"" of your unit can re-roll Charge rolls."
+tyranids_subterranean_assault,,Subterranean Assault,STRATAGEM,tyranids_subterranean_assault_stratagem_retreat_below,Retreat Below,,1,,,"Two BURROWERS or one other unit
+Go back to Reserves","WHEN: End of your opponent’s Fight phase.
+
+TARGET: One Tyranids unit or up to two Burrower units from your army that are not within Engagement Range of one or more enemy units.
+
+EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_destabilising_predation,Destabilising Predation,,,,,NORN EMISSARY unit only. Ranged attacks have [ANTI‑CHARACTER 2+].,NORN EMISSARY unit only. This unit’s ranged attacks have [ANTI‑CHARACTER 2+].
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,ENHANCEMENT,tyranids_talons_of_the_norn_queen_enhancement_synapto_prescience,Synapto Prescience,,,,,NORN ASSIMILATOR unit only. This unit has a 4+ invulnerable save.,NORN ASSIMILATOR unit only. This unit has 4+ InSv.
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,STRATAGEM,tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,Catalytic Biofortification,,1,,,"ANY PHASE: When a NORN ASSIMILATOR suffers a mortal wound, that unit has Feel No Pain 4+ against mortal wounds.","WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
+
+TARGET: That NORN ASSIMILATOR unit.
+
+EFFECT: Your unit has Feel No Pain 4+ against mortal wounds."
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,STRATAGEM,tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,Lesser Prey,,1,,,"FIGHT: When a NORN ASSIMILATOR or NORN EMISSARY unit is selected to fight, its melee attacks have +2 Strength.","WHEN: Fight phase, when a friendly NORN ASSIMILATOR/NORN EMISSARY unit is selected to fight.
+
+TARGET: That NORN ASSIMILATOR/NORN EMISSARY unit.
+
+EFFECT: Your unit’s melee attacks have +2 S."
+tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,STRATAGEM,tyranids_talons_of_the_norn_queen_stratagem_tanglestrike_rounds_1cp,Tanglestrike Rounds,,1,,,"SHOOTING: After a NORN ASSIMILATOR has shot, select an enemy hit by those attacks; that enemy is tethered until your next Command phase and has –2″ M.","WHEN: Your Shooting phase, when a friendly NORN ASSIMILATOR unit has shot.
+
+TARGET: That NORN ASSIMILATOR unit.
+
+EFFECT: Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase. While a unit is tethered, that unit has –2″ M."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_hunting_grounds,Hunting Grounds,20,,,,Enemy from Reserves take Battle-shock,"TYRANIDS model only. While the bearer is on the battlefield, each time your opponent sets up a Reserves unit on the battlefield, roll one D6: on a 2+, that unit must take a Battle-shock test."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_chameleonic,Chameleonic,15,,,,Stealth and Cover for Unit,"VANGUARD INVADER model only. The bearer has the Stealth ability and each time a ranged attack targets the bearer’s unit, models in that unit have the Benefit of Cover against that attack."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_stalker,Stalker,10,,,,Select Enemy = +1 To Hit and +1 To Wound,"VANGUARD INVADER model only. At the start of the battle, select one enemy unit. Each time the bearer makes an attack that targets that enemy unit, add 1 to the Hit roll and add 1 to the Wound roll."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_neuronode,Neuronode,20,,,,Redeploy units,"TYRANIDS model only. After both players have deployed their armies, you can select up to three VANGUARD INVADER units from your army and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_surprise_assault,Surprise Assault,,1,,,"Shooting of Fight
++1 To Hit & Enemy Battle-shock
+If battle-shocked +1 To Wound","WHEN: Your Shooting phase or the Fight phase, just after a VANGUARD INVADER unit from your army has selected its targets.
+
+TARGET: That VANGUARD INVADER unit.
+
+EFFECT: Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_assassin_beasts,Assassin Beasts,,1,,,Unit gets PRECISION,"WHEN: Fight phase.
+
+TARGET: One VANGUARD INVADER INFANTRY unit from your army that has not been selected to fight this phase.
+
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_seeded_broods,Seeded Broods,,1,,,Arrive early from Reserves,"WHEN: Your Movement phase.
+
+TARGET: One TYRANIDS unit from your army that is in Reserves, or up to two VANGUARD INVADER units from your army that are in Reserves.
+
+EFFECT: Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_hypersensory_scillia,Hypersensory Scillia,,2,,,Reactive Move,"WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
+
+TARGET: Up to two VANGUARD INVADER units from your army that are within 9"" of that enemy unit, or one other TYRANIDS INFANTRY unit from your army that is within 9"" of that enemy unit.
+
+EFFECT: Those selected units can each make a Normal move of up to 6"".
+
+RESTRICTIONS: You cannot target units that are within Engagement Range of one or more enemy units."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_unseen_lurkers,Unseen Lurkers,,1,,,"Lone Op 18"" or 6"" if already Lone Op","WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+
+TARGET: One VANGUARD INVADER unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
+
+EFFECT: Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18"" or, if your unit has the Lone Operative ability, if the attacking model is within 6"". Your opponent can select new targets for the attacking unit’s attacks."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_invisible_hunter,Invisible Hunter,,1,,,Return to Reserves,"WHEN: End of your opponent’s Fight phase.
+
+TARGET: Up to two VANGUARD INVADER units from your army, or one TYRANIDS INFANTRY unit from your army.
+
+EFFECT: Remove the targeted units from the battlefield and place them into Strategic Reserves.
+
+RESTRICTIONS: The targeted units must be more than 3"" away from all enemy units."
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. Melee attacks re‑roll wound rolls and have +1 AP.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,,,,,Winged Tyranid Prime/Tyranid Prime with Lash Whip model only. This unit’s melee attacks have +1 to hit rolls.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: When a Tyranid Warriors unit is targeted by an attack with Strength greater than its Toughness, those attacks have –1 to wound rolls.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
+
+TARGET: That TYRANID WARRIORS unit.
+
+EFFECT: Attacks that target your unit with a Strength greater than your unit’s Toughness have –1 to wound rolls."
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_synaptic_micronodes_1cp,Synaptic Micronodes,,1,,,End of Movement: One Tyranid Warriors unit secures an objective it controls.,"WHEN: End of your Movement phase.
+
+TARGET: One friendly TYRANID WARRIORS unit.
+
+EFFECT: Select one objective your unit is controlling. That objective is secured."
+tyranids_warrior_bioform_onslaught,,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,Parasitic Payload,,1,,,Shooting: A Tyranid Warriors unit’s ranged attacks have [IGNORE COVER].,"WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
+
+TARGET: That TYRANID WARRIORS unit.
+
+EFFECT: Your unit’s ranged attacks have [IGNORE COVER]."

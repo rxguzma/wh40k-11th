@@ -1,0 +1,110 @@
+Ability_ID,Ability Name,Short Description,Long Description
+ADAPTABLE_PREDATORS,Adaptable Predators,"Fall back, Shoot and Charge",This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
+ADAPTIVE_INSTINCTS,Adaptive Instincts,"In Fight phase:
+- Aggression: Re-roll a Hit roll of 1.
+- Bioregeneration: Until the end of the phase, re-roll a saving throw of 1.","In Fight phase:
+- Aggression: Re-roll a Hit roll of 1.
+- Bioregeneration: Until the end of the phase, re-roll a saving throw of 1."
+ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,"Weapons equipped by models in this unit have
+the [SUSTAINED HITS 1] ability."
+ALPHA_LEADER,Alpha Leader,Leading = Unit re-rolls the Hit roll.,"While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll."
+ALPHA_WARRIOR,Alpha Warrior,Unit gains [SUSTAINED HITS 1] ability.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+BIO_STIMULUS,Bio-stimulus,"Shoot an enemy, then, in MELEE, 
+ALL Tyranids have extra -1 AP","In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly Tyranids unit makes a melee attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per turn."
+BLISTERING_ASSAULT,Blistering Assault,"Lost a wound to ANY shots.
+Move D6+2"" to CLOSEST Enemy
+Ok to end in Engagement.","Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit lost one or more wounds as a result of those attacks, this unit can make a Blistering Assault move. 
+
+If it does, roll one D6, adding 2 to the result: each model in this unit can be moved a distance in inches up to the result, but this unit must finish that move as close as possible to the closest enemy unit. 
+
+When doing so, those models can be moved within Engagement Range of that enemy unit. Each unit can only make one Blistering Assault move per phase."
+BOUNDING_LEAP,Bounding Leap,TBD Short text,
+BROOD_PROGENITOR_AURA_AND_PSYCHIC,Brood Progenitor (Aura and Psychic),"Termagant 6"" RANGED have [LETHAL HITS]","Brood Progenitor (Aura, Psychic): While a friendly Termagants unit is within 6"" of this model, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability."
+BURNING_SPRAY,Burning Spray,TBD Short text,
+DEATH_BLOW,Death Blow,"If destroyed by - and if it has not fought, roll one D6: on a 4+, it can fight before it's removed.","If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+DEATH_FROM_BELOW,Death From Below,"At the end of enemy turn, if not within Engagement, remove from battlefield and place into Strategic Reserves.","At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves."
+DEATH_SCREAM,Death Scream,"In Shooting, after shooting, select one enemy to take Battle-shock with -1.","In your Shooting phase, after this model has shot, select one unit hit by one or more of those attacks. That unit must take a Battle-shock test, subtracting 1 from that test."
+DEFENSIVE_STANCE,Defensive Stance,Overwatch on 5+ or 4+ if on objective.,"Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+, or unmodified Hit rolls of 4+ instead if this unit is within range of an objective marker."
+DOMINATION_OF_THE_HIVE_MIND_AURA,Domination of the Hive Mind (Aura),"9"" have Synapse","Domination of the Hive Mind: While a friendly Tyranids unit is within 9"" of this model, that unit is within your army’s Synapse Range."
+ENCEPHALIC_DIFFUSION_AURA_AND_PSYCHIC,Encephalic Diffusion (Aura and Psychic),TBD Short text,
+FEAR_OF_THE_UNSEEN_AURA,Fear of the Unseen (Aura),"While within 6"", enemy is LD -1.
+Also, if below Starting strength, take battle-shock test in enemy Command Phase","While an enemy unit is within 6"" of this model, worsen the Leadership characteristic of models in that unit by 1.
+
+In addition, in the Battle-shock step of your opponent’s Command phase, if such an enemy unit is below its Starting Strength, it must take a Battle-shock test."
+FEEDER_TENDRILS,Feeder Tendrils,"When this model destroys a Character, you gain 1CP.","Each time this model destroys an enemy Character model, you gain 1CP."
+FEEDING_FRENZY,Feeding Frenzy,"Each Melee vs a unit below its Starting Strength, add +1 To Hit.
+
+If target is also Below Half-strength, add +1 To Wound.","Each time this model makes a - attack that targets a unit that is below its Starting Strength, add 1 to the Hit roll. 
+
+If that target is also Below Half-strength, add 1 to the Wound roll as well."
+GRASPING_TENDRILS,Grasping Tendrils,TBD Short text,
+GRISLY_SPECTACLE,Grisly Spectacle,"Destroy a model, all take battle shock within 6""","Each time this model is selected to fight, after resolving its attacks, if one or more enemy units were destroyed by those attacks, each enemy unit within 6"" of this model must take a Battle-shock test."
+GUARDIAN_ORGANISM,Guardian Organism,TBD Short text,
+HIVE_COMMANDER,Hive Commander,"At start of Command Phase, gain 1 CP.","At the start of your Command phase, if this model is on the battlefield, you gain 1CP."
+HYPERSENSORY_ARRAY,Hypersensory Array,Free Rapid Ingress and Free Heroic Intervention even if already used the stratagem,"Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn."
+HYPERTOXIC_MIASMA_AURA,Hypertoxic Miasma (Aura),TBD Short text,
+HYPNOTIC_GAZE_PSYCHIC,Hypnotic Gaze (Psychic),"Fight phase, select enemy within Engagement Range: -1 To Hit.","At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a model in that unit makes an attack, subtract 1 from the Hit roll."
+LEADING_GENESTEALERS,Leading Genestealers,"Leading Genestealers: 
+Re-roll To Hit of 1.
+Target on obj, re-roll To Wound of 1","Re-roll To Hit of 1.
+Target on obj, re-roll To Wound of 1"
+MALIGN_PRESENCE_AURA,Malign Presence (Aura),"12"" cost +1 CP","If this model is your WARLORD, each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP."
+NEURAL_DISRUPTION,Neural Disruption,"Battleshock within12""","In your Command phase, select one enemy unit within 12"" of this model. That unit must take a Battle-shock test."
+NEUROCYTES,Neurocytes,Extends Synapse,"While this unit is within Synapse Range of a friendly TYRANIDS unit (excluding NEUROGAUNT units), it has the SYNAPSE keyword."
+NEUROLOIDS,Neuroloids,"In Command, select 2 units within 18"", they will stay in synapse.","In your Command phase, you can select up to two friendly TYRANIDS units within 18"" of this model’s unit. Until the start of your next Command phase, the selected units are always considered to be within Synapse Range of your army."
+NODE_LASH_PSYCHIC,Node Lash (Psychic),"Leading = +1 To Hit.
+Target Battle-shocked = +1 To Wound.","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll. If the target is Battle-shocked, add 1 to the Wound roll as well."
+ONSLAUGHT_AURA_PSYCHIC,Onslaught (Aura + Psychic),TBD Short text,
+PAROXYSM_PSYCHIC,Paroxysm (Psychic),"Start of Fight, select enemy within 12"" and visible. Roll D6: on a 1, this Psyker suffers D3 mortal; 2+, until the end of the phase, subtract 1 from the Attacks of weapons in that unit.","At the start of the Fight phase, you can select one enemy unit within 12"" of and visible to this model and roll one D6: on a 1, this Psyker suffers D3 mortal wounds; on a 2+, until the end of the phase, subtract 1 from the Attacks characteristic of weapons equipped by models in that unit."
+PHEROMONE_TRAIL,Pheromone Trail,"Once per battle round, Rapid Ingress Stratagem for 0CP.","Once per battle round, you can target one model with this ability with the Rapid Ingress Stratagem for 0CP."
+POUNCING_LEAP,Pouncing Leap,Can use Heroic Intervention for Free. Even if it was already used.,"You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase."
+PSYCHIC_TERROR_PSYCHIC,Psychic Terror (Psychic),"If a Neurotyrant is on the battlefield, Shadow in the Warp, subtract -1 from the Battle-shock test of enemy.","If one or more models from your army with this ability are on the battlefield when you unleash the Shadow in the Warp, subtract 1 from the Battle-shock test each enemy unit on the battlefield must take as a result."
+PSYCHOLOGICAL_SABOTEUR_AURA,Psychological Saboteur (Aura),"If Battleshock: -1 from Hit rolls, +1 To Wound them","While an enemy unit is within 12"" of this model, if that unit is Battle-shocked:
+- Each time a model in that unit makes an attack, subtract 1 from the Hit roll.
+- Each time a friendly TYRANIDS model makes an attack that targets that unit, add 1 to the Wound roll."
+RAVENER_PRIME,Ravener Prime,"Prime Wounds = 6
+Prime Claws and talons","Prime Wounds = 6
+Prime Claws and talons"
+RESILIENT_ORGANISM,Resilient Organism,"Once per Battle, Damage is 0","Once per battle, when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+SEED_SPORE_MINES,Seed Spore Mines,"Instead of Shooting, set up a Spore mine anywhere within 48"" and 8"" away from enemy.","Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new SPORE MINES unit to your army and set it up anywhere on the battlefield that is wholly within 48"" of this unit and more than 8"" horizontally away from all enemy units. That SPORE MINES unit contains 1 model for each model in this unit."
+SERPENTINE_FIEND,Serpentine Fiend,Move through terrain; can move on RUINS floors if base does not overhang,"This model can move through terrain features, but cannot end a move within a wall, a floor, etc. This model can be set up or end a move on any floor level of RUINS, but if that level is not the ground floor, it can only do so if its base does not overhang the floor at that level."
+SINGULAR_PURPOSE,Singular Purpose,Pick an enemy unit (reroll Hit/Wound vs it) or an objective (FNP 5+ and OC 15 on it).,"At the start of the first battle round, select one of the following:
+• Select one enemy unit. Until the end of the battle, each time this model makes an attack that targets that unit, you can re-roll the Hit roll and you can re-roll the Wound roll.
+• Select one objective marker. Until the end of the battle, while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15."
+SKULKING_HORRORS,Skulking Horrors,TBD Short text,
+SPAWN_TERMAGANTS,Spawn Termagants,"Command Phase: Termagaunts 6"" generate D3+3","In your Command phase, you can select one friendly Termagants unit within 6"" of this model and return up to D3+3 destroyed Termagant models to that unit. A Termagants unit cannot be selected for this ability more than once per phase."
+SPIRIT_LEECH_AURA_AND_PSYCHIC,Spirit Leech (Aura & Psychic),"EACH TIME, Enemy 6"" fails a Battle-shock, it suffers D3 mortal wounds and it regains up to D3 wounds.","Spirit Leech (Aura, Psychic): While an enemy unit is within 6"" of this unit, if this unit contains a Neurothrope, each time that enemy unit fails a Battle-shock test, it suffers D3 mortal wounds and one model in this unit regains up to D3 lost wounds."
+SPORE_MINES,Spore Mines,"M T SV W LD OC
+4"" 1 7+ 1 8+ 0
+Enemy cannot start/end Advance within 6"". Also, if it ends within 3"", roll a D6. 2-5 = 1 mortal, 6 = D3 mortal.","M T SV W LD OC
+4"" 1  7+  1  8+  0
+
+Bio-minefield: Enemy units cannot start or end an Advance move within 6"" of this unit.
+
+Floating Death: Each time an enemy unit ends a move within 3"" of a model in this unit, and each time a model in this unit ends a move within 3"" of an enemy unit, roll one D6: on a 2-5, that enemy unit suffers 1 mortal wound; on a 6, that enemy unit suffers D3 mortal wounds. The model in this unit that caused that roll is then destroyed."
+SUBTERRANEAN_HUNTER,Subterranean Hunter,"End of Fight: if not in Engagement, go to Strategic Reserves","At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves."
+SUBTERRANEAN_TUNNELS,Subterranean Tunnels,"Deep Strike more 6"". 
+If setup within 9"" it cannot Charge.","In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel.
+
+If it does, this model can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the"
+LEADER_BROODLORD,Leader: Broodlord,LEADER: GENESTEALERS,LEADER: GENESTEALERS
+LEADER_HIVE_TYRANT,Leader: Hive Tyrant,LEADER: TYRANT GUARD,LEADER: TYRANT GUARD
+LEADER_HYPERADAPTED_RAVENERS,Leader: Hyperadapted Raveners,LEADER: RAVENERS,LEADER: RAVENERS
+LEADER_NEUROTYRANT,Leader: Neurotyrant,"LEADER: NEUROGAUNTS, TYRANT GUARD, ZOANTHROPES","LEADER: NEUROGAUNTS, TYRANT GUARD, ZOANTHROPES"
+LEADER_OLD_ONE_EYE,Leader: Old One Eye,LEADER: CARNIFEXES,LEADER: CARNIFEXES
+LEADER_THE_SWARMLORD,Leader: The Swarmlord,LEADER: TYRANT GUARD,LEADER: TYRANT GUARD
+LEADER_WINGED_TYRANID_PRIME,Leader: Winged Tyranid Prime,"LEADER: GARGOYLES, TYRANID WARRIORS WITH MELEE BIO-WEAPONS, TYRANID WARRIORS WITH RANGED BIO-WEAPONS","LEADER: GARGOYLES, TYRANID WARRIORS WITH MELEE BIO-WEAPONS, TYRANID WARRIORS WITH RANGED BIO-WEAPONS"
+SWALLOW_WHOLE,Swallow Whole,"Critical Wounds vs INFANTRY, MOUNTED or BEASTS; regain D3+2 wounds","Each time an attack with this model’s gaping maw targets an INFANTRY, MOUNTED or BEASTS unit, each successful unmodified Wound roll is a Critical Wound. Each time an INFANTRY, MOUNTED or BEASTS model is destroyed as a result of an attack made by this model’s gaping maw, this model regains up to D3+2 lost wounds."
+SYMBIOTIC_TARGETING,Symbiotic Targeting,TBD Short text,
+TERROR_FROM_THE_DEEP,Terror From The Deep,TBD Short text,
+TRYGON_PRIME,Trygon Prime,Trygon Prime  Enhancement included in points and weapon profiles.,"Trygon Prime  Enhancement included in points and weapon profiles. Including the CHARACTER, SYNAPSE +1 WS and +1 Strength."
+UNNATURAL_RESILIENCE,Unnatural Resilience,TBD Short text,
+UNSTOPPABLE_MONSTER,Unstoppable Monster,"EACH Command, regain D3 wounds.","At the start of each player’s Command phase, this model regains up to D3 lost wounds."
+VANGUARD_PREDATOR,Vanguard Predator,"Re-roll To Hit of 1.
+Target on obj, re-roll To Wound of 1","Each time a model in this unit makes an attack, re-roll a Hit roll of 1. 
+If the target is within range of one or more objective markers, re-roll a Wound roll of 1 as well."
+VICIOUS_INSIGHT,Vicious Insight,Leading. Unit has [DEVASTATING WOUNDS].,"While this model is leading a unit, weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability."
+WARP_FIELD_AURA_AND_PSYCHIC,Warp Field (Aura & Psychic),"FRIENDLY 6"" have 6++","Warp Field (Aura, Psychic): While a friendly TYRANIDS unit is within 6"" of this unit, models in that unit have a 6+ invulnerable save."
+WILL_OF_THE_HIVE_MIND,Will of the Hive Mind,"Once per battle round, units within 12"" have -1 CP cost.","Once per battle round, one model from your army with this ability can use it when a friendly Tyranids unit within 12"" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP"
+WINGED_SWARM,Winged Swarm,TBD Short text,
+HARPOON_BARBS,Harpoon Barbs,"Once per turn, enemy that Falls Back from Engagement: 2+ suffers D6 mortal wounds.","Once per turn, when an enemy unit within Engagement Range of this model is selected to Fall Back, roll one D6: on a 2+, that unit suffers D6 mortal wounds."
