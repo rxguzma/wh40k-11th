@@ -172,7 +172,7 @@ WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-bla
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.
 AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
 AMMO_RUNTS,Ammo Runts,Once per battle: +1 to Hit Ranged,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
-BEASTSCENT,Beastscent (Psychic Level 1),Disembarking unit gets +1 to wound vs MONSTER/VEHICLE (risk battle-shock on 1),"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+BEASTSCENT,Beastscent (Wurrboy Psychic Level 1),"Disembarking= +1 to wound vs MONSTER/VEHICLE  Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER/VEHICLE unit have +1 to wound rolls until the end of the turn"
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
@@ -265,10 +265,8 @@ WAAAGH_EFFIGY,Waaagh! Effigy,This unit is always riled up,This unit is riled up.
 WARPATH,Warpath (Psychic Level 1),Melee attacks gain [LETHAL HITS] and [PSYCHIC] (risk battle-shock on 1),"In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC]."
-WURRBOY,Wurrboy (Psyker Level 1),Has the psychic abilities Beastscent and Warpath,This model has the psychic abilities listed in the Psychic Abilities section (see left).
 TIDE_OF_MUSCLE,Tide of Muscle,If charged this turn: melee attacks have [LETHAL HITS],"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS]."
 NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,Engaged does not prevent starting an action,Being engaged does not prevent this unit from being eligible to start an action.
-
 ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Attacks targeting this unit have -1 AP,Attacks that target this unit have -1 AP
 BIG_AN_SHOOTY,Big an’ Shooty,Ranged attacks can re-roll hit rolls of 1,This unit’s ranged attacks can re-roll hit rolls of 1.
 BIG_AN_STOMPY,Big an’ Stompy,Melee attacks can re-roll hit rolls of 1,This unit’s melee attacks can re-roll hit rolls of 1.
