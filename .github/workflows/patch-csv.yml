@@ -1,6 +1,10 @@
 name: Patch CSV
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-csv.yml'
   workflow_dispatch:
     inputs:
       patches:
@@ -27,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              sys.exit('patches input is empty')
+              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ROKKIT_CHARGE","column":"Short Description","value":"Charge = +1 A, +1 S and [HAZARDOUS] in Melee."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
