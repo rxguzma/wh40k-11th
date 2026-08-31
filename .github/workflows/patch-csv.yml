@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability Name","row_id":"Waaagh! Energy","mode":"delete"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"WEIRDBOY","column":"Ability_IDs","value":"DA_JUMP"}]'
+              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"WARPATH_WEIRDBOY","sets":{"Short Description":"Psychic: In Melee, TEST and on 2+ re-roll wound rolls of 1 and have [PSYCHIC].","Long Description":"Warpath (psychic level 1): In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6.\u00a0  If you do: - On a 1, this unit is battle-shocked. - This unit\u0027s melee attacks can re-roll wound rolls of 1. - This unit\u0027s melee attacks have [PSYCHIC]."}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
