@@ -380,23 +380,23 @@ EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, if your unit is riled up, up to 6""."
 
-orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,,"Destroyed WARBOSS fights on 3+ if not selected to fight (2+ if riled up).","When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is riled up.
+orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,,Destroyed WARBOSS fights on 3+ if not selected to fight (2+ if riled up).,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is riled up.
 - On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield."
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,,,,,"INFANTRY WARBOSS. Once per battle, per army: after this model is destroyed, on a 2+ return it with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining."
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',,,,,"WARBOSS model only. This model's melee attacks have +1 D.","WARBOSS model only. This model's melee attacks have +1 D."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',,,,,WARBOSS model only. This model's melee attacks have +1 D.,WARBOSS model only. This model's melee attacks have +1 D.
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,,,,,"WARBOSS. A TRANSPORT this unit is embarked within (excluding WALKER) has +2"" M and 5+ InSv.","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
 - +2"" M
 - 5+ InSv."
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,,,,,"WARBOSS model only. Re-roll hit rolls of 1.","WARBOSS model only. This model can re-roll hit rolls of 1."
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,,,,,WARBOSS model only. Re-roll hit rolls of 1.,WARBOSS model only. This model can re-roll hit rolls of 1.
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,,,,,"WARBOSS. Once per battle, per army: end of opponent's Movement phase, if unengaged, Normal move up to D6""; if riled up, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
 - Up to D6"".
 - If this unit is riled up, you can re-roll that D6."
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,,,,,"WARBOSS model only. Gains Da Gobshot Thunderbuss.","WARBOSS model only. This model has the following weapon:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,,,,,WARBOSS model only. Gains Da Gobshot Thunderbuss.,"WARBOSS model only. This model has the following weapon:
 Da Gobshot Thunderbuss [LETHAL HITS: non-MONSTER/VEHICLE, RAPID FIRE 6]
 Range 24"", A 6, BS 4+, S 7, AP -2, D 2."
 
-orks_wurrband,Orks,Wurrband,DETACHMENT_RULE,orks_wurrband_detachment_rule_powers_of_da_waaagh,POWERS OF DA WAAAGH!,,,,,"ORKS PSYKER [PSYCHIC] attacks gain +1 S, plus +1 S per 5 models in/embarked with the unit. ORKS PSYKERS gain Roar of Mork and Visions of Violence.","Friendly ORKS PSYKER models' [PSYCHIC] attacks have:
+orks_wurrband,Orks,Wurrband,DETACHMENT_RULE,orks_wurrband_detachment_rule_powers_of_da_waaagh,POWERS OF DA WAAAGH!,,,1,,"ORKS PSYKER [PSYCHIC] attacks gain +1 S, plus +1 S per 5 models in/embarked with the unit. ORKS PSYKERS gain Roar of Mork and Visions of Violence.","Friendly ORKS PSYKER models' [PSYCHIC] attacks have:
 - +1 S.
 - +1 S for every 5 models in this unit (or embarked within this model).
 
@@ -419,7 +419,7 @@ orks_wurrband,,Wurrband,ENHANCEMENT,orks_wurrband_enhancement_warphead,WARPHEAD,
 - Has psyker level 2.
 - Has Deadly Demise D6.
 - Can re-roll psychic rolls."
-orks_runt_swarm,Orks,Runt Swarm,DETACHMENT_RULE,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,,,,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
+orks_runt_swarm,Orks,Runt Swarm,DETACHMENT_RULE,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,,,1,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
 When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action."
 orks_runt_swarm,,Runt Swarm,ENHANCEMENT,orks_runt_swarm_enhancement_extra_sneaky,EXTRA SNEAKY,,,,,"GRETCHIN unit only. This unit has -3"" detection range.","GRETCHIN unit only. This unit has -3"" detection range."
 orks_runt_swarm,,Runt Swarm,ENHANCEMENT,orks_runt_swarm_enhancement_minefield_detail,MINEFIELD DETAIL,,,,,"GRETCHIN unit only. While not embarked, this unit has Scouts 6"".","GRETCHIN unit only. While this unit is not embarked, this unit has Scouts 6""."
@@ -440,7 +440,7 @@ orks_runt_swarm,,Runt Swarm,STRATAGEM,orks_runt_swarm_stratagem_grot_shields_1cp
 TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
 
 EFFECT: When a hit roll for that enemy unit's ranged attacks that target that ORKS unit results in a hit, if a model in your GRETCHIN unit is on the battlefield, end the attack sequence for that attack and your GRETCHIN unit suffers 1 mortal wound."
-orks_shoota_boyz,Orks,Shoota Boyz,DETACHMENT_RULE,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,,,,,"ORKS INFANTRY ranged attacks have [ASSAULT]. While riled up, ranged attacks have +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
+orks_shoota_boyz,Orks,Shoota Boyz,DETACHMENT_RULE,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,,,1,,"ORKS INFANTRY ranged attacks have [ASSAULT]. While riled up, ranged attacks have +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
 - [ASSAULT].
 - While this unit is riled up, +3"" R."
 orks_shoota_boyz,,Shoota Boyz,ENHANCEMENT,orks_shoota_boyz_enhancement_supa_glowy_fing,SUPA-GLOWY FING,,,,,"ORKS INFANTRY model (excluding MEKBOY): ranged attacks gain [ANTI-INFANTRY 4+], [DEVASTATING WOUNDS], and [SUPA-HAZARDOUS].","ORKS INFANTRY model only (excluding MEKBOY models). This model's ranged attacks have:
