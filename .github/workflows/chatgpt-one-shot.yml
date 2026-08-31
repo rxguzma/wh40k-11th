@@ -1,0 +1,41 @@
+name: ChatGPT One-Shot Battlewagon Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/chatgpt-one-shot.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-battlewagon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply exact CSV change
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("data/orks/Abilities.csv")
+          text = path.read_text(encoding="utf-8")
+          old = 'TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport capacity 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",'
+          new = 'TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",'
+
+          count = text.count(old)
+          if count != 1:
+              raise SystemExit(f"Expected exactly one target row prefix, found {count}")
+
+          path.write_text(text.replace(old, new), encoding="utf-8")
+
+      - name: Commit requested change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/orks/Abilities.csv
+          git diff --cached --exit-code && exit 0
+          git commit -m "Update Battlewagon transport short description"
+          git push
