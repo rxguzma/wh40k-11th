@@ -254,7 +254,7 @@ MOBILE_FORTRESS,Mobile Fortress,Ranged attacks targeting this model have -1 Dama
 NOWHERE_TO_HIDE,Nowhere to Hide,Attacks against hidden units have +1 to hit,This unit’s attacks that target a hidden unit have +1 to hit rolls.
 PAIRED_KRUMPAS,Paired Krumpas,Kustom Krumpa attacks can re-roll hit and wound rolls,Attacks made with this model’s Kustom Krumpa weapon can re-roll hit rolls and wound rolls.
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll."
-ROKKIT_CHARGE,Rokkit Charge,"If charged this turn: melee get +1 A, +1 S and [HAZARDOUS]","When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
+ROKKIT_CHARGE,Rokkit Charge,"Charge = +1 A, +1 S and [HAZARDOUS] in Melee.","When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]"
 SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (not Wartrakk): gains Lone Operative","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative."
