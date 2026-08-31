@@ -307,10 +307,7 @@ DA_JUMP,Da Jump,Psychic: on 2+ place in Strategic Reserves and gain Deep Strike.
 - On a 1, this unit is battle-shocked.
 - Place this unit in strategic reserves.
 - This unit has Deep Strike."
-WARPATH_WEIRDBOY,Warpath,Psychic: melee re-roll wound rolls of 1 and [PSYCHIC].,"Warpath (psychic level 1): In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
-- On a 1, this unit is battle-shocked.
-- This unit's melee attacks can re-roll wound rolls of 1.
-- This unit's melee attacks have [PSYCHIC]."
+WARPATH_WEIRDBOY,Warpath,"Psychic: In Melee, TEST and on 2+ re-roll wound rolls of 1 and have [PSYCHIC].","Warpath (psychic level 1): In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6.   If you do: - On a 1, this unit is battle-shocked. - This unit's melee attacks can re-roll wound rolls of 1. - This unit's melee attacks have [PSYCHIC]."
 DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, Ingress from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move."
 BOSS_AMMO_RUNT,Boss' Ammo Runt,Once per battle: +1 to hit on this model’s ranged attacks.,"Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls.Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used."
 COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa + Kustom Shoota.,"UNIT COMPOSITION: 1 Warboss model.
