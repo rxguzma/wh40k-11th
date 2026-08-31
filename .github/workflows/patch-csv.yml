@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_runt_swarm","column":"DP_Cost","value":"1"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_shoota_boyz","column":"DP_Cost","value":"1"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wurrband","column":"DP_Cost","value":"1"}]'
+              raw = '[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_runt_swarm_detachment_rule_sneaky_little_gitz","column":"DP_Cost","value":"1"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_shoota_boyz_detachment_rule_dakka_dakka_dakka","column":"DP_Cost","value":"1"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_wurrband_detachment_rule_powers_of_da_waaagh","column":"DP_Cost","value":"1"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
