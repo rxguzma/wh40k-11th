@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"WARPATH","column":"Ability Name","value":"Warpath (Psychic Lvl 1)"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"WARPATH","column":"Short Description","value":"Melee attacks gain [LETHAL HITS] and [PSYCHIC] Test on D6, battle-shock on a 1"}]'
+              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEASTSCENT","column":"Ability Name","value":"Beastscent (Wurrboy Psychic Lvl 1)"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEASTSCENT","column":"Short Description","value":"Disembarking= +1 to wound vs MONSTER/VEHICLE  Test on D6, battle-shock on a 1"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
