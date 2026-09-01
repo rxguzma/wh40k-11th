@@ -1,0 +1,4 @@
+Unit_ID,Option_Group_ID,Group_Label,Option_ID,Option_Name,Weapon_IDs,Default,Sort_Order
+GUNWAGON,MAIN_GUN,Main Gun,KILLKANNON,Killkannon,KILLKANNON,TRUE,1
+GUNWAGON,MAIN_GUN,Main Gun,ZZAP_GUN,Zzap Gun,ZZAP_GUN,FALSE,2
+GUNWAGON,MAIN_GUN,Main Gun,KANNON_FRAG,Kannon - Frag,"KANNON_FRAG, KANNON_SHELL",FALSE,3
