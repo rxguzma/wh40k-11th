@@ -238,7 +238,7 @@ FOUND_EM,Found ’Em!,"Movement: select enemy 12"" → +3"" detection range unti
 Place one Accusatory Grot token next to that enemy unit to remind you."
 GET_OUT_DA_WAY,Get Out da Way!,Can Charge while moving thru models except MONSTER/VEHICLE,"While making a charge move, this unit can move through models (excluding MONSTER/VEHICLE models)."
 HIGH_SPEED_CARNAGE,High-speed Carnage,If charged this turn: melee +1 S and +1 D,"If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D."
-IDOL_OF_BELLIGERENCE,Idol of Belligerence,Embarked unit that disembarks becomes riled up until start of your next turn,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is riled up until the start of your next turn."
+IDOL_OF_BELLIGERENCE,Idol of Belligerence,Disembarking units are RILED UP,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is riled up until the start of your next turn."
 INFILTRATORS,Infiltrators,CORE: Infiltrators,CORE: Infiltrators
 INVULNERABLE_SAVE_4,Invulnerable Save 4+,INVULNERABLE SAVE 4+,INVULNERABLE SAVE 4+
 INVULNERABLE_SAVE_5,Invulnerable Save 5+,INVULNERABLE SAVE 5+,INVULNERABLE SAVE 5+
@@ -258,7 +258,7 @@ SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (not Wart
 STEALTH,Stealth,CORE: Stealth,CORE: Stealth
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability."
-WAAAGH_EFFIGY,Waaagh! Effigy,This unit is always riled up,This unit is riled up.
+WAAAGH_EFFIGY,Waaagh! Effigy,This unit is always RILED UP,This unit is riled up.
 WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and [PSYCHIC] Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC]."
@@ -349,9 +349,7 @@ SUPPORT_SHOKKA,Support Shokka,"Lone Operative within 3"" of friendly Orks Infant
 EVEN_MORE_DAKKA,Even More Dakka,RILED UP= [SUSTAINED HITS 1] in Ranged.,"If this unit is riled up, this unit's ranged attacks have [SUSTAINED HITS 1]."
 BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER/VEHICLE +6 A.,"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER/VEHICLE units), that weapon has +6 A."
 KUSTOM_DAKKA,Kustom Dakka,This unit's ranged attacks have [IGNORES COVER].,This unit's ranged attacks have [IGNORES COVER].
-CLEVER_KNOW_WOTZ,Clever Know-wotz,"Buff a Vehicle within 3"": heal D3 and +1 to hit until next Movement.","In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS VEHICLE model (excluding AIRCRAFT/TITANIC models) within 3"" of this model:
-- That VEHICLE model heals D3 wounds.
-- That VEHICLE model's attacks have +1 to hit rolls until the start of your next Movement phase."
+CLEVER_KNOW_WOTZ,Clever Know-wotz,"Buff a Vehicle within 3"": heal D3 and +1 to hit until next Movement.","In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS VEHICLE model (excluding AIRCRAFT /  TITANIC models) within 3"" of this model: - That VEHICLE model heals D3 wounds. - That VEHICLE model's attacks have +1 to hit rolls until the start of your next Movement phase."
 GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un-shock and riled up.","Get Back in da Race (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly SPEED FREEKS unit within 6"" of this unit. That unit (and any units embarked within that unit):
 - Is no longer battle-shocked.
 - Is riled up until the start of your next turn."
