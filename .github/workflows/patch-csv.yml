@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"TRANSPORT_GUNWAGON","mode":"insert","after_row_id":"TRANSPORT_BATTLEWAGON","sets":{"Ability Name":"Transport (Gunwagon)","Short Description":"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)","Long Description":"Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models."}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON","sets":{"Ability_IDs":"MOBILE_ARSENAL, TRANSPORT_GUNWAGON, COMPOSITION_GUNWAGON"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_KILLKANNON","sets":{"Ability_IDs":"MOBILE_ARSENAL, TRANSPORT_GUNWAGON, COMPOSITION_GUNWAGON"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_ZZAP_GUN","sets":{"Ability_IDs":"MOBILE_ARSENAL, TRANSPORT_GUNWAGON, COMPOSITION_GUNWAGON"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_KANNON","sets":{"Ability_IDs":"MOBILE_ARSENAL, TRANSPORT_GUNWAGON, COMPOSITION_GUNWAGON"}}]'
+              raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_KILLKANNON","mode":"delete"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_ZZAP_GUN","mode":"delete"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON_KANNON","mode":"delete"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
