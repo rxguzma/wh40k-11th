@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"IMPULSOR_Orbital","column":"Unit Name","value":"Impulsor"}]'
+              raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_OBJECTIVE_SECURED","column":"Ability Name","value":"Objective Secured"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_HAIL_OF_BOLTS","column":"Ability Name","value":"Hail of Bolts"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_INTERCESSOR_SQUAD_LOADOUT","column":"Ability Name","value":"Unit Composition: Intercessor Squad"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_INTERCESSOR_SQUAD_LOADOUT","column":"Long Description","value":"Unit Composition: 1 Intercessor Sergeant and 9 Intercessors.   Every model is equipped with: 1 bolt pistol; 1 bolt rifle; 1 close-combat weapon.   The Intercessor Sergeant is equipped with: 1 chainsword.   1 Intercessor is equipped with: 1 grenade launcher."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
