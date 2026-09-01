@@ -1,0 +1,61 @@
+name: Patch Warboss Options
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-warboss-options.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Warboss rows
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          path = Path('data/orks/Units.csv')
+          with path.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.reader(f))
+
+          header = rows[0]
+          i_id = header.index('Unit_ID')
+          i_name = header.index('Unit Name')
+          out = [header]
+          renamed = deleted = 0
+
+          for row in rows[1:]:
+              if not row:
+                  continue
+              while len(row) < len(header):
+                  row.append('')
+              unit_id = row[i_id]
+              if unit_id == 'WARBOSS_CHOPPA_SKORCHA':
+                  deleted += 1
+                  continue
+              if unit_id == 'WARBOSS':
+                  row[i_name] = 'Warboss'
+                  renamed += 1
+              out.append(row)
+
+          if renamed != 1:
+              raise SystemExit(f'Expected 1 WARBOSS row, found {renamed}')
+          if deleted != 1:
+              raise SystemExit(f'Expected 1 WARBOSS_CHOPPA_SKORCHA row, found {deleted}')
+
+          with path.open('w', newline='', encoding='utf-8') as f:
+              csv.writer(f, lineterminator='\n').writerows(out)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/orks/Units.csv
+          git commit -m "Collapse Warboss variants into weapon options"
+          git push
