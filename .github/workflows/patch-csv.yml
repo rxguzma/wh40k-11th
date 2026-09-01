@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_OBJECTIVE_SECURED","column":"Ability Name","value":"Objective Secured"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_HAIL_OF_BOLTS","column":"Ability Name","value":"Hail of Bolts"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_INTERCESSOR_SQUAD_LOADOUT","column":"Ability Name","value":"Unit Composition: Intercessor Squad"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEW_INTERCESSOR_SQUAD_LOADOUT","column":"Long Description","value":"Unit Composition: 1 Intercessor Sergeant and 9 Intercessors.   Every model is equipped with: 1 bolt pistol; 1 bolt rifle; 1 close-combat weapon.   The Intercessor Sergeant is equipped with: 1 chainsword.   1 Intercessor is equipped with: 1 grenade launcher."}]'
+              raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Detachment_ID","row_id":"dark_angels_inner_circle_task_force","column":"Short_Description","value":"Vowed Target (Objective): Defensive (Control) or Aggressive (No Control)  Deathwing INFANTRY: +1 To Wound (Range or Shoot)"},{"file":"data/marines/Detachments.csv","id_column":"Detachment_ID","row_id":"LIBRARIUS_CONCLAVE","column":"Short_Description","value":"Start of battle round: - Biomancy: +2\" M.  - Divination: Re-roll 1s To Hit and To Wound - Pyromancy: Ranged within 12\" have +1 AP.  - Telekinesis: Enemy Range -1 S.  - Telepathy: Ignore mods to BS, WS and hits."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
