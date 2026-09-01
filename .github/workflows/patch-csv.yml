@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"bulk","mode":"replace_text","column":"Short_Description","from":"remove unit if Battle Shock","to":"remove model if Battle Shock"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"bulk","mode":"replace_text","column":"Long_Description","from":"Adeptus Astartes model only. While an enemy unit (excluding Monsters and Vehicles)","to":"Adeptus Astartes model only. While an enemy unit (excluding MONSTERS and VEHICLES)"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"bulk","mode":"replace_text","column":"Long_Description","from":"one model in that unit is destroyed (chosen by its controlling player). Once per battle, when such an enemy unit fails a Battle‑shock test","to":"one model in that unit is destroyed (chosen by its controlling player).  Once per battle, when such an enemy unit fails a Battle‑shock test"}]'
+              raw = '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BIG_SHOOTA_X5","mode":"insert","after_row_id":"BIG_SHOOTA_X4","sets":{"Weapon Name":"Big shoota x5","R\\\"":"36\\\"","A":"15","WS":"5+","St":"5","AP":"0","D":"1","Weapon_Abilities":"RAPID FIRE 20, LETHAL HITS: non-MONSTER/VEHICLE"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
