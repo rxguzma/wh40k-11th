@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit Name","row_id":"Impulsor (Bellicatus Missile Array)","mode":"delete"},{"file":"data/marines/Units.csv","id_column":"Unit Name","row_id":"Impulsor (Ironhail Skytalon Array)","mode":"delete"},{"file":"data/marines/Units.csv","id_column":"Unit Name","row_id":"Impulsor (Shield Dome)","mode":"delete"},{"file":"data/marines/Units.csv","id_column":"Unit Name","row_id":"Impulsor (Orbital Array)","column":"Unit Name","value":"Impulsor"}]'
+              raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"IMPULSOR_Orbital","column":"Unit Name","value":"Impulsor"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
