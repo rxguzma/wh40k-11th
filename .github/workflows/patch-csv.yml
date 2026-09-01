@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CRUSHIN_BULK_BATTLEWAGON","mode":"insert","after_row_id":"CRUSHIN_BULK","sets":{"Weapon Name":"Crushin'"'"' Bulk","R\\\"":"-","A":"6","WS":"3","St":"8","AP":"-2","D":"2","Weapon Abilities":"CLEAVE 1"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BATTLEWAGON","column":"Weapon_IDs","value":"BIG_SHOOTA_X4, CRUSHIN_BULK_BATTLEWAGON, GRABBIN_KLAW, WRECKIN_BALL"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON","column":"Weapon_IDs","value":"BIG_SHOOTA_X4, KANNON_FRAG, KANNON_SHELL, KILLKANNON, LOBBA, ZZAP_GUN, CRUSHIN_BULK, GRABBIN_KLAW, WRECKIN_BALL"}]'
+              raw = '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEAST_SNAGGA_FOLLOWING","column":"Short Description","value":"Lone Operative within 3\" of Beast Snagga (not Monster Character)."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
