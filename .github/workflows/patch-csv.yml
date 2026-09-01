@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CRUSHIN_BULK_BATTLEWAGON","column":"Weapon Abilities","value":"CLEAVE 1"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CRUSHIN_BULK_GUNWAGON","column":"Weapon Abilities","value":"CLEAVE 2"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BIG_SHOOTA_GUNWAGON","sets":{"Weapon Name":"Big shoota x4","R\\\"":"36\\\"","A":"12","WS":"5+","St":"5","AP":"0","D":"1","Weapon Abilities":"RAPID FIRE 8, LETHAL HITS: non-MONSTER/VEHICLE"}}]'
+              raw = '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CRUSHIN_BULK_BATTLEWAGON","mode":"insert","after_row_id":"CRUSHIN_BULK","sets":{"Weapon Name":"Crushin'"'"' Bulk","R\\\"":"-","A":"6","WS":"3","St":"8","AP":"-2","D":"2","Weapon Abilities":"CLEAVE 1"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BATTLEWAGON","column":"Weapon_IDs","value":"BIG_SHOOTA_X4, CRUSHIN_BULK_BATTLEWAGON, GRABBIN_KLAW, WRECKIN_BALL"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"GUNWAGON","column":"Weapon_IDs","value":"BIG_SHOOTA_X4, KANNON_FRAG, KANNON_SHELL, KILLKANNON, LOBBA, ZZAP_GUN, CRUSHIN_BULK, GRABBIN_KLAW, WRECKIN_BALL"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
