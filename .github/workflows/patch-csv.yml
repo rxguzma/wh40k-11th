@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_10","sets":{"Ability Name":"Damaged 1-10","Long Description":"CORE: Damaged 1-10"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_6","sets":{"Ability Name":"Damaged 1-6","Long Description":"CORE: Damaged 1-6"}},{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_1_10","column":"Long Description","value":"Damaged 1-10: While this model has 1-10 wounds remaining, subtract 1 from the Hit roll each time this model makes an attack."}]'
+              raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BATTLEWAGON","column":"Core_Ability_IDs","value":"DAMAGED_1_6, DEADLY_DEMISE_D6, FIRING_DECK_11, INVULNERABLE_SAVE_6"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"KILL_RIG","column":"Core_Ability_IDs","value":"DAMAGED_1_6, DEADLY_DEMISE_D6, FEEL_NO_PAIN_5, INVULNERABLE_SAVE_6, UNSTABLE_ENERGIES"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"STOMPA","column":"Core_Ability_IDs","value":"DAMAGED_1_10, DEADLY_DEMISE_2D6, SUPER_HEAVY_WALKER, INVULNERABLE_SAVE_5"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_6","column":"Ability_ID","value":"DAMAGED_1_6"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_10","mode":"delete"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
