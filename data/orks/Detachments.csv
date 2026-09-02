@@ -152,7 +152,7 @@ orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_sh
 Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
 - Or, if this unit has 11+ models, +2 A.",
-orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ,25,,,,BOYZ unit only. This unit has 4+ Sv.,BOYZ unit only. This unit has 4+ Sv.,
+orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ,25,,,,BOYZ unit only. This unit has 4+ Sv.,BOYZ unit has 4++,
 orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_unbridled_carnage_1cp,UNBRIDLED CARNAGE,,1,,,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.
@@ -390,7 +390,7 @@ orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,25,,,,"INFANTRY WARBOSS.  Once per battle, if model is destroyed, on a 2+ return with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining.",
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',30,,,,WARBOSS model only.  Model melee have +1 D.,WARBOSS model only. This model's melee attacks have +1 D.,
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,20,,,,"WARBOSS. A TRANSPORT this unit is embarked within has +2"" M and 5+ InSv.  Excludes WALKER","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,20,,,,"WARBOSS. TRANSPORT its embarked in has +2"" M and 5+ InSv.  Excludes WALKER","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
 - +2"" M
 - 5+ InSv.",
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,15,,,,WARBOSS model.  Re-roll hit rolls of 1.,WARBOSS model only. This model can re-roll hit rolls of 1.,
