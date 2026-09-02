@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"BIG_MEK_KUSTOM_MEGA_BLASTA","column":"Default","value":"FALSE"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"BIG_MEK_TRAKTOR_BLASTA","column":"Default","value":"TRUE"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"BIG_MEK_POWER_KLAW","column":"Default","value":"FALSE"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"BIG_MEK_DRILLA","column":"Default","value":"TRUE"}]'
+              raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"ROKKIT_PISTOL_X2_TANKBUSTAS","mode":"insert","sets":{"Weapon Name":"Rokkit pistol x2","R\"":"12\"","A":"2","WS":"5","St":"9","AP":"-2","D":"3","Weapon Abilities":"PISTOL"}},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"TANKBUSTAS_ROKKIT_PISTOL_X1","mode":"insert","sets":{"Unit_ID":"TANKBUSTAS","Option_Group_ID":"NOB_ROKKIT_PISTOL_TANKBUSTAS","Group_Label":"Nob Rokkit Pistol","Option_Name":"Rokkit Pistol x1","Weapon_IDs":"ROKKIT_PISTOL, SMASH_HAMMER","Default":"TRUE","Sort_Order":"1"}},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"TANKBUSTAS_ROKKIT_PISTOL_X2","mode":"insert","sets":{"Unit_ID":"TANKBUSTAS","Option_Group_ID":"NOB_ROKKIT_PISTOL_TANKBUSTAS","Group_Label":"Nob Rokkit Pistol","Option_Name":"Rokkit Pistol x2","Weapon_IDs":"ROKKIT_PISTOL_X2_TANKBUSTAS","Default":"FALSE","Sort_Order":"2"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
