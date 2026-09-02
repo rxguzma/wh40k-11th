@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_brute_bosses","mode":"replace_text","column":"Short_Description","from":"WARBOSS  Fight on death 3+ or 2+ if RILED UP","to":"WARBOSS  Fight on death  3+ or 2+ if RILED UP"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MIGHT_IS_RIGHT","mode":"replace_text","column":"Short Description","from":"CHARGE this turn, MODEL gets +3 A and +2 S","to":"CHARGE this turn, MODEL gets  +3 A and +2 S"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_green_tide","mode":"replace_text","column":"Long_Description","from":"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.\\n\\nTARGET: That BOYZ unit.\\n\\nEFFECT: Your unit\u0027s melee attacks have +1 A.","to":"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.\\n\\nTARGET: That BOYZ unit.\\n\\nEFFECT: Unit\u0027s melee attacks have +1 A."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"__bulk__","mode":"fill_blank_where","match_column":"Item_Type","match_value":"ENHANCEMENT","column":"Points","value":"15"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"__bulk__","mode":"fill_blank_where","match_column":"Item_Type","match_value":"DETACHMENT_RULE","column":"Detachment_Disposition","value":"Take and Hold"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
@@ -77,6 +77,36 @@ jobs:
               if not row_id:
                   sys.exit(f'op {i}: row_id required')
               mode = str(op.get('mode') or 'update').strip()
+
+              if mode == 'fill_blank_where':
+                  match_col = str(op.get('match_column') or '').strip()
+                  col = str(op.get('column') or '').strip()
+                  if match_col not in header:
+                      sys.exit(f'op {i}: match column not in header: {match_col}')
+                  if col not in header:
+                      sys.exit(f'op {i}: column not in header: {col}')
+                  match_value = decode(op.get('match_value')).strip()
+                  new = decode(op.get('value'))
+                  if not match_value:
+                      sys.exit(f'op {i}: match_value required')
+                  if new == '':
+                      sys.exit(f'op {i}: value required')
+                  i_match = header.index(match_col)
+                  i_col = header.index(col)
+                  hits = 0
+                  for row in rows[1:]:
+                      if not row:
+                          continue
+                      while len(row) < len(header):
+                          row.append('')
+                      if row[i_match].strip() == match_value and not row[i_col].strip():
+                          row[i_col] = new
+                          hits += 1
+                  if hits < 1:
+                      sys.exit(f'op {i}: found no blank {col} values where {match_col}={match_value!r}')
+                  changed.add(path)
+                  print(f'filled {hits} blank {col} values in {path} where {match_col}={match_value!r}')
+                  continue
 
               if mode == 'replace_text':
                   col = str(op.get('column') or '').strip()
