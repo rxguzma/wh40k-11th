@@ -2,22 +2,22 @@ Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Co
 orks,Orks,,ARMY_RULE,orks_army_rule_waaagh,WAAAGH!,,,,,"WARLORD: +1 CP
 Always: Re-roll Advances
 
-Riled Up: 5++, Assault Ranged, Advance & Charge. Lasts thru end of turn.","Army Rule
+RILED UP: 5++, Assault Ranged, Advance & Charge. Lasts thru end of turn.","Army Rule
 At the start of the battle round, if a model with this ability is your WARLORD, gain a CP.
 
 Friendly ORKS units with this ability can:
 - Re-roll advance rolls.
-- Become riled up, as stated in other rules.
+- Become RILED UP, as stated in other rules.
 
-While a unit is riled up:
+While a unit is RILED UP:
 - That unit has 5+ InSv.
 - That unit’s ranged attacks have [ASSAULT].
 - When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
-War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are riled up until the end of the next turn."
+War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are RILED UP until the end of the next turn."
 orks_war_horde,Orks,War Horde,DETACHMENT_RULE,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,,,3,Take and Hold,Friendly ORKS melee attacks have [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_headwoppas_killchoppa,HEADWOPPA'S KILLCHOPPA,20,,,,"ORKS model only. If this unit charged this turn, this model’s melee attacks have +1 AP.","ORKS model only. If this unit made a charge move this turn, this model's melee attacks have +1 AP."
-orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_da_boss_is_watchin,DA BOSS IS WATCHIN',15,,,,"ORKS model only. Once per battle, per army: in your Movement phase, this unit is riled up until the start of your next turn.","ORKS model only. (Once per battle, per army) In your Movement phase, you can use this ability. If you do, this unit is riled up until the start of your next turn."
+orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_da_boss_is_watchin,DA BOSS IS WATCHIN',15,,,,"ORKS model only. Once per battle, per army: in your Movement phase, this unit is RILED UP until the start of your next turn.","ORKS model only. (Once per battle, per army) In your Movement phase, you can use this ability. If you do, this unit is RILED UP until the start of your next turn."
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_kunnin_but_brutal,KUNNIN' BUT BRUTAL,15,,,,ORKS model only. Fall Back does not prevent this unit from shooting or charging.,"ORKS model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot/declare a charge."
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_follow_me_ladz,FOLLOW ME LADZ,25,,,,"ORKS model only. This unit has +2"" M.","ORKS model only. This unit has +2"" M."
 orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_breakin_heads_1cp,BREAKIN' HEADS,,1,,,Any phase: attached ORKS INFANTRY that becomes Battle-shocked takes D3 MW and is no longer Battle-shocked.,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
@@ -32,11 +32,11 @@ orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_hit_em_harder_1cp,H
 TARGET: That ORKS unit.
 
 EFFECT: Your unit's melee attacks have [LETHAL HITS]."
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_orks_is_never_beaten_1cp,ORKS IS NEVER BEATEN,,1,,,Fight: non-TITANIC ORKS models fight-on-death on 4+ (3+ if riled up).,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_orks_is_never_beaten_1cp,ORKS IS NEVER BEATEN,,1,,,Fight: non-TITANIC ORKS models fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
 
 TARGET: That ORKS unit.
 
-EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is riled up.
+EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP.
 - On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
 orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_mow_em_down_1cp,MOW 'EM DOWN,,1,,,Fight: charging non-WALKER ORKS VEHICLE melee gains [CLEAVE 1] (or +1 CLEAVE).,"WHEN: Fight phase, when a friendly ORKS VEHICLE unit (excluding WALKER units) that made a charge move this turn is selected to fight.
 
@@ -169,23 +169,23 @@ TARGET: That BEAST SNAGGA BOYZ/BOYZ unit.
 
 EFFECT: Your unit has +2 to advance rolls."
 orks_bully_boyz,Orks,Bully Boyz,DETACHMENT_RULE,orks_bully_boyz_detachment_rule_displays_of_savagery,DISPLAYS OF SAVAGERY,,,1,Purge the Foe,Friendly MEGANOBZ/NOBZ melee has [SUSTAINED HITS 1].,Friendly MEGANOBZ/NOBZ units' melee attacks have [SUSTAINED HITS 1].
-orks_bully_boyz,,Bully Boyz,ENHANCEMENT,orks_bully_boyz_enhancement_wimp_kickaz,WIMP-KICKAZ,,,,,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is riled up.,"NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:
+orks_bully_boyz,,Bully Boyz,ENHANCEMENT,orks_bully_boyz_enhancement_wimp_kickaz,WIMP-KICKAZ,,,,,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is RILED UP.,"NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:
 - That enemy unit must select the desperate escape mode.
-- If this unit is riled up, that enemy unit has -1 to the hazard rolls made for that desperate escape."
+- If this unit is RILED UP, that enemy unit has -1 to the hazard rolls made for that desperate escape."
 orks_bully_boyz,,Bully Boyz,ENHANCEMENT,orks_bully_boyz_enhancement_tellyporta_boss,TELLYPORTA BOSS,25,,,,MEGA ARMOUR model only. This unit (excluding VEHICLE) has Deep Strike.,MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike.
-orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,TOO ARROGANT TO DIE,,1,,,Fight: MEGANOBZ/NOBZ fight-on-death on 4+ (3+ if riled up).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.
+orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,TOO ARROGANT TO DIE,,1,,,Fight: MEGANOBZ/NOBZ fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.
 
 TARGET: That MEGANOBZ/NOBZ unit.
 
-EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is riled up:
+EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP:
 - On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
-orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_armed_to_da_teef_1cp,ARMED TO DA TEEF,,1,,,"Shooting or Fight: MEGANOBZ/NOBZ re-roll hit 1s; if riled up, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ/NOBZ unit is selected to attack.
+orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_armed_to_da_teef_1cp,ARMED TO DA TEEF,,1,,,"Shooting or Fight: MEGANOBZ/NOBZ re-roll hit 1s; if RILED UP, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ/NOBZ unit is selected to attack.
 
 TARGET: That MEGANOBZ/NOBZ unit.
 
 EFFECT: Your unit's attacks can:
 - Re-roll hit rolls of 1.
-- If your unit is riled up, re-roll hit rolls."
+- If your unit is RILED UP, re-roll hit rolls."
 orks_bully_boyz,,Bully Boyz,STRATAGEM,orks_bully_boyz_stratagem_hulking_brutes_1cp,HULKING BRUTES,,1,,,"Opp shooting: MEGANOBZ/NOBZ, S>T ranged -1 to Wound (1CP); or all ranged -1 to Wound (+1CP).","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly MEGANOBZ/NOBZ unit.
 
 TARGET: That MEGANOBZ/NOBZ unit.
@@ -245,11 +245,11 @@ orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_where_dya_fin
 TARGET: That BEAST SNAGGA unit.
 
 EFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is a MONSTER/VEHICLE unit, that enemy unit makes three additional hazard rolls for each BEAST SNAGGA unit it is engaged with, with -1 from those hazard rolls if that enemy unit is battle-shocked."
-orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_goaded_into_action_1cp,GOADED INTO ACTION,,1,,,"Opp Shooting: unengaged BEAST SNAGGA that lost a wound surge D6"" (re-roll if riled up).","WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
+orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_goaded_into_action_1cp,GOADED INTO ACTION,,1,,,"Opp Shooting: unengaged BEAST SNAGGA that lost a wound surge D6"" (re-roll if RILED UP).","WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
 
 TARGET: One friendly unengaged BEAST SNAGGA unit that lost a wound as a result of those attacks.
 
-EFFECT: Your unit can make a surge move of up to D6"". If your unit is riled up, it can re-roll that D6."
+EFFECT: Your unit can make a surge move of up to D6"". If your unit is RILED UP, it can re-roll that D6."
 orks_da_big_hunt,,Da Big Hunt,STRATAGEM,orks_da_big_hunt_stratagem_instinctive_hunters_1cp,INSTINCTIVE HUNTERS,,1,,,"End of opp Fight: unengaged BEAST SNAGGA within 6"" of a battlefield edge goes into Strategic Reserves.","WHEN: End of your opponent's Fight phase.
 
 TARGET: One friendly unengaged BEAST SNAGGA unit within 6"" of a battlefield edge.
@@ -264,7 +264,7 @@ D6  RESULT
 4  Seekerz: Those attacks have +1 to hit rolls.
 5  Lifted: The target unit has FLY, and cannot have the benefit of cover, until your unit has shot.
 6  Runtified: The target unit has -1 T until your unit has shot."
-orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_mekwaaagh_mastermind,MEKWAAAGH! MASTERMIND,,,,,BIG MEK model only. This unit is riled up.,BIG MEK model only. This unit is riled up.
+orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_mekwaaagh_mastermind,MEKWAAAGH! MASTERMIND,,,,,BIG MEK model only. This unit is RILED UP.,BIG MEK model only. This unit is RILED UP.
 orks_madcap_meks,,Madcap Meks,ENHANCEMENT,orks_madcap_meks_enhancement_temperamental_shokka,TEMPERAMENTAL SHOKKA,,,,,"BIG MEK WITH SHOKK ATTACK GUN: on shoot, D6 — 1 Torrent then destroyed; 2-5 +1 A; 6 Sustained Hits 2.","BIG MEK WITH SHOKK ATTACK GUN model only. In your Shooting phase, when this unit is selected to shoot, you can roll one D6:
 - On a 1, this model's Shokk Attack Gun weapon has [TORRENT], and when this unit has shot, this model is destroyed.
 - On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
@@ -308,7 +308,7 @@ orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_dread_power_1cp,DRE
 
 TARGET: One friendly ORKS WALKER unit.
 
-EFFECT: Your unit is riled up until the start of your next turn."
+EFFECT: Your unit is RILED UP until the start of your next turn."
 orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_stomping_juggernaut_1cp,STOMPING JUGGERNAUT,,1,,,Movement or Charge:  WALKER gains MOBILE.,"WHEN: Your Movement/Charge phase, when a friendly ORKS WALKER unit is selected to move or declares a charge.
 
 TARGET: That ORKS WALKER unit.
@@ -317,9 +317,9 @@ EFFECT: Your unit has MOBILE."
 orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,1,,WAGON units re-roll charge rolls and can change Advance rolls to 6.,"Friendly WAGON units can re-roll charge rolls.
 
 When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6."
-orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS,15,,,,WAGON with embarked BIG MEK: ranged [IGNORES COVER]; if riled up also [SUSTAINED HITS 1].,"WAGON unit only. While a BIG MEK model is embarked within this unit:
+orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS,15,,,,WAGON with embarked BIG MEK: ranged [IGNORES COVER]; if RILED UP also [SUSTAINED HITS 1].,"WAGON unit only. While a BIG MEK model is embarked within this unit:
 - This unit's ranged attacks have [IGNORES COVER].
-- If this unit is riled up, this unit's ranged attacks have [SUSTAINED HITS 1]."
+- If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1]."
 orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_boss_boomer,BOSS BOOMER,,,,,WAGON with embarked WARBOSS gains that WARBOSS's Intimidating Motivation/Keep Huntin' ability.,"WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation/Keep Huntin' ability."
 orks_blitz_brigade,,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_keep_it_runnin_1cp,KEEP IT RUNNIN',,1,,,"End of Fight: unengaged ORKS INFANTRY that could fight, wholly within 6"" of a TRANSPORT it can embark, embarks.","WHEN: End of the Fight phase.
 
@@ -360,10 +360,10 @@ TARGET: That SPEED FREEKS unit.
 EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3."
 orks_flyboyz,Orks,Flyboyz,DETACHMENT_RULE,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,,,1,,ORKS AIRCRAFT ignore Strategic Reserves points cap. Riled up ORKS AIRCRAFT/DEFFKOPTAS ranged +1 to hit.,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
 
-While a friendly ORKS AIRCRAFT/DEFFKOPTAS unit is riled up, this unit's ranged attacks have +1 to hit rolls."
-orks_flyboyz,,Flyboyz,ENHANCEMENT,orks_flyboyz_enhancement_flyboss,FLYBOSS,,,,,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT/DEFFKOPTAS within 6"" are riled up until start of your next turn.","ORKS AIRCRAFT unit only.
+While a friendly ORKS AIRCRAFT/DEFFKOPTAS unit is RILED UP, this unit's ranged attacks have +1 to hit rolls."
+orks_flyboyz,,Flyboyz,ENHANCEMENT,orks_flyboyz_enhancement_flyboss,FLYBOSS,,,,,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT/DEFFKOPTAS within 6"" are RILED UP until start of your next turn.","ORKS AIRCRAFT unit only.
 - This unit has CHARACTER.
-- When this unit ends an ingress move, each friendly ORKS AIRCRAFT/DEFFKOPTAS unit within 6"" of this unit is riled up until the start of your next turn."
+- When this unit ends an ingress move, each friendly ORKS AIRCRAFT/DEFFKOPTAS unit within 6"" of this unit is RILED UP until the start of your next turn."
 orks_flyboyz,,Flyboyz,ENHANCEMENT,orks_flyboyz_enhancement_impulsive_recon,IMPULSIVE RECON,,,,,"ORKS AIRCRAFT unit only. In the first Movement phase, this unit can make an ingress move.","ORKS AIRCRAFT unit only. In your first Movement phase, this unit can make an ingress move."
 orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_flyin_headbutt_1cp,FLYIN' HEADBUTT,,1,,,"Any phase: destroyed ORKS AIRCRAFT skips Deadly Demise; one enemy within 12"" takes 8D6, each 4+ = 1 MW; then remove the aircraft.","WHEN: Any phase, when a friendly ORKS AIRCRAFT unit is destroyed, before rolling for any Deadly Demise.
 
@@ -377,15 +377,15 @@ orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_long_uncontrolled_bursts_
 TARGET: That ORKS AIRCRAFT/DEFFKOPTAS unit.
 
 EFFECT: When your unit's ranged attacks target a FLY unit, those attacks can re-roll hit rolls."
-orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_whirligig_evasion_1cp,WHIRLIGIG EVASION,,1,,,"Opp Movement: unengaged DEFFKOPTAS within 8"" of an enemy that ended a move can Normal move D6"" (6"" if riled up).","WHEN: Your opponent's Movement phase, when an enemy unit ends a move.
+orks_flyboyz,,Flyboyz,STRATAGEM,orks_flyboyz_stratagem_whirligig_evasion_1cp,WHIRLIGIG EVASION,,1,,,"Opp Movement: unengaged DEFFKOPTAS within 8"" of an enemy that ended a move can Normal move D6"" (6"" if RILED UP).","WHEN: Your opponent's Movement phase, when an enemy unit ends a move.
 
 TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
 
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
-- Or, if your unit is riled up, up to 6""."
+- Or, if your unit is RILED UP, up to 6""."
 
-orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,,WARBOSS  Fight on death 3+ or 2+ if RILED UP,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is riled up.
+orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,,WARBOSS  Fight on death 3+ or 2+ if RILED UP,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
 - On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield."
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,,,,,"INFANTRY WARBOSS. Once per battle, per army: after this model is destroyed, on a 2+ return it with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining."
@@ -394,9 +394,9 @@ orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzb
 - +2"" M
 - 5+ InSv."
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,,,,,WARBOSS model only. Re-roll hit rolls of 1.,WARBOSS model only. This model can re-roll hit rolls of 1.
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,,,,,"WARBOSS. Once per battle, per army: end of opponent's Movement phase, if unengaged, Normal move up to D6""; if riled up, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,,,,,"WARBOSS. Once per battle, per army: end of opponent's Movement phase, if unengaged, Normal move up to D6""; if RILED UP, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
 - Up to D6"".
-- If this unit is riled up, you can re-roll that D6."
+- If this unit is RILED UP, you can re-roll that D6."
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,,,,,WARBOSS model only. Gains Da Gobshot Thunderbuss.,"WARBOSS model only. This model has the following weapon:
 Da Gobshot Thunderbuss [LETHAL HITS: non-MONSTER/VEHICLE, RAPID FIRE 6]
 Range 24"", A 6, BS 4+, S 7, AP -2, D 2."
@@ -445,9 +445,9 @@ orks_runt_swarm,,Runt Swarm,STRATAGEM,orks_runt_swarm_stratagem_grot_shields_1cp
 TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
 
 EFFECT: When a hit roll for that enemy unit's ranged attacks that target that ORKS unit results in a hit, if a model in your GRETCHIN unit is on the battlefield, end the attack sequence for that attack and your GRETCHIN unit suffers 1 mortal wound."
-orks_shoota_boyz,Orks,Shoota Boyz,DETACHMENT_RULE,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,,,1,,"ORKS INFANTRY ranged attacks have [ASSAULT]. While riled up, ranged attacks have +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
+orks_shoota_boyz,Orks,Shoota Boyz,DETACHMENT_RULE,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,,,1,,"ORKS INFANTRY ranged attacks have [ASSAULT]. While RILED UP, ranged attacks have +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
 - [ASSAULT].
-- While this unit is riled up, +3"" R."
+- While this unit is RILED UP, +3"" R."
 orks_shoota_boyz,,Shoota Boyz,ENHANCEMENT,orks_shoota_boyz_enhancement_supa_glowy_fing,SUPA-GLOWY FING,,,,,"ORKS INFANTRY model (excluding MEKBOY): ranged attacks gain [ANTI-INFANTRY 4+], [DEVASTATING WOUNDS], and [SUPA-HAZARDOUS].","ORKS INFANTRY model only (excluding MEKBOY models). This model's ranged attacks have:
 - [ANTI-INFANTRY 4+].
 - [DEVASTATING WOUNDS].
