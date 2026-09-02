@@ -314,13 +314,13 @@ orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_stomping_juggernaut
 TARGET: That ORKS WALKER unit.
 
 EFFECT: Your unit has MOBILE.",
-orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,1,Take and Hold,WAGON units re-roll charge rolls and can change Advance rolls to 6.,"Friendly WAGON units can re-roll charge rolls.
+orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,1,Take and Hold,WAGON  Re-roll Charges & can Advance flat 6.,"Friendly WAGON units can re-roll charge rolls.
 
 When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6.",
-orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS,10,,,,WAGON with embarked BIG MEK: ranged [IGNORES COVER]; if RILED UP also [SUSTAINED HITS 1].,"WAGON unit only. While a BIG MEK model is embarked within this unit:
+orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS,10,,,,WAGON with embarked BIG MEK: [IGNORES COVER] RILED UP also [SUSTAINED HITS 1],"WAGON unit only. While a BIG MEK model is embarked within this unit:
 - This unit's ranged attacks have [IGNORES COVER].
 - If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",
-orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_boss_boomer,BOSS BOOMER,10,,,,WAGON with embarked WARBOSS gains that WARBOSS's Intimidating Motivation/Keep Huntin' ability.,"WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation/Keep Huntin' ability.",
+orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_boss_boomer,BOSS BOOMER,10,,,,WAGON with embarked WARBOSS  gains that WARBOSS's Intimidating Motivation / Keep Huntin' ability.,"WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation/Keep Huntin' ability.",
 orks_blitz_brigade,,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_keep_it_runnin_1cp,KEEP IT RUNNIN',,1,,,"End of Fight: unengaged ORKS INFANTRY that could fight, wholly within 6"" of a TRANSPORT it can embark, embarks.","WHEN: End of the Fight phase.
 
 TARGET: One friendly unengaged ORKS INFANTRY unit that was eligible to fight this phase and is wholly within 6"" of a friendly TRANSPORT unit that INFANTRY unit is able to embark within.
@@ -385,19 +385,19 @@ EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, if your unit is RILED UP, up to 6"".",
 ,,,,,,,,,,,,
-orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,Purge the Foe,WARBOSS  Fight on death  3+ or 2+ if RILED UP,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
+orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,Purge the Foe,WARBOSS   Fight on death 3+ or 2+ if RILED UP,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
 - On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield.",
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,25,,,,"INFANTRY WARBOSS. Once per battle, per army: after this model is destroyed, on a 2+ return it with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,25,,,,"INFANTRY WARBOSS.  Once per battle, if model is destroyed, on a 2+ return with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining.",
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',30,,,,WARBOSS model only. This model's melee attacks have +1 D.,WARBOSS model only. This model's melee attacks have +1 D.,
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,20,,,,"WARBOSS. A TRANSPORT this unit is embarked within (excluding WALKER) has +2"" M and 5+ InSv.","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_brutal_but_kunnin,BRUTAL BUT KUNNIN',30,,,,WARBOSS model only.  Model melee have +1 D.,WARBOSS model only. This model's melee attacks have +1 D.,
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_blitzboss,BLITZBOSS,20,,,,"WARBOSS. A TRANSPORT this unit is embarked within has +2"" M and 5+ InSv.  Excludes WALKER","WARBOSS model only. A TRANSPORT unit (excluding WALKER units) this unit is embarked within has:
 - +2"" M
 - 5+ InSv.",
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,15,,,,WARBOSS model only. Re-roll hit rolls of 1.,WARBOSS model only. This model can re-roll hit rolls of 1.,
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,50,,,,"WARBOSS. Once per battle, per army: end of opponent's Movement phase, if unengaged, Normal move up to D6""; if RILED UP, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_proper_killy,PROPER KILLY,15,,,,WARBOSS model.  Re-roll hit rolls of 1.,WARBOSS model only. This model can re-roll hit rolls of 1.,
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_morgogs_finkin_cap,MORGOG'S FINKIN' CAP,50,,,,"WARBOSS. Once per battle End of opponent's Move, if unengaged, Move D6"". If RILED UP, re-roll that D6.","WARBOSS model only. (Once per battle, per army) At the end of your opponent's Movement phase, if this unit is unengaged, this unit can make a normal move of:
 - Up to D6"".
 - If this unit is RILED UP, you can re-roll that D6.",
-orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,20,,,,WARBOSS model only. Gains Da Gobshot Thunderbuss.,"WARBOSS model only. This model has the following weapon:
+orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_da_gobshot_thunderbuss,DA GOBSHOT THUNDERBUSS,20,,,,WARBOSS model only.  Gains Da Gobshot Thunderbuss.,"WARBOSS model only. This model has the following weapon:
 Da Gobshot Thunderbuss [LETHAL HITS: non-MONSTER/VEHICLE, RAPID FIRE 6]
 Range 24"", A 6, BS 4+, S 7, AP -2, D 2.",
 ,,,,,,,,,,,,
