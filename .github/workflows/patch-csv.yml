@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"__bulk__","mode":"fill_blank_where","match_column":"Item_Type","match_value":"ENHANCEMENT","column":"Points","value":"15"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"__bulk__","mode":"fill_blank_where","match_column":"Item_Type","match_value":"DETACHMENT_RULE","column":"Detachment_Disposition","value":"Take and Hold"}]'
+              raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"MEGANOBZ","column":"Points_Label_1","value":"x2"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"MEGANOBZ","column":"Points_Label_2","value":"x3"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"MEGANOBZ","column":"Points_Label_3","value":"x5"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"MEGANOBZ","column":"Points_Label_4","value":"x6"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"WAZBOM_BLASTAJET","column":"Points_Cost_1","value":"215"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
