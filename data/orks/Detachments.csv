@@ -279,7 +279,13 @@ EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
 - Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1]."
-orks_dread_mob,Orks,Dread Mob,DETACHMENT_RULE,orks_dread_mob_detachment_rule_try_dat_button,TRY DAT BUTTON!,,,1,Purge the Foe,TRY DAT BUTTON! D6 1-2  +1 A 3-4  +2 S 5-6  +1 AP  2D6 get HAZARDOUS (keep dups) Non-TITANIC ORKS WALKER,"In your Shooting phase or the Fight phase, when a friendly ORKS WALKER unit (excluding TITANIC units) is selected to attack, you can use this ability. If you do, roll either one D6 or two D6 (keep re-rolling duplicate results). This unit's attacks have the relevant rule(s):
+orks_dread_mob,Orks,Dread Mob,DETACHMENT_RULE,orks_dread_mob_detachment_rule_try_dat_button,TRY DAT BUTTON!,,,1,Purge the Foe,"TRY DAT BUTTON! D6
+1-2  +1 A
+3-4  +2 S
+5-6  +1 AP
+
+2D6 get HAZARDOUS (keep dups)
+Non-TITANIC ORKS WALKER","In your Shooting phase or the Fight phase, when a friendly ORKS WALKER unit (excluding TITANIC units) is selected to attack, you can use this ability. If you do, roll either one D6 or two D6 (keep re-rolling duplicate results). This unit's attacks have the relevant rule(s):
 
 TRY DAT BUTTON!
 D6  RESULT
