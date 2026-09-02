@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_green_tide","column":"Short_Description","value":"Movement: BEAST SNAGGA BOYZ / BOYZ +2 to Advance rolls."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_da_big_hunt","column":"Short_Description","value":"Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape;  MONSTERS / VEHICLES take an extra hazard rolls."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_green_tide","mode":"replace_text","column":"Short_Description","from":"Movement: BEAST SNAGGA BOYZ/BOYZ +2 to Advance rolls.","to":"Movement: BEAST SNAGGA BOYZ / BOYZ +2 to Advance rolls."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_da_big_hunt","mode":"replace_text","column":"Short_Description","from":"Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape; MONSTER/VEHICLE takes extra hazard rolls.","to":"Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape;  MONSTERS / VEHICLES take an extra hazard rolls."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
