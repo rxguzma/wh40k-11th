@@ -1,0 +1,70 @@
+name: Patch War Horde Disposition V20
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-war-horde-disposition-v20.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add second disposition column and War Horde option
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          path = Path('data/orks/Detachments.csv')
+          with path.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.reader(f))
+
+          if not rows:
+              raise SystemExit('Detachments.csv is empty')
+
+          header = rows[0]
+          id_column = 'Item_ID'
+          new_column = 'Detachment_Disposition_2'
+          target_id = 'orks_war_horde_detachment_rule_get_stuck_in'
+
+          if id_column not in header:
+              raise SystemExit(f'Missing {id_column}')
+
+          if new_column not in header:
+              header.append(new_column)
+
+          target_index = header.index(id_column)
+          new_index = header.index(new_column)
+          hits = 0
+
+          for row in rows[1:]:
+              while len(row) < len(header):
+                  row.append('')
+              if row[target_index] == target_id:
+                  row[new_index] = 'Purge the Foe'
+                  hits += 1
+
+          if hits != 1:
+              raise SystemExit(f'Expected exactly one War Horde rule row, found {hits}')
+
+          with path.open('w', encoding='utf-8', newline='') as f:
+              csv.writer(f, lineterminator='\n').writerows(rows)
+          PY
+
+      - name: Commit CSV
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/orks/Detachments.csv
+          if git diff --cached --quiet; then
+            echo "No CSV change required"
+            exit 0
+          fi
+          git commit -m "Add War Horde second disposition"
+          git push
