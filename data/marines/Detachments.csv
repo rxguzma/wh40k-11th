@@ -316,7 +316,9 @@ GO BACK TO RESERVES","WHEN: End of your opponent’s Fight phase.
 TARGET: One Adeptus Astartes Terminator unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves"
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_duty_unto_death_1cp,DUTY UNTO DEATH,,1,,,Deathwing ANY: Fight on Death on 4+.  VOWED OBJ = 3+.,"WHEN: Fight phase, just after an enemy unit has selected its targets.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_duty_unto_death_1cp,DUTY UNTO DEATH,,1,,,"Deathwing ANY: Fight on Death on 4+.
+
+VOWED OBJ = 3+.","WHEN: Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One DEATHWING unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
@@ -436,7 +438,10 @@ TARGET: One Adeptus Astartes unit from your army that is within Engagement Range
 EFFECT: Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. 
 
 In addition, until the end of the turn, if your unit does not have the DEATHWING, RAVENWING or VEHICLE keyword, each time a model in your unit makes an attack, add 1 to the Hit roll."
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_martial_mastery_1cp,MARTIAL MASTERY,,1,,,Deathwing INFANTRY (Melee):  Re-roll 1s To Wound  VOWED OBJ = ALL To Wound,"WHEN: Fight phase.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_martial_mastery_1cp,MARTIAL MASTERY,,1,,,"Deathwing INFANTRY (Melee):
+Re-roll 1s To Wound
+
+VOWED OBJ = ALL To Wound","WHEN: Fight phase.
 
 TARGET: One DEATHWING INFANTRY unit from your army that has not been selected to fight this phase.
 
@@ -499,7 +504,7 @@ FULGURIS_TASK_FORCE,,Fulguris Task Force,STRATAGEM,FULGURIS_TASK_FORCE_STRATAGEM
 TARGET: That SPEEDER unit.
 
 EFFECT: Your unit can make a normal move of up to D3+3""."
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp,RELIC TELEPORTARIUM,,1,,,"Deathwing with Deepstrike:  6"" Deep Strike","WHEN: Your Movement phase.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp,RELIC TELEPORTARIUM,,1,,,"Deathwing with Deepstrike:  6"" Deep Strike","WHEN: Your Movement phase.
 
 TARGET: One DEATHWING unit from your army that is arriving using the Deep Strike ability this phase.
 
@@ -621,7 +626,8 @@ space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade
 TARGET: One Adeptus Astartes unit from your army.
 
 EFFECT: Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle."
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_unmatched_fortitude_1cp,UNMATCHED FORTITUDE,,1,,,Deathwing INFANTRY (Ranged):  -1 To be wounded if Higher Strength,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_unmatched_fortitude_1cp,UNMATCHED FORTITUDE,,1,,,"Deathwing INFANTRY (Ranged):
+-1 To be wounded if Higher Strength","WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
 
 TARGET: One DEATHWING INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
@@ -654,7 +660,9 @@ space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marin
 TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that is not within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_wrath_of_the_lion_1cp,WRATH OF THE LION,,1,,,Deathwing INFANTRY (Charges): Mortals per model on a 4+ Max 3 Mortals.   VOWED OBJ = 3+ Max 3 Mortal Wounds,"WHEN: Your Charge phase.
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_angels_inner_circle_task_force_stratagem_wrath_of_the_lion_1cp,WRATH OF THE LION,,1,,,"Deathwing INFANTRY (Charges): Mortals per model on a 4+ Max 3 Mortals.
+
+VOWED OBJ = 3+ Max 3 Mortal Wounds","WHEN: Your Charge phase.
 
 TARGET: One DEATHWING INFANTRY unit from your army that just ended a Charge move.
 
