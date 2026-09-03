@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"CANT_CUT_DAT_BIT","sets":{"Short Description":"Once per battle.  Crude Surgery is D3+3","Long Description":"Can\u0027t Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used."}}]'
+              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"CRUDE_SURGERY","column":"Short Description","value":"In Command phase: Heals 3 wounds"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"CANT_CUT_DAT_BIT","sets":{"Short Description":"Once per battle.  Crude Surgery is D3+3","Long Description":"Can\u0027t Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used."}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
