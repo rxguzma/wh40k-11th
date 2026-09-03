@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BANNERNOB","column":"Core_Ability_IDs","value":"SUPPORT"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BIGBOSS","column":"Core_Ability_IDs","value":"SUPPORT"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"MEK","column":"Core_Ability_IDs","value":"SUPPORT"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"PAINBOSS","column":"Core_Ability_IDs","value":"SUPPORT, INVULNERABLE_SAVE_6"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"PAINBOY","column":"Core_Ability_IDs","value":"SUPPORT"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"RUNTHERD","column":"Core_Ability_IDs","value":"SUPPORT"},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"WEIRDBOY","column":"Core_Ability_IDs","value":"DEADLY_DEMISE_D3, SUPPORT, UNSTABLE_ENERGIES"}]'
+              raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"SQUIGHOG_BOYZ","sets":{"Points_Label_2":"x8","Points_Cost_2":"280"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"PAINBOSS","sets":{"Points_Label_1":"x1","Points_Cost_1":"60"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
