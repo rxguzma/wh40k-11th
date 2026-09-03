@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_green_tide","mode":"replace_text","column":"Long_Description","from":"BOYZ unit only. This unit has 4+ Sv.","to":"BOYZ unit has 4++"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_brute_bosses","mode":"replace_text","column":"Short_Description","from":"WARBOSS. A TRANSPORT this unit is embarked within has +2\" M and 5+ InSv.  Excludes WALKER","to":"WARBOSS. TRANSPORT its embarked in has +2\" M and 5+ InSv.  Excludes WALKER"}]'
+              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"KEEP_HUNTIN","column":"Short Description","value":"Once per Battle Round:\u00a0 BEAST SNAGGAS 6\" are un-shock and RILED UP."},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ONE_LAST_KILL","column":"Short Description","value":"Fight on death on 2+."},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DA_BIGGER_DEY_IZ","column":"Short Description","value":"Re-rolls To Wound vs MONSTER / VEHICLE in Melee."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
