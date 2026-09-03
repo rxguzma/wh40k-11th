@@ -172,7 +172,7 @@ WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-bla
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.
 AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
 AMMO_RUNTS,Ammo Runts,Once per battle: +1 to Hit Ranged,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
-BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking= +1 to wound vs MONSTER/VEHICLE  Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking= +1 to wound vs MONSTER/VEHICLE   Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER/VEHICLE unit have +1 to wound rolls until the end of the turn"
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
@@ -258,7 +258,7 @@ STEALTH,Stealth,CORE: Stealth,CORE: Stealth
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability."
 WAAAGH_EFFIGY,Waaagh! Effigy,This unit is always RILED UP,This unit is RILED UP.
-WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and [PSYCHIC] Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and [PSYCHIC]  Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC]."
 TIDE_OF_MUSCLE,Tide of Muscle,If charged this turn: melee attacks have [LETHAL HITS],"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS]."
