@@ -16,7 +16,7 @@ CLOSE-QUARTERS,CLOSE-QUARTERS,Can shoot while engaged; must target engaged enemy
 COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Lootas.
 
 Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon."
-DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,Melee vs MONSTER/VEHICLE can re-roll wound rolls.,This unit's melee attacks that target a MONSTER/VEHICLE unit can re-roll wound rolls.
+DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,Re-rolls To Wound vs MONSTER / VEHICLE in Melee.,This unit's melee attacks that target a MONSTER/VEHICLE unit can re-roll wound rolls.
 DA_BIGGEST_AND_DA_BEST,Da Biggest and da Best,WAAAGH! = +4 Attacks in -,"When you call a Waaagh!, until the start of the next battle round, add 4 to the Attacks characteristic of this model’s - weapons."
 NEW_DA_BIGGEST_AND_DA_BEST,Da Biggest and da Best,In Waaagh!  Melee +4 attacks,"While the Waaagh! is active for this unit, this model’s melee weapons have +4 A."
 DA_BOSS_LADZ,Da Boss’ Ladz,IF Led by Warboss: -1 To Wound this unit if higher than Toughness.,"IF Led by Warboss: Da Boss’ Ladz: While a WARBOSS model is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll."
@@ -100,7 +100,7 @@ NOB,Nob,Nob has 2 Wounds,Nob has 2 Wounds
 NOB_ON_SMASHA_SQUIG,Nob on Smasha Squig,Nob has 4 Wounds,
 NOB_ON_SMASHA_SQUIG_2,Nob On Smasha Squig,Nob = 4 Wounds,
 NOB_WITH_TANK_HAMMER_5_SMASH_HAMMERS,Nob with Tank Hammer 5 Smash Hammers,Breaka Boyz 6 Wargear,
-ONE_LAST_KILL,One Last Kill,"When destroyed unactivated in Fight phase, 2+ fight then removed.","In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
+ONE_LAST_KILL,One Last Kill,Fight on death on 2+.,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield."
 PATROL_SQUAD,Patrol Squad,Split into two units,"At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models."
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"Friendly Orks within 6"": +1 to hit and +1 to wound on melee","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
@@ -315,7 +315,7 @@ COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa 
 This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.
 
 WARGEAR OPTIONS: This model's Kustom Choppa can be replaced with 1 Power Klaw. This model's Kustom Shoota can be replaced with one of the following: 1 Kombi-rokkit; 1 Kombi-skorcha."
-KEEP_HUNTIN,Keep Huntin',"Once per Battle Round: BEAST SNAGGAS 6"" un-shock and RILED UP.","Keep Huntin' (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit:
+KEEP_HUNTIN,Keep Huntin',"Once per Battle Round:  BEAST SNAGGAS 6"" are un-shock and RILED UP.","Keep Huntin' (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit:
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn."
 DODGE_DIS,Dodge Dis!,This unit's attacks have +1 to hit rolls.,This unit's attacks have +1 to hit rolls.
