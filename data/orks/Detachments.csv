@@ -223,14 +223,14 @@ orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_drive_by_bustin_1cp,DRIVE
 TARGET: That ORKS TRANSPORT unit.
 
 EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.",
-orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_grab_it_1cp,GRAB IT,,1,,,"After shooting: unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS Normal move 6"" onto an objective; cannot charge this turn.","WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit has shot.
+orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_grab_it_1cp,GRAB IT,,1,,,"Shoot and Move BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 6"" onto an objective.","WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit has shot.
 
 TARGET: That BREAKA BOYZ/FLASH GITZ/TANKBUSTAS unit.
 
 EFFECT:
 - Your unit can make a normal move of up to 6"", and must end that move within range of an objective.
 - Your unit is not eligible to declare a charge until the end of the turn.",
-orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,GUN-CRAZY SHOW-OFFS,,1,,,Opp shooting: FLASH GITZ/TANKBUSTAS hit by that enemy can shoot back at only that enemy.,"WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
+orks_wreckas,,Wreckas,STRATAGEM,orks_wreckas_stratagem_gun_crazy_show_offs_1cp,GUN-CRAZY SHOW-OFFS,,1,,,Opp shooting: FLASH GITZ / TANKBUSTAS hit by enemy can shoot back at same enemy.,"WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
 
 TARGET: One friendly FLASH GITZ/TANKBUSTAS unit hit by those attacks.
 
