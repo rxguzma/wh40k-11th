@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon Name","row_id":"Drilla","sets":{"Weapon Name":"Power klaw (Big Mek)","A":"4","St":"9","AP":"-2","D":"2"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon Name","row_id":"Power Klaw","sets":{"A":"3"}}]'
+              raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"POWER_KLAW_BIG_MEK","sets":{"Weapon Name":"Power klaw (Big Mek)","A":"4","St":"9","AP":"-2","D":"2"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"POWER_KLAW","sets":{"A":"3"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
