@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"BIG MEK/MEK model only. This model has +2\" M.","to":"BIG MEK / MEK model: +2\" M."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"BIG MEK: within 3\" of friendly ORKS WALKER (not BIG MEK) — Lone Operative; one WALKER within 3\" re-rolls hit 1s.","to":"BIG MEK: within 3\" of WALKER, the MEK gets Lone Op.\u00a0  Also, thst WALKER within 3\" re-rolls hit 1s."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"replace_text","column":"Short_Description","from":"BIG MEK/WARBOSS INFANTRY only. After deployment, redeploy up to 3 ORKS INFANTRY; can go into Strategic Reserves ignoring limits.","to":"BIG MEK / WARBOSS INFANTRY only.\u00a0 After deployment, redeploy 3 INFANTRY; can go into Strategic Reserves ignoring limits."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
