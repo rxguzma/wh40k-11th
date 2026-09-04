@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"POWER_KLAW_BIG_MEK","sets":{"A":"5","WS":"3+","St":"10","AP":"-2","D":"2"}},{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"BIG_MEK","column":"Weapon_IDs","value":"KUSTOM_MEGA_BLASTA_MEK, TRAKTOR_BLASTA, DRILLA, POWER_KLAW_BIG_MEK"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"BIG_MEK_KUSTOM_MEGA_BLASTA","column":"Weapon_IDs","value":"KUSTOM_MEGA_BLASTA_MEK"}]'
+              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"KEEP_HUNTIN","column":"Short Description","value":"Once per Battle Round:  BEAST SNAGGAS 6\" are un-shock and RILED UP."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
