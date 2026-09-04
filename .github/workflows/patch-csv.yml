@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KOMBI_SKORCHA","column":"Compatible_With","value":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW|NOB_BIG_CHOPPA"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KOMBI_ROKKIT","column":"Compatible_With","value":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW|NOB_BIG_CHOPPA"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KUSTOM_SHOOTA","column":"Compatible_With","value":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW|NOB_BIG_CHOPPA"}]'
+              raw = r'[{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KOMBI_SKORCHA","sets":{"Default":"FALSE","Compatible_With":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW"}},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KOMBI_ROKKIT","column":"Compatible_With","value":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KUSTOM_SHOOTA","column":"Compatible_With","value":"MELEE_NOB=NOB_KUSTOM_CHOPPA|NOB_POWER_KLAW"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_SLUGGA","column":"Default","value":"TRUE"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_KUSTOM_CHOPPA","column":"Default","value":"FALSE"},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"NOB_BIG_CHOPPA","sets":{"Default":"TRUE","Compatible_With":"RANGED_NOB=NOB_SLUGGA"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
