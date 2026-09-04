@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"Fight: non-TITANIC ORKS WALKER fight-on-death on 4+ (+3 if DEFF DREAD).","to":"Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"replace_text","column":"Short_Description","from":"Shooting: ORKS TRANSPORT Firing Deck weapons +1 to hit.","to":"Shooting: TRANSPORT Firing Deck +1 to hit."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_dread_mob_enhancement_more_dakka","column":"Short_Description","value":"Ranged attacks [IGNORES COVER]\\n\\nIf RILED UP: [SUSTAINED HITS 1]."},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_dread_mob_enhancement_shokk_boosta","column":"Short_Description","value":"Advance can be 6\”, move through models, then hazard per model."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
