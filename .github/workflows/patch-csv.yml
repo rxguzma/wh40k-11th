@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_green_tide","mode":"replace_text","column":"Short_Description","from":"BOYZ melee [SUSTAINED HITS 1].  Also, after a Charge, INFANTRY gains [LETHAL HITS: non-MONSTER/VEHICLE].","to":"BOYZ melee [SUSTAINED HITS 1].\\n\\nCharge, INFANTRY gains [LETHAL HITS: non-MONSTER/VEHICLE]."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_dread_mob_enhancement_dreadherder","column":"Short_Description","value":"BIG MEK: within 3\" of WALKER\\nMEK gets Lone Op.\\nAlso, WALKER within 3\" re-rolls hit 1s."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
