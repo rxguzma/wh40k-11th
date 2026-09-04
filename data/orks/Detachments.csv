@@ -150,7 +150,7 @@ orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ferocious_sh
 Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
 - Or, if this unit has 11+ models, +2 A.",
-orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ (UP),25,,,,BOYZ unit  4++,BOYZ unit only. This unit has 4+ Sv.,
+orks_green_tide,,Green Tide,ENHANCEMENT,orks_green_tide_enhancement_ardboyz,'ARDBOYZ (UP),25,,,,BOYZ unit  4+ Save,BOYZ unit only. This unit has 4+ Sv.,
 orks_green_tide,,Green Tide,STRATAGEM,orks_green_tide_stratagem_unbridled_carnage_1cp,UNBRIDLED CARNAGE,,1,,,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.
