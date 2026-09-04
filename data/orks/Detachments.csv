@@ -292,8 +292,8 @@ D6  RESULT
 5-6  +1 AP
 
 If you rolled two D6, when this unit has attacked, this unit makes one hazard roll.",
-orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_cybork_boosta,CYBORK BOOSTA,10,,,,"BIG MEK/MEK model only. This model has +2"" M.","BIG MEK/MEK model only. This model has +2"" M.",
-orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_dreadherder,DREADHERDER,20,,,,"BIG MEK: within 3"" of friendly ORKS WALKER (not BIG MEK) — Lone Operative; one WALKER within 3"" re-rolls hit 1s.","BIG MEK model only. While this model is within 3"" of a friendly ORKS WALKER unit (excluding BIG MEK units):
+orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_cybork_boosta,CYBORK BOOSTA,10,,,,"BIG MEK / MEK model: +2"" M.","BIG MEK/MEK model only. This model has +2"" M.",
+orks_dread_mob,,Dread Mob,ENHANCEMENT,orks_dread_mob_enhancement_dreadherder,DREADHERDER,20,,,,"BIG MEK: within 3"" of WALKER, the MEK gets Lone Op.   Also, thst WALKER within 3"" re-rolls hit 1s.","BIG MEK model only. While this model is within 3"" of a friendly ORKS WALKER unit (excluding BIG MEK units):
 - This model has Lone Operative.
 - In your Shooting phase, you can select one friendly ORKS WALKER unit within 3"" of this model. That unit's attacks can re-roll hit rolls of 1 until the end of the turn.",
 orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_crazed_rampage_1cp,CRAZED RAMPAGE,,1,,,Fight: non-TITANIC ORKS WALKER fight-on-death on 4+ (+3 if DEFF DREAD).,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
