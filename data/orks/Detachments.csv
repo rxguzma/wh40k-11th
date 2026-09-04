@@ -312,7 +312,8 @@ orks_dread_mob,,Dread Mob,STRATAGEM,orks_dread_mob_stratagem_stomping_juggernaut
 TARGET: That ORKS WALKER unit.
 
 EFFECT: Your unit has MOBILE.",
-orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,1,Take and Hold,WAGON  Re-roll Charges & can Advance flat 6.,"Friendly WAGON units can re-roll charge rolls.
+orks_blitz_brigade,Orks,Blitz Brigade,DETACHMENT_RULE,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,,,1,Take and Hold,"WAGON
+Re-roll Charges & can Advance flat 6.","Friendly WAGON units can re-roll charge rolls.
 
 When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6.",
 orks_blitz_brigade,,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_targetin_gizmos,TARGETIN' GIZMOS (UP),10,,,,WAGON with embarked BIG MEK: [IGNORES COVER] RILED UP also [SUSTAINED HITS 1],"WAGON unit only. While a BIG MEK model is embarked within this unit:
@@ -383,7 +384,8 @@ EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, if your unit is RILED UP, up to 6"".",
 ,,,,,,,,,,,,
-orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,Purge the Foe,WARBOSS   Fight on death 3+ or 2+ if RILED UP,"When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
+orks_brute_bosses,Orks,Brute Bosses,DETACHMENT_RULE,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,,,1,Purge the Foe,"WARBOSS
+Fight on death 3+ or 2+ if RILED UP","When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
 - On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield.",
 orks_brute_bosses,,Brute Bosses,ENHANCEMENT,orks_brute_bosses_enhancement_surly_as_a_squiggoth,SURLY AS A SQUIGGOTH,25,,,,"WARBOSS INFANTRY Once per battle, if model is destroyed, on a 2+ return with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining.",
