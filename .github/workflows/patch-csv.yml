@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"replace_text","column":"Short_Description","from":"BIG MEK/WARBOSS INFANTRY only. After deployment, redeploy up to 3 ORKS INFANTRY; can go into Strategic Reserves ignoring limits.","to":"BIG MEK / WARBOSS INFANTRY only.\u00a0 After deployment, redeploy 3 INFANTRY; can go into Strategic Reserves ignoring limits."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"Fight: non-TITANIC ORKS WALKER fight-on-death on 4+ (+3 if DEFF DREAD).","to":"Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC"},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"replace_text","column":"Short_Description","from":"Shooting: ORKS TRANSPORT Firing Deck weapons +1 to hit.","to":"Shooting: TRANSPORT Firing Deck +1 to hit."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
