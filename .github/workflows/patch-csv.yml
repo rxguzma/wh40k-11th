@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"replace_text","column":"Short_Description","from":"BREAKA BOYZ/FLASH GITZ/TANKBUSTAS re-roll hit 1s if they or their target are in range of an objective.","to":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS reroll 1s To Hit if they or their target are in range of an objective."}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"BIG MEK/MEK model only. This model has +2\" M.","to":"BIG MEK / MEK model: +2\" M."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_dread_mob","mode":"replace_text","column":"Short_Description","from":"BIG MEK: within 3\" of friendly ORKS WALKER (not BIG MEK) — Lone Operative; one WALKER within 3\" re-rolls hit 1s.","to":"BIG MEK: within 3\" of WALKER, the MEK gets Lone Op.\u00a0  Also, thst WALKER within 3\" re-rolls hit 1s."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
