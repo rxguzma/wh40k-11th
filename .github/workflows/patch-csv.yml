@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_blitz_brigade","mode":"replace_text","column":"Short_Description","from":"WAGON with embarked WARBOSS  gains that WARBOSS\u0027s Intimidating Motivation / Keep Huntin\u0027 ability.","to":"WAGON with embarked by WARBOSS:  It gains that WARBOSS\u0027s Intimidating Motivation / Keep Huntin\u0027 ability."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_blitz_brigade","mode":"replace_text","column":"Short_Description","from":"WAGON with embarked BIG MEK: [IGNORES COVER] RILED UP also [SUSTAINED HITS 1]","to":"WAGON with embarked by BIG MEK: [IGNORES COVER]   If RILED UP also [SUSTAINED HITS 1]"}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_blitz_brigade","mode":"replace_text","column":"Short_Description","from":"WAGON with embarked by WARBOSS:  It gains that WARBOSS\u0027s Intimidating Motivation / Keep Huntin\u0027 ability.","to":"WAGON with embarked by WARBOSS:\\nIt gains that WARBOSS\u0027s Intimidating Motivation / Keep Huntin\u0027 ability."},{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_blitz_brigade","mode":"replace_text","column":"Short_Description","from":"WAGON with embarked by BIG MEK: [IGNORES COVER]   If RILED UP also [SUSTAINED HITS 1]","to":"WAGON with embarked by BIG MEK:\\n[IGNORES COVER]\\n\\nIf RILED UP also [SUSTAINED HITS 1]"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
