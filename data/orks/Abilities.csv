@@ -64,26 +64,26 @@ Up to 2 Kommandos can each have their slugga and choppa replaced with 1 speshul 
 KRUMPIN_TIME,Krumpin Time,If RILED UP: +1 to hit rolls in Fight phase,"In the Fight phase, if this unit is RILED UP, this unit has +1 to hit rolls."
 KUNNIN_INFILTRATOR,Kunnin' Infiltrator,Hidden and unengaged at end of opponent Fight phase = go reserves,"At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves."
 KUSTOM_FORCE_FIELD,Kustom Force Field,This unit has 4+ InSv against ranged attacks.,This unit has 4+ InSv against ranged attacks.
-LEADER_BEASTBOSS,Leader: Beastboss,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
+LEADER_BEASTBOSS,Leader: Beastboss,Can Lead: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
 LEADER_BEASTBOSS_ON_SQUIGOSAUR,Leader: Beastboss on Squigosaur,LEADER: SQUIGHOG BOYZ,LEADER: SQUIGHOG BOYZ
-LEADER_BIG_MEK,Leader: Big Mek,"LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
-LEADER_BIG_MEK_IN_MEGA_ARMOUR,Leader: Big Mek in Mega Armour,LEADER: MEGANOBZ,LEADER: MEGANOBZ
-LEADER_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Leader: Big Mek with Shokk Attack Gun,"LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
+LEADER_BIG_MEK,Leader: Big Mek,"Can Lead: BOYZ, BREAKA BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
+LEADER_BIG_MEK_IN_MEGA_ARMOUR,Leader: Big Mek in Mega Armour,"Can Lead: MEGANOBZ, MEK GUNZ",LEADER: MEGANOBZ
+LEADER_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Leader: Big Mek with Shokk Attack Gun,"Can Lead: BOYZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
 LEADER_BIGBOSS,Leader: Bigboss,"LEADER: BOYZ, BREAKA BOYZ, NOBZ",Leader: This model can be attached to the following units: Boyz; Breaka Boyz; Nobz.
-LEADER_BOSS_SNIKROT,Leader: Boss Snikrot,LEADER: KOMMANDOS,LEADER: KOMMANDOS
+LEADER_BOSS_SNIKROT,Leader: Boss Snikrot,Can Lead: KOMMANDOS,LEADER: KOMMANDOS
 NEW_LEADER_BOYZ,Leader: Boyz,Can attach to BOYZ,Leader: This model can be attached to the following units: Boyz.
 NEW_LEADER_BOYZ_BREAKA_BOYZ_LOOTAS_MEK_GUNZ_NOBZ_TANKBUSTAS,"Leader: Boyz, Breaka Boyz, Lootas, Mek Gunz, Nobz, Tankbustas","Can lead Boyz, Breaka Boyz, Lootas, Mek Gunz, Nobz or Tankbustas.","Leader: This model may attach to Boyz, Breaka Boyz, Lootas, Mek Gunz, Nobz or Tankbustas."
 NEW_LEADER_BOYZ_BREAKA_BOYZ_NOBZ,"Leader: Boyz, Breaka Boyz, Nobz","Can attach to Boyz, Breaka Boyz, or Nobz",Leader: This model can be attached to the following units: Boyz; Breaka Boyz; Nobz.
-LEADER_DEFFKILLA_WARTRIKE,Leader: Deffkilla Wartrike,LEADER: WARBIKERS,LEADER: WARBIKERS
+LEADER_DEFFKILLA_WARTRIKE,Leader: Deffkilla Wartrike,Can Lead: WARBIKERS,LEADER: WARBIKERS
 LEADER_GHAZGHKULL_THRAKA,Leader: Ghazghkull Thraka,"LEADER: BOYZ, BREAKA BOYZ, MEGANOBZ, NOBZ","LEADER: BOYZ, BREAKA BOYZ, MEGANOBZ, NOBZ"
 LEADER_MEK,Leader: Mek,"LEADER: BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS"
 LEADER_MOZROG_SKRAGBAD,Leader: Mozrog Skragbad,LEADER: SQUIGHOG BOYZ,LEADER: SQUIGHOG BOYZ
 LEADER_PAINBOSS,Leader: Painboss,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
-LEADER_WARBOSS,Leader: Warboss,"LEADER: BOYZ, BREAKA BOYZ, NOBZ","LEADER: BOYZ, BREAKA BOYZ, NOBZ"
-LEADER_WARBOSS_IN_MEGA_ARMOUR,Leader: Warboss in Mega Armour,LEADER: MEGANOBZ,LEADER: MEGANOBZ
+LEADER_WARBOSS,Leader: Warboss,"Can Lead: BOYZ, BREAKA BOYZ, NOBZ","LEADER: BOYZ, BREAKA BOYZ, NOBZ"
+LEADER_WARBOSS_IN_MEGA_ARMOUR,Leader: Warboss in Mega Armour,Can Lead: MEGANOBZ,LEADER: MEGANOBZ
 LEADER_WEIRDBOY,Leader: Weirdboy,"LEADER: BOYZ, BREAKA BOYZ","LEADER: BOYZ, BREAKA BOYZ"
 LEADER_WURRBOY,Leader: Wurrboy,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ
-LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,LEADER: GRETCHIN,LEADER: GRETCHIN
+LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: GRETCHIN
 MAKARI,Makari,"Sv: 2++, W:1, Ld: 8, OC: 1Cannot re-roll Invul Save",
 MEKANIAK,Mekaniak,"End of Movement. Select Vehicle 3"", repair D3 wounds and +1 To Hit.","At the end of your Movement phase, you can select one friendly ORKS VEHICLE model within 3"" of this model. That VEHICLE model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn."
 MEKBOY,Mekboy,"IF within 3"" of Vehicle = Lone Operative","While this model is within 3"" of one or more friendly ORKS VEHICLE units, this model has the Lone Operative ability."
@@ -136,9 +136,9 @@ SPIRIT_OF_GORK_PSYCHIC,Spirit of Gork (Psychic),"Figth: 2-5 +1 Strenght to Orks 
 STOMPIN_FORWARD,Stompin’ Forward,"Move over non-TITANIC models and terrain 4"" or lower","Each time this model makes a Normal, Advance or Fall Back move, it can move over models, excluding TITANIC models, and terrain features that are 4"" or less in height as if they were not there."
 SUPER_RUNTS,Super Runts,"This unit is RILED UP. Scavenged Shivs +1 A, WS and S.","- This unit is RILED UP.
 - This unit's Scavenged Shivs weapons have +1 A, WS and S."
-SUPPORT_BANNERNOB,Support: Bannernob,"SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, FLASH GITZ, LOOTAS, NOBZ, TANKBUSTAS",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.
+SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.
 NEW_SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Burna Boyz, Lootas, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Lootas; Nobz; Tankbustas.
-SUPPORT_PAINBOY,Support: Painboy,"SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, LOOTAS, NOBZ, TANKBUSTAS","SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, LOOTAS, NOBZ, TANKBUSTAS"
+SUPPORT_PAINBOY,Support: Painboy,"Can Support: BOYZ, BREAKA BOYZ, FLASH GITZ, NOBZ, TANKBUSTAS","SUPPORT: BOYZ, BREAKA BOYZ, BURNA BOYZ, LOOTAS, NOBZ, TANKBUSTAS"
 SUPPORT_WARBIKERS,Support: Warbikers,Can attach to Warbikers,Support: This model can be attached to Warbikers units.
 TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster/Vehicles,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll."
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,
@@ -437,3 +437,9 @@ WARGEAR_OPTIONS_BOYZ,Unit Composition (Boyz Opt 3),"3 specials per 10: Big Shoot
 This unit can have 3 special weapons per 10 models (Big Shoota, Rokkit Launcha, and Burna)."
 WARGEAR_OPTIONS_BOYZ_OPT_1,Unit Composition (Boyz Opt 1),"3 specials per 10: Big Shoota, Rokkit Launcha, Burna. Nobs: Kustom Choppa + Kombi-skorcha.",
 WARGEAR_OPTIONS_BOYZ_OPT_2,Unit Composition (Boyz Opt 2),"3 specials per 10: Big Shoota, Rokkit Launcha, Burna. Nobs: Kustom Choppa + Kombi-Rokkit.",
+LEADER_NAZDREG,LEADER,Can Lead: MEGANOBZ,
+SUPPORT_BIGBOSS,SUPPORT,"Can Support: BOYZ, BREAKA BOYZ, NOBZ",
+SUPPORT_MEK,SUPPORT,"Can Support: BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS",
+SUPPORT_PAINBOSS,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, SQUIGHOG BOYZ",
+SUPPORT_RUNTHERD,SUPPORT,Can Support: GRETCHIN,
+SUPPORT_WEIRDBOY,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, BOYZ",
