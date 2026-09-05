@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"*","mode":"replace_text","column":"Short Description","from":"MONSTER/VEHICLE","to":"MONSTER / VEHICLE"}]'
+              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Short_Description","from":"BOYZ/KOMMANDOS/STORMBOYZ","to":"BOYZ / KOMMANDOS / STORMBOYZ"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Long_Description","from":"BOYZ/KOMMANDOS/STORMBOYZ","to":"BOYZ / KOMMANDOS / STORMBOYZ"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Short_Description","from":"KOMMANDOS/STORMBOYZ","to":"KOMMANDOS / STORMBOYZ"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Long_Description","from":"KOMMANDOS/STORMBOYZ","to":"KOMMANDOS / STORMBOYZ"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Long_Description","from":"BREAKA BOYZ/FLASH GITZ/TANKBUSTAS","to":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Short_Description","from":"MONSTER/VEHICLE","to":"MONSTER / VEHICLE"},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"*","mode":"replace_text","column":"Long_Description","from":"MONSTER/VEHICLE","to":"MONSTER / VEHICLE"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
