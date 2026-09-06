@@ -248,9 +248,7 @@ dark_angels_inner_circle_task_force,,Inner Circle Task Force,STRATAGEM,dark_ange
 TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
-iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_augmetic_fortitude_1cp,AUGMETIC FORTITUDE,,1,,,"ENEMY CHARGE
-VETS
--1 Damage","WHEN: Your opponent’s Charge phase, just after an enemy unit ends a Charge move.
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_augmetic_fortitude_1cp,AUGMETIC FORTITUDE,,1,,,ENEMY CHARGE: VETS -1 Damage,"WHEN: Your opponent’s Charge phase, just after an enemy unit ends a Charge move.
 
 TARGET: One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within Engagement Range of that enemy unit.
 
@@ -284,9 +282,8 @@ SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_CLOAK
 TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: Your unit has -3"" detection range until the end of the turn."
-iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_cogitated_ferocity_1cp,COGITATED FEROCITY,,1,,,"MELEE
-DREADS and VETS
-LETHAL OR SUSTAIN 1","WHEN: Your Fight phase.
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_cogitated_ferocity_1cp,COGITATED FEROCITY,,1,,,"MELEE DREADS and VETS
+[LETHAL HIT] OR [SUSTAIN HITS]","WHEN: Your Fight phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to fight this phase.
 
@@ -316,8 +313,7 @@ Ignore Cover and AP -1","WHEN: Your Shooting phase.
 TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability and improve the Armour Penetration characteristic of such weapons by 1."
-iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dominator_beacon_1cp,DOMINATOR BEACON,,1,,,"MOVEMENT
-DREADS and VETS
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dominator_beacon_1cp,DOMINATOR BEACON,,1,,,"MOVEMENT DREADS and VETS
 Sticky Objective","WHEN: Your Movement phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within range of an objective marker you control.
@@ -330,8 +326,7 @@ Go back to RESERVES","WHEN: End of your opponent’s Fight phase.
 TARGET: One ADEPTUS ASTARTES TERMINATOR unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves."
-iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dropship_extraction_1cp,DROPSHIP EXTRACTION,,1,,,"ENEMY FIGHT
-TERMINATOR
+iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_dropship_extraction_1cp,DROPSHIP EXTRACTION,,1,,,"ENEMY FIGHT: TERMINATOR
 GO BACK TO RESERVES","WHEN: End of your opponent’s Fight phase.
 
 TARGET: One Adeptus Astartes Terminator unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
@@ -551,8 +546,7 @@ TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from y
 EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll."
 iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_ruthless_butchery_1cp,RUTHLESS BUTCHERY,,1,,,"MELEE and RANGE
 DREADS and VETS
-+1 To Hit
-IF wounded +1 To Wound","WHEN: Your Shooting phase or the Fight phase.
+[+1 To Hit] IF wounded [+1 To Wound]","WHEN: Your Shooting phase or the Fight phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to shoot or fight this phase.
 
