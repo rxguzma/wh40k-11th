@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"NEW_ANCIENT","column":"Unit Name","value":"Ancient"},{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"INTERCESSORS","mode":"update","sets":{"Points_Label_1":"x5","Points_Cost_1":"80","Points_Label_2":"x10","Points_Cost_2":"150"}},{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"NEW_INTERCESSOR_SQUAD","mode":"delete"},{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"NEW_LAND_SPEEDER","mode":"delete"}]'
+              raw = r'[{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"DARK_AGE_ARSENAL","mode":"replace_text","column":"Short_Description","from":"HAZARDOUS plasma attacks have +1 S.","to":"HAZARDOUS plasma attacks have [+1 S]."},{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"DARK_AGE_ARSENAL","mode":"replace_text","column":"Short_Description","from":"Unit\u0027s plasma attacks +1 To Hit.","to":"Unit\u0027s plasma attacks [+1 To Hit]."},{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"dark_angels_inner_circle_task_force","mode":"replace_text","column":"Short_Description","from":"Deathwing INFANTRY: +1 To Wound (Range or Shoot)","to":"Deathwing INFANTRY: [+1 To Wound] (Range or Shoot)"},{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"DARK_AGE_ARSENAL","mode":"replace_text","column":"Short_Description","from":"Plasma weapon profiles have +1 S.","to":"Plasma weapon profiles have [+1 S]."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
