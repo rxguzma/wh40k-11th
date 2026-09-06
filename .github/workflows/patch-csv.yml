@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"PROPHET_OF_DA_GREAT_WAAAGH","column":"Short Description","value":"Friendly Orks within 6\": [+1 To Hit] and [+1 To Wound] on melee"}]'
+              raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"TIDE_OF_MUSCLE","column":"Short Description","value":"Charge this turn: melee attacks have [LETHAL HITS]"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
