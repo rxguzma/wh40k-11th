@@ -20,32 +20,33 @@ orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_headwoppas_kill
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_da_boss_is_watchin,DA BOSS IS WATCHIN',25,,,,"ORKS model only. Once per battle, per army: in your Movement phase, this unit is RILED UP until the start of your next turn.","ORKS model only. (Once per battle, per army) In your Movement phase, you can use this ability. If you do, this unit is RILED UP until the start of your next turn.",
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_kunnin_but_brutal,KUNNIN' BUT BRUTAL,20,,,,ORKS model only. Fall Back does not prevent this unit from shooting or charging.,"ORKS model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot / declare a charge.",
 orks_war_horde,,War Horde,ENHANCEMENT,orks_war_horde_enhancement_follow_me_ladz,FOLLOW ME LADZ,20,,,,"ORKS model only. This unit has +2"" M.","ORKS model only. This unit has +2"" M.",
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_breakin_heads_1cp,BREAKIN' HEADS,,1,,,Any phase: attached ORKS INFANTRY that becomes Battle-shocked takes D3 MW and is no longer Battle-shocked.,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_breakin_heads_1cp,BREAKIN' HEADS,,1,,,Any phase: Attached INFANTRY takes D3 MW and is no longer Battle-shocked.,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
 
 TARGET: That ORKS INFANTRY unit. You can target that unit with this stratagem even though it is battle-shocked.
 
 EFFECT: Roll one D3:
 - Your unit suffers a number of mortal wounds equal to the result.
 - Your unit is no longer battle-shocked.",
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_hit_em_harder_1cp,HIT 'EM HARDER,,1,,,Fight: ORKS unit’s melee attacks gain [LETHAL HITS].,"WHEN: Fight phase, when a friendly ORKS unit is selected to fight.
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_hit_em_harder_1cp,HIT 'EM HARDER,,1,,,Fight: Melee attacks gain [LETHAL HITS].,"WHEN: Fight phase, when a friendly ORKS unit is selected to fight.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit's melee attacks have [LETHAL HITS].",
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_orks_is_never_beaten_1cp,ORKS IS NEVER BEATEN,,1,,,Fight: non-TITANIC ORKS models fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_orks_is_never_beaten_1cp,ORKS IS NEVER BEATEN,,1,,,"Fight: non-TITANIC fight-on-death 
+on 4+ (3+ if RILED UP).","WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
 
 TARGET: That ORKS unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP.
 - On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_mow_em_down_1cp,MOW 'EM DOWN,,1,,,Fight: charging non-WALKER ORKS VEHICLE melee gains [CLEAVE 1] (or +1 CLEAVE).,"WHEN: Fight phase, when a friendly ORKS VEHICLE unit (excluding WALKER units) that made a charge move this turn is selected to fight.
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_mow_em_down_1cp,MOW 'EM DOWN,,1,,,Fight: Charging non-WALKER VEHICLE melee gains [CLEAVE 1] (or +1 CLEAVE).,"WHEN: Fight phase, when a friendly ORKS VEHICLE unit (excluding WALKER units) that made a charge move this turn is selected to fight.
 
 TARGET: That ORKS VEHICLE unit.
 
 EFFECT: Your unit's melee attacks have:
 - [CLEAVE 1]
 - Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",
-orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_fungus_fuel_injection_1cp,FUNGUS-FUEL INJECTION,,1,,,"Movement: ORKS MOUNTED / VEHICLE unit gets +2"" M.","WHEN: Your Movement phase, when a friendly ORKS MOUNTED / VEHICLE unit is selected to move.
+orks_war_horde,,War Horde,STRATAGEM,orks_war_horde_stratagem_fungus_fuel_injection_1cp,FUNGUS-FUEL INJECTION,,1,,,"Movement: MOUNTED / VEHICLE +2"" M.","WHEN: Your Movement phase, when a friendly ORKS MOUNTED / VEHICLE unit is selected to move.
 
 TARGET: That ORKS MOUNTED / VEHICLE unit.
 
