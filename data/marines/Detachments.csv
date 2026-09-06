@@ -100,34 +100,34 @@ space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_mar
 space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
 space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
 space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing,,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army.
 
 EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 
 RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination,,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
 
 EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation,,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
 
 EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen,,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
 
 TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
 
 EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught,,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
+space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor,,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
 
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
 
@@ -178,54 +178,6 @@ DARK_AGE_ARSENAL,,Dark Age Arsenal,ENHANCEMENT,DARK_AGE_ARSENAL_ENHANCEMENT_ENTR
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_execute_and_redeploy,Execute and Redeploy,20,,,,"PHOBOS + SHOOTING
 Shoot + Normal move up to 6"".
 Cannot Charge","Execute and Redeploy: PHOBOS model only. In your Shooting phase, after the bearer’s unit has shot, if that unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6"". If it does, until the end of the turn, that unit is not eligible to declare a charge. This cannot allow the bearer’s unit to move more than once in your Shooting phase."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_eye_of_the_unseen,Eye of the Unseen,10,,,,Gain CP,"Eye of the Unseen: DEATHWING model only. Each time you target the bearer’s unit with a Stratagem, roll one D6, adding 1 if the bearer is within range of your Vowed objective marker: on a 5+, you gain 1CP"
 space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_feinting_withdrawal,Feinting Withdrawal,10,,,,"LEADING 
 Shoot after Fallback","ADEPTUS ASTARTES model only. While the bearer is leading a unit, that unit is eligible to shoot in a turn in which it Fell Back."
@@ -241,54 +193,6 @@ LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMEN
 
 PYROMANCY: Grants [SUSTAINED HITS 1].","ADEPTUS ASTARTES PSYKER model only. This unit's ranged attacks have [ANTI-MONSTER/VEHICLE 5+]. If this unit has the Pyromancy Discipline ability, this unit's ranged attacks also have [SUSTAINED HITS 1]."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_ghostweave_cloak,Ghostweave Cloak,15,,,,Bearer has Stealth and Lone Op,Ghostweave Cloak: ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_hunters_eye,Hunter’s Eye,20,,,,Bearer’s unit ranged weapons gain SUSTAINED HITS 1 and IGNORES COVER.,HUNTER’S EYE: ADEPTUS ASTARTES model only. Ranged weapons equipped by models in the bearer’s unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.
 space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_hunters_instincts,Hunter’s Instincts,25,,,,Arrive from Reserves early,"ADEPTUS ASTARTES model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is."
 space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_hunters_instincts,Hunter’s Instincts,25,,,,"RESERVES + MOUNTED. 
@@ -324,54 +228,6 @@ LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMEN
 DIVINATION: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6""."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_shadow_war_veteran,Shadow War Veteran,30,,,,"PHOBOS gets Lord of Deceit (Aura): Within 12"", +1CP for stratagems","Shadow War Veteran: PHOBOS model only. Gain following ability:
 Lord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 SUBVERSION_ASSETS,,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_SHROUD_FIELD,Shroud Field,20,,,,PHOBOS model only. This model has Lone Operative and Stealth.,PHOBOS model only. This model has Lone Operative and Stealth.
 dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_singular_will,Singular Will,20,,,,"+3"" Pile in, Consolidate","Singular Will: DEATHWING model only. Each time the bearer’s unit Piles In or Consolidates, models in that unit can move an additional 3""."
 space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_spearpoint_paragon,Spearpoint Paragon,25,,,," +1 Strength and AP to melee weapons. If the bearer charged, +2 Strength and AP instead.","SPEARPOINT PARAGON: ADEPTUS ASTARTES model only. Improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 1. Each time the bearer ends a Charge move, until the end of the turn, improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 2 instead."
@@ -387,54 +243,6 @@ that unit."
 LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go Reserves at end opp Fight.  
 TELEKINESIS: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_the_blade_driven_deep,The Blade Driven Deep,25,,,,Leading = Infiltrator to Unit,"The Blade Driven Deep: ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_the_honour_vehement,The Honour Vehement,15,,,,"+1 Attack +1 Strength
  +2 Attack +2 Strength in Assault","The Honour Vehement: ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead."
 DARKFLIGHT_PURSUIT,,Darkflight Pursuit,ENHANCEMENT,DARKFLIGHT_PURSUIT_ENHANCEMENT_THUNDERCOWL_TURBINES,Thundercowl Turbines,,,,,"RAVENWING FLY unit only. In your first Movement phase, this unit can make an ingress move.","RAVENWING FLY unit only. In your first Movement phase, this unit can make an ingress move."
@@ -448,54 +256,6 @@ Sabotaged","WHEN: Start of the Command phase.
 TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.
 
 EFFECT: That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_ADAPTIVE_OPERATIONS,ADAPTIVE OPERATIONS,,1,,,SHOOTING: A PHOBOS or SCOUT SQUAD unit starts an action. That action does not prevent the unit from shooting.,"WHEN: Your Shooting phase, when a friendly PHOBOS/SCOUT SQUAD unit starts an action.
 
 TARGET: That PHOBOS/SCOUT SQUAD unit.
@@ -565,54 +325,6 @@ TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a
 EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit.
 
 RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 SUBVERSION_ASSETS,,Subversion Assets,STRATAGEM,SUBVERSION_ASSETS_STRATAGEM_CLOAKED_POSITION,CLOAKED POSITION,,1,,,"START OF ENEMY MOVEMENT: One unengaged PHOBOS or SCOUT SQUAD unit has -3"" detection range until the end of the turn.","WHEN: Start of your opponent's Movement phase.
 
 TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
@@ -720,54 +432,6 @@ TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other A
 EFFECT: Remove those units from the battlefield and place them into Strategic Reserves.
 
 RESTRICTIONS: Each unit selected for this Stratagem must be more than 3"" away from all enemy models."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_honour_the_chapter_1cp,Honour The Chapter,,1,,,"CHARGE +1 To Wound
 with Assault doctrine -1 AP","WHEN: Fight phase.
 
@@ -988,54 +652,6 @@ Also, Battle Shock.","WHEN: Your Shooting phase.
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 space_marines_shadowmark_talon,,Shadowmark Talon,STRATAGEM,space_marines_shadowmark_talon_stratagem_stunning_fusillade_1cp,STUNNING FUSILLADE,,1,,,"Enemy 12"" away +1 BS and AP.
 If destroyed model, Battle Shock","WHEN: Your Shooting phase.
 
@@ -1049,54 +665,6 @@ space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_van
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
-
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_laurels_of_thunder,Laurels of Thunder,15,,,,Set up this turn: Re-roll Charge rolls.,ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer's unit in a turn in which it was set up on the battlefield.
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_veteran_of_the_vanguard,Veteran of the Vanguard,20,,,,"Unit has Scouts 6"".","ADEPTUS ASTARTES model only. Models in the bearer's unit have the Scouts 6"" ability."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_orbital_uplink_reliquary,Orbital Uplink Reliquary,25,,,,After deployment: Redeploy up to 3 ADEPTUS ASTARTES units; can place them in Strategic Reserves.,"ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,ENHANCEMENT,space_marines_orbital_assault_force_enhancement_dedicated_gunship,Dedicated Gunship,15,,,,"TERMINATOR: Once per battle, end opponent Fight if unengaged: Unit goes to Strategic Reserves.","ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent's Fight phase, if the bearer's unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer's unit from the battlefield and place it into Strategic Reserves."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_suppression_strafing,Suppression Strafing (1CP),,1,,,"Command: Enemy within 18"" takes Battle-shock at -1. Failed = -1 To Hit until next turn.","WHEN: Command phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Select one enemy unit visible to and within 18"" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-
-RESTRICTIONS: You cannot use this Stratagem more than once per battle round."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_auto_sense_coordination,Auto-Sense Coordination (1CP),,1,,,"Shoot/Fight: [LETHAL HITS] or [SUSTAINED HITS 1] after DROP POD disembark OR vs target within 12"".","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_tactical_decapitation,Tactical Decapitation (1CP),,1,,,Shoot/Fight: [PRECISION] and +1 To Hit vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_blind_screen,Blind Screen (1CP),,1,,,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
-
-EFFECT: Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_shock_onslaught,Shock Onslaught (1CP),,1,,,"Fight: Pile-in and Consolidation moves up to 6"".","WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6"" instead of up to 3""."
-space_marines_orbital_assault_force,,Orbital Assault Force,STRATAGEM,space_marines_orbital_assault_force_stratagem_onward_for_the_emperor,Onward for the Emperor (1CP),,1,,,"End enemy Fight: INFANTRY wholly within 6"" of TRANSPORT can embark.","WHEN: End of your opponent's Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was not set up on the battlefield this turn and one friendly TRANSPORT it is able to embark within.
-
-EFFECT: If your ADEPTUS ASTARTES unit is wholly within 6"" of that TRANSPORT, it can embark within it."
 space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_tactical_foresight_1cp,Tactical Foresight,,1,,,"If Strengths is higher or equal
 -1 To Wound.","WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
