@@ -172,7 +172,7 @@ WARGEAR_OPTIONS_NEW_BOYZ,Wargear Options - Boyz (New),Boss Nob can replace kusto
 WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-blasta.,"For every 3 models in this unit, 1 Deffkopta can have its kopta rokkits replaced with 1 kustom mega-blasta."
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.
 AERIAL_MANOEUVRE,Aerial Manoeuvre,"End of opponent’s turn: if unengaged, can return to Strategic Reserves","At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves."
-AMMO_RUNTS,Ammo Runts,Once per battle: +1 to Hit Ranged,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
+AMMO_RUNTS,Ammo Runts,Once per battle: [+1 To Hit] Ranged,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls.Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used."
 BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking= +1 to wound vs MONSTER / VEHICLE   Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls until the end of the turn"
@@ -230,7 +230,7 @@ DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mort
 DEEP_STRIKE,Deep Strike,Unit has the Deep Strike ability,CORE: Deep Strike
 DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model."
 FEEL_NO_PAIN_5,Feel No Pain 5+,CORE: Feel No Pain 5+,CORE: Feel No Pain 5+
-FINDER_KEEPERZ,Finder Keeperz,Shooting: +1 AP if unit or target is on an objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
+FINDER_KEEPERZ,Finder Keeperz,Shooting:[+1 AP] if unit or target is on an objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
 - The target of that attack is within range of an objective"
 FIRING_DECK_11,Firing Deck 11,CORE: Firing Deck 11,CORE: Firing Deck 11
