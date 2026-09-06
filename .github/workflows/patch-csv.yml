@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/orks/Detachments.csv","id_column":"Detachment_ID","row_id":"orks_blitz_brigade","mode":"replace_text","column":"Short_Description","from":"WAGON with embarked by BIG MEK:\\n[IGNORES COVER]\\n\\nIf RILED UP: [SUSTAINED HITS 1]","to":"WAGON with embarked by BIG MEK:\\n[IGNORES COVER]\\nIf RILED UP: [SUSTAINED HITS 1]"}]'
+              raw = r'[{"file":"data/universal/Universal_Stratagems.csv","id_column":"Item_Name","row_id":"Grenade (1CP)","sets":{"Item_Name":"Explosives (1CP)"}},{"file":"data/universal/Universal_Stratagems.csv","id_column":"Item_Name","row_id":"Tank Shock (1CP)","sets":{"Item_Name":"Crushing Impact (1CP)"}},{"file":"data/universal/Universal_Stratagems.csv","id_column":"Item_Name","row_id":"Go to Ground (1CP)","mode":"delete"},{"file":"data/universal/Universal_Stratagems.csv","id_column":"Item_Name","row_id":"Heroic Intervention (2CP)","sets":{"Item_Name":"Heroic Intervention (1CP)","CP_Cost":"1.0"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
