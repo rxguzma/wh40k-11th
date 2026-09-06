@@ -84,9 +84,12 @@ Telepathy Discipline: This unit's attacks can ignore modifiers to BS, WS and hit
 SUBVERSION_ASSETS,Marines,Subversion Assets,DETACHMENT_RULE,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,,,1,Recon,"PHOBOS and SCOUT detect a visible enemy within 12"". 
 While detected, enemy has +3"" detection range.","Friendly PHOBOS/SCOUT SQUAD units have the following ability. Transhuman Perception: In your Shooting phase, this unit can select one visible enemy unit within 12"". That enemy unit is detected. While a unit is detected, that unit has +3"" detection range."
 space_marines_vanguard_spearhead,Marines,Vanguard Spearhead,DETACHMENT_RULE,space_marines_vanguard_spearhead_detachment_rule_detachment_rule,SHADOW MASTERS,,,2,Recon,Cover & -1 To be Hit,"Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -175,9 +178,12 @@ DARK_AGE_ARSENAL,,Dark Age Arsenal,ENHANCEMENT,DARK_AGE_ARSENAL_ENHANCEMENT_ENTR
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_execute_and_redeploy,Execute and Redeploy,20,,,,"PHOBOS + SHOOTING
 Shoot + Normal move up to 6"".
 Cannot Charge","Execute and Redeploy: PHOBOS model only. In your Shooting phase, after the bearer’s unit has shot, if that unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6"". If it does, until the end of the turn, that unit is not eligible to declare a charge. This cannot allow the bearer’s unit to move more than once in your Shooting phase."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -235,9 +241,12 @@ LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMEN
 
 PYROMANCY: Grants [SUSTAINED HITS 1].","ADEPTUS ASTARTES PSYKER model only. This unit's ranged attacks have [ANTI-MONSTER/VEHICLE 5+]. If this unit has the Pyromancy Discipline ability, this unit's ranged attacks also have [SUSTAINED HITS 1]."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_ghostweave_cloak,Ghostweave Cloak,15,,,,Bearer has Stealth and Lone Op,Ghostweave Cloak: ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -315,9 +324,12 @@ LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMEN
 DIVINATION: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6""."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_shadow_war_veteran,Shadow War Veteran,30,,,,"PHOBOS gets Lord of Deceit (Aura): Within 12"", +1CP for stratagems","Shadow War Veteran: PHOBOS model only. Gain following ability:
 Lord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -375,9 +387,12 @@ that unit."
 LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go Reserves at end opp Fight.  
 TELEKINESIS: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_the_blade_driven_deep,The Blade Driven Deep,25,,,,Leading = Infiltrator to Unit,"The Blade Driven Deep: ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -433,9 +448,12 @@ Sabotaged","WHEN: Start of the Command phase.
 TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.
 
 EFFECT: That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -547,9 +565,12 @@ TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a
 EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit.
 
 RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -699,9 +720,12 @@ TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other A
 EFFECT: Remove those units from the battlefield and place them into Strategic Reserves.
 
 RESTRICTIONS: Each unit selected for this Stratagem must be more than 3"" away from all enemy models."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -964,9 +988,12 @@ Also, Battle Shock.","WHEN: Your Shooting phase.
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
@@ -1022,9 +1049,12 @@ space_marines_vanguard_spearhead,,Vanguard Spearhead,STRATAGEM,space_marines_van
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).
-Set up this turn: Re-roll 1s To Wound.
-DROP POD disembark: also Re-roll 1s To Hit.","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+
+Also, Set up this turn: Re-roll [1s To Wound]
+If DROP POD disembark: [Re-roll 1s To Hit]
+
+Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
 Incursion: 2
 Strike Force: 3
