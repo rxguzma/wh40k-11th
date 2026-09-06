@@ -9,20 +9,6 @@ core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_ep
 TARGET: That CHARACTER unit.
 
 EFFECT: Select one CHARACTER model in your unit. Until the end of the phase, that model’s melee weapons have the [PRECISION] ability."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_fire_overwatch_1cp,Fire Overwatch ,,1.0,"End of enemy Movement: Snap shoot within 24""; Hit only on unmodified 6; no Hit re-rolls.","WHEN: End of your opponent’s Movement phase.
-
-TARGET: One friendly unengaged unit, excluding TITANIC units.
-
-EFFECT: Your unit shoots using snap shooting. 
-
-SNAP SHOOTING: Your unit can only target one visible enemy unit within 24"" of your unit, and only if it is an eligible target. Each attack only hits on an unmodified Hit roll of 6, irrespective of the attacking weapon’s BS characteristic or any modifiers. You cannot re-roll Hit rolls. 
-
-AFTER SHOOTING: Until the end of the phase, your unit is not eligible to start an action."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_explosives_new_1cp,Explosives,,1.0,EXPLOSIVES/GRENADES: Roll 6D6; each 4+ causes 1 mortal wound.,"WHEN: Your Shooting phase.
-
-TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn.
-
-EFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8"" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
 core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_insane_bravery_new_1cp,Insane Bravery ,,1.0,Once per battle: Automatically pass a Battle-shock roll.,"WHEN: Battle-shock step of your Command phase, just before you make a Battle-shock roll for a friendly unit.
 
 TARGET: That unit.
@@ -30,6 +16,11 @@ TARGET: That unit.
 EFFECT: That Battle-shock roll is automatically successful.
 
 RESTRICTIONS: You cannot use this Stratagem more than once per battle."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_explosives_new_1cp,Explosives,,1.0,EXPLOSIVES/GRENADES: Roll 6D6; each 4+ causes 1 mortal wound.,"WHEN: Your Shooting phase.
+
+TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn.
+
+EFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8"" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
 core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_crushing_impact_new_1cp,Crushing Impact,,1.0,MONSTER/VEHICLE charge: Roll D6 equal to T. 1s hurt you; 5+s hurt enemy.,"WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a Charge move.
 
 TARGET: That MONSTER/VEHICLE unit.
@@ -42,6 +33,15 @@ TARGET: One friendly unit that is in Strategic Reserves, excluding AIRCRAFT.
 EFFECT: Your unit makes an Ingress move.
 
 RESTRICTIONS: You cannot use this Stratagem during the first battle round."
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_fire_overwatch_1cp,Fire Overwatch ,,1.0,"End of enemy Movement: Snap shoot within 24""; Hit only on unmodified 6; no Hit re-rolls.","WHEN: End of your opponent’s Movement phase.
+
+TARGET: One friendly unengaged unit, excluding TITANIC units.
+
+EFFECT: Your unit shoots using snap shooting. 
+
+SNAP SHOOTING: Your unit can only target one visible enemy unit within 24"" of your unit, and only if it is an eligible target. Each attack only hits on an unmodified Hit roll of 6, irrespective of the attacking weapon’s BS characteristic or any modifiers. You cannot re-roll Hit rolls. 
+
+AFTER SHOOTING: Until the end of the phase, your unit is not eligible to start an action."
 core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_smokescreen_new_1cp,Smokescreen ,,1.0,SMOKE: Target unit and units obscured by it gain Benefit of Cover.,"WHEN: Start of your opponent’s Shooting phase.
 
 TARGET: One friendly SMOKE unit.
