@@ -107,7 +107,8 @@ space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_g
 space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_blackwing_shroud,Blackwing Shroud,25,,,,Leading = Infiltrator to Unit,"ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
 dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_angels_lions_blade_task_force_enhancement_calibanite_armaments,Calibanite Armaments,15,,,,+1 Damage for bearer only.,ADEPTUS ASTARTES model only. Add 1 to the Damage characteristic of the bearer’s melee weapons.
 LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_CELERITY,Celerity,35,,,,"PSYKER: Advance & Charge.
-In Biomancy: Advance or Fallback & Charge.","ADEPTUS ASTARTES PSYKER model only. 
+
+BIOMANCY: Advance or Fallback & Charge.","ADEPTUS ASTARTES PSYKER model only. 
 - When this unit is selected to make an advance move, that move does not prevent this unit from being eligible to declare a charge. 
 - When this unit is selected to make a fall-back move, if this unit has the Biomancy Discipline ability, that move does not prevent this unit from being eligible to declare a charge."
 space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_champion_of_humanity,Champion of Humanity,10,,,,"LEADING
@@ -140,8 +141,9 @@ dark_angels_lions_blade_task_force,,Lions Blade Task Force,ENHANCEMENT,dark_ange
 space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_fury_of_the_storm,Fury of the Storm,25,,,,"MELEE + MOUNTED:
  +1 Strength and AP in Melee.
  +2 Strength and AP if Charge.","ADEPTUS ASTARTES MOUNTED model only. Improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 1. Each time the bearer ends a Charge move, until the end of the turn, improve the Strength and Armour Penetration characteristics of the bearers melee weapons by 2 instead."
-LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_FUSILLADE,Fusillade,25,,,,"PSYKER: Ranged are [ANTI-MONSTER/VEHICLE 5+]. 
-In Pyromancy: Grants [SUSTAINED HITS 1].","ADEPTUS ASTARTES PSYKER model only. This unit's ranged attacks have [ANTI-MONSTER/VEHICLE 5+]. If this unit has the Pyromancy Discipline ability, this unit's ranged attacks also have [SUSTAINED HITS 1]."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_FUSILLADE,Fusillade,25,,,,"PSYKER: Ranged are [ANTI-MONSTER / VEHICLE 5+]. 
+
+PYROMANCY: Grants [SUSTAINED HITS 1].","ADEPTUS ASTARTES PSYKER model only. This unit's ranged attacks have [ANTI-MONSTER/VEHICLE 5+]. If this unit has the Pyromancy Discipline ability, this unit's ranged attacks also have [SUSTAINED HITS 1]."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_ghostweave_cloak,Ghostweave Cloak,15,,,,Bearer has Stealth and Lone Op,Ghostweave Cloak: ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.
 space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_marines_spearpoint_task_force_enhancement_hunters_eye,Hunter’s Eye,20,,,,Bearer’s unit ranged weapons gain SUSTAINED HITS 1 and IGNORES COVER.,HUNTER’S EYE: ADEPTUS ASTARTES model only. Ranged weapons equipped by models in the bearer’s unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.
 space_marines_shadowmark_talon,,Shadowmark Talon,ENHANCEMENT,space_marines_shadowmark_talon_enhancement_hunters_instincts,Hunter’s Instincts,25,,,,Arrive from Reserves early,"ADEPTUS ASTARTES model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is."
@@ -168,12 +170,14 @@ DARKFLIGHT_PURSUIT,,Darkflight Pursuit,ENHANCEMENT,DARKFLIGHT_PURSUIT_ENHANCEMEN
 space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_oath_of_macragge,Oath Of Macragge,15,,,,"+1 Attack +1 Strength
  +2 Attack +2 Strength in Assault","Oath Of Macragge: ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead."
 LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_OBFUSCATION,Obfuscation,25,,,,"PSYKER: No Overwatch.
-Telepathy: -3"" detection range.","ADEPTUS ASTARTES PSYKER model only. Enemy units cannot target this unit with snap shooting attacks. If this unit has the Telepathy Discipline ability, this unit has -3"" detection range."
+
+TELEPATHY: -3"" detection range.","ADEPTUS ASTARTES PSYKER model only. Enemy units cannot target this unit with snap shooting attacks. If this unit has the Telepathy Discipline ability, this unit has -3"" detection range."
 DARK_AGE_ARSENAL,,Dark Age Arsenal,ENHANCEMENT,DARK_AGE_ARSENAL_ENHANCEMENT_PETITION_OF_STABILITY,Petition Of Stability,,,,,"Plasma attacks have +6"" R.","ADEPTUS ASTARTES unit only. This unit's plasma attacks have +6"" R."
 space_marines_stormlance_task_force,,Stormlance Task Force,ENHANCEMENT,space_marines_stormlance_task_force_enhancement_portents_of_wisdom,Portents of Wisdom,15,,,,"LEADING
 Re-roll Advance","ADEPTUS ASTARTES model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit."
-LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_PRESCIENCE,Prescience,20,,,,"PSYKER, excluding TERMINATOR: Reactive move D6""
-In Divination: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6""."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_PRESCIENCE,Prescience,20,,,,"PSYKER, excl TERM: Reactive move D6""
+
+DIVINATION: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6""."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_shadow_war_veteran,Shadow War Veteran,30,,,,"PHOBOS gets Lord of Deceit (Aura): Within 12"", +1CP for stratagems","Shadow War Veteran: PHOBOS model only. Gain following ability:
 Lord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP."
 SUBVERSION_ASSETS,,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_SHROUD_FIELD,Shroud Field,20,,,,PHOBOS model only. This model has Lone Operative and Stealth.,PHOBOS model only. This model has Lone Operative and Stealth.
@@ -188,8 +192,8 @@ space_marines_spearpoint_task_force,,Spearpoint Task Force,ENHANCEMENT,space_mar
 space_marines_blade_of_ultramar,,Blade Of Ultramar,ENHANCEMENT,space_marines_blade_of_ultramar_enhancement_student_of_the_codex,Student Of The Codex,20,,,,Tactical doctrine can be ON,"CAPTAIN model only. At the start of your Command phase, if the bearer is on the battlefield, instead of selecting a Combat Doctrine to be active for your army, you can select the Tactical Doctrine. If you do, until the start of your next Command phase, that Combat Doctrine is active for the bearer’s unit only, even if you have already selected that Combat Doctrine to be active for your army this battle."
 dark_angels_wrath_of_the_rock,,Wrath of the Rock,ENHANCEMENT,dark_angels_wrath_of_the_rock_enhancement_tempered_in_battle,Tempered in Battle,10,,,,Aura to re-roll LD and Battleshock,"Adeptus Astartes model only. While a friendly Adeptus Astartes unit is within 6"" of this model, you can re-roll Battle-shock and Leadership tests taken for
 that unit."
-LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go to Reserves at end opponent's Fight phase. 
-In Telekinesis: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike."
+LIBRARIUS_CONCLAVE,,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go Reserves at end opp Fight.  
+TELEKINESIS: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike."
 space_marines_vanguard_spearhead,,Vanguard Spearhead,ENHANCEMENT,space_marines_vanguard_spearhead_enhancement_the_blade_driven_deep,The Blade Driven Deep,25,,,,Leading = Infiltrator to Unit,"The Blade Driven Deep: ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability."
 space_marines_gladius_task_force,,Gladius Task Force,ENHANCEMENT,space_marines_gladius_task_force_enhancement_the_honour_vehement,The Honour Vehement,15,,,,"+1 Attack +1 Strength
  +2 Attack +2 Strength in Assault","The Honour Vehement: ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead."
