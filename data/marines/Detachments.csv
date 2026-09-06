@@ -22,7 +22,7 @@ Assault: Adv and Charge.","At the start of your Command phase, you can select on
 Devastator Doctrine: This unit is eligible to shoot in a turn in which it Advanced.
 Tactical Doctrine: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
 Assault Doctrine: This unit is eligible to declare a charge in a turn in which it Advanced."
-DARK_AGE_ARSENAL,Dark Angels,Dark Age Arsenal,DETACHMENT_RULE,DARK_AGE_ARSENAL_DETACHMENT_RULE_INVOCATIONS_OF_ANCIENT_FURY,INVOCATIONS OF ANCIENT FURY,,,1,Priority Assets,Plasma weapon profiles have +1 S.,Friendly ADEPTUS ASTARTES units' weapon profiles with 'Plasma' in their names are plasma weapon profiles. Plasma weapon profiles have +1 S.
+DARK_AGE_ARSENAL,Dark Angels,Dark Age Arsenal,DETACHMENT_RULE,DARK_AGE_ARSENAL_DETACHMENT_RULE_INVOCATIONS_OF_ANCIENT_FURY,INVOCATIONS OF ANCIENT FURY,,,1,Priority Assets,Plasma weapon profiles have [+1 S].,Friendly ADEPTUS ASTARTES units' weapon profiles with 'Plasma' in their names are plasma weapon profiles. Plasma weapon profiles have +1 S.
 space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,EMPEROR'S SHIELD,,,2,Priority Assets,"Re-rolls 1s To Wound vs Oath
 Re-roll all To Wound with Lysander","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
 
@@ -40,7 +40,7 @@ Caanok: 2nd Oath Target (Visible)","Each time a model from your army with the Oa
 Once per battle round, after your Oath of Moment target is destroyed, if a Caanok Var model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes your Oath of Moment target until you select a new one."
 dark_angels_inner_circle_task_force,Dark Angels,Inner Circle Task Force,DETACHMENT_RULE,dark_angels_inner_circle_task_force_detachment_rule_detachment_rule,VOWED TARGET,,,2,Priority Assets,"Vowed Target (Objective): Defensive (Control) or Aggressive (No Control)  
 
-Deathwing INFANTRY: +1 To Wound (Range or Shoot)","At the start of your Movement phase, select one of the following:
+Deathwing INFANTRY: [+1 To Wound] (Range or Shoot)","At the start of your Movement phase, select one of the following:
 
 Defensive Footing: Select one objective marker you control. Until the start of your next Movement phase, that objective marker is your Vowed objective marker.
 
@@ -467,7 +467,7 @@ space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marin
 TARGET: One ADEPTUS ASTARTES unit from your army.
 
 EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced or Fell Back."
-DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_NO_SACRIFICE_TOO_GREAT,NO SACRIFICE TOO GREAT,,1,,,HAZARDOUS plasma attacks have +1 S.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_NO_SACRIFICE_TOO_GREAT,NO SACRIFICE TOO GREAT,,1,,,HAZARDOUS plasma attacks have [+1 S].,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
@@ -533,7 +533,7 @@ SHOOTING = +2 Strength","WHEN: Your Shooting phase.
 TARGET: One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit."
-DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_REVELATION_OF_GUILT,REVELATION OF GUILT,,1,,,Unit's plasma attacks +1 To Hit.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+DARK_AGE_ARSENAL,,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAGEM_REVELATION_OF_GUILT,REVELATION OF GUILT,,1,,,Unit's plasma attacks [+1 To Hit].,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
