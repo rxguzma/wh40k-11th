@@ -18,11 +18,6 @@ EFFECT: Your unit shoots using snap shooting.
 SNAP SHOOTING: Your unit can only target one visible enemy unit within 24"" of your unit, and only if it is an eligible target. Each attack only hits on an unmodified Hit roll of 6, irrespective of the attacking weapon’s BS characteristic or any modifiers. You cannot re-roll Hit rolls. 
 
 AFTER SHOOTING: Until the end of the phase, your unit is not eligible to start an action."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_go_to_ground_1cp,Go To Ground ,,1,Infantry get Cover.,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover (pg 44)."
 core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_explosives_new_1cp,Explosives,,1.0,EXPLOSIVES/GRENADES: Roll 6D6; each 4+ causes 1 mortal wound.,"WHEN: Your Shooting phase.
 
 TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn.
