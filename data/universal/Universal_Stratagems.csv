@@ -21,7 +21,7 @@ core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_ex
 TARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an Advance move this turn.
 
 EFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8"" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_crushing_impact_new_1cp,Crushing Impact,,1.0,MONSTER/VEHICLE charge: Roll D6 equal to T. 1s hurt you; 5+s hurt enemy.,"WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a Charge move.
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_crushing_impact_new_1cp,Crushing Impact,,1.0,"MONSTER/VEHICLE charge: D6=T. 1s = self Mortals; 5+ = enemy Mortals, max 6.","WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a Charge move.
 
 TARGET: That MONSTER/VEHICLE unit.
 
@@ -37,12 +37,21 @@ core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_fi
 
 TARGET: One friendly unengaged unit, excluding TITANIC units.
 
-EFFECT: Your unit shoots using snap shooting. 
+EFFECT: Your unit shoots using snap shooting.
 
-SNAP SHOOTING: Your unit can only target one visible enemy unit within 24"" of your unit, and only if it is an eligible target. Each attack only hits on an unmodified Hit roll of 6, irrespective of the attacking weapon’s BS characteristic or any modifiers. You cannot re-roll Hit rolls. 
+SNAP SHOOTING:
+
+ELIGIBLE IF: As stated in the rule allowing this shooting type.
+
+EFFECT: Your unit shoots as described in Making Attacks (04).
+
+WHILE SHOOTING:
+- You can only target one visible enemy unit within 24"" of your unit, and only if it is an eligible target.
+- Each attack only hits on an unmodified Hit roll of 6, irrespective of the attacking weapon’s BS characteristic or any modifiers.
+- You cannot re-roll Hit rolls.
 
 AFTER SHOOTING: Until the end of the phase, your unit is not eligible to start an action."
-core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_smokescreen_new_1cp,Smokescreen ,,1.0,SMOKE: Target unit and units obscured by it gain Benefit of Cover.,"WHEN: Start of your opponent’s Shooting phase.
+core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_smokescreen_new_1cp,Smokescreen ,,1.0,SMOKE: Target and units not fully visible because of it gain Benefit of Cover.,"WHEN: Start of your opponent’s Shooting phase.
 
 TARGET: One friendly SMOKE unit.
 
@@ -51,7 +60,15 @@ core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_he
 
 TARGET: One friendly unengaged unit within 12"" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.
 
-EFFECT: Resolve a charge with your unit. Before making the Charge roll, select one mode: Leap to Defend: when selecting charge targets, you can only select enemy units that made a Charge move this phase and are within the maximum distance. Into the Fray: this mode costs +1CP. When making the Charge roll, if the result is greater than 6 after modifiers, change it to 6. When selecting charge targets, you can select any enemy units within 6"" of your unit and within the maximum distance."
+EFFECT: Resolve a charge with your unit. Before making the Charge roll, select one mode:
+
+LEAP TO DEFEND:
+When selecting charge targets, you can only select enemy units that made a Charge move this phase and are within the maximum distance.
+
+INTO THE FRAY:
+This mode costs +1CP.
+When making the Charge roll, if the result is greater than 6 after modifiers, change it to 6.
+When selecting charge targets, you can select any enemy units within 6"" of your unit and within the maximum distance."
 core_stratagems,Core Stratagems,CORE_STRATAGEM,core_stratagems_core_stratagem_counteroffensive_new_2cp,Counteroffensive,,2.0,Fight next after an enemy unit resolves its attacks.,"WHEN: Fight step of your opponent’s Fight phase, just after an enemy unit has resolved its attacks.
 
 TARGET: One friendly unit that is eligible to fight.
