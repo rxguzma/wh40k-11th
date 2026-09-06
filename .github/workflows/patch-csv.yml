@@ -31,7 +31,7 @@ jobs:
 
           raw = os.environ.get('PATCHES', '').strip()
           if not raw:
-              raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment","column":"Short_Description","value":"x3 unit gain Deep Strike \\n\\nAlso, Set up this turn: Re-roll [1s To Wound]\\nIf DROP POD disembark: [Re-roll 1s To Hit]\\n\\nExclude: Titanic"}]'
+              raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force","mode":"replace_text","column":"Short_Description","from":"2/3/4 non-TITANIC units gain Deep Strike (Incursion/Strike Force/Onslaught).\\nSet up this turn: Re-roll 1s To Wound.\\nDROP POD disembark: also Re-roll 1s To Hit.","to":"x3 unit gain Deep Strike \\n\\nAlso, Set up this turn: Re-roll [1s To Wound]\\nIf DROP POD disembark: [Re-roll 1s To Hit]\\n\\nExclude: Titanic"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
