@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_suppression_strafing","column":"Item_Name","value":"Suppression Strafing"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_auto_sense_coordination","column":"Item_Name","value":"Auto-Sense Coordination"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_tactical_decapitation","column":"Item_Name","value":"Tactical Decapitation"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_blind_screen","column":"Item_Name","value":"Blind Screen"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_shock_onslaught","column":"Item_Name","value":"Shock Onslaught"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_onward_for_the_emperor","column":"Item_Name","value":"Onward for the Emperor"}]'
+          raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Detachment_ID","row_id":"space_marines_orbital_assault_force","mode":"dedupe_by_key","key_column":"Item_ID"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_suppression_strafing","column":"Item_Name","value":"Suppression Strafing"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_auto_sense_coordination","column":"Item_Name","value":"Auto-Sense Coordination"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_tactical_decapitation","column":"Item_Name","value":"Tactical Decapitation"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_blind_screen","column":"Item_Name","value":"Blind Screen"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_shock_onslaught","column":"Item_Name","value":"Shock Onslaught"},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"space_marines_orbital_assault_force_stratagem_onward_for_the_emperor","column":"Item_Name","value":"Onward for the Emperor"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
@@ -75,6 +75,41 @@ jobs:
               if not row_id:
                   sys.exit(f'op {i}: row_id required')
               mode = str(op.get('mode') or 'update').strip()
+
+              if mode == 'dedupe_by_key':
+                  key_col = str(op.get('key_column') or '').strip()
+                  if key_col not in header:
+                      sys.exit(f'op {i}: key column not in header: {key_col}')
+                  i_key = header.index(key_col)
+                  kept = [header]
+                  seen = set()
+                  matched = 0
+                  removed = 0
+                  for row in rows[1:]:
+                      if not row:
+                          continue
+                      while len(row) < len(header):
+                          row.append('')
+                      if row[i_id] != row_id:
+                          kept.append(row)
+                          continue
+                      matched += 1
+                      key = row[i_key].strip()
+                      if not key:
+                          sys.exit(f'op {i}: blank {key_col} while deduping {row_id!r}')
+                      if key in seen:
+                          removed += 1
+                          continue
+                      seen.add(key)
+                      kept.append(row)
+                  if matched < 1:
+                      sys.exit(f'op {i}: found no rows for {row_id!r}')
+                  if removed < 1:
+                      sys.exit(f'op {i}: found no duplicate rows for {row_id!r}')
+                  files[path] = kept
+                  changed.add(path)
+                  print(f'deduped {path} {row_id}: kept {len(seen)} unique {key_col} values, removed {removed} duplicates')
+                  continue
 
               if mode == 'fill_blank_where':
                   match_col = str(op.get('match_column') or '').strip()
