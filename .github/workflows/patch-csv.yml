@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"apothecary","column":"Core_Ability_IDs","value":""},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"APOTHECARY_SUPPORT","column":"Short Description","value":"Can Support: Most INFANTRY like\nIntercessors, Hellblasters, Infernus,\nSternguard Vets, Vanguard Vets"}]'
+          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"drop_pod","column":"Ability_IDs","value":"DROP_POD_ASSAULT,COMBAT_DISEMBARKATION,TRANSPORT_DROP_POD"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DEPLOYMENT_COMPLETE","mode":"delete"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"TRANSPORT_DROP_POD","column":"Long Description","value":"Transport Capacity: 12 ADEPTUS ASTARTES INFANTRY models. It cannot transport CENTURION, GRAVIS, JUMP PACK, WULFEN or TERMINATOR models. Once this unit has been set up on the battlefield and all embarked units have disembarked, units cannot embark within this TRANSPORT for the rest of the battle."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
