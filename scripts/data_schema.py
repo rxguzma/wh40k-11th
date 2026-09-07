@@ -12,6 +12,7 @@ ARMIES = ("marines", "orks", "nids")
 TRUE_VALUES = {"true", "1", "yes", "y"}
 ALLOWED_DETACHMENT_TYPES = {"ARMY_RULE", "DETACHMENT_RULE", "ENHANCEMENT", "STRATAGEM"}
 ALLOWED_UNIVERSAL_TYPES = {"CORE_STRATAGEM", "STRATAGEM"}
+ALLOWED_OWNERSHIP = {"AUTHORITATIVE", "GENERATED_COMPAT", "GENERATED_COLUMN"}
 
 
 def fail(message):
@@ -23,9 +24,10 @@ def load_schema():
         fail(f"missing schema: {SCHEMA_PATH}")
     grouped = defaultdict(list)
     required = defaultdict(set)
+    ownership_by_file = defaultdict(set)
     with SCHEMA_PATH.open(encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        expected = ["Scope", "File", "Column_Order", "Column_Name", "Required", "Notes"]
+        expected = ["Scope", "File", "Column_Order", "Column_Name", "Required", "Ownership", "Notes"]
         if reader.fieldnames != expected:
             fail(f"CSV_SCHEMA.csv header must be exactly {expected!r}")
         for row in reader:
@@ -38,9 +40,19 @@ def load_schema():
                 fail(f"bad Column_Order in schema: {row!r}")
             if not scope or not file_name or not column_name:
                 fail(f"incomplete schema row: {row!r}")
+            ownership = (row.get("Ownership") or "").strip().upper()
+            if ownership not in ALLOWED_OWNERSHIP:
+                fail(f"invalid Ownership {ownership!r} in schema row: {row!r}")
+            ownership_by_file[(scope, file_name)].add(ownership)
             grouped[(scope, file_name)].append((order, column_name))
             if (row.get("Required") or "").strip().upper() == "YES":
                 required[(scope, file_name)].add(column_name)
+    for key, ownerships in ownership_by_file.items():
+        if "GENERATED_COMPAT" in ownerships and ownerships != {"GENERATED_COMPAT"}:
+            fail(f"GENERATED_COMPAT must own every column for {key}: {sorted(ownerships)!r}")
+        if ownerships == {"GENERATED_COLUMN"}:
+            fail(f"file cannot contain only GENERATED_COLUMN ownership: {key}")
+
     schemas = {}
     for key, entries in grouped.items():
         entries.sort()

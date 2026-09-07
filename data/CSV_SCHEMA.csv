@@ -1,173 +1,173 @@
-Scope,File,Column_Order,Column_Name,Required,Notes
-army,Units.csv,1,Unit_ID,YES,Stable unique unit key.
-army,Units.csv,2,Unit Name,YES,
-army,Units.csv,3,Ability_IDs,NO,Legacy comma-separated army Ability_ID references retained until HTML migration.
-army,Units.csv,4,Core_Ability_IDs,NO,Legacy comma-separated universal/core Ability_ID references retained until HTML migration.
-army,Units.csv,5,Weapon_IDs,NO,Legacy comma-separated Weapon_ID references retained until HTML migration.
-army,Units.csv,6,"M""",NO,
-army,Units.csv,7,T,NO,
-army,Units.csv,8,SV,NO,
-army,Units.csv,9,W,NO,
-army,Units.csv,10,LD,NO,
-army,Units.csv,11,OC,NO,
-army,Units.csv,12,Keywords,NO,
-army,Units.csv,13,Hyperlink,NO,
-army,Units.csv,14,Points_Label_1,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,15,Points_Cost_1,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,16,Points_Label_2,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,17,Points_Cost_2,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,18,Points_Label_3,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,19,Points_Cost_3,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,20,Points_Label_4,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,21,Points_Cost_4,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,22,Points_Label_5,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,23,Points_Cost_5,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,24,Points_Label_6,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,25,Points_Cost_6,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,26,Points_Label_7,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,27,Points_Cost_7,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,28,Points_Label_8,NO,Legacy point slot retained until HTML migration.
-army,Units.csv,29,Points_Cost_8,NO,Legacy point slot retained until HTML migration.
-army,Unit_Abilities.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Abilities.csv,2,Ability_ID,YES,Foreign key to army or Universal Abilities.
-army,Unit_Abilities.csv,3,Ability_Type,YES,ABILITY or CORE_ABILITY; preserves the source relationship class.
-army,Unit_Weapons.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Weapons.csv,2,Weapon_ID,YES,Foreign key to Weapon_Stats.csv.
-army,Unit_Points.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Points.csv,2,Point_Option_ID,YES,Stable point-slot key; currently point_1 through point_8.
-army,Unit_Points.csv,3,Label,NO,Exact legacy point label; blank is valid for single-cost units.
-army,Unit_Points.csv,4,Cost,NO,Exact legacy point cost; blank is valid when a label is loadout-driven.
-army,Unit_Points.csv,5,Sort_Order,YES,Original point-slot order 1 through 8.
-army,Weapon_Stats.csv,1,Weapon_ID,YES,
-army,Weapon_Stats.csv,2,Weapon Name,YES,
-army,Weapon_Stats.csv,3,"R""",NO,
-army,Weapon_Stats.csv,4,A,NO,
-army,Weapon_Stats.csv,5,WS,NO,
-army,Weapon_Stats.csv,6,St,NO,
-army,Weapon_Stats.csv,7,AP,NO,
-army,Weapon_Stats.csv,8,D,NO,
-army,Weapon_Stats.csv,9,Weapon Abilities,NO,
-army,Abilities.csv,1,Ability_ID,YES,
-army,Abilities.csv,2,Ability Name,YES,
-army,Abilities.csv,3,Short Description,NO,
-army,Abilities.csv,4,Long Description,NO,
-army,Abilities.csv,5,Tags,NO,Optional structured helper tags; blank is valid.
-army,Abilities.csv,6,Order,NO,Optional default ability sort order 0-9; blank uses application fallback.
-army,Detachments.csv,1,Detachment_ID,YES,Legacy mixed detachment table retained temporarily for current HTML compatibility.
-army,Detachments.csv,2,Army_Name,NO,
-army,Detachments.csv,3,Detachment_Name,NO,
-army,Detachments.csv,4,Item_Type,YES,
-army,Detachments.csv,5,Item_ID,YES,
-army,Detachments.csv,6,Item_Name,YES,
-army,Detachments.csv,7,Points,NO,
-army,Detachments.csv,8,CP_Cost,NO,
-army,Detachments.csv,9,DP_Cost,NO,
-army,Detachments.csv,10,Detachment_Disposition,NO,
-army,Detachments.csv,11,Short_Description,NO,
-army,Detachments.csv,12,Long_Description,NO,
-army,Detachments.csv,13,Detachment_Disposition_2,NO,Optional second allowed disposition; blank is valid.
-army,Detachment_Definitions.csv,1,Detachment_ID,YES,Stable unique detachment key.
-army,Detachment_Definitions.csv,2,Army_Name,YES,Owning army name.
-army,Detachment_Definitions.csv,3,Detachment_Name,YES,Visible detachment name.
-army,Detachment_Definitions.csv,4,Rule_ID,YES,Stable unique ID for the detachment rule.
-army,Detachment_Definitions.csv,5,Rule_Name,YES,Visible detachment rule name.
-army,Detachment_Definitions.csv,6,DP_Cost,NO,Detachment point cost.
-army,Detachment_Definitions.csv,7,Detachment_Disposition,NO,Primary allowed disposition.
-army,Detachment_Definitions.csv,8,Detachment_Disposition_2,NO,Optional second allowed disposition.
-army,Detachment_Definitions.csv,9,Short_Description,NO,
-army,Detachment_Definitions.csv,10,Long_Description,NO,
-army,Enhancements.csv,1,Enhancement_ID,YES,Stable unique enhancement key.
-army,Enhancements.csv,2,Detachment_ID,YES,Foreign key to Detachment_Definitions.csv.
-army,Enhancements.csv,3,Enhancement_Name,YES,Visible enhancement name.
-army,Enhancements.csv,4,Points,NO,Enhancement points cost.
-army,Enhancements.csv,5,Short_Description,NO,
-army,Enhancements.csv,6,Long_Description,NO,
-army,Enhancements.csv,7,Tags,NO,Optional explicit modifier tags; blank is valid.
-army,Stratagems.csv,1,Stratagem_ID,YES,Stable unique stratagem key.
-army,Stratagems.csv,2,Detachment_ID,YES,Foreign key to Detachment_Definitions.csv.
-army,Stratagems.csv,3,Stratagem_Name,YES,Visible stratagem name.
-army,Stratagems.csv,4,CP_Cost,NO,Command point cost.
-army,Stratagems.csv,5,Short_Description,NO,
-army,Stratagems.csv,6,Long_Description,NO,
-army,Army_Rules.csv,1,Army_Rule_ID,YES,Stable unique army-rule key.
-army,Army_Rules.csv,2,Army_Name,YES,Owning army name.
-army,Army_Rules.csv,3,Rule_Name,YES,Visible army-rule name.
-army,Army_Rules.csv,4,Short_Description,NO,
-army,Army_Rules.csv,5,Long_Description,NO,
-army,Unit_Weapon_Options.csv,1,Unit_ID,YES,Stable unique unit key.
-army,Unit_Weapon_Options.csv,2,Option_Group_ID,YES,
-army,Unit_Weapon_Options.csv,3,Group_Label,NO,
-army,Unit_Weapon_Options.csv,4,Option_ID,YES,
-army,Unit_Weapon_Options.csv,5,Option_Name,YES,
-army,Unit_Weapon_Options.csv,6,Weapon_IDs,NO,Comma-separated Weapon_ID references.
-army,Unit_Weapon_Options.csv,7,Ability_IDs,NO,Comma-separated Ability_ID references granted by this option.
-army,Unit_Weapon_Options.csv,8,Points_Label_1,NO,Optional first option-specific unit-size label.
-army,Unit_Weapon_Options.csv,9,Points_Cost_1,NO,Optional first option-specific unit-size cost.
-army,Unit_Weapon_Options.csv,10,Points_Label_2,NO,Optional second option-specific unit-size label.
-army,Unit_Weapon_Options.csv,11,Points_Cost_2,NO,Optional second option-specific unit-size cost.
-army,Unit_Weapon_Options.csv,12,Default,NO,
-army,Unit_Weapon_Options.csv,13,Sort_Order,NO,
-army,Unit_Weapon_Options.csv,14,Legacy_Unit_IDs,NO,
-army,Unit_Weapon_Options.csv,15,Preserve_Weapon_IDs,NO,
-army,Unit_Weapon_Options.csv,16,Compatible_With,NO,Option compatibility expression; blank is valid.
-universal,Universal_Abilities.csv,1,Ability_ID,YES,
-universal,Universal_Abilities.csv,2,Ability Name,YES,
-universal,Universal_Abilities.csv,3,Short Description,NO,
-universal,Universal_Abilities.csv,4,Long Description,NO,
-universal,Universal_Abilities.csv,5,Order,NO,Optional default ability sort order 0-9; blank uses application fallback.
-universal,Universal_Stratagems.csv,1,Detachment_ID,YES,
-universal,Universal_Stratagems.csv,2,Detachment_Name,NO,
-universal,Universal_Stratagems.csv,3,Item_Type,YES,
-universal,Universal_Stratagems.csv,4,Item_ID,YES,
-universal,Universal_Stratagems.csv,5,Item_Name,YES,
-universal,Universal_Stratagems.csv,6,Points,NO,
-universal,Universal_Stratagems.csv,7,CP_Cost,NO,
-universal,Universal_Stratagems.csv,8,Short_Description,NO,
-universal,Universal_Stratagems.csv,9,Long_Description,NO,
-army,Unit_Loadout_Options.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Loadout_Options.csv,2,Option_Group_ID,YES,Stable option-group key within a unit.
-army,Unit_Loadout_Options.csv,3,Group_Label,NO,Visible option-group label.
-army,Unit_Loadout_Options.csv,4,Option_ID,YES,Stable loadout option key.
-army,Unit_Loadout_Options.csv,5,Option_Name,YES,Visible loadout option name.
-army,Unit_Loadout_Options.csv,6,Default,YES,Exactly one default option per unit/group.
-army,Unit_Loadout_Options.csv,7,Sort_Order,YES,Display order within the option group.
-army,Unit_Loadout_Weapons.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Loadout_Weapons.csv,2,Option_Group_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Weapons.csv,3,Option_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Weapons.csv,4,Weapon_ID,YES,Foreign key to Weapon_Stats.csv.
-army,Unit_Loadout_Weapons.csv,5,Weapon_Role,YES,SELECTED adds/replaces the option weapons; PRESERVE retains a base weapon.
-army,Unit_Loadout_Weapons.csv,6,Sort_Order,YES,Order within the selected or preserved weapon list.
-army,Unit_Loadout_Abilities.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Loadout_Abilities.csv,2,Option_Group_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Abilities.csv,3,Option_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Abilities.csv,4,Ability_ID,YES,Ability granted by selecting this loadout option.
-army,Unit_Loadout_Abilities.csv,5,Sort_Order,YES,Order within the option ability list.
-army,Unit_Loadout_Points.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Loadout_Points.csv,2,Option_Group_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Points.csv,3,Option_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Points.csv,4,Point_Option_ID,YES,Stable option-specific point slot key.
-army,Unit_Loadout_Points.csv,5,Label,NO,Option-specific unit-size label; blank is valid.
-army,Unit_Loadout_Points.csv,6,Cost,NO,Option-specific point cost; blank is valid for loadout-driven behavior.
-army,Unit_Loadout_Points.csv,7,Sort_Order,YES,Point-option display order.
-army,Unit_Loadout_Compatibility.csv,1,Unit_ID,YES,Foreign key to Units.csv.
-army,Unit_Loadout_Compatibility.csv,2,Option_Group_ID,YES,Source option group.
-army,Unit_Loadout_Compatibility.csv,3,Option_ID,YES,Source option.
-army,Unit_Loadout_Compatibility.csv,4,Required_Group_ID,YES,Other option group constrained by this rule.
-army,Unit_Loadout_Compatibility.csv,5,Compatible_Option_ID,YES,Allowed option in Required_Group_ID; multiple rows are OR alternatives.
-army,Unit_Loadout_Compatibility.csv,6,Rule_Order,YES,Original compatibility rule order.
-army,Unit_Loadout_Compatibility.csv,7,Option_Order,YES,Original allowed-option order within the rule.
-army,Unit_Loadout_Legacy_Units.csv,1,Unit_ID,YES,Canonical unit receiving the loadout option.
-army,Unit_Loadout_Legacy_Units.csv,2,Option_Group_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Legacy_Units.csv,3,Option_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
-army,Unit_Loadout_Legacy_Units.csv,4,Legacy_Unit_ID,YES,Historical unit ID migrated to this selected option.
-army,Unit_Loadout_Legacy_Units.csv,5,Sort_Order,YES,Original alias order.
-army,Effects.csv,1,Effect_ID,YES,Stable unique effect key.
-army,Effects.csv,2,Source_Type,YES,ABILITY or ENHANCEMENT.
-army,Effects.csv,3,Source_ID,YES,Foreign key to Ability_ID or Enhancement_ID according to Source_Type.
-army,Effects.csv,4,Effect_Type,YES,"STAT, POINTS_PER_MODEL, or KEYWORD."
-army,Effects.csv,5,Target,YES,Execution target; currently UNIT.
-army,Effects.csv,6,Stat,YES,"M/T/SV/W/LD/OC, PTS, or KEYWORD according to Effect_Type."
-army,Effects.csv,7,Operation,YES,"ADD, SET, or REMOVE according to Effect_Type."
-army,Effects.csv,8,Value,YES,Machine-readable effect value.
-army,Effects.csv,9,Display_Tag,YES,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
-army,Effects.csv,10,Sort_Order,YES,Effect order within its source.
+Scope,File,Column_Order,Column_Name,Required,Ownership,Notes
+army,Units.csv,1,Unit_ID,YES,AUTHORITATIVE,Stable unique unit key.
+army,Units.csv,2,Unit Name,YES,AUTHORITATIVE,
+army,Units.csv,3,Ability_IDs,NO,GENERATED_COLUMN,Generated from Unit_Abilities.csv rows with Ability_Type=ABILITY; compatibility-only column.
+army,Units.csv,4,Core_Ability_IDs,NO,GENERATED_COLUMN,Generated from Unit_Abilities.csv rows with Ability_Type=CORE_ABILITY; compatibility-only column.
+army,Units.csv,5,Weapon_IDs,NO,GENERATED_COLUMN,Generated from Unit_Weapons.csv; compatibility-only column.
+army,Units.csv,6,"M""",NO,AUTHORITATIVE,
+army,Units.csv,7,T,NO,AUTHORITATIVE,
+army,Units.csv,8,SV,NO,AUTHORITATIVE,
+army,Units.csv,9,W,NO,AUTHORITATIVE,
+army,Units.csv,10,LD,NO,AUTHORITATIVE,
+army,Units.csv,11,OC,NO,AUTHORITATIVE,
+army,Units.csv,12,Keywords,NO,AUTHORITATIVE,
+army,Units.csv,13,Hyperlink,NO,AUTHORITATIVE,
+army,Units.csv,14,Points_Label_1,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,15,Points_Cost_1,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,16,Points_Label_2,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,17,Points_Cost_2,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,18,Points_Label_3,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,19,Points_Cost_3,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,20,Points_Label_4,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,21,Points_Cost_4,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,22,Points_Label_5,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,23,Points_Cost_5,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,24,Points_Label_6,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,25,Points_Cost_6,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,26,Points_Label_7,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,27,Points_Cost_7,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,28,Points_Label_8,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Units.csv,29,Points_Cost_8,NO,GENERATED_COLUMN,Generated from Unit_Points.csv by point slot; compatibility-only column.
+army,Unit_Abilities.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Abilities.csv,2,Ability_ID,YES,AUTHORITATIVE,Foreign key to army or Universal Abilities.
+army,Unit_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,ABILITY or CORE_ABILITY; preserves the source relationship class.
+army,Unit_Weapons.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Weapons.csv,2,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
+army,Unit_Points.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Points.csv,2,Point_Option_ID,YES,AUTHORITATIVE,Stable point-slot key; currently point_1 through point_8.
+army,Unit_Points.csv,3,Label,NO,AUTHORITATIVE,Exact legacy point label; blank is valid for single-cost units.
+army,Unit_Points.csv,4,Cost,NO,AUTHORITATIVE,Exact legacy point cost; blank is valid when a label is loadout-driven.
+army,Unit_Points.csv,5,Sort_Order,YES,AUTHORITATIVE,Original point-slot order 1 through 8.
+army,Weapon_Stats.csv,1,Weapon_ID,YES,AUTHORITATIVE,
+army,Weapon_Stats.csv,2,Weapon Name,YES,AUTHORITATIVE,
+army,Weapon_Stats.csv,3,"R""",NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,4,A,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,5,WS,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,6,St,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,7,AP,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,8,D,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,9,Weapon Abilities,NO,AUTHORITATIVE,
+army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
+army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
+army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
+army,Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
+army,Abilities.csv,5,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Ability_ID; presentation/legacy compatibility only.
+army,Abilities.csv,6,Order,NO,AUTHORITATIVE,Optional default ability sort order 0-9; blank uses application fallback.
+army,Detachments.csv,1,Detachment_ID,YES,GENERATED_COMPAT,Legacy mixed detachment table retained temporarily for current HTML compatibility.
+army,Detachments.csv,2,Army_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,3,Detachment_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,4,Item_Type,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,5,Item_ID,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,6,Item_Name,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,7,Points,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,8,CP_Cost,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,9,DP_Cost,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,10,Detachment_Disposition,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,11,Short_Description,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,12,Long_Description,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
+army,Detachments.csv,13,Detachment_Disposition_2,NO,GENERATED_COMPAT,Optional second allowed disposition; blank is valid.
+army,Detachment_Definitions.csv,1,Detachment_ID,YES,AUTHORITATIVE,Stable unique detachment key.
+army,Detachment_Definitions.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
+army,Detachment_Definitions.csv,3,Detachment_Name,YES,AUTHORITATIVE,Visible detachment name.
+army,Detachment_Definitions.csv,4,Rule_ID,YES,AUTHORITATIVE,Stable unique ID for the detachment rule.
+army,Detachment_Definitions.csv,5,Rule_Name,YES,AUTHORITATIVE,Visible detachment rule name.
+army,Detachment_Definitions.csv,6,DP_Cost,NO,AUTHORITATIVE,Detachment point cost.
+army,Detachment_Definitions.csv,7,Detachment_Disposition,NO,AUTHORITATIVE,Primary allowed disposition.
+army,Detachment_Definitions.csv,8,Detachment_Disposition_2,NO,AUTHORITATIVE,Optional second allowed disposition.
+army,Detachment_Definitions.csv,9,Short_Description,NO,AUTHORITATIVE,
+army,Detachment_Definitions.csv,10,Long_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,1,Enhancement_ID,YES,AUTHORITATIVE,Stable unique enhancement key.
+army,Enhancements.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
+army,Enhancements.csv,3,Enhancement_Name,YES,AUTHORITATIVE,Visible enhancement name.
+army,Enhancements.csv,4,Points,NO,AUTHORITATIVE,Enhancement points cost.
+army,Enhancements.csv,5,Short_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,6,Long_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,7,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.
+army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
+army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
+army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
+army,Stratagems.csv,4,CP_Cost,NO,AUTHORITATIVE,Command point cost.
+army,Stratagems.csv,5,Short_Description,NO,AUTHORITATIVE,
+army,Stratagems.csv,6,Long_Description,NO,AUTHORITATIVE,
+army,Army_Rules.csv,1,Army_Rule_ID,YES,AUTHORITATIVE,Stable unique army-rule key.
+army,Army_Rules.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
+army,Army_Rules.csv,3,Rule_Name,YES,AUTHORITATIVE,Visible army-rule name.
+army,Army_Rules.csv,4,Short_Description,NO,AUTHORITATIVE,
+army,Army_Rules.csv,5,Long_Description,NO,AUTHORITATIVE,
+army,Unit_Weapon_Options.csv,1,Unit_ID,YES,GENERATED_COMPAT,Stable unique unit key.
+army,Unit_Weapon_Options.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,3,Group_Label,NO,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,4,Option_ID,YES,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,5,Option_Name,YES,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,6,Weapon_IDs,NO,GENERATED_COMPAT,Comma-separated Weapon_ID references.
+army,Unit_Weapon_Options.csv,7,Ability_IDs,NO,GENERATED_COMPAT,Comma-separated Ability_ID references granted by this option.
+army,Unit_Weapon_Options.csv,8,Points_Label_1,NO,GENERATED_COMPAT,Optional first option-specific unit-size label.
+army,Unit_Weapon_Options.csv,9,Points_Cost_1,NO,GENERATED_COMPAT,Optional first option-specific unit-size cost.
+army,Unit_Weapon_Options.csv,10,Points_Label_2,NO,GENERATED_COMPAT,Optional second option-specific unit-size label.
+army,Unit_Weapon_Options.csv,11,Points_Cost_2,NO,GENERATED_COMPAT,Optional second option-specific unit-size cost.
+army,Unit_Weapon_Options.csv,12,Default,NO,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,13,Sort_Order,NO,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,14,Legacy_Unit_IDs,NO,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,15,Preserve_Weapon_IDs,NO,GENERATED_COMPAT,Generated compatibility output from normalized Unit_Loadout_* tables; do not author directly.
+army,Unit_Weapon_Options.csv,16,Compatible_With,NO,GENERATED_COMPAT,Option compatibility expression; blank is valid.
+universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
+universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
+universal,Universal_Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
+universal,Universal_Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
+universal,Universal_Abilities.csv,5,Order,NO,AUTHORITATIVE,Optional default ability sort order 0-9; blank uses application fallback.
+universal,Universal_Stratagems.csv,1,Detachment_ID,YES,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,2,Detachment_Name,NO,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,3,Item_Type,YES,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,4,Item_ID,YES,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,5,Item_Name,YES,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,6,Points,NO,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,7,CP_Cost,NO,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,8,Short_Description,NO,AUTHORITATIVE,
+universal,Universal_Stratagems.csv,9,Long_Description,NO,AUTHORITATIVE,
+army,Unit_Loadout_Options.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Loadout_Options.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Stable option-group key within a unit.
+army,Unit_Loadout_Options.csv,3,Group_Label,NO,AUTHORITATIVE,Visible option-group label.
+army,Unit_Loadout_Options.csv,4,Option_ID,YES,AUTHORITATIVE,Stable loadout option key.
+army,Unit_Loadout_Options.csv,5,Option_Name,YES,AUTHORITATIVE,Visible loadout option name.
+army,Unit_Loadout_Options.csv,6,Default,YES,AUTHORITATIVE,Exactly one default option per unit/group.
+army,Unit_Loadout_Options.csv,7,Sort_Order,YES,AUTHORITATIVE,Display order within the option group.
+army,Unit_Loadout_Weapons.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Loadout_Weapons.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Weapons.csv,3,Option_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Weapons.csv,4,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
+army,Unit_Loadout_Weapons.csv,5,Weapon_Role,YES,AUTHORITATIVE,SELECTED adds/replaces the option weapons; PRESERVE retains a base weapon.
+army,Unit_Loadout_Weapons.csv,6,Sort_Order,YES,AUTHORITATIVE,Order within the selected or preserved weapon list.
+army,Unit_Loadout_Abilities.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Loadout_Abilities.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Abilities.csv,3,Option_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Abilities.csv,4,Ability_ID,YES,AUTHORITATIVE,Ability granted by selecting this loadout option.
+army,Unit_Loadout_Abilities.csv,5,Sort_Order,YES,AUTHORITATIVE,Order within the option ability list.
+army,Unit_Loadout_Points.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Loadout_Points.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Points.csv,3,Option_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Points.csv,4,Point_Option_ID,YES,AUTHORITATIVE,Stable option-specific point slot key.
+army,Unit_Loadout_Points.csv,5,Label,NO,AUTHORITATIVE,Option-specific unit-size label; blank is valid.
+army,Unit_Loadout_Points.csv,6,Cost,NO,AUTHORITATIVE,Option-specific point cost; blank is valid for loadout-driven behavior.
+army,Unit_Loadout_Points.csv,7,Sort_Order,YES,AUTHORITATIVE,Point-option display order.
+army,Unit_Loadout_Compatibility.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Units.csv.
+army,Unit_Loadout_Compatibility.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Source option group.
+army,Unit_Loadout_Compatibility.csv,3,Option_ID,YES,AUTHORITATIVE,Source option.
+army,Unit_Loadout_Compatibility.csv,4,Required_Group_ID,YES,AUTHORITATIVE,Other option group constrained by this rule.
+army,Unit_Loadout_Compatibility.csv,5,Compatible_Option_ID,YES,AUTHORITATIVE,Allowed option in Required_Group_ID; multiple rows are OR alternatives.
+army,Unit_Loadout_Compatibility.csv,6,Rule_Order,YES,AUTHORITATIVE,Original compatibility rule order.
+army,Unit_Loadout_Compatibility.csv,7,Option_Order,YES,AUTHORITATIVE,Original allowed-option order within the rule.
+army,Unit_Loadout_Legacy_Units.csv,1,Unit_ID,YES,AUTHORITATIVE,Canonical unit receiving the loadout option.
+army,Unit_Loadout_Legacy_Units.csv,2,Option_Group_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Legacy_Units.csv,3,Option_ID,YES,AUTHORITATIVE,Foreign key component to Unit_Loadout_Options.csv.
+army,Unit_Loadout_Legacy_Units.csv,4,Legacy_Unit_ID,YES,AUTHORITATIVE,Historical unit ID migrated to this selected option.
+army,Unit_Loadout_Legacy_Units.csv,5,Sort_Order,YES,AUTHORITATIVE,Original alias order.
+army,Effects.csv,1,Effect_ID,YES,AUTHORITATIVE,Stable unique effect key.
+army,Effects.csv,2,Source_Type,YES,AUTHORITATIVE,ABILITY or ENHANCEMENT.
+army,Effects.csv,3,Source_ID,YES,AUTHORITATIVE,Foreign key to Ability_ID or Enhancement_ID according to Source_Type.
+army,Effects.csv,4,Effect_Type,YES,AUTHORITATIVE,"STAT, POINTS_PER_MODEL, or KEYWORD."
+army,Effects.csv,5,Target,YES,AUTHORITATIVE,Execution target; currently UNIT.
+army,Effects.csv,6,Stat,YES,AUTHORITATIVE,"M/T/SV/W/LD/OC, PTS, or KEYWORD according to Effect_Type."
+army,Effects.csv,7,Operation,YES,AUTHORITATIVE,"ADD, SET, or REMOVE according to Effect_Type."
+army,Effects.csv,8,Value,YES,AUTHORITATIVE,Machine-readable effect value.
+army,Effects.csv,9,Display_Tag,YES,AUTHORITATIVE,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
+army,Effects.csv,10,Sort_Order,YES,AUTHORITATIVE,Effect order within its source.
