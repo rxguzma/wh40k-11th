@@ -14,17 +14,21 @@ on:
       - 'scripts/data_schema.py'
       - 'scripts/audit_references.py'
       - '.github/workflows/data-schema.yml'
+  workflow_run:
+    workflows: ['Patch CSV']
+    types: [completed]
 
 permissions:
   contents: write
 
 jobs:
   schema:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'push' && github.ref_name || github.event.pull_request.head.sha }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
 
       - name: Normalize schema
         run: python3 scripts/data_schema.py normalize
@@ -43,7 +47,7 @@ jobs:
         run: git diff --exit-code -- data
 
       - name: Commit normalized data and manifests
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
