@@ -7,12 +7,14 @@ on:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
       - 'scripts/audit_references.py'
+      - 'scripts/split_detachments_v2.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
     paths:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
       - 'scripts/audit_references.py'
+      - 'scripts/split_detachments_v2.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
     workflows: ['Patch CSV']
@@ -29,6 +31,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
+
+      - name: Sync normalized detachment tables
+        run: python3 scripts/split_detachments_v2.py
 
       - name: Normalize schema
         run: python3 scripts/data_schema.py normalize
