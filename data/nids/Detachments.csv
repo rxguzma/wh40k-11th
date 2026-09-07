@@ -158,8 +158,8 @@ tyranids_talons_of_the_norn_queen,,Talons of the Norn Queen,STRATAGEM,tyranids_t
 TARGET: That NORN ASSIMILATOR unit.
 
 EFFECT: Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase. While a unit is tethered, that unit has –2″ M."
-tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_hunting_grounds,Hunting Grounds,20,,,,Enemy from Reserves take Battle-shock,"TYRANIDS model only. While the bearer is on the battlefield, each time your opponent sets up a Reserves unit on the battlefield, roll one D6: on a 2+, that unit must take a Battle-shock test."
-tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_chameleonic,Chameleonic,15,,,,Stealth and Cover for Unit,"VANGUARD INVADER model only. The bearer has the Stealth ability and each time a ranged attack targets the bearer’s unit, models in that unit have the Benefit of Cover against that attack."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_hunting_grounds,Hunting Grounds,30,,,,Enemy from Reserves take Battle-shock,"TYRANIDS model only. While the bearer is on the battlefield, each time your opponent sets up a Reserves unit on the battlefield, roll one D6: on a 2+, that unit must take a Battle-shock test."
+tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_chameleonic,Chameleonic,15,,,,VANGUARD INVADER model gets Stealth,VANGUARD INVADER model only. This unit has the Stealth ability.
 tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_stalker,Stalker,10,,,,Select Enemy = +1 To Hit and +1 To Wound,"VANGUARD INVADER model only. At the start of the battle, select one enemy unit. Each time the bearer makes an attack that targets that enemy unit, add 1 to the Hit roll and add 1 to the Wound roll."
 tyranids_vanguard_onslaught,,Vanguard Onslaught,ENHANCEMENT,tyranids_vanguard_onslaught_enhancement_neuronode,Neuronode,20,,,,Redeploy units,"TYRANIDS model only. After both players have deployed their armies, you can select up to three VANGUARD INVADER units from your army and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves."
 tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_surprise_assault,Surprise Assault,,1,,,"Shooting of Fight
@@ -181,7 +181,7 @@ TARGET: One TYRANIDS unit from your army that is in Reserves, or up to two VANGU
 EFFECT: Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is."
 tyranids_vanguard_onslaught,,Vanguard Onslaught,STRATAGEM,tyranids_vanguard_onslaught_stratagem_hypersensory_scillia,Hypersensory Scillia,,2,,,Reactive Move,"WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
 
-TARGET: Up to two VANGUARD INVADER units from your army that are within 9"" of that enemy unit, or one other TYRANIDS INFANTRY unit from your army that is within 9"" of that enemy unit.
+TARGET: Up to two VANGUARD INVADER units from your army that are within 8"" of that enemy unit, or one other TYRANIDS INFANTRY unit from your army that is within 8"" of that enemy unit.
 
 EFFECT: Those selected units can each make a Normal move of up to 6"".
 
