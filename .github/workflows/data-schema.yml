@@ -46,7 +46,7 @@ jobs:
       - name: Sync legacy unit compatibility columns
         run: python3 scripts/split_units_v1.py
 
-      - name: Sync normalized loadout tables
+      - name: Sync legacy loadout compatibility table
         run: python3 scripts/split_loadouts_v1.py
 
       - name: Normalize schema
