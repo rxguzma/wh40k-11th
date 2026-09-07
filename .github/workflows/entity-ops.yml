@@ -5,6 +5,7 @@ name: Entity Ops
 # Contract: schemas/entity-ops.schema.json (version 1)
 # Operations: add | change | delete
 # Generated compatibility files/columns are never direct targets.
+# Loadout CHANGE/DELETE uses one Loadout_Option_ID.
 
 on:
   push:
