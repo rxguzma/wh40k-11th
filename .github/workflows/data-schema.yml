@@ -11,6 +11,7 @@ on:
       - 'scripts/split_units_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
+      - 'scripts/validate_loadouts.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
     paths:
@@ -21,6 +22,7 @@ on:
       - 'scripts/split_units_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
+      - 'scripts/validate_loadouts.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
     workflows: ['Patch CSV']
@@ -58,6 +60,9 @@ jobs:
 
       - name: Validate normalized unit relationships
         run: python3 scripts/validate_unit_relations.py
+
+      - name: Validate normalized loadouts
+        run: python3 scripts/validate_loadouts.py
 
       - name: Build manifests
         run: python3 scripts/data_schema.py manifest
