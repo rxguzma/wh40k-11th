@@ -7,6 +7,7 @@ on:
     paths:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
+      - 'scripts/migrate_unit_profiles_v1.py'
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
@@ -20,6 +21,7 @@ on:
     paths:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
+      - 'scripts/migrate_unit_profiles_v1.py'
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
@@ -45,10 +47,13 @@ jobs:
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
 
+      - name: Migrate authoritative unit profiles
+        run: python3 scripts/migrate_unit_profiles_v1.py
+
       - name: Sync legacy detachment compatibility table
         run: python3 scripts/split_detachments_v2.py
 
-      - name: Sync legacy unit compatibility columns
+      - name: Sync legacy unit compatibility table
         run: python3 scripts/split_units_v1.py
 
       - name: Sync legacy loadout compatibility table
@@ -80,17 +85,17 @@ jobs:
 
       - name: Require normalized data in pull requests
         if: github.event_name == 'pull_request'
-        run: git diff --exit-code -- data
+        run: git diff --exit-code -- data scripts/data_schema.py scripts/split_units_v1.py scripts/validate_unit_relations.py
 
       - name: Commit normalized data and manifests
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data
+          git add -- data scripts/data_schema.py scripts/split_units_v1.py scripts/validate_unit_relations.py
           if git diff --cached --quiet; then
             echo "Schema and manifests already current"
             exit 0
           fi
-          git commit -m "Normalize CSV schema and refresh manifests"
+          git commit -m "Normalize authoritative unit profiles"
           git push
