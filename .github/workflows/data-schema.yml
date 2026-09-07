@@ -11,7 +11,6 @@ on:
       - 'scripts/split_units_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/split_effects_v1.py'
-      - 'scripts/register_effects_schema.py'
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
@@ -25,7 +24,6 @@ on:
       - 'scripts/split_units_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/split_effects_v1.py'
-      - 'scripts/register_effects_schema.py'
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
@@ -57,9 +55,6 @@ jobs:
 
       - name: Sync normalized effects from Tags
         run: python3 scripts/split_effects_v1.py
-
-      - name: Register Effects schema
-        run: python3 scripts/register_effects_schema.py
 
       - name: Normalize schema
         run: python3 scripts/data_schema.py normalize
