@@ -104,6 +104,7 @@ universal,Universal_Abilities.csv,1,Ability_ID,YES,
 universal,Universal_Abilities.csv,2,Ability Name,YES,
 universal,Universal_Abilities.csv,3,Short Description,NO,
 universal,Universal_Abilities.csv,4,Long Description,NO,
+universal,Universal_Abilities.csv,5,Order,NO,Optional default ability sort order 0-9; blank uses application fallback.
 universal,Universal_Stratagems.csv,1,Detachment_ID,YES,
 universal,Universal_Stratagems.csv,2,Detachment_Name,NO,
 universal,Universal_Stratagems.csv,3,Item_Type,YES,
