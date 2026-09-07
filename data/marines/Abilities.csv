@@ -16,7 +16,7 @@ The Assault Intercessor Sergeant with Jump Pack’s heavy bolt pistol can be rep
 ASSAULT_RAMP,Assault Ramp,"Landraider Moves, Unit Disembarks and can Charge.","Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn."
 ASSAULT_VEHICLE,Assault Vehicle,Disembark after Advance,"Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move, and cannot declare a charge that turn."
 ASTARTES_BANNER,Astartes Banner,+1 OC,"While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit."
-ASTARTES_BANNER_ANCIENT,Astartes Banner (Ancient),+1 OC,"Astartes Banner (Ravenwing Command - Ancient: While this unit contains an Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit."
+ASTARTES_BANNER_ANCIENT,Astartes Banner (Ancient),+1 OC,"Astartes Banner (Ravenwing Command - Ancient): While this unit contains a Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit."
 ASTARTES_BANNER_CH,Astartes Banner (CH),+1 OC,"While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit."
 ASTARTES_SHIELD,Astartes Shield,Invul Save: 4++,The bearer has a 4+ invulnerable save.
 BALLISTUS_STRIKE,Ballistus Strike,"Each ranged attack that targets a unit that is NOT Below Half-strength, RE-ROLL ALL HITS.","Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll."
@@ -36,10 +36,10 @@ BRUTALIS_CHARGE,Brutalis Charge,"Charge and roll D6:
 4-5 = 3 mortal wounds
 6 = D3+3 mortal wounds","Each time this model ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
 CAANOK_HAMMER,Caanok Var in Hammer Of Avernii,"Caanok: 2nd Oath Target (Visible)
-In Hammer of Abernii detachment. ","In Hammer of Abernii detachment only.  
+In Hammer of Avernii detachment.","In Hammer of Avernii detachment only.
 
 RECALCULATING
-Once per battle round, after your Oath of Moment target is destroyed, if a Caanok Var model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes, your Oath of Moment target until you select a new "
+Once per battle round, after your Oath of Moment target is destroyed, if a CAANOK VAR model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes your Oath of Moment target until you select a new one."
 CATECHISM_OF_FIRE,Catechism of Fire,"When Shooting within 12"", Unit gets DEVASTATING WOUNDS (No Save).","Each time this model’s unit is selected to shoot, you can select one enemy unit within 12"" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model’s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.
 
 DEVASTATING WOUNDS: Critical Wounds = Mortal."
@@ -53,11 +53,10 @@ CEREBREX_LOGIC_ENGINE,Cerebrex Logic Engine,"In Battle Formation, selec ability:
 CHAPTER_MASTER_OF_THE_RAVEN_GUARD,CHAPTER MASTER OF THE RAVEN GUARD,KAYVAAN SHRIKE loses Lone Op and CHAPTER MASTER = CAPTAIN.,"CHAPTER MASTER OF THE RAVEN GUARD
 At the start of the Declare Battle Formations step, if your army includes AETHON SHAAN and KAYVAAN SHRIKE, until the end of the battle, your KAYVAAN SHRIKE unit loses its Lone Operative ability and it replaces its CHAPTER MASTER keyword with CAPTAIN."
 CLOSE_QUARTERS_FIREPOWER,Close-quarters Firepower,"Ranged attack by MODEL vs. closest eligible target, +1 AP.","Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1."
-COLD_AND_CALCULATING,Cold and Calculating:,"Unit.  LETHAL HITS vs MONSTER/VEHICLE
-All others SUSTAINED HITS 1","Cold and Calculating: Each time a model in this model’s unit makes an attack that targets a MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability. 
-Each time a model in this model’s unit makes an attack that targets any other unit, that attack has the [SUSTAINED HITS 1] ability."
+COLD_AND_CALCULATING,Cold and Calculating,"Unit.  LETHAL HITS vs MONSTER/VEHICLE
+All others SUSTAINED HITS 1","Each time a model in this model’s unit makes an attack that targets a MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability. Each time a model in this model’s unit makes an attack that targets any other unit, that attack has the [SUSTAINED HITS 1] ability."
 COMBAT_DISEMBARKATION,Combat Disembarkation,Disembark and Charge,"Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn."
-COMBAT_SUPPORT,Combat Support,"Shoot back if Phobos shot within 6""","Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6"" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target)."
+COMBAT_SUPPORT,Combat Support,"Shoot back if Phobos shot within 6""","Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6"" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
 COMMAND_SQUAD,Command Squad,Led = -1 To Wound,"While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll."
 COMPOSITION_CH,Composition (CH),"1 Ancient, 1 Company Champion, 2 Company Veterans","The Ancient is equipped with: bolt pistol; bolt rifle; close combat weapon.
 
@@ -110,12 +109,12 @@ HAILSTRIKE,Hailstrike,"+1 AP, excluding MONSTERS and VEHICLES","Each time this m
 HAMMER_OF_WRATH,Hammer of Wrath,Charge = Mortal Wounds per model on 4+.,"Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound."
 HAMMERSTRIKE,Hammerstrike,Remove Cover IGNORES COVER,"Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover."
 HAYWIRE_MINE,Haywire Mine,"ONE. Mortal Wounds within 3""","Once per battle, at the start of any phase, you can select one enemy unit within 3"" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a VEHICLE unit."
-HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds","After the bearerâ_x0080__x0099_s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds."
+HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds","After the bearer’s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds."
 HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pain 6+ ability.,Models in the bearer’s unit have the Feel No Pain 6+ ability.
 HIGH_KING_OF_FENRIS,High King of Fenris,ONCE. Bring one unit from Reserves one turn earlier.,"Once per battle round, in your Movement phase, you can select one friendly SPACE WOLVES unit in Strategic Reserves. For the purpose of setting up that unit on the battlefield, treat the current battle round as one higher than it actually is."
 HONOUR_GUARD_OF_MACRAGGE,Honour Guard of Macragge,"With Victrix Honour Guard, MARNEUS CALGAR gets FNP 4+.","While this unit contains one or more Victrix Honour Guard models, this unit’s MARNEUS CALGAR model has the Feel No Pain 4+ ability."
 HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
-0 CP for Heroinc Intervention","Honour or Death (Ravenwing Command - Champion: While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
+0 CP for Heroinc Intervention","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
 ICON_OF_OBSTINACY,Icon of Obstinacy,Unit gets -1 To Wound,"Each time an attack targets this model’s unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll."
 IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover,"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack."
 INCENDIARY_TERROR,Incendiary Terror,Enemy takes Battle-shock,"In your Shooting phase, after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test, subtracting 1 from that test."
