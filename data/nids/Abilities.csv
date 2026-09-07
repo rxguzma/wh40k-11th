@@ -5,8 +5,7 @@ ADAPTIVE_INSTINCTS,Adaptive Instincts,"Once per turn: Fight, when selected to fi
 - or +1 T","Once per turn, per unit: In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following:
 - This unit’s melee attacks have +1 S.
 - This unit has +1 T."
-ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,"Weapons equipped by models in this unit have
-the [SUSTAINED HITS 1] ability."
+ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.
 ALPHA_LEADER,Alpha Leader,Leading = Unit re-rolls the Hit roll.,"While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll."
 ALPHA_WARRIOR,Alpha Warrior,Unit gains [SUSTAINED HITS 1] ability.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
 BIO_STIMULUS,Bio-stimulus,"Shoot an enemy, then, in MELEE, 
@@ -101,8 +100,7 @@ TRYGON_PRIME,Trygon Prime,Trygon Prime  Enhancement included in points and weapo
 UNNATURAL_RESILIENCE,Unnatural Resilience,Feel No Pain 4+ against mortal wounds.,This model has the Feel No Pain 4+ ability against mortal wounds.
 UNSTOPPABLE_MONSTER,Unstoppable Monster,"EACH Command, regain D3 wounds.","At the start of each player’s Command phase, this model regains up to D3 lost wounds."
 VANGUARD_PREDATOR,Vanguard Predator,"Re-roll To Hit of 1.
-Target on obj, re-roll To Wound of 1","Each time a model in this unit makes an attack, re-roll a Hit roll of 1. 
-If the target is within range of one or more objective markers, re-roll a Wound roll of 1 as well."
+Target on obj, re-roll To Wound of 1","Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target is within range of one or more objective markers, re-roll a Wound roll of 1 as well."
 VICIOUS_INSIGHT,Vicious Insight,Leading. Unit has [DEVASTATING WOUNDS].,"While this model is leading a unit, weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability."
 WARP_FIELD_AURA_AND_PSYCHIC,Warp Field (Aura & Psychic),"Friendly 6"" have 6++","While a friendly TYRANIDS unit is within 6"" of this unit, models in that unit have a 6+ invulnerable save."
 WILL_OF_THE_HIVE_MIND,Will of the Hive Mind,"Once per battle round, units within 12"" have -1 CP cost.","Once per battle round, one model from your army with this ability can use it when a friendly Tyranids unit within 12"" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP"
