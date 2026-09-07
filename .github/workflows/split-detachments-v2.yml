@@ -28,4 +28,4 @@ jobs:
           git commit -m "Split detachment data into normalized CSVs"
           git push
 
-# diagnostic rerun
+# migration rerun
