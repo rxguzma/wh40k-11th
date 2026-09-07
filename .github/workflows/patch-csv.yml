@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_iron_laurel","column":"Short_Description","value":"ANYTIME\n +1 OC for Bearer\n +1 OC, ONCE for Unit"}]'
+          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"ERADICATOR_SQUAD_HEAVY_BOLTERS","sets":{"Points_Label_2":"","Points_Cost_2":""}},{"file":"data/marines/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"ERADICATORS_HEAVY_BOLTERS","sets":{"Option_Name":"Heavy Bolters","Weapon_IDs":"HEAVY_BOLTER_ERADICATORS","Preserve_Weapon_IDs":"BOLT_PISTOL_INTERCESSORS, CLOSE_COMBAT_WEAPON_INTERCESSORS"}},{"file":"data/marines/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"ERADICATORS_MELTA","sets":{"Option_Name":"Melta Rifle","Weapon_IDs":"MELTA_RIFLE, MULTI_MELTA_ERADICATORS","Preserve_Weapon_IDs":"BOLT_PISTOL_INTERCESSORS, CLOSE_COMBAT_WEAPON_INTERCESSORS"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
