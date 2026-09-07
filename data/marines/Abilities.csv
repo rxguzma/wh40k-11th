@@ -443,3 +443,6 @@ REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Inciner
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W,Add 1 to the Wounds characteristic of the bearer.,+1 W,
 ERADICATOR_TOTAL_OBLITERATION,Total Obliteration,"RANGED vs MONSTER/VEHICLE
 Re-roll Hit, Wound & Damage","Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll, you can re-roll the Wound roll and you can re-roll the Damage roll.",,
+ERADICATOR_OVERLAPPING_DETONATIONS,Overlapping Detonations,"SHOOTING
+Select visible non-MONSTER/VEHICLE
+Heavy bolters vs selected unit: BLAST 1","In your Shooting phase, when this unit is selected to shoot, select one visible enemy unit that is not a MONSTER or VEHICLE. Until the end of the phase, heavy bolters in this unit have [BLAST 1] when targeting that selected unit.",,
