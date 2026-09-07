@@ -42,6 +42,7 @@ army,Abilities.csv,2,Ability Name,YES,
 army,Abilities.csv,3,Short Description,NO,
 army,Abilities.csv,4,Long Description,NO,
 army,Abilities.csv,5,Tags,NO,Optional structured helper tags; blank is valid.
+army,Abilities.csv,6,Order,NO,Optional default ability sort order 0-9; blank uses application fallback.
 army,Detachments.csv,1,Detachment_ID,YES,Legacy mixed detachment table retained temporarily for current HTML compatibility.
 army,Detachments.csv,2,Army_Name,NO,
 army,Detachments.csv,3,Detachment_Name,NO,
