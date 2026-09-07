@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS","mode":"insert","sets":{"Ability Name":"Thunder Hammers & Shields","Short Description":"+5 pts per model","Long Description":"Each model in this unit equipped with a Thunder Hammer costs +5 points.","Tags":"+5 Pts"}},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"REDEMPTOR_MACRO_PLASMA_POINTS","mode":"insert","sets":{"Ability Name":"Macro Plasma Incinerator","Short Description":"+10 pts per model","Long Description":"Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.","Tags":"+10 Pts"}},{"file":"data/marines/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"ASSAULT_TERMINATORS_HAMMER","sets":{"Ability_IDs":"STORM_SHIELD_TERMINATORS, ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS","Points_Label_1":"","Points_Cost_1":"","Points_Label_2":"","Points_Cost_2":""}},{"file":"data/marines/Unit_Weapon_Options.csv","id_column":"Option_Name","row_id":"Macro Plasma","column":"Ability_IDs","value":"REDEMPTOR_MACRO_PLASMA_POINTS"},{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"REDEMPTOR_PLASMA","sets":{"Points_Cost_1":"195","Points_Cost_2":"390"}}]'
+          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"KEEP_THE_BANNER_HIGH","column":"Short Description","value":"UNIT\n+1 TO HIT if below Strength\n+1 TO WOUND if HALF Strength"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
