@@ -9,6 +9,7 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
@@ -18,6 +19,7 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
@@ -41,6 +43,9 @@ jobs:
 
       - name: Sync legacy unit compatibility columns
         run: python3 scripts/split_units_v1.py
+
+      - name: Sync normalized loadout tables
+        run: python3 scripts/split_loadouts_v1.py
 
       - name: Normalize schema
         run: python3 scripts/data_schema.py normalize
