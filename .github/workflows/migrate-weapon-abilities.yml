@@ -1,4 +1,5 @@
 name: Migrate Weapon Abilities
+# Preserve exact legacy ability separators during migration.
 
 on:
   push:
