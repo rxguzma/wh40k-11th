@@ -42,7 +42,7 @@ army,Abilities.csv,2,Ability Name,YES,
 army,Abilities.csv,3,Short Description,NO,
 army,Abilities.csv,4,Long Description,NO,
 army,Abilities.csv,5,Tags,NO,Optional structured helper tags; blank is valid.
-army,Detachments.csv,1,Detachment_ID,YES,
+army,Detachments.csv,1,Detachment_ID,YES,Legacy mixed detachment table retained temporarily for current HTML compatibility.
 army,Detachments.csv,2,Army_Name,NO,
 army,Detachments.csv,3,Detachment_Name,NO,
 army,Detachments.csv,4,Item_Type,YES,
@@ -55,6 +55,34 @@ army,Detachments.csv,10,Detachment_Disposition,NO,
 army,Detachments.csv,11,Short_Description,NO,
 army,Detachments.csv,12,Long_Description,NO,
 army,Detachments.csv,13,Detachment_Disposition_2,NO,Optional second allowed disposition; blank is valid.
+army,Detachment_Definitions.csv,1,Detachment_ID,YES,Stable unique detachment key.
+army,Detachment_Definitions.csv,2,Army_Name,YES,Owning army name.
+army,Detachment_Definitions.csv,3,Detachment_Name,YES,Visible detachment name.
+army,Detachment_Definitions.csv,4,Rule_ID,YES,Stable unique ID for the detachment rule.
+army,Detachment_Definitions.csv,5,Rule_Name,YES,Visible detachment rule name.
+army,Detachment_Definitions.csv,6,DP_Cost,NO,Detachment point cost.
+army,Detachment_Definitions.csv,7,Detachment_Disposition,NO,Primary allowed disposition.
+army,Detachment_Definitions.csv,8,Detachment_Disposition_2,NO,Optional second allowed disposition.
+army,Detachment_Definitions.csv,9,Short_Description,NO,
+army,Detachment_Definitions.csv,10,Long_Description,NO,
+army,Enhancements.csv,1,Enhancement_ID,YES,Stable unique enhancement key.
+army,Enhancements.csv,2,Detachment_ID,YES,Foreign key to Detachment_Definitions.csv.
+army,Enhancements.csv,3,Enhancement_Name,YES,Visible enhancement name.
+army,Enhancements.csv,4,Points,NO,Enhancement points cost.
+army,Enhancements.csv,5,Short_Description,NO,
+army,Enhancements.csv,6,Long_Description,NO,
+army,Enhancements.csv,7,Tags,NO,Optional explicit modifier tags; blank is valid.
+army,Stratagems.csv,1,Stratagem_ID,YES,Stable unique stratagem key.
+army,Stratagems.csv,2,Detachment_ID,YES,Foreign key to Detachment_Definitions.csv.
+army,Stratagems.csv,3,Stratagem_Name,YES,Visible stratagem name.
+army,Stratagems.csv,4,CP_Cost,NO,Command point cost.
+army,Stratagems.csv,5,Short_Description,NO,
+army,Stratagems.csv,6,Long_Description,NO,
+army,Army_Rules.csv,1,Army_Rule_ID,YES,Stable unique army-rule key.
+army,Army_Rules.csv,2,Army_Name,YES,Owning army name.
+army,Army_Rules.csv,3,Rule_Name,YES,Visible army-rule name.
+army,Army_Rules.csv,4,Short_Description,NO,
+army,Army_Rules.csv,5,Long_Description,NO,
 army,Unit_Weapon_Options.csv,1,Unit_ID,YES,Stable unique unit key.
 army,Unit_Weapon_Options.csv,2,Option_Group_ID,YES,
 army,Unit_Weapon_Options.csv,3,Group_Label,NO,
