@@ -107,7 +107,7 @@ def migrate_army(army):
     stratagem_source = []
     army_rule_source = []
 
-    for row in rows:
+    for source_line, row in enumerate(rows, start=2):
         item_type = (row.get("Item_Type") or "").strip().upper()
         if item_type == "DETACHMENT_RULE":
             definition_source.append(row)
@@ -154,7 +154,7 @@ def migrate_army(army):
                 row["Long_Description"],
             ])
         else:
-            fail(f"{army}: unsupported Item_Type {item_type!r}")
+            fail(f"{army}: unsupported Item_Type {item_type!r} at CSV line {source_line}: {row!r}")
 
     require_unique(definition_source, "Detachment_ID", "Detachment_ID", army)
     require_unique(definition_source, "Item_ID", "detachment Rule_ID", army)
