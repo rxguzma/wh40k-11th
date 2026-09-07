@@ -5,7 +5,7 @@ BIO_PLASMA,Bio-plasma,"12""",D3,4,7,-2,1,"ASSAULT, BLAST"
 BIO_PLASMIC_CANNON,Bio-plasmic cannon,"36""",D6+3,3,9,-3,3,"BLAST, HEAVY"
 BIO_PLASMIC_SCREAM,Bio-plasmic scream,"18""",D6+3,4,8,-2,1,"ASSAULT, BLAST"
 BLINDING_VENOM,Blinding venom,-,1,4,3,0,1,
-BONE_CLEAVER_WITH_LASH_WHIP_AND_RENDING_CLAWS,Bone cleaver with lash whip and rending claws,-,3,3,5,-1,2,
+BONE_CLEAVER_WITH_LASH_WHIP_AND_RENDING_CLAWS,"Bone cleaver, lash whip and rending claws",-,3,3,5,-1,2,
 BONE_SABRES,Bone sabres,-,8,2,9,-2,3,TWIN-LINKED
 BROODLORD_CLAWS_AND_TALONS,Broodlord claws and talons,-,5,2,6,-2,2,"DEVASTATING WOUNDS, TWIN-LINKED"
 CARNIFEX_CRUSHING_CLAWS,Carnifex crushing claws,-,4,4,12,-3,D6+1,
@@ -79,3 +79,4 @@ WARP_BLAST_WITCHFIRE,Warp Blast – witchfire,"24""",D3,3,7,-2,D3,"BLAST, PSYCHI
 TOXINJECTOR_HARPOON,Toxinjector harpoon,"12""",2,2+,12,-3,D6+1,HARPOONED
 TOXINJECTOR_HARPOON_MELEE,Toxinjector harpoon,-,4,2+,12,-3,D6+1,EXTRA ATTACKS
 FLESHBORER_HIVE_TYRANNOFEX,Fleshborer hive,"24""",20,3,5,0,1,"HEAVY, SUSTAINED HITS 1, TWIN-LINKED"
+SCYTHING_TALONS_AND_RENDING_CLAWS,Scything talons and rending claws,-,5,3,5,-1,1,
