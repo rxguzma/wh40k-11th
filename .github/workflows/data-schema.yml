@@ -9,6 +9,7 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/validate_unit_relations.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
     paths:
@@ -17,6 +18,7 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/validate_unit_relations.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
     workflows: ['Patch CSV']
@@ -48,6 +50,9 @@ jobs:
 
       - name: Validate data
         run: python3 scripts/data_schema.py validate
+
+      - name: Validate normalized unit relationships
+        run: python3 scripts/validate_unit_relations.py
 
       - name: Build manifests
         run: python3 scripts/data_schema.py manifest
