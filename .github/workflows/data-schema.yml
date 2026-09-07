@@ -32,7 +32,7 @@ jobs:
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
 
-      - name: Sync normalized detachment tables
+      - name: Sync legacy detachment compatibility table
         run: python3 scripts/split_detachments_v2.py
 
       - name: Normalize schema
