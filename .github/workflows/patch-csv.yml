@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"ERADICATOR_SQUAD_HEAVY_BOLTERS","sets":{"Points_Label_1":"x3","Points_Label_2":"x6","Points_Label_3":"x3","Points_Label_4":"x6"}}]'
+          raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Detachment_ID","row_id":"iron_hands_hammer_of_avernii","column":"Short_Description","value":"ANYTIME\n +1 OC for Bearer\n +1 OC, ONCE for Unit"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
