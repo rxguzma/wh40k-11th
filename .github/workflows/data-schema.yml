@@ -6,11 +6,13 @@ on:
     paths:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
+      - 'scripts/audit_references.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
     paths:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
+      - 'scripts/audit_references.py'
       - '.github/workflows/data-schema.yml'
 
 permissions:
@@ -24,8 +26,17 @@ jobs:
         with:
           ref: ${{ github.event_name == 'push' && github.ref_name || github.event.pull_request.head.sha }}
 
-      - name: Normalize validate and build manifests
-        run: python3 scripts/data_schema.py all
+      - name: Normalize schema
+        run: python3 scripts/data_schema.py normalize
+
+      - name: Audit references
+        run: python3 scripts/audit_references.py
+
+      - name: Validate data
+        run: python3 scripts/data_schema.py validate
+
+      - name: Build manifests
+        run: python3 scripts/data_schema.py manifest
 
       - name: Require normalized data in pull requests
         if: github.event_name == 'pull_request'
