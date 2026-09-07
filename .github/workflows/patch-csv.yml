@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"PRIORITY_OBJECTIVE_IDENTIFIED","column":"Short Description","value":"Select an Objective, while on the battlefield, [RE-ROLL 1S TO WOUND]."},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"HAILSTRIKE","column":"Short Description","value":"[+1 AP], excluding MONSTERS and VEHICLES"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"HAMMERSTRIKE","column":"Short Description","value":"Remove Cover [IGNORES COVER]"}]'
+          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short Description","from":"[","to":""},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short Description","from":"]","to":""},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short_Description","from":"[","to":""},{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short_Description","from":"]","to":""},{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short_Description","from":"[","to":""},{"file":"data/dark_angels/Detachments.csv","id_column":"Detachment_ID","row_id":"ALL_SHORT_DESCRIPTIONS","mode":"replace_text","column":"Short_Description","from":"]","to":""}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
