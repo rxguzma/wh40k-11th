@@ -71,7 +71,8 @@ def read_source(path):
         reader = csv.DictReader(handle)
         if reader.fieldnames != EXPECTED:
             fail(f"{path.relative_to(ROOT)} header mismatch: {reader.fieldnames!r}")
-        return list(reader)
+        rows = list(reader)
+    return [row for row in rows if any((value or "").strip() for value in row.values())]
 
 
 def require_unique(rows, key, label, army):
