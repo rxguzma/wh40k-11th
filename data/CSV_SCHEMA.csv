@@ -1,9 +1,9 @@
 Scope,File,Column_Order,Column_Name,Required,Notes
 army,Units.csv,1,Unit_ID,YES,Stable unique unit key.
 army,Units.csv,2,Unit Name,YES,
-army,Units.csv,3,Ability_IDs,NO,Comma-separated army Ability_ID references.
-army,Units.csv,4,Core_Ability_IDs,NO,Comma-separated universal/core Ability_ID references.
-army,Units.csv,5,Weapon_IDs,NO,Comma-separated Weapon_ID references.
+army,Units.csv,3,Ability_IDs,NO,Legacy comma-separated army Ability_ID references retained until HTML migration.
+army,Units.csv,4,Core_Ability_IDs,NO,Legacy comma-separated universal/core Ability_ID references retained until HTML migration.
+army,Units.csv,5,Weapon_IDs,NO,Legacy comma-separated Weapon_ID references retained until HTML migration.
 army,Units.csv,6,"M""",NO,
 army,Units.csv,7,T,NO,
 army,Units.csv,8,SV,NO,
@@ -12,22 +12,32 @@ army,Units.csv,10,LD,NO,
 army,Units.csv,11,OC,NO,
 army,Units.csv,12,Keywords,NO,
 army,Units.csv,13,Hyperlink,NO,
-army,Units.csv,14,Points_Label_1,NO,
-army,Units.csv,15,Points_Cost_1,NO,
-army,Units.csv,16,Points_Label_2,NO,
-army,Units.csv,17,Points_Cost_2,NO,
-army,Units.csv,18,Points_Label_3,NO,
-army,Units.csv,19,Points_Cost_3,NO,
-army,Units.csv,20,Points_Label_4,NO,
-army,Units.csv,21,Points_Cost_4,NO,
-army,Units.csv,22,Points_Label_5,NO,
-army,Units.csv,23,Points_Cost_5,NO,
-army,Units.csv,24,Points_Label_6,NO,
-army,Units.csv,25,Points_Cost_6,NO,
-army,Units.csv,26,Points_Label_7,NO,
-army,Units.csv,27,Points_Cost_7,NO,
-army,Units.csv,28,Points_Label_8,NO,
-army,Units.csv,29,Points_Cost_8,NO,
+army,Units.csv,14,Points_Label_1,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,15,Points_Cost_1,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,16,Points_Label_2,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,17,Points_Cost_2,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,18,Points_Label_3,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,19,Points_Cost_3,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,20,Points_Label_4,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,21,Points_Cost_4,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,22,Points_Label_5,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,23,Points_Cost_5,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,24,Points_Label_6,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,25,Points_Cost_6,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,26,Points_Label_7,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,27,Points_Cost_7,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,28,Points_Label_8,NO,Legacy point slot retained until HTML migration.
+army,Units.csv,29,Points_Cost_8,NO,Legacy point slot retained until HTML migration.
+army,Unit_Abilities.csv,1,Unit_ID,YES,Foreign key to Units.csv.
+army,Unit_Abilities.csv,2,Ability_ID,YES,Foreign key to army or Universal Abilities.
+army,Unit_Abilities.csv,3,Ability_Type,YES,ABILITY or CORE_ABILITY; preserves the source relationship class.
+army,Unit_Weapons.csv,1,Unit_ID,YES,Foreign key to Units.csv.
+army,Unit_Weapons.csv,2,Weapon_ID,YES,Foreign key to Weapon_Stats.csv.
+army,Unit_Points.csv,1,Unit_ID,YES,Foreign key to Units.csv.
+army,Unit_Points.csv,2,Point_Option_ID,YES,Stable point-slot key; currently point_1 through point_8.
+army,Unit_Points.csv,3,Label,NO,Exact legacy point label; blank is valid for single-cost units.
+army,Unit_Points.csv,4,Cost,NO,Exact legacy point cost; blank is valid when a label is loadout-driven.
+army,Unit_Points.csv,5,Sort_Order,YES,Original point-slot order 1 through 8.
 army,Weapon_Stats.csv,1,Weapon_ID,YES,
 army,Weapon_Stats.csv,2,Weapon Name,YES,
 army,Weapon_Stats.csv,3,"R""",NO,
