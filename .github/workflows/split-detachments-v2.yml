@@ -27,3 +27,5 @@ jobs:
           git add -- data/nids/Detachment_Definitions.csv data/nids/Enhancements.csv data/nids/Stratagems.csv data/nids/Army_Rules.csv
           git commit -m "Split detachment data into normalized CSVs"
           git push
+
+# diagnostic rerun
