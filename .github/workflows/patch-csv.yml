@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"NEUROTYRANT","column":"Cost","value":"130"},{"file":"data/nids/Unit_Points.csv","id_column":"Cost","row_id":"100","column":"Cost","value":"90"},{"file":"data/nids/Unit_Points.csv","id_column":"Label","row_id":"3x2","column":"Label","value":"__ZOANTHROPES_3X2_TEMP__"},{"file":"data/nids/Unit_Points.csv","id_column":"Label","row_id":"__ZOANTHROPES_3X2_TEMP__","column":"Cost","value":"201"},{"file":"data/nids/Unit_Points.csv","id_column":"Cost","row_id":"200","column":"Cost","value":"190"},{"file":"data/nids/Unit_Points.csv","id_column":"Label","row_id":"__ZOANTHROPES_3X2_TEMP__","column":"Cost","value":"200"},{"file":"data/nids/Unit_Points.csv","id_column":"Label","row_id":"__ZOANTHROPES_3X2_TEMP__","column":"Label","value":"3x2"}]'
+          raw = r'[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"HEAVY_BOLTER_ERADICATORS","column":"Weapon Name","value":"Heavy bolter"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
