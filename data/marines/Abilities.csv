@@ -152,7 +152,7 @@ Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.
 LEADER_SUBODEN_KHAN,Leader: Suboden Khan,"Can Lead: MOUNTED
 Outriders",LEADER: OUTRIDER SQUAD
-LITANY_OF_HATE,Litany of Hate,"While Leading, Melee +1 To Wound.","While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll."
+LITANY_OF_HATE,Litany of Hate,"While Leading, Melee [+1 TO WOUND].","While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll."
 NEW_LITANY_OF_HATE,Litany of Hate (New),Add +1 to Wound for this unit’s melee weapons,This unit’s melee weapons have +1 to Wound rolls.
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away.","Cannot be shot at if 12"" away."
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP."
@@ -259,10 +259,10 @@ Infernus, Sternguard Vets",Support: This model can be attached to the following 
 SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn.,"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
 
 Until your next turn starts, while this unit remains on the battlefield, that enemy unit is suppressed. Suppressed units subtract 1 from Hit rolls when attacking."
-SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
-TACTICAL_PRECISION,Tactical Precision,Unit has Lethal Hits. LETHAL HITS	Critical Hits (ie 6s) auto-wound the target.,"While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains [SUSTAINED HITS 1],"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+TACTICAL_PRECISION,Tactical Precision,Unit has [LETHAL HITS]. LETHAL HITS: Critical Hits (ie 6s) auto-wound the target.,"While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
 TALONSTRIKE_DOCTRINES,Talonstrike Doctrines,"Deepstrike and get:
-Extra AP and LANCE","Each time this unit is set up on the battlefield, until the end of the turn:
+[+1 AP] and LANCE","Each time this unit is set up on the battlefield, until the end of the turn:
 - Improve the Armour Penetration characteristic of weapons equipped by models in this unit by 1.
 - Melee weapons equipped by models in this unit have the [LANCE] ability."
 TALONSTRIKE_KILL_TEAM_BREAKDOWN,Talonstrike Kill Team breakdown,"x1 Sergeant with Plasma pistol and power fist
@@ -275,7 +275,7 @@ x2 Heavy bolt pistols and chainswords
 
 x5 Assault bolters with Close combat weapon"
 TARGET_PRIORITY,Target Priority,This model’s unit can shoot and declare a charge in a turn in which it Fell Back.,This model’s unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
-TARGETER_OPTICS,Targeter Optics,Stationary = Ignore Cover,"Each time this unit Remains Stationary, until the start of your next Movement phase, ranged weapons equipped by models in this unit have the [IGNORES COVER] ability."
+TARGETER_OPTICS,Targeter Optics,Stationary = [IGNORES COVER],"Each time this unit Remains Stationary, until the start of your next Movement phase, ranged weapons equipped by models in this unit have the [IGNORES COVER] ability."
 TECHMARINE,Techmarine,"Lone Operative if within 3"" of Vehicle.
 
 Lone Operative: Cannot be targetted outside of 12"".","While this model is within 3"" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
@@ -303,7 +303,7 @@ NEW_UNBREAKABLE_RESOLVE,Unbreakable Resolve (New),Feel No Pain 4+ near an object
 UNORTHODOX_STRATEGIST,Unorthodox Strategist,"Enemy within 12"" CP cost +1","Unorthodox Strategist (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem)."
 UNPARALLELED_TACTICIAN,UNPARALLELED TACTICIAN,Every Battle Round: Free Into Darkness.,"UNPARALLELED TACTICIAN
 Once per battle round, if an AETHON SHAAN model from your army is on the battlefield, you can use the Into Darkness Stratagem for 0CP."
-UNTO_THE_ANVIL,Unto the Anvil,Leading = re-roll ALL To Wound in MELEE,"While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll."
+UNTO_THE_ANVIL,Unto the Anvil,Leading = [RE-ROLL ALL WOUNDS] in MELEE,"While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll."
 UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,"While on controlled objective, +1 save vs Damage 1 attacks","While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack."
 VANGUARD_ASSAULT,Vanguard Assault,CHARGE + [LETHAL HITS],"Each time this unit ends a Charge move, until the end of the turn, - weapons equipped by models in this unit have the [LETHAL HITS] ability."
 VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has [SUSTAINED HITS 1].,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
