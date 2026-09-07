@@ -161,3 +161,13 @@ army,Unit_Loadout_Legacy_Units.csv,2,Option_Group_ID,YES,Foreign key component t
 army,Unit_Loadout_Legacy_Units.csv,3,Option_ID,YES,Foreign key component to Unit_Loadout_Options.csv.
 army,Unit_Loadout_Legacy_Units.csv,4,Legacy_Unit_ID,YES,Historical unit ID migrated to this selected option.
 army,Unit_Loadout_Legacy_Units.csv,5,Sort_Order,YES,Original alias order.
+army,Effects.csv,1,Effect_ID,YES,Stable unique effect key.
+army,Effects.csv,2,Source_Type,YES,ABILITY or ENHANCEMENT.
+army,Effects.csv,3,Source_ID,YES,Foreign key to Ability_ID or Enhancement_ID according to Source_Type.
+army,Effects.csv,4,Effect_Type,YES,"STAT, POINTS_PER_MODEL, or KEYWORD."
+army,Effects.csv,5,Target,YES,Execution target; currently UNIT.
+army,Effects.csv,6,Stat,YES,"M/T/SV/W/LD/OC, PTS, or KEYWORD according to Effect_Type."
+army,Effects.csv,7,Operation,YES,"ADD, SET, or REMOVE according to Effect_Type."
+army,Effects.csv,8,Value,YES,Machine-readable effect value.
+army,Effects.csv,9,Display_Tag,YES,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
+army,Effects.csv,10,Sort_Order,YES,Effect order within its source.
