@@ -1,4 +1,5 @@
 name: Install Entity Ops
+# One-time installer; rerun after staged asset refinement.
 
 on:
   push:
@@ -23,6 +24,7 @@ jobs:
           schema=json.load(open('schemas/entity-ops.schema.json', encoding='utf-8'))
           assert schema.get('$schema') == 'https://json-schema.org/draft/2020-12/schema'
           assert len(schema['$defs']['operation']['oneOf']) == 33
+          assert 'nestedLoadoutAdd' in schema['$defs']
           print('schema structure: OK')
           PY
       - name: Commit assets
@@ -30,6 +32,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- scripts/entity_ops.py schemas/entity-ops.schema.json
-          git commit -m "Add schema-first entity operations engine"
+          git commit -m "Refine Entity Ops schema"
           git pull --rebase origin main
           git push
