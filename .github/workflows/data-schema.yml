@@ -53,7 +53,7 @@ jobs:
       - name: Sync legacy loadout compatibility table
         run: python3 scripts/split_loadouts_v1.py
 
-      - name: Sync normalized effects from Tags
+      - name: Sync legacy effect Tags
         run: python3 scripts/split_effects_v1.py
 
       - name: Normalize schema
