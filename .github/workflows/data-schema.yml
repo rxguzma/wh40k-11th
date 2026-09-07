@@ -39,7 +39,7 @@ jobs:
       - name: Sync legacy detachment compatibility table
         run: python3 scripts/split_detachments_v2.py
 
-      - name: Sync normalized unit relationship tables
+      - name: Sync legacy unit compatibility columns
         run: python3 scripts/split_units_v1.py
 
       - name: Normalize schema
