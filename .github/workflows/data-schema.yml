@@ -1,5 +1,6 @@
 name: Data Schema
 # CSV ownership metadata is enforced by scripts/data_schema.py.
+# Canonical loadouts use Loadout_Option_ID; Unit_Loadout_* remains generated compatibility.
 
 on:
   push:
