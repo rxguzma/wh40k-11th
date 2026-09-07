@@ -1,0 +1,83 @@
+Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description
+orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,3,Take and Hold,Purge the Foe,ORKS melee [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].
+orks_more_dakka,Orks,More Dakka!,orks_more_dakka_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,INFANTRY ranged have [ASSAULT].  In addition whe RILED UP ranged get  [SUSTAINED HITS 1],"Friendly ORKS INFANTRY units’ ranged attacks have [ASSAULT].
+
+In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1]."
+orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective."
+orks_rollin_deff,Orks,Rollin’ Deff,orks_rollin_deff_detachment_rule_thundering_wagons,THUNDERING WAGONS,1,Priority Assets,,"WAGON re‑rolls Charge & Advance flat 6"". 
+
+BATTLEWAGON, HUNTA & KILL RIG.","Friendly BATTLEWAGON, HUNTA RIG, KILL RIG units have WAGON. 
+
+Friendly WAGON units can re‑roll charge rolls. When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6. 
+
+This detachment has the WAGONS tag and cannot be taken with another WAGONS detachment."
+orks_green_tide,Orks,Green Tide,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,1,Take and Hold,,"BOYZ melee [SUSTAINED HITS 1].
+
+Charge, INFANTRY gains [LETHAL HITS: non-MONSTER / VEHICLE].","Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].
+
+If a friendly ORKS INFANTRY unit made a charge move this turn, that unit's melee attacks have [LETHAL HITS: non-MONSTER / VEHICLE]."
+orks_bully_boyz,Orks,Bully Boyz,orks_bully_boyz_detachment_rule_displays_of_savagery,DISPLAYS OF SAVAGERY,1,Purge the Foe,,Friendly MEGANOBZ / NOBZ melee has [SUSTAINED HITS 1].,Friendly MEGANOBZ / NOBZ units' melee attacks have [SUSTAINED HITS 1].
+orks_taktikal_brigade,Orks,Taktikal Brigade,orks_taktikal_brigade_detachment_rule_suspiciously_well_organised,SUSPICIOUSLY WELL ORGANISED,1,Take and Hold,,STORMBOYZ have BATTLELINE. BOYZ / KOMMANDOS / STORMBOYZ can Fall Back and still charge.,"Friendly STORMBOYZ units have BATTLELINE.
+
+When a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make a fall-back move, that fall-back move does not prevent that unit from being eligible to declare a charge."
+orks_wreckas,Orks,Wreckas,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',1,Priority Assets,,BREAKA BOYZ / FLASH GITZ / TANKBUSTAS [Re-roll 1s To Hit] if they or their target are in range of an objective.,"In your Shooting phase, when a friendly BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
+- That unit is within range of an objective.
+- The target of that attack is within range of an objective."
+orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,1,Purge the Foe,,BEAST SNAGGA attacks that target MONSTER / VEHICLE have +1 AP.,Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.
+orks_madcap_meks,Orks,Madcap Meks,orks_madcap_meks_detachment_rule_unpredictable_genius,UNPREDICTABLE GENIUS,1,Disruption,,"When BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET puts all ranged attacks into one enemy, roll D6 table.","In your Shooting phase, when all of a friendly BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET unit's ranged attacks target a single enemy unit, roll one D6:
+
+UNPREDICTABLE GENIUS
+D6  RESULT
+1  Dat's Weird: The target unit has 4+ InSv until your unit has shot.
+2-3  Hop Splat: Select one other enemy unit within 3"" of the target. That unit suffers D3 mortal wounds.
+4  Seekerz: Those attacks have +1 to hit rolls.
+5  Lifted: The target unit has FLY, and cannot have the benefit of cover, until your unit has shot.
+6  Runtified: The target unit has -1 T until your unit has shot."
+orks_dread_mob,Orks,Dread Mob,orks_dread_mob_detachment_rule_try_dat_button,TRY DAT BUTTON!,1,Purge the Foe,,"TRY DAT BUTTON! D6
+1-2  +1 A
+3-4  +2 S
+5-6  +1 AP
+
+2D6 get HAZARDOUS (keep dups)
+Non-TITANIC ORKS WALKER","In your Shooting phase or the Fight phase, when a friendly ORKS WALKER unit (excluding TITANIC units) is selected to attack, you can use this ability. If you do, roll either one D6 or two D6 (keep re-rolling duplicate results). This unit's attacks have the relevant rule(s):
+
+TRY DAT BUTTON!
+D6  RESULT
+1-2  +1 A
+3-4  +2 S
+5-6  +1 AP
+
+If you rolled two D6, when this unit has attacked, this unit makes one hazard roll."
+orks_blitz_brigade,Orks,Blitz Brigade,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,1,Take and Hold,,"WAGON
+Re-roll Charges & can Advance flat 6.","Friendly WAGON units can re-roll charge rolls.
+
+When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6."
+orks_kult_of_speed,Orks,Kult of Speed,orks_kult_of_speed_detachment_rule_adrenaline_junkies,ADRENALINE JUNKIES,1,Reconnaissance,,WARBIKERS have BATTLELINE. SPEED FREEKS Advance/Fall Back: ranged [ASSAULT] this turn and can still charge.,"Friendly WARBIKERS units have BATTLELINE.
+
+When a friendly SPEED FREEKS unit is selected to make an advance/fall-back move:
+That unit's ranged attacks have [ASSAULT] until the end of the turn.
+That move does not prevent that unit from being eligible to declare a charge."
+orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Reconnaissance,,ORKS AIRCRAFT ignore Strategic Reserves points cap. Riled up ORKS AIRCRAFT / DEFFKOPTAS ranged +1 to hit.,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
+
+While a friendly ORKS AIRCRAFT / DEFFKOPTAS unit is RILED UP, this unit's ranged attacks have +1 to hit rolls."
+orks_brute_bosses,Orks,Brute Bosses,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,1,Purge the Foe,,"WARBOSS
+Fight on death 3+ or 2+ if RILED UP","When a friendly WARBOSS model is destroyed, if this unit has not been selected to fight this phase, roll one D6, with +1 to the roll if your unit is RILED UP.
+- On a 3+, do not remove this WARBOSS model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this WARBOSS model is removed from the battlefield."
+orks_wurrband,Orks,Wurrband,orks_wurrband_detachment_rule_powers_of_da_waaagh,POWERS OF DA WAAAGH!,1,Disruption,,"ORKS PSYKER [PSYCHIC] attacks gain +1 S, plus +1 S per 5 models in/embarked with the unit. ORKS PSYKERS gain Roar of Mork and Visions of Violence.","Friendly ORKS PSYKER models' [PSYCHIC] attacks have:
+- +1 S.
+- +1 S for every 5 models in this unit (or embarked within this model).
+
+Friendly ORKS PSYKER models have the following psychic abilities:
+
+Roar of Mork (psychic level 1): In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+- On a 1, this unit is battle-shocked.
+- Select one enemy unit (excluding MONSTER / VEHICLE units) within 12"" of this unit. That enemy unit makes a battle-shock roll, with -1 from that battle-shock roll for every 10 models in this unit.
+
+Visions of Violence (psychic level 1): At the start of the Fight phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+- On a 1, this unit is battle-shocked.
+- This unit has Fights First."
+orks_runt_swarm,Orks,Runt Swarm,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,1,Priority Assets,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
+When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action."
+orks_shoota_boyz,Orks,Shoota Boyz,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,"INFANTRY ranged attacks have [ASSAULT]. If RILED UP, ranged attacks +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
+- [ASSAULT].
+- While this unit is RILED UP, +3"" R."

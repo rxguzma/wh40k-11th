@@ -1,0 +1,14 @@
+Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description
+tyranids_army_rule,Tyranids,Synapse / Shadow in the Warp,"Synapse: 6"" of SYNAPSE. Battle-shock on 3D6. Melee +1 S.
+Shadow in the Warp: Once per battle, all enemy Battle-shock. -1 if within 6"" of SYNAPSE.","Army Rule
+SYNAPSE
+While a TYRANIDS unit from your army is within 6"" of one or more friendly SYNAPSE models, that unit is within Synapse Range of that model and of your army.
+
+While a TYRANIDS unit from your army is within Synapse Range of your army:
+- Battle-shock tests are taken on 3D6 instead of 2D6.
+- Melee attacks made by models in that unit have +1 Strength.
+
+SHADOW IN THE WARP
+Once per battle, in either player’s Command phase, if one or more units from your army with this ability are on the battlefield, you can unleash the Shadow in the Warp.
+
+When you do, each enemy unit on the battlefield must take a Battle-shock test. If that unit is within 6"" of one or more SYNAPSE units from your army, subtract 1 from that test."
