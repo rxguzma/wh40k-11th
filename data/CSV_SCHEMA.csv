@@ -41,7 +41,7 @@ army,Abilities.csv,1,Ability_ID,YES,
 army,Abilities.csv,2,Ability Name,YES,
 army,Abilities.csv,3,Short Description,NO,
 army,Abilities.csv,4,Long Description,NO,
-army,Abilities.csv,5,Tags,NO,Optional structured/helper tags; blank is valid.
+army,Abilities.csv,5,Tags,NO,Optional structured helper tags; blank is valid.
 army,Detachments.csv,1,Detachment_ID,YES,
 army,Detachments.csv,2,Army_Name,NO,
 army,Detachments.csv,3,Detachment_Name,NO,
@@ -61,12 +61,16 @@ army,Unit_Weapon_Options.csv,3,Group_Label,NO,
 army,Unit_Weapon_Options.csv,4,Option_ID,YES,
 army,Unit_Weapon_Options.csv,5,Option_Name,YES,
 army,Unit_Weapon_Options.csv,6,Weapon_IDs,NO,Comma-separated Weapon_ID references.
-army,Unit_Weapon_Options.csv,7,Ability_IDs,NO,Comma-separated Ability_ID references granted by this loadout option.
-army,Unit_Weapon_Options.csv,8,Default,NO,
-army,Unit_Weapon_Options.csv,9,Sort_Order,NO,
-army,Unit_Weapon_Options.csv,10,Legacy_Unit_IDs,NO,
-army,Unit_Weapon_Options.csv,11,Preserve_Weapon_IDs,NO,
-army,Unit_Weapon_Options.csv,12,Compatible_With,NO,GROUP=OPTION|OPTION compatibility expression; blank is valid.
+army,Unit_Weapon_Options.csv,7,Ability_IDs,NO,Comma-separated Ability_ID references granted by this option.
+army,Unit_Weapon_Options.csv,8,Points_Label_1,NO,Optional first option-specific unit-size label.
+army,Unit_Weapon_Options.csv,9,Points_Cost_1,NO,Optional first option-specific unit-size cost.
+army,Unit_Weapon_Options.csv,10,Points_Label_2,NO,Optional second option-specific unit-size label.
+army,Unit_Weapon_Options.csv,11,Points_Cost_2,NO,Optional second option-specific unit-size cost.
+army,Unit_Weapon_Options.csv,12,Default,NO,
+army,Unit_Weapon_Options.csv,13,Sort_Order,NO,
+army,Unit_Weapon_Options.csv,14,Legacy_Unit_IDs,NO,
+army,Unit_Weapon_Options.csv,15,Preserve_Weapon_IDs,NO,
+army,Unit_Weapon_Options.csv,16,Compatible_With,NO,Option compatibility expression; blank is valid.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,
 universal,Universal_Abilities.csv,2,Ability Name,YES,
 universal,Universal_Abilities.csv,3,Short Description,NO,
