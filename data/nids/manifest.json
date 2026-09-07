@@ -1,9 +1,9 @@
 {
-  "dataset_sha256": "bb774611d1a5c8921603e6205cde3096d2c4123a302ad11aae201e55565ffbd9",
+  "dataset_sha256": "88fd26e8191f690194f71205569f9162d2719a8ec594b077f7f289563cf8eec7",
   "files": {
     "Abilities.csv": {
-      "bytes": 19823,
-      "sha256": "f14592f707d4bf87a21bcc99608f7178cd9f140374cd4c1a8a4d6b2562aedf55"
+      "bytes": 20072,
+      "sha256": "ca99c5805e4cefd9f21b9b135cd7f5ca8677a5c2d9274c26ab77a54cfa04bfea"
     },
     "Army_Rules.csv": {
       "bytes": 1014,
@@ -18,8 +18,8 @@
       "sha256": "610aa39a8efb083be610f19e2e12ea1b670ebf44a842b476911382173d393ec6"
     },
     "Effects.csv": {
-      "bytes": 95,
-      "sha256": "464e3b69c7844ec2b507ef406e9e316befdd516fbd6924d87c3bfaedcaaf9151"
+      "bytes": 341,
+      "sha256": "af81d46e31a9664e2ee3fd27a83cd0deeb11c19e5520ceae07fbfdd7e6eb4290"
     },
     "Enhancements.csv": {
       "bytes": 6448,
@@ -34,8 +34,8 @@
       "sha256": "f2f338bc15be89a37eae96f2e08e69fe7da28e9604c27ee75437780d5f06b24b"
     },
     "Unit_Loadout_Abilities.csv": {
-      "bytes": 56,
-      "sha256": "1a2903062124a2aa77872d333a782cb3d69e98082a4ad49901bd69ee1c01ba57"
+      "bytes": 216,
+      "sha256": "5e2e5fdefc89335d020bac7e6d2d0c604f6769f408857848b3b5baaeeb6e9b7c"
     },
     "Unit_Loadout_Compatibility.csv": {
       "bytes": 97,
@@ -50,8 +50,8 @@
       "sha256": "d50968c315cdc310993d4eab8b4a6760a411ebc69e6f8520bdef221f6cbfc18c"
     },
     "Unit_Loadout_Points.csv": {
-      "bytes": 261,
-      "sha256": "c847736099f91f28801f6653a04267a5dd3949fa776b7bad9563941e7a5624f2"
+      "bytes": 72,
+      "sha256": "183d4f2bacd7d09f7b4790ecf5d8f389fd509c79e5e9d9dd0b1a50cf384333f7"
     },
     "Unit_Loadout_Weapons.csv": {
       "bytes": 308,
@@ -62,8 +62,8 @@
       "sha256": "95ef8a067ddfb1eb7fc435aff24061e76cfcbea89b16c558857c2bbc4c21bee0"
     },
     "Unit_Weapon_Options.csv": {
-      "bytes": 598,
-      "sha256": "2878f1717e7b8300944235bd330ba6735ac078c9ea99e8806d1eff70cfca1513"
+      "bytes": 649,
+      "sha256": "5cd77021c244c0a65886a90f74692d4df7033b361d71571341a2c8b8ca54033b"
     },
     "Unit_Weapons.csv": {
       "bytes": 3545,
