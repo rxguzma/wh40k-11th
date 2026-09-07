@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"}]'
+          raw = r'[{"file":"data/orks/Units.csv","id_column":"Unit Name","row_id":"Gunwagon (Base)","sets":{"Points_Label_1":"","Points_Cost_1":"150"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"GUNWAGON_ZZAP_GUN_POINTS","mode":"insert","sets":{"Ability Name":"Gunwagon Zzap Gun","Short Description":"Gunwagon Zzap Gun +10 Pts","Long Description":"A Gunwagon equipped with a Zzap Gun costs +10 points.","Tags":"+10 Pts"}},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_Name","row_id":"Zzap Gun","column":"Ability_IDs","value":"GUNWAGON_ZZAP_GUN_POINTS"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
