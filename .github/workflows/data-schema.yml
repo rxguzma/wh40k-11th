@@ -10,9 +10,11 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/split_weapon_abilities_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/split_effects_v1.py'
       - 'scripts/validate_unit_relations.py'
+      - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
       - '.github/workflows/data-schema.yml'
@@ -23,9 +25,11 @@ on:
       - 'scripts/audit_references.py'
       - 'scripts/split_detachments_v2.py'
       - 'scripts/split_units_v1.py'
+      - 'scripts/split_weapon_abilities_v1.py'
       - 'scripts/split_loadouts_v1.py'
       - 'scripts/split_effects_v1.py'
       - 'scripts/validate_unit_relations.py'
+      - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
       - '.github/workflows/data-schema.yml'
@@ -51,6 +55,9 @@ jobs:
       - name: Sync legacy unit compatibility table
         run: python3 scripts/split_units_v1.py
 
+      - name: Sync weapon ability compatibility column
+        run: python3 scripts/split_weapon_abilities_v1.py
+
       - name: Sync legacy loadout compatibility table
         run: python3 scripts/split_loadouts_v1.py
 
@@ -68,6 +75,9 @@ jobs:
 
       - name: Validate normalized unit relationships
         run: python3 scripts/validate_unit_relations.py
+
+      - name: Validate normalized weapon abilities
+        run: python3 scripts/validate_weapon_abilities.py
 
       - name: Validate normalized loadouts
         run: python3 scripts/validate_loadouts.py
