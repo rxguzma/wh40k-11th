@@ -23,8 +23,8 @@ Devastator Doctrine: This unit is eligible to shoot in a turn in which it Advanc
 Tactical Doctrine: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
 Assault Doctrine: This unit is eligible to declare a charge in a turn in which it Advanced."
 DARK_AGE_ARSENAL,Dark Angels,Dark Age Arsenal,DETACHMENT_RULE,DARK_AGE_ARSENAL_DETACHMENT_RULE_INVOCATIONS_OF_ANCIENT_FURY,INVOCATIONS OF ANCIENT FURY,,,1,Priority Assets,Plasma weapon profiles have [+1 S].,Friendly ADEPTUS ASTARTES units' weapon profiles with 'Plasma' in their names are plasma weapon profiles. Plasma weapon profiles have +1 S.
-space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,EMPEROR'S SHIELD,,,2,Priority Assets,"Re-rolls 1s To Wound vs Oath
-Re-roll all To Wound with Lysander","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
+space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,EMPEROR'S SHIELD,,,2,Priority Assets,"[RE-ROLL 1S TO WOUND] vs Oath
+Lysander: [RE-ROLL ALL WOUNDS] vs Oath","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
 
 Each time a model in a DARNATH LYSANDER unit from your army makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll."
 space_marines_gladius_task_force,Marines,Gladius Task Force,DETACHMENT_RULE,space_marines_gladius_task_force_detachment_rule_detachment_rule,COMBAT DOCTRINES,,,3,Priority Assets,"Devastator: Adv and Shoot.
@@ -65,11 +65,11 @@ space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,DETACHMENT
 INTERROGATION_CONCLAVE,Dark Angels,Interrogation Conclave,DETACHMENT_RULE,INTERROGATION_CONCLAVE_DETACHMENT_RULE_DREAD_CATECHISM,DREAD CATECHISM,,,1,Recon,"CHAPLAIN: Destroy a unit = Force Battle-shock. Also, -1 LD within 6"".","In the Fight phase, when a friendly CHAPLAIN unit destroys an enemy unit, enemy units within 6"" of that CHAPLAIN unit make a battle-shock roll.
 
 Friendly CHAPLAIN units have the following ability: Sower of Dread (Aura): While an enemy unit is within 6"" of this unit, that enemy unit has -1 Ld."
-LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,DETACHMENT_RULE,LIBRARIUS_CONCLAVE_DETACHMENT_RULE_PSYCHIC_DISCIPLINES,PSYCHIC DISCIPLINES,,,1,Recon,"Start of battle round: 
-- Biomancy: +2"" M.  
-- Divination: Re-roll 1s To Hit and To Wound
-- Pyromancy: Ranged within 12"" have +1 AP
-- Telekinesis: Enemy Range -1 S.  
+LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,DETACHMENT_RULE,LIBRARIUS_CONCLAVE_DETACHMENT_RULE_PSYCHIC_DISCIPLINES,PSYCHIC DISCIPLINES,,,1,Recon,"Start of battle round:
+- Biomancy: +2"" M.
+- Divination: [RE-ROLL 1S TO HIT] and [RE-ROLL 1S TO WOUND]
+- Pyromancy: Ranged within 12"" have [+1 AP]
+- Telekinesis: Enemy Range -1 S.
 - Telepathy: Ignore mods to BS, WS and hits.","At the start of the battle round, select one of the following Psychic Disciplines abilities. Friendly ADEPTUS ASTARTES PSYKER units have that ability until the end of the battle round:
 
 Biomancy Discipline: This unit has +2"" M.
@@ -84,10 +84,10 @@ Telepathy Discipline: This unit's attacks can ignore modifiers to BS, WS and hit
 SUBVERSION_ASSETS,Marines,Subversion Assets,DETACHMENT_RULE,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,,,1,Recon,"PHOBOS and SCOUT detect a visible enemy within 12"". 
 While detected, enemy has +3"" detection range.","Friendly PHOBOS/SCOUT SQUAD units have the following ability. Transhuman Perception: In your Shooting phase, this unit can select one visible enemy unit within 12"". That enemy unit is detected. While a unit is detected, that unit has +3"" detection range."
 space_marines_vanguard_spearhead,Marines,Vanguard Spearhead,DETACHMENT_RULE,space_marines_vanguard_spearhead_detachment_rule_detachment_rule,SHADOW MASTERS,,,2,Recon,Cover & -1 To be Hit,"Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack."
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike 
+space_marines_orbital_assault_force,Marines,Orbital Assault Force,DETACHMENT_RULE,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,,,2,Take and Hold,"x3 unit gain Deep Strike
 
-Also, Set up this turn: Re-roll [1s To Wound]
-If DROP POD disembark: [Re-roll 1s To Hit]
+Also, Set up this turn: [RE-ROLL 1S TO WOUND]
+If DROP POD disembark: [RE-ROLL 1S TO HIT]
 
 Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
 
@@ -161,7 +161,7 @@ BIOMANCY: Advance or Fallback & Charge.","ADEPTUS ASTARTES PSYKER model only.
 - When this unit is selected to make a fall-back move, if this unit has the Biomancy Discipline ability, that move does not prevent this unit from being eligible to declare a charge."
 space_marines_firestorm_assault_force,,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_champion_of_humanity,Champion of Humanity,10,,,,"LEADING
 Ignore all Modifiers","TACTICUS model only. While the bearer is leading a unit, models in that unit can ignore any or all modifiers to their characteristics and/or to any roll or test made for them (excluding modifiers to saving throws)."
-dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_champion_of_the_deathwing,Champion of the Deathwing,15,,,,"Deathwing. LETHAL Hits 
+dark_angels_inner_circle_task_force,,Inner Circle Task Force,ENHANCEMENT,dark_angels_inner_circle_task_force_enhancement_champion_of_the_deathwing,Champion of the Deathwing,15,,,,"Deathwing. [LETHAL HITS]
 VOWED = LETHAL on 5+.","Champion of the Deathwing: DEATHWING model only. - weapons equipped by the bearer have the [LETHAL HITS] ability, and each time the bearer makes a - attack, if it is within range of your Vowed objective marker, a Critical Hit is scored on an unmodified Hit roll of 5+."
 space_marines_emperors_shield,,Emperor's Shield,ENHANCEMENT,space_marines_emperors_shield_enhancement_champion_of_the_feast,Champion of the Feast,25,,,,"+1 Attacks.
 Once, Unit +1 Attacks also","ADEPTUS ASTARTES model only. Add 1 to the Attacks characteristic of the bearer’s melee weapons. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by other models in the bearer’s unit as well."
@@ -331,7 +331,7 @@ TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: Your unit has -3"" detection range until the end of the turn."
 iron_hands_hammer_of_avernii,,Hammer Of Avernii,STRATAGEM,iron_hands_hammer_of_avernii_stratagem_cogitated_ferocity_1cp,COGITATED FEROCITY,,1,,,"MELEE DREADS and VETS
-[LETHAL HIT] OR [SUSTAIN HITS]","WHEN: Your Fight phase.
+[LETHAL HITS] OR [SUSTAINED HITS 1]","WHEN: Your Fight phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to fight this phase.
 
@@ -397,7 +397,7 @@ INTERROGATION_CONCLAVE,,Interrogation Conclave,STRATAGEM,INTERROGATION_CONCLAVE_
 TARGET: That CHAPLAIN unit.
 
 EFFECT: Your unit's attacks have [PRECISION]."
-space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,Exemplary Vigilance,,1,,,No Cover and -1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
+space_marines_blade_of_ultramar,,Blade Of Ultramar,STRATAGEM,space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,Exemplary Vigilance,,1,,,[IGNORES COVER] and [+1 AP] in Dev doctrine.,"WHEN: Your Shooting phase.
 
 TARGET: One Adeptus Astartes unit from your army.
 
@@ -617,7 +617,7 @@ DARKFLIGHT_PURSUIT,,Darkflight Pursuit,STRATAGEM,DARKFLIGHT_PURSUIT_STRATAGEM_SK
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Visible enemy units within 6"" of your unit have +3"" detection range."
-space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_spear_thrust_and_sabre_swing_1cp,Spear Thrust And Sabre Swing,,1,,,Fight. Unit gains LANCE or LETHAL HITS. MOUNTED gets both.,"WHEN: Fight phase.
+space_marines_spearpoint_task_force,,Spearpoint Task Force,STRATAGEM,space_marines_spearpoint_task_force_stratagem_spear_thrust_and_sabre_swing_1cp,Spear Thrust And Sabre Swing,,1,,,Fight. Unit gains LANCE or [LETHAL HITS]. MOUNTED gets both.,"WHEN: Fight phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
 
@@ -629,7 +629,7 @@ TARGET: One Adeptus Astartes INFANTRY or Adeptus Astartes MOUNTED unit from your
 EFFECT: Your unit can make a Normal move of up to D6"", or a Normal move of up to 6"" instead if it is under the effects of the Tactical Doctrine.
 
 RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units."
-space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_storm_of_fire_1cp,Storm Of Fire,,1,,,No Cover and -1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
+space_marines_gladius_task_force,,Gladius Task Force,STRATAGEM,space_marines_gladius_task_force_stratagem_storm_of_fire_1cp,Storm Of Fire,,1,,,[IGNORES COVER] and [+1 AP] in Dev doctrine.,"WHEN: Your Shooting phase.
 
 TARGET: One Adeptus Astartes unit from your army.
 
