@@ -198,6 +198,7 @@ def validate():
             fail(f"invalid universal Item_Type {item_type!r} line {line_no}")
 
     for army in ARMIES:
+        unit_profiles = loaded[(army, "Unit_Profiles.csv")]
         units = loaded[(army, "Units.csv")]
         weapons = loaded[(army, "Weapon_Stats.csv")]
         abilities = loaded[(army, "Abilities.csv")]
@@ -208,7 +209,8 @@ def validate():
         army_rules = loaded[(army, "Army_Rules.csv")]
         options = loaded[(army, "Unit_Weapon_Options.csv")]
 
-        require_unique(units, ["Unit_ID"], f"{army} Unit_ID")
+        require_unique(unit_profiles, ["Unit_ID"], f"{army} authoritative Unit_ID")
+        require_unique(units, ["Unit_ID"], f"{army} generated Unit_ID")
         require_unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
         require_unique(abilities, ["Ability_ID"], f"{army} Ability_ID")
         require_unique(detachments, ["Item_ID"], f"{army} legacy Item_ID")
@@ -219,7 +221,10 @@ def validate():
         require_unique(army_rules, ["Army_Rule_ID"], f"{army} Army_Rule_ID")
         require_unique(options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} weapon option")
 
-        unit_ids = {(row["Unit_ID"] or "").strip() for _, row in units}
+        unit_ids = {(row["Unit_ID"] or "").strip() for _, row in unit_profiles}
+        generated_unit_ids = {(row["Unit_ID"] or "").strip() for _, row in units}
+        if generated_unit_ids != unit_ids:
+            fail(f"{army}: Units.csv Unit_ID set does not match authoritative Unit_Profiles.csv")
         weapon_ids = {(row["Weapon_ID"] or "").strip() for _, row in weapons}
         army_ability_ids = {(row["Ability_ID"] or "").strip() for _, row in abilities}
         all_ability_ids = army_ability_ids | universal_abilities

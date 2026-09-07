@@ -5,6 +5,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 
+PROFILE_HEADER = [
+    "Unit_ID",
+    "Unit Name",
+    'M"',
+    "T",
+    "SV",
+    "W",
+    "LD",
+    "OC",
+    "Keywords",
+    "Hyperlink",
+]
+
 UNITS_HEADER = [
     "Unit_ID",
     "Unit Name",
@@ -81,21 +94,19 @@ def point_slot(row, army):
 def sync_army(army):
     directory = ROOT / "data" / army
     units_path = directory / "Units.csv"
-    units = read_dict_rows(units_path, UNITS_HEADER)
+    profiles = read_dict_rows(directory / "Unit_Profiles.csv", PROFILE_HEADER)
     abilities = read_dict_rows(directory / "Unit_Abilities.csv", UNIT_ABILITIES_HEADER)
     weapons = read_dict_rows(directory / "Unit_Weapons.csv", UNIT_WEAPONS_HEADER)
     points = read_dict_rows(directory / "Unit_Points.csv", UNIT_POINTS_HEADER)
 
-    unit_ids = []
     unit_id_set = set()
-    for line_no, unit in enumerate(units, start=2):
-        unit_id = (unit.get("Unit_ID") or "").strip()
+    for line_no, profile in enumerate(profiles, start=2):
+        unit_id = (profile.get("Unit_ID") or "").strip()
         if not unit_id:
-            fail(f"{army}: blank Unit_ID at Units.csv line {line_no}")
+            fail(f"{army}: blank Unit_ID at Unit_Profiles.csv line {line_no}")
         if unit_id in unit_id_set:
-            fail(f"{army}: duplicate Unit_ID {unit_id!r}")
+            fail(f"{army}: duplicate Unit_ID {unit_id!r} in Unit_Profiles.csv")
         unit_id_set.add(unit_id)
-        unit_ids.append(unit_id)
 
     ability_map = {}
     core_ability_map = {}
@@ -107,7 +118,7 @@ def sync_army(army):
         ability_id = (row.get("Ability_ID") or "").strip()
         ability_type = (row.get("Ability_Type") or "").strip().upper()
         if unit_id not in unit_id_set:
-            fail(f"{army}: Unit_Abilities line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Abilities line {line_no} references missing Unit_Profile {unit_id!r}")
         if not ability_id:
             fail(f"{army}: blank Ability_ID in Unit_Abilities line {line_no}")
         if ability_type == "ABILITY":
@@ -121,7 +132,7 @@ def sync_army(army):
         unit_id = (row.get("Unit_ID") or "").strip()
         weapon_id = (row.get("Weapon_ID") or "").strip()
         if unit_id not in unit_id_set:
-            fail(f"{army}: Unit_Weapons line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Weapons line {line_no} references missing Unit_Profile {unit_id!r}")
         if not weapon_id:
             fail(f"{army}: blank Weapon_ID in Unit_Weapons line {line_no}")
         add_unique(weapon_map, unit_id, weapon_id, "unit weapon", army)
@@ -129,51 +140,42 @@ def sync_army(army):
     for line_no, row in enumerate(points, start=2):
         unit_id = (row.get("Unit_ID") or "").strip()
         if unit_id not in unit_id_set:
-            fail(f"{army}: Unit_Points line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Points line {line_no} references missing Unit_Profile {unit_id!r}")
         slot = point_slot(row, army)
         slots = point_map.setdefault(unit_id, {})
         if slot in slots:
             fail(f"{army}: duplicate Unit_Points slot {slot} for {unit_id!r}")
-        slots[slot] = {
-            "label": row.get("Label") or "",
-            "cost": row.get("Cost") or "",
-        }
+        slots[slot] = {"label": row.get("Label") or "", "cost": row.get("Cost") or ""}
 
-    changed = False
-    for unit in units:
-        unit_id = (unit.get("Unit_ID") or "").strip()
-        next_values = {
-            "Ability_IDs": ", ".join(ability_map.get(unit_id, [])),
-            "Core_Ability_IDs": ", ".join(core_ability_map.get(unit_id, [])),
-            "Weapon_IDs": ", ".join(weapon_map.get(unit_id, [])),
-        }
-        slots = point_map.get(unit_id, {})
-        for index in range(1, 9):
-            point = slots.get(index)
-            next_values[f"Points_Label_{index}"] = point["label"] if point else ""
-            next_values[f"Points_Cost_{index}"] = point["cost"] if point else ""
+    units = []
+    for profile in profiles:
+        unit_id = (profile.get("Unit_ID") or "").strip()
+        unit = {column: "" for column in UNITS_HEADER}
+        for column in PROFILE_HEADER:
+            unit[column] = profile.get(column) or ""
+        unit["Ability_IDs"] = ", ".join(ability_map.get(unit_id, []))
+        unit["Core_Ability_IDs"] = ", ".join(core_ability_map.get(unit_id, []))
+        unit["Weapon_IDs"] = ", ".join(weapon_map.get(unit_id, []))
+        for index, point in point_map.get(unit_id, {}).items():
+            unit[f"Points_Label_{index}"] = point["label"]
+            unit[f"Points_Cost_{index}"] = point["cost"]
+        units.append(unit)
 
-        for column, value in next_values.items():
-            if (unit.get(column) or "") != value:
-                unit[column] = value
-                changed = True
-
+    current = read_dict_rows(units_path, UNITS_HEADER) if units_path.exists() else []
+    changed = current != units
     if changed:
         write_units(units_path, units)
 
     print(
-        f"{army}: {len(units)} units <- "
-        f"{len(abilities)} normalized ability links, "
-        f"{len(weapons)} normalized weapon links, "
-        f"{len(points)} normalized point options "
+        f"{army}: {len(units)} generated units <- Unit_Profiles + "
+        f"{len(abilities)} ability links, {len(weapons)} weapon links, {len(points)} point options "
         f"({'updated' if changed else 'current'})"
     )
-
 
 def main():
     for army in ARMIES:
         sync_army(army)
-    print("normalized unit compatibility sync: OK")
+    print("authoritative Unit_Profiles -> legacy Units compatibility sync: OK")
 
 
 if __name__ == "__main__":

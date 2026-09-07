@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 ABILITY_TYPES = {"ABILITY", "CORE_ABILITY"}
 
+PROFILE_HEADER = ["Unit_ID", "Unit Name", 'M"', "T", "SV", "W", "LD", "OC", "Keywords", "Hyperlink"]
+
 UNIT_ABILITIES_HEADER = ["Unit_ID", "Ability_ID", "Ability_Type"]
 UNIT_WEAPONS_HEADER = ["Unit_ID", "Weapon_ID"]
 UNIT_POINTS_HEADER = ["Unit_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"]
@@ -78,6 +80,7 @@ def normalize_global_unit_order(rows, unit_rank):
 
 def validate_army(army, universal_ability_ids):
     directory = ROOT / "data" / army
+    profiles = read_dicts(directory / "Unit_Profiles.csv", PROFILE_HEADER)
     units = read_dicts(directory / "Units.csv")
     weapon_stats = read_dicts(directory / "Weapon_Stats.csv")
     army_abilities = read_dicts(directory / "Abilities.csv")
@@ -85,11 +88,18 @@ def validate_army(army, universal_ability_ids):
     unit_weapons = read_dicts(directory / "Unit_Weapons.csv", UNIT_WEAPONS_HEADER)
     unit_points = read_dicts(directory / "Unit_Points.csv", UNIT_POINTS_HEADER)
 
-    unit_ids = {(row.get("Unit_ID") or "").strip() for row in units}
+    require_unique(profiles, ["Unit_ID"], "unit profile", army)
+    unit_ids = {(row.get("Unit_ID") or "").strip() for row in profiles}
     unit_rank = {
         (row.get("Unit_ID") or "").strip(): index
-        for index, row in enumerate(units)
+        for index, row in enumerate(profiles)
     }
+    if len(units) != len(profiles):
+        fail(f"{army}: Units.csv row count does not match Unit_Profiles.csv")
+    for index, (profile, unit) in enumerate(zip(profiles, units), start=2):
+        for column in PROFILE_HEADER:
+            if (unit.get(column) or "") != (profile.get(column) or ""):
+                fail(f"{army}: Units.csv line {index} profile column {column!r} differs from Unit_Profiles.csv")
     weapon_ids = {(row.get("Weapon_ID") or "").strip() for row in weapon_stats}
     ability_ids = {
         (row.get("Ability_ID") or "").strip()
@@ -107,7 +117,7 @@ def validate_army(army, universal_ability_ids):
         ability_id = (row.get("Ability_ID") or "").strip()
         ability_type = (row.get("Ability_Type") or "").strip()
         if unit_id not in unit_ids:
-            fail(f"{army}: Unit_Abilities line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Abilities line {line_no} references missing Unit_Profile {unit_id!r}")
         if ability_id not in ability_ids:
             fail(f"{army}: Unit_Abilities line {line_no} references missing Ability_ID {ability_id!r}")
         if ability_type not in ABILITY_TYPES:
@@ -117,7 +127,7 @@ def validate_army(army, universal_ability_ids):
         unit_id = (row.get("Unit_ID") or "").strip()
         weapon_id = (row.get("Weapon_ID") or "").strip()
         if unit_id not in unit_ids:
-            fail(f"{army}: Unit_Weapons line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Weapons line {line_no} references missing Unit_Profile {unit_id!r}")
         if weapon_id not in weapon_ids:
             fail(f"{army}: Unit_Weapons line {line_no} references missing Weapon_ID {weapon_id!r}")
 
@@ -128,7 +138,7 @@ def validate_army(army, universal_ability_ids):
         cost = (row.get("Cost") or "").strip()
         sort_text = (row.get("Sort_Order") or "").strip()
         if unit_id not in unit_ids:
-            fail(f"{army}: Unit_Points line {line_no} references missing Unit_ID {unit_id!r}")
+            fail(f"{army}: Unit_Points line {line_no} references missing Unit_Profile {unit_id!r}")
         if not label and not cost:
             fail(f"{army}: Unit_Points line {line_no} has neither Label nor Cost")
         try:
@@ -170,7 +180,7 @@ def main():
     }
     for army in ARMIES:
         validate_army(army, universal_ability_ids)
-    print("unit relationship validation: OK")
+    print("authoritative unit profile and relationship validation: OK")
 
 
 if __name__ == "__main__":
