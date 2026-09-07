@@ -17,6 +17,7 @@ HEADERS = {
     "Unit_Weapons.csv": ["Unit_ID", "Weapon_ID"],
     "Unit_Points.csv": ["Unit_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
     "Weapon_Stats.csv": ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D", "Weapon Abilities"],
+    "Weapon_Abilities.csv": ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Separator_Before", "Sort_Order"],
     "Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Tags", "Order"],
     "Detachment_Definitions.csv": ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description"],
     "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Short_Description", "Long_Description", "Tags"],
@@ -125,7 +126,7 @@ class State:
             base = ROOT / "data" / army
             for filename in (
                 "Unit_Profiles.csv", "Unit_Abilities.csv", "Unit_Weapons.csv", "Unit_Points.csv",
-                "Weapon_Stats.csv", "Abilities.csv", "Detachment_Definitions.csv", "Enhancements.csv",
+                "Weapon_Stats.csv", "Weapon_Abilities.csv", "Abilities.csv", "Detachment_Definitions.csv", "Enhancements.csv",
                 "Stratagems.csv", "Army_Rules.csv", "Effects.csv", "Unit_Loadout_Options.csv",
                 "Unit_Loadout_Weapons.csv", "Unit_Loadout_Abilities.csv", "Unit_Loadout_Points.csv",
                 "Unit_Loadout_Compatibility.csv", "Unit_Loadout_Legacy_Units.csv",
@@ -212,7 +213,7 @@ def weapon_row(data, existing=None):
     row = dict(existing or {col: "" for col in HEADERS["Weapon_Stats.csv"]})
     mapping = {
         "Weapon_ID": "Weapon_ID", "Weapon_Name": "Weapon Name", "R": 'R"', "A": "A", "WS": "WS",
-        "St": "St", "AP": "AP", "D": "D", "Weapon_Abilities": "Weapon Abilities",
+        "St": "St", "AP": "AP", "D": "D",
     }
     for key, col in mapping.items():
         if key in data:
@@ -264,6 +265,23 @@ def stratagem_row(data, detachment_id=None, existing=None):
         if key in data:
             row[col] = sval(data[key])
     return row
+
+
+def replace_weapon_abilities(state, army, weapon_id, abilities):
+    table = state.t(army, "Weapon_Abilities.csv")
+    table.delete_where(lambda row: row.get("Weapon_ID") == weapon_id)
+    for index, ability in enumerate(abilities, start=1):
+        sort_order = ability.get("Sort_Order", index)
+        table.insert({
+            "Weapon_ID": weapon_id,
+            "Weapon_Ability_ID": f"{weapon_id}:ability_{index}",
+            "Ability_Type": ability["Ability_Type"],
+            "Target": ability.get("Target", ""),
+            "Value": ability.get("Value", ""),
+            "Condition": ability.get("Condition", ""),
+            "Separator_Before": "" if index == 1 else ", ",
+            "Sort_Order": sort_order,
+        })
 
 
 def replace_effects(state, army, source_type, source_id, effects):
@@ -472,11 +490,21 @@ def apply_operation(state, op, index):
 
     if entity == "weapon":
         table = state.t(army, "Weapon_Stats.csv")
-        if mode == "add": add_simple(table, "Weapon_ID", weapon_row(data), "Weapon_ID")
+        if mode == "add":
+            wid = sval(data["Weapon_ID"])
+            add_simple(table, "Weapon_ID", weapon_row(data), "Weapon_ID")
+            if "weapon_abilities" in data:
+                replace_weapon_abilities(state, army, wid, data["weapon_abilities"])
         elif mode == "change":
-            row = table.one(Weapon_ID=sval(entity_id)); row.update(weapon_row(changes, row))
+            wid = sval(entity_id)
+            row = table.one(Weapon_ID=wid)
+            row.update(weapon_row(changes, row))
+            if "weapon_abilities" in changes:
+                replace_weapon_abilities(state, army, wid, changes["weapon_abilities"])
         else:
-            wid = sval(entity_id); delete_simple(table, "Weapon_ID", wid, "Weapon_ID")
+            wid = sval(entity_id)
+            delete_simple(table, "Weapon_ID", wid, "Weapon_ID")
+            state.t(army, "Weapon_Abilities.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
             state.t(army, "Unit_Weapons.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
             state.t(army, "Unit_Loadout_Weapons.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
         return
@@ -646,6 +674,7 @@ def validate_state(state):
     for army in ARMIES:
         profiles = state.t(army, "Unit_Profiles.csv")
         weapons = state.t(army, "Weapon_Stats.csv")
+        weapon_abilities = state.t(army, "Weapon_Abilities.csv")
         abilities = state.t(army, "Abilities.csv")
         detachments = state.t(army, "Detachment_Definitions.csv")
         enhancements = state.t(army, "Enhancements.csv")
@@ -654,6 +683,8 @@ def validate_state(state):
         options = state.t(army, "Unit_Loadout_Options.csv")
         unique(profiles, ["Unit_ID"], f"{army} Unit_ID")
         unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
+        unique(weapon_abilities, ["Weapon_Ability_ID"], f"{army} Weapon_Ability_ID")
+        unique(weapon_abilities, ["Weapon_ID", "Sort_Order"], f"{army} weapon ability sort order")
         unique(abilities, ["Ability_ID"], f"{army} Ability_ID")
         unique(detachments, ["Detachment_ID"], f"{army} Detachment_ID")
         unique(detachments, ["Rule_ID"], f"{army} Rule_ID")
@@ -664,6 +695,14 @@ def validate_state(state):
         unit_ids = idset(profiles, "Unit_ID")
         weapon_ids = idset(weapons, "Weapon_ID")
         ability_ids = idset(abilities, "Ability_ID") | universal_abilities
+        for row in weapon_abilities.rows:
+            if row["Weapon_ID"] not in weapon_ids:
+                fail(f"{army}: Weapon_Abilities missing Weapon_ID {row['Weapon_ID']!r}")
+            if not (row.get("Ability_Type") or "").strip():
+                fail(f"{army}: Weapon_Abilities blank Ability_Type for {row['Weapon_Ability_ID']!r}")
+            if row["Ability_Type"] == "ANTI" and (not row["Target"] or not row["Value"]):
+                fail(f"{army}: ANTI weapon ability requires Target and Value for {row['Weapon_Ability_ID']!r}")
+
         detachment_ids = idset(detachments, "Detachment_ID")
         enhancement_ids = idset(enhancements, "Enhancement_ID")
         army_ability_ids = idset(abilities, "Ability_ID")

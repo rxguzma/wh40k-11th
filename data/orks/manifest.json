@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "fa153a757bbc2a6b08c520d35edcd9efac33d6176f72af99fee22de659ce0c7f",
+  "dataset_sha256": "ed1df2fb9172f39f151dbadc681178c396995a6de1d1fbba30c63a71dc636d08",
   "files": {
     "Abilities.csv": {
       "bytes": 67519,
@@ -77,11 +77,15 @@
       "bytes": 17981,
       "sha256": "c27fa7e32967fe11e713a90a5991b02cdedbebac1c5b519c153525c1aa406e09"
     },
+    "Weapon_Abilities.csv": {
+      "bytes": 21082,
+      "sha256": "08eec0a1e14ce0ebefe084cbb93de71fef46784bf6f9d87a9307d86fa8caa3eb"
+    },
     "Weapon_Stats.csv": {
       "bytes": 17719,
       "sha256": "7dfd67242ece0df1cab9ae6c648cec4bccc1755219f6ca64a80a6188eeb90406"
     }
   },
-  "schema_sha256": "db87bae6ac8d9b8a2e78a4f93607d9601a9938271f3398f63834a3bdfe7595a2",
+  "schema_sha256": "a18a653a70865b1c85c724342c1bca92782c1235ce73ced78797950ebbb30175",
   "schema_version": 1
 }

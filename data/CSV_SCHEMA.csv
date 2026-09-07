@@ -56,7 +56,15 @@ army,Weapon_Stats.csv,5,WS,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,6,St,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,7,AP,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,8,D,NO,AUTHORITATIVE,
-army,Weapon_Stats.csv,9,Weapon Abilities,NO,AUTHORITATIVE,
+army,Weapon_Stats.csv,9,Weapon Abilities,NO,GENERATED_COLUMN,Generated from authoritative Weapon_Abilities.csv; compatibility/presentation column for current HTML.
+army,Weapon_Abilities.csv,1,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
+army,Weapon_Abilities.csv,2,Weapon_Ability_ID,YES,AUTHORITATIVE,Stable unique relationship key generated from Weapon_ID and ability order.
+army,Weapon_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,Canonical weapon ability type; NONE preserves an explicit legacy '-' value.
+army,Weapon_Abilities.csv,4,Target,NO,AUTHORITATIVE,Target class for parameterized abilities such as ANTI; blank otherwise.
+army,Weapon_Abilities.csv,5,Value,NO,AUTHORITATIVE,"Structured parameter such as 2, D3, or 4+; blank for flag abilities."
+army,Weapon_Abilities.csv,6,Condition,NO,AUTHORITATIVE,Optional qualifier previously represented after ':' in the compatibility string.
+army,Weapon_Abilities.csv,7,Separator_Before,NO,AUTHORITATIVE,"Exact legacy delimiter before this ability; blank for first ability, normally ', ' thereafter."
+army,Weapon_Abilities.csv,8,Sort_Order,YES,AUTHORITATIVE,Ability display/order position within the weapon.
 army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
