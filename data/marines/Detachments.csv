@@ -1,5 +1,5 @@
 Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description,Detachment_Disposition_2
-FULGURIS_TASK_FORCE,Marines,Fulguris Task Force,DETACHMENT_RULE,FULGURIS_TASK_FORCE_DETACHMENT_RULE_SKYSTRIKE,SKYSTRIKE,,,1,Disruption,"LAND SPEEDER and STORM SPEEDER units gain SPEEDER. 
+FULGURIS_TASK_FORCE,Marines,Fulguris Task Force,DETACHMENT_RULE,FULGURIS_TASK_FORCE_DETACHMENT_RULE_SKYSTRIKE,SKYSTRIKE,,,1,Recon,"LAND SPEEDER and STORM SPEEDER units gain SPEEDER. 
 First Movement phase: SPEEDER units can make an ingress move.","Friendly LAND SPEEDER/STORM SPEEDER HAILSTRIKE/STORM SPEEDER HAMMERSTRIKE/STORM SPEEDER THUNDERSTRIKE units have SPEEDER.
 
 In your first Movement phase, friendly SPEEDER units can make an ingress move.",
@@ -217,7 +217,7 @@ DARK_AGE_ARSENAL,Dark Angels,Dark Age Arsenal,STRATAGEM,DARK_AGE_ARSENAL_STRATAG
 TARGET: That HELLBLASTER SQUAD unit.
 
 EFFECT: Select one enemy unit hit by your unit's plasma ranged attacks. That enemy unit is seared until the start of your next turn. While a unit is seared, that unit has -2"" M.",
-space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,EMPEROR'S SHIELD,,,2,Priority Assets,"RE-ROLL 1S TO WOUND vs Oath
+space_marines_emperors_shield,Imperial Fists,Emperor's Shield,DETACHMENT_RULE,space_marines_emperors_shield_detachment_rule_detachment_rule,EMPEROR'S SHIELD,,,2,Purge the Foe,"RE-ROLL 1S TO WOUND vs Oath
 Lysander: RE-ROLL ALL WOUNDS vs Oath","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
 
 Each time a model in a DARNATH LYSANDER unit from your army makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.",
@@ -311,7 +311,7 @@ space_marines_gladius_task_force,Marines,Gladius Task Force,STRATAGEM,space_mari
 TARGET: One Adeptus Astartes unit from your army.
 
 EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
-iron_hands_hammer_of_avernii,Iron Hands,Hammer Of Avernii,DETACHMENT_RULE,iron_hands_hammer_of_avernii_detachment_rule_detachment_rule,CALCULATED ANNIHILATION,,,2,Priority Assets,"Oath Target: RE-ROLL 1S TO WOUND
+iron_hands_hammer_of_avernii,Iron Hands,Hammer Of Avernii,DETACHMENT_RULE,iron_hands_hammer_of_avernii_detachment_rule_detachment_rule,CALCULATED ANNIHILATION,,,2,Purge the Foe,"Oath Target: RE-ROLL 1S TO WOUND
 Caanok: 2nd Oath Target (Visible)","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
 
 Once per battle round, after your Oath of Moment target is destroyed, if a Caanok Var model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes your Oath of Moment target until you select a new one.",
@@ -455,7 +455,7 @@ TARGET: One Adeptus Astartes unit from your army.
 EFFECT: Your unit is eligible to shoot and declare a charge in a turn in which it Advanced. 
 
 If your unit has the RAVENWING keyword, it is also eligible to shoot and declare a charge in a turn in which it Fell Back.",
-space_marines_forgefathers_seekers,Salamanders,Forgefather's Seekers,DETACHMENT_RULE,space_marines_forgefathers_seekers_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,,,2,Purge the Foe,"RANGE: ASSAULT and +1 S within 12""
+space_marines_forgefathers_seekers,Salamanders,Forgefather's Seekers,DETACHMENT_RULE,space_marines_forgefathers_seekers_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,,,2,Priority Assets,"RANGE: ASSAULT and +1 S within 12""
 Infernus can Advance + Action OR Shoot and Action","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.
 
 If your army includes VULKAN HE’STAN, during your turn, each INFERNUS SQUAD unit from your army is eligible to do one of the following:
@@ -537,7 +537,7 @@ DARKFLIGHT_PURSUIT,Dark Angels,Darkflight Pursuit,STRATAGEM,DARKFLIGHT_PURSUIT_S
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Your unit has Stealth.",
-space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,DETACHMENT_RULE,space_marines_firestorm_assault_force_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,,,2,Recon,"Range: Get ASSAULT and +1 S within 12""","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.",
+space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,DETACHMENT_RULE,space_marines_firestorm_assault_force_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,,,2,Priority Assets,"Range: Get ASSAULT and +1 S within 12""","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.",
 space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_adamantine_mantle,Adamantine Mantle,20,,,,-1 to Damage. If Melta or Torrent then Damage is just 1.,"ADEPTUS ASTARTES model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made with a Melta or Torrent weapon, change the Damage characteristic of that attack to 1 instead.",
 space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,ENHANCEMENT,space_marines_firestorm_assault_force_enhancement_champion_of_humanity,Champion of Humanity,10,,,,"LEADING
 Ignore all Modifiers","TACTICUS model only. While the bearer is leading a unit, models in that unit can ignore any or all modifiers to their characteristics and/or to any roll or test made for them (excluding modifiers to saving throws).",
@@ -630,7 +630,7 @@ LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENH
 DIVINATION: 6""","ADEPTUS ASTARTES PSYKER model only, excluding TERMINATOR models. Once per turn per unit, in your opponent's Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to D6"". Or, if this unit has the Divination Discipline ability, up to 6"".",
 LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,ENHANCEMENT,LIBRARIUS_CONCLAVE_ENHANCEMENT_TEMPORAL_CORRIDOR,Temporal Corridor,25,,,,"PSYKER: Go Reserves at end opp Fight.  
 TELEKINESIS: Grants Deep Strike.","ADEPTUS ASTARTES PSYKER model only. At the end of your opponent's Fight phase, you can place this unit into strategic reserves. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike.",
-SUBVERSION_ASSETS,Marines,Subversion Assets,DETACHMENT_RULE,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,,,1,Recon,"PHOBOS and SCOUT detect a visible enemy within 12"". 
+SUBVERSION_ASSETS,Marines,Subversion Assets,DETACHMENT_RULE,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,,,1,Disruption,"PHOBOS and SCOUT detect a visible enemy within 12"". 
 While detected, enemy has +3"" detection range.","Friendly PHOBOS/SCOUT SQUAD units have the following ability. Transhuman Perception: In your Shooting phase, this unit can select one visible enemy unit within 12"". That enemy unit is detected. While a unit is detected, that unit has +3"" detection range.",
 SUBVERSION_ASSETS,Marines,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_DEATH_IN_THE_DARK,Death In The Dark,15,,,,INFANTRY PHOBOS unit only. Attacks targeting a hidden unit have +1 to hit rolls.,INFANTRY PHOBOS unit only. This unit's attacks that target a hidden unit have +1 to hit rolls.,
 SUBVERSION_ASSETS,Marines,Subversion Assets,ENHANCEMENT,SUBVERSION_ASSETS_ENHANCEMENT_SHROUD_FIELD,Shroud Field,20,,,,PHOBOS model only. This model has Lone Operative and Stealth.,PHOBOS model only. This model has Lone Operative and Stealth.,
