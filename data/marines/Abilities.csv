@@ -138,8 +138,9 @@ If you include this model in your army, until the end of the battle, non-CHARACT
 INSPIRING_COMMANDER_VULKAN,Inspiring Commander,Infernus are OC 2,"If you include this model in your army, until the end of the battle, non-CHARACTER models in INFERNUS SQUAD units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked.",
 INSPIRING_LEADER,Inspiring Leader,Shoot and declare a charge in a turn in which it Advanced or Fell Back,"While this unit is leading a unit and contains a MARNEUS CALGAR model, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back",
 IRON_FATHER,Iron Father,Lone Operative near friendly Vehicles,"While Iron Father Feirros is within 3"" of a friendly Adeptus Astartes Vehicle, he has Lone Operative.",
-KEEP_THE_BANNER_HIGH,Keep the Banner High,"+1 TO HIT if below Strength
- +1 TO WOUND if below HALF Strength","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",
+KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
++1 TO HIT if below Strength
+ +1 TO WOUND if HALF Strength","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",
 LANCE,LANCE,Add +1 TO WOUND if the bearer charged this turn.,"Each time an attack is made with this weapon, if the bearer made a Charge move this turn, add 1 to that attack’s Wound roll.",
 NEW_LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield (New),"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
