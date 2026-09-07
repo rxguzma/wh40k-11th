@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"GUNWAGON_ZZAP_GUN_POINTS","mode":"insert","sets":{"Ability Name":"Gunwagon Zzap Gun","Short Description":"Gunwagon Zzap Gun +10 Pts","Long Description":"A Gunwagon equipped with a Zzap Gun costs +10 points.","Tags":"+10 Pts","Order":"8"}},{"file":"data/orks/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"ZZAP_GUN","column":"Ability_IDs","value":"GUNWAGON_ZZAP_GUN_POINTS"}]'
+          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS","column":"Short Description","value":"Thunder Hammer +5 Pts each\nStorm Shield +1 W each"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
