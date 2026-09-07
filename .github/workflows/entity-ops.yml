@@ -1,0 +1,692 @@
+name: Entity Ops
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/entity-ops.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Apply entity operations
+        run: |
+          python3 <<'PY'
+          import csv, json, re, sys
+          from collections import defaultdict
+          from pathlib import Path
+
+          ROOT = Path('.')
+          ARMIES = {'marines', 'orks', 'nids'}
+          ARMY_NAMES = {'marines': 'Marines', 'orks': 'Orks', 'nids': 'Tyranids'}
+
+          # PAYLOAD CONTRACT (examples; canonical CSV field names are accepted directly):
+          #
+          # ADD UNIT:
+          # [{"operation":"add","entity_type":"unit","army":"marines","data":{
+          #   "Unit_ID":"EXAMPLE_UNIT","Unit Name":"Example Unit","M\"":"6\"","T":"4","SV":"3+","W":"2","LD":"6+","OC":"1",
+          #   "Keywords":"INFANTRY, IMPERIUM","Hyperlink":"...",
+          #   "abilities":["ABILITY_ID"],"core_abilities":["DEEP_STRIKE"],"weapons":["WEAPON_ID"],
+          #   "points":[{"label":"x5","cost":100}]}}]
+          #
+          # CHANGE / DELETE UNIT:
+          # [{"operation":"change","entity_type":"unit","army":"marines","id":"EXAMPLE_UNIT","changes":{"W":"3","points":[{"label":"x5","cost":105}]}}]
+          # [{"operation":"delete","entity_type":"unit","army":"marines","id":"EXAMPLE_UNIT"}]
+          #
+          # ADD WEAPON:
+          # [{"operation":"add","entity_type":"weapon","army":"orks","data":{"Weapon_ID":"EXAMPLE_GUN","Weapon Name":"Example Gun","R\"":"24\"","A":"3","WS":"4+","St":"6","AP":"-1","D":"2","Weapon Abilities":""}}]
+          #
+          # ADD ABILITY WITH STRUCTURED EFFECTS AND UNIT ASSIGNMENT:
+          # [{"operation":"add","entity_type":"ability","army":"marines","data":{"Ability_ID":"EXAMPLE_ABILITY","Ability Name":"Example Ability","Short Description":"+1 W","Long Description":"Add 1 to Wounds.","Order":"8","unit_ids":["EXAMPLE_UNIT"],"effects":[{"effect_type":"STAT","target":"UNIT","stat":"W","operation":"ADD","value":"1","display_tag":"+1 W"}]}}]
+          #
+          # ADD WHOLE DETACHMENT PACKAGE:
+          # [{"operation":"add","entity_type":"detachment","army":"orks","data":{"Detachment_ID":"EXAMPLE_DET","Detachment_Name":"Example Detachment","Rule_ID":"EXAMPLE_DET_RULE","Rule_Name":"Example Rule","DP_Cost":"1","Short_Description":"...","Long_Description":"...","enhancements":[{"Enhancement_ID":"EXAMPLE_ENH","Enhancement_Name":"Example Enhancement","Points":"20","Short_Description":"...","Long_Description":"..."}],"stratagems":[{"Stratagem_ID":"EXAMPLE_STRAT","Stratagem_Name":"Example Stratagem","CP_Cost":"1","Short_Description":"...","Long_Description":"..."}]}}]
+          # Individual enhancement/stratagem CHANGE or DELETE uses entity_type enhancement/stratagem plus id.
+          #
+          # ADD LOADOUT OPTION:
+          # [{"operation":"add","entity_type":"loadout_option","army":"marines","data":{"Unit_ID":"EXAMPLE_UNIT","Option_Group_ID":"MAIN_GUN","Group_Label":"Main Gun","Option_ID":"MAIN_GUN_A","Option_Name":"Gun A","Default":true,"Sort_Order":1,"selected_weapons":["WEAPON_A"],"preserve_weapons":["BOLT_PISTOL"],"abilities":[],"points":[],"compatible_with":[],"legacy_unit_ids":[]}}]
+          # CHANGE/DELETE loadout_option requires unit_id + option_group_id + id (Option_ID).
+          #
+          # Supported entity_type values: unit, weapon, ability, detachment, enhancement, stratagem, army_rule, loadout_option, effect.
+          # Generated compatibility fields/tables are never authored here.
+          #
+          # Replace only the JSON between these markers for normal LLM use.
+          # LLM_ENTITY_OPS_BEGIN
+          raw = r'''[]'''
+          # LLM_ENTITY_OPS_END
+
+          try:
+              OPS = json.loads(raw)
+          except json.JSONDecodeError as e:
+              sys.exit(f'entity ops payload is not JSON: {e}')
+          if not isinstance(OPS, list):
+              sys.exit('entity ops payload must be a JSON list')
+
+          GENERATED_UNIT_COLUMNS = {
+              'Ability_IDs', 'Core_Ability_IDs', 'Weapon_IDs',
+              *{f'Points_Label_{i}' for i in range(1, 9)},
+              *{f'Points_Cost_{i}' for i in range(1, 9)},
+          }
+          FRIENDLY_ALIASES = {
+              'Unit_Name': 'Unit Name',
+              'Weapon_Name': 'Weapon Name',
+              'Ability_Name': 'Ability Name',
+              'Short_Description': 'Short Description',
+              'Long_Description': 'Long Description',
+              'Move': 'M"',
+              'Range': 'R"',
+              'Strength': 'St',
+          }
+
+          TABLES = {
+              'unit': ('Units.csv', 'Unit_ID'),
+              'weapon': ('Weapon_Stats.csv', 'Weapon_ID'),
+              'ability': ('Abilities.csv', 'Ability_ID'),
+              'detachment': ('Detachment_Definitions.csv', 'Detachment_ID'),
+              'enhancement': ('Enhancements.csv', 'Enhancement_ID'),
+              'stratagem': ('Stratagems.csv', 'Stratagem_ID'),
+              'army_rule': ('Army_Rules.csv', 'Army_Rule_ID'),
+              'effect': ('Effects.csv', 'Effect_ID'),
+          }
+
+          class CsvStore:
+              def __init__(self):
+                  self.cache = {}
+                  self.changed = set()
+
+              def path(self, army, filename):
+                  return ROOT / 'data' / army / filename
+
+              def load(self, army, filename):
+                  path = self.path(army, filename)
+                  if path not in self.cache:
+                      if not path.is_file():
+                          sys.exit(f'missing canonical file {path}')
+                      with path.open(encoding='utf-8-sig', newline='') as f:
+                          reader = csv.DictReader(f)
+                          if not reader.fieldnames:
+                              sys.exit(f'empty or invalid CSV {path}')
+                          self.cache[path] = [reader.fieldnames, list(reader)]
+                  return self.cache[path]
+
+              def header(self, army, filename):
+                  return self.load(army, filename)[0]
+
+              def rows(self, army, filename):
+                  return self.load(army, filename)[1]
+
+              def mark(self, army, filename):
+                  self.changed.add(self.path(army, filename))
+
+              def flush(self):
+                  for path in sorted(self.changed):
+                      header, rows = self.cache[path]
+                      with path.open('w', encoding='utf-8', newline='') as f:
+                          writer = csv.DictWriter(f, fieldnames=header, lineterminator='\n', extrasaction='raise')
+                          writer.writeheader()
+                          writer.writerows(rows)
+                      print(f'wrote {path}')
+
+          store = CsvStore()
+
+          def clean(value):
+              if value is None:
+                  return ''
+              if isinstance(value, bool):
+                  return 'TRUE' if value else 'FALSE'
+              return str(value).replace('\\n', '\n')
+
+          def normalized_fields(obj):
+              if not isinstance(obj, dict):
+                  sys.exit('data/changes must be an object')
+              out = {}
+              for key, value in obj.items():
+                  key = FRIENDLY_ALIASES.get(key, key)
+                  out[key] = value
+              return out
+
+          def require_army(op, index):
+              army = str(op.get('army') or '').strip().lower()
+              if army not in ARMIES:
+                  sys.exit(f'op {index}: army must be one of {sorted(ARMIES)}, got {army!r}')
+              return army
+
+          def find_rows(army, filename, column, value):
+              return [r for r in store.rows(army, filename) if clean(r.get(column)).strip() == value]
+
+          def find_one(army, filename, column, value, *, required=True):
+              hits = find_rows(army, filename, column, value)
+              if len(hits) > 1:
+                  sys.exit(f'{army}/{filename}: expected unique {column}={value!r}, found {len(hits)}')
+              if not hits:
+                  if required:
+                      sys.exit(f'{army}/{filename}: missing {column}={value!r}')
+                  return None
+              return hits[0]
+
+          def ensure_absent(army, filename, column, value):
+              if find_rows(army, filename, column, value):
+                  sys.exit(f'{army}/{filename}: {column}={value!r} already exists')
+
+          def validate_columns(army, filename, fields, *, forbidden=()):
+              header = store.header(army, filename)
+              bad = [k for k in fields if k not in header]
+              if bad:
+                  sys.exit(f'{army}/{filename}: unknown columns {bad}')
+              blocked = [k for k in fields if k in set(forbidden)]
+              if blocked:
+                  sys.exit(f'{army}/{filename}: generated columns cannot be authored directly: {blocked}')
+
+          def append_row(army, filename, fields, required_fields=()):
+              fields = normalized_fields(fields)
+              validate_columns(army, filename, fields)
+              header = store.header(army, filename)
+              row = {h: '' for h in header}
+              for k, v in fields.items():
+                  row[k] = clean(v)
+              missing = [k for k in required_fields if not clean(row.get(k)).strip()]
+              if missing:
+                  sys.exit(f'{army}/{filename}: missing required fields {missing}')
+              store.rows(army, filename).append(row)
+              store.mark(army, filename)
+              return row
+
+          def update_row(army, filename, id_col, entity_id, changes, *, forbidden=()):
+              changes = normalized_fields(changes)
+              if id_col in changes and clean(changes[id_col]).strip() != entity_id:
+                  sys.exit(f'{army}/{filename}: IDs are immutable; delete and add instead')
+              validate_columns(army, filename, changes, forbidden=forbidden)
+              row = find_one(army, filename, id_col, entity_id)
+              touched = []
+              for k, v in changes.items():
+                  if k == id_col:
+                      continue
+                  row[k] = clean(v)
+                  touched.append(k)
+              if touched:
+                  store.mark(army, filename)
+              return row
+
+          def delete_where(army, filename, predicate, *, require_count=None, label='rows'):
+              rows = store.rows(army, filename)
+              kept, removed = [], []
+              for row in rows:
+                  if predicate(row):
+                      removed.append(row)
+                  else:
+                      kept.append(row)
+              if require_count is not None and len(removed) != require_count:
+                  sys.exit(f'{army}/{filename}: expected {require_count} {label}, found {len(removed)}')
+              if removed:
+                  store.cache[store.path(army, filename)][1] = kept
+                  store.mark(army, filename)
+              return removed
+
+          def replace_unit_relations(army, unit_id, data):
+              if 'abilities' in data:
+                  vals = data['abilities'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('unit abilities must be a list')
+                  delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Unit_ID') == unit_id and r.get('Ability_Type') == 'ABILITY')
+                  for ability_id in vals:
+                      append_row(army, 'Unit_Abilities.csv', {
+                          'Unit_ID': unit_id, 'Ability_ID': ability_id, 'Ability_Type': 'ABILITY'
+                      }, ('Unit_ID', 'Ability_ID', 'Ability_Type'))
+              if 'core_abilities' in data:
+                  vals = data['core_abilities'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('unit core_abilities must be a list')
+                  delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Unit_ID') == unit_id and r.get('Ability_Type') == 'CORE_ABILITY')
+                  for ability_id in vals:
+                      append_row(army, 'Unit_Abilities.csv', {
+                          'Unit_ID': unit_id, 'Ability_ID': ability_id, 'Ability_Type': 'CORE_ABILITY'
+                      }, ('Unit_ID', 'Ability_ID', 'Ability_Type'))
+              if 'weapons' in data:
+                  vals = data['weapons'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('unit weapons must be a list')
+                  delete_where(army, 'Unit_Weapons.csv', lambda r: r.get('Unit_ID') == unit_id)
+                  for weapon_id in vals:
+                      append_row(army, 'Unit_Weapons.csv', {
+                          'Unit_ID': unit_id, 'Weapon_ID': weapon_id
+                      }, ('Unit_ID', 'Weapon_ID'))
+              if 'points' in data:
+                  vals = data['points'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('unit points must be a list')
+                  delete_where(army, 'Unit_Points.csv', lambda r: r.get('Unit_ID') == unit_id)
+                  for idx, item in enumerate(vals, start=1):
+                      if not isinstance(item, dict):
+                          sys.exit('unit point entries must be objects')
+                      sort_order = int(item.get('sort_order') or idx)
+                      point_id = clean(item.get('Point_Option_ID') or item.get('point_option_id') or f'point_{sort_order}')
+                      append_row(army, 'Unit_Points.csv', {
+                          'Unit_ID': unit_id,
+                          'Point_Option_ID': point_id,
+                          'Label': item.get('Label', item.get('label', '')),
+                          'Cost': item.get('Cost', item.get('cost', '')),
+                          'Sort_Order': sort_order,
+                      }, ('Unit_ID', 'Point_Option_ID', 'Sort_Order'))
+
+          def replace_effects(army, source_type, source_id, effects):
+              if not isinstance(effects, list):
+                  sys.exit('effects must be a list')
+              delete_where(army, 'Effects.csv', lambda r: r.get('Source_Type') == source_type and r.get('Source_ID') == source_id)
+              for idx, effect in enumerate(effects, start=1):
+                  if not isinstance(effect, dict):
+                      sys.exit('effect entries must be objects')
+                  effect_id = clean(effect.get('Effect_ID') or effect.get('effect_id') or f'{source_type}:{source_id}:{idx}')
+                  ensure_absent(army, 'Effects.csv', 'Effect_ID', effect_id)
+                  append_row(army, 'Effects.csv', {
+                      'Effect_ID': effect_id,
+                      'Source_Type': source_type,
+                      'Source_ID': source_id,
+                      'Effect_Type': effect.get('Effect_Type', effect.get('effect_type', '')),
+                      'Target': effect.get('Target', effect.get('target', 'UNIT')),
+                      'Stat': effect.get('Stat', effect.get('stat', '')),
+                      'Operation': effect.get('Operation', effect.get('operation', '')),
+                      'Value': effect.get('Value', effect.get('value', '')),
+                      'Display_Tag': effect.get('Display_Tag', effect.get('display_tag', '')),
+                      'Sort_Order': effect.get('Sort_Order', effect.get('sort_order', idx)),
+                  }, ('Effect_ID','Source_Type','Source_ID','Effect_Type','Target','Stat','Operation','Value','Display_Tag','Sort_Order'))
+
+          def replace_loadout_relations(army, unit_id, group_id, option_id, data):
+              key = lambda r: r.get('Unit_ID') == unit_id and r.get('Option_Group_ID') == group_id and r.get('Option_ID') == option_id
+
+              if 'selected_weapons' in data or 'preserve_weapons' in data:
+                  delete_where(army, 'Unit_Loadout_Weapons.csv', key)
+                  for role, field in [('SELECTED', 'selected_weapons'), ('PRESERVE', 'preserve_weapons')]:
+                      vals = data.get(field, []) or []
+                      if not isinstance(vals, list):
+                          sys.exit(f'{field} must be a list')
+                      for idx, weapon_id in enumerate(vals, start=1):
+                          append_row(army, 'Unit_Loadout_Weapons.csv', {
+                              'Unit_ID': unit_id, 'Option_Group_ID': group_id, 'Option_ID': option_id,
+                              'Weapon_ID': weapon_id, 'Weapon_Role': role, 'Sort_Order': idx,
+                          }, ('Unit_ID','Option_Group_ID','Option_ID','Weapon_ID','Weapon_Role','Sort_Order'))
+
+              if 'abilities' in data:
+                  delete_where(army, 'Unit_Loadout_Abilities.csv', key)
+                  vals = data.get('abilities') or []
+                  if not isinstance(vals, list):
+                      sys.exit('loadout abilities must be a list')
+                  for idx, ability_id in enumerate(vals, start=1):
+                      append_row(army, 'Unit_Loadout_Abilities.csv', {
+                          'Unit_ID': unit_id, 'Option_Group_ID': group_id, 'Option_ID': option_id,
+                          'Ability_ID': ability_id, 'Sort_Order': idx,
+                      }, ('Unit_ID','Option_Group_ID','Option_ID','Ability_ID','Sort_Order'))
+
+              if 'points' in data:
+                  delete_where(army, 'Unit_Loadout_Points.csv', key)
+                  vals = data.get('points') or []
+                  if not isinstance(vals, list):
+                      sys.exit('loadout points must be a list')
+                  for idx, item in enumerate(vals, start=1):
+                      if not isinstance(item, dict):
+                          sys.exit('loadout point entries must be objects')
+                      sort_order = int(item.get('sort_order') or idx)
+                      append_row(army, 'Unit_Loadout_Points.csv', {
+                          'Unit_ID': unit_id, 'Option_Group_ID': group_id, 'Option_ID': option_id,
+                          'Point_Option_ID': item.get('Point_Option_ID', item.get('point_option_id', f'point_{sort_order}')),
+                          'Label': item.get('Label', item.get('label', '')),
+                          'Cost': item.get('Cost', item.get('cost', '')),
+                          'Sort_Order': sort_order,
+                      }, ('Unit_ID','Option_Group_ID','Option_ID','Point_Option_ID','Sort_Order'))
+
+              if 'compatible_with' in data:
+                  delete_where(army, 'Unit_Loadout_Compatibility.csv', key)
+                  rules = data.get('compatible_with') or []
+                  if not isinstance(rules, list):
+                      sys.exit('compatible_with must be a list')
+                  for rule_idx, rule in enumerate(rules, start=1):
+                      if not isinstance(rule, dict):
+                          sys.exit('compatibility entries must be objects')
+                      required_group = clean(rule.get('Required_Group_ID') or rule.get('required_group_id'))
+                      options = rule.get('options', rule.get('compatible_option_ids', [])) or []
+                      if not required_group or not isinstance(options, list) or not options:
+                          sys.exit('compatibility entry needs required_group_id and non-empty options')
+                      for option_idx, compatible_id in enumerate(options, start=1):
+                          append_row(army, 'Unit_Loadout_Compatibility.csv', {
+                              'Unit_ID': unit_id, 'Option_Group_ID': group_id, 'Option_ID': option_id,
+                              'Required_Group_ID': required_group,
+                              'Compatible_Option_ID': compatible_id,
+                              'Rule_Order': rule_idx, 'Option_Order': option_idx,
+                          }, ('Unit_ID','Option_Group_ID','Option_ID','Required_Group_ID','Compatible_Option_ID','Rule_Order','Option_Order'))
+
+              if 'legacy_unit_ids' in data:
+                  delete_where(army, 'Unit_Loadout_Legacy_Units.csv', key)
+                  vals = data.get('legacy_unit_ids') or []
+                  if not isinstance(vals, list):
+                      sys.exit('legacy_unit_ids must be a list')
+                  for idx, legacy_id in enumerate(vals, start=1):
+                      append_row(army, 'Unit_Loadout_Legacy_Units.csv', {
+                          'Unit_ID': unit_id, 'Option_Group_ID': group_id, 'Option_ID': option_id,
+                          'Legacy_Unit_ID': legacy_id, 'Sort_Order': idx,
+                      }, ('Unit_ID','Option_Group_ID','Option_ID','Legacy_Unit_ID','Sort_Order'))
+
+          def add_simple(army, entity_type, data):
+              filename, id_col = TABLES[entity_type]
+              data = normalized_fields(data)
+              entity_id = clean(data.get(id_col)).strip()
+              if not entity_id:
+                  sys.exit(f'{entity_type} add requires {id_col}')
+              ensure_absent(army, filename, id_col, entity_id)
+              forbidden = set()
+              if entity_type == 'unit':
+                  forbidden |= GENERATED_UNIT_COLUMNS
+              if entity_type in {'ability', 'enhancement'}:
+                  forbidden.add('Tags')
+              validate_columns(army, filename, {k:v for k,v in data.items() if k not in {
+                  'abilities','core_abilities','weapons','points','effects','unit_ids','core_unit_ids','enhancements','stratagems','rule'
+              }}, forbidden=forbidden)
+              row_data = {k:v for k,v in data.items() if k in store.header(army, filename)}
+              if entity_type == 'detachment' and not clean(row_data.get('Army_Name')).strip():
+                  row_data['Army_Name'] = ARMY_NAMES[army]
+              append_row(army, filename, row_data, (id_col,))
+              return entity_id
+
+          def add_unit(army, data):
+              data = normalized_fields(data)
+              unit_id = add_simple(army, 'unit', data)
+              replace_unit_relations(army, unit_id, data)
+              return unit_id
+
+          def change_unit(army, unit_id, changes):
+              changes = normalized_fields(changes)
+              relation_keys = {'abilities','core_abilities','weapons','points'}
+              scalar = {k:v for k,v in changes.items() if k not in relation_keys}
+              if scalar:
+                  update_row(army, 'Units.csv', 'Unit_ID', unit_id, scalar, forbidden=GENERATED_UNIT_COLUMNS)
+              replace_unit_relations(army, unit_id, changes)
+
+          def delete_unit(army, unit_id):
+              find_one(army, 'Units.csv', 'Unit_ID', unit_id)
+              delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Unit_ID') == unit_id)
+              delete_where(army, 'Unit_Weapons.csv', lambda r: r.get('Unit_ID') == unit_id)
+              delete_where(army, 'Unit_Points.csv', lambda r: r.get('Unit_ID') == unit_id)
+              for filename in (
+                  'Unit_Loadout_Weapons.csv','Unit_Loadout_Abilities.csv','Unit_Loadout_Points.csv',
+                  'Unit_Loadout_Compatibility.csv','Unit_Loadout_Legacy_Units.csv','Unit_Loadout_Options.csv',
+              ):
+                  delete_where(army, filename, lambda r, uid=unit_id: r.get('Unit_ID') == uid)
+              delete_where(army, 'Units.csv', lambda r: r.get('Unit_ID') == unit_id, require_count=1, label='unit')
+
+          def add_ability(army, data):
+              data = normalized_fields(data)
+              ability_id = add_simple(army, 'ability', data)
+              if 'effects' in data:
+                  replace_effects(army, 'ABILITY', ability_id, data['effects'])
+              if 'unit_ids' in data:
+                  vals = data['unit_ids'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('unit_ids must be a list')
+                  for unit_id in vals:
+                      append_row(army, 'Unit_Abilities.csv', {'Unit_ID':unit_id,'Ability_ID':ability_id,'Ability_Type':'ABILITY'}, ('Unit_ID','Ability_ID','Ability_Type'))
+              if 'core_unit_ids' in data:
+                  vals = data['core_unit_ids'] or []
+                  if not isinstance(vals, list):
+                      sys.exit('core_unit_ids must be a list')
+                  for unit_id in vals:
+                      append_row(army, 'Unit_Abilities.csv', {'Unit_ID':unit_id,'Ability_ID':ability_id,'Ability_Type':'CORE_ABILITY'}, ('Unit_ID','Ability_ID','Ability_Type'))
+              return ability_id
+
+          def change_ability(army, ability_id, changes):
+              changes = normalized_fields(changes)
+              nested = {'effects','unit_ids','core_unit_ids'}
+              scalar = {k:v for k,v in changes.items() if k not in nested}
+              if scalar:
+                  update_row(army, 'Abilities.csv', 'Ability_ID', ability_id, scalar, forbidden={'Tags'})
+              if 'effects' in changes:
+                  replace_effects(army, 'ABILITY', ability_id, changes['effects'])
+              if 'unit_ids' in changes:
+                  delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Ability_ID') == ability_id and r.get('Ability_Type') == 'ABILITY')
+                  for unit_id in changes['unit_ids'] or []:
+                      append_row(army, 'Unit_Abilities.csv', {'Unit_ID':unit_id,'Ability_ID':ability_id,'Ability_Type':'ABILITY'}, ('Unit_ID','Ability_ID','Ability_Type'))
+              if 'core_unit_ids' in changes:
+                  delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Ability_ID') == ability_id and r.get('Ability_Type') == 'CORE_ABILITY')
+                  for unit_id in changes['core_unit_ids'] or []:
+                      append_row(army, 'Unit_Abilities.csv', {'Unit_ID':unit_id,'Ability_ID':ability_id,'Ability_Type':'CORE_ABILITY'}, ('Unit_ID','Ability_ID','Ability_Type'))
+
+          def delete_ability(army, ability_id):
+              find_one(army, 'Abilities.csv', 'Ability_ID', ability_id)
+              delete_where(army, 'Unit_Abilities.csv', lambda r: r.get('Ability_ID') == ability_id)
+              delete_where(army, 'Unit_Loadout_Abilities.csv', lambda r: r.get('Ability_ID') == ability_id)
+              delete_where(army, 'Effects.csv', lambda r: r.get('Source_Type') == 'ABILITY' and r.get('Source_ID') == ability_id)
+              delete_where(army, 'Abilities.csv', lambda r: r.get('Ability_ID') == ability_id, require_count=1, label='ability')
+
+          def add_enhancement(army, data):
+              data = normalized_fields(data)
+              enhancement_id = add_simple(army, 'enhancement', data)
+              if 'effects' in data:
+                  replace_effects(army, 'ENHANCEMENT', enhancement_id, data['effects'])
+              return enhancement_id
+
+          def change_enhancement(army, enhancement_id, changes):
+              changes = normalized_fields(changes)
+              scalar = {k:v for k,v in changes.items() if k != 'effects'}
+              if scalar:
+                  update_row(army, 'Enhancements.csv', 'Enhancement_ID', enhancement_id, scalar, forbidden={'Tags'})
+              if 'effects' in changes:
+                  replace_effects(army, 'ENHANCEMENT', enhancement_id, changes['effects'])
+
+          def delete_enhancement(army, enhancement_id):
+              find_one(army, 'Enhancements.csv', 'Enhancement_ID', enhancement_id)
+              delete_where(army, 'Effects.csv', lambda r: r.get('Source_Type') == 'ENHANCEMENT' and r.get('Source_ID') == enhancement_id)
+              delete_where(army, 'Enhancements.csv', lambda r: r.get('Enhancement_ID') == enhancement_id, require_count=1, label='enhancement')
+
+          def add_detachment(army, data):
+              data = normalized_fields(data)
+              detachment_id = add_simple(army, 'detachment', data)
+              for enhancement in data.get('enhancements', []) or []:
+                  if not isinstance(enhancement, dict):
+                      sys.exit('detachment enhancements must be objects')
+                  child = dict(enhancement)
+                  child.setdefault('Detachment_ID', detachment_id)
+                  if clean(child.get('Detachment_ID')).strip() != detachment_id:
+                      sys.exit('nested enhancement Detachment_ID must match parent')
+                  add_enhancement(army, child)
+              for stratagem in data.get('stratagems', []) or []:
+                  if not isinstance(stratagem, dict):
+                      sys.exit('detachment stratagems must be objects')
+                  child = dict(stratagem)
+                  child.setdefault('Detachment_ID', detachment_id)
+                  if clean(child.get('Detachment_ID')).strip() != detachment_id:
+                      sys.exit('nested stratagem Detachment_ID must match parent')
+                  add_simple(army, 'stratagem', child)
+              return detachment_id
+
+          def delete_detachment(army, detachment_id):
+              find_one(army, 'Detachment_Definitions.csv', 'Detachment_ID', detachment_id)
+              enhancement_ids = [r.get('Enhancement_ID') for r in find_rows(army, 'Enhancements.csv', 'Detachment_ID', detachment_id)]
+              for enhancement_id in enhancement_ids:
+                  delete_where(army, 'Effects.csv', lambda r, eid=enhancement_id: r.get('Source_Type') == 'ENHANCEMENT' and r.get('Source_ID') == eid)
+              delete_where(army, 'Enhancements.csv', lambda r: r.get('Detachment_ID') == detachment_id)
+              delete_where(army, 'Stratagems.csv', lambda r: r.get('Detachment_ID') == detachment_id)
+              delete_where(army, 'Detachment_Definitions.csv', lambda r: r.get('Detachment_ID') == detachment_id, require_count=1, label='detachment')
+
+          def add_loadout(army, data):
+              data = normalized_fields(data)
+              required = ['Unit_ID','Option_Group_ID','Option_ID','Option_Name']
+              missing = [k for k in required if not clean(data.get(k)).strip()]
+              if missing:
+                  sys.exit(f'loadout_option add missing {missing}')
+              unit_id = clean(data['Unit_ID']).strip()
+              group_id = clean(data['Option_Group_ID']).strip()
+              option_id = clean(data['Option_ID']).strip()
+              find_one(army, 'Units.csv', 'Unit_ID', unit_id)
+              exists = [r for r in store.rows(army, 'Unit_Loadout_Options.csv') if r.get('Unit_ID') == unit_id and r.get('Option_Group_ID') == group_id and r.get('Option_ID') == option_id]
+              if exists:
+                  sys.exit(f'loadout option already exists: {unit_id}/{group_id}/{option_id}')
+              append_row(army, 'Unit_Loadout_Options.csv', {
+                  'Unit_ID': unit_id, 'Option_Group_ID': group_id,
+                  'Group_Label': data.get('Group_Label', data.get('group_label', '')),
+                  'Option_ID': option_id, 'Option_Name': data['Option_Name'],
+                  'Default': data.get('Default', data.get('default', False)),
+                  'Sort_Order': data.get('Sort_Order', data.get('sort_order', 1)),
+              }, ('Unit_ID','Option_Group_ID','Option_ID','Option_Name','Default','Sort_Order'))
+              replace_loadout_relations(army, unit_id, group_id, option_id, data)
+              return f'{unit_id}/{group_id}/{option_id}'
+
+          def get_loadout_key(op, data):
+              unit_id = clean(op.get('unit_id') or data.get('Unit_ID')).strip()
+              group_id = clean(op.get('option_group_id') or data.get('Option_Group_ID')).strip()
+              option_id = clean(op.get('id') or op.get('option_id') or data.get('Option_ID')).strip()
+              if not all((unit_id, group_id, option_id)):
+                  sys.exit('loadout_option change/delete requires unit_id, option_group_id, and id/option_id')
+              return unit_id, group_id, option_id
+
+          def change_loadout(army, op, changes):
+              changes = normalized_fields(changes)
+              unit_id, group_id, option_id = get_loadout_key(op, changes)
+              rows = [r for r in store.rows(army, 'Unit_Loadout_Options.csv') if r.get('Unit_ID') == unit_id and r.get('Option_Group_ID') == group_id and r.get('Option_ID') == option_id]
+              if len(rows) != 1:
+                  sys.exit(f'loadout option missing or duplicated: {unit_id}/{group_id}/{option_id}')
+              relation_keys = {'selected_weapons','preserve_weapons','abilities','points','compatible_with','legacy_unit_ids'}
+              scalar = {k:v for k,v in changes.items() if k not in relation_keys and k not in {'Unit_ID','Option_Group_ID','Option_ID'}}
+              allowed_scalar = {'Group_Label','Option_Name','Default','Sort_Order','group_label','default','sort_order'}
+              unknown = [k for k in scalar if k not in allowed_scalar]
+              if unknown:
+                  sys.exit(f'loadout option unknown scalar fields {unknown}')
+              row = rows[0]
+              mapping = {'group_label':'Group_Label','default':'Default','sort_order':'Sort_Order'}
+              for k,v in scalar.items():
+                  row[mapping.get(k,k)] = clean(v)
+              if scalar:
+                  store.mark(army, 'Unit_Loadout_Options.csv')
+              replace_loadout_relations(army, unit_id, group_id, option_id, changes)
+
+          def delete_loadout(army, op):
+              unit_id, group_id, option_id = get_loadout_key(op, {})
+              key = lambda r: r.get('Unit_ID') == unit_id and r.get('Option_Group_ID') == group_id and r.get('Option_ID') == option_id
+              hits = [r for r in store.rows(army, 'Unit_Loadout_Options.csv') if key(r)]
+              if len(hits) != 1:
+                  sys.exit(f'loadout option missing or duplicated: {unit_id}/{group_id}/{option_id}')
+              for filename in ('Unit_Loadout_Weapons.csv','Unit_Loadout_Abilities.csv','Unit_Loadout_Points.csv','Unit_Loadout_Compatibility.csv','Unit_Loadout_Legacy_Units.csv'):
+                  delete_where(army, filename, key)
+              delete_where(army, 'Unit_Loadout_Options.csv', key, require_count=1, label='loadout option')
+
+          def delete_weapon(army, weapon_id):
+              find_one(army, 'Weapon_Stats.csv', 'Weapon_ID', weapon_id)
+              delete_where(army, 'Unit_Weapons.csv', lambda r: r.get('Weapon_ID') == weapon_id)
+              delete_where(army, 'Unit_Loadout_Weapons.csv', lambda r: r.get('Weapon_ID') == weapon_id)
+              delete_where(army, 'Weapon_Stats.csv', lambda r: r.get('Weapon_ID') == weapon_id, require_count=1, label='weapon')
+
+          def process(index, op):
+              if not isinstance(op, dict):
+                  sys.exit(f'op {index}: operation must be an object')
+              operation = str(op.get('operation') or '').strip().lower()
+              if operation not in {'add','change','delete'}:
+                  sys.exit(f'op {index}: operation must be add/change/delete')
+              entity_type = str(op.get('entity_type') or '').strip().lower()
+              if entity_type not in {*TABLES.keys(), 'loadout_option'}:
+                  sys.exit(f'op {index}: unsupported entity_type {entity_type!r}')
+              army = require_army(op, index)
+              data = op.get('data') if operation == 'add' else op.get('changes', {})
+              if operation != 'delete' and not isinstance(data, dict):
+                  sys.exit(f'op {index}: {operation} requires object data/changes')
+
+              if operation == 'add':
+                  if entity_type == 'unit':
+                      result = add_unit(army, data)
+                  elif entity_type == 'ability':
+                      result = add_ability(army, data)
+                  elif entity_type == 'enhancement':
+                      result = add_enhancement(army, data)
+                  elif entity_type == 'detachment':
+                      result = add_detachment(army, data)
+                  elif entity_type == 'loadout_option':
+                      result = add_loadout(army, data)
+                  else:
+                      result = add_simple(army, entity_type, data)
+                  print(f'op {index}: added {entity_type} {result}')
+                  return
+
+              if entity_type == 'loadout_option':
+                  if operation == 'change':
+                      change_loadout(army, op, data)
+                      print(f'op {index}: changed loadout_option')
+                  else:
+                      delete_loadout(army, op)
+                      print(f'op {index}: deleted loadout_option')
+                  return
+
+              filename, id_col = TABLES[entity_type]
+              entity_id = clean(op.get('id')).strip()
+              if not entity_id:
+                  sys.exit(f'op {index}: {operation} {entity_type} requires id')
+
+              if operation == 'change':
+                  if entity_type == 'unit':
+                      change_unit(army, entity_id, data)
+                  elif entity_type == 'ability':
+                      change_ability(army, entity_id, data)
+                  elif entity_type == 'enhancement':
+                      change_enhancement(army, entity_id, data)
+                  elif entity_type == 'detachment':
+                      nested = {'enhancements','stratagems'}
+                      if any(k in data for k in nested):
+                          sys.exit('detachment CHANGE updates only the definition; change enhancements/stratagems as separate entity operations')
+                      update_row(army, filename, id_col, entity_id, data)
+                  else:
+                      update_row(army, filename, id_col, entity_id, data)
+                  print(f'op {index}: changed {entity_type} {entity_id}')
+                  return
+
+              if entity_type == 'unit':
+                  delete_unit(army, entity_id)
+              elif entity_type == 'weapon':
+                  delete_weapon(army, entity_id)
+              elif entity_type == 'ability':
+                  delete_ability(army, entity_id)
+              elif entity_type == 'enhancement':
+                  delete_enhancement(army, entity_id)
+              elif entity_type == 'detachment':
+                  delete_detachment(army, entity_id)
+              else:
+                  delete_where(army, filename, lambda r, col=id_col, eid=entity_id: r.get(col) == eid, require_count=1, label=entity_type)
+              print(f'op {index}: deleted {entity_type} {entity_id}')
+
+          for i, op in enumerate(OPS, start=1):
+              process(i, op)
+
+          store.flush()
+          if not OPS:
+              print('No entity operations in fallback payload; validation-only run.')
+          PY
+
+      - name: Sync generated compatibility data
+        run: |
+          python3 scripts/split_detachments_v2.py
+          python3 scripts/split_units_v1.py
+          python3 scripts/split_loadouts_v1.py
+          python3 scripts/split_effects_v1.py
+
+      - name: Validate canonical data
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/audit_references.py
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_unit_relations.py
+          python3 scripts/validate_loadouts.py
+          python3 scripts/validate_effects.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Commit entity changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "No entity data changes"
+            exit 0
+          fi
+          git commit -m "Apply entity operations"
+          git push
