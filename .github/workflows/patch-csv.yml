@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Detachments.csv","id_column":"Item_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_iron_laurel","column":"Long_Description","value":"IRON LAUREL\\nAdeptus Astartes model only. Improve the Objective Control characteristic of the bearer by 1. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Objective Control characteristic of all other models in the bearer’s unit as well."}]'
+          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"ERADICATOR_SQUAD_HEAVY_BOLTERS","sets":{"Points_Label_1":"x3","Points_Label_2":"x6","Points_Label_3":"x3","Points_Label_4":"x6"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
