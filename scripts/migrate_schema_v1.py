@@ -28,10 +28,42 @@ ROWS = {
 }
 
 
+def read_csv(path):
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.reader(handle))
+
+
+def write_csv(path, rows):
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        csv.writer(handle, lineterminator="\n").writerows(rows)
+
+
+def dedupe_identical_rows():
+    changed = False
+    for path in sorted((ROOT / "data").glob("**/*.csv")):
+        rows = read_csv(path)
+        if not rows:
+            continue
+        seen = set()
+        kept = [rows[0]]
+        removed = 0
+        for row in rows[1:]:
+            key = tuple(row)
+            if key in seen:
+                removed += 1
+                continue
+            seen.add(key)
+            kept.append(row)
+        if removed:
+            write_csv(path, kept)
+            changed = True
+            print(f"removed {removed} identical duplicate row(s) from {path.relative_to(ROOT)}")
+    return changed
+
+
 def add_missing_rows(rel_path, additions):
     path = ROOT / rel_path
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        rows = list(csv.reader(handle))
+    rows = read_csv(path)
     if not rows:
         raise SystemExit(f"empty CSV: {rel_path}")
     header = rows[0]
@@ -47,13 +79,12 @@ def add_missing_rows(rel_path, additions):
         changed = True
         print(f"inserted {rel_path} {row[0]}")
     if changed:
-        with path.open("w", encoding="utf-8", newline="") as handle:
-            csv.writer(handle, lineterminator="\n").writerows(rows)
+        write_csv(path, rows)
     return changed
 
 
 def main():
-    changed = False
+    changed = dedupe_identical_rows()
     for rel_path, additions in ROWS.items():
         changed = add_missing_rows(rel_path, additions) or changed
     print("schema v1 reference migration:", "changed" if changed else "already applied")
