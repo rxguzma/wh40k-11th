@@ -13,24 +13,33 @@ LEGACY_HEADER = [
     "Points_Label_2", "Points_Cost_2", "Default", "Sort_Order",
     "Legacy_Unit_IDs", "Preserve_Weapon_IDs", "Compatible_With",
 ]
-OPTIONS_HEADER = [
-    "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name",
-    "Default", "Sort_Order",
+CANON_OPTIONS_HEADER = [
+    "Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID",
+    "Option_Name", "Default", "Sort_Order",
 ]
-WEAPONS_HEADER = [
+CANON_WEAPONS_HEADER = ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"]
+CANON_ABILITIES_HEADER = ["Loadout_Option_ID", "Ability_ID", "Sort_Order"]
+CANON_POINTS_HEADER = ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"]
+CANON_COMPAT_HEADER = [
+    "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
+]
+CANON_LEGACY_UNITS_HEADER = ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"]
+
+COMPAT_OPTIONS_HEADER = [
+    "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order",
+]
+COMPAT_WEAPONS_HEADER = [
     "Unit_ID", "Option_Group_ID", "Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order",
 ]
-ABILITIES_HEADER = [
-    "Unit_ID", "Option_Group_ID", "Option_ID", "Ability_ID", "Sort_Order",
-]
-POINTS_HEADER = [
+COMPAT_ABILITIES_HEADER = ["Unit_ID", "Option_Group_ID", "Option_ID", "Ability_ID", "Sort_Order"]
+COMPAT_POINTS_HEADER = [
     "Unit_ID", "Option_Group_ID", "Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order",
 ]
-COMPAT_HEADER = [
+COMPAT_COMPAT_HEADER = [
     "Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID",
     "Compatible_Option_ID", "Rule_Order", "Option_Order",
 ]
-LEGACY_UNITS_HEADER = [
+COMPAT_LEGACY_UNITS_HEADER = [
     "Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order",
 ]
 
@@ -71,31 +80,36 @@ def order_value(value):
         return 0
 
 
-def option_key(row):
-    return (clean(row.get("Unit_ID")), clean(row.get("Option_Group_ID")), clean(row.get("Option_ID")))
+def load_canonical(directory):
+    options = read_dicts(directory / "Loadout_Options.csv", CANON_OPTIONS_HEADER)
+    weapons = read_dicts(directory / "Loadout_Weapons.csv", CANON_WEAPONS_HEADER)
+    abilities = read_dicts(directory / "Loadout_Abilities.csv", CANON_ABILITIES_HEADER)
+    points = read_dicts(directory / "Loadout_Points.csv", CANON_POINTS_HEADER)
+    compatibility = read_dicts(directory / "Loadout_Compatibility.csv", CANON_COMPAT_HEADER)
+    legacy_units = read_dicts(directory / "Loadout_Legacy_Units.csv", CANON_LEGACY_UNITS_HEADER)
+    return options, weapons, abilities, points, compatibility, legacy_units
 
 
-def migrate_army(army):
-    directory = ROOT / "data" / army
-    options = read_dicts(directory / "Unit_Loadout_Options.csv", OPTIONS_HEADER)
-    weapons = read_dicts(directory / "Unit_Loadout_Weapons.csv", WEAPONS_HEADER)
-    abilities = read_dicts(directory / "Unit_Loadout_Abilities.csv", ABILITIES_HEADER)
-    points = read_dicts(directory / "Unit_Loadout_Points.csv", POINTS_HEADER)
-    compatibility = read_dicts(directory / "Unit_Loadout_Compatibility.csv", COMPAT_HEADER)
-    legacy_units = read_dicts(directory / "Unit_Loadout_Legacy_Units.csv", LEGACY_UNITS_HEADER)
-
-    option_keys = set()
+def validate_canonical(army, tables):
+    options, weapons, abilities, points, compatibility, legacy_units = tables
+    by_id = {}
     group_defaults = defaultdict(int)
     group_options = defaultdict(set)
+
     for row in options:
-        unit_id, group_id, option_id = option_key(row)
+        lid = clean(row.get("Loadout_Option_ID"))
+        unit_id = clean(row.get("Unit_ID"))
+        group_id = clean(row.get("Option_Group_ID"))
+        option_id = clean(row.get("Option_ID"))
         option_name = clean(row.get("Option_Name"))
-        if not unit_id or not group_id or not option_id or not option_name:
-            fail(f"{army}: incomplete normalized loadout option identity")
-        key = (unit_id, group_id, option_id)
-        if key in option_keys:
-            fail(f"{army}: duplicate normalized loadout option {key!r}")
-        option_keys.add(key)
+        if not lid or not unit_id or not group_id or not option_id or not option_name:
+            fail(f"{army}: incomplete canonical loadout option identity")
+        if lid in by_id:
+            fail(f"{army}: duplicate Loadout_Option_ID {lid!r}")
+        semantic_key = (unit_id, group_id, option_id)
+        if semantic_key in {(v["Unit_ID"], v["Option_Group_ID"], v["Option_ID"]) for v in by_id.values()}:
+            fail(f"{army}: duplicate semantic loadout option {semantic_key!r}")
+        by_id[lid] = row
         group_options[(unit_id, group_id)].add(option_id)
         if clean(row.get("Default")).lower() in TRUE_VALUES:
             group_defaults[(unit_id, group_id)] += 1
@@ -103,6 +117,100 @@ def migrate_army(army):
     for group_key in group_options:
         if group_defaults[group_key] != 1:
             fail(f"{army}: {group_key!r} must have exactly one default option")
+
+    for filename, rows in (
+        ("Loadout_Weapons.csv", weapons),
+        ("Loadout_Abilities.csv", abilities),
+        ("Loadout_Points.csv", points),
+        ("Loadout_Compatibility.csv", compatibility),
+        ("Loadout_Legacy_Units.csv", legacy_units),
+    ):
+        for row in rows:
+            lid = clean(row.get("Loadout_Option_ID"))
+            if lid not in by_id:
+                fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
+
+    for row in compatibility:
+        lid = clean(row["Loadout_Option_ID"])
+        parent = by_id[lid]
+        required_group = clean(row.get("Required_Group_ID"))
+        compatible_option = clean(row.get("Compatible_Option_ID"))
+        if not required_group or compatible_option not in group_options.get((parent["Unit_ID"], required_group), set()):
+            fail(
+                f"{army}: compatibility for {lid!r} references unknown "
+                f"{required_group}/{compatible_option}"
+            )
+    return by_id
+
+
+def generate_compatibility(army, directory, tables):
+    options, weapons, abilities, points, compatibility, legacy_units = tables
+    by_id = validate_canonical(army, tables)
+
+    def parent(lid):
+        row = by_id[clean(lid)]
+        return row["Unit_ID"], row["Option_Group_ID"], row["Option_ID"]
+
+    compat_options = [
+        [
+            row["Unit_ID"], row["Option_Group_ID"], row["Group_Label"], row["Option_ID"],
+            row["Option_Name"], row["Default"], row["Sort_Order"],
+        ]
+        for row in options
+    ]
+    compat_weapons = [
+        [*parent(row["Loadout_Option_ID"]), row["Weapon_ID"], row["Weapon_Role"], row["Sort_Order"]]
+        for row in weapons
+    ]
+    compat_abilities = [
+        [*parent(row["Loadout_Option_ID"]), row["Ability_ID"], row["Sort_Order"]]
+        for row in abilities
+    ]
+    compat_points = [
+        [
+            *parent(row["Loadout_Option_ID"]), row["Point_Option_ID"], row["Label"],
+            row["Cost"], row["Sort_Order"],
+        ]
+        for row in points
+    ]
+    compat_compatibility = [
+        [
+            *parent(row["Loadout_Option_ID"]), row["Required_Group_ID"],
+            row["Compatible_Option_ID"], row["Rule_Order"], row["Option_Order"],
+        ]
+        for row in compatibility
+    ]
+    compat_legacy_units = [
+        [*parent(row["Loadout_Option_ID"]), row["Legacy_Unit_ID"], row["Sort_Order"]]
+        for row in legacy_units
+    ]
+
+    write_csv(directory / "Unit_Loadout_Options.csv", COMPAT_OPTIONS_HEADER, compat_options)
+    write_csv(directory / "Unit_Loadout_Weapons.csv", COMPAT_WEAPONS_HEADER, compat_weapons)
+    write_csv(directory / "Unit_Loadout_Abilities.csv", COMPAT_ABILITIES_HEADER, compat_abilities)
+    write_csv(directory / "Unit_Loadout_Points.csv", COMPAT_POINTS_HEADER, compat_points)
+    write_csv(directory / "Unit_Loadout_Compatibility.csv", COMPAT_COMPAT_HEADER, compat_compatibility)
+    write_csv(directory / "Unit_Loadout_Legacy_Units.csv", COMPAT_LEGACY_UNITS_HEADER, compat_legacy_units)
+
+    return (
+        [dict(zip(COMPAT_OPTIONS_HEADER, row)) for row in compat_options],
+        [dict(zip(COMPAT_WEAPONS_HEADER, row)) for row in compat_weapons],
+        [dict(zip(COMPAT_ABILITIES_HEADER, row)) for row in compat_abilities],
+        [dict(zip(COMPAT_POINTS_HEADER, row)) for row in compat_points],
+        [dict(zip(COMPAT_COMPAT_HEADER, row)) for row in compat_compatibility],
+        [dict(zip(COMPAT_LEGACY_UNITS_HEADER, row)) for row in compat_legacy_units],
+    )
+
+
+def generate_legacy(army, directory, compat_tables):
+    options, weapons, abilities, points, compatibility, legacy_units = compat_tables
+
+    option_keys = set()
+    group_options = defaultdict(set)
+    for row in options:
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
+        option_keys.add(key)
+        group_options[(key[0], key[1])].add(key[2])
 
     selected_weapons = defaultdict(list)
     preserved_weapons = defaultdict(list)
@@ -112,31 +220,19 @@ def migrate_army(army):
     legacy_links = defaultdict(list)
 
     for source_index, row in enumerate(weapons):
-        key = option_key(row)
-        if key not in option_keys:
-            fail(f"{army}: loadout weapon references missing option {key!r}")
-        weapon_id = clean(row.get("Weapon_ID"))
-        role = clean(row.get("Weapon_Role")).upper()
-        if not weapon_id or role not in {"SELECTED", "PRESERVE"}:
-            fail(f"{army}: invalid loadout weapon row for {key!r}")
-        record = (order_value(row.get("Sort_Order")), source_index, weapon_id)
-        (preserved_weapons if role == "PRESERVE" else selected_weapons)[key].append(record)
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
+        record = (order_value(row["Sort_Order"]), source_index, clean(row["Weapon_ID"]))
+        target = preserved_weapons if clean(row["Weapon_Role"]).upper() == "PRESERVE" else selected_weapons
+        target[key].append(record)
 
     for source_index, row in enumerate(abilities):
-        key = option_key(row)
-        if key not in option_keys:
-            fail(f"{army}: loadout ability references missing option {key!r}")
-        ability_id = clean(row.get("Ability_ID"))
-        if not ability_id:
-            fail(f"{army}: blank loadout Ability_ID for {key!r}")
-        ability_links[key].append((order_value(row.get("Sort_Order")), source_index, ability_id))
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
+        ability_links[key].append((order_value(row["Sort_Order"]), source_index, clean(row["Ability_ID"])))
 
     for source_index, row in enumerate(points):
-        key = option_key(row)
-        if key not in option_keys:
-            fail(f"{army}: loadout point references missing option {key!r}")
-        point_id = clean(row.get("Point_Option_ID"))
-        sort_order = order_value(row.get("Sort_Order"))
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
+        point_id = clean(row["Point_Option_ID"])
+        sort_order = order_value(row["Sort_Order"])
         slot = 0
         if point_id.lower().startswith("point_"):
             try:
@@ -149,41 +245,29 @@ def migrate_army(army):
             fail(f"{army}: legacy Unit_Weapon_Options.csv cannot represent point slot {point_id!r} for {key!r}")
         if any(existing[0] == slot for existing in point_links[key]):
             fail(f"{army}: duplicate loadout point slot {slot} for {key!r}")
-        point_links[key].append((slot, source_index, clean(row.get("Label")), clean(row.get("Cost"))))
+        point_links[key].append((slot, source_index, clean(row["Label"]), clean(row["Cost"])))
 
     for source_index, row in enumerate(compatibility):
-        key = option_key(row)
-        if key not in option_keys:
-            fail(f"{army}: compatibility references missing option {key!r}")
-        required_group = clean(row.get("Required_Group_ID"))
-        compatible_option = clean(row.get("Compatible_Option_ID"))
-        if not required_group or compatible_option not in group_options.get((key[0], required_group), set()):
-            fail(f"{army}: compatibility for {key!r} references unknown {required_group}/{compatible_option}")
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
         compatibility_links[key].append((
-            order_value(row.get("Rule_Order")) or 1,
-            required_group,
-            order_value(row.get("Option_Order")) or 1,
+            order_value(row["Rule_Order"]) or 1,
+            clean(row["Required_Group_ID"]),
+            order_value(row["Option_Order"]) or 1,
             source_index,
-            compatible_option,
+            clean(row["Compatible_Option_ID"]),
         ))
 
     for source_index, row in enumerate(legacy_units):
-        key = option_key(row)
-        if key not in option_keys:
-            fail(f"{army}: legacy-unit alias references missing option {key!r}")
-        legacy_id = clean(row.get("Legacy_Unit_ID"))
-        if not legacy_id:
-            fail(f"{army}: blank Legacy_Unit_ID for {key!r}")
-        legacy_links[key].append((order_value(row.get("Sort_Order")), source_index, legacy_id))
+        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
+        legacy_links[key].append((order_value(row["Sort_Order"]), source_index, clean(row["Legacy_Unit_ID"])))
 
     legacy_rows = []
     for option in options:
-        key = option_key(option)
+        key = (clean(option["Unit_ID"]), clean(option["Option_Group_ID"]), clean(option["Option_ID"]))
         selected = ", ".join(item[2] for item in sorted(selected_weapons[key]))
         preserved = ", ".join(item[2] for item in sorted(preserved_weapons[key]))
         granted = ", ".join(item[2] for item in sorted(ability_links[key]))
         aliases = ", ".join(item[2] for item in sorted(legacy_links[key]))
-
         point_slots = {slot: (label, cost) for slot, _, label, cost in point_links[key]}
 
         compat_groups = {}
@@ -202,23 +286,31 @@ def migrate_army(army):
         point_1 = point_slots.get(1, ("", ""))
         point_2 = point_slots.get(2, ("", ""))
         legacy_rows.append([
-            key[0], key[1], clean(option.get("Group_Label")), key[2], clean(option.get("Option_Name")),
+            key[0], key[1], clean(option["Group_Label"]), key[2], clean(option["Option_Name"]),
             selected, granted, point_1[0], point_1[1], point_2[0], point_2[1],
-            clean(option.get("Default")), clean(option.get("Sort_Order")), aliases, preserved, compatible_with,
+            clean(option["Default"]), clean(option["Sort_Order"]), aliases, preserved, compatible_with,
         ])
 
     write_csv(directory / "Unit_Weapon_Options.csv", LEGACY_HEADER, legacy_rows)
+
+
+def migrate_army(army):
+    directory = ROOT / "data" / army
+    tables = load_canonical(directory)
+    compat_tables = generate_compatibility(army, directory, tables)
+    generate_legacy(army, directory, compat_tables)
+    options, weapons, abilities, points, compatibility, legacy_units = tables
     print(
-        f"{army}: {len(options)} normalized options -> legacy Unit_Weapon_Options.csv "
+        f"{army}: {len(options)} canonical Loadout_Option_ID rows -> compatibility tables "
         f"({len(weapons)} weapon links, {len(abilities)} ability links, {len(points)} point rows, "
-        f"{len(compatibility)} compatibility rows, {len(legacy_units)} legacy-unit aliases)"
+        f"{len(compatibility)} compatibility rows, {len(legacy_units)} legacy aliases)"
     )
 
 
 def main():
     for army in ARMIES:
         migrate_army(army)
-    print("normalized loadout compatibility sync: OK")
+    print("canonical Loadout_Option_ID -> Unit_Loadout_* compatibility sync: OK")
 
 
 if __name__ == "__main__":

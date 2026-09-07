@@ -24,12 +24,12 @@ HEADERS = {
     "Stratagems.csv": ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description"],
     "Army_Rules.csv": ["Army_Rule_ID", "Army_Name", "Rule_Name", "Short_Description", "Long_Description"],
     "Effects.csv": ["Effect_ID", "Source_Type", "Source_ID", "Effect_Type", "Target", "Stat", "Operation", "Value", "Display_Tag", "Sort_Order"],
-    "Unit_Loadout_Options.csv": ["Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order"],
-    "Unit_Loadout_Weapons.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
-    "Unit_Loadout_Abilities.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Ability_ID", "Sort_Order"],
-    "Unit_Loadout_Points.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
-    "Unit_Loadout_Compatibility.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"],
-    "Unit_Loadout_Legacy_Units.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order"],
+    "Loadout_Options.csv": ["Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order"],
+    "Loadout_Weapons.csv": ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
+    "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
+    "Loadout_Points.csv": ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
+    "Loadout_Compatibility.csv": ["Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"],
+    "Loadout_Legacy_Units.csv": ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"],
     "Universal_Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Order"],
     "Universal_Stratagems.csv": ["Detachment_ID", "Detachment_Name", "Item_Type", "Item_ID", "Item_Name", "Points", "CP_Cost", "Short_Description", "Long_Description"],
 }
@@ -127,9 +127,9 @@ class State:
             for filename in (
                 "Unit_Profiles.csv", "Unit_Abilities.csv", "Unit_Weapons.csv", "Unit_Points.csv",
                 "Weapon_Stats.csv", "Weapon_Abilities.csv", "Abilities.csv", "Detachment_Definitions.csv", "Enhancements.csv",
-                "Stratagems.csv", "Army_Rules.csv", "Effects.csv", "Unit_Loadout_Options.csv",
-                "Unit_Loadout_Weapons.csv", "Unit_Loadout_Abilities.csv", "Unit_Loadout_Points.csv",
-                "Unit_Loadout_Compatibility.csv", "Unit_Loadout_Legacy_Units.csv",
+                "Stratagems.csv", "Army_Rules.csv", "Effects.csv", "Loadout_Options.csv",
+                "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
+                "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
             ):
                 self.tables[(army, filename)] = Table(base / filename, HEADERS[filename])
         base = ROOT / "data" / UNIVERSAL
@@ -342,83 +342,89 @@ def replace_unit_links(state, army, unit_id, payload):
             add_loadout(state, army, loadout)
 
 
-def option_key_from_id(value):
-    return {
-        "Unit_ID": sval(value["Unit_ID"]),
-        "Option_Group_ID": sval(value["Option_Group_ID"]),
-        "Option_ID": sval(value["Option_ID"]),
-    }
+def derived_loadout_option_id(unit_id, group_id, option_id):
+    return f"{unit_id}__{group_id}__{option_id}"
 
 
 def delete_unit_loadouts(state, army, unit_id):
+    options = state.t(army, "Loadout_Options.csv")
+    loadout_ids = {row["Loadout_Option_ID"] for row in options.rows if row.get("Unit_ID") == unit_id}
     for filename in (
-        "Unit_Loadout_Weapons.csv", "Unit_Loadout_Abilities.csv", "Unit_Loadout_Points.csv",
-        "Unit_Loadout_Compatibility.csv", "Unit_Loadout_Legacy_Units.csv", "Unit_Loadout_Options.csv",
+        "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
+        "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
     ):
-        state.t(army, filename).delete_where(lambda row, uid=unit_id: row.get("Unit_ID") == uid)
+        state.t(army, filename).delete_where(lambda row, ids=loadout_ids: row.get("Loadout_Option_ID") in ids)
+    options.delete_where(lambda row, uid=unit_id: row.get("Unit_ID") == uid)
 
 
-def delete_option_children(state, army, key, filenames=None):
+def delete_option_children(state, army, loadout_option_id, filenames=None):
     targets = filenames or (
-        "Unit_Loadout_Weapons.csv", "Unit_Loadout_Abilities.csv", "Unit_Loadout_Points.csv",
-        "Unit_Loadout_Compatibility.csv", "Unit_Loadout_Legacy_Units.csv",
+        "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
+        "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
     )
     for filename in targets:
         state.t(army, filename).delete_where(
-            lambda row, k=key: all(row.get(col) == value for col, value in k.items())
+            lambda row, lid=loadout_option_id: row.get("Loadout_Option_ID") == lid
         )
 
 
-def set_default_exclusive(state, army, unit_id, group_id, option_id):
-    table = state.t(army, "Unit_Loadout_Options.csv")
+def set_default_exclusive(state, army, unit_id, group_id, loadout_option_id):
+    table = state.t(army, "Loadout_Options.csv")
     for row in table.rows:
         if row.get("Unit_ID") == unit_id and row.get("Option_Group_ID") == group_id:
-            row["Default"] = "TRUE" if row.get("Option_ID") == option_id else "FALSE"
+            row["Default"] = "TRUE" if row.get("Loadout_Option_ID") == loadout_option_id else "FALSE"
 
 
 def add_loadout(state, army, data):
-    options = state.t(army, "Unit_Loadout_Options.csv")
+    options = state.t(army, "Loadout_Options.csv")
     unit_id = sval(data["Unit_ID"])
     group_id = sval(data["Option_Group_ID"])
     option_id = sval(data["Option_ID"])
-    key = {"Unit_ID": unit_id, "Option_Group_ID": group_id, "Option_ID": option_id}
-    if options.exists(**key):
-        fail(f"loadout option already exists: {key}")
+    loadout_option_id = sval(
+        data.get("Loadout_Option_ID") or derived_loadout_option_id(unit_id, group_id, option_id)
+    )
+    if options.exists(Loadout_Option_ID=loadout_option_id):
+        fail(f"Loadout_Option_ID already exists: {loadout_option_id!r}")
+    if options.exists(Unit_ID=unit_id, Option_Group_ID=group_id, Option_ID=option_id):
+        fail(f"semantic loadout option already exists: {unit_id}/{group_id}/{option_id}")
     if not state.t(army, "Unit_Profiles.csv").exists(Unit_ID=unit_id):
         fail(f"loadout references missing Unit_ID {unit_id!r}")
     options.insert({
-        **key,
+        "Loadout_Option_ID": loadout_option_id,
+        "Unit_ID": unit_id,
+        "Option_Group_ID": group_id,
         "Group_Label": data.get("Group_Label", ""),
+        "Option_ID": option_id,
         "Option_Name": data["Option_Name"],
         "Default": bool_csv(data["Default"]),
         "Sort_Order": data["Sort_Order"],
     })
     if bool_csv(data["Default"]) == "TRUE":
-        set_default_exclusive(state, army, unit_id, group_id, option_id)
-    replace_loadout_children(state, army, key, data)
+        set_default_exclusive(state, army, unit_id, group_id, loadout_option_id)
+    replace_loadout_children(state, army, loadout_option_id, data)
 
 
-def replace_loadout_children(state, army, key, payload):
-    unit_id, group_id, option_id = key["Unit_ID"], key["Option_Group_ID"], key["Option_ID"]
+def replace_loadout_children(state, army, loadout_option_id, payload):
+    key = {"Loadout_Option_ID": loadout_option_id}
     if "weapons" in payload:
-        delete_option_children(state, army, key, ("Unit_Loadout_Weapons.csv",))
-        table = state.t(army, "Unit_Loadout_Weapons.csv")
+        delete_option_children(state, army, loadout_option_id, ("Loadout_Weapons.csv",))
+        table = state.t(army, "Loadout_Weapons.csv")
         for index, item in enumerate(payload["weapons"], start=1):
             table.insert({**key, "Weapon_ID": item["Weapon_ID"], "Weapon_Role": item.get("Weapon_Role", "SELECTED"), "Sort_Order": item.get("Sort_Order", index)})
     if "abilities" in payload:
-        delete_option_children(state, army, key, ("Unit_Loadout_Abilities.csv",))
-        table = state.t(army, "Unit_Loadout_Abilities.csv")
+        delete_option_children(state, army, loadout_option_id, ("Loadout_Abilities.csv",))
+        table = state.t(army, "Loadout_Abilities.csv")
         for index, item in enumerate(payload["abilities"], start=1):
             table.insert({**key, "Ability_ID": item["Ability_ID"], "Sort_Order": item.get("Sort_Order", index)})
     if "points" in payload:
-        delete_option_children(state, army, key, ("Unit_Loadout_Points.csv",))
-        table = state.t(army, "Unit_Loadout_Points.csv")
+        delete_option_children(state, army, loadout_option_id, ("Loadout_Points.csv",))
+        table = state.t(army, "Loadout_Points.csv")
         for index, item in enumerate(payload["points"], start=1):
             sort_order = item.get("Sort_Order", index)
             table.insert({**key, "Point_Option_ID": item.get("Point_Option_ID") or f"point_{sort_order}", "Label": item.get("Label", ""), "Cost": item.get("Cost", ""), "Sort_Order": sort_order})
     if "compatibility" in payload:
-        delete_option_children(state, army, key, ("Unit_Loadout_Compatibility.csv",))
-        table = state.t(army, "Unit_Loadout_Compatibility.csv")
+        delete_option_children(state, army, loadout_option_id, ("Loadout_Compatibility.csv",))
+        table = state.t(army, "Loadout_Compatibility.csv")
         for index, item in enumerate(payload["compatibility"], start=1):
             table.insert({
                 **key,
@@ -428,11 +434,10 @@ def replace_loadout_children(state, army, key, payload):
                 "Option_Order": item.get("Option_Order", 1),
             })
     if "legacy_units" in payload:
-        delete_option_children(state, army, key, ("Unit_Loadout_Legacy_Units.csv",))
-        table = state.t(army, "Unit_Loadout_Legacy_Units.csv")
+        delete_option_children(state, army, loadout_option_id, ("Loadout_Legacy_Units.csv",))
+        table = state.t(army, "Loadout_Legacy_Units.csv")
         for index, item in enumerate(payload["legacy_units"], start=1):
             table.insert({**key, "Legacy_Unit_ID": item["Legacy_Unit_ID"], "Sort_Order": item.get("Sort_Order", index)})
-
 
 def add_unit(state, army, data):
     table = state.t(army, "Unit_Profiles.csv")
@@ -506,7 +511,7 @@ def apply_operation(state, op, index):
             delete_simple(table, "Weapon_ID", wid, "Weapon_ID")
             state.t(army, "Weapon_Abilities.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
             state.t(army, "Unit_Weapons.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
-            state.t(army, "Unit_Loadout_Weapons.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
+            state.t(army, "Loadout_Weapons.csv").delete_where(lambda r: r.get("Weapon_ID") == wid)
         return
 
     if entity == "ability":
@@ -520,7 +525,7 @@ def apply_operation(state, op, index):
         else:
             aid = sval(entity_id); delete_simple(table, "Ability_ID", aid, "Ability_ID")
             state.t(army, "Unit_Abilities.csv").delete_where(lambda r: r.get("Ability_ID") == aid)
-            state.t(army, "Unit_Loadout_Abilities.csv").delete_where(lambda r: r.get("Ability_ID") == aid)
+            state.t(army, "Loadout_Abilities.csv").delete_where(lambda r: r.get("Ability_ID") == aid)
             state.t(army, "Effects.csv").delete_where(lambda r: r.get("Source_Type") == "ABILITY" and r.get("Source_ID") == aid)
         return
 
@@ -590,22 +595,23 @@ def apply_operation(state, op, index):
         return
 
     if entity == "loadout_option":
-        if mode == "add": add_loadout(state, army, data)
+        if mode == "add":
+            add_loadout(state, army, data)
         else:
-            key = option_key_from_id(entity_id)
-            table = state.t(army, "Unit_Loadout_Options.csv")
+            loadout_option_id = sval(entity_id)
+            table = state.t(army, "Loadout_Options.csv")
             if mode == "change":
-                row = table.one(**key)
+                row = table.one(Loadout_Option_ID=loadout_option_id)
                 for key_name, col in {"Group_Label":"Group_Label","Option_Name":"Option_Name","Default":"Default","Sort_Order":"Sort_Order"}.items():
                     if key_name in changes:
                         row[col] = bool_csv(changes[key_name]) if key_name == "Default" else sval(changes[key_name])
                 if changes.get("Default") is True or str(changes.get("Default", "")).lower() in {"true","1","yes","y"}:
-                    set_default_exclusive(state, army, key["Unit_ID"], key["Option_Group_ID"], key["Option_ID"])
-                replace_loadout_children(state, army, key, changes)
+                    set_default_exclusive(state, army, row["Unit_ID"], row["Option_Group_ID"], loadout_option_id)
+                replace_loadout_children(state, army, loadout_option_id, changes)
             else:
-                if table.delete_where(lambda r, k=key: all(r.get(c) == v for c, v in k.items())) != 1:
-                    fail(f"missing loadout option {key}")
-                delete_option_children(state, army, key)
+                if table.delete_where(lambda r, lid=loadout_option_id: r.get("Loadout_Option_ID") == lid) != 1:
+                    fail(f"missing Loadout_Option_ID {loadout_option_id!r}")
+                delete_option_children(state, army, loadout_option_id)
         return
 
     if entity == "universal_ability":
@@ -620,7 +626,7 @@ def apply_operation(state, op, index):
             aid = sval(entity_id); delete_simple(table, "Ability_ID", aid, "universal Ability_ID")
             for a in ARMIES:
                 state.t(a, "Unit_Abilities.csv").delete_where(lambda r, x=aid: r.get("Ability_ID") == x)
-                state.t(a, "Unit_Loadout_Abilities.csv").delete_where(lambda r, x=aid: r.get("Ability_ID") == x)
+                state.t(a, "Loadout_Abilities.csv").delete_where(lambda r, x=aid: r.get("Ability_ID") == x)
         return
 
     if entity == "universal_stratagem":
@@ -680,7 +686,7 @@ def validate_state(state):
         enhancements = state.t(army, "Enhancements.csv")
         stratagems = state.t(army, "Stratagems.csv")
         effects = state.t(army, "Effects.csv")
-        options = state.t(army, "Unit_Loadout_Options.csv")
+        options = state.t(army, "Loadout_Options.csv")
         unique(profiles, ["Unit_ID"], f"{army} Unit_ID")
         unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
         unique(weapon_abilities, ["Weapon_Ability_ID"], f"{army} Weapon_Ability_ID")
@@ -691,7 +697,8 @@ def validate_state(state):
         unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
         unique(stratagems, ["Stratagem_ID"], f"{army} Stratagem_ID")
         unique(effects, ["Effect_ID"], f"{army} Effect_ID")
-        unique(options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} loadout option")
+        unique(options, ["Loadout_Option_ID"], f"{army} Loadout_Option_ID")
+        unique(options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} semantic loadout option")
         unit_ids = idset(profiles, "Unit_ID")
         weapon_ids = idset(weapons, "Weapon_ID")
         ability_ids = idset(abilities, "Ability_ID") | universal_abilities
@@ -725,21 +732,35 @@ def validate_state(state):
             if st == "ENHANCEMENT" and sid not in enhancement_ids: fail(f"{army}: effect missing Enhancement_ID source {sid!r}")
             if st not in {"ABILITY", "ENHANCEMENT"}: fail(f"{army}: invalid effect Source_Type {st!r}")
 
-        option_keys = {(r["Unit_ID"], r["Option_Group_ID"], r["Option_ID"]) for r in options.rows}
+        loadout_ids = {r["Loadout_Option_ID"] for r in options.rows}
+        group_options = {}
         for row in options.rows:
-            if row["Unit_ID"] not in unit_ids: fail(f"{army}: loadout missing Unit_ID {row['Unit_ID']!r}")
+            if row["Unit_ID"] not in unit_ids:
+                fail(f"{army}: loadout missing Unit_ID {row['Unit_ID']!r}")
+            group_options.setdefault((row["Unit_ID"], row["Option_Group_ID"]), set()).add(row["Option_ID"])
         child_specs = [
-            ("Unit_Loadout_Weapons.csv", "Weapon_ID", weapon_ids),
-            ("Unit_Loadout_Abilities.csv", "Ability_ID", ability_ids),
-            ("Unit_Loadout_Points.csv", None, None),
-            ("Unit_Loadout_Compatibility.csv", None, None),
-            ("Unit_Loadout_Legacy_Units.csv", None, None),
+            ("Loadout_Weapons.csv", "Weapon_ID", weapon_ids),
+            ("Loadout_Abilities.csv", "Ability_ID", ability_ids),
+            ("Loadout_Points.csv", None, None),
+            ("Loadout_Compatibility.csv", None, None),
+            ("Loadout_Legacy_Units.csv", None, None),
         ]
         for filename, ref_col, valid_ids in child_specs:
             for row in state.t(army, filename).rows:
-                key = (row["Unit_ID"], row["Option_Group_ID"], row["Option_ID"])
-                if key not in option_keys: fail(f"{army}: {filename} references missing loadout option {key!r}")
-                if ref_col and row[ref_col] not in valid_ids: fail(f"{army}: {filename} missing {ref_col} {row[ref_col]!r}")
+                lid = row["Loadout_Option_ID"]
+                if lid not in loadout_ids:
+                    fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
+                if ref_col and row[ref_col] not in valid_ids:
+                    fail(f"{army}: {filename} missing {ref_col} {row[ref_col]!r}")
+        option_by_id = {r["Loadout_Option_ID"]: r for r in options.rows}
+        for row in state.t(army, "Loadout_Compatibility.csv").rows:
+            parent = option_by_id[row["Loadout_Option_ID"]]
+            target = group_options.get((parent["Unit_ID"], row["Required_Group_ID"]), set())
+            if row["Compatible_Option_ID"] not in target:
+                fail(
+                    f"{army}: compatibility for {row['Loadout_Option_ID']!r} references "
+                    f"unknown {row['Required_Group_ID']}/{row['Compatible_Option_ID']}"
+                )
 
     unique(state.t(UNIVERSAL, "Universal_Abilities.csv"), ["Ability_ID"], "universal Ability_ID")
     unique(state.t(UNIVERSAL, "Universal_Stratagems.csv"), ["Item_ID"], "universal Item_ID")

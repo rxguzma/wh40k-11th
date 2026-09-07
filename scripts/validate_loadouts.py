@@ -7,18 +7,65 @@ ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 TRUE_VALUES = {"true", "1", "yes", "y"}
 
+CANON = {
+    "Loadout_Options.csv": [
+        "Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID",
+        "Option_Name", "Default", "Sort_Order",
+    ],
+    "Loadout_Weapons.csv": ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
+    "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
+    "Loadout_Points.csv": ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
+    "Loadout_Compatibility.csv": [
+        "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
+    ],
+    "Loadout_Legacy_Units.csv": ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"],
+}
+COMPAT = {
+    "Unit_Loadout_Options.csv": [
+        "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order",
+    ],
+    "Unit_Loadout_Weapons.csv": [
+        "Unit_ID", "Option_Group_ID", "Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order",
+    ],
+    "Unit_Loadout_Abilities.csv": ["Unit_ID", "Option_Group_ID", "Option_ID", "Ability_ID", "Sort_Order"],
+    "Unit_Loadout_Points.csv": [
+        "Unit_ID", "Option_Group_ID", "Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order",
+    ],
+    "Unit_Loadout_Compatibility.csv": [
+        "Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID",
+        "Compatible_Option_ID", "Rule_Order", "Option_Order",
+    ],
+    "Unit_Loadout_Legacy_Units.csv": [
+        "Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order",
+    ],
+}
+
 
 def fail(message):
     raise SystemExit(message)
 
 
-def read_dicts(path):
+def read_dicts(path, expected_header=None):
     with path.open(encoding="utf-8-sig", newline="") as handle:
-        return [row for row in csv.DictReader(handle) if any((value or "").strip() for value in row.values())]
+        reader = csv.DictReader(handle)
+        if expected_header is not None and reader.fieldnames != expected_header:
+            fail(
+                f"{path.relative_to(ROOT)} header mismatch\n"
+                f"expected: {expected_header!r}\nactual:   {reader.fieldnames!r}"
+            )
+        return [row for row in reader if any((value or "").strip() for value in row.values())]
+
+
+def clean(value):
+    return (value or "").strip()
 
 
 def split_ids(value):
     return [part.strip() for part in (value or "").split(",") if part.strip()]
+
+
+def actual_tuples(rows, columns):
+    return [tuple(clean(row.get(column)) for column in columns) for row in rows]
 
 
 def legacy_expected(rows):
@@ -29,13 +76,12 @@ def legacy_expected(rows):
     compatibility = []
     legacy_units = []
     for row in rows:
-        unit_id = (row.get("Unit_ID") or "").strip()
-        group_id = (row.get("Option_Group_ID") or "").strip()
-        option_id = (row.get("Option_ID") or "").strip()
+        unit_id = clean(row.get("Unit_ID"))
+        group_id = clean(row.get("Option_Group_ID"))
+        option_id = clean(row.get("Option_ID"))
         options.append((
-            unit_id, group_id, (row.get("Group_Label") or "").strip(), option_id,
-            (row.get("Option_Name") or "").strip(), (row.get("Default") or "").strip(),
-            (row.get("Sort_Order") or "").strip(),
+            unit_id, group_id, clean(row.get("Group_Label")), option_id,
+            clean(row.get("Option_Name")), clean(row.get("Default")), clean(row.get("Sort_Order")),
         ))
         for index, weapon_id in enumerate(split_ids(row.get("Weapon_IDs")), start=1):
             weapons.append((unit_id, group_id, option_id, weapon_id, "SELECTED", str(index)))
@@ -44,8 +90,8 @@ def legacy_expected(rows):
         for index, ability_id in enumerate(split_ids(row.get("Ability_IDs")), start=1):
             abilities.append((unit_id, group_id, option_id, ability_id, str(index)))
         for index in range(1, 3):
-            label = (row.get(f"Points_Label_{index}") or "").strip()
-            cost = (row.get(f"Points_Cost_{index}") or "").strip()
+            label = clean(row.get(f"Points_Label_{index}"))
+            cost = clean(row.get(f"Points_Cost_{index}"))
             if label or cost:
                 points.append((unit_id, group_id, option_id, f"point_{index}", label, cost, str(index)))
         for rule_order, raw_rule in enumerate((row.get("Compatible_With") or "").split(";"), start=1):
@@ -68,99 +114,149 @@ def legacy_expected(rows):
     return options, weapons, abilities, points, compatibility, legacy_units
 
 
-def actual_tuples(rows, columns):
-    return [tuple((row.get(column) or "").strip() for column in columns) for row in rows]
+def expected_compat_from_canonical(canonical):
+    options, weapons, abilities, points, compatibility, legacy_units = canonical
+    by_id = {clean(row["Loadout_Option_ID"]): row for row in options}
+
+    def parent(row):
+        p = by_id[clean(row["Loadout_Option_ID"])]
+        return p["Unit_ID"], p["Option_Group_ID"], p["Option_ID"]
+
+    return (
+        [
+            (
+                row["Unit_ID"], row["Option_Group_ID"], row["Group_Label"], row["Option_ID"],
+                row["Option_Name"], row["Default"], row["Sort_Order"],
+            )
+            for row in options
+        ],
+        [
+            (*parent(row), row["Weapon_ID"], row["Weapon_Role"], row["Sort_Order"])
+            for row in weapons
+        ],
+        [
+            (*parent(row), row["Ability_ID"], row["Sort_Order"])
+            for row in abilities
+        ],
+        [
+            (*parent(row), row["Point_Option_ID"], row["Label"], row["Cost"], row["Sort_Order"])
+            for row in points
+        ],
+        [
+            (*parent(row), row["Required_Group_ID"], row["Compatible_Option_ID"], row["Rule_Order"], row["Option_Order"])
+            for row in compatibility
+        ],
+        [
+            (*parent(row), row["Legacy_Unit_ID"], row["Sort_Order"])
+            for row in legacy_units
+        ],
+    )
 
 
 def validate_army(army):
     directory = ROOT / "data" / army
-    legacy = read_dicts(directory / "Unit_Weapon_Options.csv")
-    options = read_dicts(directory / "Unit_Loadout_Options.csv")
-    weapons = read_dicts(directory / "Unit_Loadout_Weapons.csv")
-    abilities = read_dicts(directory / "Unit_Loadout_Abilities.csv")
-    points = read_dicts(directory / "Unit_Loadout_Points.csv")
-    compatibility = read_dicts(directory / "Unit_Loadout_Compatibility.csv")
-    legacy_units = read_dicts(directory / "Unit_Loadout_Legacy_Units.csv")
+    canonical = tuple(read_dicts(directory / filename, header) for filename, header in CANON.items())
+    compat_rows = tuple(read_dicts(directory / filename, header) for filename, header in COMPAT.items())
+    options, weapons, abilities, points, compatibility, legacy_units = canonical
+    compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility, compat_legacy_units = compat_rows
 
-    expected = legacy_expected(legacy)
-    actual = (
-        actual_tuples(options, ["Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order"]),
-        actual_tuples(weapons, ["Unit_ID", "Option_Group_ID", "Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"]),
-        actual_tuples(abilities, ["Unit_ID", "Option_Group_ID", "Option_ID", "Ability_ID", "Sort_Order"]),
-        actual_tuples(points, ["Unit_ID", "Option_Group_ID", "Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"]),
-        actual_tuples(compatibility, ["Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"]),
-        actual_tuples(legacy_units, ["Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order"]),
+    # Canonical IDs and semantic identity.
+    by_id = {}
+    semantic = set()
+    groups = defaultdict(set)
+    defaults = defaultdict(int)
+    for row in options:
+        lid = clean(row["Loadout_Option_ID"])
+        unit_id = clean(row["Unit_ID"])
+        group_id = clean(row["Option_Group_ID"])
+        option_id = clean(row["Option_ID"])
+        key = (unit_id, group_id, option_id)
+        if not lid:
+            fail(f"{army}: blank Loadout_Option_ID")
+        if lid in by_id:
+            fail(f"{army}: duplicate Loadout_Option_ID {lid!r}")
+        if key in semantic:
+            fail(f"{army}: duplicate semantic loadout option {key!r}")
+        by_id[lid] = row
+        semantic.add(key)
+        groups[(unit_id, group_id)].add(option_id)
+        if clean(row["Default"]).lower() in TRUE_VALUES:
+            defaults[(unit_id, group_id)] += 1
+    for group_key in groups:
+        if defaults[group_key] != 1:
+            fail(f"{army}: {group_key!r} must have exactly one default option")
+
+    for filename, rows in zip(list(CANON)[1:], canonical[1:]):
+        seen = set()
+        for row in rows:
+            lid = clean(row["Loadout_Option_ID"])
+            if lid not in by_id:
+                fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
+            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv", "Loadout_Legacy_Units.csv"}:
+                natural = tuple(clean(row[c]) for c in CANON[filename])
+                if natural in seen:
+                    fail(f"{army}: duplicate row in {filename}: {natural!r}")
+                seen.add(natural)
+
+    # Canonical -> current Unit_Loadout_* compatibility must be exact.
+    expected_compat = expected_compat_from_canonical(canonical)
+    actual_compat = tuple(
+        actual_tuples(rows, header)
+        for rows, header in zip(compat_rows, COMPAT.values())
     )
     labels = ("options", "weapons", "abilities", "points", "compatibility", "legacy units")
-    for label, expected_rows, actual_rows in zip(labels, expected, actual):
+    for label, expected_rows, actual_rows in zip(labels, expected_compat, actual_compat):
         if expected_rows != actual_rows:
-            fail(f"{army}: normalized loadout {label} do not exactly match legacy Unit_Weapon_Options.csv")
+            fail(f"{army}: generated Unit_Loadout_* {label} do not exactly match canonical Loadout_* data")
 
-    unit_ids = {(row.get("Unit_ID") or "").strip() for row in read_dicts(directory / "Units.csv")}
-    weapon_ids = {(row.get("Weapon_ID") or "").strip() for row in read_dicts(directory / "Weapon_Stats.csv")}
-    ability_ids = {(row.get("Ability_ID") or "").strip() for row in read_dicts(directory / "Abilities.csv")}
+    # Current Unit_Weapon_Options compatibility must still expand to the current Unit_Loadout_* tables.
+    legacy = read_dicts(directory / "Unit_Weapon_Options.csv")
+    legacy_rows = legacy_expected(legacy)
+    for label, expected_rows, actual_rows in zip(labels, legacy_rows, actual_compat):
+        if expected_rows != actual_rows:
+            fail(f"{army}: Unit_Weapon_Options {label} do not exactly match generated Unit_Loadout_* data")
+
+    unit_ids = {clean(row.get("Unit_ID")) for row in read_dicts(directory / "Unit_Profiles.csv")}
+    weapon_ids = {clean(row.get("Weapon_ID")) for row in read_dicts(directory / "Weapon_Stats.csv")}
+    ability_ids = {clean(row.get("Ability_ID")) for row in read_dicts(directory / "Abilities.csv")}
     universal_ability_ids = {
-        (row.get("Ability_ID") or "").strip()
+        clean(row.get("Ability_ID"))
         for row in read_dicts(ROOT / "data" / "universal" / "Universal_Abilities.csv")
     }
     all_ability_ids = ability_ids | universal_ability_ids
 
-    option_keys = set()
-    group_options = defaultdict(set)
-    defaults = defaultdict(int)
-    for row in options:
-        unit_id = (row.get("Unit_ID") or "").strip()
-        group_id = (row.get("Option_Group_ID") or "").strip()
-        option_id = (row.get("Option_ID") or "").strip()
-        key = (unit_id, group_id, option_id)
-        if unit_id not in unit_ids:
-            fail(f"{army}: loadout option {key!r} references missing Unit_ID")
-        if key in option_keys:
-            fail(f"{army}: duplicate normalized loadout option {key!r}")
-        option_keys.add(key)
-        group_options[(unit_id, group_id)].add(option_id)
-        if (row.get("Default") or "").strip().lower() in TRUE_VALUES:
-            defaults[(unit_id, group_id)] += 1
-    for group_key in group_options:
-        if defaults[group_key] != 1:
-            fail(f"{army}: {group_key!r} must have exactly one default")
+    for lid, row in by_id.items():
+        if clean(row["Unit_ID"]) not in unit_ids:
+            fail(f"{army}: loadout {lid!r} references missing Unit_ID {row['Unit_ID']!r}")
 
     for row in weapons:
-        key = ((row.get("Unit_ID") or "").strip(), (row.get("Option_Group_ID") or "").strip(), (row.get("Option_ID") or "").strip())
-        weapon_id = (row.get("Weapon_ID") or "").strip()
-        role = (row.get("Weapon_Role") or "").strip()
-        if key not in option_keys:
-            fail(f"{army}: loadout weapon references missing option {key!r}")
+        lid = clean(row["Loadout_Option_ID"])
+        weapon_id = clean(row["Weapon_ID"])
+        role = clean(row["Weapon_Role"])
         if weapon_id not in weapon_ids:
-            fail(f"{army}: loadout option {key!r} references missing Weapon_ID {weapon_id!r}")
+            fail(f"{army}: loadout {lid!r} references missing Weapon_ID {weapon_id!r}")
         if role not in {"SELECTED", "PRESERVE"}:
-            fail(f"{army}: loadout option {key!r} has invalid Weapon_Role {role!r}")
+            fail(f"{army}: loadout {lid!r} has invalid Weapon_Role {role!r}")
 
     for row in abilities:
-        key = ((row.get("Unit_ID") or "").strip(), (row.get("Option_Group_ID") or "").strip(), (row.get("Option_ID") or "").strip())
-        ability_id = (row.get("Ability_ID") or "").strip()
-        if key not in option_keys:
-            fail(f"{army}: loadout ability references missing option {key!r}")
+        lid = clean(row["Loadout_Option_ID"])
+        ability_id = clean(row["Ability_ID"])
         if ability_id not in all_ability_ids:
-            fail(f"{army}: loadout option {key!r} references missing Ability_ID {ability_id!r}")
-
-    for row in points:
-        key = ((row.get("Unit_ID") or "").strip(), (row.get("Option_Group_ID") or "").strip(), (row.get("Option_ID") or "").strip())
-        if key not in option_keys:
-            fail(f"{army}: loadout points reference missing option {key!r}")
+            fail(f"{army}: loadout {lid!r} references missing Ability_ID {ability_id!r}")
 
     for row in compatibility:
-        unit_id = (row.get("Unit_ID") or "").strip()
-        key = (unit_id, (row.get("Option_Group_ID") or "").strip(), (row.get("Option_ID") or "").strip())
-        required_group = (row.get("Required_Group_ID") or "").strip()
-        compatible_option = (row.get("Compatible_Option_ID") or "").strip()
-        if key not in option_keys:
-            fail(f"{army}: compatibility references missing option {key!r}")
-        if compatible_option not in group_options.get((unit_id, required_group), set()):
-            fail(f"{army}: compatibility for {key!r} references unknown {required_group}/{compatible_option}")
+        lid = clean(row["Loadout_Option_ID"])
+        parent = by_id[lid]
+        required_group = clean(row["Required_Group_ID"])
+        compatible_option = clean(row["Compatible_Option_ID"])
+        if compatible_option not in groups.get((clean(parent["Unit_ID"]), required_group), set()):
+            fail(
+                f"{army}: compatibility for {lid!r} references unknown "
+                f"{required_group}/{compatible_option}"
+            )
 
     print(
-        f"{army}: loadouts OK — {len(options)} options, {len(weapons)} weapons, "
+        f"{army}: loadouts OK — {len(options)} Loadout_Option_IDs, {len(weapons)} weapons, "
         f"{len(abilities)} abilities, {len(points)} points, {len(compatibility)} compatibility rows, "
         f"{len(legacy_units)} legacy aliases"
     )
@@ -169,7 +265,7 @@ def validate_army(army):
 def main():
     for army in ARMIES:
         validate_army(army)
-    print("loadout validation: OK")
+    print("canonical Loadout_Option_ID validation: OK")
 
 
 if __name__ == "__main__":
