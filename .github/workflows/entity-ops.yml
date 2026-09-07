@@ -2,7 +2,7 @@ name: Entity Ops
 
 # LLM CONTRACT
 # Entity CRUD only: edit the fallback JSON between the markers below.
-# Contract: schemas/entity-ops.schema.json
+# Contract: schemas/entity-ops.schema.json (version 1)
 # Operations: add | change | delete
 # Generated compatibility files/columns are never direct targets.
 
