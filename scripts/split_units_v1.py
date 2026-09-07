@@ -107,11 +107,6 @@ def migrate_army(army):
             cost = (unit.get(f"Points_Cost_{index}") or "").strip()
             if not label and not cost:
                 continue
-            if label and not cost:
-                fail(
-                    f"{army}: points label without matching cost for {unit_id} slot {index} "
-                    f"at Units.csv line {source_line}: label={label!r}"
-                )
             option_id = f"point_{index}"
             key = (unit_id, option_id)
             if key in point_keys:
