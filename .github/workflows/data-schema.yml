@@ -15,6 +15,7 @@ on:
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
+      - 'scripts/consolidate_tyrant_guard.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
     paths:
@@ -28,6 +29,7 @@ on:
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
+      - 'scripts/consolidate_tyrant_guard.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
     workflows: ['Patch CSV']
@@ -44,6 +46,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
+
+      - name: Consolidate Tyrant Guard
+        run: python3 scripts/consolidate_tyrant_guard.py
 
       - name: Sync legacy detachment compatibility table
         run: python3 scripts/split_detachments_v2.py
