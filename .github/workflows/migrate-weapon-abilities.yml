@@ -1,5 +1,6 @@
 name: Migrate Weapon Abilities
 # Preserve exact legacy ability separators during migration.
+# Permanent workflow edits are applied separately because Actions cannot update workflow files.
 
 on:
   push:
@@ -69,11 +70,14 @@ jobs:
           ENTITY_OPS_JSON: '{"version":1,"operations":[]}'
         run: python3 scripts/entity_ops.py
 
+      - name: Restore workflow files for separate update
+        run: git restore .github/workflows/data-schema.yml .github/workflows/entity-ops.yml
+
       - name: Commit migration
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data scripts/entity_ops.py schemas/entity-ops.schema.json .github/workflows/data-schema.yml .github/workflows/entity-ops.yml
+          git add -- data scripts/entity_ops.py schemas/entity-ops.schema.json
           if git diff --cached --quiet; then
             echo "Weapon ability migration already current"
             exit 0
