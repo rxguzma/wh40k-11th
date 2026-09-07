@@ -84,16 +84,11 @@ EMERGENCY_COMBAT_EMBARKATION,Emergency Combat Embarkation,"In target of a CHARGE
 ENMITY_FOR_THE_UNWORTHY,Enmity for the Unworthy,"IF being LEAD, +1 TO HIT vs CHARACTERS","Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",,
 EVADE_AND_SURVIVE,Evade and Survive,"Enemy ends a move within 8"": Normal move up to 6"".","In your opponent’s Movement phase, if an enemy unit ends a move within 8"" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to 6"".",,
 EXECUTIONER,Executioner,If Target below half strength +1 TO HIT.,"Each time this model makes an attack that targets a unit that is Below Half-strength, add 1 to the Hit roll.",,
-NEW_EXHORTATION_OF_RAGE,Exhortation of Rage,"Fight: engaged enemy suffers D3 mortal wounds on 4-5, or 3 mortal wounds on 6.","Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.",,
+EXHORTATION_OF_RAGE,Exhortation of Rage,"Fight: engaged enemy suffers D3 mortal wounds on 4-5, or 3 mortal wounds on 6.","Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.",,
 FEARSOME_ASSAULT,Fearsome Assault,"In Engagement, Enemy must take LD test -1","At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test, subtracting 1 from that test.",,
 FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE,"Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll.",,
 FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First.,"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",,
-FINEST_HOUR,Finest Hour,"Once per battle, start of the Fight, +3 to Attacks in - and get DEVASTATING WOUNDS.
-
-DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.","Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of - weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability.
-
-DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.",,
-NEW_FINEST_HOUR,Finest Hour (New),Once per battle: Add +3 Attacks and DEVASTATING WOUNDS in melee,"Finest Hour (Once per battle): In the Fight phase, when this unit is selected to fight, this model’s melee weapons have +3 Attacks and [DEVASTATING WOUNDS] until the end of the phase.",,
+FINEST_HOUR,Finest Hour,Once per battle: Add +3 Attacks and DEVASTATING WOUNDS in melee,"Finest Hour (Once per battle): In the Fight phase, when this unit is selected to fight, this model’s melee weapons have +3 Attacks and [DEVASTATING WOUNDS] until the end of the phase.",,
 FOR_THE_CHAPTER,For the Chapter!,"Each time a model in this unit is destroyed, roll one D6: on a 3+, it can shoot again before it is removed. For these new attacks, no Hazardous tests are needed.","Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",,
 FORGEFATHER,Forgefather,Torrent/Melta vs selected target: RE-ROLL ALL WOUNDS,"In your Shooting phase, select one enemy unit within 24"" of and visible to this model. 
 
@@ -142,18 +137,17 @@ KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
 +1 TO HIT if below Strength
 +1 TO WOUND if HALF Strength","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",,
 LANCE,LANCE,Add +1 TO WOUND if the bearer charged this turn.,"Each time an attack is made with this weapon, if the bearer made a Charge move this turn, add 1 to that attack’s Wound roll.",,
-NEW_LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield (New),"Can Lead: Most INFANTRY like
+LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Bladeguard Veteran Squad; Company Heroes; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,
-NEW_LEADER_CHAPLAIN_WITH_JUMP_PACK,Leader: Chaplain with Jump Pack (New),"Can Lead: JUMP PACK
+LEADER_CHAPLAIN_WITH_JUMP_PACK,Leader: Chaplain with Jump Pack,"Can Lead: JUMP PACK
 Jump Intercessors, Vanguard Vets",Leader: This model can be attached to the following units: Assault Intercessors with Jump Packs; Vanguard Veteran Squad with Jump Packs.,,
-NEW_LEADER_LIBRARIAN,Leader: Librarian (New),"Can Lead: Most INFANTRY like
+LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,
 LEADER_SUBODEN_KHAN,Leader: Suboden Khan,"Can Lead: MOUNTED
 Outriders",LEADER: OUTRIDER SQUAD,,
-LITANY_OF_HATE,Litany of Hate,"While Leading, Melee +1 TO WOUND.","While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll.",,
-NEW_LITANY_OF_HATE,Litany of Hate (New),Add +1 to Wound for this unit’s melee weapons,This unit’s melee weapons have +1 to Wound rolls.,,
+LITANY_OF_HATE,Litany of Hate,Add +1 to Wound for this unit’s melee weapons,This unit’s melee weapons have +1 to Wound rolls.,,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away.","Cannot be shot at if 12"" away.",,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,
 LORD_OF_THE_PYROCLASTS,Lord of the Pyroclasts,HALF OC in Engagement,"While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit.",,
@@ -173,18 +167,17 @@ MATHAMMER_DEATHWING_KNIGHTS,Mathammer (Deathwing Knights),"With a Chaplain, afte
 - MEQ: 4 Damage.
 
 Great weapon of the Unforgiven is better vs Invuls as it bypasses the Saves.",,
-NEW_MENTAL_FORTRESS,Mental Fortress (New),This unit has a 4+ invulnerable save,This unit has a 4+ invulnerable save.,,
+MENTAL_FORTRESS,Mental Fortress,This unit has a 4+ invulnerable save,This unit has a 4+ invulnerable save.,,
 MENTAL_FORTRESS_PSYCHIC,Mental Fortress (Psychic),"If LEADING, unit 4++","While this model is leading a unit, models in that unit have a 4+ invulnerable save.",,
 METEORIC_DESCENT,Meteoric Descent,"Deep Strike within 6"" horizontally. Cannot Charge.","When this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",,
 MULTI_SPECTRUM_ARRAY,Multi-spectrum Array,+1 TO HIT for Army,"In Shooting, after this unit has shot, select one enemy that was hit. Until the end of the phase, friendly adds +1 to the Hit roll.",,
 NARTHECIUM_APOTHECARY,Narthecium (Apothecary),Bring back model,"Narthecium (Ravenwing Command - Apothecary): While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",,
-OBJECTIVE_SECURED,Objective Secured,Sticky Objectives.,"If you control an objective marker at the end of your Command phase and this unit is within range of that objective marker, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",,
-NEW_OBJECTIVE_SECURED,Objective Secured,Sticky Objectives,"At the end of your Command phase, if this unit controls an objective, that objective is secured by your army.",,
+OBJECTIVE_SECURED,Objective Secured,Sticky Objectives,"At the end of your Command phase, if this unit controls an objective, that objective is secured by your army.",,
 OMNI_SCRAMBLERS,Omni-scramblers,"Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12"" of this unit.","Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12"" of this unit.",,
 ONE SHOT,ONE SHOT,Can only be shot once,This weapon can only be shot once per battle.,,
 OUTFLANK,Outflank,"If this model is not leading a unit, it can be placed into Strategic Reserves.","During the Declare Battle Formations step, if this model is not leading a unit, it can be placed into Strategic Reserves.",,
 OUTRIDER_ESCORT,Outrider Escort,"Shoot back within 6""","Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES MOUNTED unit within 6"" of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,
-OVERLAPPING_DETONATIONS,Overlapping Detonations,Heavy bolters gain BLAST vs non-MONSTER / VEHICLE ,"In your Shooting phase, when this unit is selected to shoot, you can select one non-MONSTER/VEHICLE enemy unit visible to it. While making attacks, this unit’s heavy bolters that targeted that selected unit have [BLAST].",,
+OVERLAPPING_DETONATIONS,Overlapping Detonations,Heavy bolters gain BLAST 1 against  non-MONSTER / VEHICLE,"In your Shooting phase, when this unit is selected to shoot, select one visible non-MONSTER/VEHICLE enemy unit. While making attacks, this unit’s heavy bolters that target that selected unit have [BLAST 1].",,
 PRIMARCH_OF_THE_FIRST_LEGION,Primarch of the First Legion,"Primarch of the First Legion (choose TWO): 
 
 - Mist-wreathed Shadow Realms: Go back to Reserves. 
@@ -200,9 +193,8 @@ PRIMARCH_OF_THE_FIRST_LEGION,Primarch of the First Legion,"Primarch of the First
 - No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds.",,
 PRIORITY_OBJECTIVE_IDENTIFIED,Priority Objective Identified,"Select an Objective, while on the battlefield, RE-ROLL 1S TO WOUND.","At the start of the first battle round, if your army includes one or more models with this ability, you can select one objective marker on the battlefield. Until the end of the battle, while one or more models with this ability are on the battlefield, each time a friendly ADEPTUS ASTARTES model makes an attack that targets an enemy unit that is within range of that objective marker, re-roll a Wound roll of 1.",,
 PSYCHIC,PSYCHIC,Wounds caused are Psychic Attacks,"Weapons and abilities tagged Psychic are used by PSYKERS. If a Psychic weapon or ability causes wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,
-PSYCHIC_HOOD,Psychic Hood,FNP 4+ vs Psychic attacks.,"While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.",,
-NEW_PSYCHIC_HOOD,Psychic Hood (New),Feel No Pain 4+ against psychic attacks and abilities,This unit has Feel No Pain 4+ against psychic attacks and abilities.,,
-PURGATION_RUN,Purgation Run,"After shooting, make a normal move up to D6""; cannot charge","In your Shooting phase, after this unit has shot, it can make a normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,
+PSYCHIC_HOOD,Psychic Hood,Feel No Pain 4+ against psychic attacks and abilities,This unit has Feel No Pain 4+ against psychic attacks and abilities.,,
+PURGATION_RUN,Purgation Run,"After shooting: move up to D6""; cannot charge","In your Shooting phase, after this unit has shot, it can make a Normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,
 RAMPART,Rampart,"Once, 2++","Once per battle, at the start of any phase, this model can use this ability. If it does, until the end of the phase, this model has a 2+ invulnerable save.",,
 RAVENWING_COMMAND_SQUAD_WARGEAR,Ravenwing Command Squad - Wargear,"Champion, Apothecary & Ancient x3 Plasma Talons. 
 Enhancements, if any, added to Champion.","UNIT COMPOSITION
@@ -213,11 +205,9 @@ The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-craft
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,
 RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds,"While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds.",,
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage,"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",,
-NEW_RELIC_BANNER,Relic Banner (New),Add +1 Objective Control,This unit has +1 Objective Control.,,
-RELIC_SHIELD,Relic Shield,"Added 1 Wound to profile, already included",The bearer has a Wounds characteristic of 6.,,
-NEW_RELIC_SHIELD,Relic Shield (New),"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,,
-RITES_OF_BATTLE,Rites of Battle,"Once per battle round, -1 CP cost","Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",,
-NEW_RITES_OF_BATTLE,Rites of Battle (New),Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,
+RELIC_BANNER,Relic Banner,Add +1 Objective Control,This unit has +1 Objective Control.,,
+RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,,
+RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,
 RITES_OF_TEMPERING,Rites of Tempering,Leading unit gets Feel No Pain 5+,"While Iron Father Feirros is leading a unit, models in that unit have Feel No Pain 5+.",,
 ROTATING_DEATH,Rotating Death,Vs. INFANTRY. Gatling Cannon SUSTAINED HITS 2,"This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting INFANTRY units.
 
@@ -253,7 +243,7 @@ Cannot Charge","In your Shooting phase, after this model’s unit has shot, if i
 STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot.,Fallback and Shoot,,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
 Max 6 per attacking unit. Melee only.","Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,
-NEW_SUPPORT_ANCIENT,Support: Ancient (New),"Can Support: Most INFANTRY like
+SUPPORT_ANCIENT,Support: Ancient,"Can Support: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Support: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,
 SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn.,"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
@@ -299,13 +289,13 @@ TRANSPORT_LAND_RAIDER_REDEEMER,Transport (Land Raider Redeemer),"14 infantry
 TRANSPORT_REPULSOR_EXECUTIONER,Transport (Repulsor Executioner),7 INFANTRY,"This model has a transport capacity of 7 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models.",,
 TRANSPORT_REPULSOR,Transport (Repulsor),14 INFANTRY,"This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models.",,
 ULTRAMARINES_HONOUR_GUARD,Ultramarines Honour Guard,"If being led, -1 To Wound","While a CAPTAIN or CHAPTER MASTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.",,
-NEW_UNBREAKABLE_RESOLVE,Unbreakable Resolve (New),Feel No Pain 4+ near an objective or battlefield centre,"While this model is within range of an objective or within 6"" of the centre of the battlefield, it has Feel No Pain 4+.",,
+UNBREAKABLE_RESOLVE,Unbreakable Resolve,Feel No Pain 4+ near an objective or battlefield centre,"While this model is within range of an objective or within 6"" of the centre of the battlefield, it has Feel No Pain 4+.",,
 UNORTHODOX_STRATEGIST,Unorthodox Strategist,"Enemy within 12"" CP cost +1","Unorthodox Strategist (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem).",,
 UNPARALLELED_TACTICIAN,UNPARALLELED TACTICIAN,Every Battle Round: Free Into Darkness.,"UNPARALLELED TACTICIAN
 Once per battle round, if an AETHON SHAAN model from your army is on the battlefield, you can use the Into Darkness Stratagem for 0CP.",,
 UNTO_THE_ANVIL,Unto the Anvil,Leading = RE-ROLL ALL WOUNDS in MELEE,"While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll.",,
 UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,"While on controlled objective, +1 save vs Damage 1 attacks","While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.",,
-VANGUARD_ASSAULT,Vanguard Assault,CHARGE + LETHAL HITS,"Each time this unit ends a Charge move, until the end of the turn, - weapons equipped by models in this unit have the [LETHAL HITS] ability.",,
+VANGUARD_ASSAULT,Vanguard Assault,Charge: melee weapons gain LETHAL HITS,"In a turn in which this unit made a Charge move, this unit’s melee weapons have [LETHAL HITS].",,
 VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,
 WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,
@@ -317,13 +307,10 @@ Each time a model in a DARNATH LYSANDER unit from your army makes an attack that
 WRATH_OF_THE_FIRST_KHAN,Wrath Of The First Khan,"Spearhead Detachment Rule: If SUBODEN KHAN destroyed an enemy unit in the Fight phase and is not in Engagement Range, it can make a Normal move up to 6"".","WRATH OF THE FIRST KHAN: At the end of the Fight phase, if a SUBODEN KHAN unit from your army destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, that unit can make a Normal move of up to 6"".
 
 Note: Spearhead Detachment Rule. ",,
-NEW_HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit,"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",,
-NEW_INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,1 Sergeant and 9 Intercessors; includes chainsword and grenade launcher,Unit Composition: 1 Intercessor Sergeant and 9 Intercessors.   Every model is equipped with: 1 bolt pistol; 1 bolt rifle; 1 close-combat weapon.   The Intercessor Sergeant is equipped with: 1 chainsword.   1 Intercessor is equipped with: 1 grenade launcher.,,
-NEW_VANGUARD_ASSAULT,Vanguard Assault (New),Charge: melee weapons gain LETHAL HITS,"In a turn in which this unit made a Charge move, this unit’s melee weapons have [LETHAL HITS].",,
-NEW_VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS_LOADOUT,Unit Composition: Vanguard Veteran Squad with Jump Packs (New),5 models; 4 heavy bolt pistols and 1 plasma pistol,Unit Composition: 1 Vanguard Veteran Sergeant and 4 Vanguard Veterans. The Vanguard Veteran Sergeant and 3 Vanguard Veterans are each equipped with: 1 heavy bolt pistol; 1 master-crafted power weapon. 1 Vanguard Veteran is equipped with: 1 plasma pistol; 1 master-crafted power weapon.,,
-NEW_OVERLAPPING_DETONATIONS,Overlapping Detonations,Heavy bolters gain BLAST 1 against  non-MONSTER / VEHICLE,"In your Shooting phase, when this unit is selected to shoot, select one visible non-MONSTER/VEHICLE enemy unit. While making attacks, this unit’s heavy bolters that target that selected unit have [BLAST 1].",,
-NEW_PURGATION_RUN,Purgation Run (New),"After shooting: move up to D6""; cannot charge","In your Shooting phase, after this unit has shot, it can make a Normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,
-NEW_LAND_SPEEDER_WARGEAR_OPTIONS,Wargear Options: Land Speeder (New),May replace onslaught gatling cannon with heavy flamer,Wargear Options: This model can have its 1 onslaught gatling cannon replaced with 1 heavy flamer.,,
+HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit,"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",,
+INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,1 Sergeant and 9 Intercessors; includes chainsword and grenade launcher,Unit Composition: 1 Intercessor Sergeant and 9 Intercessors.   Every model is equipped with: 1 bolt pistol; 1 bolt rifle; 1 close-combat weapon.   The Intercessor Sergeant is equipped with: 1 chainsword.   1 Intercessor is equipped with: 1 grenade launcher.,,
+VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS_LOADOUT,Unit Composition: Vanguard Veteran Squad with Jump Packs,5 models; 4 heavy bolt pistols and 1 plasma pistol,Unit Composition: 1 Vanguard Veteran Sergeant and 4 Vanguard Veterans. The Vanguard Veteran Sergeant and 3 Vanguard Veterans are each equipped with: 1 heavy bolt pistol; 1 master-crafted power weapon. 1 Vanguard Veteran is equipped with: 1 plasma pistol; 1 master-crafted power weapon.,,
+LAND_SPEEDER_WARGEAR_OPTIONS,Wargear Options: Land Speeder,May replace onslaught gatling cannon with heavy flamer,Wargear Options: This model can have its 1 onslaught gatling cannon replaced with 1 heavy flamer.,,
 LEADER_ASMODAI,Leader: Asmodai,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,
@@ -343,9 +330,6 @@ LEADER_RAVENWING_COMMAND_SQUAD,Leader: Ravenwing Command Squad,"Can Lead: MOUNTE
 Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,
 LEADER_SAMMAEL,Leader: Sammael,"Can Lead: MOUNTED
 Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,
-SUPPORT_ANCIENT,Support: Ancient,"Can Support: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","SUPPORT: ASSAULT INTERCESSOR SQUAD, CRUSADER SQUAD, DEATHWATCH VETERANS, DECIMUS KILL TEAM, DESOLATION SQUAD, DEVASTATOR SQUAD, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,
 LEADER_ADRAX_AGATONE,Leader: Adrax Agatone,"Can Lead: Most INFANTRY like
 Intercessors, Bladeguard Vets
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, COMPANY HEROES, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,
@@ -394,16 +378,10 @@ Terminators, Assault Terminators
 Deathwing Knights","LEADER: TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, DEATHWATCH TERMINATOR SQUAD",,
 LEADER_CHAPLAIN_ON_BIKE,Leader: Chaplain On Bike,"Can Lead: MOUNTED
 Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,
-LEADER_CHAPLAIN_WITH_JUMP_PACK,Leader: Chaplain with Jump Pack,"Can Lead: JUMP PACK
-Jump Intercessors, Vanguard Vets
-Death Company","LEADER: ASSAULT INTERCESSORS WITH JUMP PACKS, VANGUARD VETERAN SQUAD WITH JUMP PACKS, DEATH COMPANY MARINES WITH JUMP PACKS, TALONSTRIKE KILL TEAM",,
 LEADER_JUDICIAR,Leader: Judiciar,"Can Lead: Most INFANTRY like
 Intercessors, Bladeguard Vets
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD, VANGUARD VETERAN SQUAD, ASSAULT SQUAD, CRUSADER SQUAD, SWORD BRETHREN SQUAD, INNER CIRCLE COMPANIONS, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, SKYCLAWS, WOLF GUARD",,
 MELEE_INVULNERABLE_SAVE_4,Invulnerable Save (Melee),MELEE: 4++,This model has a 4+ invulnerable save against melee attacks.,,
-LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, DEATHWATCH VETERANS, DECIMUS KILL TEAM, DESOLATION SQUAD, DEVASTATOR SQUAD, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,
 LEADER_LIBRARIAN_IN_PHOBOS_ARMOUR,Leader: Librarian in Phobos Armour,"Can Lead: PHOBOS
 Infiltrators, Incursors, Reivers
 Eliminators, Scouts","LEADER: ELIMINATOR SQUAD, INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD, SCOUT SQUAD, SPECTRUS KILL TEAM",,

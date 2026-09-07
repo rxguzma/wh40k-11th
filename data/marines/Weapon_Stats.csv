@@ -1,5 +1,5 @@
 Weapon_ID,Weapon Name,"R""",A,WS,St,AP,D,Weapon Abilities
-ABSOLVOR_BOLT_PISTOL,Absolvor bolt pistol,"18""",1,3,5,-1,2,PISTOL
+ABSOLVOR_BOLT_PISTOL,Absolvor bolt pistol,"18""",1,3,5,-1,2,CLOSE-QUARTERS
 ARMA_LUMINIS_BOLT,Arma Luminis – bolt,"12""",4,2,4,-1,2,PISTOL
 ARMA_LUMINIS_PLASMA,Arma Luminis – plasma,"12""",2,2,8,-3,2,PISTOL
 ARMORED_TRACKS_LAND_RAIDER,Armored Tracks (Land Raider),-,6,4,8,0,1,
@@ -207,15 +207,14 @@ TYRNAK_AND_FENRIR,Tyrnak and Fenrir,-,6,2,5,-1,1,EXTRA ATTACKS
 VANGUARD_VETERAN_WEAPON,Vanguard Veteran weapon,-,4,3,5,-1,1,
 VENGOR_LAUNCHER,Vengor launcher,"48""",D6,2,7,-1,2,"BLAST, INDIRECT FIRE"
 VICTRIX_POWER_SWORD,Victrix power sword,-,5,2,5,-2,2,
-NEW_HEAVY_BOLT_PISTOL_CAPTAIN_WITH_RELIC_SHIELD,Heavy bolt pistol (Captain with Relic Shield) (New),"18""",1,2,4,-1,1,CLOSE-QUARTERS
-NEW_ABSOLVOR_BOLT_PISTOL,Absolvor bolt pistol (New),"18""",1,3,5,-1,2,CLOSE-QUARTERS
-NEW_BOLT_PISTOL,Bolt pistol (New),"12""",1,3,4,0,1,CLOSE-QUARTERS
-NEW_CLOSE_COMBAT_WEAPON_ANCIENT,Close-combat weapon (Ancient) (New),-,5,2,4,0,1,
-NEW_CHAINSWORD_INTERCESSORS,Chainsword (Intercessors) (New),-,5,3,4,-1,1,
-NEW_HEAVY_BOLT_PISTOL_VANGUARD_VETERANS,Heavy bolt pistol (Vanguard Veterans) (New),"18""",1,3,4,-1,1,CLOSE-QUARTERS
-NEW_PLASMA_PISTOL_STANDARD_VANGUARD_VETERANS,Plasma pistol - standard (Vanguard Veterans) (New),"12""",D3,3,7,-2,1,CLOSE-QUARTERS
-NEW_PLASMA_PISTOL_SUPERCHARGE_VANGUARD_VETERANS,Plasma pistol - supercharge (Vanguard Veterans) (New),"12""",1,3,8,-3,2,"CLOSE-QUARTERS, HAZARDOUS"
-NEW_MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted power weapon (Vanguard Veterans) (New),-,3,3,5,-2,2,
+HEAVY_BOLT_PISTOL_CAPTAIN_WITH_RELIC_SHIELD,Heavy bolt pistol (Captain with Relic Shield),"18""",1,2,4,-1,1,CLOSE-QUARTERS
+BOLT_PISTOL,Bolt pistol,"12""",1,3,4,0,1,CLOSE-QUARTERS
+CLOSE_COMBAT_WEAPON_ANCIENT,Close-combat weapon (Ancient),-,5,2,4,0,1,
+CHAINSWORD_INTERCESSORS,Chainsword (Intercessors),-,5,3,4,-1,1,
+HEAVY_BOLT_PISTOL_VANGUARD_VETERANS,Heavy bolt pistol (Vanguard Veterans),"18""",1,3,4,-1,1,CLOSE-QUARTERS
+PLASMA_PISTOL_STANDARD_VANGUARD_VETERANS,Plasma pistol - standard (Vanguard Veterans),"12""",D3,3,7,-2,1,CLOSE-QUARTERS
+PLASMA_PISTOL_SUPERCHARGE_VANGUARD_VETERANS,Plasma pistol - supercharge (Vanguard Veterans),"12""",1,3,8,-3,2,"CLOSE-QUARTERS, HAZARDOUS"
+MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted power weapon (Vanguard Veterans),-,3,3,5,-2,2,
 THUNDER_HAMMER_JUMP_CAPTAIN,Thunder hammer,-,5,3+,8,-2,2,DEVASTATING WOUNDS
 TWIN_LAS_TALON,Twin las-talon,"36""",2,3+,10,-3,D6+1,TWIN-LINKED
 MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT,Master-crafted power weapon,-,5,2+,5,-2,2,

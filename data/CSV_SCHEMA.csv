@@ -217,3 +217,8 @@ army,Effects.csv,7,Operation,YES,AUTHORITATIVE,"ADD, SET, or REMOVE according to
 army,Effects.csv,8,Value,YES,AUTHORITATIVE,Machine-readable effect value.
 army,Effects.csv,9,Display_Tag,YES,AUTHORITATIVE,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
 army,Effects.csv,10,Sort_Order,YES,AUTHORITATIVE,Effect order within its source.
+universal,Entity_Aliases.csv,1,Entity_Type,YES,AUTHORITATIVE,Entity type resolved by this alias.
+universal,Entity_Aliases.csv,2,Army,YES,AUTHORITATIVE,"Owning army slug, or universal for universal entities."
+universal,Entity_Aliases.csv,3,Alias_ID,YES,AUTHORITATIVE,Deprecated historical ID accepted only for compatibility; may preserve legacy naming.
+universal,Entity_Aliases.csv,4,Canonical_ID,YES,AUTHORITATIVE,Current canonical entity ID.
+universal,Entity_Aliases.csv,5,Status,YES,AUTHORITATIVE,Alias lifecycle status; currently DEPRECATED.

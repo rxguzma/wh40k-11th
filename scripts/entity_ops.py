@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -31,6 +32,7 @@ HEADERS = {
     "Loadout_Compatibility.csv": ["Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"],
     "Loadout_Legacy_Units.csv": ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"],
     "Universal_Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Order"],
+    "Entity_Aliases.csv": ["Entity_Type", "Army", "Alias_ID", "Canonical_ID", "Status"],
     "Universal_Stratagems.csv": ["Detachment_ID", "Detachment_Name", "Item_Type", "Item_ID", "Item_Name", "Points", "CP_Cost", "Short_Description", "Long_Description"],
 }
 
@@ -134,6 +136,7 @@ class State:
                 self.tables[(army, filename)] = Table(base / filename, HEADERS[filename])
         base = ROOT / "data" / UNIVERSAL
         self.tables[(UNIVERSAL, "Universal_Abilities.csv")] = Table(base / "Universal_Abilities.csv", HEADERS["Universal_Abilities.csv"])
+        self.tables[(UNIVERSAL, "Entity_Aliases.csv")] = Table(base / "Entity_Aliases.csv", HEADERS["Entity_Aliases.csv"])
         self.tables[(UNIVERSAL, "Universal_Stratagems.csv")] = Table(base / "Universal_Stratagems.csv", HEADERS["Universal_Stratagems.csv"])
 
     def t(self, army, filename):
@@ -155,6 +158,50 @@ class State:
         fallback = {"marines": "Space Marines", "orks": "Orks", "nids": "Tyranids"}
         return fallback[army]
 
+
+
+def resolve_entity_alias(state, entity_type, army, value):
+    raw = sval(value)
+    matches = state.t(UNIVERSAL, "Entity_Aliases.csv").find(
+        Entity_Type=entity_type, Army=army, Alias_ID=raw
+    )
+    if not matches:
+        return raw
+    if len(matches) != 1:
+        fail(f"ambiguous entity alias {entity_type}/{army}/{raw!r}")
+    return matches[0]["Canonical_ID"]
+
+
+def validate_new_entity_id(value, label):
+    text = sval(value)
+    if not re.fullmatch(r"[A-Z][A-Z0-9_]*", text):
+        fail(f"{label} must use UPPER_SNAKE_CASE: {text!r}")
+    if re.search(r"(?:^NEW(?:_|$)|_NEW(?:_|$))", text):
+        fail(f"{label} must not contain NEW: {text!r}")
+
+
+def validate_new_display_names(value, path="data"):
+    if isinstance(value, dict):
+        for key, item in value.items():
+            validate_new_display_names(item, f"{path}.{key}")
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            validate_new_display_names(item, f"{path}[{index}]")
+    elif isinstance(value, str) and re.search(r"\(\s*New\s*\)", value, re.IGNORECASE):
+        fail(f"{path} must not contain '(New)': {value!r}")
+
+
+PRIMARY_ADD_IDS = {
+    "unit": ("Unit_ID",),
+    "weapon": ("Weapon_ID",),
+    "ability": ("Ability_ID",),
+    "detachment": ("Detachment_ID", "Rule_ID"),
+    "enhancement": ("Enhancement_ID",),
+    "stratagem": ("Stratagem_ID",),
+    "army_rule": ("Army_Rule_ID",),
+    "universal_ability": ("Ability_ID",),
+    "universal_stratagem": ("Item_ID",),
+}
 
 def schema_validate(payload):
     try:
@@ -485,6 +532,18 @@ def apply_operation(state, op, index):
     data = op.get("data")
     changes = op.get("changes")
     entity_id = op.get("id")
+    if mode == "add":
+        validate_new_display_names(data)
+        for field in PRIMARY_ADD_IDS.get(entity, ()):
+            if field in data:
+                validate_new_entity_id(data[field], field)
+        if entity == "detachment":
+            for enhancement in data.get("enhancements", []):
+                validate_new_entity_id(enhancement["Enhancement_ID"], "Enhancement_ID")
+            for stratagem in data.get("stratagems", []):
+                validate_new_entity_id(stratagem["Stratagem_ID"], "Stratagem_ID")
+    if mode != "add" and isinstance(entity_id, str):
+        entity_id = resolve_entity_alias(state, entity, army, entity_id)
     print(f"op {index}: {mode} {entity} [{army}]")
 
     if entity == "unit":
