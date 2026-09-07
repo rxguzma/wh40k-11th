@@ -13,6 +13,7 @@ WEAPON_ABILITIES_HEADER = [
     "Target",
     "Value",
     "Condition",
+    "Separator_Before",
     "Sort_Order",
 ]
 
@@ -70,6 +71,19 @@ def render_ability(row):
     return text
 
 
+def render_group(rows, army, weapon_id):
+    output = ""
+    for index, (_, row) in enumerate(sorted(rows, key=lambda pair: pair[0])):
+        separator = row.get("Separator_Before") or ""
+        if index == 0:
+            if separator:
+                fail(f"{army}: first weapon ability for {weapon_id!r} must have blank Separator_Before")
+        elif not separator.startswith(","):
+            fail(f"{army}: non-first weapon ability for {weapon_id!r} must use a comma separator")
+        output += separator + render_ability(row)
+    return output
+
+
 def sync_army(army):
     directory = ROOT / "data" / army
     stats_path = directory / "Weapon_Stats.csv"
@@ -114,8 +128,7 @@ def sync_army(army):
     changed = False
     for row in stats:
         weapon_id = (row.get("Weapon_ID") or "").strip()
-        rendered = [render_ability(item) for _, item in sorted(grouped.get(weapon_id, []), key=lambda pair: pair[0])]
-        next_value = ", ".join(rendered)
+        next_value = render_group(grouped.get(weapon_id, []), army, weapon_id)
         if (row.get("Weapon Abilities") or "") != next_value:
             row["Weapon Abilities"] = next_value
             changed = True
