@@ -1,0 +1,102 @@
+name: Migrate Loadout Option IDs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-loadout-option-ids.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wh40k-loadout-option-id-migration
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install schema validator
+        run: python3 -m pip install --disable-pip-version-check --quiet 'jsonschema==4.25.1'
+
+      - name: Snapshot current compatibility files
+        run: |
+          mkdir -p /tmp/loadout-before
+          for army in marines orks nids; do
+            mkdir -p "/tmp/loadout-before/$army"
+            cp "data/$army/Unit_Loadout_Options.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Loadout_Weapons.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Loadout_Abilities.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Loadout_Points.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Loadout_Compatibility.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Loadout_Legacy_Units.csv" "/tmp/loadout-before/$army/"
+            cp "data/$army/Unit_Weapon_Options.csv" "/tmp/loadout-before/$army/"
+          done
+
+      - name: Migrate to Loadout Option IDs
+        run: python3 scripts/migrate_loadout_option_ids_v2.py
+
+      - name: Compile permanent tooling
+        run: |
+          python3 -m py_compile scripts/entity_ops.py
+          python3 -m py_compile scripts/split_loadouts_v1.py
+          python3 -m py_compile scripts/validate_loadouts.py
+          python3 - <<'PY'
+          import json
+          schema = json.load(open('schemas/entity-ops.schema.json', encoding='utf-8'))
+          assert schema['$defs']['loadoutId'] == {'type':'string','minLength':1}
+          assert 'Loadout_Option_ID' in schema['$defs']['loadoutAdd']['properties']
+          assert 'Loadout_Option_ID' in schema['$defs']['nestedLoadoutAdd']['properties']
+          print('Entity Ops loadout schema: OK')
+          PY
+
+      - name: Generate compatibility outputs
+        run: |
+          python3 scripts/split_detachments_v2.py
+          python3 scripts/split_units_v1.py
+          python3 scripts/split_weapon_abilities_v1.py
+          python3 scripts/split_loadouts_v1.py
+          python3 scripts/split_effects_v1.py
+
+      - name: Require unchanged loadout compatibility
+        run: |
+          for army in marines orks nids; do
+            for file in Unit_Loadout_Options.csv Unit_Loadout_Weapons.csv Unit_Loadout_Abilities.csv Unit_Loadout_Points.csv Unit_Loadout_Compatibility.csv Unit_Loadout_Legacy_Units.csv Unit_Weapon_Options.csv; do
+              cmp "/tmp/loadout-before/$army/$file" "data/$army/$file"
+            done
+          done
+          echo 'All current loadout compatibility files are unchanged'
+
+      - name: Validate repository data
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/audit_references.py
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_unit_relations.py
+          python3 scripts/validate_weapon_abilities.py
+          python3 scripts/validate_loadouts.py
+          python3 scripts/validate_effects.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Validate Entity Ops against migrated data
+        env:
+          ENTITY_OPS_JSON: '{"version":1,"operations":[]}'
+        run: python3 scripts/entity_ops.py
+
+      - name: Commit migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data scripts/entity_ops.py scripts/split_loadouts_v1.py scripts/validate_loadouts.py schemas/entity-ops.schema.json
+          if git diff --cached --quiet; then
+            echo 'Loadout Option ID migration already current'
+            exit 0
+          fi
+          git commit -m "Simplify loadouts with stable option IDs"
+          git pull --rebase origin main
+          git push
