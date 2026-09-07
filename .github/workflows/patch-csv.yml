@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"REDEMPTOR_PLASMA","sets":{"Points_Cost_1":"205","Points_Cost_2":"410"}}]'
+          raw = r'[{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","sets":{"Unit Name":"Assault Terminators (Claws)","Ability_IDs":"TERMINATUS_ASSAULT, Teleport_Homer","Weapon_IDs":"TWIN_LIGHTNING_CLAWS_TERMINATORS","W":"3"}},{"file":"data/marines/Units.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD_HAMMER","mode":"insert","after_row_id":"TERMINATOR_ASSAULT_SQUAD","sets":{"Unit Name":"Assault Terminators (Hammer)","Ability_IDs":"TERMINATUS_ASSAULT, STORM_SHIELD_TERMINATORS, Teleport_Homer","Core_Ability_IDs":"DEEP_STRIKE","Weapon_IDs":"THUNDER_HAMMER_TERMINATORS","M\"":"5\"","T":"5","SV":"2+ / 4++","W":"4","LD":"6","OC":"1","Keywords":"INFANTRY, IMPERIUM, TERMINATORS, TERMINATOR ASSAULT SQUAD","Hyperlink":"https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad","Points_Label_1":"x5","Points_Cost_1":"180","Points_Label_2":"x10","Points_Cost_2":"360"}},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"TWIN_LIGHTNING_CLAWS_TERMINATORS","mode":"insert","sets":{"Weapon Name":"Twin lightning claws","R\"":"-","A":"6","WS":"3","St":"5","AP":"-2","D":"1","Weapon Abilities":"TWIN-LINKED"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
