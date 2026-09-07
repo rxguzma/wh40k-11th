@@ -437,5 +437,7 @@ DEPLOYMENT_COMPLETE,Deployment Complete,After setup and disembarkation: no units
 SURGICAL_PRECISION,Surgical Precision,While leading: Unit weapons gain [LETHAL HITS],"While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
 VIVISPECTRUM,Vivispectrum,Destroy enemy in melee: this model becomes OC 9,"If this model’s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",
 APOTHECARY_BIOLOGIS_SUPPORT,Support,"Can Support: Aggressors, Eradicators, Heavy Intercessors, Indomitor Kill Team",This model can be attached to the following units: Aggressor Squad; Eradicator Squad; Heavy Intercessor Squad; Indomitor Kill Team.,
-ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Thunder Hammers & Shields,+5 pts per model,Each model in this unit equipped with a Thunder Hammer costs +5 points.,+5 Pts
-REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,+10 pts per model,Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.,+10 Pts
+ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Thunder Hammers & Shields,Each Thunder Hammer +5 Pts per model,Each model in this unit equipped with a Thunder Hammer costs +5 points.,+5 Pts
+REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Incinerator +10 Pts per model,Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.,+10 Pts
+ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W,Add 1 to the Wounds characteristic of the bearer.,+1 W
+ASSAULT_TERMINATORS_STORM_SHIELDS,Storm Shields,Each Storm Shield +1 W per model,Each model in this unit equipped with a Storm Shield has +1 Wound.,+1 W
