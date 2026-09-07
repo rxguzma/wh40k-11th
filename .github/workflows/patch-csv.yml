@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS","sets":{"Ability Name":"Thunder Hammer & Storm Shields","Short Description":"Each Thunder Hammer +5 Pts per model; Each Storm Shield +1 W per model","Long Description":"Each model in this unit equipped with a Thunder Hammer costs +5 points. Each model equipped with a Storm Shield has +1 Wound.","Tags":"+5 Pts, +1 W"}},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_TERMINATORS_STORM_SHIELDS","mode":"delete"},{"file":"data/marines/Unit_Weapon_Options.csv","id_column":"Option_ID","row_id":"ASSAULT_TERMINATORS_HAMMER","column":"Ability_IDs","value":"ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS"}]'
+          raw = r'[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"},{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"__schema__","mode":"add_column","column":"Order"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
