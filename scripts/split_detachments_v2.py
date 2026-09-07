@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import csv
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 
-EXPECTED = [
+LEGACY_HEADER = [
     "Detachment_ID",
     "Army_Name",
     "Detachment_Name",
@@ -66,10 +67,10 @@ def fail(message):
     raise SystemExit(message)
 
 
-def read_source(path):
+def read_csv(path, expected_header):
     with path.open(encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        if reader.fieldnames != EXPECTED:
+        if reader.fieldnames != expected_header:
             fail(f"{path.relative_to(ROOT)} header mismatch: {reader.fieldnames!r}")
         rows = list(reader)
     return [row for row in rows if any((value or "").strip() for value in row.values())]
@@ -86,111 +87,147 @@ def require_unique(rows, key, label, army):
         seen.add(value)
 
 
-def write_csv(path, header, rows):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle, lineterminator="\n")
-        writer.writerow(header)
-        writer.writerows(rows)
+def slugify(value):
+    text = str(value or "").strip().lower().replace("’", "").replace("'", "")
+    text = re.sub(r"[^a-z0-9]+", "_", text)
+    return re.sub(r"_+", "_", text).strip("_") or "army_rule"
 
 
-def migrate_army(army):
-    source = ROOT / "data" / army / "Detachments.csv"
-    rows = read_source(source)
+def csv_text(header, rows):
+    from io import StringIO
 
-    definitions = []
-    enhancements = []
-    stratagems = []
-    army_rules = []
+    buffer = StringIO(newline="")
+    writer = csv.writer(buffer, lineterminator="\n")
+    writer.writerow(header)
+    writer.writerows(rows)
+    return buffer.getvalue()
 
-    definition_source = []
-    enhancement_source = []
-    stratagem_source = []
-    army_rule_source = []
 
-    for source_line, row in enumerate(rows, start=2):
-        item_type = (row.get("Item_Type") or "").strip().upper()
-        if item_type == "DETACHMENT_RULE":
-            definition_source.append(row)
-            definitions.append([
-                row["Detachment_ID"],
-                row["Army_Name"],
-                row["Detachment_Name"],
-                row["Item_ID"],
-                row["Item_Name"],
-                row["DP_Cost"],
-                row["Detachment_Disposition"],
-                row["Detachment_Disposition_2"],
-                row["Short_Description"],
-                row["Long_Description"],
-            ])
-        elif item_type == "ENHANCEMENT":
-            enhancement_source.append(row)
-            enhancements.append([
-                row["Item_ID"],
-                row["Detachment_ID"],
-                row["Item_Name"],
-                row["Points"],
-                row["Short_Description"],
-                row["Long_Description"],
+def write_if_changed(path, header, rows):
+    content = csv_text(header, rows)
+    old = path.read_text(encoding="utf-8-sig") if path.exists() else None
+    if old == content:
+        return False
+    path.write_text(content, encoding="utf-8", newline="")
+    return True
+
+
+def sync_army(army):
+    directory = ROOT / "data" / army
+    definitions = read_csv(directory / "Detachment_Definitions.csv", DEFINITION_HEADER)
+    enhancements = read_csv(directory / "Enhancements.csv", ENHANCEMENT_HEADER)
+    stratagems = read_csv(directory / "Stratagems.csv", STRATAGEM_HEADER)
+    army_rules = read_csv(directory / "Army_Rules.csv", ARMY_RULE_HEADER)
+
+    require_unique(definitions, "Detachment_ID", "Detachment_ID", army)
+    require_unique(definitions, "Rule_ID", "Rule_ID", army)
+    require_unique(enhancements, "Enhancement_ID", "Enhancement_ID", army)
+    require_unique(stratagems, "Stratagem_ID", "Stratagem_ID", army)
+    require_unique(army_rules, "Army_Rule_ID", "Army_Rule_ID", army)
+
+    definition_by_id = {(row["Detachment_ID"] or "").strip(): row for row in definitions}
+    enhancements_by_parent = {detachment_id: [] for detachment_id in definition_by_id}
+    stratagems_by_parent = {detachment_id: [] for detachment_id in definition_by_id}
+
+    for row in enhancements:
+        parent = (row["Detachment_ID"] or "").strip()
+        if parent not in definition_by_id:
+            fail(f"{army}: enhancement {row['Enhancement_ID']!r} references missing detachment {parent!r}")
+        enhancements_by_parent[parent].append(row)
+
+    for row in stratagems:
+        parent = (row["Detachment_ID"] or "").strip()
+        if parent not in definition_by_id:
+            fail(f"{army}: stratagem {row['Stratagem_ID']!r} references missing detachment {parent!r}")
+        stratagems_by_parent[parent].append(row)
+
+    legacy_rows = []
+    for definition in definitions:
+        detachment_id = definition["Detachment_ID"]
+        army_name = definition["Army_Name"]
+        detachment_name = definition["Detachment_Name"]
+        legacy_rows.append([
+            detachment_id,
+            army_name,
+            detachment_name,
+            "DETACHMENT_RULE",
+            definition["Rule_ID"],
+            definition["Rule_Name"],
+            "",
+            "",
+            definition["DP_Cost"],
+            definition["Detachment_Disposition"],
+            definition["Short_Description"],
+            definition["Long_Description"],
+            definition["Detachment_Disposition_2"],
+        ])
+
+        for enhancement in enhancements_by_parent[detachment_id]:
+            legacy_rows.append([
+                detachment_id,
+                army_name,
+                detachment_name,
+                "ENHANCEMENT",
+                enhancement["Enhancement_ID"],
+                enhancement["Enhancement_Name"],
+                enhancement["Points"],
+                "",
+                "",
+                "",
+                enhancement["Short_Description"],
+                enhancement["Long_Description"],
                 "",
             ])
-        elif item_type == "STRATAGEM":
-            stratagem_source.append(row)
-            stratagems.append([
-                row["Item_ID"],
-                row["Detachment_ID"],
-                row["Item_Name"],
-                row["CP_Cost"],
-                row["Short_Description"],
-                row["Long_Description"],
+
+        for stratagem in stratagems_by_parent[detachment_id]:
+            legacy_rows.append([
+                detachment_id,
+                army_name,
+                detachment_name,
+                "STRATAGEM",
+                stratagem["Stratagem_ID"],
+                stratagem["Stratagem_Name"],
+                "",
+                stratagem["CP_Cost"],
+                "",
+                "",
+                stratagem["Short_Description"],
+                stratagem["Long_Description"],
+                "",
             ])
-        elif item_type == "ARMY_RULE":
-            army_rule_source.append(row)
-            army_rules.append([
-                row["Item_ID"],
-                row["Army_Name"],
-                row["Item_Name"],
-                row["Short_Description"],
-                row["Long_Description"],
-            ])
-        else:
-            fail(f"{army}: unsupported Item_Type {item_type!r} at CSV line {source_line}: {row!r}")
 
-    require_unique(definition_source, "Detachment_ID", "Detachment_ID", army)
-    require_unique(definition_source, "Item_ID", "detachment Rule_ID", army)
-    require_unique(enhancement_source, "Item_ID", "Enhancement_ID", army)
-    require_unique(stratagem_source, "Item_ID", "Stratagem_ID", army)
-    require_unique(army_rule_source, "Item_ID", "Army_Rule_ID", army)
+    for rule in army_rules:
+        legacy_rows.append([
+            slugify(rule["Army_Name"]),
+            rule["Army_Name"],
+            "",
+            "ARMY_RULE",
+            rule["Army_Rule_ID"],
+            rule["Rule_Name"],
+            "",
+            "",
+            "",
+            "",
+            rule["Short_Description"],
+            rule["Long_Description"],
+            "",
+        ])
 
-    detachment_ids = {(row.get("Detachment_ID") or "").strip() for row in definition_source}
-    for row in enhancement_source + stratagem_source:
-        parent = (row.get("Detachment_ID") or "").strip()
-        if parent not in detachment_ids:
-            fail(f"{army}: child {row.get('Item_ID')!r} references missing detachment {parent!r}")
+    normalized_count = len(definitions) + len(enhancements) + len(stratagems) + len(army_rules)
+    if len(legacy_rows) != normalized_count:
+        fail(f"{army}: row-count mismatch normalized={normalized_count} legacy={len(legacy_rows)}")
 
-    directory = ROOT / "data" / army
-    write_csv(directory / "Detachment_Definitions.csv", DEFINITION_HEADER, definitions)
-    write_csv(directory / "Enhancements.csv", ENHANCEMENT_HEADER, enhancements)
-    write_csv(directory / "Stratagems.csv", STRATAGEM_HEADER, stratagems)
-    write_csv(directory / "Army_Rules.csv", ARMY_RULE_HEADER, army_rules)
-
-    source_count = len(rows)
-    split_count = len(definitions) + len(enhancements) + len(stratagems) + len(army_rules)
-    if source_count != split_count:
-        fail(f"{army}: row-count mismatch source={source_count} split={split_count}")
-
+    changed = write_if_changed(directory / "Detachments.csv", LEGACY_HEADER, legacy_rows)
     print(
-        f"{army}: {source_count} rows -> "
-        f"{len(definitions)} detachments, {len(enhancements)} enhancements, "
-        f"{len(stratagems)} stratagems, {len(army_rules)} army rules"
+        f"{army}: {normalized_count} normalized rows -> legacy Detachments.csv "
+        f"({'updated' if changed else 'current'})"
     )
 
 
 def main():
     for army in ARMIES:
-        migrate_army(army)
-    print("detachment split migration: OK")
+        sync_army(army)
+    print("normalized detachment compatibility sync: OK")
 
 
 if __name__ == "__main__":
