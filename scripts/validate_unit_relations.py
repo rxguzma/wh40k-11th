@@ -70,6 +70,12 @@ def actual_rows(rows, header):
     return [[(row.get(column) or "").strip() for column in header] for row in rows]
 
 
+def normalize_global_unit_order(rows, unit_rank):
+    # Relationship order within a unit is semantic; where that unit's block sits in
+    # the normalized file is not. Stable-sort only by canonical Units.csv position.
+    return sorted(rows, key=lambda row: unit_rank.get(row[0], len(unit_rank)))
+
+
 def validate_army(army, universal_ability_ids):
     directory = ROOT / "data" / army
     units = read_dicts(directory / "Units.csv")
@@ -80,6 +86,10 @@ def validate_army(army, universal_ability_ids):
     unit_points = read_dicts(directory / "Unit_Points.csv", UNIT_POINTS_HEADER)
 
     unit_ids = {(row.get("Unit_ID") or "").strip() for row in units}
+    unit_rank = {
+        (row.get("Unit_ID") or "").strip(): index
+        for index, row in enumerate(units)
+    }
     weapon_ids = {(row.get("Weapon_ID") or "").strip() for row in weapon_stats}
     ability_ids = {
         (row.get("Ability_ID") or "").strip()
@@ -134,16 +144,16 @@ def validate_army(army, universal_ability_ids):
             )
 
     expected_abilities, expected_weapons, expected_points = expected_from_units(units)
-    actual_abilities = actual_rows(unit_abilities, UNIT_ABILITIES_HEADER)
-    actual_weapons = actual_rows(unit_weapons, UNIT_WEAPONS_HEADER)
-    actual_points = actual_rows(unit_points, UNIT_POINTS_HEADER)
+    actual_abilities = normalize_global_unit_order(actual_rows(unit_abilities, UNIT_ABILITIES_HEADER), unit_rank)
+    actual_weapons = normalize_global_unit_order(actual_rows(unit_weapons, UNIT_WEAPONS_HEADER), unit_rank)
+    actual_points = normalize_global_unit_order(actual_rows(unit_points, UNIT_POINTS_HEADER), unit_rank)
 
     if actual_abilities != expected_abilities:
-        fail(f"{army}: Unit_Abilities.csv is not an exact expansion of Units.csv Ability_IDs/Core_Ability_IDs")
+        fail(f"{army}: Unit_Abilities.csv is not an exact per-unit expansion of Units.csv Ability_IDs/Core_Ability_IDs")
     if actual_weapons != expected_weapons:
-        fail(f"{army}: Unit_Weapons.csv is not an exact expansion of Units.csv Weapon_IDs")
+        fail(f"{army}: Unit_Weapons.csv is not an exact per-unit expansion of Units.csv Weapon_IDs")
     if actual_points != expected_points:
-        fail(f"{army}: Unit_Points.csv is not an exact expansion of Units.csv point slots")
+        fail(f"{army}: Unit_Points.csv is not an exact per-unit expansion of Units.csv point slots")
 
     print(
         f"{army}: unit relations OK — "
