@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 WEAPON_STATS_HEADER = ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D", "Weapon Abilities"]
-WEAPON_ABILITIES_HEADER = ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Sort_Order"]
+WEAPON_ABILITIES_HEADER = ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Separator_Before", "Sort_Order"]
 PARAMETERIZED = ("SUSTAINED HITS", "RAPID FIRE", "MELTA", "BLAST", "CLEAVE", "DEADLY DEMISE")
 
 
@@ -80,6 +80,28 @@ def render(parsed):
     return text
 
 
+def split_with_separators(raw):
+    parts = re.split(r"(,\s*)", raw)
+    if not parts or not parts[0].strip():
+        fail(f"invalid Weapon Abilities string {raw!r}")
+    result = [("", parts[0].strip())]
+    index = 1
+    while index < len(parts):
+        separator = parts[index]
+        if index + 1 >= len(parts) or not parts[index + 1].strip():
+            fail(f"invalid Weapon Abilities separator structure {raw!r}")
+        result.append((separator, parts[index + 1].strip()))
+        index += 2
+    return result
+
+
+def render_rows(rows):
+    output = ""
+    for row in sorted(rows, key=lambda item: int(item["Sort_Order"])):
+        output += (row.get("Separator_Before") or "") + render(row)
+    return output
+
+
 def migrate_data():
     for army in ARMIES:
         directory = ROOT / "data" / army
@@ -89,11 +111,9 @@ def migrate_data():
             rows = read_dict_rows(target, WEAPON_ABILITIES_HEADER)
             grouped = {}
             for row in rows:
-                grouped.setdefault(row["Weapon_ID"], []).append((int(row["Sort_Order"]), row))
+                grouped.setdefault(row["Weapon_ID"], []).append(row)
             for stat in stats:
-                rendered = ", ".join(
-                    render(item) for _, item in sorted(grouped.get(stat["Weapon_ID"], []), key=lambda pair: pair[0])
-                )
+                rendered = render_rows(grouped.get(stat["Weapon_ID"], []))
                 if rendered != (stat.get("Weapon Abilities") or ""):
                     fail(f"{army}: existing Weapon_Abilities.csv does not round-trip {stat['Weapon_ID']!r}")
             print(f"{army}: Weapon_Abilities.csv already current ({len(rows)} rows)")
@@ -105,23 +125,22 @@ def migrate_data():
             raw = stat.get("Weapon Abilities") or ""
             if not raw:
                 continue
-            tokens = [part.strip() for part in raw.split(",")]
-            parsed_tokens = []
-            for index, token in enumerate(tokens, start=1):
-                if not token:
-                    fail(f"{army}: blank token inside Weapon Abilities for {weapon_id!r}: {raw!r}")
+            normalized = []
+            for index, (separator, token) in enumerate(split_with_separators(raw), start=1):
                 parsed = parse_token(token)
-                parsed_tokens.append(parsed)
-                rows.append({
+                row = {
                     "Weapon_ID": weapon_id,
                     "Weapon_Ability_ID": f"{weapon_id}:ability_{index}",
                     "Ability_Type": parsed["Ability_Type"],
                     "Target": parsed["Target"],
                     "Value": parsed["Value"],
                     "Condition": parsed["Condition"],
+                    "Separator_Before": separator,
                     "Sort_Order": str(index),
-                })
-            round_trip = ", ".join(render(item) for item in parsed_tokens)
+                }
+                normalized.append(row)
+                rows.append(row)
+            round_trip = render_rows(normalized)
             if round_trip != raw:
                 fail(
                     f"{army}: Weapon Abilities round-trip mismatch for {weapon_id!r}\n"
@@ -141,7 +160,8 @@ def migrate_csv_schema():
             row["Ownership"] = "GENERATED_COLUMN"
             row["Notes"] = "Generated from authoritative Weapon_Abilities.csv; compatibility/presentation column for current HTML."
 
-    if not any(row["Scope"] == "army" and row["File"] == "Weapon_Abilities.csv" for row in rows):
+    existing = [row for row in rows if row["Scope"] == "army" and row["File"] == "Weapon_Abilities.csv"]
+    if not existing:
         new_rows = [
             ["Weapon_ID", "YES", "Foreign key to Weapon_Stats.csv."],
             ["Weapon_Ability_ID", "YES", "Stable unique relationship key generated from Weapon_ID and ability order."],
@@ -149,6 +169,7 @@ def migrate_csv_schema():
             ["Target", "NO", "Target class for parameterized abilities such as ANTI; blank otherwise."],
             ["Value", "NO", "Structured parameter such as 2, D3, or 4+; blank for flag abilities."],
             ["Condition", "NO", "Optional qualifier previously represented after ':' in the compatibility string."],
+            ["Separator_Before", "NO", "Exact legacy delimiter before this ability; blank for first ability, normally ', ' thereafter."],
             ["Sort_Order", "YES", "Ability display/order position within the weapon."],
         ]
         insert_at = max(i for i, row in enumerate(rows) if row["File"] == "Weapon_Stats.csv") + 1
@@ -166,6 +187,9 @@ def migrate_csv_schema():
         rows[insert_at:insert_at] = payload
         print("CSV_SCHEMA.csv: added authoritative Weapon_Abilities.csv schema")
     else:
+        columns = [row["Column_Name"] for row in sorted(existing, key=lambda row: int(row["Column_Order"]))]
+        if columns != WEAPON_ABILITIES_HEADER:
+            fail(f"existing Weapon_Abilities.csv schema differs from expected: {columns!r}")
         print("CSV_SCHEMA.csv: Weapon_Abilities schema already present")
 
     write_dict_rows(path, header, rows)
@@ -200,7 +224,7 @@ def patch_entity_ops():
     text = path.read_text(encoding="utf-8")
     if '"Weapon_Abilities.csv": [' not in text:
         needle = '    "Weapon_Stats.csv": ["Weapon_ID", "Weapon Name", \'R"\', "A", "WS", "St", "AP", "D", "Weapon Abilities"],\n'
-        insert = needle + '    "Weapon_Abilities.csv": ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Sort_Order"],\n'
+        insert = needle + '    "Weapon_Abilities.csv": ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Separator_Before", "Sort_Order"],\n'
         if needle not in text:
             fail("cannot patch entity_ops HEADERS")
         text = text.replace(needle, insert, 1)
@@ -214,7 +238,7 @@ def patch_entity_ops():
 
     if "def replace_weapon_abilities(" not in text:
         marker = "def replace_effects(state, army, source_type, source_id, effects):\n"
-        helper = '''def replace_weapon_abilities(state, army, weapon_id, abilities):\n    table = state.t(army, "Weapon_Abilities.csv")\n    table.delete_where(lambda row: row.get("Weapon_ID") == weapon_id)\n    for index, ability in enumerate(abilities, start=1):\n        sort_order = ability.get("Sort_Order", index)\n        table.insert({\n            "Weapon_ID": weapon_id,\n            "Weapon_Ability_ID": f"{weapon_id}:ability_{index}",\n            "Ability_Type": ability["Ability_Type"],\n            "Target": ability.get("Target", ""),\n            "Value": ability.get("Value", ""),\n            "Condition": ability.get("Condition", ""),\n            "Sort_Order": sort_order,\n        })\n\n\n'''
+        helper = '''def replace_weapon_abilities(state, army, weapon_id, abilities):\n    table = state.t(army, "Weapon_Abilities.csv")\n    table.delete_where(lambda row: row.get("Weapon_ID") == weapon_id)\n    for index, ability in enumerate(abilities, start=1):\n        sort_order = ability.get("Sort_Order", index)\n        table.insert({\n            "Weapon_ID": weapon_id,\n            "Weapon_Ability_ID": f"{weapon_id}:ability_{index}",\n            "Ability_Type": ability["Ability_Type"],\n            "Target": ability.get("Target", ""),\n            "Value": ability.get("Value", ""),\n            "Condition": ability.get("Condition", ""),\n            "Separator_Before": "" if index == 1 else ", ",\n            "Sort_Order": sort_order,\n        })\n\n\n'''
         if marker not in text:
             fail("cannot insert replace_weapon_abilities helper")
         text = text.replace(marker, helper + marker, 1)
