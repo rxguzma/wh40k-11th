@@ -1,4 +1,5 @@
 name: Data Schema
+# CSV ownership metadata is enforced by scripts/data_schema.py.
 
 on:
   push:
