@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"GUARDIAN_ORGANISM","column":"Short Description","value":"If led by CHARACTER, \\nthat unit has 5+ FNP"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SERPENTINE_FIEND","column":"Short Description","value":"Move thru terrain"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SWALLOW_WHOLE","column":"Order","value":"1"}]'
+          raw = r'[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"MALIGN_PRESENCE_AURA","column":"Short Description","value":"Each time: 12\" cost +1 CP"},{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_ambush_predators","column":"Short_Description","value":"DEATHLEAPER / LICTOR / NEUROLICTOR have Deep Strike. \\n\\nLICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
