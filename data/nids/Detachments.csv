@@ -182,7 +182,9 @@ tyranids_talons_of_the_norn_queen,Tyranids,Talons of the Norn Queen,STRATAGEM,ty
 TARGET: That NORN ASSIMILATOR unit.
 
 EFFECT: Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase. While a unit is tethered, that unit has –2″ M.",
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,DETACHMENT_RULE,tyranids_warrior_bioform_onslaught_detachment_rule_leader_beasts,LEADER‑BEASTS,,,1,Take and Hold,"Friendly TYRANID WARRIORS with ranged or melee bio‑weapons gain the TYRANID WARRIORS keyword and become Battleline, and TYRANID WARRIORS, Tyranid Prime with Lash Whip, and Winged Tyranid Prime models have a 5+ invulnerable save.","Friendly TYRANID WARRIORS WITH RANGED BIO‑WEAPONS/TYRANID WARRIORS WITH MELEE BIO‑WEAPONS units have: TYRANID WARRIORS and BATTLELINE.
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,DETACHMENT_RULE,tyranids_warrior_bioform_onslaught_detachment_rule_leader_beasts,LEADER‑BEASTS,,,1,Take and Hold,"WARRIORS gain Battleline
+
+Also, WARRIORS, TYRANID PRIME (both types) have a 5+ invulnerable save.","Friendly TYRANID WARRIORS WITH RANGED BIO‑WEAPONS/TYRANID WARRIORS WITH MELEE BIO‑WEAPONS units have: TYRANID WARRIORS and BATTLELINE.
 
 TYRANID WARRIORS/TYRANID PRIME WITH LASH WHIP/WINGED TYRANID PRIME models from your army have 5+ InSv.",
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,30,,,,"TYRANID PRIME model (both types) only.
