@@ -1,4 +1,5 @@
 name: Migrate Ability Order Authority
+# Retry after the permanent Data Schema workflow registered the new validator.
 
 on:
   push:
@@ -67,7 +68,6 @@ jobs:
                   writer.writerows(rows)
               print(f'{path}: filled {sum(migrated.values())} blank Orders -> 0:{migrated[0]} 8:{migrated[8]} 9:{migrated[9]}')
 
-          # CSV ownership contract: Order is now required, not an application fallback.
           schema_path = root / 'data' / 'CSV_SCHEMA.csv'
           with schema_path.open(encoding='utf-8-sig', newline='') as handle:
               reader = csv.DictReader(handle)
@@ -92,11 +92,9 @@ jobs:
               writer.writeheader()
               writer.writerows(schema_rows)
 
-          # Permanent validator for all canonical Ability tables.
           validator_path = root / 'scripts' / 'validate_ability_orders.py'
           validator_path.write_text('''#!/usr/bin/env python3\nimport csv\nimport re\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nFILES = [\n    ROOT / "data" / "marines" / "Abilities.csv",\n    ROOT / "data" / "orks" / "Abilities.csv",\n    ROOT / "data" / "nids" / "Abilities.csv",\n    ROOT / "data" / "universal" / "Universal_Abilities.csv",\n]\n\ndef fail(message):\n    raise SystemExit(message)\n\nfor path in FILES:\n    with path.open(encoding="utf-8-sig", newline="") as handle:\n        reader = csv.DictReader(handle)\n        header = list(reader.fieldnames or [])\n        if "Ability_ID" not in header or "Order" not in header:\n            fail(f"{path.relative_to(ROOT)} must contain Ability_ID and Order")\n        rows = list(reader)\n    seen = set()\n    for line_no, row in enumerate(rows, start=2):\n        ability_id = (row.get("Ability_ID") or "").strip()\n        order = (row.get("Order") or "").strip()\n        if not ability_id:\n            fail(f"{path.relative_to(ROOT)} line {line_no}: blank Ability_ID")\n        if ability_id in seen:\n            fail(f"{path.relative_to(ROOT)} line {line_no}: duplicate Ability_ID {ability_id!r}")\n        seen.add(ability_id)\n        if not re.fullmatch(r"[0-9]", order):\n            fail(f"{path.relative_to(ROOT)} line {line_no}: Ability {ability_id!r} requires Order 0-9, found {order!r}")\n    print(f"{path.relative_to(ROOT)}: {len(rows)} Ability Orders valid")\n''', encoding='utf-8')
 
-          # Data Schema workflow permanently runs the Ability-order validator.
           workflow_path = root / '.github' / 'workflows' / 'data-schema.yml'
           text = workflow_path.read_text(encoding='utf-8')
           if "      - 'scripts/validate_ability_orders.py'\n" not in text:
@@ -112,7 +110,6 @@ jobs:
               text = text.replace(anchor, step + anchor, 1)
           workflow_path.write_text(text, encoding='utf-8')
 
-          # Entity Ops ADD requires an explicit canonical Order; CHANGE validates it when supplied.
           entity_schema_path = root / 'schemas' / 'entity-ops.schema.json'
           entity_schema = json.loads(entity_schema_path.read_text(encoding='utf-8'))
           order_schema = {
