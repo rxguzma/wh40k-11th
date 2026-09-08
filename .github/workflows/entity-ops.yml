@@ -6,7 +6,7 @@ name: Entity Ops
 # Operations: add | change | delete
 # Generated compatibility files/columns are never direct targets.
 # Loadout CHANGE/DELETE uses one Loadout_Option_ID.
-# ADD IDs use UPPER_SNAKE_CASE and cannot contain NEW; deprecated IDs resolve through Entity_Aliases.csv.
+# ADD IDs use UPPER_SNAKE_CASE and cannot contain NEW.
 
 on:
   push:
@@ -68,7 +68,6 @@ jobs:
           python3 scripts/validate_weapon_abilities.py
           python3 scripts/validate_loadouts.py
           python3 scripts/validate_effects.py
-          python3 scripts/validate_aliases.py
           python3 scripts/validate_no_new_names.py
           python3 scripts/data_schema.py manifest
 
