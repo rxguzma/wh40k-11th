@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"TYRANID_WARRIOR_CLAWS_AND_TALONS_MELEE_WARRIORS","column":"Weapon Name","value":"Tyranid Warrior claws and talons"}]'
+          raw = r'[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"ADAPTIVE_INSTINCTS","column":"Short Description","value":"MELEE. Once per turn. \\nWhen Targetted or selected to Fight (pick one): \\n- +1 S melee\\n- +1 T"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
