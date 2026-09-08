@@ -135,7 +135,7 @@ EFFECT: Remove the targeted units from the battlefield and place them into Strat
 
 RESTRICTIONS: The targeted units must be more than 3"" away from all enemy units."
 tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,tyranids_warrior_bioform_onslaught,Alien Physiology,1,"Shooting or Fight: Warriors 
-–1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
+-1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
 TARGET: That TYRANID WARRIORS unit.
 
@@ -147,7 +147,7 @@ TARGET: One friendly TYRANID WARRIORS unit.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured."
 tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,tyranids_warrior_bioform_onslaught,Parasitic Payload,1,"Shooting:Warriors 
-Ranged attacks have [IGNORE COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
+Ranged attacks have [IGNORES COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
 
 TARGET: That TYRANID WARRIORS unit.
 
