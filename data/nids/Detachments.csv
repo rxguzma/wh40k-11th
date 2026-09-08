@@ -192,17 +192,20 @@ tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMEN
 Melee re‑roll wound rolls and have +1 AP.",WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.,
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,20,,,,"TYRANID PRIME model (both types) only.
 Melee attacks have +1 to hit rolls.",WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.,
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: When a Tyranid Warriors unit is targeted by an attack with Strength greater than its Toughness, those attacks have –1 to wound rolls.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: Warriors 
+–1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
 TARGET: That TYRANID WARRIORS unit.
 
 EFFECT: Attacks that target your unit with a Strength greater than your unit’s Toughness have –1 to wound rolls.",
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_synaptic_micronodes_1cp,Synaptic Micronodes,,1,,,End of Movement: One Tyranid Warriors unit secures an objective it controls.,"WHEN: End of your Movement phase.
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_synaptic_micronodes_1cp,Synaptic Micronodes,,1,,,"End of Movement: 
+One Warriors secures an objective.","WHEN: End of your Movement phase.
 
 TARGET: One friendly TYRANID WARRIORS unit.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured.",
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,Parasitic Payload,,1,,,Shooting: A Tyranid Warriors unit’s ranged attacks have [IGNORE COVER].,"WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,Parasitic Payload,,1,,,"Shooting:Warriors 
+Ranged attacks have [IGNORE COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
 
 TARGET: That TYRANID WARRIORS unit.
 
