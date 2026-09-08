@@ -1,0 +1,73 @@
+name: Remove Legacy Alias Compatibility
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/remove-legacy-alias-compat.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install schema validator
+        run: python3 -m pip install --disable-pip-version-check --quiet 'jsonschema==4.25.1'
+
+      - name: Remove legacy alias compatibility
+        run: python3 scripts/remove_legacy_alias_compat.py
+
+      - name: Compile permanent tooling
+        run: |
+          python3 -m py_compile scripts/entity_ops.py
+          python3 -m py_compile scripts/validate_no_new_names.py
+
+      - name: Generate compatibility outputs
+        run: |
+          python3 scripts/split_detachments_v2.py
+          python3 scripts/split_units_v1.py
+          python3 scripts/split_weapon_abilities_v1.py
+          python3 scripts/split_loadouts_v1.py
+          python3 scripts/split_effects_v1.py
+
+      - name: Validate repository data
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/audit_references.py
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_unit_relations.py
+          python3 scripts/validate_weapon_abilities.py
+          python3 scripts/validate_loadouts.py
+          python3 scripts/validate_effects.py
+          python3 scripts/validate_no_new_names.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Validate Entity Ops
+        env:
+          ENTITY_OPS_JSON: '{"version":1,"operations":[]}'
+        run: python3 scripts/entity_ops.py
+
+      - name: Require no alias compatibility remains
+        run: |
+          test ! -e data/universal/Entity_Aliases.csv
+          test ! -e scripts/validate_aliases.py
+          ! grep -R "Entity_Aliases\|resolve_entity_alias\|validate_aliases" scripts/entity_ops.py data/CSV_SCHEMA.csv scripts/validate_no_new_names.py
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- data scripts/entity_ops.py scripts/validate_aliases.py
+          if git diff --cached --quiet; then
+            echo "Legacy alias compatibility already removed"
+            exit 0
+          fi
+          git commit -m "Remove legacy alias compatibility"
+          git pull --rebase origin main
+          git push
