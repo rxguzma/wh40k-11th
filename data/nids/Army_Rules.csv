@@ -1,5 +1,9 @@
 Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description
-tyranids_army_rule,Tyranids,Synapse / Shadow in the Warp,"Synapse: 6"" of SYNAPSE. Battle-shock on 3D6. Melee +1 S.
+tyranids_army_rule,Tyranids,Synapse / Shadow in the Warp,"Synapse: 
+- 6"" of SYNAPSE. 
+- Battle-shock on 3D6. 
+- Melee +1 S
+
 Shadow in the Warp: Once per battle, all enemy Battle-shock. -1 if within 6"" of SYNAPSE.","Army Rule
 SYNAPSE
 While a TYRANIDS unit from your army is within 6"" of one or more friendly SYNAPSE models, that unit is within Synapse Range of that model and of your army.
