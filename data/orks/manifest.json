@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "9a7cf778df7552e510efadd7a67ab19a5fe9c382050fb85364dd2418f57ece8d",
+  "dataset_sha256": "097f621f06de27579fd646a1c5038ea068aab88f0fdc774652ad03c31acb8712",
   "files": {
     "Abilities.csv": {
       "bytes": 65741,
@@ -33,10 +33,6 @@
       "bytes": 713,
       "sha256": "8c7c83240b4e54cd0ac9c6404fb4837da5787583d024df4265f2d4567b3eb1ed"
     },
-    "Loadout_Legacy_Units.csv": {
-      "bytes": 723,
-      "sha256": "85bd3e4e6a4297e5e8d1c8bbe643343bb9ff3066ec770b0ecf6c5db9cfefd8ae"
-    },
     "Loadout_Options.csv": {
       "bytes": 3274,
       "sha256": "f2a1aa0789e914c5350d8a599350361461a80df74963bcd782830ec0b4f58f74"
@@ -66,8 +62,8 @@
       "sha256": "43b9feba2fc73e3779a5f0f3c04be2b90f530b3a9347fafab95385015bafdd94"
     },
     "Unit_Loadout_Legacy_Units.csv": {
-      "bytes": 713,
-      "sha256": "a0dd75c7ec2db94f0530c98e032e29eb86d72987c91dff5be40223666eb16ac6"
+      "bytes": 60,
+      "sha256": "db1e68f36f0eae17b1e6a225d0972305ed62d899094be0f5eecc6bd1b57e0568"
     },
     "Unit_Loadout_Options.csv": {
       "bytes": 2113,
@@ -90,8 +86,8 @@
       "sha256": "c3d4abe21f989fc8d57a8207fc3b697c4a6b0d6675afad5e4be62dd00057f857"
     },
     "Unit_Weapon_Options.csv": {
-      "bytes": 3443,
-      "sha256": "584d2650281f7facd6a0aae5552d20d37dcac5371b292cc4bcab349b2545a365"
+      "bytes": 3262,
+      "sha256": "c16728de6cb5d7f7af509686e2635cfbc45a2f9362b40cc868503cf0a70d5db3"
     },
     "Unit_Weapons.csv": {
       "bytes": 7106,
@@ -110,6 +106,6 @@
       "sha256": "6aecd4d6612a81753db84b49a2419e8e92e59f00a84721f584f27f0c5d856378"
     }
   },
-  "schema_sha256": "2985ac5996e59497706cbf81a54a96bda89bc0d9874f2310ad72b0d8c7c8c3e8",
+  "schema_sha256": "fee30f3d035b5c3885c07cd2bd754a9a8474c0bb57a75b1cbc6705c40aa0f1b9",
   "schema_version": 1
 }

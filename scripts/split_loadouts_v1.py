@@ -23,7 +23,6 @@ CANON_POINTS_HEADER = ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", 
 CANON_COMPAT_HEADER = [
     "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
 ]
-CANON_LEGACY_UNITS_HEADER = ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"]
 
 COMPAT_OPTIONS_HEADER = [
     "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order",
@@ -86,12 +85,11 @@ def load_canonical(directory):
     abilities = read_dicts(directory / "Loadout_Abilities.csv", CANON_ABILITIES_HEADER)
     points = read_dicts(directory / "Loadout_Points.csv", CANON_POINTS_HEADER)
     compatibility = read_dicts(directory / "Loadout_Compatibility.csv", CANON_COMPAT_HEADER)
-    legacy_units = read_dicts(directory / "Loadout_Legacy_Units.csv", CANON_LEGACY_UNITS_HEADER)
-    return options, weapons, abilities, points, compatibility, legacy_units
+    return options, weapons, abilities, points, compatibility
 
 
 def validate_canonical(army, tables):
-    options, weapons, abilities, points, compatibility, legacy_units = tables
+    options, weapons, abilities, points, compatibility = tables
     by_id = {}
     group_defaults = defaultdict(int)
     group_options = defaultdict(set)
@@ -123,7 +121,6 @@ def validate_canonical(army, tables):
         ("Loadout_Abilities.csv", abilities),
         ("Loadout_Points.csv", points),
         ("Loadout_Compatibility.csv", compatibility),
-        ("Loadout_Legacy_Units.csv", legacy_units),
     ):
         for row in rows:
             lid = clean(row.get("Loadout_Option_ID"))
@@ -144,7 +141,7 @@ def validate_canonical(army, tables):
 
 
 def generate_compatibility(army, directory, tables):
-    options, weapons, abilities, points, compatibility, legacy_units = tables
+    options, weapons, abilities, points, compatibility = tables
     by_id = validate_canonical(army, tables)
 
     def parent(lid):
@@ -180,10 +177,7 @@ def generate_compatibility(army, directory, tables):
         ]
         for row in compatibility
     ]
-    compat_legacy_units = [
-        [*parent(row["Loadout_Option_ID"]), row["Legacy_Unit_ID"], row["Sort_Order"]]
-        for row in legacy_units
-    ]
+    compat_legacy_units = []
 
     write_csv(directory / "Unit_Loadout_Options.csv", COMPAT_OPTIONS_HEADER, compat_options)
     write_csv(directory / "Unit_Loadout_Weapons.csv", COMPAT_WEAPONS_HEADER, compat_weapons)
@@ -203,7 +197,7 @@ def generate_compatibility(army, directory, tables):
 
 
 def generate_legacy(army, directory, compat_tables):
-    options, weapons, abilities, points, compatibility, legacy_units = compat_tables
+    options, weapons, abilities, points, compatibility, _ = compat_tables
 
     option_keys = set()
     group_options = defaultdict(set)
@@ -217,7 +211,6 @@ def generate_legacy(army, directory, compat_tables):
     ability_links = defaultdict(list)
     point_links = defaultdict(list)
     compatibility_links = defaultdict(list)
-    legacy_links = defaultdict(list)
 
     for source_index, row in enumerate(weapons):
         key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
@@ -257,9 +250,6 @@ def generate_legacy(army, directory, compat_tables):
             clean(row["Compatible_Option_ID"]),
         ))
 
-    for source_index, row in enumerate(legacy_units):
-        key = (clean(row["Unit_ID"]), clean(row["Option_Group_ID"]), clean(row["Option_ID"]))
-        legacy_links[key].append((order_value(row["Sort_Order"]), source_index, clean(row["Legacy_Unit_ID"])))
 
     legacy_rows = []
     for option in options:
@@ -267,7 +257,7 @@ def generate_legacy(army, directory, compat_tables):
         selected = ", ".join(item[2] for item in sorted(selected_weapons[key]))
         preserved = ", ".join(item[2] for item in sorted(preserved_weapons[key]))
         granted = ", ".join(item[2] for item in sorted(ability_links[key]))
-        aliases = ", ".join(item[2] for item in sorted(legacy_links[key]))
+        aliases = ""
         point_slots = {slot: (label, cost) for slot, _, label, cost in point_links[key]}
 
         compat_groups = {}
@@ -299,11 +289,11 @@ def migrate_army(army):
     tables = load_canonical(directory)
     compat_tables = generate_compatibility(army, directory, tables)
     generate_legacy(army, directory, compat_tables)
-    options, weapons, abilities, points, compatibility, legacy_units = tables
+    options, weapons, abilities, points, compatibility = tables
     print(
         f"{army}: {len(options)} canonical Loadout_Option_ID rows -> compatibility tables "
         f"({len(weapons)} weapon links, {len(abilities)} ability links, {len(points)} point rows, "
-        f"{len(compatibility)} compatibility rows, {len(legacy_units)} legacy aliases)"
+        f"{len(compatibility)} compatibility rows)"
     )
 
 

@@ -30,9 +30,7 @@ HEADERS = {
     "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
     "Loadout_Points.csv": ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
     "Loadout_Compatibility.csv": ["Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"],
-    "Loadout_Legacy_Units.csv": ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"],
     "Universal_Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Order"],
-    "Entity_Aliases.csv": ["Entity_Type", "Army", "Alias_ID", "Canonical_ID", "Status"],
     "Universal_Stratagems.csv": ["Detachment_ID", "Detachment_Name", "Item_Type", "Item_ID", "Item_Name", "Points", "CP_Cost", "Short_Description", "Long_Description"],
 }
 
@@ -131,12 +129,11 @@ class State:
                 "Weapon_Stats.csv", "Weapon_Abilities.csv", "Abilities.csv", "Detachment_Definitions.csv", "Enhancements.csv",
                 "Stratagems.csv", "Army_Rules.csv", "Effects.csv", "Loadout_Options.csv",
                 "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
-                "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
+                "Loadout_Compatibility.csv",
             ):
                 self.tables[(army, filename)] = Table(base / filename, HEADERS[filename])
         base = ROOT / "data" / UNIVERSAL
         self.tables[(UNIVERSAL, "Universal_Abilities.csv")] = Table(base / "Universal_Abilities.csv", HEADERS["Universal_Abilities.csv"])
-        self.tables[(UNIVERSAL, "Entity_Aliases.csv")] = Table(base / "Entity_Aliases.csv", HEADERS["Entity_Aliases.csv"])
         self.tables[(UNIVERSAL, "Universal_Stratagems.csv")] = Table(base / "Universal_Stratagems.csv", HEADERS["Universal_Stratagems.csv"])
 
     def t(self, army, filename):
@@ -158,18 +155,6 @@ class State:
         fallback = {"marines": "Space Marines", "orks": "Orks", "nids": "Tyranids"}
         return fallback[army]
 
-
-
-def resolve_entity_alias(state, entity_type, army, value):
-    raw = sval(value)
-    matches = state.t(UNIVERSAL, "Entity_Aliases.csv").find(
-        Entity_Type=entity_type, Army=army, Alias_ID=raw
-    )
-    if not matches:
-        return raw
-    if len(matches) != 1:
-        fail(f"ambiguous entity alias {entity_type}/{army}/{raw!r}")
-    return matches[0]["Canonical_ID"]
 
 
 def validate_new_entity_id(value, label):
@@ -398,7 +383,7 @@ def delete_unit_loadouts(state, army, unit_id):
     loadout_ids = {row["Loadout_Option_ID"] for row in options.rows if row.get("Unit_ID") == unit_id}
     for filename in (
         "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
-        "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
+        "Loadout_Compatibility.csv",
     ):
         state.t(army, filename).delete_where(lambda row, ids=loadout_ids: row.get("Loadout_Option_ID") in ids)
     options.delete_where(lambda row, uid=unit_id: row.get("Unit_ID") == uid)
@@ -407,7 +392,7 @@ def delete_unit_loadouts(state, army, unit_id):
 def delete_option_children(state, army, loadout_option_id, filenames=None):
     targets = filenames or (
         "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
-        "Loadout_Compatibility.csv", "Loadout_Legacy_Units.csv",
+        "Loadout_Compatibility.csv",
     )
     for filename in targets:
         state.t(army, filename).delete_where(
@@ -480,11 +465,6 @@ def replace_loadout_children(state, army, loadout_option_id, payload):
                 "Rule_Order": item.get("Rule_Order", index),
                 "Option_Order": item.get("Option_Order", 1),
             })
-    if "legacy_units" in payload:
-        delete_option_children(state, army, loadout_option_id, ("Loadout_Legacy_Units.csv",))
-        table = state.t(army, "Loadout_Legacy_Units.csv")
-        for index, item in enumerate(payload["legacy_units"], start=1):
-            table.insert({**key, "Legacy_Unit_ID": item["Legacy_Unit_ID"], "Sort_Order": item.get("Sort_Order", index)})
 
 def add_unit(state, army, data):
     table = state.t(army, "Unit_Profiles.csv")
@@ -542,8 +522,6 @@ def apply_operation(state, op, index):
                 validate_new_entity_id(enhancement["Enhancement_ID"], "Enhancement_ID")
             for stratagem in data.get("stratagems", []):
                 validate_new_entity_id(stratagem["Stratagem_ID"], "Stratagem_ID")
-    if mode != "add" and isinstance(entity_id, str):
-        entity_id = resolve_entity_alias(state, entity, army, entity_id)
     print(f"op {index}: {mode} {entity} [{army}]")
 
     if entity == "unit":
@@ -802,7 +780,6 @@ def validate_state(state):
             ("Loadout_Abilities.csv", "Ability_ID", ability_ids),
             ("Loadout_Points.csv", None, None),
             ("Loadout_Compatibility.csv", None, None),
-            ("Loadout_Legacy_Units.csv", None, None),
         ]
         for filename, ref_col, valid_ids in child_specs:
             for row in state.t(army, filename).rows:

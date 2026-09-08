@@ -18,7 +18,6 @@ CANON = {
     "Loadout_Compatibility.csv": [
         "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
     ],
-    "Loadout_Legacy_Units.csv": ["Loadout_Option_ID", "Legacy_Unit_ID", "Sort_Order"],
 }
 COMPAT = {
     "Unit_Loadout_Options.csv": [
@@ -109,13 +108,11 @@ def legacy_expected(rows):
                     unit_id, group_id, option_id, required_group.strip(), compatible_option,
                     str(rule_order), str(option_order),
                 ))
-        for index, legacy_unit_id in enumerate(split_ids(row.get("Legacy_Unit_IDs")), start=1):
-            legacy_units.append((unit_id, group_id, option_id, legacy_unit_id, str(index)))
     return options, weapons, abilities, points, compatibility, legacy_units
 
 
 def expected_compat_from_canonical(canonical):
-    options, weapons, abilities, points, compatibility, legacy_units = canonical
+    options, weapons, abilities, points, compatibility = canonical
     by_id = {clean(row["Loadout_Option_ID"]): row for row in options}
 
     def parent(row):
@@ -146,10 +143,7 @@ def expected_compat_from_canonical(canonical):
             (*parent(row), row["Required_Group_ID"], row["Compatible_Option_ID"], row["Rule_Order"], row["Option_Order"])
             for row in compatibility
         ],
-        [
-            (*parent(row), row["Legacy_Unit_ID"], row["Sort_Order"])
-            for row in legacy_units
-        ],
+        [],
     )
 
 
@@ -157,7 +151,7 @@ def validate_army(army):
     directory = ROOT / "data" / army
     canonical = tuple(read_dicts(directory / filename, header) for filename, header in CANON.items())
     compat_rows = tuple(read_dicts(directory / filename, header) for filename, header in COMPAT.items())
-    options, weapons, abilities, points, compatibility, legacy_units = canonical
+    options, weapons, abilities, points, compatibility = canonical
     compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility, compat_legacy_units = compat_rows
 
     # Canonical IDs and semantic identity.
@@ -192,7 +186,7 @@ def validate_army(army):
             lid = clean(row["Loadout_Option_ID"])
             if lid not in by_id:
                 fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
-            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv", "Loadout_Legacy_Units.csv"}:
+            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv"}:
                 natural = tuple(clean(row[c]) for c in CANON[filename])
                 if natural in seen:
                     fail(f"{army}: duplicate row in {filename}: {natural!r}")
@@ -257,8 +251,7 @@ def validate_army(army):
 
     print(
         f"{army}: loadouts OK — {len(options)} Loadout_Option_IDs, {len(weapons)} weapons, "
-        f"{len(abilities)} abilities, {len(points)} points, {len(compatibility)} compatibility rows, "
-        f"{len(legacy_units)} legacy aliases"
+        f"{len(abilities)} abilities, {len(points)} points, {len(compatibility)} compatibility rows"
     )
 
 
