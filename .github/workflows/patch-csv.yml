@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"tyranids_army_rule","column":"Short_Description","value":"SYNAPSE:\n- 6\" of SYNAPSE.\n- Battle-shock on 3D6.\n- Melee +1 S\n\nSHADOW IN THE WARP:\n- Once per battle\n- Test Battleshock -1 if within 6\" of SYNAPSE"},{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_vanguard_onslaught","column":"Short_Description","value":"VANGUARD INVADERS\n- Advance and Charge.\nALL UNITS: Fall back and Charge\n\nDeathleaper can be Warlord"}]'
+          raw = r'[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"FEAR_OF_THE_UNSEEN_AURA","column":"Short Description","value":"While within 6\", enemy is LD -1.\\n\\nIf below Starting strength, take battle-shock test enemy in Command Ph"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
