@@ -1,5 +1,7 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description
-tyranids_ambush_predators,Tyranids,Ambush Predators,tyranids_ambush_predators_detachment_rule_mindhunger,MINDHUNGER,1,Disruption,,DEATHLEAPER/LICTOR/NEUROLICTOR have Deep Strike; LICTOR/NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.,"Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
+tyranids_ambush_predators,Tyranids,Ambush Predators,tyranids_ambush_predators_detachment_rule_mindhunger,MINDHUNGER,1,Disruption,,"DEATHLEAPER / LICTOR / NEUROLICTOR have Deep Strike. 
+
+LICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.","Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
 
 Friendly LICTOR/NEUROLICTOR units’ attacks that target a CHARACTER unit can re-roll hit rolls of 1."
 tyranids_subterranean_assault,Tyranids,Subterranean Assault,tyranids_subterranean_assault_detachment_rule_detachment_rule,SURPRISE ASSAULT,3,Disruption,,"SURPRISE ASSAULT:
