@@ -1,0 +1,89 @@
+name: Migrate Cards CSV Schema
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-cards-csv-schema.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Register Cards CSV schema
+        run: |
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+
+          path = Path('data/CSV_SCHEMA.csv')
+          with path.open(encoding='utf-8-sig', newline='') as handle:
+              reader = csv.DictReader(handle)
+              header = list(reader.fieldnames or [])
+              rows = list(reader)
+
+          expected = ['Scope','File','Column_Order','Column_Name','Required','Ownership','Notes']
+          if header != expected:
+              raise SystemExit(f'Unexpected CSV_SCHEMA.csv header: {header!r}')
+
+          additions = [
+              ('universal','Dispositions.csv',1,'Disposition_ID','YES','AUTHORITATIVE','Stable canonical Disposition key.'),
+              ('universal','Dispositions.csv',2,'Disposition_Name','YES','AUTHORITATIVE','Visible Disposition name.'),
+              ('universal','Dispositions.csv',3,'Sort_Order','YES','AUTHORITATIVE','Canonical Disposition display order.'),
+              ('universal','Primary_Missions.csv',1,'Primary_Mission_ID','YES','AUTHORITATIVE','Stable canonical Primary Mission key.'),
+              ('universal','Primary_Missions.csv',2,'Disposition_ID','YES','AUTHORITATIVE','Foreign key to Dispositions.csv; owning Disposition deck.'),
+              ('universal','Primary_Missions.csv',3,'Mission_Name','YES','AUTHORITATIVE','Visible Primary Mission name.'),
+              ('universal','Primary_Missions.csv',4,'Sort_Order','YES','AUTHORITATIVE','Mission order within its Disposition deck.'),
+              ('universal','Primary_Mission_Matchups.csv',1,'Matchup_ID','YES','AUTHORITATIVE','Stable key YOUR_DISPOSITION__VS__OPPONENT_DISPOSITION.'),
+              ('universal','Primary_Mission_Matchups.csv',2,'Your_Disposition_ID','YES','AUTHORITATIVE','Foreign key to Dispositions.csv for the player Disposition.'),
+              ('universal','Primary_Mission_Matchups.csv',3,'Opponent_Disposition_ID','YES','AUTHORITATIVE','Foreign key to Dispositions.csv for the opposing Disposition.'),
+              ('universal','Primary_Mission_Matchups.csv',4,'Primary_Mission_ID','YES','AUTHORITATIVE','Foreign key to Primary_Missions.csv.'),
+          ]
+
+          existing = {(r['Scope'], r['File'], r['Column_Name']) for r in rows}
+          for scope, file_name, order, column, required, ownership, notes in additions:
+              key = (scope, file_name, column)
+              if key in existing:
+                  continue
+              rows.append({
+                  'Scope': scope,
+                  'File': file_name,
+                  'Column_Order': str(order),
+                  'Column_Name': column,
+                  'Required': required,
+                  'Ownership': ownership,
+                  'Notes': notes,
+              })
+
+          with path.open('w', encoding='utf-8', newline='') as handle:
+              writer = csv.DictWriter(handle, fieldnames=header, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(rows)
+          PY
+
+      - name: Validate Cards data and schema
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_cards_data.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Commit Cards schema registration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/CSV_SCHEMA.csv data/universal/manifest.json
+          if git diff --cached --quiet; then
+            echo "Cards CSV schema already current"
+            exit 0
+          fi
+          git commit -m "Register Cards CSV schema"
+          git pull --rebase origin main
+          git push
