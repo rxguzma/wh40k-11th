@@ -134,17 +134,20 @@ TARGET: Up to two VANGUARD INVADER units from your army, or one TYRANIDS INFANTR
 EFFECT: Remove the targeted units from the battlefield and place them into Strategic Reserves.
 
 RESTRICTIONS: The targeted units must be more than 3"" away from all enemy units."
-tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,tyranids_warrior_bioform_onslaught,Alien Physiology,1,"Shooting or Fight: When a Tyranid Warriors unit is targeted by an attack with Strength greater than its Toughness, those attacks have –1 to wound rolls.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
+tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,tyranids_warrior_bioform_onslaught,Alien Physiology,1,"Shooting or Fight: Warriors 
+–1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
 TARGET: That TYRANID WARRIORS unit.
 
 EFFECT: Attacks that target your unit with a Strength greater than your unit’s Toughness have –1 to wound rolls."
-tyranids_warrior_bioform_onslaught_stratagem_synaptic_micronodes_1cp,tyranids_warrior_bioform_onslaught,Synaptic Micronodes,1,End of Movement: One Tyranid Warriors unit secures an objective it controls.,"WHEN: End of your Movement phase.
+tyranids_warrior_bioform_onslaught_stratagem_synaptic_micronodes_1cp,tyranids_warrior_bioform_onslaught,Synaptic Micronodes,1,"End of Movement: 
+One Warriors secures an objective.","WHEN: End of your Movement phase.
 
 TARGET: One friendly TYRANID WARRIORS unit.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured."
-tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,tyranids_warrior_bioform_onslaught,Parasitic Payload,1,Shooting: A Tyranid Warriors unit’s ranged attacks have [IGNORE COVER].,"WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
+tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,tyranids_warrior_bioform_onslaught,Parasitic Payload,1,"Shooting:Warriors 
+Ranged attacks have [IGNORE COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
 
 TARGET: That TYRANID WARRIORS unit.
 
