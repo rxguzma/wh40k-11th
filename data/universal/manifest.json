@@ -1,6 +1,18 @@
 {
-  "dataset_sha256": "1513ca4d8184208008a0bea789bcd2b250c3fdde41cc5023dc21f9a3b92840b2",
+  "dataset_sha256": "503935e168c3570423d3621db6b6278893f6d874ecbc096834d531557e77c179",
   "files": {
+    "Dispositions.csv": {
+      "bytes": 175,
+      "sha256": "f7fb83e49bff33ecec4d98b22d6c5b53ea29512dbafc1b12dfa6b41e4663318b"
+    },
+    "Primary_Mission_Matchups.csv": {
+      "bytes": 1810,
+      "sha256": "8a9932ae4524a9d3fc913c0e5579bd92c201a58436072de3d686e3fa0484e0e0"
+    },
+    "Primary_Missions.csv": {
+      "bytes": 1195,
+      "sha256": "b6ae0162326a4e154db8caa97526953167ca046a0dc131ebbdf4c973651adef3"
+    },
     "Universal_Abilities.csv": {
       "bytes": 21695,
       "sha256": "06bfcdbe6c7a51fa0e7244a09fbd11ce8e3e17beca5e52fe498971bb449d2153"
@@ -10,6 +22,6 @@
       "sha256": "0dcec8479fd1119e9e5eae1e617f3d41ae83412e2489d80a0fa394cfd0773c0b"
     }
   },
-  "schema_sha256": "dfbc0729622c8c01db232265d799848aa4facc505ca6f57141734f8ea02e9b27",
+  "schema_sha256": "c86de5febae6bfef59b61f20c4defb08cde82c95fa4ed24ab6640eecc00ab9fb",
   "schema_version": 1
 }

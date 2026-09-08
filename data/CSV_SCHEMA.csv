@@ -209,3 +209,14 @@ army,Effects.csv,7,Operation,YES,AUTHORITATIVE,"ADD, SET, or REMOVE according to
 army,Effects.csv,8,Value,YES,AUTHORITATIVE,Machine-readable effect value.
 army,Effects.csv,9,Display_Tag,YES,AUTHORITATIVE,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
 army,Effects.csv,10,Sort_Order,YES,AUTHORITATIVE,Effect order within its source.
+universal,Dispositions.csv,1,Disposition_ID,YES,AUTHORITATIVE,Stable canonical Disposition key.
+universal,Dispositions.csv,2,Disposition_Name,YES,AUTHORITATIVE,Visible Disposition name.
+universal,Dispositions.csv,3,Sort_Order,YES,AUTHORITATIVE,Canonical Disposition display order.
+universal,Primary_Missions.csv,1,Primary_Mission_ID,YES,AUTHORITATIVE,Stable canonical Primary Mission key.
+universal,Primary_Missions.csv,2,Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv; owning Disposition deck.
+universal,Primary_Missions.csv,3,Mission_Name,YES,AUTHORITATIVE,Visible Primary Mission name.
+universal,Primary_Missions.csv,4,Sort_Order,YES,AUTHORITATIVE,Mission order within its Disposition deck.
+universal,Primary_Mission_Matchups.csv,1,Matchup_ID,YES,AUTHORITATIVE,Stable key YOUR_DISPOSITION__VS__OPPONENT_DISPOSITION.
+universal,Primary_Mission_Matchups.csv,2,Your_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the player Disposition.
+universal,Primary_Mission_Matchups.csv,3,Opponent_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the opposing Disposition.
+universal,Primary_Mission_Matchups.csv,4,Primary_Mission_ID,YES,AUTHORITATIVE,Foreign key to Primary_Missions.csv.
