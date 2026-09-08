@@ -40,6 +40,7 @@ ENHANCEMENT_HEADER = [
     "Detachment_ID",
     "Enhancement_Name",
     "Points",
+    "Repeatable",
     "Short_Description",
     "Long_Description",
     "Tags",

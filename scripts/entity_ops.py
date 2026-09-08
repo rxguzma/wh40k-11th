@@ -21,7 +21,7 @@ HEADERS = {
     "Weapon_Abilities.csv": ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Separator_Before", "Sort_Order"],
     "Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Tags", "Order"],
     "Detachment_Definitions.csv": ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description"],
-    "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Short_Description", "Long_Description", "Tags"],
+    "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags"],
     "Stratagems.csv": ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description"],
     "Army_Rules.csv": ["Army_Rule_ID", "Army_Name", "Rule_Name", "Short_Description", "Long_Description"],
     "Effects.csv": ["Effect_ID", "Source_Type", "Source_ID", "Effect_Type", "Target", "Stat", "Operation", "Value", "Display_Tag", "Sort_Order"],
@@ -279,6 +279,10 @@ def enhancement_row(data, detachment_id=None, existing=None):
     for key, col in mapping.items():
         if key in data:
             row[col] = sval(data[key])
+    if "Repeatable" in data:
+        row["Repeatable"] = bool_csv(data["Repeatable"])
+    elif existing is None:
+        row["Repeatable"] = "FALSE"
     if existing is None:
         row["Tags"] = ""
     return row

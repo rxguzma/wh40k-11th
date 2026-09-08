@@ -98,9 +98,10 @@ army,Enhancements.csv,1,Enhancement_ID,YES,AUTHORITATIVE,Stable unique enhanceme
 army,Enhancements.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Enhancements.csv,3,Enhancement_Name,YES,AUTHORITATIVE,Visible enhancement name.
 army,Enhancements.csv,4,Points,NO,AUTHORITATIVE,Enhancement points cost.
-army,Enhancements.csv,5,Short_Description,NO,AUTHORITATIVE,
-army,Enhancements.csv,6,Long_Description,NO,AUTHORITATIVE,
-army,Enhancements.csv,7,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.
+army,Enhancements.csv,5,Repeatable,YES,AUTHORITATIVE,TRUE when this Enhancement may be assigned more than once in the same army; FALSE otherwise.
+army,Enhancements.csv,6,Short_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,7,Long_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,8,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.
 army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
 army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
