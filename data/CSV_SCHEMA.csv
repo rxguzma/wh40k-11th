@@ -125,9 +125,8 @@ army,Unit_Weapon_Options.csv,10,Points_Label_2,NO,GENERATED_COMPAT,Optional seco
 army,Unit_Weapon_Options.csv,11,Points_Cost_2,NO,GENERATED_COMPAT,Optional second option-specific unit-size cost.
 army,Unit_Weapon_Options.csv,12,Default,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
 army,Unit_Weapon_Options.csv,13,Sort_Order,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,14,Legacy_Unit_IDs,NO,GENERATED_COMPAT,Generated blank compatibility column retained for the current HTML shape; no legacy unit mappings are stored.
-army,Unit_Weapon_Options.csv,15,Preserve_Weapon_IDs,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,16,Compatible_With,NO,GENERATED_COMPAT,Option compatibility expression; blank is valid.
+army,Unit_Weapon_Options.csv,14,Preserve_Weapon_IDs,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
+army,Unit_Weapon_Options.csv,15,Compatible_With,NO,GENERATED_COMPAT,Option compatibility expression; blank is valid.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
@@ -199,11 +198,6 @@ army,Unit_Loadout_Compatibility.csv,4,Required_Group_ID,YES,GENERATED_COMPAT,Gen
 army,Unit_Loadout_Compatibility.csv,5,Compatible_Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
 army,Unit_Loadout_Compatibility.csv,6,Rule_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
 army,Unit_Loadout_Compatibility.csv,7,Option_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Legacy_Units.csv,1,Unit_ID,YES,GENERATED_COMPAT,Empty generated compatibility stub retained for the current HTML filename contract; no legacy unit mappings are stored.
-army,Unit_Loadout_Legacy_Units.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Empty generated compatibility stub retained for the current HTML filename contract; no legacy unit mappings are stored.
-army,Unit_Loadout_Legacy_Units.csv,3,Option_ID,YES,GENERATED_COMPAT,Empty generated compatibility stub retained for the current HTML filename contract; no legacy unit mappings are stored.
-army,Unit_Loadout_Legacy_Units.csv,4,Legacy_Unit_ID,YES,GENERATED_COMPAT,Empty generated compatibility stub retained for the current HTML filename contract; no legacy unit mappings are stored.
-army,Unit_Loadout_Legacy_Units.csv,5,Sort_Order,YES,GENERATED_COMPAT,Empty generated compatibility stub retained for the current HTML filename contract; no legacy unit mappings are stored.
 army,Effects.csv,1,Effect_ID,YES,AUTHORITATIVE,Stable unique effect key.
 army,Effects.csv,2,Source_Type,YES,AUTHORITATIVE,ABILITY or ENHANCEMENT.
 army,Effects.csv,3,Source_ID,YES,AUTHORITATIVE,Foreign key to Ability_ID or Enhancement_ID according to Source_Type.

@@ -34,9 +34,6 @@ COMPAT = {
         "Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID",
         "Compatible_Option_ID", "Rule_Order", "Option_Order",
     ],
-    "Unit_Loadout_Legacy_Units.csv": [
-        "Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order",
-    ],
 }
 
 
@@ -73,7 +70,6 @@ def legacy_expected(rows):
     abilities = []
     points = []
     compatibility = []
-    legacy_units = []
     for row in rows:
         unit_id = clean(row.get("Unit_ID"))
         group_id = clean(row.get("Option_Group_ID"))
@@ -108,7 +104,7 @@ def legacy_expected(rows):
                     unit_id, group_id, option_id, required_group.strip(), compatible_option,
                     str(rule_order), str(option_order),
                 ))
-    return options, weapons, abilities, points, compatibility, legacy_units
+    return options, weapons, abilities, points, compatibility
 
 
 def expected_compat_from_canonical(canonical):
@@ -143,7 +139,6 @@ def expected_compat_from_canonical(canonical):
             (*parent(row), row["Required_Group_ID"], row["Compatible_Option_ID"], row["Rule_Order"], row["Option_Order"])
             for row in compatibility
         ],
-        [],
     )
 
 
@@ -152,7 +147,7 @@ def validate_army(army):
     canonical = tuple(read_dicts(directory / filename, header) for filename, header in CANON.items())
     compat_rows = tuple(read_dicts(directory / filename, header) for filename, header in COMPAT.items())
     options, weapons, abilities, points, compatibility = canonical
-    compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility, compat_legacy_units = compat_rows
+    compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility = compat_rows
 
     # Canonical IDs and semantic identity.
     by_id = {}
@@ -198,7 +193,7 @@ def validate_army(army):
         actual_tuples(rows, header)
         for rows, header in zip(compat_rows, COMPAT.values())
     )
-    labels = ("options", "weapons", "abilities", "points", "compatibility", "legacy units")
+    labels = ("options", "weapons", "abilities", "points", "compatibility")
     for label, expected_rows, actual_rows in zip(labels, expected_compat, actual_compat):
         if expected_rows != actual_rows:
             fail(f"{army}: generated Unit_Loadout_* {label} do not exactly match canonical Loadout_* data")

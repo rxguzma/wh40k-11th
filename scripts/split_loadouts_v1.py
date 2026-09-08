@@ -11,7 +11,7 @@ LEGACY_HEADER = [
     "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name",
     "Weapon_IDs", "Ability_IDs", "Points_Label_1", "Points_Cost_1",
     "Points_Label_2", "Points_Cost_2", "Default", "Sort_Order",
-    "Legacy_Unit_IDs", "Preserve_Weapon_IDs", "Compatible_With",
+    "Preserve_Weapon_IDs", "Compatible_With",
 ]
 CANON_OPTIONS_HEADER = [
     "Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID",
@@ -37,9 +37,6 @@ COMPAT_POINTS_HEADER = [
 COMPAT_COMPAT_HEADER = [
     "Unit_ID", "Option_Group_ID", "Option_ID", "Required_Group_ID",
     "Compatible_Option_ID", "Rule_Order", "Option_Order",
-]
-COMPAT_LEGACY_UNITS_HEADER = [
-    "Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order",
 ]
 
 
@@ -177,14 +174,11 @@ def generate_compatibility(army, directory, tables):
         ]
         for row in compatibility
     ]
-    compat_legacy_units = []
-
     write_csv(directory / "Unit_Loadout_Options.csv", COMPAT_OPTIONS_HEADER, compat_options)
     write_csv(directory / "Unit_Loadout_Weapons.csv", COMPAT_WEAPONS_HEADER, compat_weapons)
     write_csv(directory / "Unit_Loadout_Abilities.csv", COMPAT_ABILITIES_HEADER, compat_abilities)
     write_csv(directory / "Unit_Loadout_Points.csv", COMPAT_POINTS_HEADER, compat_points)
     write_csv(directory / "Unit_Loadout_Compatibility.csv", COMPAT_COMPAT_HEADER, compat_compatibility)
-    write_csv(directory / "Unit_Loadout_Legacy_Units.csv", COMPAT_LEGACY_UNITS_HEADER, compat_legacy_units)
 
     return (
         [dict(zip(COMPAT_OPTIONS_HEADER, row)) for row in compat_options],
@@ -192,12 +186,11 @@ def generate_compatibility(army, directory, tables):
         [dict(zip(COMPAT_ABILITIES_HEADER, row)) for row in compat_abilities],
         [dict(zip(COMPAT_POINTS_HEADER, row)) for row in compat_points],
         [dict(zip(COMPAT_COMPAT_HEADER, row)) for row in compat_compatibility],
-        [dict(zip(COMPAT_LEGACY_UNITS_HEADER, row)) for row in compat_legacy_units],
     )
 
 
 def generate_legacy(army, directory, compat_tables):
-    options, weapons, abilities, points, compatibility, _ = compat_tables
+    options, weapons, abilities, points, compatibility = compat_tables
 
     option_keys = set()
     group_options = defaultdict(set)
@@ -257,7 +250,6 @@ def generate_legacy(army, directory, compat_tables):
         selected = ", ".join(item[2] for item in sorted(selected_weapons[key]))
         preserved = ", ".join(item[2] for item in sorted(preserved_weapons[key]))
         granted = ", ".join(item[2] for item in sorted(ability_links[key]))
-        aliases = ""
         point_slots = {slot: (label, cost) for slot, _, label, cost in point_links[key]}
 
         compat_groups = {}
@@ -278,7 +270,7 @@ def generate_legacy(army, directory, compat_tables):
         legacy_rows.append([
             key[0], key[1], clean(option["Group_Label"]), key[2], clean(option["Option_Name"]),
             selected, granted, point_1[0], point_1[1], point_2[0], point_2[1],
-            clean(option["Default"]), clean(option["Sort_Order"]), aliases, preserved, compatible_with,
+            clean(option["Default"]), clean(option["Sort_Order"]), preserved, compatible_with,
         ])
 
     write_csv(directory / "Unit_Weapon_Options.csv", LEGACY_HEADER, legacy_rows)
