@@ -28,7 +28,8 @@ DEFENSIVE_STANCE,Defensive Stance,Overwatch on 5+ or 4+ if on objective.,"Each t
 DOMINATION_OF_THE_HIVE_MIND_AURA,Domination of the Hive Mind (Aura),"9"" have Synapse","While a friendly Tyranids unit is within 9"" of this model, that unit is within your army’s Synapse Range.",,0
 ENCEPHALIC_DIFFUSION_AURA_AND_PSYCHIC,Encephalic Diffusion (Aura and Psychic),"Enemy 6"": -1 to Hit. If Below Half-strength, -1 to Wound.","While an enemy unit is within 6"" of this model, each time a model in that unit makes an attack, subtract 1 from the Hit roll, and, if that enemy unit is Below Half-strength, subtract 1 from the Wound roll as well.",,0
 FEAR_OF_THE_UNSEEN_AURA,Fear of the Unseen (Aura),"While within 6"", enemy is LD -1.
-Also, if below Starting strength, take battle-shock test in enemy Command Phase","While an enemy unit is within 6"" of this model, worsen the Leadership characteristic of models in that unit by 1.
+
+If below Starting strength, take battle-shock test enemy in Command Ph","While an enemy unit is within 6"" of this model, worsen the Leadership characteristic of models in that unit by 1.
 
 In addition, in the Battle-shock step of your opponent’s Command phase, if such an enemy unit is below its Starting Strength, it must take a Battle-shock test.",,0
 FEEDER_TENDRILS,Feeder Tendrils,"When this model destroys a Character, you gain 1CP.","Each time this model destroys an enemy Character model, you gain 1CP.",,0
