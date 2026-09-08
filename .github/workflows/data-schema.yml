@@ -21,6 +21,7 @@ on:
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
       - 'scripts/validate_ability_orders.py'
+      - 'scripts/validate_cards_data.py'
       - 'scripts/validate_no_new_names.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
@@ -38,6 +39,7 @@ on:
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
       - 'scripts/validate_ability_orders.py'
+      - 'scripts/validate_cards_data.py'
       - 'scripts/validate_no_new_names.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
@@ -94,6 +96,9 @@ jobs:
 
       - name: Validate canonical Ability orders
         run: python3 scripts/validate_ability_orders.py
+
+      - name: Validate Cards data
+        run: python3 scripts/validate_cards_data.py
 
       - name: Reject New naming in canonical data
         run: python3 scripts/validate_no_new_names.py
