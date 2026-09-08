@@ -192,10 +192,8 @@ tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,DETACHMENT
 Also, WARRIORS, TYRANID PRIME (both types) have a 5+ invulnerable save.","Friendly TYRANID WARRIORS WITH RANGED BIO‑WEAPONS/TYRANID WARRIORS WITH MELEE BIO‑WEAPONS units have: TYRANID WARRIORS and BATTLELINE.
 
 TYRANID WARRIORS/TYRANID PRIME WITH LASH WHIP/WINGED TYRANID PRIME models from your army have 5+ InSv.",
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,30,,,,"TYRANID PRIME model (both types) only.
-Melee re‑roll wound rolls and have +1 AP.",WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.,
-tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,20,,,,"TYRANID PRIME model (both types) only.
-Melee attacks have +1 to hit rolls.",WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.,
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_elevated_might,Elevated Might,30,,,,TYRANID PRIME model (both types). Melee re‑roll wound rolls and have +1 AP.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This model’s melee attacks can re‑roll wound rolls and have +1 AP.,
+tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,20,,,,TYRANID PRIME model (both types). Melee attacks have +1 to hit rolls.,WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.,
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: Warriors 
 -1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
