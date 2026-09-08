@@ -1,5 +1,7 @@
 Detachment_ID,Army_Name,Detachment_Name,Item_Type,Item_ID,Item_Name,Points,CP_Cost,DP_Cost,Detachment_Disposition,Short_Description,Long_Description,Detachment_Disposition_2
-tyranids_ambush_predators,Tyranids,Ambush Predators,DETACHMENT_RULE,tyranids_ambush_predators_detachment_rule_mindhunger,MINDHUNGER,,,1,Disruption,DEATHLEAPER/LICTOR/NEUROLICTOR have Deep Strike; LICTOR/NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.,"Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
+tyranids_ambush_predators,Tyranids,Ambush Predators,DETACHMENT_RULE,tyranids_ambush_predators_detachment_rule_mindhunger,MINDHUNGER,,,1,Disruption,"DEATHLEAPER / LICTOR / NEUROLICTOR have Deep Strike. 
+
+LICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.","Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
 
 Friendly LICTOR/NEUROLICTOR units’ attacks that target a CHARACTER unit can re-roll hit rolls of 1.",
 tyranids_ambush_predators,Tyranids,Ambush Predators,ENHANCEMENT,tyranids_ambush_predators_enhancement_encircling_horrors,Encircling Horrors,20,,,,"In your opponent’s Movement phase, when an enemy ends a move within 8"" of a NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit, that unit can move up to D3+3"".","NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, this unit can make a normal move of up to D3+3"".",
