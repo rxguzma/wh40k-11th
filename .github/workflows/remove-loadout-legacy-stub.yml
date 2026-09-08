@@ -1,0 +1,142 @@
+name: Remove Loadout Legacy Stub
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/remove-loadout-legacy-stub.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install schema validator
+        run: python3 -m pip install --disable-pip-version-check --quiet 'jsonschema==4.25.1'
+
+      - name: Remove retired loadout compatibility
+        run: |
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+
+          root = Path('.')
+
+          # Generator: five Unit_Loadout_* compatibility tables, no legacy stub,
+          # and no blank Legacy_Unit_IDs column in Unit_Weapon_Options.csv.
+          path = root / 'scripts/split_loadouts_v1.py'
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              '    "Points_Label_2", "Points_Cost_2", "Default", "Sort_Order",\n    "Legacy_Unit_IDs", "Preserve_Weapon_IDs", "Compatible_With",\n',
+              '    "Points_Label_2", "Points_Cost_2", "Default", "Sort_Order",\n    "Preserve_Weapon_IDs", "Compatible_With",\n'
+          )
+          start = text.find('COMPAT_LEGACY_UNITS_HEADER = [')
+          if start >= 0:
+              end = text.find(']\n', start)
+              if end < 0:
+                  raise SystemExit('Could not remove COMPAT_LEGACY_UNITS_HEADER')
+              text = text[:start] + text[end + 2:]
+          text = text.replace('    compat_legacy_units = []\n\n', '')
+          text = text.replace('    write_csv(directory / "Unit_Loadout_Legacy_Units.csv", COMPAT_LEGACY_UNITS_HEADER, compat_legacy_units)\n', '')
+          text = text.replace('        [dict(zip(COMPAT_COMPAT_HEADER, row)) for row in compat_compatibility],\n        [dict(zip(COMPAT_LEGACY_UNITS_HEADER, row)) for row in compat_legacy_units],\n', '        [dict(zip(COMPAT_COMPAT_HEADER, row)) for row in compat_compatibility],\n')
+          text = text.replace('    options, weapons, abilities, points, compatibility, _ = compat_tables\n', '    options, weapons, abilities, points, compatibility = compat_tables\n')
+          text = text.replace('        aliases = ""\n', '')
+          text = text.replace('            clean(option["Default"]), clean(option["Sort_Order"]), aliases, preserved, compatible_with,\n', '            clean(option["Default"]), clean(option["Sort_Order"]), preserved, compatible_with,\n')
+          for forbidden in ('COMPAT_LEGACY_UNITS_HEADER', 'Unit_Loadout_Legacy_Units.csv', 'compat_legacy_units', 'Legacy_Unit_IDs', 'aliases = ""'):
+              if forbidden in text:
+                  raise SystemExit(f'Generator cleanup incomplete: {forbidden}')
+          path.write_text(text, encoding='utf-8')
+
+          # Validator: exactly five generated Unit_Loadout_* tables.
+          path = root / 'scripts/validate_loadouts.py'
+          text = path.read_text(encoding='utf-8')
+          block = '''    "Unit_Loadout_Legacy_Units.csv": [\n        "Unit_ID", "Option_Group_ID", "Option_ID", "Legacy_Unit_ID", "Sort_Order",\n    ],\n'''
+          text = text.replace(block, '')
+          text = text.replace('    legacy_units = []\n', '')
+          text = text.replace('    return options, weapons, abilities, points, compatibility, legacy_units\n', '    return options, weapons, abilities, points, compatibility\n')
+          text = text.replace('        ],\n        [],\n    )\n', '        ],\n    )\n', 1)
+          text = text.replace('    compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility, compat_legacy_units = compat_rows\n', '    compat_options, compat_weapons, compat_abilities, compat_points, compat_compatibility = compat_rows\n')
+          text = text.replace('    labels = ("options", "weapons", "abilities", "points", "compatibility", "legacy units")\n', '    labels = ("options", "weapons", "abilities", "points", "compatibility")\n')
+          for forbidden in ('Unit_Loadout_Legacy_Units.csv', 'compat_legacy_units', 'legacy_units'):
+              if forbidden in text:
+                  raise SystemExit(f'Validator cleanup incomplete: {forbidden}')
+          path.write_text(text, encoding='utf-8')
+
+          # CSV schema: remove retired file and blank compatibility column.
+          path = root / 'data/CSV_SCHEMA.csv'
+          with path.open(encoding='utf-8-sig', newline='') as handle:
+              reader = csv.DictReader(handle)
+              header = list(reader.fieldnames or [])
+              rows = []
+              for row in reader:
+                  if row.get('Scope') == 'army' and row.get('File') == 'Unit_Loadout_Legacy_Units.csv':
+                      continue
+                  if row.get('Scope') == 'army' and row.get('File') == 'Unit_Weapon_Options.csv' and row.get('Column_Name') == 'Legacy_Unit_IDs':
+                      continue
+                  if row.get('Scope') == 'army' and row.get('File') == 'Unit_Weapon_Options.csv':
+                      order = int(row.get('Column_Order') or 0)
+                      if order > 14:
+                          row['Column_Order'] = str(order - 1)
+                  rows.append(row)
+          with path.open('w', encoding='utf-8', newline='') as handle:
+              writer = csv.DictWriter(handle, fieldnames=header, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(rows)
+
+          for army in ('marines', 'orks', 'nids'):
+              stub = root / 'data' / army / 'Unit_Loadout_Legacy_Units.csv'
+              if stub.exists():
+                  stub.unlink()
+          PY
+
+      - name: Generate compatibility outputs
+        run: |
+          python3 scripts/split_detachments_v2.py
+          python3 scripts/split_units_v1.py
+          python3 scripts/split_weapon_abilities_v1.py
+          python3 scripts/split_loadouts_v1.py
+          python3 scripts/split_effects_v1.py
+
+      - name: Validate repository data
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/audit_references.py
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_unit_relations.py
+          python3 scripts/validate_weapon_abilities.py
+          python3 scripts/validate_loadouts.py
+          python3 scripts/validate_effects.py
+          python3 scripts/validate_no_new_names.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Validate Entity Ops
+        env:
+          ENTITY_OPS_JSON: '{"version":1,"operations":[]}'
+        run: python3 scripts/entity_ops.py
+
+      - name: Require fresh-state contract
+        run: |
+          for army in marines orks nids; do
+            test ! -e "data/$army/Unit_Loadout_Legacy_Units.csv"
+            ! head -n 1 "data/$army/Unit_Weapon_Options.csv" | grep -q 'Legacy_Unit_IDs'
+          done
+          ! grep -R "Unit_Loadout_Legacy_Units\|Legacy_Unit_IDs" scripts/split_loadouts_v1.py scripts/validate_loadouts.py data/CSV_SCHEMA.csv
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- data scripts/split_loadouts_v1.py scripts/validate_loadouts.py
+          if git diff --cached --quiet; then
+            echo "Loadout legacy compatibility already removed"
+            exit 0
+          fi
+          git commit -m "Remove retired loadout compatibility"
+          git pull --rebase origin main
+          git push
