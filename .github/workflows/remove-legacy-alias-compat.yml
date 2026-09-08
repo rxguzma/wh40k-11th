@@ -25,6 +25,7 @@ jobs:
         run: |
           python3 scripts/remove_legacy_alias_compat.py
           python3 scripts/fix_legacy_cleanup_transforms.py
+          python3 scripts/finalize_legacy_cleanup_metadata.py
 
       - name: Compile permanent tooling
         run: |
@@ -74,7 +75,9 @@ jobs:
             test ! -e "data/$army/Loadout_Legacy_Units.csv"
             test "$(wc -l < "data/$army/Unit_Loadout_Legacy_Units.csv")" -eq 1
           done
-          ! grep -R "Entity_Aliases\|resolve_entity_alias\|Loadout_Legacy_Units\|legacy_units" scripts/entity_ops.py schemas/entity-ops.schema.json data/CSV_SCHEMA.csv
+          ! grep -R "Entity_Aliases\|resolve_entity_alias\|legacy_units" scripts/entity_ops.py schemas/entity-ops.schema.json data/CSV_SCHEMA.csv
+          ! grep -q '^army,Loadout_Legacy_Units.csv,' data/CSV_SCHEMA.csv
+          ! grep -q 'Generated from canonical Loadout_Legacy_Units.csv' data/CSV_SCHEMA.csv
 
       - name: Commit cleanup
         run: |
