@@ -1,0 +1,196 @@
+name: Migrate Repeatable Enhancements
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-repeatable-enhancements.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install schema validator
+        run: python3 -m pip install --disable-pip-version-check --quiet 'jsonschema==4.25.1'
+
+      - name: Migrate repeatable enhancement field
+        run: |
+          python3 - <<'PY'
+          import csv
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('.')
+          armies = ('marines', 'orks', 'nids')
+
+          # 1) Canonical Enhancements.csv: add explicit Repeatable field.
+          for army in armies:
+              path = root / 'data' / army / 'Enhancements.csv'
+              with path.open(encoding='utf-8-sig', newline='') as handle:
+                  reader = csv.DictReader(handle)
+                  old_header = list(reader.fieldnames or [])
+                  rows = list(reader)
+              expected_old = ['Enhancement_ID','Detachment_ID','Enhancement_Name','Points','Short_Description','Long_Description','Tags']
+              expected_new = ['Enhancement_ID','Detachment_ID','Enhancement_Name','Points','Repeatable','Short_Description','Long_Description','Tags']
+              if old_header not in (expected_old, expected_new):
+                  raise SystemExit(f'{path}: unexpected header {old_header!r}')
+              true_count = 0
+              for row in rows:
+                  if old_header == expected_old:
+                      name = str(row.get('Enhancement_Name') or '').strip()
+                      repeatable = bool(re.search(r'\((?:UP|Upgrade)\)\s*$', name, re.I))
+                      row['Repeatable'] = 'TRUE' if repeatable else 'FALSE'
+                  else:
+                      raw = str(row.get('Repeatable') or '').strip().lower()
+                      if raw not in {'true','false','1','0','yes','no','y','n'}:
+                          raise SystemExit(f'{path}: invalid Repeatable value {row.get("Repeatable")!r}')
+                      row['Repeatable'] = 'TRUE' if raw in {'true','1','yes','y'} else 'FALSE'
+                  true_count += row['Repeatable'] == 'TRUE'
+              with path.open('w', encoding='utf-8', newline='') as handle:
+                  writer = csv.DictWriter(handle, fieldnames=expected_new, lineterminator='\n')
+                  writer.writeheader()
+                  writer.writerows(rows)
+              print(f'{army}: {true_count} repeatable enhancements')
+
+          # 2) CSV_SCHEMA: Repeatable is authoritative and explicit.
+          path = root / 'data' / 'CSV_SCHEMA.csv'
+          with path.open(encoding='utf-8-sig', newline='') as handle:
+              reader = csv.DictReader(handle)
+              header = list(reader.fieldnames or [])
+              rows = list(reader)
+          new_rows = []
+          inserted = False
+          enhancement_schema = [
+              ('1','Enhancement_ID','YES','AUTHORITATIVE','Stable unique enhancement key.'),
+              ('2','Detachment_ID','YES','AUTHORITATIVE','Foreign key to Detachment_Definitions.csv.'),
+              ('3','Enhancement_Name','YES','AUTHORITATIVE','Visible enhancement name.'),
+              ('4','Points','NO','AUTHORITATIVE','Enhancement points cost.'),
+              ('5','Repeatable','YES','AUTHORITATIVE','TRUE when this Enhancement may be assigned more than once in the same army; FALSE otherwise.'),
+              ('6','Short_Description','NO','AUTHORITATIVE',''),
+              ('7','Long_Description','NO','AUTHORITATIVE',''),
+              ('8','Tags','NO','GENERATED_COLUMN','Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.'),
+          ]
+          for row in rows:
+              if row.get('Scope') == 'army' and row.get('File') == 'Enhancements.csv':
+                  if not inserted:
+                      for order, column, required, ownership, notes in enhancement_schema:
+                          new_rows.append({
+                              'Scope':'army','File':'Enhancements.csv','Column_Order':order,'Column_Name':column,
+                              'Required':required,'Ownership':ownership,'Notes':notes
+                          })
+                      inserted = True
+                  continue
+              new_rows.append(row)
+          if not inserted:
+              raise SystemExit('Enhancements.csv schema rows not found')
+          with path.open('w', encoding='utf-8', newline='') as handle:
+              writer = csv.DictWriter(handle, fieldnames=header, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(new_rows)
+
+          # 3) Detachment generator must accept the new canonical header.
+          path = root / 'scripts' / 'split_detachments_v2.py'
+          text = path.read_text(encoding='utf-8')
+          old = '''ENHANCEMENT_HEADER = [\n    "Enhancement_ID",\n    "Detachment_ID",\n    "Enhancement_Name",\n    "Points",\n    "Short_Description",\n    "Long_Description",\n    "Tags",\n]\n'''
+          new = '''ENHANCEMENT_HEADER = [\n    "Enhancement_ID",\n    "Detachment_ID",\n    "Enhancement_Name",\n    "Points",\n    "Repeatable",\n    "Short_Description",\n    "Long_Description",\n    "Tags",\n]\n'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif new not in text:
+              raise SystemExit('split_detachments_v2.py enhancement header not found')
+          path.write_text(text, encoding='utf-8')
+
+          # 4) Entity Ops must read/write Repeatable on enhancement ADD/CHANGE.
+          path = root / 'scripts' / 'entity_ops.py'
+          text = path.read_text(encoding='utf-8')
+          old = '    "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Short_Description", "Long_Description", "Tags"],'
+          new = '    "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags"],'
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif new not in text:
+              raise SystemExit('entity_ops.py Enhancements HEADERS entry not found')
+          old = '''        "Enhancement_Name": "Enhancement_Name", "Points": "Points",\n        "Short_Description": "Short_Description", "Long_Description": "Long_Description",\n'''
+          new = '''        "Enhancement_Name": "Enhancement_Name", "Points": "Points",\n        "Short_Description": "Short_Description", "Long_Description": "Long_Description",\n'''
+          if old not in text:
+              raise SystemExit('entity_ops.py enhancement mapping not found')
+          marker = '''    for key, col in mapping.items():\n        if key in data:\n            row[col] = sval(data[key])\n    if existing is None:\n        row["Tags"] = ""\n    return row\n\n\ndef stratagem_row'''
+          replacement = '''    for key, col in mapping.items():\n        if key in data:\n            row[col] = sval(data[key])\n    if "Repeatable" in data:\n        row["Repeatable"] = bool_csv(data["Repeatable"])\n    elif existing is None:\n        row["Repeatable"] = "FALSE"\n    if existing is None:\n        row["Tags"] = ""\n    return row\n\n\ndef stratagem_row'''
+          if marker in text:
+              text = text.replace(marker, replacement, 1)
+          elif 'row["Repeatable"] = bool_csv(data["Repeatable"])' not in text:
+              raise SystemExit('entity_ops.py enhancement_row body not found')
+          path.write_text(text, encoding='utf-8')
+
+          # 5) Entity Ops JSON schema exposes Repeatable for all enhancement forms.
+          path = root / 'schemas' / 'entity-ops.schema.json'
+          schema = json.loads(path.read_text(encoding='utf-8'))
+          repeatable_schema = {'type':['boolean','string','integer']}
+          for key in ('nestedEnhancementAdd','enhancementAdd','enhancementChange'):
+              props = schema['$defs'][key]['properties']
+              props['Repeatable'] = repeatable_schema
+          path.write_text(json.dumps(schema, separators=(',', ':')) + '\n', encoding='utf-8')
+          PY
+
+      - name: Generate compatibility outputs
+        run: |
+          python3 scripts/split_detachments_v2.py
+          python3 scripts/split_units_v1.py
+          python3 scripts/split_weapon_abilities_v1.py
+          python3 scripts/split_loadouts_v1.py
+          python3 scripts/split_effects_v1.py
+
+      - name: Validate repository data
+        run: |
+          python3 scripts/data_schema.py normalize
+          python3 scripts/audit_references.py
+          python3 scripts/data_schema.py validate
+          python3 scripts/validate_unit_relations.py
+          python3 scripts/validate_weapon_abilities.py
+          python3 scripts/validate_loadouts.py
+          python3 scripts/validate_effects.py
+          python3 scripts/validate_no_new_names.py
+          python3 scripts/data_schema.py manifest
+
+      - name: Validate repeatable contract
+        run: |
+          python3 - <<'PY'
+          import csv
+          import re
+          from pathlib import Path
+          for army in ('marines','orks','nids'):
+              path = Path('data') / army / 'Enhancements.csv'
+              with path.open(encoding='utf-8-sig', newline='') as handle:
+                  rows = list(csv.DictReader(handle))
+              for row in rows:
+                  value = row.get('Repeatable')
+                  if value not in {'TRUE','FALSE'}:
+                      raise SystemExit(f'{path}: invalid Repeatable {value!r}')
+                  old_semantic = bool(re.search(r'\((?:UP|Upgrade)\)\s*$', row.get('Enhancement_Name') or '', re.I))
+                  if old_semantic != (value == 'TRUE'):
+                      raise SystemExit(f'{path}: migration mismatch for {row.get("Enhancement_ID")}')
+          PY
+
+      - name: Validate Entity Ops
+        env:
+          ENTITY_OPS_JSON: '{"version":1,"operations":[]}'
+        run: python3 scripts/entity_ops.py
+
+      - name: Commit migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- data scripts/split_detachments_v2.py scripts/entity_ops.py schemas/entity-ops.schema.json
+          if git diff --cached --quiet; then
+            echo "Repeatable enhancement migration already current"
+            exit 0
+          fi
+          git commit -m "Make enhancement repeatability canonical"
+          git pull --rebase origin main
+          git push
