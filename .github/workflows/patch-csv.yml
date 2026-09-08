@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp","column":"Short_Description","value":"Shooting or Fight: Warriors \\n-1 to wound if Strength is higher Toughness."},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp","column":"Short_Description","value":"Shooting:Warriors \\nRanged attacks have [IGNORES COVER]."},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"ALPHA_WARRIOR_TYRANID_PRIME_WITH_LASH_WHIP","column":"Short Description","value":"UNIT all weapons: SUSTAIN 1"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"LEADER_TYRANID_PRIME_WITH_LASH_WHIP","column":"Short Description","value":"Leader: Gaunts, Warriors"}]'
+          raw = r'[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_warrior_bioform_onslaught_enhancement_elevated_might","column":"Short_Description","value":"TYRANID PRIME model (both types). Melee re‑roll wound rolls and have +1 AP."},{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation","column":"Short_Description","value":"TYRANID PRIME model (both types). Melee attacks have +1 to hit rolls."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
