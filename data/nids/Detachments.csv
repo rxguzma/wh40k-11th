@@ -197,7 +197,7 @@ Melee re‑roll wound rolls and have +1 AP.",WINGED TYRANID PRIME/TYRANID PRIM
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,ENHANCEMENT,tyranids_warrior_bioform_onslaught_enhancement_ocular_adaptation,Ocular Adaptation,20,,,,"TYRANID PRIME model (both types) only.
 Melee attacks have +1 to hit rolls.",WINGED TYRANID PRIME/TYRANID PRIME WITH LASH WHIP model only. This unit’s melee attacks have +1 to hit rolls.,
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_alien_physiology_1cp,Alien Physiology,,1,,,"Shooting or Fight: Warriors 
-–1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
+-1 to wound if Strength is higher Toughness.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly TYRANID WARRIORS unit.
 
 TARGET: That TYRANID WARRIORS unit.
 
@@ -209,7 +209,7 @@ TARGET: One friendly TYRANID WARRIORS unit.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured.",
 tyranids_warrior_bioform_onslaught,Tyranids,Warrior Bioform Onslaught,STRATAGEM,tyranids_warrior_bioform_onslaught_stratagem_parasitic_payload_1cp,Parasitic Payload,,1,,,"Shooting:Warriors 
-Ranged attacks have [IGNORE COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
+Ranged attacks have [IGNORES COVER].","WHEN: Your Shooting phase, when a friendly TYRANID WARRIORS unit is selected to shoot.
 
 TARGET: That TYRANID WARRIORS unit.
 
