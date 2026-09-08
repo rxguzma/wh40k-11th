@@ -1,7 +1,7 @@
 name: Data Schema
 # CSV ownership metadata is enforced by scripts/data_schema.py.
 # Canonical loadouts use Loadout_Option_ID; Unit_Loadout_* remains generated compatibility.
-# Deprecated IDs live only in Entity_Aliases.csv; canonical/display names cannot use New markers.
+# Canonical/display names cannot use New markers.
 
 on:
   push:
@@ -19,7 +19,6 @@ on:
       - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
-      - 'scripts/validate_aliases.py'
       - 'scripts/validate_no_new_names.py'
       - '.github/workflows/data-schema.yml'
   pull_request:
@@ -36,7 +35,6 @@ on:
       - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
       - 'scripts/validate_effects.py'
-      - 'scripts/validate_aliases.py'
       - 'scripts/validate_no_new_names.py'
       - '.github/workflows/data-schema.yml'
   workflow_run:
@@ -90,9 +88,6 @@ jobs:
 
       - name: Validate normalized effects
         run: python3 scripts/validate_effects.py
-
-      - name: Validate entity aliases
-        run: python3 scripts/validate_aliases.py
 
       - name: Reject New naming in canonical data
         run: python3 scripts/validate_no_new_names.py
