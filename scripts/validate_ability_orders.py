@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Canonical Ability Order is required data; application code must not infer it.
 import csv
 import re
 from pathlib import Path
