@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_A_MELEE","sets":{"Title":"+1 Attack (M)"}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_S_MELEE","sets":{"Title":"+1 Strength (M)"}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_AP_MELEE","sets":{"Title":"+1 AP (M)"}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_D_MELEE","sets":{"Title":"+1 Damage (M)"}}]'
+          raw = r'[{"file":"data/nids/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"TYRANID_WARRIORS_WITH_MELEE_BIO_WEAPONS","column":"Unit Name","value":"Warriors With Melee Bio-weapons"},{"file":"data/nids/Weapon Stats.csv","id_column":"Weapon_ID","row_id":"TYRANID_WARRIOR_CLAWS_AND_TALONS_MELEE_WARRIORS","column":"Weapon Name","value":"Warrior claws and talons"},{"file":"data/nids/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"TYRANID_WARRIORS_WITH_RANGED_BIO_WEAPONS","column":"Unit Name","value":"Warriors with Ranged Bio-weapons"},{"file":"data/nids/Weapon Stats.csv","id_column":"Weapon_ID","row_id":"TYRANID_WARRIOR_CLAWS_AND_TALONS","column":"Weapon Name","value":"Warrior claws and talons"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
