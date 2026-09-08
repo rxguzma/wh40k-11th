@@ -1,8 +1,9 @@
 Ability_ID,Ability Name,Short Description,Long Description,Tags,Order
 ADAPTABLE_PREDATORS,Adaptable Predators,"Fall back, Shoot and Charge",This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.,,
-ADAPTIVE_INSTINCTS,Adaptive Instincts,"Once per turn: Fight, when selected to fight or when targeted.
+ADAPTIVE_INSTINCTS,Adaptive Instincts,"MELEE. Once per turn. 
+When Targetted or selected to Fight (pick one): 
 - +1 S melee
-- or +1 T","Once per turn, per unit: In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following:
+- +1 T","Once per turn, per unit: In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following:
 - This unit’s melee attacks have +1 S.
 - This unit has +1 T.",,
 ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.,,
