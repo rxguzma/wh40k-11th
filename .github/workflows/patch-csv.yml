@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"MALIGN_PRESENCE_AURA","column":"Short Description","value":"Each time: 12\" cost +1 CP"},{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_ambush_predators","column":"Short_Description","value":"DEATHLEAPER / LICTOR / NEUROLICTOR have Deep Strike. \\n\\nLICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units."}]'
+          raw = r'[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_ambush_predators_enhancement_encircling_horrors","column":"Short_Description","value":"Reactive Move\\nOpponent’s Movement move within 8\" \\nNEUROLICTOR / LICTOR / VON RYAN’S LEAPERS can move up to D3+3\"."}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
