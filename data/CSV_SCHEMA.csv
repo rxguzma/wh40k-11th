@@ -70,7 +70,7 @@ army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
 army,Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
 army,Abilities.csv,5,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Ability_ID; presentation/legacy compatibility only.
-army,Abilities.csv,6,Order,NO,AUTHORITATIVE,Optional default ability sort order 0-9; blank uses application fallback.
+army,Abilities.csv,6,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type, Tags, or Effects."
 army,Detachments.csv,1,Detachment_ID,YES,GENERATED_COMPAT,Legacy mixed detachment table retained temporarily for current HTML compatibility.
 army,Detachments.csv,2,Army_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
 army,Detachments.csv,3,Detachment_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
@@ -132,7 +132,7 @@ universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
 universal,Universal_Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
-universal,Universal_Abilities.csv,5,Order,NO,AUTHORITATIVE,Optional default ability sort order 0-9; blank uses application fallback.
+universal,Universal_Abilities.csv,5,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type, Tags, or Effects."
 universal,Universal_Stratagems.csv,1,Detachment_ID,YES,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,2,Detachment_Name,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,3,Item_Type,YES,AUTHORITATIVE,
