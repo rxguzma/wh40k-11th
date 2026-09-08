@@ -1,4 +1,5 @@
 name: Remove Legacy Alias Compatibility
+# Final cleanup run after removing stale Entity Ops child spec.
 
 on:
   push:
