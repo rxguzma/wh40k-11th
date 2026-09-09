@@ -65,12 +65,6 @@ army,Weapon_Abilities.csv,5,Value,NO,AUTHORITATIVE,"Structured parameter such as
 army,Weapon_Abilities.csv,6,Condition,NO,AUTHORITATIVE,Optional qualifier previously represented after ':' in the compatibility string.
 army,Weapon_Abilities.csv,7,Separator_Before,NO,AUTHORITATIVE,"Exact legacy delimiter before this ability; blank for first ability, normally ', ' thereafter."
 army,Weapon_Abilities.csv,8,Sort_Order,YES,AUTHORITATIVE,Ability display/order position within the weapon.
-army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
-army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
-army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
-army,Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
-army,Abilities.csv,5,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Ability_ID; presentation/legacy compatibility only.
-army,Abilities.csv,6,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type, Tags, or Effects."
 army,Detachments.csv,1,Detachment_ID,YES,GENERATED_COMPAT,Legacy mixed detachment table retained temporarily for current HTML compatibility.
 army,Detachments.csv,2,Army_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
 army,Detachments.csv,3,Detachment_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
@@ -102,12 +96,6 @@ army,Enhancements.csv,5,Repeatable,YES,AUTHORITATIVE,TRUE when this Enhancement 
 army,Enhancements.csv,6,Short_Description,NO,AUTHORITATIVE,
 army,Enhancements.csv,7,Long_Description,NO,AUTHORITATIVE,
 army,Enhancements.csv,8,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.
-army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
-army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
-army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
-army,Stratagems.csv,4,CP_Cost,NO,AUTHORITATIVE,Command point cost.
-army,Stratagems.csv,5,Short_Description,NO,AUTHORITATIVE,
-army,Stratagems.csv,6,Long_Description,NO,AUTHORITATIVE,
 army,Army_Rules.csv,1,Army_Rule_ID,YES,AUTHORITATIVE,Stable unique army-rule key.
 army,Army_Rules.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Army_Rules.csv,3,Rule_Name,YES,AUTHORITATIVE,Visible army-rule name.
@@ -233,3 +221,18 @@ universal,Tag_Definitions.csv,10,Stat,NO,AUTHORITATIVE,"Structured characteristi
 universal,Tag_Definitions.csv,11,Operation,YES,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE."
 universal,Tag_Definitions.csv,12,Value,NO,AUTHORITATIVE,Machine-readable effect value.
 universal,Tag_Definitions.csv,13,Sort_Order,YES,AUTHORITATIVE,Canonical display order within the universal Tag library.
+army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,Stable unique ability key.
+army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,Visible ability name.
+army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
+army,Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
+army,Abilities.csv,5,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this ability.
+army,Abilities.csv,6,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
+army,Abilities.csv,7,Order,YES,AUTHORITATIVE,Required canonical Ability sort order 0-9.
+army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
+army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
+army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
+army,Stratagems.csv,4,CP_Cost,NO,AUTHORITATIVE,Command point cost.
+army,Stratagems.csv,5,Short_Description,NO,AUTHORITATIVE,
+army,Stratagems.csv,6,Long_Description,NO,AUTHORITATIVE,
+army,Stratagems.csv,7,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this stratagem.
+army,Stratagems.csv,8,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
