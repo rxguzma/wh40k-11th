@@ -20,3 +20,4 @@ PLUS_1_S_RANGE,+1 S,+1 Strength,Range - Weapon Stats,Ranged Weapons,Adds 1 Stren
 PLUS_1_AP_RANGE,+1 AP,+1 AP,Range - Weapon Stats,Ranged Weapons,Improves the AP of each Ranged Weapon on the Unit by 1. Example: AP -1 becomes AP -2.,TRUE,WEAPON_STAT,RANGE,AP,IMPROVE,1,19
 PLUS_1_D_RANGE,+1 D,+1 Damage,Range - Weapon Stats,Ranged Weapons,Adds 1 Damage to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,D,ADD,1,20
 PLUS_6_M,+6 M”,+6 Movement,Unit Stats,Unit,Adds 6” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,6,21
+PLUS_4_M,+4 M”,+4 Movement,Unit Stats,Unit,Adds 4” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,4,22

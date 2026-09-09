@@ -112,7 +112,7 @@ orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,Movement: B
 
 TARGET: That BEAST SNAGGA BOYZ / BOYZ unit.
 
-EFFECT: Your unit has +2 to advance rolls.",,
+EFFECT: Your unit has +2 to advance rolls.",[+2 M”],[Unit Stats]
 orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT TO DIE,1,Fight: MEGANOBZ / NOBZ fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.
@@ -188,7 +188,7 @@ TARGET: That MEK GUNZ unit.
 EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
-- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules]
+- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1] [HAZARDOUS],[Range - Weapon Rules] [Range - Weapon Rules] [Range - Weapon Rules]
 orks_dread_mob_stratagem_crazed_rampage_1cp,orks_dread_mob,CRAZED RAMPAGE,1,Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
 
 TARGET: That ORKS WALKER unit.

@@ -38,7 +38,7 @@ FIRING DECK_12,Firing Deck 12,Transport can temporarily use weapons from X embar
 FIX_DAT_ARMOUR_UP,Fix Dat Armour Up,Return 1 model,"While this model is leading a unit, in your Command phase, you can return 1 destroyed Bodyguard model to that unit.",,,0
 FIXIT_DA_GROT,Fixit da Grot,Command: regain D3 lost wounds,"At the start of your Command phase, this model regains up to D3 lost wounds.",,,0
 FLASHIEST_GITZ,Flashiest Gitz,Flash Gitz re-rolls To Hit in Range.,"While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Hit roll.",[RE-ROLL ALL HITS],[Range - Combat Modifiers],0
-FUEL_MIXA_GROT,Fuel-mixa Grot,"Advances 6""","Each time this model’s unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this model’s unit.",,,0
+FUEL_MIXA_GROT,Fuel-mixa Grot,"Advances 6""","Each time this model’s unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this model’s unit.",[+6 M”],[Unit Stats],0
 FULL_THROTTLE,Full Throttle,Charge after Advance or Fall back.,This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back.,,,0
 GET_DA_GOOD_BITZ,Get Da Good Bitz,Sticky Objectives,"At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",,,0
 GHAZGHKULLS_WAAAGH_BANNER_AURA,Ghazghkull’s Waaagh! Banner (Aura),"WAAAGH! &12"" of Makari = LETHAL HITS","While an ORKS unit is within 12"" of Makari, if you have called a Waaagh! this round, MELEE weapons in that unit have the [LETHAL HITS] ability. LETHAL HITS: Critical Hits (ie 6s) auto-wound the target.",[LETHAL HITS],[Melee - Weapon Rules],0
@@ -53,7 +53,7 @@ HAMMER_OF_WRATH,Hammer of Wrath,Charge = Mortal Wounds per model on 4+.,"Each ti
 HOGBOSS,Hogboss, +1 To Hit in - if Leading,"While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll.",[+1 TO HIT],[Melee - Combat Modifiers],0
 HOLD_STILL_AND_SAY_AARGH,Hold Still and Say ‘Aargh!’,Urty syringe: D6 Mortals if Critical Wounds.,"Each time an attack made by this model with its ’urty syringe scores a Critical Wound against a unit (excluding VEHICLE units), that unit suffers D6 mortal wounds.",,,0
 HUNGRY_CHOMPA,Hungry Chompa,Charge = 5+ Critical Wounds,"Each time this model declares a charge, until the end of the turn, each time this model makes an attack, an unmodified successful Wound roll of 5+ scores a Critical Wound.",,,0
-HUNT_THEM_DOWN,Hunt Them Down,WAAAGH! = Anti-Monster / Vehicle 3+,"During the battle round in which you call a Waaagh!, this model’s big choppa has the [ANTI-MONSTER 3+] and [ANTI-VEHICLE 3+] abilities.",[ANTI-VEHICLE 3+],[Melee - Weapon Rules],0
+HUNT_THEM_DOWN,Hunt Them Down,WAAAGH! = Anti-Monster / Vehicle 3+,"During the battle round in which you call a Waaagh!, this model’s big choppa has the [ANTI-MONSTER 3+] and [ANTI-VEHICLE 3+] abilities.",[ANTI-VEHICLE 3+] [ANTI-MONSTER 3+],[Melee - Weapon Rules] [Melee - Weapon Rules],0
 INDISCRIMINATE_DETONATIONS,Indiscriminate Detonations,"After shooting, hit enemy unit is suppressed","In your Shooting phase, when this unit has resolved its attacks, select one enemy unit hit by one or more of those attacks. That enemy unit is suppressed until the start of your next Command phase. While a unit is suppressed, it has -1 to hit rolls.",,,0
 KOMMANDOS_WARGEAR,Kommandos Wargear,Nob: Slugga and Power Klaw Kommandos: 2 speshul Kommando shoota & CCW 1 burna & CCW 1 rokkit launcha & CCW 5 slugga & choppas,"WARGEAR OPTIONS: The Boss Nob’s choppa can be replaced with one of the following: 1 big choppa; 1 power klaw.
 
@@ -117,7 +117,7 @@ SAWBONEZ,Sawbonez,"Heals 3 Wounds within 3"" of Beast Snagga character","At the 
 SHOKK_BOOSTA,Shokk-boosta,"Advance can be 6"", move through models, then hazard per model.","In your Movement phase, when this unit is selected to make an advance move, you can use this ability. If you do:
 - This unit can change that advance roll to a 6.
 - This unit can move through all types of model.
-- When this unit ends that advance move, make a hazard roll for each model in this unit.",,,0
+- When this unit ends that advance move, make a hazard roll for each model in this unit.",[+6 M”],[Unit Stats],0
 SHOOTY_POWER_TRIP,Shooty Power Trip,"Roll D6: 5+ = +1 Attacks in RANGE 3+ = +1 Strength in RANGE 1,2 = D3 Mortals","Each time this unit is selected to shoot, you can roll one D6: On a 1-2, this unit suffers D3 mortal wounds. On a 3-4, until the end of the phase, add 1 to the Strength characteristic of ranged weapons equipped by models in this unit. On a 5-6, until the end of the phase, add 1 to the Attacks characteristic of ranged weapons equipped by models in this unit.",[+1 S] [+1 A],[Range - Weapon Stats] [Range - Weapon Stats],0
 SINGLE_MINDED_PREDATOR,Single-minded Predator,"Heroic = 0CP, even if used","You can target this model's unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",,,0
 SNAGGED,SNAGGED,Hit MONSTER / VEHICLE: Add +2 to Charge and blocks Overwatch,"Each time this weapon scores a hit against a MONSTER or VEHICLE unit, until the end of the turn, if the bearer selects that unit as a charge target, add 2 to that Charge roll and that enemy unit cannot fire Overwatch at the bearer.",,,0
@@ -149,7 +149,7 @@ Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can u
 - Place this unit in strategic reserves.
 - This unit can make an ingress move in your next Movement phase (including in your first turn).
 
-Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",,,0
+Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",[+6 M”],[Unit Stats],0
 THUNDERING_STAMPEDE,Thundering Stampede,"Aura: friendly Beast Snagga within 6"" +1 to charge rolls.","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",,,0
 TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,9
 TRANSPORT_GUNWAGON,Transport (Gunwagon),"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,9
@@ -220,7 +220,7 @@ WARGEAR OPTIONS: The Nob can have their Rokkit Pistol replaced with 1 Smash Hamm
 COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,"UNIT COMPOSITION: 1 Biker Nob model, 2-5 Warbiker models.
 
 The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,,9
-DAMAGED_1_6,Damaged 1-6,"While this model has 1-6 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 1-6,,,0
+DAMAGED_1_6,Damaged 1-6,"While this model has 1-6 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 1-6,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0
 DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.",,,0
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,0
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0
@@ -250,7 +250,7 @@ PAIRED_KRUMPAS,Paired Krumpas,Kustom Krumpa attacks can re-roll hit and wound ro
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0
 ROKKIT_CHARGE,Rokkit Charge,"Charge = +1 A, +1 S and [HAZARDOUS] in Melee.","When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
-- [HAZARDOUS]",[+1 A] [+1 S],[Melee - Weapon Stats] [Melee - Weapon Stats],0
+- [HAZARDOUS]",[+1 A] [+1 S] [HAZARDOUS],[Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Rules],0
 SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (not Wartrakk): gains Lone Operative","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.",,,0
 STEALTH,Stealth,CORE: Stealth,CORE: Stealth,,,0
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,0
@@ -279,7 +279,7 @@ COMPOSITION_MEGANOBZ,Unit Composition (Meganobz),2-6 Meganobz. Default Kustom Sh
 Every model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
 
 WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced with 1 Killsaw. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-weapon. Any number of models can each have their Power Klaw and Kustom Shoota replaced with Twin Killsaws.",,,9
-DAMAGED_7,Damaged 7,"While 1-7 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 7,,,0
+DAMAGED_7,Damaged 7,"While 1-7 wounds remaining, subtract 1 from hit rolls",CORE: Damaged 7,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0
 DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1,,,0
 DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3,,,0
 DREAD_ARD,Dread ’Ard,Attacks targeting this model have -1 Damage,Attacks targeting this model have -1 damage,,,0
@@ -350,7 +350,7 @@ CLEVER_KNOW_WOTZ,Clever Know-wotz,"Buff a Vehicle within 3"": heal D3 and +1 to 
 GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un-shock and RILED UP.","Get Back in da Race (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly SPEED FREEKS unit within 6"" of this unit. That unit (and any units embarked within that unit):
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",,,0
-FUEL_MIXA_GROB,Fuel-mixa Grob,This unit has +1 to advance rolls.,This unit has +1 to advance rolls.,,,0
+FUEL_MIXA_GROB,Fuel-mixa Grob,This unit has +1 to advance rolls.,This unit has +1 to advance rolls.,[+1 M”],[Unit Stats],0
 CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,0
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,Once per battle.  Crude Surgery is D3+3,"Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0
@@ -358,7 +358,7 @@ HARDY_BILIOUS,Hardy Bilious,Attacks vs T greater than this unit -1 to wound.,Att
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY
-- Has +4"" M",,,0
+- Has +4"" M",[+4 M”],[Unit Stats],0
 THEYLL_LEARN_YA,They'll Learn Ya,"Once per battle: if battle-shocked and contains Gretchin, un-shock and destroy that many Grots.","They'll Learn Ya (Once per battle, per unit): When this unit becomes battle-shocked, if this unit contains 1+ Gretchin models, you can roll one D6:
 - That number of Gretchin models in this unit are destroyed.
 - This unit is no longer battle-shocked.",,,0
@@ -381,7 +381,7 @@ STRAFING_RUN,Strafing Run,Ranged attacks vs non-FLY +1 to hit.,"In your Shooting
 BURNA_BOMB,Burna Bomb,End of opponent Fight phase: D3 MW on 2+ and IGNORES COVER until your next turn.,"At the end of your opponent's Fight phase, select one visible enemy unit (excluding Lone Operative and MONSTER / VEHICLE units) within 18"" of this unit and roll one D6. On a 2+:
 - That enemy unit suffers D3 mortal wounds.
 - That enemy unit cannot be hidden until the end of your next turn.
-- Ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.",,,0
+- Ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.",[IGNORES COVER],[Range - Weapon Rules],0
 GO_FER_DA_WEAK_SPOT,Go fer da Weak Spot,Ranged vs MONSTER / VEHICLE +1 to wound.,"In your Shooting phase, this unit's ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers],0
 WAZBOM_FORCE_FIELD,Wazbom Force Field,Has 5+ InSv. Does not have SMOKE.,"Models in this unit:
 - Have 5+ InSv.
