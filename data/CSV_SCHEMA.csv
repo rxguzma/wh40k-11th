@@ -220,3 +220,16 @@ universal,Primary_Mission_Matchups.csv,1,Matchup_ID,YES,AUTHORITATIVE,Stable key
 universal,Primary_Mission_Matchups.csv,2,Your_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the player Disposition.
 universal,Primary_Mission_Matchups.csv,3,Opponent_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the opposing Disposition.
 universal,Primary_Mission_Matchups.csv,4,Primary_Mission_ID,YES,AUTHORITATIVE,Foreign key to Primary_Missions.csv.
+universal,Tag_Definitions.csv,1,Tag_ID,YES,AUTHORITATIVE,Stable unique Tag definition key.
+universal,Tag_Definitions.csv,2,Display_Tag,YES,AUTHORITATIVE,"Exact visible Tag text shown in the application; weapon scope is carried by Category/Target, not an (M)/(R) suffix."
+universal,Tag_Definitions.csv,3,Title,NO,AUTHORITATIVE,Human-readable Tag title.
+universal,Tag_Definitions.csv,4,Category,YES,AUTHORITATIVE,"Picker/runtime category such as Unit Stats, Melee - Weapon Stats, Range - Weapon Rules, or Points."
+universal,Tag_Definitions.csv,5,Affects,NO,AUTHORITATIVE,Human-readable scope summary.
+universal,Tag_Definitions.csv,6,Description,NO,AUTHORITATIVE,User-facing explanation of the Tag effect.
+universal,Tag_Definitions.csv,7,Editable,YES,AUTHORITATIVE,TRUE when the Tag can be selected/edited in roster UI.
+universal,Tag_Definitions.csv,8,Effect_Type,YES,AUTHORITATIVE,"Structured effect family such as STAT, WEAPON_STAT, or POINTS_PER_MODEL."
+universal,Tag_Definitions.csv,9,Target,YES,AUTHORITATIVE,"Structured scope such as UNIT, MELEE, or RANGE."
+universal,Tag_Definitions.csv,10,Stat,NO,AUTHORITATIVE,"Structured characteristic such as M, W, A, S, AP, D, or PTS."
+universal,Tag_Definitions.csv,11,Operation,YES,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE."
+universal,Tag_Definitions.csv,12,Value,NO,AUTHORITATIVE,Machine-readable effect value.
+universal,Tag_Definitions.csv,13,Sort_Order,YES,AUTHORITATIVE,Canonical display order within the universal Tag library.
