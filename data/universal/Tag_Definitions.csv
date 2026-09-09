@@ -5,9 +5,10 @@ PLUS_1_OC,+1 OC,+1 Objective Control,Unit Stats,Unit,Adds 1 Objective Control to
 PLUS_1_M,+1 M”,+1 Movement,Unit Stats,Unit,Adds 1” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,1,4
 PLUS_2_M,+2 M”,+2 Movement,Unit Stats,Unit,Adds 2” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,2,5
 PLUS_1_A_MELEE,+1 A,+1 Attack,Melee - Weapon Stats,Melee Weapons,Adds 1 Attack to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,1,6
-PLUS_1_S_MELEE,+1 S,+1 Strength,Melee - Weapon Stats,Melee Weapons,Adds 1 Strength to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,S,ADD,1,7
-PLUS_1_AP_MELEE,+1 AP,+1 AP,Melee - Weapon Stats,Melee Weapons,Improves the AP of each Melee Weapon on the Unit by 1. Example: AP -1 becomes AP -2.,TRUE,WEAPON_STAT,MELEE,AP,IMPROVE,1,8
-PLUS_1_D_MELEE,+1 D,+1 Damage,Melee - Weapon Stats,Melee Weapons,Adds 1 Damage to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,D,ADD,1,9
-PLUS_5_PTS,+5 Pts,+5 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,5,10
-PLUS_10_PTS,+10 Pts,+10 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,10,11
-PLUS_20_PTS,+20 Pts,+20 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,20,12
+PLUS_3_A_MELEE,+3 A,+3 Attack,Melee - Weapon Stats,Melee Weapons,Adds 3 Attacks to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,3,7
+PLUS_1_S_MELEE,+1 S,+1 Strength,Melee - Weapon Stats,Melee Weapons,Adds 1 Strength to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,S,ADD,1,8
+PLUS_1_AP_MELEE,+1 AP,+1 AP,Melee - Weapon Stats,Melee Weapons,Improves the AP of each Melee Weapon on the Unit by 1. Example: AP -1 becomes AP -2.,TRUE,WEAPON_STAT,MELEE,AP,IMPROVE,1,9
+PLUS_1_D_MELEE,+1 D,+1 Damage,Melee - Weapon Stats,Melee Weapons,Adds 1 Damage to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,D,ADD,1,10
+PLUS_5_PTS,+5 Pts,+5 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,5,11
+PLUS_10_PTS,+10 Pts,+10 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,10,12
+PLUS_20_PTS,+20 Pts,+20 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,20,13
