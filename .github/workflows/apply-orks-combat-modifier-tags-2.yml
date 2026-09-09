@@ -1,0 +1,112 @@
+name: Apply More Orks Combat Modifier Tags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-orks-combat-modifier-tags-2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply approved Orks tags
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          root = Path('.')
+
+          def load(path):
+              with path.open(encoding='utf-8-sig', newline='') as f:
+                  reader = csv.DictReader(f)
+                  return list(reader.fieldnames or []), list(reader)
+
+          def save(path, fields, rows):
+              with path.open('w', encoding='utf-8', newline='') as f:
+                  writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+                  writer.writeheader()
+                  writer.writerows(rows)
+
+          ability_updates = {
+              'MONSTER_HUNTERS': (
+                  '[RE-ROLL ALL HITS] [RE-ROLL ALL HITS]',
+                  '[Melee - Combat Modifiers] [Range - Combat Modifiers]'
+              ),
+              'MONSTER_HUNTERS_BEASTBOSS': (
+                  '[RE-ROLL ALL HITS] [RE-ROLL ALL HITS]',
+                  '[Melee - Combat Modifiers] [Range - Combat Modifiers]'
+              ),
+              'SPEEDBOSS': ('[+1 TO HIT]', '[Melee - Combat Modifiers]'),
+              'WARPATH_WEIRDBOY': ('[RE-ROLL 1S TO WOUND]', '[Melee - Combat Modifiers]'),
+              'TANK_HUNTERS': (
+                  '[+1 TO HIT] [+1 TO WOUND]',
+                  '[Range - Combat Modifiers] [Range - Combat Modifiers]'
+              ),
+          }
+
+          abilities_path = root / 'data' / 'orks' / 'Abilities.csv'
+          fields, rows = load(abilities_path)
+          found = set()
+          for row in rows:
+              key = (row.get('Ability_ID') or '').strip()
+              if key in ability_updates:
+                  row['Tags'], row['Tag Categories'] = ability_updates[key]
+                  found.add(key)
+          missing = sorted(set(ability_updates) - found)
+          if missing:
+              raise SystemExit(f'Missing Ability_IDs: {missing}')
+          save(abilities_path, fields, rows)
+
+          strat_updates = {
+              'orks_flyboyz_stratagem_long_uncontrolled_bursts_1cp': (
+                  '[RE-ROLL ALL HITS]', '[Range - Combat Modifiers]'
+              ),
+              'orks_shoota_boyz_stratagem_kustom_dakka_1cp': (
+                  '[+1 TO WOUND]', '[Range - Combat Modifiers]'
+              ),
+              'orks_wreckas_stratagem_drive_by_bustin_1cp': (
+                  '[+1 TO HIT]', '[Range - Combat Modifiers]'
+              ),
+          }
+
+          strat_path = root / 'data' / 'orks' / 'Stratagems.csv'
+          sfields, srows = load(strat_path)
+          found = set()
+          for row in srows:
+              key = (row.get('Stratagem_ID') or '').strip()
+              if key in strat_updates:
+                  row['Tags'], row['Tag Categories'] = strat_updates[key]
+                  found.add(key)
+          missing = sorted(set(strat_updates) - found)
+          if missing:
+              raise SystemExit(f'Missing Stratagem_IDs: {missing}')
+          save(strat_path, sfields, srows)
+          PY
+
+      - name: Normalize all army CSV headers to schema
+        run: python3 scripts/data_schema.py normalize
+
+      - name: Validate data
+        run: python3 scripts/data_schema.py validate
+
+      - name: Regenerate manifests
+        run: python3 scripts/data_schema.py manifest
+
+      - name: Commit data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git commit -m "Tag more Orks combat modifiers"
+          git push
