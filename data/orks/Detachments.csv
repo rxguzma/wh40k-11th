@@ -313,8 +313,7 @@ If RILED UP: [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is emba
 - If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",
 orks_blitz_brigade,Orks,Blitz Brigade,ENHANCEMENT,orks_blitz_brigade_enhancement_boss_boomer,BOSS BOOMER (UP),10,,,,"WAGON with embarked by WARBOSS:
 It gains that WARBOSS's Intimidating Motivation / Keep Huntin' ability.","WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation / Keep Huntin' ability.",
-orks_blitz_brigade,Orks,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_keep_it_runnin_1cp,KEEP IT RUNNIN',,1,,,"End of Fight: 
-IF IT WAS ELEGIBLE to FIGHT but its now unengaged
+orks_blitz_brigade,Orks,Blitz Brigade,STRATAGEM,orks_blitz_brigade_stratagem_keep_it_runnin_1cp,KEEP IT RUNNIN',,1,,,"End of Fight:  IF IT WAS ELEGIBLE to FIGHT but its now unengaged
 INFANTRY thst is wholly within 6"" of TRANSPORT can embark.","WHEN: End of the Fight phase.
 
 TARGET: One friendly unengaged ORKS INFANTRY unit that was eligible to fight this phase and is wholly within 6"" of a friendly TRANSPORT unit that INFANTRY unit is able to embark within.
