@@ -153,7 +153,7 @@ Firing Deck [+1 to hit].","WHEN: Your Shooting phase, when a friendly ORKS TRANS
 
 TARGET: That ORKS TRANSPORT unit.
 
-EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.",,
+EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers]
 orks_wreckas_stratagem_grab_it_1cp,orks_wreckas,GRAB IT,1,"Shoot and Move BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 6"" onto an objective.","WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit has shot.
 
 TARGET: That BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit.
@@ -247,7 +247,7 @@ orks_flyboyz_stratagem_long_uncontrolled_bursts_1cp,orks_flyboyz,"LONG, UNCONTRO
 
 TARGET: That ORKS AIRCRAFT / DEFFKOPTAS unit.
 
-EFFECT: When your unit's ranged attacks target a FLY unit, those attacks can re-roll hit rolls.",,
+EFFECT: When your unit's ranged attacks target a FLY unit, those attacks can re-roll hit rolls.",[RE-ROLL ALL HITS],[Range - Combat Modifiers]
 orks_flyboyz_stratagem_whirligig_evasion_1cp,orks_flyboyz,WHIRLIGIG EVASION,1,"Opp Movement: unengaged DEFFKOPTAS within 8"" of an enemy that ended a move can Normal move D6"" (6"" if RILED UP).","WHEN: Your opponent's Movement phase, when an enemy unit ends a move.
 
 TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
@@ -276,7 +276,7 @@ orks_shoota_boyz_stratagem_kustom_dakka_1cp,orks_shoota_boyz,KUSTOM DAKKA,1,Shoo
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks that target a unit (excluding MONSTER / VEHICLE units) have +1 to wound rolls.",,
+EFFECT: Your unit's ranged attacks that target a unit (excluding MONSTER / VEHICLE units) have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers]
 orks_shoota_boyz_stratagem_clovin_dakka_1cp,orks_shoota_boyz,CLOVIN' DAKKA,1,"Shooting: INFANTRY ranged attacks against a unit within 9"" have [+1 AP].","WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.

@@ -87,8 +87,8 @@ MEKBOY,Mekboy,"IF within 3"" of Vehicle = Lone Operative","While this model is w
 MIGHT_IS_RIGHT,Might is Right,"CHARGE this turn, MODEL gets  +3 A and +2 S","If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
 - +2 S",,,0
-MONSTER_HUNTERS,Monster Hunters,Re-rolls To Hit vs MONSTER or VEHICLE,"Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll.",,,0
-MONSTER_HUNTERS_BEASTBOSS,Monster Hunters (Beastboss),LEADING Beastsnagga = Re-rolls To Hit vs MONSTER or VEHICLE,"IF Leading Beastsnagga: Monster Hunters: Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll.",,,0
+MONSTER_HUNTERS,Monster Hunters,Re-rolls To Hit vs MONSTER or VEHICLE,"Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll.",[RE-ROLL ALL HITS] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Range - Combat Modifiers],0
+MONSTER_HUNTERS_BEASTBOSS,Monster Hunters (Beastboss),LEADING Beastsnagga = Re-rolls To Hit vs MONSTER or VEHICLE,"IF Leading Beastsnagga: Monster Hunters: Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll.",[RE-ROLL ALL HITS] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Range - Combat Modifiers],0
 MORE_DAKKA,More Dakka,"Ranged attacks [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1].","This unit's ranged attacks have:
 - [IGNORES COVER]
@@ -126,7 +126,7 @@ SNAGGED_STIKKA_KANNON_2,Snagged Stikka kannon,"Charge +2"" Targetted Monster / V
 SNEAKY_SURPRISE,Sneaky Surprise,Cannot be Overwatched,Enemy units cannot use the Fire Overwatch Stratagem to shoot at this unit.,,,0
 SOMETHIN_TO_PROVE,Somethin' to Prove,UNIT melee attacks have +1 to hit.,This unit's melee attacks have +1 to hit rolls.,[+1 TO HIT],[Melee - Combat Modifiers],0
 SPECIAL_DOSE,Special Dose,"WAAAGH! = +6"" to Movement","When you call a Waaagh!, until the start of the next battle round, add 6"" to the Move characteristic of models in this model’s unit.",,,0
-SPEEDBOSS,Speedboss,Leading = +1 To Hit,"While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll.",,,0
+SPEEDBOSS,Speedboss,Leading = +1 To Hit,"While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll.",[+1 TO HIT],[Melee - Combat Modifiers],0
 SPIRIT_OF_GORK,Spirit of Gork,"Fight phase = +1 Strength, on 6s + LETHAL HITS","Spirit of Gork (Psychic): At the start of the Fight phase, you can select one friendly Orks unit within 12"" of this model and roll one D6: on a 1, this model suffers D3 mortal wounds; on a 2-5, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit; on a 6, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability.",,,0
 SPIRIT_OF_GORK_PSYCHIC,Spirit of Gork (Psychic),"Figth: 2-5 +1 Strenght to Orks within 12""","At the start of the Fight phase, you can select one friendly ORKS unit within 12"" of this model and roll one D6: On a 2-5, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit. On a 6, until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit and those weapons have the [LETHAL HITS] ability. On a 1, this model suffers D3 mortal wounds.",,,0
 STOMPIN_FORWARD,Stompin’ Forward,"Move over non-TITANIC models and terrain 4"" or lower","Each time this model makes a Normal, Advance or Fall Back move, it can move over models, excluding TITANIC models, and terrain features that are 4"" or less in height as if they were not there.",,,0
@@ -135,7 +135,7 @@ SUPER_RUNTS,Super Runts,"This unit is RILED UP. Scavenged Shivs +1 A, WS and S."
 SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,,9
 SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Burna Boyz, Lootas, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Lootas; Nobz; Tankbustas.,,,9
 SUPPORT_WARBIKERS,Support: Warbikers,Can attach to Warbikers,Support: This model can be attached to Warbikers units.,,,9
-TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster / Vehicles,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll.",,,0
+TANK_HUNTERS,Tank Hunters,UNIT: +1 To Hit & Wound vs Monster / Vehicles,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll.",[+1 TO HIT] [+1 TO WOUND],[Range - Combat Modifiers] [Range - Combat Modifiers],0
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,,,,0
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"If controlling an objective at end of Movement, it is secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,0
 THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
@@ -305,7 +305,7 @@ DA_JUMP,Da Jump,Psychic: on 2+ place in Strategic Reserves and gain Deep Strike.
 - On a 1, this unit is battle-shocked.
 - Place this unit in strategic reserves.
 - This unit has Deep Strike.",,,0
-WARPATH_WEIRDBOY,Warpath,"Psychic: In Melee, TEST and on 2+ re-roll wound rolls of 1 and have [PSYCHIC].","Warpath (psychic level 1): In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6.   If you do: - On a 1, this unit is battle-shocked. - This unit's melee attacks can re-roll wound rolls of 1. - This unit's melee attacks have [PSYCHIC].",,,0
+WARPATH_WEIRDBOY,Warpath,"Psychic: In Melee, TEST and on 2+ re-roll wound rolls of 1 and have [PSYCHIC].","Warpath (psychic level 1): In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6.   If you do: - On a 1, this unit is battle-shocked. - This unit's melee attacks can re-roll wound rolls of 1. - This unit's melee attacks have [PSYCHIC].",[RE-ROLL 1S TO WOUND],[Melee - Combat Modifiers],0
 DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, Ingress from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move.",,,0
 BOSS_AMMO_RUNT,Boss' Ammo Runt,Once per battle: +1 to hit on this model’s ranged attacks.,"Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[+1 TO HIT],[Range - Combat Modifiers],0
 COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa + Kustom Shoota.,"UNIT COMPOSITION: 1 Warboss model.
