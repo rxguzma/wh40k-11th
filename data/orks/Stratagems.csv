@@ -132,7 +132,7 @@ TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
 
-Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",,
+Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Informational - Incoming]
 orks_taktikal_brigade_stratagem_dubious_restraint_1cp,orks_taktikal_brigade,DUBIOUS RESTRAINT,1,Start/end of your Movement: BOYZ / KOMMANDOS / STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
 
 TARGET: One friendly BOYZ / KOMMANDOS / STORMBOYZ unit.
@@ -235,7 +235,7 @@ orks_kult_of_speed_stratagem_speediest_freeks_1cp,orks_kult_of_speed,SPEEDIEST F
 
 TARGET: That SPEED FREEKS unit.
 
-EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",,
+EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",[INCOMING RANGE HIT 1-3 FAILS],[Informational - Incoming]
 orks_flyboyz_stratagem_flyin_headbutt_1cp,orks_flyboyz,FLYIN' HEADBUTT,1,"Any phase: destroyed ORKS AIRCRAFT skips Deadly Demise; one enemy within 12"" takes 8D6, each 4+ = 1 MW; then remove the aircraft.","WHEN: Any phase, when a friendly ORKS AIRCRAFT unit is destroyed, before rolling for any Deadly Demise.
 
 TARGET: That ORKS unit.
