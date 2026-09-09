@@ -1,0 +1,166 @@
+name: Apply Orks Combat Modifier Tags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-orks-combat-modifier-tags.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update CSV schema and approved Orks tags
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          root = Path('.')
+
+          # Keep the shared schema aligned with the Tag columns now used by Abilities and Stratagems.
+          schema_path = root / 'data' / 'CSV_SCHEMA.csv'
+          with schema_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              schema_fields = reader.fieldnames
+              schema_rows = list(reader)
+
+          def replace_schema(scope, file_name, columns):
+              global schema_rows
+              schema_rows = [r for r in schema_rows if not (r['Scope'] == scope and r['File'] == file_name)]
+              for order, (name, required, ownership, notes) in enumerate(columns, start=1):
+                  schema_rows.append({
+                      'Scope': scope,
+                      'File': file_name,
+                      'Column_Order': str(order),
+                      'Column_Name': name,
+                      'Required': required,
+                      'Ownership': ownership,
+                      'Notes': notes,
+                  })
+
+          replace_schema('army', 'Abilities.csv', [
+              ('Ability_ID','YES','AUTHORITATIVE','Stable unique ability key.'),
+              ('Ability Name','YES','AUTHORITATIVE','Visible ability name.'),
+              ('Short Description','NO','AUTHORITATIVE',''),
+              ('Long Description','NO','AUTHORITATIVE',''),
+              ('Tags','NO','AUTHORITATIVE','Bracketed canonical Tags assigned to this ability.'),
+              ('Tag Categories','NO','AUTHORITATIVE','Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.'),
+              ('Order','YES','AUTHORITATIVE','Required canonical Ability sort order 0-9.'),
+          ])
+          replace_schema('army', 'Stratagems.csv', [
+              ('Stratagem_ID','YES','AUTHORITATIVE','Stable unique stratagem key.'),
+              ('Detachment_ID','YES','AUTHORITATIVE','Foreign key to Detachment_Definitions.csv.'),
+              ('Stratagem_Name','YES','AUTHORITATIVE','Visible stratagem name.'),
+              ('CP_Cost','NO','AUTHORITATIVE','Command point cost.'),
+              ('Short_Description','NO','AUTHORITATIVE',''),
+              ('Long_Description','NO','AUTHORITATIVE',''),
+              ('Tags','NO','AUTHORITATIVE','Bracketed canonical Tags assigned to this stratagem.'),
+              ('Tag Categories','NO','AUTHORITATIVE','Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.'),
+          ])
+
+          with schema_path.open('w', encoding='utf-8', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=schema_fields, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(schema_rows)
+
+          def load(path):
+              with path.open(encoding='utf-8-sig', newline='') as f:
+                  reader = csv.DictReader(f)
+                  rows = list(reader)
+                  fields = list(reader.fieldnames or [])
+              return fields, rows
+
+          def save(path, fields, rows):
+              with path.open('w', encoding='utf-8', newline='') as f:
+                  writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+                  writer.writeheader()
+                  writer.writerows(rows)
+
+          ability_updates = {
+              'MORE_DAKKA_BIG_MEK_WITH_SHOKK_ATTACK_GUN': ('[RE-ROLL 1S TO HIT]', '[Range - Combat Modifiers]'),
+              'PROPHET_OF_DA_GREAT_WAAAGH': ('[+1 TO HIT] [+1 TO WOUND]', '[Melee - Combat Modifiers] [Melee - Combat Modifiers]'),
+              'PYROMANIAKS': ('[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS]', '[Range - Combat Modifiers] [Range - Combat Modifiers]'),
+              'SOMETHIN_TO_PROVE': ('[+1 TO HIT]', '[Melee - Combat Modifiers]'),
+              'BEASTSCENT': ('[+1 TO WOUND] [+1 TO WOUND]', '[Melee - Combat Modifiers] [Range - Combat Modifiers]'),
+              'NOWHERE_TO_HIDE': ('[+1 TO HIT] [+1 TO HIT]', '[Melee - Combat Modifiers] [Range - Combat Modifiers]'),
+              'SPITEFUL_POWER_TRIP': ('[+1 TO HIT] [+1 TO HIT]', '[Melee - Combat Modifiers] [Range - Combat Modifiers]'),
+              'BIG_AN_SHOOTY': ('[RE-ROLL 1S TO HIT]', '[Range - Combat Modifiers]'),
+              'BIG_AN_STOMPY': ('[RE-ROLL 1S TO HIT]', '[Melee - Combat Modifiers]'),
+              'MOBILE_ARSENAL': ('[RE-ROLL 1S TO HIT]', '[Range - Combat Modifiers]'),
+              'BOSS_AMMO_RUNT': ('[+1 TO HIT]', '[Range - Combat Modifiers]'),
+              'CLEVER_KNOW_WOTZ': ('[+1 TO HIT] [+1 TO HIT]', '[Melee - Combat Modifiers] [Range - Combat Modifiers]'),
+              'STRAFING_RUN': ('[+1 TO HIT]', '[Range - Combat Modifiers]'),
+              'GO_FER_DA_WEAK_SPOT': ('[+1 TO WOUND]', '[Range - Combat Modifiers]'),
+          }
+
+          abilities_path = root / 'data' / 'orks' / 'Abilities.csv'
+          fields, rows = load(abilities_path)
+          for col in ('Tags', 'Tag Categories'):
+              if col not in fields:
+                  fields.insert(fields.index('Order'), col)
+                  for row in rows:
+                      row[col] = ''
+          found = set()
+          for row in rows:
+              key = (row.get('Ability_ID') or '').strip()
+              if key in ability_updates:
+                  row['Tags'], row['Tag Categories'] = ability_updates[key]
+                  found.add(key)
+          missing = sorted(set(ability_updates) - found)
+          if missing:
+              raise SystemExit(f'Missing Ability_IDs: {missing}')
+          save(abilities_path, fields, rows)
+
+          strat_updates = {
+              'orks_freebooter_krew_stratagem_bash_and_grab_1cp': ('[RE-ROLL ALL WOUNDS]', '[Melee - Combat Modifiers]'),
+              'orks_bully_boyz_stratagem_armed_to_da_teef_1cp': (
+                  '[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS]',
+                  '[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers]'
+              ),
+          }
+
+          strat_path = root / 'data' / 'orks' / 'Stratagems.csv'
+          sfields, srows = load(strat_path)
+          for col in ('Tags', 'Tag Categories'):
+              if col not in sfields:
+                  sfields.append(col)
+                  for row in srows:
+                      row[col] = ''
+          found = set()
+          for row in srows:
+              key = (row.get('Stratagem_ID') or '').strip()
+              if key in strat_updates:
+                  row['Tags'], row['Tag Categories'] = strat_updates[key]
+                  found.add(key)
+          missing = sorted(set(strat_updates) - found)
+          if missing:
+              raise SystemExit(f'Missing Stratagem_IDs: {missing}')
+          save(strat_path, sfields, srows)
+          PY
+
+      - name: Normalize all army CSV headers to schema
+        run: python3 scripts/data_schema.py normalize
+
+      - name: Validate data
+        run: python3 scripts/data_schema.py validate
+
+      - name: Regenerate manifests
+        run: python3 scripts/data_schema.py manifest
+
+      - name: Commit data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git commit -m "Tag Orks combat modifiers"
+          git push
