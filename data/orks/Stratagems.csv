@@ -205,8 +205,7 @@ orks_dread_mob_stratagem_stomping_juggernaut_1cp,orks_dread_mob,STOMPING JUGGERN
 TARGET: That ORKS WALKER unit.
 
 EFFECT: Your unit has MOBILE."
-orks_blitz_brigade_stratagem_keep_it_runnin_1cp,orks_blitz_brigade,KEEP IT RUNNIN',1,"End of Fight: 
-IF IT WAS ELEGIBLE to FIGHT but its now unengaged
+orks_blitz_brigade_stratagem_keep_it_runnin_1cp,orks_blitz_brigade,KEEP IT RUNNIN',1,"End of Fight:  IF IT WAS ELEGIBLE to FIGHT but its now unengaged
 INFANTRY thst is wholly within 6"" of TRANSPORT can embark.","WHEN: End of the Fight phase.
 
 TARGET: One friendly unengaged ORKS INFANTRY unit that was eligible to fight this phase and is wholly within 6"" of a friendly TRANSPORT unit that INFANTRY unit is able to embark within.
