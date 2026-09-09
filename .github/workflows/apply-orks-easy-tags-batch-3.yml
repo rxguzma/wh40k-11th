@@ -1,0 +1,98 @@
+name: Apply Next Orks Easy Tag Batch 3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-orks-easy-tags-batch-3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply easy tag batch
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          root = Path('.')
+
+          ability_updates = {
+              'AMMO_RUNT': ('[LETHAL HITS]', '[Range - Weapon Rules]'),
+              'BEASTBOSS': ('[+1 TO HIT]', '[Melee - Combat Modifiers]'),
+              'CLEAVE 1': ('[CLEAVE 1]', '[Melee - Weapon Rules]'),
+              'CLEAVE 2': ('[CLEAVE 2]', '[Melee - Weapon Rules]'),
+              'KOMBI': ('[KOMBI]', '[Range - Weapon Rules]'),
+              'CLOSE-QUARTERS': ('[CLOSE-QUARTERS]', '[Range - Weapon Rules]'),
+              'DEATH_CHOPPY': ('[+1 A]', '[Melee - Weapon Stats]'),
+              'GUN_CRAZY_SHOW_OFFS': ('[+1 A]', '[Range - Weapon Stats]'),
+              'FULLY_LOADED_BUTCHERY': ('[+2 A]', '[Melee - Weapon Stats]'),
+              'DEVASTATING WOUNDS': ('[DEVASTATING WOUNDS] [DEVASTATING WOUNDS]', '[Melee - Weapon Rules] [Range - Weapon Rules]'),
+          }
+
+          path = root / 'data/orks/Abilities.csv'
+          with path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              header = reader.fieldnames
+              rows = list(reader)
+          found = set()
+          for row in rows:
+              aid = (row.get('Ability_ID') or '').strip()
+              if aid in ability_updates:
+                  row['Tags'], row['Tag Categories'] = ability_updates[aid]
+                  found.add(aid)
+          missing = sorted(set(ability_updates) - found)
+          if missing:
+              raise SystemExit(f'missing Ability_IDs: {missing}')
+          with path.open('w', encoding='utf-8', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=header, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(rows)
+
+          tag_path = root / 'data/universal/Tag_Definitions.csv'
+          with tag_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              tag_header = reader.fieldnames
+              tag_rows = list(reader)
+          if not any((r.get('Tag_ID') or '').strip() == 'PLUS_2_A_MELEE' for r in tag_rows):
+              tag_rows.append({
+                  'Tag_ID': 'PLUS_2_A_MELEE',
+                  'Display_Tag': '+2 A',
+                  'Title': '+2 Attacks',
+                  'Category': 'Melee - Weapon Stats',
+                  'Affects': 'Melee Weapons',
+                  'Description': 'Adds 2 Attacks to each Melee Weapon on the Unit.',
+                  'Editable': 'TRUE',
+                  'Effect_Type': 'WEAPON_STAT',
+                  'Target': 'MELEE',
+                  'Stat': 'A',
+                  'Operation': 'ADD',
+                  'Value': '2',
+                  'Sort_Order': '22',
+              })
+          with tag_path.open('w', encoding='utf-8', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=tag_header, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(tag_rows)
+          PY
+
+      - name: Normalize validate and regenerate manifests
+        run: python3 scripts/data_schema.py all
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git commit -m "Tag next easy Orks rules"
+          git push
