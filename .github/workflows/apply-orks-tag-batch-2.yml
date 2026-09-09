@@ -1,0 +1,130 @@
+name: Apply Orks Tag Batch 2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-orks-tag-batch-2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Orks ability tags and universal tag library
+        run: |
+          python3 <<'PY'
+          import csv
+          from pathlib import Path
+
+          root = Path('.')
+
+          # Update Orks Abilities.csv
+          abilities_path = root / 'data' / 'orks' / 'Abilities.csv'
+          with abilities_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              fieldnames = reader.fieldnames
+              rows = list(reader)
+
+          if 'Tag Categories' not in fieldnames:
+              raise SystemExit('Abilities.csv is missing Tag Categories')
+
+          updates = {
+              'FINEST_HOUR': ('[+3 A] [DEVASTATING WOUNDS]', '[Melee - Weapon Stats] [Melee - Weapon Rules]'),
+              'FLASHIEST_GITZ': ('[RE-ROLL ALL HITS]', '[Range - Combat Modifiers]'),
+              'GHAZGHKULLS_WAAAGH_BANNER_AURA': ('[LETHAL HITS]', '[Melee - Weapon Rules]'),
+              'HOGBOSS': ('[+1 TO HIT]', '[Melee - Combat Modifiers]'),
+              'KRUMPIN_TIME': ('[+1 TO HIT]', '[Melee - Combat Modifiers]'),
+              'MEKANIAK': ('[+1 TO HIT] [+1 TO HIT]', '[Melee - Combat Modifiers] [Range - Combat Modifiers]'),
+              'MORE_DAKKA': ('[IGNORES COVER] [SUSTAINED HITS 1]', '[Range - Weapon Rules] [Range - Weapon Rules]'),
+          }
+
+          seen = set()
+          for row in rows:
+              aid = (row.get('Ability_ID') or '').strip()
+              if aid not in updates:
+                  continue
+              tags, cats = updates[aid]
+              row['Tags'] = tags
+              row['Tag Categories'] = cats
+              seen.add(aid)
+
+          missing = sorted(set(updates) - seen)
+          if missing:
+              raise SystemExit(f'Missing Ability_ID rows: {missing}')
+
+          with abilities_path.open('w', encoding='utf-8', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(rows)
+
+          # Add +3 A to universal Tag_Definitions.csv.
+          tags_path = root / 'data' / 'universal' / 'Tag_Definitions.csv'
+          with tags_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              tag_fields = reader.fieldnames
+              tag_rows = list(reader)
+
+          required = ['Tag_ID','Display_Tag','Title','Category','Affects','Description','Editable','Effect_Type','Target','Stat','Operation','Value','Sort_Order']
+          if tag_fields != required:
+              raise SystemExit(f'Unexpected Tag_Definitions.csv header: {tag_fields}')
+
+          existing = None
+          for row in tag_rows:
+              if (row.get('Tag_ID') or '').strip() == 'PLUS_3_A_MELEE':
+                  existing = row
+                  break
+
+          new_row = {
+              'Tag_ID':'PLUS_3_A_MELEE',
+              'Display_Tag':'+3 A',
+              'Title':'+3 Attack',
+              'Category':'Melee - Weapon Stats',
+              'Affects':'Melee Weapons',
+              'Description':'Adds 3 Attacks to each Melee Weapon on the Unit.',
+              'Editable':'TRUE',
+              'Effect_Type':'WEAPON_STAT',
+              'Target':'MELEE',
+              'Stat':'A',
+              'Operation':'ADD',
+              'Value':'3',
+              'Sort_Order':'7',
+          }
+
+          if existing is not None:
+              existing.update(new_row)
+          else:
+              for row in tag_rows:
+                  try:
+                      order = int((row.get('Sort_Order') or '0').strip() or 0)
+                  except ValueError:
+                      order = 0
+                  if order >= 7:
+                      row['Sort_Order'] = str(order + 1)
+              tag_rows.append(new_row)
+
+          tag_rows.sort(key=lambda r: int((r.get('Sort_Order') or '9999').strip() or 9999))
+          with tags_path.open('w', encoding='utf-8', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=tag_fields, lineterminator='\n')
+              writer.writeheader()
+              writer.writerows(tag_rows)
+          PY
+
+      - name: Regenerate manifests
+        run: python3 scripts/data_schema.py manifest
+
+      - name: Commit data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git commit -m "Tag next Orks ability batch"
+          git push
