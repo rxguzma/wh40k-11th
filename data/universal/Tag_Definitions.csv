@@ -21,3 +21,4 @@ PLUS_1_AP_RANGE,+1 AP,+1 AP,Range - Weapon Stats,Ranged Weapons,Improves the AP 
 PLUS_1_D_RANGE,+1 D,+1 Damage,Range - Weapon Stats,Ranged Weapons,Adds 1 Damage to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,D,ADD,1,20
 PLUS_6_M,+6 M”,+6 Movement,Unit Stats,Unit,Adds 6” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,6,21
 PLUS_4_M,+4 M”,+4 Movement,Unit Stats,Unit,Adds 4” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,4,22
+PLUS_2_A_MELEE,+2 A,+2 Attacks,Melee - Weapon Stats,Melee Weapons,Adds 2 Attacks to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,2,22
