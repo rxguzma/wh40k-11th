@@ -10,7 +10,7 @@ orks_war_horde_stratagem_hit_em_harder_1cp,orks_war_horde,HIT 'EM HARDER,1,Fight
 
 TARGET: That ORKS unit.
 
-EFFECT: Your unit's melee attacks have [LETHAL HITS].",,
+EFFECT: Your unit's melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules]
 orks_war_horde_stratagem_orks_is_never_beaten_1cp,orks_war_horde,ORKS IS NEVER BEATEN,1,"Fight: non-TITANIC fight-on-death 
 on 4+ (3+ if RILED UP).","WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
 
@@ -24,19 +24,19 @@ TARGET: That ORKS VEHICLE unit.
 
 EFFECT: Your unit's melee attacks have:
 - [CLEAVE 1]
-- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",,
+- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",[CLEAVE 1],[Melee - Weapon Rules]
 orks_war_horde_stratagem_fungus_fuel_injection_1cp,orks_war_horde,FUNGUS-FUEL INJECTION,1,"Movement: MOUNTED / VEHICLE +2"" M.","WHEN: Your Movement phase, when a friendly ORKS MOUNTED / VEHICLE unit is selected to move.
 
 TARGET: That ORKS MOUNTED / VEHICLE unit.
 
-EFFECT: Your unit has +2"" M.",,
+EFFECT: Your unit has +2"" M.",[+2 M”],[Unit Stats]
 orks_war_horde_stratagem_close_range_dakka_1cp,orks_war_horde,CLOSE-RANGE DAKKA,1,Shooting: ORKS unit’s ranged attacks gain [RAPID FIRE 1] (or +1 RAPID FIRE).,"WHEN: Your Shooting phase, when a friendly ORKS unit is selected to shoot.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit's ranged attacks have:
 - [RAPID FIRE 1]
-- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",,
+- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",[RAPID FIRE 1],[Range - Weapon Rules]
 orks_freebooter_krew_stratagem_bash_and_grab_1cp,orks_freebooter_krew,Bash and Grab,1,FIGHT: ORKS can re‑roll To Wound within loot objective.,"WHEN: The Fight phase.
 
 TARGET: One ORKS unit from your army that has not been selected to fight this phase.
@@ -46,7 +46,7 @@ orks_freebooter_krew_stratagem_boardin_rush_1cp,orks_freebooter_krew,Boardin’ 
 
 TARGET: One ORKS unit from your army that has not been selected to move this phase.
 
-EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",,
+EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",[+6 M”],[Unit Stats]
 orks_rollin_deff_stratagem_brutal_broadside_1cp,orks_rollin_deff,Brutal Broadside,1,"SHOOTING: BATTLEWAGONs ranged attacks (excluding Firing Deck) have [RAPID FIRE X], where X equals the attack’s A.","WHEN: Your Shooting phase, when a friendly BATTLEWAGON unit is selected to shoot.
 
 TARGET: That BATTLEWAGON unit.
@@ -61,12 +61,12 @@ orks_freebooter_krew_stratagem_deck_fraggers_1cp,orks_freebooter_krew,Deck Fragg
 
 TARGET: One ORKS unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",,
+EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",[BLAST],[Range - Weapon Rules]
 orks_rollin_deff_stratagem_devastating_drift_1cp,orks_rollin_deff,Devastating Drift,1,FIGHT: A WAGON unit that charged this turn has melee attacks with [CLEAVE 1].,"WHEN: Your Fight phase, when a friendly WAGON unit that made a charge move this turn is selected to fight.
 
 TARGET: That WAGON unit.
 
-EFFECT: Your unit’s melee attacks have [CLEAVE 1].",,
+EFFECT: Your unit’s melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules]
 orks_freebooter_krew_stratagem_grab_and_bash_1cp,orks_freebooter_krew,Grab and Bash,1,"COMMAND: ORKS* within loot objective get the Waaagh! until next Command phase.
 *Excludes Gretchin.","WHEN: Your Command phase.
 
@@ -87,22 +87,22 @@ orks_more_dakka_stratagem_long_uncontrolled_bursts_1cp,orks_more_dakka,"Long, Un
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",,
+EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules]
 orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,orks_freebooter_krew,Rolling Loot‑Heap,1,SHOOTING: Flash Gitz ranged gain [ANTI‑VEHICLE 4+] for the phase.,"WHEN: Your Shooting phase.
 
 TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",,
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules]
 orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,SHOOTING: ORKS INFANTRY ranged target within 9″ have AP -1. ,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",,
+EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats]
 orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAGE,1,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.
 
-EFFECT: Unit's melee attacks have +1 A.",,
+EFFECT: Unit's melee attacks have +1 A.",[+1 A],[Melee - Weapon Stats]
 orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"Command Battle-shock step: ORKS INFANTRY 13+ models auto-pass Battle-shock for a visible ORKS unit within 12"".","WHEN: Start of the Battle-shock step of your Command phase.
 
 TARGET: One friendly ORKS INFANTRY unit of 13+ models.
@@ -188,7 +188,7 @@ TARGET: That MEK GUNZ unit.
 EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
-- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",,
+- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules]
 orks_dread_mob_stratagem_crazed_rampage_1cp,orks_dread_mob,CRAZED RAMPAGE,1,Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
 
 TARGET: That ORKS WALKER unit.
@@ -230,7 +230,7 @@ orks_kult_of_speed_stratagem_dakkastorm_1cp,orks_kult_of_speed,DAKKASTORM,1,Shoo
 
 TARGET: That SPEED FREEKS unit.
 
-EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",,
+EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules]
 orks_kult_of_speed_stratagem_speediest_freeks_1cp,orks_kult_of_speed,SPEEDIEST FREEKS,1,Opp Shooting: ranged attacks vs SPEED FREEKS fail on an unmodified hit roll of 1-3.,"WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly SPEED FREEKS unit.
 
 TARGET: That SPEED FREEKS unit.
@@ -281,9 +281,9 @@ orks_shoota_boyz_stratagem_clovin_dakka_1cp,orks_shoota_boyz,CLOVIN' DAKKA,1,"Sh
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks that target a unit within 9"" have +1 AP.",,
+EFFECT: Your unit's ranged attacks that target a unit within 9"" have +1 AP.",[+1 AP],[Range - Weapon Stats]
 orks_shoota_boyz_stratagem_never_enough_dakka_1cp,orks_shoota_boyz,NEVER ENOUGH DAKKA,1,Shooting: INFANTRY ranged attacks have [SUSTAINED HITS 1].,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",,
+EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules]
