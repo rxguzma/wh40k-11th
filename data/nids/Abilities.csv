@@ -6,9 +6,9 @@ When Targetted or selected to Fight (pick one):
 - +1 T","Once per turn, per unit: In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following:
 - This unit’s melee attacks have +1 S.
 - This unit has +1 T.",,,0,
-ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.,,,0,
+ALPHA_INVADER,Alpha Invader,SUSTAIN HITS 1,Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.,[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,
 ALPHA_LEADER,Alpha Leader,Leading = Unit re-rolls the Hit roll.,"While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll.",,,0,
-ALPHA_WARRIOR,Alpha Warrior,Unit gains SUSTAINED HITS 1 ability.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",,,0,
+ALPHA_WARRIOR,Alpha Warrior,Unit gains SUSTAINED HITS 1 ability.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,
 BIO_STIMULUS,Bio-stimulus,"Shoot an enemy, then, in MELEE, 
 ALL Tyranids have extra -1 AP","In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly Tyranids unit makes a melee attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per turn.",,,0,
 BLISTERING_ASSAULT,Blistering Assault,"Lost a wound to ANY shots.
@@ -18,7 +18,7 @@ Ok to end in Engagement.","Each time an enemy unit is selected to shoot, after t
 If it does, roll one D6, adding 2 to the result: each model in this unit can be moved a distance in inches up to the result, but this unit must finish that move as close as possible to the closest enemy unit. 
 
 When doing so, those models can be moved within Engagement Range of that enemy unit. Each unit can only make one Blistering Assault move per phase.",,,0,
-BOUNDING_LEAP,Bounding Leap,Advance and Charge.,This unit is eligible to declare a charge in a turn in which it Advanced.,,,0,
+BOUNDING_LEAP,Bounding Leap,Advance and Charge.,This unit is eligible to declare a charge in a turn in which it Advanced.,[ADVANCE AND CHARGE],[Movement Rules],0,
 BROOD_PROGENITOR_AURA_AND_PSYCHIC,Brood Progenitor (Aura and Psychic),"Termagant 6"" RANGED have LETHAL HITS","While a friendly Termagants unit is within 6"" of this model, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",,,0,
 BURNING_SPRAY,Burning Spray,Hit enemy loses Benefit of Cover this Shooting phase.,"In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",,,0,
 DEATH_BLOW,Death Blow,"If destroyed by - and if it has not fought, roll one D6: on a 4+, it can fight before it's removed.","If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",,,0,
@@ -42,7 +42,7 @@ GRASPING_TENDRILS,Grasping Tendrils,Enemy (not TITANIC) in Engagement trying to 
 GRISLY_SPECTACLE,Grisly Spectacle,"Destroy a model, all take battle shock within 6""","Each time this model is selected to fight, after resolving its attacks, if one or more enemy units were destroyed by those attacks, each enemy unit within 6"" of this model must take a Battle-shock test.",,,0,
 GUARDIAN_ORGANISM,Guardian Organism,"If led by CHARACTER, while alive, they grant 5+ FNP to character.","While a CHARACTER model is leading this unit, that CHARACTER has the Feel No Pain 5+ ability.",,,0,
 HIVE_COMMANDER,Hive Commander,"At start of Command Phase, 
-gain 1 CP.","At the start of your Command phase, if this model is on the battlefield, you gain 1CP.",,,0,
+gain 1 CP.","At the start of your Command phase, if this model is on the battlefield, you gain 1CP.",[GAIN 1 CP],[Unit Rules],0,
 HYPERSENSORY_ARRAY,Hypersensory Array,Free Rapid Ingress and Free Heroic Intervention even if already used the stratagem,"Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn.",,,0,
 HYPERTOXIC_MIASMA_AURA,Hypertoxic Miasma (Aura),"End of Movement: each enemy 6"" takes MW (2-3: 1, 4-5: D3, 6: D6).","At the end of your Movement phase, roll one D6 for each enemy unit within 6"" of this model: on a 2-3, that unit suffers 1 mortal wound; on a 4-5, that unit suffers D3 mortal wounds; on a 6, that unit suffers D6 mortal wounds.",,,0,
 HYPNOTIC_GAZE_PSYCHIC,Hypnotic Gaze (Psychic),"Fight phase, select enemy within Engagement Range: -1 To Hit.","At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",,,0,
@@ -87,7 +87,7 @@ Floating Death: Each time an enemy unit ends a move within 3"" of a model in thi
 SUBTERRANEAN_HUNTER,Subterranean Hunter,"End of Fight: if not in Engagement, go to Strategic Reserves","At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",,,0,
 SUBTERRANEAN_TUNNELS,Subterranean Tunnels,"Deep Strike more than 6"". Cannot charge this turn.","In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel.
 
-If it does, this model can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",,,0,
+If it does, this model can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",[DEEP STRIKE],[Unit Rules],0,
 LEADER_BROODLORD,Leader: Broodlord,LEADER: GENESTEALERS,LEADER: GENESTEALERS,,,9,
 LEADER_HIVE_TYRANT,Leader: Hive Tyrant,LEADER: TYRANT GUARD,LEADER: TYRANT GUARD,,,9,
 LEADER_HYPERADAPTED_RAVENERS,Leader: Hyperadapted Raveners,LEADER: RAVENERS,LEADER: RAVENERS,,,9,
@@ -111,6 +111,6 @@ HARPOON_BARBS,Harpoon Barbs,"Once per turn, enemy that Falls Back from Engagemen
 FOUL_SPORES_AURA,Foul Spores (Aura),"Friendly TYRANIDS within 6"" have Stealth.","Friendly TYRANIDS units within 6"" of this unit have the Stealth ability.",,,0,
 TYRANNOFEX_ACID_SPRAY_POINTS,Acid Spray,+10 Pts,Each Tyrannofex equipped with an Acid Spray costs +10 points.,[+10 Pts],[Points],8,
 TYRANNOFEX_RUPTURE_CANNON_POINTS,Rupture Cannon,+20 Pts,Each Tyrannofex equipped with a Rupture Cannon costs +20 points.,[+20 Pts],[Points],8,
-ALPHA_WARRIOR_TYRANID_PRIME_WITH_LASH_WHIP,Alpha Warrior,UNIT all weapons: SUSTAIN 1,Weapons equipped by models in this model's unit have the [SUSTAINED HITS 1] ability.,,,0,
+ALPHA_WARRIOR_TYRANID_PRIME_WITH_LASH_WHIP,Alpha Warrior,UNIT all weapons: SUSTAIN 1,Weapons equipped by models in this model's unit have the [SUSTAINED HITS 1] ability.,[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,
 AGGRESSIVE_LEADER_BEAST,Aggressive Leader-beast,"Enemy shoots and destroys a model: surge move up to D6"".","In your opponent's Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,,0,
 LEADER_TYRANID_PRIME_WITH_LASH_WHIP,Leader: Tyranid Prime with Lash Whip,"Leader: Gaunts, Warriors","LEADER: HORMAGAUNTS, TERMAGANTS, TYRANID WARRIORS WITH MELEE BIO-WEAPONS, TYRANID WARRIORS WITH RANGED BIO-WEAPONS",,,9,

@@ -15,9 +15,9 @@ The Assault Intercessor Sergeant with Jump Pack’s heavy bolt pistol can be rep
 1 plasma pistol",,,0,
 ASSAULT_RAMP,Assault Ramp,"Landraider Moves, Unit Disembarks and can Charge.","Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.",,,0,
 ASSAULT_VEHICLE,Assault Vehicle,Disembark after Advance,"Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move, and cannot declare a charge that turn.",,,0,
-ASTARTES_BANNER,Astartes Banner,+1 OC,"While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",,,0,
-ASTARTES_BANNER_ANCIENT,Astartes Banner (Ancient),+1 OC,"Astartes Banner (Ravenwing Command - Ancient): While this unit contains a Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit.",,,0,
-ASTARTES_BANNER_CH,Astartes Banner (CH),+1 OC,"While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",,,0,
+ASTARTES_BANNER,Astartes Banner,+1 OC,"While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",[+1 OC],[Unit Stats],0,
+ASTARTES_BANNER_ANCIENT,Astartes Banner (Ancient),+1 OC,"Astartes Banner (Ravenwing Command - Ancient): While this unit contains a Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit.",[+1 OC],[Unit Stats],0,
+ASTARTES_BANNER_CH,Astartes Banner (CH),+1 OC,"While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",[+1 OC],[Unit Stats],0,
 ASTARTES_SHIELD,Astartes Shield,Invul Save: 4++,The bearer has a 4+ invulnerable save.,,,0,
 BALLISTUS_STRIKE,Ballistus Strike,"Each ranged attack that targets a unit that is NOT Below Half-strength, RE-ROLL ALL HITS.","Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll.",,,0,
 BANNER_OF_MACRAGGE,Banner of Macragge,"Once per Battle, in Melee: +1 S and +1 Attacks.","Once per battle, at the start of the Fight phase, the bearer can use this ability. If it does, until the end of the phase, add 1 to the Strength and Attacks characteristics of melee weapons equipped by models in the bearer’s unit.",,,0,
@@ -87,7 +87,7 @@ EXECUTIONER,Executioner,If Target below half strength +1 TO HIT.,"Each time this
 EXHORTATION_OF_RAGE,Exhortation of Rage,"Fight: engaged enemy suffers D3 mortal wounds on 4-5, or 3 mortal wounds on 6.","Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.",,,0,
 FEARSOME_ASSAULT,Fearsome Assault,"In Engagement, Enemy must take LD test -1","At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test, subtracting 1 from that test.",,,0,
 FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE,"Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll.",,,0,
-FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First.,"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",,,0,
+FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First.,"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",[FIGHTS FIRST],[Unit Rules],0,
 FINEST_HOUR,Finest Hour,Once per battle: Add +3 Attacks and DEVASTATING WOUNDS in melee,"Finest Hour (Once per battle): In the Fight phase, when this unit is selected to fight, this model’s melee weapons have +3 Attacks and [DEVASTATING WOUNDS] until the end of the phase.",,,0,
 FOR_THE_CHAPTER,For the Chapter!,"Each time a model in this unit is destroyed, roll one D6: on a 3+, it can shoot again before it is removed. For these new attacks, no Hazardous tests are needed.","Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",,,0,
 FORGEFATHER,Forgefather,Torrent/Melta vs selected target: RE-ROLL ALL WOUNDS,"In your Shooting phase, select one enemy unit within 24"" of and visible to this model. 
@@ -105,13 +105,13 @@ HAMMER_OF_WRATH,Hammer of Wrath,Charge = Mortal Wounds per model on 4+.,"Each ti
 HAMMERSTRIKE,Hammerstrike,Remove Cover IGNORES COVER,"Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",,,0,
 HAYWIRE_MINE,Haywire Mine,"ONE. Mortal Wounds within 3""","Once per battle, at the start of any phase, you can select one enemy unit within 3"" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a VEHICLE unit.",,,0,
 HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds","After the bearer’s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds.",,,0,
-HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pain 6+ ability.,Models in the bearer’s unit have the Feel No Pain 6+ ability.,,,0,
+HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pain 6+ ability.,Models in the bearer’s unit have the Feel No Pain 6+ ability.,[FEEL NO PAIN 6+],[Unit Rules],0,
 HIGH_KING_OF_FENRIS,High King of Fenris,ONCE. Bring one unit from Reserves one turn earlier.,"Once per battle round, in your Movement phase, you can select one friendly SPACE WOLVES unit in Strategic Reserves. For the purpose of setting up that unit on the battlefield, treat the current battle round as one higher than it actually is.",,,0,
 HONOUR_GUARD_OF_MACRAGGE,Honour Guard of Macragge,"With Victrix Honour Guard, MARNEUS CALGAR gets FNP 4+.","While this unit contains one or more Victrix Honour Guard models, this unit’s MARNEUS CALGAR model has the Feel No Pain 4+ ability.",,,0,
 HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
 0 CP for Heroinc Intervention","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",,,0,
 ICON_OF_OBSTINACY,Icon of Obstinacy,Unit gets -1 To Wound,"Each time an attack targets this model’s unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll.",,,0,
-IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover,"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack.",,,0,
+IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover,"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack.",[IGNORES COVER],[Range - Weapon Rules],0,
 INCENDIARY_TERROR,Incendiary Terror,Enemy takes Battle-shock,"In your Shooting phase, after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test, subtracting 1 from that test.",,,0,
 INDOMITOR_DOCTRINES,Indomitor Doctrines,"Target Closest Target at Range then Charge and get +2 Strenght in Melee.
 (Can split fire to closest target)","Each time a model in this unit makes a ranged attack that targets the closest eligible target, or makes a melee attack in a turn in which it made a Charge move, improve the Strength characteristic of that attack by 2.",,,0,
@@ -123,7 +123,7 @@ x3 Heavy Intercessor with power fists and flamers
 x3 Heavy Intercessor with melta rifle: x2 melta rifles
 Note: x7 bolt pistols",,,0,
 INFILTRATOR_COMMS_ARRAY,Infiltrator Comms Array,"Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.","Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",,,0,
-INFILTRATORS,Infiltrators,"During Deployment, setup anywhere 9"" away.","During deployment, if every model in a unit has this ability, then when you set it up, it can be set up anywhere on the battlefield that is more than 9"" horizontally away from the enemy deployment zone and all enemy models.",,,0,
+INFILTRATORS,Infiltrators,"During Deployment, setup anywhere 9"" away.","During deployment, if every model in a unit has this ability, then when you set it up, it can be set up anywhere on the battlefield that is more than 9"" horizontally away from the enemy deployment zone and all enemy models.",[INFILTRATORS],[Unit Rules],0,
 INNER_CIRCLE,Inner Circle,-1 Damage to Unit,"Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",,,0,
 INSPIRING_COMMANDER,INSPIRING COMMANDER,Jump Packs = OC 2,"INSPIRING COMMANDER
 If you include this model in your army, until the end of the battle, non-CHARACTER models in ASSAULT INTERCESSORS WITH JUMP PACKS units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked.",,,0,
@@ -148,7 +148,7 @@ Infernus, Sternguard Vets",Leader: This model can be attached to the following u
 LEADER_SUBODEN_KHAN,Leader: Suboden Khan,"Can Lead: MOUNTED
 Outriders",LEADER: OUTRIDER SQUAD,,,9,
 LITANY_OF_HATE,Litany of Hate,Add +1 to Wound for this unit’s melee weapons,This unit’s melee weapons have +1 to Wound rolls.,,,0,
-LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away.","Cannot be shot at if 12"" away.",,,0,
+LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away.","Cannot be shot at if 12"" away.",[LONE OPERATIVE],[Unit Rules],0,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,0,
 LORD_OF_THE_PYROCLASTS,Lord of the Pyroclasts,HALF OC in Engagement,"While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit.",,,0,
 MARK_THE_TARGET,Mark the Target,Remain Stationary = DEVASTATING WOUNDS,"Each time this unit Remains Stationary, until the start of your next Movement phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.
@@ -169,7 +169,7 @@ MATHAMMER_DEATHWING_KNIGHTS,Mathammer (Deathwing Knights),"With a Chaplain, afte
 Great weapon of the Unforgiven is better vs Invuls as it bypasses the Saves.",,,0,
 MENTAL_FORTRESS,Mental Fortress,This unit has a 4+ invulnerable save,This unit has a 4+ invulnerable save.,,,0,
 MENTAL_FORTRESS_PSYCHIC,Mental Fortress (Psychic),"If LEADING, unit 4++","While this model is leading a unit, models in that unit have a 4+ invulnerable save.",,,0,
-METEORIC_DESCENT,Meteoric Descent,"Deep Strike within 6"" horizontally. Cannot Charge.","When this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",,,0,
+METEORIC_DESCENT,Meteoric Descent,"Deep Strike within 6"" horizontally. Cannot Charge.","When this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",[DEEP STRIKE],[Unit Rules],0,
 MULTI_SPECTRUM_ARRAY,Multi-spectrum Array,+1 TO HIT for Army,"In Shooting, after this unit has shot, select one enemy that was hit. Until the end of the phase, friendly adds +1 to the Hit roll.",,,0,
 NARTHECIUM_APOTHECARY,Narthecium (Apothecary),Bring back model,"Narthecium (Ravenwing Command - Apothecary): While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",,,0,
 OBJECTIVE_SECURED,Objective Secured,Sticky Objectives,"At the end of your Command phase, if this unit controls an objective, that objective is secured by your army.",,,0,
@@ -206,7 +206,7 @@ Every other model is equipped with: bolt pistol; plasma talon; Black Knight comb
 RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds,"While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds.",,,0,
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage,"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",,,0,
 RELIC_BANNER,Relic Banner,Add +1 Objective Control,This unit has +1 Objective Control.,,,0,
-RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,,,0,
+RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,[+1 W],[Unit Stats],0,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,,0,
 RITES_OF_TEMPERING,Rites of Tempering,Leading unit gets Feel No Pain 5+,"While Iron Father Feirros is leading a unit, models in that unit have Feel No Pain 5+.",,,0,
 ROTATING_DEATH,Rotating Death,Vs. INFANTRY. Gatling Cannon SUSTAINED HITS 2,"This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting INFANTRY units.
@@ -230,7 +230,7 @@ SHOCK_ASSAULT,Shock Assault,RE-ROLL 1S TO WOUND or RE-ROLL ALL WOUNDS if on an o
 SILENT_FURY,Silent Fury,+1 Attacks for every character killed,"Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",,,0,
 SKILLED_RIDERS,Skilled Riders,"Unit can move horizontally through terrain when making a Normal, Advance, Fall Back or Charge move.","Each time a model in this model’s unit makes a Normal, Advance, Fall Back or Charge move, it can move horizontally through terrain features.",,,0,
 SPEAR_OF_CHOGORIS,Spear of Chogoris,"Unit can shoot and charge after Advancing or Falling Back. If already eligible after Advancing, add 1 to Advance and Charge rolls.","This model’s unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If that unit is already eligible to shoot and declare a charge in a turn in which it Advanced, add 1 to Advance and Charge rolls made for that unit instead.",,,0,
-STEALTH,Stealth,Model is -1 To Hit with Ranged.,Model is -1 To Hit with Ranged.,,,0,
+STEALTH,Stealth,Model is -1 To Hit with Ranged.,Model is -1 To Hit with Ranged.,[STEALTH],[Unit Rules],0,
 STERNGUARD_FOCUS,Sternguard Focus,Oath = RE-ROLL ALL WOUNDS,"Each time a model in this unit makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.",,,0,
 STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed","Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes unit within 6"" of this model is destroyed, this model can use this ability (it cannot use this ability when it is itself destroyed). 
 
@@ -240,7 +240,7 @@ STORM_SHIELD_DEATHWATCH,Storm Shield (Deathwatch),4+ Invul,The bearer has a Woun
 STORM_SHIELD_TERMINATORS,Storm Shield (Terminators),+1 Wound (included),+1 Wound (included),[+1 W],[Unit Stats],8,
 STRATEGIC_DISPERSAL,Strategic Dispersal,"Shot and Move 6""
 Cannot Charge","In your Shooting phase, after this model’s unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6"". If it does, until the end of the turn, that unit is not eligible to declare a charge.",,,0,
-STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot.,Fallback and Shoot,,,0,
+STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot.,Fallback and Shoot,[FALL BACK AND SHOOT],[Movement Rules],0,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
 Max 6 per attacking unit. Melee only.","Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,,0,
 SUPPORT_ANCIENT,Support: Ancient,"Can Support: Most INFANTRY like
@@ -249,8 +249,8 @@ Infernus, Sternguard Vets",Support: This model can be attached to the following 
 SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn.,"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
 
 Until your next turn starts, while this unit remains on the battlefield, that enemy unit is suppressed. Suppressed units subtract 1 from Hit rolls when attacking.",,,0,
-SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",,,0,
-TACTICAL_PRECISION,Tactical Precision,Unit has LETHAL HITS. LETHAL HITS: Critical Hits (ie 6s) auto-wound the target.,"While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",,,0,
+SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,
+TACTICAL_PRECISION,Tactical Precision,Unit has LETHAL HITS. LETHAL HITS: Critical Hits (ie 6s) auto-wound the target.,"While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",[LETHAL HITS] [LETHAL HITS],[Melee - Weapon Rules] [Range - Weapon Rules],0,
 TALONSTRIKE_DOCTRINES,Talonstrike Doctrines,"Deepstrike and get:
 +1 AP and LANCE","Each time this unit is set up on the battlefield, until the end of the turn:
 - Improve the Armour Penetration characteristic of weapons equipped by models in this unit by 1.
@@ -296,7 +296,7 @@ Once per battle round, if an AETHON SHAAN model from your army is on the battlef
 UNTO_THE_ANVIL,Unto the Anvil,Leading = RE-ROLL ALL WOUNDS in MELEE,"While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll.",,,0,
 UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,"While on controlled objective, +1 save vs Damage 1 attacks","While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.",,,0,
 VANGUARD_ASSAULT,Vanguard Assault,Charge: melee weapons gain LETHAL HITS,"In a turn in which this unit made a Charge move, this unit’s melee weapons have [LETHAL HITS].",,,0,
-VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",,,0,
+VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,0,
 WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,,0,
 WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds,"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds.",,,0,
