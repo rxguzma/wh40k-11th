@@ -1,17 +1,17 @@
 {
-  "dataset_sha256": "ec464bfa50698729325a6f6ab7c24af08e800a3d457e5401731c3fcbbf56fdf1",
+  "dataset_sha256": "3dfa658121d91f0a7e75f8826b7343ea928c5d8dabb388b78dc363b0aad0b1f8",
   "files": {
     "Abilities.csv": {
-      "bytes": 20512,
-      "sha256": "faaf947d25c4df032f57d6246dad5b248e4a06720281d6cb9ac487982c92d12d"
+      "bytes": 20600,
+      "sha256": "8a0f9435096285cb62d28548ec3bfe1f5f3c16a48bedd7bace1509621288923f"
     },
     "Army_Rules.csv": {
-      "bytes": 1015,
-      "sha256": "351a896f41de50ffce578406aa51b1dccc18e6c8ef51b001f135532433e871f0"
+      "bytes": 1053,
+      "sha256": "61dd4d268a3383095c545851fd1fbe8f8258ce502cfa0c688f8905e9e0b7a348"
     },
     "Detachment_Definitions.csv": {
-      "bytes": 6229,
-      "sha256": "90762c54d893f0826be6f6ae0d9f69c4fdae99a58387f8027023dfdb68931025"
+      "bytes": 6294,
+      "sha256": "696983ea3a27ad51ce35e96d0a42f5080665de80406f4b326a19905fe6f55393"
     },
     "Detachments.csv": {
       "bytes": 28601,
@@ -22,8 +22,8 @@
       "sha256": "af81d46e31a9664e2ee3fd27a83cd0deeb11c19e5520ceae07fbfdd7e6eb4290"
     },
     "Enhancements.csv": {
-      "bytes": 6452,
-      "sha256": "0e865b7c0fe7675763c9b419ee091fc85d0394b87324c7075bbf823512203b5a"
+      "bytes": 6518,
+      "sha256": "5eeb372ad2d624d034e77f1d1d0c2977083f144810777dd590a0eb917f715700"
     },
     "Loadout_Abilities.csv": {
       "bytes": 204,
@@ -46,8 +46,8 @@
       "sha256": "258b1ac2eb7bf1783b6672defa4cb166fe579716c4ceee9ca8f12b36fd3a097c"
     },
     "Stratagems.csv": {
-      "bytes": 13171,
-      "sha256": "5722670e1865693b1634a73430e613544bacf190ca794e72769715c937483b99"
+      "bytes": 13213,
+      "sha256": "962f270fdb6e435d83d34666637103845b61c5c717a21246571f1aa48e30c721"
     },
     "Unit_Abilities.csv": {
       "bytes": 5506,
@@ -102,6 +102,6 @@
       "sha256": "5600028e6e10b8f60e8bdf95bd7c4b60d827d79955c5c04d1612f23e89361313"
     }
   },
-  "schema_sha256": "9682d76001fcf46d7e60c954969d7f8669cd6569cbb7a349f8d5c1740628abd8",
+  "schema_sha256": "089d874d48f13dce18439a6f7cc8ed11510a14a7a7f25b3f594d862a7d51670b",
   "schema_version": 1
 }

@@ -1,5 +1,5 @@
-Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description
-space_marines_army_rule_oath_of_moment,Marines,Oath of Moment,OATH OF MOMENT,OATH OF MOMENT
+Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Tag Categories,Default_Active
+space_marines_army_rule_oath_of_moment,Marines,Oath of Moment,OATH OF MOMENT,OATH OF MOMENT,,,
 dark_angels_army_rule_the_unforgiven,Dark Angels,The Unforgiven,The Unforgiven: become Dark Angels.,"The Unforgiven
 If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that units Chapter. For example, Asmodai has both the ADEPTUS ASTARTES and DARK ANGELS Faction keywords, and is therefore from the Dark Angels Chapter.
 You cannot include units from more than one Chapter in your army.
@@ -13,4 +13,4 @@ The following ADEPTUS ASTARTES units gain the DEATHWING keyword if they are draw
 TERMINATOR units
 BLADEGUARD ANCIENT, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD and VANGUARD VETERAN SQUAD WITH JUMP PACKS units
 LAND RAIDER, LAND RAIDER CRUSADER, LAND RAIDER REDEEMER, REPULSOR and REPULSOR EXECUTIONER units
-DREADNOUGHT units"
+DREADNOUGHT units",,,

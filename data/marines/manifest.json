@@ -1,17 +1,17 @@
 {
-  "dataset_sha256": "1cf153871c22efad70ccc966b3210938954aced6114474c03a552c05fd9263e7",
+  "dataset_sha256": "3f2015698a5eea090a9f1cf7a50bb9f95a6905c37c21fe91df2a4933fc43bdf2",
   "files": {
     "Abilities.csv": {
-      "bytes": 64695,
-      "sha256": "c27928f6aedf0750f5e979573bc68d66f6717cbd6934a9382c367edb33898db1"
+      "bytes": 64939,
+      "sha256": "77c2f6ee7c36dbf84dbadce4d98bd63ddbc4c2a7624326546ec080bb5fb7b5cc"
     },
     "Army_Rules.csv": {
-      "bytes": 1153,
-      "sha256": "1edf4bc35ffb17607ac6846d81f078f0aeeba9d0d2cb8eb2a6d58bbc4afb3db0"
+      "bytes": 1194,
+      "sha256": "886654fd36782c7c89b1123a7a8ca6690717ce4d32c6ba873e80ab128287a53f"
     },
     "Detachment_Definitions.csv": {
-      "bytes": 13003,
-      "sha256": "6ecc5633ebac8ef80dbf871758309811a3eabae14ebd40dd60c5c477dc5662b9"
+      "bytes": 13101,
+      "sha256": "54c2235e714a5146930e3e279454ed58fcb8a07572b65545ee01240905f7e193"
     },
     "Detachments.csv": {
       "bytes": 100457,
@@ -22,8 +22,8 @@
       "sha256": "10975f0564c4523c1487be8122a0f8cdcf6621a5f6d49b37905c286ec3ad5644"
     },
     "Enhancements.csv": {
-      "bytes": 26429,
-      "sha256": "532f3c9bbe9511d390532b6e3e66347a95e0c1eb0a23d78f5beb42b714fc7afb"
+      "bytes": 26599,
+      "sha256": "654f5a890be539d793fd5f3a222c73aead550464aada68d95056905f492516d0"
     },
     "Loadout_Abilities.csv": {
       "bytes": 378,
@@ -46,8 +46,8 @@
       "sha256": "feb9f04a4b8b8115fb08cb51cb1e824b7ca74ec5ca62c9270fa603919b0958e3"
     },
     "Stratagems.csv": {
-      "bytes": 52738,
-      "sha256": "5d838bf14fb618a05e808bc89d021ab2cf4fc5cdcd90d1259ee272b18f378159"
+      "bytes": 52851,
+      "sha256": "d8fef4322b042c42b2a7cd322e724a09607711e7838959c8c8504f770c83f7af"
     },
     "Unit_Abilities.csv": {
       "bytes": 13919,
@@ -102,6 +102,6 @@
       "sha256": "b982817cf0d8eb2213d1b26dd4949f1a7a5434feb96a827432c344ac6fec707c"
     }
   },
-  "schema_sha256": "9682d76001fcf46d7e60c954969d7f8669cd6569cbb7a349f8d5c1740628abd8",
+  "schema_sha256": "089d874d48f13dce18439a6f7cc8ed11510a14a7a7f25b3f594d862a7d51670b",
   "schema_version": 1
 }

@@ -92,6 +92,9 @@ def sync_source_tags(directory, army, source_type, tags_by_source):
         if desired:
             tagged_sources += 1
         current = (row.get("Tags") or "").strip()
+        if current and current != desired:
+            # Keep authored Tags; do not replace them with Effects Display_Tag output.
+            continue
         if current != desired:
             row["Tags"] = desired
             changed = True
