@@ -85,3 +85,10 @@ PLUS_1_WS_MELEE,+1 WS,+1 WS,Melee - Weapon Stats,Melee Weapons,Improves Weapon S
 SAVE_4_PLUS,SAVE 4+,Save 4+,Unit Stats,Unit,Sets the unit Save characteristic to 4+.,TRUE,UNIT_STAT,UNIT,SAVE,SET,4,7
 PLUS_3_RANGE,+3 R”,+3 R”,Range - Weapon Stats,Ranged Weapons,Adds 3 inches to the Range characteristic of Ranged weapons.,TRUE,WEAPON_STAT,RANGE,R,ADD,3,407
 FALL_BACK_AND_SHOOT,FALL BACK AND SHOOT,Fall Back and Shoot,Movement Rules,Unit,Falling Back does not prevent the unit from shooting when the source rule allows it.,TRUE,,,,,,803
+ADVANCE_6,ADVANCE 6,Advance 6,Movement Rules,Unit,"When this rule is active, treat the unit Advance roll as 6.",TRUE,,,,,,806
+ENEMY_MINUS_1_T,ENEMY -1 T,Enemy -1 Toughness,Informational - Enemy,Enemy Unit,The affected enemy unit has -1 Toughness while the source rule applies.,TRUE,,,,,,907
+REMOVE_BATTLE_SHOCK,REMOVE BATTLE-SHOCK,Remove Battle-shock,Unit Rules,Unit,The affected unit is no longer Battle-shocked when the source rule is used.,TRUE,,,,,,818
+REDEPLOY_3,REDEPLOY 3,Redeploy 3,Movement Rules,Units,The source rule allows up to three eligible units to be redeployed.,TRUE,,,,,,819
+FORCE_DESPERATE_ESCAPE,FORCE DESPERATE ESCAPE,Force Desperate Escape,Informational - Enemy,Enemy Unit,An affected enemy unit that Falls Back must use Desperate Escape when the source rule applies.,TRUE,,,,,,908
+ENEMY_MINUS_1_HAZARD,ENEMY -1 HAZARD,Enemy -1 Hazard,Informational - Enemy,Enemy Unit,Apply -1 to the affected enemy unit Hazard rolls when the source rule applies.,TRUE,,,,,,909
+INGRESS_MOVE,INGRESS MOVE,Ingress Move,Movement Rules,Unit,The source rule allows the unit to make an ingress move at the specified time.,TRUE,,,,,,820
