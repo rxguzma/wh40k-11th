@@ -3,7 +3,7 @@ orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET ST
 orks_more_dakka,Orks,More Dakka!,orks_more_dakka_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,INFANTRY ranged have [ASSAULT].  In addition whe RILED UP ranged get  [SUSTAINED HITS 1],"Friendly ORKS INFANTRY units’ ranged attacks have [ASSAULT].
 
 In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0
-orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective.",,,
+orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0
 orks_rollin_deff,Orks,Rollin’ Deff,orks_rollin_deff_detachment_rule_thundering_wagons,THUNDERING WAGONS,1,Priority Assets,,"WAGON re‑rolls Charge & Advance flat 6"". 
 
 BATTLEWAGON, HUNTA & KILL RIG.","Friendly BATTLEWAGON, HUNTA RIG, KILL RIG units have WAGON. 
@@ -47,7 +47,7 @@ D6  RESULT
 3-4  +2 S
 5-6  +1 AP
 
-If you rolled two D6, when this unit has attacked, this unit makes one hazard roll.",,,
+If you rolled two D6, when this unit has attacked, this unit makes one hazard roll.",[+1 A] [+1 A] [+2 S] [+2 S] [+1 AP] [+1 AP] [SUPA-HAZARDOUS],[Melee - Weapon Stats] [Range - Weapon Stats] [Melee - Weapon Stats] [Range - Weapon Stats] [Melee - Weapon Stats] [Range - Weapon Stats] [Unit Rules],0
 orks_blitz_brigade,Orks,Blitz Brigade,orks_blitz_brigade_detachment_rule_unstoppable_momentum,UNSTOPPABLE MOMENTUM,1,Take and Hold,,"WAGON
 Re-roll Charges & can Advance flat 6.","Friendly WAGON units can re-roll charge rolls.
 
@@ -75,7 +75,7 @@ Roar of Mork (psychic level 1): In your Movement phase, if this unit is not batt
 
 Visions of Violence (psychic level 1): At the start of the Fight phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked.
-- This unit has Fights First.",,,
+- This unit has Fights First.",[FIGHTS FIRST],[Unit Rules],0
 orks_runt_swarm,Orks,Runt Swarm,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,1,Priority Assets,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
 When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action.",,,
 orks_shoota_boyz,Orks,Shoota Boyz,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,"INFANTRY ranged attacks have [ASSAULT]. If RILED UP, ranged attacks +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:

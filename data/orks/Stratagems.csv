@@ -112,7 +112,7 @@ orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,Movement: B
 
 TARGET: That BEAST SNAGGA BOYZ / BOYZ unit.
 
-EFFECT: Your unit has +2 to advance rolls.",,,0
+EFFECT: Your unit has +2 to advance rolls.",[+2 ADVANCE],[Movement Rules],0
 orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT TO DIE,1,Fight: MEGANOBZ / NOBZ fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.

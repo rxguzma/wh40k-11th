@@ -99,3 +99,12 @@ COPY_WARBOSS_ABILITY,COPY WARBOSS ABILITY,Copy Warboss Ability,Unit Rules,Unit,T
 CHARACTER,CHARACTER,Character,Unit Rules,Unit,The affected unit has the CHARACTER keyword while this rule is active.,TRUE,,,,,,825
 RE_ROLL_BATTLE_SHOCK,RE-ROLL BATTLE-SHOCK,Re-roll Battle-shock,Unit Rules,Unit,The affected unit can re-roll the Battle-shock test specified by the source rule.,TRUE,,,,,,826
 RE_ROLL_ATTACK_DICE,RE-ROLL ATTACK DICE,Re-roll Attack Dice,Unit Rules,Unit,The affected unit can re-roll the attack dice specified by the source rule.,TRUE,,,,,,827
+PLUS_2_ADVANCE,+2 ADVANCE,+2 Advance,Movement Rules,Unit,Add 2 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,828
+RANGE_PLUS_2_S,+2 S,+2 Strength,Range - Weapon Stats,Ranged Weapon,Adds 2 Strength to each affected ranged weapon.,TRUE,WEAPON_STAT,WEAPON,S,ADD,2,829
+MELEE_DAMAGE_3,DAMAGE 3,Damage 3,Melee - Weapon Stats,Melee Weapon,Sets Damage to 3 for each affected melee weapon.,TRUE,WEAPON_STAT,WEAPON,D,SET,3,830
+MELEE_CRITICAL_WOUND_5_PLUS,CRITICAL WOUND 5+,Critical Wound 5+,Melee - Weapon Rules,Melee Weapon,Unmodified wound rolls of 5+ are Critical Wounds for each affected melee weapon while this rule is active.,TRUE,,,,,,831
+SUPA_HAZARDOUS,SUPA-HAZARDOUS,Supa-Hazardous,Unit Rules,Unit,The affected unit is subject to the Supa-Hazardous condition specified by the source rule.,TRUE,,,,,,832
+LONE_OPERATIVE,LONE OPERATIVE,Lone Operative,Unit Rules,Unit,The affected unit has Lone Operative while this rule is active.,TRUE,,,,,,833
+FIGHTS_FIRST,FIGHTS FIRST,Fights First,Unit Rules,Unit,The affected unit has Fights First while this rule is active.,TRUE,,,,,,834
+RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Re-roll Advance,Movement Rules,Unit,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
+GAIN_1_CP,GAIN 1 CP,Gain 1 CP,Unit Rules,Player,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
