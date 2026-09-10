@@ -118,3 +118,5 @@ FEEL_NO_PAIN_6_PLUS,FEEL NO PAIN 6+,Feel No Pain 6+,Unit Rules,Unit,The affected
 SCOUT_6,"SCOUT 6""","Scout 6""",Movement Rules,Unit,"The affected unit has Scout 6"" while this rule is active.",TRUE,,,,,,921
 CRITS_5_PLUS_MELEE,CRITS 5+,Crits 5+,Melee - Weapon Rules,Weapon,Critical hits on unmodified 5+ for melee attacks.,TRUE,WEAPON_RULE,MELEE,CRITS,SET,5,922
 CRITS_5_PLUS_RANGE,CRITS 5+,Crits 5+,Range - Weapon Rules,Weapon,Critical hits on unmodified 5+ for ranged attacks.,TRUE,WEAPON_RULE,RANGE,CRITS,SET,5,923
+PLUS_1_ADVANCE,+1 ADVANCE,+1 Advance,Movement Rules,Unit,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
+PLUS_1_CHARGE,+1 CHARGE,+1 Charge,Movement Rules,Unit,Add 1 to the affected unit Charge roll while this rule is active.,TRUE,,,,,,925
