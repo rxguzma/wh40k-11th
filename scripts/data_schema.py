@@ -9,10 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "data" / "CSV_SCHEMA.csv"
 ARMIES = ("marines", "orks", "nids")
-TRUE_VALUES = {"true", "1", "yes", "y"}
-ALLOWED_DETACHMENT_TYPES = {"ARMY_RULE", "DETACHMENT_RULE", "ENHANCEMENT", "STRATAGEM"}
 ALLOWED_UNIVERSAL_TYPES = {"CORE_STRATAGEM", "STRATAGEM"}
-ALLOWED_OWNERSHIP = {"AUTHORITATIVE", "GENERATED_COMPAT", "GENERATED_COLUMN"}
+ALLOWED_OWNERSHIP = {"AUTHORITATIVE"}
 
 
 def fail(message):
@@ -47,11 +45,6 @@ def load_schema():
             grouped[(scope, file_name)].append((order, column_name))
             if (row.get("Required") or "").strip().upper() == "YES":
                 required[(scope, file_name)].add(column_name)
-    for key, ownerships in ownership_by_file.items():
-        if "GENERATED_COMPAT" in ownerships and ownerships != {"GENERATED_COMPAT"}:
-            fail(f"GENERATED_COMPAT must own every column for {key}: {sorted(ownerships)!r}")
-        if ownerships == {"GENERATED_COLUMN"}:
-            fail(f"file cannot contain only GENERATED_COLUMN ownership: {key}")
 
     schemas = {}
     for key, entries in grouped.items():
@@ -95,10 +88,6 @@ def normalize():
     for scope, owner, file_name, path in specs(schemas):
         canonical = schemas[(scope, file_name)]
         if not path.exists():
-            if scope == "army" and file_name == "Unit_Weapon_Options.csv":
-                write_rows(path, [canonical])
-                changed.append(str(path.relative_to(ROOT)))
-                continue
             fail(f"missing required CSV: {path.relative_to(ROOT)}")
         rows = read_rows(path)
         if not rows:
@@ -199,48 +188,87 @@ def validate():
 
     for army in ARMIES:
         unit_profiles = loaded[(army, "Unit_Profiles.csv")]
-        units = loaded[(army, "Units.csv")]
+        unit_abilities = loaded[(army, "Unit_Abilities.csv")]
+        unit_weapons = loaded[(army, "Unit_Weapons.csv")]
+        unit_points = loaded[(army, "Unit_Points.csv")]
         weapons = loaded[(army, "Weapon_Stats.csv")]
+        weapon_abilities = loaded[(army, "Weapon_Abilities.csv")]
         abilities = loaded[(army, "Abilities.csv")]
-        detachments = loaded[(army, "Detachments.csv")]
         detachment_definitions = loaded[(army, "Detachment_Definitions.csv")]
         enhancements = loaded[(army, "Enhancements.csv")]
         stratagems = loaded[(army, "Stratagems.csv")]
         army_rules = loaded[(army, "Army_Rules.csv")]
-        options = loaded[(army, "Unit_Weapon_Options.csv")]
+        loadout_options = loaded[(army, "Loadout_Options.csv")]
+        loadout_weapons = loaded[(army, "Loadout_Weapons.csv")]
+        loadout_abilities = loaded[(army, "Loadout_Abilities.csv")]
+        loadout_points = loaded[(army, "Loadout_Points.csv")]
+        loadout_compatibility = loaded[(army, "Loadout_Compatibility.csv")]
 
         require_unique(unit_profiles, ["Unit_ID"], f"{army} authoritative Unit_ID")
-        require_unique(units, ["Unit_ID"], f"{army} generated Unit_ID")
         require_unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
+        require_unique(weapon_abilities, ["Weapon_Ability_ID"], f"{army} Weapon_Ability_ID")
         require_unique(abilities, ["Ability_ID"], f"{army} Ability_ID")
-        require_unique(detachments, ["Item_ID"], f"{army} legacy Item_ID")
         require_unique(detachment_definitions, ["Detachment_ID"], f"{army} Detachment_ID")
         require_unique(detachment_definitions, ["Rule_ID"], f"{army} detachment Rule_ID")
         require_unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
         require_unique(stratagems, ["Stratagem_ID"], f"{army} Stratagem_ID")
         require_unique(army_rules, ["Army_Rule_ID"], f"{army} Army_Rule_ID")
-        require_unique(options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} weapon option")
+        require_unique(loadout_options, ["Loadout_Option_ID"], f"{army} Loadout_Option_ID")
+        require_unique(loadout_options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} loadout option identity")
 
         unit_ids = {(row["Unit_ID"] or "").strip() for _, row in unit_profiles}
-        generated_unit_ids = {(row["Unit_ID"] or "").strip() for _, row in units}
-        if generated_unit_ids != unit_ids:
-            fail(f"{army}: Units.csv Unit_ID set does not match authoritative Unit_Profiles.csv")
         weapon_ids = {(row["Weapon_ID"] or "").strip() for _, row in weapons}
         army_ability_ids = {(row["Ability_ID"] or "").strip() for _, row in abilities}
         all_ability_ids = army_ability_ids | universal_abilities
         detachment_ids = {(row["Detachment_ID"] or "").strip() for _, row in detachment_definitions}
+        loadout_option_ids = {(row["Loadout_Option_ID"] or "").strip() for _, row in loadout_options}
 
-        for line_no, row in units:
+        for line_no, row in unit_abilities:
             unit_id = (row["Unit_ID"] or "").strip()
-            for weapon_id in split_ids(row.get("Weapon_IDs")):
-                if weapon_id not in weapon_ids:
-                    fail(f"{army} unit {unit_id}: missing Weapon_ID {weapon_id!r} (line {line_no})")
-            for ability_id in split_ids(row.get("Ability_IDs")):
-                if ability_id not in all_ability_ids:
-                    fail(f"{army} unit {unit_id}: missing Ability_ID {ability_id!r} (line {line_no})")
-            for ability_id in split_ids(row.get("Core_Ability_IDs")):
-                if ability_id not in all_ability_ids:
-                    fail(f"{army} unit {unit_id}: missing Core_Ability_ID {ability_id!r} (line {line_no})")
+            ability_id = (row["Ability_ID"] or "").strip()
+            if unit_id not in unit_ids:
+                fail(f"{army} Unit_Abilities line {line_no}: missing Unit_ID {unit_id!r}")
+            if ability_id not in all_ability_ids:
+                fail(f"{army} Unit_Abilities line {line_no}: missing Ability_ID {ability_id!r}")
+
+        for line_no, row in unit_weapons:
+            unit_id = (row["Unit_ID"] or "").strip()
+            weapon_id = (row["Weapon_ID"] or "").strip()
+            if unit_id not in unit_ids:
+                fail(f"{army} Unit_Weapons line {line_no}: missing Unit_ID {unit_id!r}")
+            if weapon_id not in weapon_ids:
+                fail(f"{army} Unit_Weapons line {line_no}: missing Weapon_ID {weapon_id!r}")
+
+        for line_no, row in unit_points:
+            unit_id = (row["Unit_ID"] or "").strip()
+            if unit_id not in unit_ids:
+                fail(f"{army} Unit_Points line {line_no}: missing Unit_ID {unit_id!r}")
+
+        for line_no, row in weapon_abilities:
+            weapon_id = (row["Weapon_ID"] or "").strip()
+            if weapon_id not in weapon_ids:
+                fail(f"{army} Weapon_Abilities line {line_no}: missing Weapon_ID {weapon_id!r}")
+
+        for line_no, row in loadout_options:
+            unit_id = (row["Unit_ID"] or "").strip()
+            if unit_id not in unit_ids:
+                fail(f"{army} Loadout_Options line {line_no}: missing Unit_ID {unit_id!r}")
+
+        for file_name, rows, extra_checks in (
+            ("Loadout_Weapons.csv", loadout_weapons, ("Weapon_ID", weapon_ids)),
+            ("Loadout_Abilities.csv", loadout_abilities, ("Ability_ID", all_ability_ids)),
+            ("Loadout_Points.csv", loadout_points, None),
+            ("Loadout_Compatibility.csv", loadout_compatibility, None),
+        ):
+            for line_no, row in rows:
+                loadout_option_id = (row["Loadout_Option_ID"] or "").strip()
+                if loadout_option_id not in loadout_option_ids:
+                    fail(f"{army} {file_name} line {line_no}: missing Loadout_Option_ID {loadout_option_id!r}")
+                if extra_checks:
+                    column, allowed = extra_checks
+                    value = (row.get(column) or "").strip()
+                    if value not in allowed:
+                        fail(f"{army} {file_name} line {line_no}: missing {column} {value!r}")
 
         for line_no, row in enhancements:
             enhancement_id = (row["Enhancement_ID"] or "").strip()
@@ -259,58 +287,6 @@ def validate():
                     f"{army} stratagem {stratagem_id}: missing Detachment_ID "
                     f"{detachment_id!r} (line {line_no})"
                 )
-
-        option_groups = defaultdict(list)
-        option_index = defaultdict(lambda: defaultdict(set))
-        for line_no, row in options:
-            unit_id = (row["Unit_ID"] or "").strip()
-            group_id = (row["Option_Group_ID"] or "").strip()
-            option_id = (row["Option_ID"] or "").strip()
-            if unit_id not in unit_ids:
-                fail(f"{army} option {option_id}: missing Unit_ID {unit_id!r} (line {line_no})")
-            for weapon_id in split_ids(row.get("Weapon_IDs")) + split_ids(row.get("Preserve_Weapon_IDs")):
-                if weapon_id not in weapon_ids:
-                    fail(f"{army} option {option_id}: missing Weapon_ID {weapon_id!r} (line {line_no})")
-            for ability_id in split_ids(row.get("Ability_IDs")):
-                if ability_id not in all_ability_ids:
-                    fail(f"{army} option {option_id}: missing Ability_ID {ability_id!r} (line {line_no})")
-            option_groups[(unit_id, group_id)].append((line_no, row))
-            option_index[unit_id][group_id].add(option_id)
-
-        for (unit_id, group_id), group_rows in option_groups.items():
-            defaults = [
-                line_no for line_no, row in group_rows
-                if (row.get("Default") or "").strip().lower() in TRUE_VALUES
-            ]
-            if len(defaults) != 1:
-                fail(f"{army} {unit_id}/{group_id}: expected exactly one Default, found {len(defaults)}")
-
-        for line_no, row in options:
-            unit_id = (row["Unit_ID"] or "").strip()
-            option_id = (row["Option_ID"] or "").strip()
-            compat = (row.get("Compatible_With") or "").strip()
-            if not compat:
-                continue
-            for raw_rule in compat.split(";"):
-                rule = raw_rule.strip()
-                if not rule:
-                    continue
-                sep = "=" if "=" in rule else (":" if ":" in rule else None)
-                if not sep:
-                    fail(f"{army} option {option_id}: invalid Compatible_With rule {rule!r} (line {line_no})")
-                group_id, option_text = rule.split(sep, 1)
-                group_id = group_id.strip()
-                allowed = [value.strip() for value in option_text.split("|") if value.strip()]
-                if group_id not in option_index[unit_id]:
-                    fail(f"{army} option {option_id}: unknown compatible group {group_id!r} (line {line_no})")
-                unknown_options = [value for value in allowed if value not in option_index[unit_id][group_id]]
-                if unknown_options:
-                    fail(f"{army} option {option_id}: unknown compatible options {unknown_options!r} (line {line_no})")
-
-        for line_no, row in detachments:
-            item_type = (row.get("Item_Type") or "").strip().upper()
-            if item_type not in ALLOWED_DETACHMENT_TYPES:
-                fail(f"{army} invalid Item_Type {item_type!r} line {line_no}")
 
     print("validation: OK")
     return True

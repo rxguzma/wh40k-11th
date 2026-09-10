@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 
-WEAPON_STATS_HEADER = ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D", "Weapon Abilities"]
+WEAPON_STATS_HEADER = ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D"]
 WEAPON_ABILITIES_HEADER = [
     "Weapon_ID",
     "Weapon_Ability_ID",
@@ -115,15 +115,8 @@ def validate_army(army):
         render(row)
         grouped.setdefault(weapon_id, []).append((sort_order, row))
 
-    for line_no, row in enumerate(stats, start=2):
-        weapon_id = (row.get("Weapon_ID") or "").strip()
-        expected = render_group(grouped.get(weapon_id, []), army, weapon_id)
-        actual = row.get("Weapon Abilities") or ""
-        if actual != expected:
-            fail(
-                f"{army}: Weapon_Stats line {line_no} Weapon Abilities differs from authoritative "
-                f"Weapon_Abilities.csv for {weapon_id!r}\nexpected: {expected!r}\nactual:   {actual!r}"
-            )
+    for weapon_id, rows in grouped.items():
+        render_group(rows, army, weapon_id)
 
     print(f"{army}: weapon abilities OK — {len(abilities)} normalized rows across {len(grouped)} weapons")
 

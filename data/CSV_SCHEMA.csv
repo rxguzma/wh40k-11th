@@ -9,35 +9,6 @@ army,Unit_Profiles.csv,7,LD,NO,AUTHORITATIVE,Unit Leadership characteristic.
 army,Unit_Profiles.csv,8,OC,NO,AUTHORITATIVE,Unit Objective Control characteristic.
 army,Unit_Profiles.csv,9,Keywords,NO,AUTHORITATIVE,Current HTML-compatible comma-separated unit keywords.
 army,Unit_Profiles.csv,10,Hyperlink,NO,AUTHORITATIVE,Source/reference hyperlink for the unit.
-army,Units.csv,1,Unit_ID,YES,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,2,Unit Name,YES,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,3,Ability_IDs,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,4,Core_Ability_IDs,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,5,Weapon_IDs,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,6,"M""",NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,7,T,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,8,SV,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,9,W,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,10,LD,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,11,OC,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,12,Keywords,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,13,Hyperlink,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,14,Points_Label_1,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,15,Points_Cost_1,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,16,Points_Label_2,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,17,Points_Cost_2,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,18,Points_Label_3,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,19,Points_Cost_3,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,20,Points_Label_4,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,21,Points_Cost_4,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,22,Points_Label_5,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,23,Points_Cost_5,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,24,Points_Label_6,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,25,Points_Cost_6,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,26,Points_Label_7,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,27,Points_Cost_7,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,28,Points_Label_8,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
-army,Units.csv,29,Points_Cost_8,NO,GENERATED_COMPAT,"Generated compatibility output from Unit_Profiles.csv, Unit_Abilities.csv, Unit_Weapons.csv, and Unit_Points.csv; do not author directly."
 army,Unit_Abilities.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
 army,Unit_Abilities.csv,2,Ability_ID,YES,AUTHORITATIVE,Foreign key to army or Universal Abilities.
 army,Unit_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,ABILITY or CORE_ABILITY; preserves the source relationship class.
@@ -56,7 +27,6 @@ army,Weapon_Stats.csv,5,WS,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,6,St,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,7,AP,NO,AUTHORITATIVE,
 army,Weapon_Stats.csv,8,D,NO,AUTHORITATIVE,
-army,Weapon_Stats.csv,9,Weapon Abilities,NO,GENERATED_COLUMN,Generated from authoritative Weapon_Abilities.csv; compatibility/presentation column for current HTML.
 army,Weapon_Abilities.csv,1,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
 army,Weapon_Abilities.csv,2,Weapon_Ability_ID,YES,AUTHORITATIVE,Stable unique relationship key generated from Weapon_ID and ability order.
 army,Weapon_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,Canonical weapon ability type; NONE preserves an explicit legacy '-' value.
@@ -65,19 +35,6 @@ army,Weapon_Abilities.csv,5,Value,NO,AUTHORITATIVE,"Structured parameter such as
 army,Weapon_Abilities.csv,6,Condition,NO,AUTHORITATIVE,Optional qualifier previously represented after ':' in the compatibility string.
 army,Weapon_Abilities.csv,7,Separator_Before,NO,AUTHORITATIVE,"Exact legacy delimiter before this ability; blank for first ability, normally ', ' thereafter."
 army,Weapon_Abilities.csv,8,Sort_Order,YES,AUTHORITATIVE,Ability display/order position within the weapon.
-army,Detachments.csv,1,Detachment_ID,YES,GENERATED_COMPAT,Legacy mixed detachment table retained temporarily for current HTML compatibility.
-army,Detachments.csv,2,Army_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,3,Detachment_Name,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,4,Item_Type,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,5,Item_ID,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,6,Item_Name,YES,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,7,Points,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,8,CP_Cost,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,9,DP_Cost,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,10,Detachment_Disposition,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,11,Short_Description,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,12,Long_Description,NO,GENERATED_COMPAT,Generated compatibility output from normalized detachment tables; do not author directly.
-army,Detachments.csv,13,Detachment_Disposition_2,NO,GENERATED_COMPAT,Optional second allowed disposition; blank is valid.
 army,Detachment_Definitions.csv,1,Detachment_ID,YES,AUTHORITATIVE,Stable unique detachment key.
 army,Detachment_Definitions.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Detachment_Definitions.csv,3,Detachment_Name,YES,AUTHORITATIVE,Visible detachment name.
@@ -109,21 +66,6 @@ army,Army_Rules.csv,5,Long_Description,NO,AUTHORITATIVE,
 army,Army_Rules.csv,6,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this army rule.
 army,Army_Rules.csv,7,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
 army,Army_Rules.csv,8,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Unit_Weapon_Options.csv,1,Unit_ID,YES,GENERATED_COMPAT,Stable unique unit key.
-army,Unit_Weapon_Options.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,3,Group_Label,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,4,Option_ID,YES,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,5,Option_Name,YES,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,6,Weapon_IDs,NO,GENERATED_COMPAT,Comma-separated Weapon_ID references.
-army,Unit_Weapon_Options.csv,7,Ability_IDs,NO,GENERATED_COMPAT,Comma-separated Ability_ID references granted by this option.
-army,Unit_Weapon_Options.csv,8,Points_Label_1,NO,GENERATED_COMPAT,Optional first option-specific unit-size label.
-army,Unit_Weapon_Options.csv,9,Points_Cost_1,NO,GENERATED_COMPAT,Optional first option-specific unit-size cost.
-army,Unit_Weapon_Options.csv,10,Points_Label_2,NO,GENERATED_COMPAT,Optional second option-specific unit-size label.
-army,Unit_Weapon_Options.csv,11,Points_Cost_2,NO,GENERATED_COMPAT,Optional second option-specific unit-size cost.
-army,Unit_Weapon_Options.csv,12,Default,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,13,Sort_Order,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,14,Preserve_Weapon_IDs,NO,GENERATED_COMPAT,Generated compatibility output from canonical Loadout_* tables via generated Unit_Loadout_* compatibility tables; do not author directly.
-army,Unit_Weapon_Options.csv,15,Compatible_With,NO,GENERATED_COMPAT,Option compatibility expression; blank is valid.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
@@ -163,38 +105,6 @@ army,Loadout_Compatibility.csv,2,Required_Group_ID,YES,AUTHORITATIVE,Other optio
 army,Loadout_Compatibility.csv,3,Compatible_Option_ID,YES,AUTHORITATIVE,Allowed option in Required_Group_ID; multiple rows are OR alternatives.
 army,Loadout_Compatibility.csv,4,Rule_Order,YES,AUTHORITATIVE,Original compatibility rule order.
 army,Loadout_Compatibility.csv,5,Option_Order,YES,AUTHORITATIVE,Original allowed-option order within the rule.
-army,Unit_Loadout_Options.csv,1,Unit_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,3,Group_Label,NO,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,4,Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,5,Option_Name,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,6,Default,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Options.csv,7,Sort_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Options.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,1,Unit_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,3,Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,4,Weapon_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,5,Weapon_Role,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Weapons.csv,6,Sort_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Weapons.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Abilities.csv,1,Unit_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Abilities.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Abilities.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Abilities.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Abilities.csv,3,Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Abilities.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Abilities.csv,4,Ability_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Abilities.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Abilities.csv,5,Sort_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Abilities.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,1,Unit_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,3,Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,4,Point_Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,5,Label,NO,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,6,Cost,NO,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Points.csv,7,Sort_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Points.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,1,Unit_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,2,Option_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,3,Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,4,Required_Group_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,5,Compatible_Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,6,Rule_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Unit_Loadout_Compatibility.csv,7,Option_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
 universal,Dispositions.csv,1,Disposition_ID,YES,AUTHORITATIVE,Stable canonical Disposition key.
 universal,Dispositions.csv,2,Disposition_Name,YES,AUTHORITATIVE,Visible Disposition name.
 universal,Dispositions.csv,3,Sort_Order,YES,AUTHORITATIVE,Canonical Disposition display order.

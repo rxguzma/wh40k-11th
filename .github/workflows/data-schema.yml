@@ -1,8 +1,8 @@
 name: Data Schema
 # CSV ownership metadata is enforced by scripts/data_schema.py.
-# Canonical loadouts use Loadout_Option_ID; Unit_Loadout_* remains generated compatibility.
+# Canonical loadouts use Loadout_Option_ID. Weapon ability text is rebuilt from Weapon_Abilities.csv.
 # Canonical/display names cannot use New markers.
-# Fresh-state model: no historical entity or loadout aliases are retained.
+# Fresh-state model: generated compatibility tables are not retained.
 
 on:
   push:
@@ -11,10 +11,6 @@ on:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
       - 'scripts/audit_references.py'
-      - 'scripts/split_detachments_v2.py'
-      - 'scripts/split_units_v1.py'
-      - 'scripts/split_weapon_abilities_v1.py'
-      - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
@@ -27,10 +23,6 @@ on:
       - 'data/**/*.csv'
       - 'scripts/data_schema.py'
       - 'scripts/audit_references.py'
-      - 'scripts/split_detachments_v2.py'
-      - 'scripts/split_units_v1.py'
-      - 'scripts/split_weapon_abilities_v1.py'
-      - 'scripts/split_loadouts_v1.py'
       - 'scripts/validate_unit_relations.py'
       - 'scripts/validate_weapon_abilities.py'
       - 'scripts/validate_loadouts.py'
@@ -54,19 +46,6 @@ jobs:
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
 
-      - name: Sync legacy detachment compatibility table
-        run: python3 scripts/split_detachments_v2.py
-
-      - name: Sync legacy unit compatibility table
-        run: python3 scripts/split_units_v1.py
-
-      - name: Sync weapon ability compatibility column
-        run: python3 scripts/split_weapon_abilities_v1.py
-
-      - name: Sync legacy loadout compatibility table
-        run: python3 scripts/split_loadouts_v1.py
-
-
       - name: Normalize schema
         run: python3 scripts/data_schema.py normalize
 
@@ -84,7 +63,6 @@ jobs:
 
       - name: Validate normalized loadouts
         run: python3 scripts/validate_loadouts.py
-
 
       - name: Validate canonical Ability orders
         run: python3 scripts/validate_ability_orders.py
