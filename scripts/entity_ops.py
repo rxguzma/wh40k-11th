@@ -19,7 +19,7 @@ HEADERS = {
     "Unit_Points.csv": ["Unit_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
     "Weapon_Stats.csv": ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D", "Weapon Abilities"],
     "Weapon_Abilities.csv": ["Weapon_ID", "Weapon_Ability_ID", "Ability_Type", "Target", "Value", "Condition", "Separator_Before", "Sort_Order"],
-    "Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Tags", "Order"],
+    "Abilities.csv": ["Ability_ID", "Ability Name", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Order", "Default_Active"],
     "Detachment_Definitions.csv": ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description"],
     "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags"],
     "Stratagems.csv": ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description"],
@@ -30,7 +30,7 @@ HEADERS = {
     "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
     "Loadout_Points.csv": ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
     "Loadout_Compatibility.csv": ["Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order"],
-    "Universal_Abilities.csv": ["Ability_ID", "Ability Name", "Short Description", "Long Description", "Order"],
+    "Universal_Abilities.csv": ["Ability_ID", "Ability Name", "Short_Description", "Long_Description", "Order"],
     "Universal_Stratagems.csv": ["Detachment_ID", "Detachment_Name", "Item_Type", "Item_ID", "Item_Name", "Points", "CP_Cost", "Short_Description", "Long_Description"],
 }
 
@@ -256,8 +256,8 @@ def weapon_row(data, existing=None):
 def ability_row(data, existing=None):
     row = dict(existing or {col: "" for col in HEADERS["Abilities.csv"]})
     mapping = {
-        "Ability_ID": "Ability_ID", "Ability_Name": "Ability Name", "Short_Description": "Short Description",
-        "Long_Description": "Long Description", "Order": "Order",
+        "Ability_ID": "Ability_ID", "Ability_Name": "Ability Name", "Short_Description": "Short_Description",
+        "Long_Description": "Long_Description", "Order": "Order",
     }
     for key, col in mapping.items():
         if key in data:
@@ -658,10 +658,10 @@ def apply_operation(state, op, index):
     if entity == "universal_ability":
         table = state.t(UNIVERSAL, "Universal_Abilities.csv")
         if mode == "add":
-            add_simple(table, "Ability_ID", {"Ability_ID":data["Ability_ID"],"Ability Name":data["Ability_Name"],"Short Description":data.get("Short_Description", ""),"Long Description":data.get("Long_Description", ""),"Order":data.get("Order", "")}, "universal Ability_ID")
+            add_simple(table, "Ability_ID", {"Ability_ID":data["Ability_ID"],"Ability Name":data["Ability_Name"],"Short_Description":data.get("Short_Description", ""),"Long_Description":data.get("Long_Description", ""),"Order":data.get("Order", "")}, "universal Ability_ID")
         elif mode == "change":
             row = table.one(Ability_ID=sval(entity_id))
-            for key, col in {"Ability_Name":"Ability Name","Short_Description":"Short Description","Long_Description":"Long Description","Order":"Order"}.items():
+            for key, col in {"Ability_Name":"Ability Name","Short_Description":"Short_Description","Long_Description":"Long_Description","Order":"Order"}.items():
                 if key in changes: row[col] = sval(changes[key])
         else:
             aid = sval(entity_id); delete_simple(table, "Ability_ID", aid, "universal Ability_ID")

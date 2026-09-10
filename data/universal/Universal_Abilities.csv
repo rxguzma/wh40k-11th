@@ -1,4 +1,4 @@
-Ability_ID,Ability Name,Short Description,Long Description,Order
+Ability_ID,Ability Name,Short_Description,Long_Description,Order
 ANTI,ANTI,Critical Wounds on X+ against specified keyword,"ANTI: This ability always takes the form [ANTI-X Y+]. Each time an attack is made with an [ANTI] weapon, if the target unit has the keyword denoted by X, an unmodified Wound roll of Y+ is a Critical Wound.",0
 ANTI-FLY 2+,ANTI-FLY 2+,Critical Wounds on 2+ vs FLY,"ANTI-FLY 2+: Each time an attack is made with this weapon against a FLY unit, an unmodified Wound roll of 2+ scores a Critical Wound.",0
 ANTI-FLY 4+,ANTI-FLY 4+,Critical Wounds on 4+ vs FLY,"ANTI-FLY 4+: Each time an attack is made with this weapon against a FLY unit, an unmodified Wound roll of 4+ scores a Critical Wound.",0

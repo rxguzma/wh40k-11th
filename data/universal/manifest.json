@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "15dcf75bfd47ea0bd4d881c950176f2e0fe25dd54acaa798ee03a0be19a019b2",
+  "dataset_sha256": "06608aedc67b6a07b71263a2879dd7c8df529c5c431ae93fd9b734746603931a",
   "files": {
     "Dispositions.csv": {
       "bytes": 175,
@@ -19,13 +19,13 @@
     },
     "Universal_Abilities.csv": {
       "bytes": 21695,
-      "sha256": "06bfcdbe6c7a51fa0e7244a09fbd11ce8e3e17beca5e52fe498971bb449d2153"
+      "sha256": "69fe542fa0e62e00be868d1f30c719523053d436f734121bdec207bff33ddd2b"
     },
     "Universal_Stratagems.csv": {
       "bytes": 5940,
       "sha256": "0dcec8479fd1119e9e5eae1e617f3d41ae83412e2489d80a0fa394cfd0773c0b"
     }
   },
-  "schema_sha256": "089d874d48f13dce18439a6f7cc8ed11510a14a7a7f25b3f594d862a7d51670b",
+  "schema_sha256": "2e9355a666f2f5b6200e238f4e1402b713de67a5b153f78cf278d3bfd4bdc374",
   "schema_version": 1
 }

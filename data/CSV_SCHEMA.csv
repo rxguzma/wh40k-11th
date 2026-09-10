@@ -126,8 +126,8 @@ army,Unit_Weapon_Options.csv,14,Preserve_Weapon_IDs,NO,GENERATED_COMPAT,Generate
 army,Unit_Weapon_Options.csv,15,Compatible_With,NO,GENERATED_COMPAT,Option compatibility expression; blank is valid.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
-universal,Universal_Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
-universal,Universal_Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
+universal,Universal_Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
+universal,Universal_Abilities.csv,4,Long_Description,NO,AUTHORITATIVE,
 universal,Universal_Abilities.csv,5,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type, Tags, or Effects."
 universal,Universal_Stratagems.csv,1,Detachment_ID,YES,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,2,Detachment_Name,NO,AUTHORITATIVE,
@@ -231,8 +231,8 @@ universal,Tag_Definitions.csv,12,Value,NO,AUTHORITATIVE,Machine-readable effect 
 universal,Tag_Definitions.csv,13,Sort_Order,YES,AUTHORITATIVE,Canonical display order within the universal Tag library.
 army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,Stable unique ability key.
 army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,Visible ability name.
-army,Abilities.csv,3,Short Description,NO,AUTHORITATIVE,
-army,Abilities.csv,4,Long Description,NO,AUTHORITATIVE,
+army,Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
+army,Abilities.csv,4,Long_Description,NO,AUTHORITATIVE,
 army,Abilities.csv,5,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this ability.
 army,Abilities.csv,6,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
 army,Abilities.csv,7,Order,YES,AUTHORITATIVE,Required canonical Ability sort order 0-9.
