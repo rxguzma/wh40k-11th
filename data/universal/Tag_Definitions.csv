@@ -109,3 +109,12 @@ FIGHTS_FIRST,FIGHTS FIRST,Fights First,Unit Rules,Unit,The affected unit has Fig
 RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Re-roll Advance,Movement Rules,Unit,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
 GAIN_1_CP,GAIN 1 CP,Gain 1 CP,Unit Rules,Player,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
 FIVE_PLUS_PLUS_INVUL,5++ Invul,5++ Invul,Unit Rules,Unit,The affected unit has a 5++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,837
+FIGHT_ON_DEATH,FIGHT ON DEATH,Fight on Death,Unit Rules,Unit,The affected unit can fight on death while this rule is active.,TRUE,,,,,,915
+FIGHT_ON_DEATH_3_PLUS,FIGHT ON DEATH 3+,Fight on Death 3+,Unit Rules,Unit,The affected unit can fight on death on a 3+ while this rule is active.,TRUE,,,,,,916
+FIGHT_ON_DEATH_4_PLUS,FIGHT ON DEATH 4+,Fight on Death 4+,Unit Rules,Unit,The affected unit can fight on death on a 4+ while this rule is active.,TRUE,,,,,,917
+FEEL_NO_PAIN_4_PLUS,FEEL NO PAIN 4+,Feel No Pain 4+,Unit Rules,Unit,The affected unit has Feel No Pain 4+ while this rule is active.,TRUE,,,,,,918
+FEEL_NO_PAIN_5_PLUS,FEEL NO PAIN 5+,Feel No Pain 5+,Unit Rules,Unit,The affected unit has Feel No Pain 5+ while this rule is active.,TRUE,,,,,,919
+FEEL_NO_PAIN_6_PLUS,FEEL NO PAIN 6+,Feel No Pain 6+,Unit Rules,Unit,The affected unit has Feel No Pain 6+ while this rule is active.,TRUE,,,,,,920
+SCOUT_6,"SCOUT 6""","Scout 6""",Movement Rules,Unit,"The affected unit has Scout 6"" while this rule is active.",TRUE,,,,,,921
+CRITS_5_PLUS_MELEE,CRITS 5+,Crits 5+,Melee - Weapon Rules,Weapon,Critical hits on unmodified 5+ for melee attacks.,TRUE,WEAPON_RULE,MELEE,CRITS,SET,5,922
+CRITS_5_PLUS_RANGE,CRITS 5+,Crits 5+,Range - Weapon Rules,Weapon,Critical hits on unmodified 5+ for ranged attacks.,TRUE,WEAPON_RULE,RANGE,CRITS,SET,5,923

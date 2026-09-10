@@ -18,12 +18,12 @@ tyranids_invasion_fleet_stratagem_adrenal_surge,tyranids_invasion_fleet,Adrenal 
 
 TARGET: Up to two Tyranids units from your army that are within Synapse Range of your army and are eligible to fight, or one other Tyranids unit from your army that is eligible to fight.
 
-EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",,,
+EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",[CRITS 5+] [CRITS 5+],[Melee - Weapon Rules] [Range - Weapon Rules],0
 tyranids_invasion_fleet_stratagem_death_frenzy,tyranids_invasion_fleet,Death Frenzy,1,Fight on Death on 4+,"WHEN: Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
-EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making attacks, and is then removed from play.",,,
+EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making attacks, and is then removed from play.",[FIGHT ON DEATH 4+],[Unit Rules],0
 tyranids_invasion_fleet_stratagem_endless_swarm,tyranids_invasion_fleet,Endless Swarm,1,Bring back Gaunts,"WHEN: Your Command phase.
 
 TARGET: Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other Endless Multitude unit from your army.
@@ -45,7 +45,7 @@ tyranids_invasion_fleet_stratagem_rapid_regeneration,tyranids_invasion_fleet,Rap
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
-EFFECT: Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, until the end of the phase, models in your unit have the Feel No Pain 5+ ability instead.",,,
+EFFECT: Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, until the end of the phase, models in your unit have the Feel No Pain 5+ ability instead.",[FEEL NO PAIN 6+] [FEEL NO PAIN 5+],[Unit Rules] [Unit Rules],0
 tyranids_subterranean_assault_stratagem_adaptive_optimisation,tyranids_subterranean_assault,Adaptive Optimisation,1,Mawloc & Trygons get SYNAPSE,"WHEN: Command phase.
 
 TARGET: One Mawloc or Trygon unit from your army.
@@ -87,7 +87,7 @@ tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,tyran
 
 TARGET: That NORN ASSIMILATOR unit.
 
-EFFECT: Your unit has Feel No Pain 4+ against mortal wounds.",,,
+EFFECT: Your unit has Feel No Pain 4+ against mortal wounds.",[FEEL NO PAIN 4+],[Unit Rules],0
 tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,tyranids_talons_of_the_norn_queen,Lesser Prey,1,"FIGHT: When a NORN ASSIMILATOR or NORN EMISSARY unit is selected to fight, its melee attacks have +2 Strength.","WHEN: Fight phase, when a friendly NORN ASSIMILATOR/NORN EMISSARY unit is selected to fight.
 
 TARGET: That NORN ASSIMILATOR/NORN EMISSARY unit.
