@@ -133,7 +133,7 @@ STOMPIN_FORWARD,Stompin’ Forward,"Move over non-TITANIC models and terrain 4""
 SUPER_RUNTS,Super Runts,"This unit is RILED UP. Scavenged Shivs +1 A, WS and S.","- This unit is RILED UP.
 - This unit's Scavenged Shivs weapons have +1 A, WS and S.",[RILED UP] [+1 A] [+1 WS] [+1 S],[Unit Rules] [Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Stats],0,1
 SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,,9,
-SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Burna Boyz, Lootas, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Lootas; Nobz; Tankbustas.,,,9,
+SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,,9,
 SUPPORT_WARBIKERS,Support: Warbikers,Can attach to Warbikers,Support: This model can be attached to Warbikers units.,,,9,
 TANK_HUNTERS,Tank Hunters,RANGE vs MONSTER / VEHICLE,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll.",[+1 TO HIT] [+1 TO WOUND],[Range - Combat Modifiers] [Range - Combat Modifiers],0,0
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,,,,0,
@@ -354,14 +354,12 @@ FUEL_MIXA_GROB,Fuel-mixa Grob,ADVANCE,This unit has +1 to advance rolls.,[+1 M�
 CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,0,
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,Once per battle.  Crude Surgery is D3+3,"Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,
-HARDY_BILIOUS,Hardy Bilious,Attacks vs T greater than this unit -1 to wound.,Attacks that target this unit with a T greater than this unit's T have -1 to wound rolls.,[INCOMING -1 TO WOUND],[Info Only],0,
+HARDY_BILIOUS,Hardy Bioniks,Incoming attack Strength > Toughness: -1 to Wound.,"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY
 - Has +4"" M",[+4 M”],[Unit Stats],0,
-THEYLL_LEARN_YA,They'll Learn Ya,"Once per battle: if battle-shocked and contains Gretchin, un-shock and destroy that many Grots.","They'll Learn Ya (Once per battle, per unit): When this unit becomes battle-shocked, if this unit contains 1+ Gretchin models, you can roll one D6:
-- That number of Gretchin models in this unit are destroyed.
-- This unit is no longer battle-shocked.",,,0,
+THEYLL_LEARN_YA,That’ll Learn Ya,"Once per battle round: if Battle-shocked with 4+ Gretchin, destroy D3 Gretchin to recover.","That’ll Learn Ya (Once per battle round, per unit): When this unit becomes Battle-shocked, if this unit contains 4 or more Gretchin models, you can roll one D3. If you do, that many Gretchin models in this unit are destroyed and this unit is no longer Battle-shocked.",,,0,
 MEK_GUNZ_ABILITIES,Madcap Artillery,"After shooting same-type Mek Gunz, apply wobbled / zapped / smashed / grounded.","In your Shooting phase, when this unit has shot, if all ranged weapons equipped by each Mek Gunz model in this unit are the same, select one enemy unit hit by those attacks. That enemy unit has the ability below that matches that weapon's name until the start of your next turn.
 - Bubblechukka: This unit is wobbled. While a unit is wobbled, if it is attacking, its targets have the benefit of cover against those attacks.
 - Kustom Mega-kannon: This unit is zapped. While a unit is zapped, that unit has -1 Ld.
