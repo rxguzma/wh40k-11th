@@ -10,12 +10,12 @@ space_marines_orbital_assault_force_stratagem_auto_sense_coordination,space_mari
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
 
-EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12"".",,,
+EFFECT: Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a DROP POD or while targeting an enemy unit within 12"".",[LETHAL HITS] [LETHAL HITS] [SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules] [Melee - Weapon Rules] [Range - Weapon Rules],0
 space_marines_orbital_assault_force_stratagem_tactical_decapitation,space_marines_orbital_assault_force,Tactical Decapitation,1,Shoot/Fight: PRECISION and +1 TO HIT vs CHARACTER.,"WHEN: Your Shooting phase or the Fight phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.
 
-EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],
+EFFECT: Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT] [PRECISION] [PRECISION],[Melee - Combat Modifiers] [Range - Combat Modifiers] [Melee - Weapon Rules] [Range - Weapon Rules],0
 space_marines_orbital_assault_force_stratagem_blind_screen,space_marines_orbital_assault_force,Blind Screen,1,Enemy Shoot: Target + nearby SMOKE VEHICLE/DROP POD get Stealth and Cover.,"WHEN: Your opponent's Shooting phase, just after an enemy unit has selected its targets.
 
 TARGET: One ADEPTUS ASTARTES unit (excluding TITANIC units) from your army that was selected as the target of one or more of the attacking unit's attacks and one friendly ADEPTUS ASTARTES SMOKE VEHICLE or DROP POD unit within 9"" of it.
@@ -116,7 +116,7 @@ LETHAL HITS OR SUSTAINED HITS 1","WHEN: Your Fight phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to fight this phase.
 
-EFFECT: Select either the [SUSTAINED HITS 1] or [LETHAL HITS] abilities. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability",,,
+EFFECT: Select either the [SUSTAINED HITS 1] or [LETHAL HITS] abilities. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability",[LETHAL HITS] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Melee - Weapon Rules],0
 space_marines_blade_of_ultramar_stratagem_courage_and_honour_1cp,space_marines_blade_of_ultramar,Courage And Honour!,1,"CHARGE +1 TO WOUND
 with Assault doctrine +1 AP","WHEN: Fight phase.
 
@@ -177,7 +177,7 @@ INTERROGATION_CONCLAVE_STRATAGEM_EXACTING_PUNISHMENT,INTERROGATION_CONCLAVE,EXAC
 
 TARGET: That CHAPLAIN unit.
 
-EFFECT: Your unit's attacks have [PRECISION].",,,
+EFFECT: Your unit's attacks have [PRECISION].",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0
 space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,space_marines_blade_of_ultramar,Exemplary Vigilance,1,IGNORES COVER and +1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
 
 TARGET: One Adeptus Astartes unit from your army.
@@ -266,7 +266,7 @@ space_marines_shadowmark_talon_stratagem_lay_low_the_tyrants_1cp,space_marines_s
 
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
-EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",,,
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0
 dark_angels_wrath_of_the_rock_stratagem_leonine_aggression_1cp,dark_angels_wrath_of_the_rock,LEONINE AGGRESSION,1,"REACTIVE CHARGE within 3""
 DEATHWING within 6""","WHEN: End of your opponent’s Charge phase.
 
@@ -446,7 +446,7 @@ space_marines_vanguard_spearhead_stratagem_surgical_strikes_2cp,space_marines_va
 
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
-EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",,,
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0
 space_marines_blade_of_ultramar_stratagem_tactical_foresight_1cp,space_marines_blade_of_ultramar,Tactical Foresight,1,"If Strengths is higher or equal
 -1 To Wound.","WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
