@@ -24,7 +24,7 @@ Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's mele
 orks_green_tide_enhancement_ardboyz,orks_green_tide,'ARDBOYZ (UP),25,TRUE,BOYZ unit  4+ Save,BOYZ unit only. This unit has 4+ Sv.,[SAVE 4+],[Unit Stats],1
 orks_bully_boyz_enhancement_wimp_kickaz,orks_bully_boyz,WIMP-KICKAZ (UP),15,TRUE,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is RILED UP.,"NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:
 - That enemy unit must select the desperate escape mode.
-- If this unit is RILED UP, that enemy unit has -1 to the hazard rolls made for that desperate escape.",[FORCE DESPERATE ESCAPE] [ENEMY -1 HAZARD],[Informational - Enemy] [Informational - Enemy],0
+- If this unit is RILED UP, that enemy unit has -1 to the hazard rolls made for that desperate escape.",[FORCE DESPERATE ESCAPE] [ENEMY -1 HAZARD],[Info Only] [Info Only],0
 orks_bully_boyz_enhancement_tellyporta_boss,orks_bully_boyz,TELLYPORTA BOSS,20,FALSE,MEGA ARMOUR model only. This unit (excluding VEHICLE) has Deep Strike.,MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike.,[DEEP STRIKE],[Unit Rules],1
 orks_taktikal_brigade_enhancement_kill_kommanda,orks_taktikal_brigade,KILL KOMMANDA,20,FALSE,"BIG MEK / WARBOSS INFANTRY model only. While part of an attached unit, this model has Infiltrators and Stealth.","BIG MEK / WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:
 - Infiltrators
@@ -40,7 +40,7 @@ orks_madcap_meks_enhancement_temperamental_shokka,orks_madcap_meks,TEMPERAMENTAL
 - On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
 - On a 6, this model's Shokk Attack Gun weapon has [SUSTAINED HITS 2].",[TORRENT] [+1 A] [SUSTAINED HITS 2],[Range - Weapon Rules] [Range - Weapon Stats] [Range - Weapon Rules],0
 orks_madcap_meks_enhancement_enhanced_runt_maw,orks_madcap_meks,ENHANCED RUNT-MAW (UP),10,TRUE,"BIG MEK WITH SHOKK ATTACK GUN: after shooting, one hit enemy is infested with Snotlings (−1 Leadership).","BIG MEK WITH SHOKK ATTACK GUN model only. When this unit has shot, select one enemy unit hit by those attacks. That unit is infested with Snotlings until the start of your next turn.
-- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Informational - Enemy],1
+- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Info Only],1
 orks_dread_mob_enhancement_cybork_boosta,orks_dread_mob,CYBORK BOOSTA,10,FALSE,"BIG MEK / MEK model: +2"" M.","BIG MEK / MEK model only. This model has +2"" M.",[+2 M”],[Unit Stats],1
 orks_dread_mob_enhancement_dreadherder,orks_dread_mob,DREADHERDER,20,FALSE,"BIG MEK: within 3"" of WALKER
 MEK gets Lone Op.
@@ -54,7 +54,7 @@ If RILED UP: [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is emba
 - If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0
 orks_blitz_brigade_enhancement_boss_boomer,orks_blitz_brigade,BOSS BOOMER (UP),10,TRUE,"WAGON with embarked by WARBOSS:
 It gains that WARBOSS's Intimidating Motivation / Keep Huntin' ability.","WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation / Keep Huntin' ability.",[COPY WARBOSS ABILITY],[Unit Rules],0
-orks_kult_of_speed_enhancement_smoky_gubbinz,orks_kult_of_speed,SMOKY GUBBINZ (UP),10,TRUE,"SPEED FREEKS (not AIRCRAFT): if an attack loses full visibility because of a model in this unit, the target has cover vs that attack.","SPEED FREEKS unit only (excluding AIRCRAFT units). When an attack targets a unit that is not fully visible to the attacking model because of a model in this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Informational - Enemy],0
+orks_kult_of_speed_enhancement_smoky_gubbinz,orks_kult_of_speed,SMOKY GUBBINZ (UP),10,TRUE,"SPEED FREEKS (not AIRCRAFT): if an attack loses full visibility because of a model in this unit, the target has cover vs that attack.","SPEED FREEKS unit only (excluding AIRCRAFT units). When an attack targets a unit that is not fully visible to the attacking model because of a model in this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],0
 orks_kult_of_speed_enhancement_competitive_streak,orks_kult_of_speed,COMPETITIVE STREAK,15,FALSE,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,[RE-ROLL CHARGE],[Movement Rules],1
 orks_flyboyz_enhancement_flyboss,orks_flyboyz,FLYBOSS (UP),20,TRUE,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT / DEFFKOPTAS within 6"" are RILED UP until start of your next turn.","ORKS AIRCRAFT unit only.
 - This unit has CHARACTER.

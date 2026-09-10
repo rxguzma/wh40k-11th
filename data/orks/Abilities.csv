@@ -17,13 +17,13 @@ COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,"UNIT COMPOSITION:
 Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon.",,,0,
 DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,MELEE vs MONSTER / VEHICLE,This unit's melee attacks that target a MONSTER / VEHICLE unit can re-roll wound rolls.,[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],0,0
 DA_BIGGEST_AND_DA_BEST,Da Biggest and da Best,WAAAGH! — MELEE,"While the Waaagh! is active for this unit, this model’s melee weapons have +4 A.",[+4 A],[Melee - Weapon Stats],0,0
-DA_BOSS_LADZ,Da Boss’ Ladz,IF Led by Warboss: -1 To Wound this unit if higher than Toughness.,"IF Led by Warboss: Da Boss’ Ladz: While a WARBOSS model is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Informational - Incoming],0,0
+DA_BOSS_LADZ,Da Boss’ Ladz,IF Led by Warboss: -1 To Wound this unit if higher than Toughness.,"IF Led by Warboss: Da Boss’ Ladz: While a WARBOSS model is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,0
 DA_JUMP_PSYCHIC,Da Jump,"Movement: 2-6 go to Strategic Reserves and gain Deep Strike. On a 1, D6 Mortals. ","Da Jump (Psychic, once per turn, per army): In your Movement phase, roll one D6. On a 1, this unit suffers D6 mortal wounds. On a 2-6, place this unit in Strategic Reserves and it gains Deep Strike until the end of the phase. This unit can then make an Ingress move, including during the first battle round.",[DEEP STRIKE],[Unit Rules],0,
 DAKKABLITZ,Dakkablitz,Blitzkannon vs non-MONSTER / VEHICLE,"In your Shooting phase, while making attacks with this unit, if its blitzkannon targeted a non-MONSTER / VEHICLE unit, that weapon has +6 attacks.",[+6 A],[Range - Weapon Stats],0,0
 DATS_OUR_LOOT,Dat’s Our Loot!,Re-roll 1s Re-roll ALL if on Objective,"Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is within range of an objective marker, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Range - Combat Modifiers] [Range - Combat Modifiers],0,
 DEAD_BRUTAL,Dead Brutal,While WAAAGH! Damage 3,"While the Waaagh! is active for your army, this model’s ’uge choppa has a Damage characteristic of 3.",[DAMAGE 3],[Melee - Weapon Stats],0,1
 DEATH_CHOPPY,DEATH CHOPPY,Add +1 Klaw = +1 Attack (already included).,Dead Choppy: The Attacks characteristic of this weapon is increased by 1 for each additional dread klaw this model is equipped with.,[+1 A],[Melee - Weapon Stats],0,
-DED_GLOWY_AMMO_AURA,Ded Glowy Ammo (Aura),"Enemy 6"" = -1 Toughness","While an enemy Infantry unit is within 6"" of this model, subtract 1 from the Toughness characteristic of models in that unit.",[ENEMY -1 T],[Informational - Enemy],0,0
+DED_GLOWY_AMMO_AURA,Ded Glowy Ammo (Aura),"Enemy 6"" = -1 Toughness","While an enemy Infantry unit is within 6"" of this model, subtract 1 from the Toughness characteristic of models in that unit.",[ENEMY -1 T],[Info Only],0,0
 DEFF_FROM_ABOVE,Deff from Above,After Ingress — RANGE,"In your Shooting phase, if this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,0
 DERANGED_SNOTLING_ASSAULT,Deranged Snotling Assault,Enemy Hit = Battle shock,"In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks; that unit must take a Battle-shock test.",,,0,
 DERANGED_SNOTLING_ASSAULT_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Deranged Snotling Assault,After shooting: one enemy unit hit must take a Battle-shock test.,"After this model shoots, choose one enemy unit hit by at least one of its attacks. That unit takes a Battle-shock test.",,,0,
@@ -109,7 +109,7 @@ PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: MONSTER / VEHICLE within 24"" — RA
 - +1 AP
 - [LETHAL HITS].",[+1 AP] [LETHAL HITS],[Range - Weapon Stats] [Range - Weapon Rules],0,0
 PYROMANIAKS,Pyromaniaks,"Re-roll To Wound of 1 if within 6"" Re-roll ALL To Wound if on Objective.","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Range - Combat Modifiers] [Range - Combat Modifiers],0,
-RAMSHACKLE_BUT_RUGGED,Ramshackle but Rugged,-1 AP vs this model,"Each time an attack is allocated to this model, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Informational - Incoming],0,1
+RAMSHACKLE_BUT_RUGGED,Ramshackle but Rugged,-1 AP vs this model,"Each time an attack is allocated to this model, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Info Only],0,1
 RED_SKULL_KOMMANDOS,Red Skull Kommandos,LEADING,"While this model is leading a unit, models in that unit have the Benefit of Cover.",[BENEFIT OF COVER],[Unit Rules],0,0
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage,,,,0,
 RUNTHERD,Runtherd,"Runtherd: T:5, Sv:5+, W:2, Ld:7, OC:1","Saves: 5+ Wounds: 2 Leadership: 7+ Objective Control: 2 While this unit contains one or more Gretchin models, each time an attack targets this unit, Runtherd models in this unit have a Toughness characteristic of 2.",,,0,
@@ -243,11 +243,11 @@ INVULNERABLE_SAVE_6,Invulnerable Save 6+,ANYTIME,INVULNERABLE SAVE 6+,[INVULNERA
 MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP number of units equal to current round,"Makari, Hoist Dat Banner! (Once per battle, per army): In your Movement phase, you can select a number of friendly ORKS units equal to or less than the current battle round number. Those units are RILED UP until the start of your next turn. Place one Makari token next to the unit, removing it after this ability is used.",,,0,
 MOBBED,Mobbed,"After charge: engaged MONSTER / VEHICLE take Battle-shock (-1, or -2 if 13+ models)","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
-- Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Informational - Enemy] [Informational - Enemy],0,
-MOBILE_FORTRESS,Mobile Fortress,ANYTIME — incoming RANGE,Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Informational - Incoming],0,1
+- Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Info Only] [Info Only],0,
+MOBILE_FORTRESS,Mobile Fortress,ANYTIME — incoming RANGE,Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],0,1
 NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units,This unit’s attacks that target a hidden unit have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,0
 PAIRED_KRUMPAS,Paired Krumpas,Kustom Krumpa — MELEE,Attacks made with this model’s Kustom Krumpa weapon can re-roll hit rolls and wound rolls.,[RE-ROLL ALL HITS] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers],0,0
-ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy],0,
+ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0,
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE,"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]",[+1 A] [+1 S] [HAZARDOUS],[Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Rules],0,0
@@ -261,7 +261,7 @@ WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain LETHAL HITS and PSYCHIC  Te
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[LETHAL HITS],[Melee - Weapon Rules],0,
 TIDE_OF_MUSCLE,Tide of Muscle,CHARGE this turn — MELEE,"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],0,0
 NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,Engaged does not prevent starting an action,Being engaged does not prevent this unit from being eligible to start an action.,,,0,
-ARROGANT_INVULNERABILITY,Arrogant Invulnerability,ANYTIME — incoming attacks,Attacks that target this unit have -1 AP,[INCOMING -1 AP],[Informational - Incoming],0,1
+ARROGANT_INVULNERABILITY,Arrogant Invulnerability,ANYTIME — incoming attacks,Attacks that target this unit have -1 AP,[INCOMING -1 AP],[Info Only],0,1
 BIG_AN_SHOOTY,Big an’ Shooty,ANYTIME — RANGE,This unit’s ranged attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Range - Combat Modifiers],0,1
 BIG_AN_STOMPY,Big an’ Stompy,ANYTIME — MELEE,This unit’s melee attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Melee - Combat Modifiers],0,1
 COMPOSITION_DEFF_DREAD,Unit Composition (Deff Dread),"1 Deff Dread. Big Shoota, Dread Klaws, Skorcha.","UNIT COMPOSITION: 1 Deff Dread model.
@@ -282,7 +282,7 @@ WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced wi
 DAMAGED_7,Damaged 7,While 1–7 wounds remaining,CORE: Damaged 7,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,0
 DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1,,,0,
 DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3,,,0,
-DREAD_ARD,Dread ’Ard,ANYTIME — incoming attacks,Attacks targeting this model have -1 damage,[INCOMING -1 D],[Informational - Incoming],0,1
+DREAD_ARD,Dread ’Ard,ANYTIME — incoming attacks,Attacks targeting this model have -1 damage,[INCOMING -1 D],[Info Only],0,1
 FIRING_DECK_12,Firing Deck 12,CORE: Firing Deck 12,CORE: Firing Deck 12,,,0,
 FULLY_LOADED_BUTCHERY,Fully Loaded Butchery,Butcha Boyz gets +2A per embarked model (max +22A),This unit’s Butcha Boyz weapon has +2 A for each model embarked within this unit (to a maximum of +22 A),[+2 A],[Melee - Weapon Stats],0,
 GUT_HATCH,Gut Hatch,"When this unit ends a normal move, embarked units can assault disembark.","In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move (pg 12).",,,0,
@@ -354,7 +354,7 @@ FUEL_MIXA_GROB,Fuel-mixa Grob,ADVANCE,This unit has +1 to advance rolls.,[+1 M�
 CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,0,
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,Once per battle.  Crude Surgery is D3+3,"Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,
-HARDY_BILIOUS,Hardy Bilious,Attacks vs T greater than this unit -1 to wound.,Attacks that target this unit with a T greater than this unit's T have -1 to wound rolls.,[INCOMING -1 TO WOUND],[Informational - Incoming],0,
+HARDY_BILIOUS,Hardy Bilious,Attacks vs T greater than this unit -1 to wound.,Attacks that target this unit with a T greater than this unit's T have -1 to wound rolls.,[INCOMING -1 TO WOUND],[Info Only],0,
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY
@@ -394,13 +394,13 @@ Every model is equipped with: 1 Extra Dakka; 1 Mek Speshul; 1 Spiked Ram.
 
 WARGEAR OPTIONS: Any number of models can each have their Mek Speshul replaced with 1 Rivet Kannon.",,,9,
 SQUIG_BARRAGE,Squig Barrage,"After shooting, non-MONSTER / VEHICLE hit by Squig Launchas is covered in Squigs (-1 to hit).","In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER / VEHICLE units) hit by this unit's Squig Launchas weapons. That enemy unit is covered in Squigs until the start of your next turn:
-- While a unit is covered in Squigs, that unit's attacks have -1 to hit rolls.",[ENEMY -1 TO HIT],[Informational - Enemy],0,
+- While a unit is covered in Squigs, that unit's attacks have -1 to hit rolls.",[ENEMY -1 TO HIT],[Info Only],0,
 RAUCOUS_OCCUPANTS,Raucous Occupants,"On home objective, add embarked OC to this model’s OC.","While this model is within range of your home objective, add the OC of models embarked within this model to this model's OC.",,,0,
 FORTIFICATION,Fortification,Standard fortification targeting / fall-back / auto-pass hazard rules.,"While an enemy unit is engaged with only FORTIFICATION units:
 - That enemy unit can be selected as a target of ranged attacks.
 - When shooting that enemy unit, those ranged attacks have -1 to hit rolls (excluding [CLOSE-QUARTERS] attacks).
-- When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.",[OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],[Informational - Outgoing] [Informational - Enemy],0,
-RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit,"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Informational - Enemy],0,0
+- When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.",[OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],[Info Only] [Info Only],0,
+RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit,"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],0,0
 TRANSPORT_BOSSBUNKA,Transport (Big’ed Bossbunka),11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,,9,
 COMPOSITION_BOSSBUNKA,Unit Composition (Big’ed Bossbunka),1 Big’ed Bossbunka. Big Shoota + Gaze of Gork.,"UNIT COMPOSITION: 1 Big'ed Bossbunka model.
 
@@ -423,7 +423,7 @@ MADCAP_ARTILLERY,Madcap Artillery,"After shooting same-type Mek Gunz, apply wobb
 - Kustom Mega-kannon: This unit is zapped. While a unit is zapped, that unit has -1 Ld.
 - Smasha Gun: This unit is smashed. While a unit is smashed, that unit has -2"" M.
 - Traktor Kannon: This unit is grounded. While a unit is grounded it cannot take to the skies.
-Place five Grot Crew tokens next to each Mek Gunz model, removing one each time this Mek Gunz model loses a wound (a Mek Gunz model itself is considered to represent its final wound).",[TARGET GETS COVER] [ENEMY -1 LD] [ENEMY -2 M”] [ENEMY GROUNDED],[Informational - Enemy] [Informational - Enemy] [Informational - Enemy] [Informational - Enemy],0,
+Place five Grot Crew tokens next to each Mek Gunz model, removing one each time this Mek Gunz model loses a wound (a Mek Gunz model itself is considered to represent its final wound).",[TARGET GETS COVER] [ENEMY -1 LD] [ENEMY -2 M”] [ENEMY GROUNDED],[Info Only] [Info Only] [Info Only] [Info Only],0,
 WARGEAR_OPTIONS_BOYZ_OPT_1,Unit Composition (Boyz Opt 1),"3 specials per 10: Big Shoota, Rokkit Launcha, Burna. Nobs: Kustom Choppa + Kombi-skorcha.",,,,9,
 WARGEAR_OPTIONS_BOYZ_OPT_2,Unit Composition (Boyz Opt 2),"3 specials per 10: Big Shoota, Rokkit Launcha, Burna. Nobs: Kustom Choppa + Kombi-Rokkit.",,,,9,
 LEADER_NAZDREG,LEADER,Can Lead: MEGANOBZ,,,,9,

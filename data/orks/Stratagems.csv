@@ -77,7 +77,7 @@ orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunc
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy],0
+EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0
 orks_freebooter_krew_stratagem_krump_and_run_1cp,orks_freebooter_krew,Krump and Run,1,"ENEMY MOVEMENT: After an enemy falls back, ORKS that was engaged can make a normal move of up to 6″.","WHEN: Your opponent’s Movement phase, just after an enemy unit falls back.
 
 TARGET: One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units.
@@ -132,7 +132,7 @@ TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
 
-Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Informational - Incoming],
+Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Info Only],
 orks_taktikal_brigade_stratagem_dubious_restraint_1cp,orks_taktikal_brigade,DUBIOUS RESTRAINT,1,Start/end of your Movement: BOYZ / KOMMANDOS / STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
 
 TARGET: One friendly BOYZ / KOMMANDOS / STORMBOYZ unit.
@@ -220,7 +220,7 @@ orks_blitz_brigade_stratagem_impending_krunch_1cp,orks_blitz_brigade,IMPENDING K
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy],0
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0
 orks_kult_of_speed_stratagem_delicious_eating_squigs_1cp,orks_kult_of_speed,DELICIOUS EATING SQUIGS,1,"Movement: RUKKATRUKK SQUIGBUGGIES heals 3 wounds on any number of friendly ORKS INFANTRY within 3"".","WHEN: Your Movement phase.
 
 TARGET: One friendly RUKKATRUKK SQUIGBUGGIES unit.
@@ -235,7 +235,7 @@ orks_kult_of_speed_stratagem_speediest_freeks_1cp,orks_kult_of_speed,SPEEDIEST F
 
 TARGET: That SPEED FREEKS unit.
 
-EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",[INCOMING RANGE HIT 1-3 FAILS],[Informational - Incoming],
+EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",[INCOMING RANGE HIT 1-3 FAILS],[Info Only],
 orks_flyboyz_stratagem_flyin_headbutt_1cp,orks_flyboyz,FLYIN' HEADBUTT,1,"Any phase: destroyed ORKS AIRCRAFT skips Deadly Demise; one enemy within 12"" takes 8D6, each 4+ = 1 MW; then remove the aircraft.","WHEN: Any phase, when a friendly ORKS AIRCRAFT unit is destroyed, before rolling for any Deadly Demise.
 
 TARGET: That ORKS unit.
