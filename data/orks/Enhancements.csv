@@ -40,7 +40,7 @@ orks_madcap_meks_enhancement_temperamental_shokka,orks_madcap_meks,TEMPERAMENTAL
 - On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
 - On a 6, this model's Shokk Attack Gun weapon has [SUSTAINED HITS 2].",[TORRENT] [+1 A] [SUSTAINED HITS 2],[Range - Weapon Rules] [Range - Weapon Stats] [Range - Weapon Rules],0
 orks_madcap_meks_enhancement_enhanced_runt_maw,orks_madcap_meks,ENHANCED RUNT-MAW (UP),10,TRUE,"BIG MEK WITH SHOKK ATTACK GUN: after shooting, one hit enemy is infested with Snotlings (−1 Leadership).","BIG MEK WITH SHOKK ATTACK GUN model only. When this unit has shot, select one enemy unit hit by those attacks. That unit is infested with Snotlings until the start of your next turn.
-- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Informational - Enemy],0
+- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Informational - Enemy],1
 orks_dread_mob_enhancement_cybork_boosta,orks_dread_mob,CYBORK BOOSTA,10,FALSE,"BIG MEK / MEK model: +2"" M.","BIG MEK / MEK model only. This model has +2"" M.",[+2 M”],[Unit Stats],1
 orks_dread_mob_enhancement_dreadherder,orks_dread_mob,DREADHERDER,20,FALSE,"BIG MEK: within 3"" of WALKER
 MEK gets Lone Op.
