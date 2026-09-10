@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_more_dakka_enhancement_dead_shiny_shootas","sets":{"Tags":"[RAPID FIRE 1]","Tag Categories":"[Range - Weapon Rules]","Default_Active":"1"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_more_dakka_enhancement_da_gobshot_thunderbuss","sets":{"Tags":"[DEVASTATING WOUNDS] [HAZARDOUS]","Tag Categories":"[Range - Weapon Rules] [Range - Weapon Rules]","Default_Active":"1"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_more_dakka_enhancement_git_spotter_squig","sets":{"Tags":"[IGNORES COVER]","Tag Categories":"[Range - Weapon Rules]","Default_Active":"1"}}]'
+          raw = r'[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_more_dakka_enhancement_dead_shiny_shootas","sets":{"Tags":"[RAPID FIRE 1]","Tag Categories":"[Range - Weapon Rules]","Default_Active":"1"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_more_dakka_enhancement_da_gobshot_thunderbuss","sets":{"Tags":"[DEVASTATING WOUNDS] [HAZARDOUS]","Tag Categories":"[Range - Weapon Rules] [Range - Weapon Rules]","Default_Active":"1"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_freebooter_krew_enhancement_git_spotter_squig","sets":{"Tags":"[IGNORES COVER]","Tag Categories":"[Range - Weapon Rules]","Default_Active":"1"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
