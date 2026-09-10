@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BIG_SHOOTA_X5:ability_1","column":"Value","value":"10"}]'
+          raw = r'[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"BEASTBOSS_ON_SQUIGOSAUR","column":"Hyperlink","value":"https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss-on-Squigosaur"}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
