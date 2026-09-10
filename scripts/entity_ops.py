@@ -24,7 +24,6 @@ HEADERS = {
     "Enhancements.csv": ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags"],
     "Stratagems.csv": ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description"],
     "Army_Rules.csv": ["Army_Rule_ID", "Army_Name", "Rule_Name", "Short_Description", "Long_Description"],
-    "Effects.csv": ["Effect_ID", "Source_Type", "Source_ID", "Effect_Type", "Target", "Stat", "Operation", "Value", "Display_Tag", "Sort_Order"],
     "Loadout_Options.csv": ["Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID", "Option_Name", "Default", "Sort_Order"],
     "Loadout_Weapons.csv": ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
     "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
@@ -36,7 +35,7 @@ HEADERS = {
 
 ENTITY_TYPES = {
     "unit", "weapon", "ability", "detachment", "enhancement", "stratagem",
-    "army_rule", "effect", "loadout_option", "universal_ability", "universal_stratagem",
+    "army_rule", "loadout_option", "universal_ability", "universal_stratagem",
 }
 
 
@@ -127,7 +126,7 @@ class State:
             for filename in (
                 "Unit_Profiles.csv", "Unit_Abilities.csv", "Unit_Weapons.csv", "Unit_Points.csv",
                 "Weapon_Stats.csv", "Weapon_Abilities.csv", "Abilities.csv", "Detachment_Definitions.csv", "Enhancements.csv",
-                "Stratagems.csv", "Army_Rules.csv", "Effects.csv", "Loadout_Options.csv",
+                "Stratagems.csv", "Army_Rules.csv", "Loadout_Options.csv",
                 "Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv",
                 "Loadout_Compatibility.csv",
             ):
@@ -317,27 +316,6 @@ def replace_weapon_abilities(state, army, weapon_id, abilities):
             "Condition": ability.get("Condition", ""),
             "Separator_Before": "" if index == 1 else ", ",
             "Sort_Order": sort_order,
-        })
-
-
-def replace_effects(state, army, source_type, source_id, effects):
-    table = state.t(army, "Effects.csv")
-    table.delete_where(lambda row: row.get("Source_Type") == source_type and row.get("Source_ID") == source_id)
-    for index, effect in enumerate(effects, start=1):
-        effect_id = sval(effect.get("Effect_ID") or f"{source_type}:{source_id}:{index}")
-        if table.exists(Effect_ID=effect_id):
-            fail(f"duplicate Effect_ID {effect_id!r}")
-        table.insert({
-            "Effect_ID": effect_id,
-            "Source_Type": source_type,
-            "Source_ID": source_id,
-            "Effect_Type": effect["Effect_Type"],
-            "Target": effect["Target"],
-            "Stat": effect["Stat"],
-            "Operation": effect["Operation"],
-            "Value": effect["Value"],
-            "Display_Tag": effect["Display_Tag"],
-            "Sort_Order": effect.get("Sort_Order", index),
         })
 
 
@@ -559,15 +537,12 @@ def apply_operation(state, op, index):
         table = state.t(army, "Abilities.csv")
         if mode == "add":
             add_simple(table, "Ability_ID", ability_row(data), "Ability_ID")
-            if "effects" in data: replace_effects(state, army, "ABILITY", sval(data["Ability_ID"]), data["effects"])
         elif mode == "change":
             aid = sval(entity_id); row = table.one(Ability_ID=aid); row.update(ability_row(changes, row))
-            if "effects" in changes: replace_effects(state, army, "ABILITY", aid, changes["effects"])
         else:
             aid = sval(entity_id); delete_simple(table, "Ability_ID", aid, "Ability_ID")
             state.t(army, "Unit_Abilities.csv").delete_where(lambda r: r.get("Ability_ID") == aid)
             state.t(army, "Loadout_Abilities.csv").delete_where(lambda r: r.get("Ability_ID") == aid)
-            state.t(army, "Effects.csv").delete_where(lambda r: r.get("Source_Type") == "ABILITY" and r.get("Source_ID") == aid)
         return
 
     if entity == "detachment":
@@ -592,10 +567,8 @@ def apply_operation(state, op, index):
         else:
             did = sval(entity_id); delete_simple(table, "Detachment_ID", did, "Detachment_ID")
             enh_table = state.t(army, "Enhancements.csv")
-            enh_ids = {r.get("Enhancement_ID") for r in enh_table.rows if r.get("Detachment_ID") == did}
             enh_table.delete_where(lambda r: r.get("Detachment_ID") == did)
             state.t(army, "Stratagems.csv").delete_where(lambda r: r.get("Detachment_ID") == did)
-            state.t(army, "Effects.csv").delete_where(lambda r: r.get("Source_Type") == "ENHANCEMENT" and r.get("Source_ID") in enh_ids)
         return
 
     if entity == "enhancement":
@@ -620,19 +593,6 @@ def apply_operation(state, op, index):
             for key, col in {"Rule_Name":"Rule_Name","Short_Description":"Short_Description","Long_Description":"Long_Description"}.items():
                 if key in changes: row[col] = sval(changes[key])
         else: delete_simple(table, "Army_Rule_ID", sval(entity_id), "Army_Rule_ID")
-        return
-
-    if entity == "effect":
-        table = state.t(army, "Effects.csv")
-        if mode == "add":
-            row = {col: sval(data.get(col, "")) for col in HEADERS["Effects.csv"]}
-            if not row["Sort_Order"]: row["Sort_Order"] = "1"
-            add_simple(table, "Effect_ID", row, "Effect_ID")
-        elif mode == "change":
-            row = table.one(Effect_ID=sval(entity_id))
-            for key in HEADERS["Effects.csv"]:
-                if key != "Effect_ID" and key in changes: row[key] = sval(changes[key])
-        else: delete_simple(table, "Effect_ID", sval(entity_id), "Effect_ID")
         return
 
     if entity == "loadout_option":
@@ -693,19 +653,16 @@ def add_enhancement(state, army, data, detachment_id=None):
     if not state.t(army, "Detachment_Definitions.csv").exists(Detachment_ID=did):
         fail(f"Enhancement references missing Detachment_ID {did!r}")
     add_simple(table, "Enhancement_ID", row, "Enhancement_ID")
-    if "effects" in data: replace_effects(state, army, "ENHANCEMENT", row["Enhancement_ID"], data["effects"])
 
 
 def change_enhancement(state, army, enhancement_id, changes):
     table = state.t(army, "Enhancements.csv")
     row = table.one(Enhancement_ID=enhancement_id)
     row.update(enhancement_row(changes, existing=row))
-    if "effects" in changes: replace_effects(state, army, "ENHANCEMENT", enhancement_id, changes["effects"])
 
 
 def delete_enhancement(state, army, enhancement_id):
     delete_simple(state.t(army, "Enhancements.csv"), "Enhancement_ID", enhancement_id, "Enhancement_ID")
-    state.t(army, "Effects.csv").delete_where(lambda r: r.get("Source_Type") == "ENHANCEMENT" and r.get("Source_ID") == enhancement_id)
 
 
 def add_stratagem(state, army, data, detachment_id=None):
@@ -726,7 +683,6 @@ def validate_state(state):
         detachments = state.t(army, "Detachment_Definitions.csv")
         enhancements = state.t(army, "Enhancements.csv")
         stratagems = state.t(army, "Stratagems.csv")
-        effects = state.t(army, "Effects.csv")
         options = state.t(army, "Loadout_Options.csv")
         unique(profiles, ["Unit_ID"], f"{army} Unit_ID")
         unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
@@ -737,7 +693,6 @@ def validate_state(state):
         unique(detachments, ["Rule_ID"], f"{army} Rule_ID")
         unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
         unique(stratagems, ["Stratagem_ID"], f"{army} Stratagem_ID")
-        unique(effects, ["Effect_ID"], f"{army} Effect_ID")
         unique(options, ["Loadout_Option_ID"], f"{army} Loadout_Option_ID")
         unique(options, ["Unit_ID", "Option_Group_ID", "Option_ID"], f"{army} semantic loadout option")
         unit_ids = idset(profiles, "Unit_ID")
@@ -752,8 +707,6 @@ def validate_state(state):
                 fail(f"{army}: ANTI weapon ability requires Target and Value for {row['Weapon_Ability_ID']!r}")
 
         detachment_ids = idset(detachments, "Detachment_ID")
-        enhancement_ids = idset(enhancements, "Enhancement_ID")
-        army_ability_ids = idset(abilities, "Ability_ID")
 
         for row in state.t(army, "Unit_Abilities.csv").rows:
             if row["Unit_ID"] not in unit_ids: fail(f"{army}: Unit_Abilities missing Unit_ID {row['Unit_ID']!r}")
@@ -767,11 +720,6 @@ def validate_state(state):
             if row["Detachment_ID"] not in detachment_ids: fail(f"{army}: enhancement missing Detachment_ID {row['Detachment_ID']!r}")
         for row in stratagems.rows:
             if row["Detachment_ID"] not in detachment_ids: fail(f"{army}: stratagem missing Detachment_ID {row['Detachment_ID']!r}")
-        for row in effects.rows:
-            st, sid = row["Source_Type"], row["Source_ID"]
-            if st == "ABILITY" and sid not in army_ability_ids: fail(f"{army}: effect missing Ability_ID source {sid!r}")
-            if st == "ENHANCEMENT" and sid not in enhancement_ids: fail(f"{army}: effect missing Enhancement_ID source {sid!r}")
-            if st not in {"ABILITY", "ENHANCEMENT"}: fail(f"{army}: invalid effect Source_Type {st!r}")
 
         loadout_ids = {r["Loadout_Option_ID"] for r in options.rows}
         group_options = {}

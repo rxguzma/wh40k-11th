@@ -58,7 +58,6 @@ jobs:
           python3 scripts/split_units_v1.py
           python3 scripts/split_weapon_abilities_v1.py
           python3 scripts/split_loadouts_v1.py
-          python3 scripts/split_effects_v1.py
 
       - name: Validate repository data
         run: |
@@ -68,7 +67,6 @@ jobs:
           python3 scripts/validate_unit_relations.py
           python3 scripts/validate_weapon_abilities.py
           python3 scripts/validate_loadouts.py
-          python3 scripts/validate_effects.py
           python3 scripts/validate_no_new_names.py
           python3 scripts/data_schema.py manifest
 

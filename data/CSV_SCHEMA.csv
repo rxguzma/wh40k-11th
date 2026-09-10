@@ -98,7 +98,7 @@ army,Enhancements.csv,4,Points,NO,AUTHORITATIVE,Enhancement points cost.
 army,Enhancements.csv,5,Repeatable,YES,AUTHORITATIVE,TRUE when this Enhancement may be assigned more than once in the same army; FALSE otherwise.
 army,Enhancements.csv,6,Short_Description,NO,AUTHORITATIVE,
 army,Enhancements.csv,7,Long_Description,NO,AUTHORITATIVE,
-army,Enhancements.csv,8,Tags,NO,GENERATED_COLUMN,Generated from Effects.csv Display_Tag values for this Enhancement_ID; presentation/legacy compatibility only.
+army,Enhancements.csv,8,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this enhancement.
 army,Enhancements.csv,9,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
 army,Enhancements.csv,10,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
 army,Army_Rules.csv,1,Army_Rule_ID,YES,AUTHORITATIVE,Stable unique army-rule key.
@@ -128,7 +128,7 @@ universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
 universal,Universal_Abilities.csv,4,Long_Description,NO,AUTHORITATIVE,
-universal,Universal_Abilities.csv,5,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type, Tags, or Effects."
+universal,Universal_Abilities.csv,5,Order,YES,AUTHORITATIVE,"Required canonical Ability sort order 0-9. The application does not infer order from Ability name, type or Tags."
 universal,Universal_Stratagems.csv,1,Detachment_ID,YES,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,2,Detachment_Name,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,3,Item_Type,YES,AUTHORITATIVE,
@@ -195,16 +195,6 @@ army,Unit_Loadout_Compatibility.csv,4,Required_Group_ID,YES,GENERATED_COMPAT,Gen
 army,Unit_Loadout_Compatibility.csv,5,Compatible_Option_ID,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
 army,Unit_Loadout_Compatibility.csv,6,Rule_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
 army,Unit_Loadout_Compatibility.csv,7,Option_Order,YES,GENERATED_COMPAT,Generated from canonical Loadout_Compatibility.csv using Loadout_Option_ID; retained for current HTML compatibility.
-army,Effects.csv,1,Effect_ID,YES,AUTHORITATIVE,Stable unique effect key.
-army,Effects.csv,2,Source_Type,YES,AUTHORITATIVE,ABILITY or ENHANCEMENT.
-army,Effects.csv,3,Source_ID,YES,AUTHORITATIVE,Foreign key to Ability_ID or Enhancement_ID according to Source_Type.
-army,Effects.csv,4,Effect_Type,YES,AUTHORITATIVE,"STAT, POINTS_PER_MODEL, or KEYWORD."
-army,Effects.csv,5,Target,YES,AUTHORITATIVE,Execution target; currently UNIT.
-army,Effects.csv,6,Stat,YES,AUTHORITATIVE,"M/T/SV/W/LD/OC, PTS, or KEYWORD according to Effect_Type."
-army,Effects.csv,7,Operation,YES,AUTHORITATIVE,"ADD, SET, or REMOVE according to Effect_Type."
-army,Effects.csv,8,Value,YES,AUTHORITATIVE,Machine-readable effect value.
-army,Effects.csv,9,Display_Tag,YES,AUTHORITATIVE,Exact visible compatibility tag preserved for Short Description badge presentation and older HTML.
-army,Effects.csv,10,Sort_Order,YES,AUTHORITATIVE,Effect order within its source.
 universal,Dispositions.csv,1,Disposition_ID,YES,AUTHORITATIVE,Stable canonical Disposition key.
 universal,Dispositions.csv,2,Disposition_Name,YES,AUTHORITATIVE,Visible Disposition name.
 universal,Dispositions.csv,3,Sort_Order,YES,AUTHORITATIVE,Canonical Disposition display order.
