@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_war_horde_enhancement_kunnin_but_brutal","sets":{"Tags":"[FALL BACK AND SHOOT] [FALL BACK AND CHARGE]","Tag Categories":"[Movement Rules] [Movement Rules]","Default_Active":"0"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_freebooter_krew_enhancement_bionik_workshop","sets":{"Tags":"[+2 M”] [+1 S] [+1 WS]","Tag Categories":"[Unit Stats] [Melee - Weapon Stats] [Melee - Weapon Stats]","Default_Active":"0"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_green_tide_enhancement_ferocious_show_off","sets":{"Tags":"[+1 A] [+2 A]","Tag Categories":"[Melee - Weapon Stats] [Melee - Weapon Stats]","Default_Active":"0"}},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_green_tide_enhancement_ardboyz","sets":{"Tags":"[SAVE 4+]","Tag Categories":"[Unit Stats]","Default_Active":"1"}}]'
+          raw = r'[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_war_horde_enhancement_da_boss_is_watchin","sets":{"Tags":"[RILED UP]","Tag Categories":"[Unit Rules]","Default_Active":"0"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPER_RUNTS","sets":{"Tags":"[RILED UP] [+1 A] [+1 WS] [+1 S]","Tag Categories":"[Unit Rules] [Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Stats]","Default_Active":"1"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
