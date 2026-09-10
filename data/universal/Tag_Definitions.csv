@@ -108,3 +108,4 @@ LONE_OPERATIVE,LONE OPERATIVE,Lone Operative,Unit Rules,Unit,The affected unit h
 FIGHTS_FIRST,FIGHTS FIRST,Fights First,Unit Rules,Unit,The affected unit has Fights First while this rule is active.,TRUE,,,,,,834
 RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Re-roll Advance,Movement Rules,Unit,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
 GAIN_1_CP,GAIN 1 CP,Gain 1 CP,Unit Rules,Player,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
+INVULNERABLE_SAVE_5_PLUS,INVULNERABLE SAVE 5+,Invulnerable Save 5+,Unit Rules,Unit,The affected unit has a 5+ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,837
