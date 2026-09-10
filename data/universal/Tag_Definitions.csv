@@ -76,3 +76,8 @@ MINUS_1_LD,-1 LD,-1 Leadership,Unit Stats,Unit,Improves the Unit Leadership char
 PLUS_15_PTS,+15 Pts,+15 Pts,Points,Unit,Adds 15 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,15,723
 PLUS_25_PTS,+25 Pts,+25 Pts,Points,Unit,Adds 25 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,25,725
 PLUS_30_PTS,+30 Pts,+30 Pts,Points,Unit,Adds 30 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,30,726
+MINUS_1_TO_HIT_MELEE,-1 TO HIT,-1 To Hit,Melee - Combat Modifiers,Melee Attacks,Worsens Hit rolls by 1 for Melee attacks.,TRUE,ROLL_MODIFIER,MELEE,HIT,WORSEN,1,207
+MINUS_1_TO_WOUND_MELEE,-1 TO WOUND,-1 To Wound,Melee - Combat Modifiers,Melee Attacks,Worsens Wound rolls by 1 for Melee attacks.,TRUE,ROLL_MODIFIER,MELEE,WOUND,WORSEN,1,208
+MINUS_1_TO_HIT_RANGE,-1 TO HIT,-1 To Hit,Range - Combat Modifiers,Ranged Attacks,Worsens Hit rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,HIT,WORSEN,1,507
+MINUS_1_TO_WOUND_RANGE,-1 TO WOUND,-1 To Wound,Range - Combat Modifiers,Ranged Attacks,Worsens Wound rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,WOUND,WORSEN,1,508
+OVERWATCH_RANGE,OVERWATCH,Overwatch,Range - Weapon Rules,Ranged Attacks,Applies Overwatch to Ranged attacks.,TRUE,WEAPON_RULE,RANGE,OVERWATCH,SET,1,614
