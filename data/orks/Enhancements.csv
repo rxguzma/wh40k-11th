@@ -1,8 +1,8 @@
 Enhancement_ID,Detachment_ID,Enhancement_Name,Points,Repeatable,Short_Description,Long_Description,Tags,Tag Categories,Default_Active
-orks_war_horde_enhancement_headwoppas_killchoppa,orks_war_horde,HEADWOPPA'S KILLCHOPPA,15,FALSE,"ORKS model only. If this unit charged this turn, this model’s melee attacks have +1 AP.","ORKS model only. If this unit made a charge move this turn, this model's melee attacks have +1 AP.",[+1 AP],[Melee - Weapon Stats],
+orks_war_horde_enhancement_headwoppas_killchoppa,orks_war_horde,HEADWOPPA'S KILLCHOPPA,15,FALSE,"ORKS model only. If this unit charged this turn, this model’s melee attacks have +1 AP.","ORKS model only. If this unit made a charge move this turn, this model's melee attacks have +1 AP.",[+1 AP],[Melee - Weapon Stats],0
 orks_war_horde_enhancement_da_boss_is_watchin,orks_war_horde,DA BOSS IS WATCHIN',25,FALSE,"ORKS model only. Once per battle, per army: in your Movement phase, this unit is RILED UP until the start of your next turn.","ORKS model only. (Once per battle, per army) In your Movement phase, you can use this ability. If you do, this unit is RILED UP until the start of your next turn.",[RILED UP],[Unit Rules],0
 orks_war_horde_enhancement_kunnin_but_brutal,orks_war_horde,KUNNIN' BUT BRUTAL,20,FALSE,ORKS model only. Fall Back does not prevent this unit from shooting or charging.,"ORKS model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot / declare a charge.",[FALL BACK AND SHOOT] [FALL BACK AND CHARGE],[Movement Rules] [Movement Rules],0
-orks_war_horde_enhancement_follow_me_ladz,orks_war_horde,FOLLOW ME LADZ,20,FALSE,"ORKS model only. This unit has +2"" M.","ORKS model only. This unit has +2"" M.",[+2 M”],[Unit Stats],
+orks_war_horde_enhancement_follow_me_ladz,orks_war_horde,FOLLOW ME LADZ,20,FALSE,"ORKS model only. This unit has +2"" M.","ORKS model only. This unit has +2"" M.",[+2 M”],[Unit Stats],1
 orks_freebooter_krew_enhancement_bionik_workshop,orks_freebooter_krew,Bionik Workshop,15,FALSE,"BIG MEK or PAINBOY. At Battle’s start, roll D3 to determine Bionik ability: 
 1) Bionik Legs +2″ to Move 
 2) Bionik Arms +1 Strength in melee 
@@ -16,7 +16,7 @@ orks_freebooter_krew_enhancement_git_spotter_squig,orks_freebooter_krew,Git‑Sp
 orks_freebooter_krew_enhancement_razgits_magik_map,orks_freebooter_krew,Razgit’s Magik Map,25,FALSE,"ORKS. After deployment, redeploy up to three ORKS INFANTRY; they may go to Reserves regardless of limits.","ORKS model only. After both players have deployed their armies, select up to three ORKS INFANTRY units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.",,,
 orks_rollin_deff_enhancement_targetin_gizmos,orks_rollin_deff,Targetin’ Gizmos,15,FALSE,"WAGON. With BIG MEK embarked, ranged attacks IGNORE COVER 
 
-If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],
+If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0
 orks_green_tide_enhancement_ferocious_show_off,orks_green_tide,FEROCIOUS SHOW-OFF,15,FALSE,"ORKS INFANTRY model.
 Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
@@ -25,23 +25,23 @@ orks_green_tide_enhancement_ardboyz,orks_green_tide,'ARDBOYZ (UP),25,TRUE,BOYZ u
 orks_bully_boyz_enhancement_wimp_kickaz,orks_bully_boyz,WIMP-KICKAZ (UP),15,TRUE,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is RILED UP.,"NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:
 - That enemy unit must select the desperate escape mode.
 - If this unit is RILED UP, that enemy unit has -1 to the hazard rolls made for that desperate escape.",,,
-orks_bully_boyz_enhancement_tellyporta_boss,orks_bully_boyz,TELLYPORTA BOSS,20,FALSE,MEGA ARMOUR model only. This unit (excluding VEHICLE) has Deep Strike.,MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike.,[DEEP STRIKE],[Unit Rules],0
+orks_bully_boyz_enhancement_tellyporta_boss,orks_bully_boyz,TELLYPORTA BOSS,20,FALSE,MEGA ARMOUR model only. This unit (excluding VEHICLE) has Deep Strike.,MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike.,[DEEP STRIKE],[Unit Rules],1
 orks_taktikal_brigade_enhancement_kill_kommanda,orks_taktikal_brigade,KILL KOMMANDA,20,FALSE,"BIG MEK / WARBOSS INFANTRY model only. While part of an attached unit, this model has Infiltrators and Stealth.","BIG MEK / WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:
 - Infiltrators
 - Stealth",[INFILTRATORS] [STEALTH],[Unit Rules] [Unit Rules],0
-orks_taktikal_brigade_enhancement_throat_slittas,orks_taktikal_brigade,THROAT-SLITTAS (UP),15,TRUE,KOMMANDOS / STORMBOYZ unit only. Melee has [LETHAL HITS: non-MONSTER / VEHICLE].,KOMMANDOS / STORMBOYZ unit only. This unit's melee attacks have [LETHAL HITS: non-MONSTER / VEHICLE].,[LETHAL HITS],[Melee - Weapon Rules],
+orks_taktikal_brigade_enhancement_throat_slittas,orks_taktikal_brigade,THROAT-SLITTAS (UP),15,TRUE,KOMMANDOS / STORMBOYZ unit only. Melee has [LETHAL HITS: non-MONSTER / VEHICLE].,KOMMANDOS / STORMBOYZ unit only. This unit's melee attacks have [LETHAL HITS: non-MONSTER / VEHICLE].,[LETHAL HITS],[Melee - Weapon Rules],0
 orks_wreckas_enhancement_kaptins_hat,orks_wreckas,KAPTIN'S HAT,25,FALSE,"BIG MEK / WARBOSS INFANTRY only.  After deployment, redeploy 3 INFANTRY; can go into Strategic Reserves ignoring limits.","BIG MEK / WARBOSS INFANTRY model only. When both players have deployed their armies, you can redeploy up to three friendly ORKS INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,,
 orks_wreckas_enhancement_supa_snazz_dakka,orks_wreckas,SUPA-SNAZZ DAKKA (UP),20,TRUE,FLASH GITZ unit only. Snazzgun weapons have [RAPID FIRE 1].,FLASH GITZ unit only. This unit's Snazzgun weapons have [RAPID FIRE 1].,[RAPID FIRE 1],[Range - Weapon Rules],
 orks_da_big_hunt_enhancement_glory_hog,orks_da_big_hunt,GLORY HOG,25,FALSE,BEAST SNAGGA model only. Fall Back does not prevent this unit from charging.,"BEAST SNAGGA model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to declare a charge.",[FALL BACK AND CHARGE],[Movement Rules],0
-orks_da_big_hunt_enhancement_it_came_from_da_drops,orks_da_big_hunt,IT CAME FROM DA DROPS,20,FALSE,BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.,BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.,[+1 T],[Unit Stats],
-orks_madcap_meks_enhancement_mekwaaagh_mastermind,orks_madcap_meks,MEKWAAAGH! MASTERMIND,30,FALSE,BIG MEK model only. This unit is RILED UP.,BIG MEK model only. This unit is RILED UP.,[RILED UP],[Unit Rules],0
+orks_da_big_hunt_enhancement_it_came_from_da_drops,orks_da_big_hunt,IT CAME FROM DA DROPS,20,FALSE,BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.,BEASTBOSS ON SQUIGOSAUR model only. This model has +1 T.,[+1 T],[Unit Stats],1
+orks_madcap_meks_enhancement_mekwaaagh_mastermind,orks_madcap_meks,MEKWAAAGH! MASTERMIND,30,FALSE,BIG MEK model only. This unit is RILED UP.,BIG MEK model only. This unit is RILED UP.,[RILED UP],[Unit Rules],1
 orks_madcap_meks_enhancement_temperamental_shokka,orks_madcap_meks,TEMPERAMENTAL SHOKKA (UP),20,TRUE,"BIG MEK WITH SHOKK ATTACK GUN: on shoot, D6 — 1 Torrent then destroyed; 2-5 +1 A; 6 Sustained Hits 2.","BIG MEK WITH SHOKK ATTACK GUN model only. In your Shooting phase, when this unit is selected to shoot, you can roll one D6:
 - On a 1, this model's Shokk Attack Gun weapon has [TORRENT], and when this unit has shot, this model is destroyed.
 - On a 2-5, this model's Shokk Attack Gun weapon has +1 A.
 - On a 6, this model's Shokk Attack Gun weapon has [SUSTAINED HITS 2].",[TORRENT] [+1 A] [SUSTAINED HITS 2],[Range - Weapon Rules] [Range - Weapon Stats] [Range - Weapon Rules],0
 orks_madcap_meks_enhancement_enhanced_runt_maw,orks_madcap_meks,ENHANCED RUNT-MAW (UP),10,TRUE,"BIG MEK WITH SHOKK ATTACK GUN: after shooting, one hit enemy is infested with Snotlings (−1 Leadership).","BIG MEK WITH SHOKK ATTACK GUN model only. When this unit has shot, select one enemy unit hit by those attacks. That unit is infested with Snotlings until the start of your next turn.
-- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Informational - Enemy],
-orks_dread_mob_enhancement_cybork_boosta,orks_dread_mob,CYBORK BOOSTA,10,FALSE,"BIG MEK / MEK model: +2"" M.","BIG MEK / MEK model only. This model has +2"" M.",[+2 M”],[Unit Stats],
+- While an enemy unit is infested with Snotlings, that unit has -1 to leadership rolls.",[ENEMY -1 LD],[Informational - Enemy],0
+orks_dread_mob_enhancement_cybork_boosta,orks_dread_mob,CYBORK BOOSTA,10,FALSE,"BIG MEK / MEK model: +2"" M.","BIG MEK / MEK model only. This model has +2"" M.",[+2 M”],[Unit Stats],1
 orks_dread_mob_enhancement_dreadherder,orks_dread_mob,DREADHERDER,20,FALSE,"BIG MEK: within 3"" of WALKER
 MEK gets Lone Op.
 Also, WALKER within 3"" re-rolls hit 1s.","BIG MEK model only. While this model is within 3"" of a friendly ORKS WALKER unit (excluding BIG MEK units):
@@ -51,14 +51,14 @@ orks_blitz_brigade_enhancement_targetin_gizmos,orks_blitz_brigade,TARGETIN' GIZM
 [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is embarked within this unit:
 - This unit's ranged attacks have [IGNORES COVER].
-- If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],
+- If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0
 orks_blitz_brigade_enhancement_boss_boomer,orks_blitz_brigade,BOSS BOOMER (UP),10,TRUE,"WAGON with embarked by WARBOSS:
 It gains that WARBOSS's Intimidating Motivation / Keep Huntin' ability.","WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation / Keep Huntin' ability.",,,
 orks_kult_of_speed_enhancement_smoky_gubbinz,orks_kult_of_speed,SMOKY GUBBINZ (UP),10,TRUE,"SPEED FREEKS (not AIRCRAFT): if an attack loses full visibility because of a model in this unit, the target has cover vs that attack.","SPEED FREEKS unit only (excluding AIRCRAFT units). When an attack targets a unit that is not fully visible to the attacking model because of a model in this unit, the target has the benefit of cover against that attack.",,,
-orks_kult_of_speed_enhancement_competitive_streak,orks_kult_of_speed,COMPETITIVE STREAK,15,FALSE,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,[RE-ROLL CHARGE],[Movement Rules],0
+orks_kult_of_speed_enhancement_competitive_streak,orks_kult_of_speed,COMPETITIVE STREAK,15,FALSE,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,[RE-ROLL CHARGE],[Movement Rules],1
 orks_flyboyz_enhancement_flyboss,orks_flyboyz,FLYBOSS (UP),20,TRUE,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT / DEFFKOPTAS within 6"" are RILED UP until start of your next turn.","ORKS AIRCRAFT unit only.
 - This unit has CHARACTER.
-- When this unit ends an ingress move, each friendly ORKS AIRCRAFT / DEFFKOPTAS unit within 6"" of this unit is RILED UP until the start of your next turn.",,,
+- When this unit ends an ingress move, each friendly ORKS AIRCRAFT / DEFFKOPTAS unit within 6"" of this unit is RILED UP until the start of your next turn.",[RILED UP],[Unit Rules],0
 orks_flyboyz_enhancement_impulsive_recon,orks_flyboyz,IMPULSIVE RECON (UP),15,TRUE,"ORKS AIRCRAFT unit only. In the first Movement phase, this unit can make an ingress move.","ORKS AIRCRAFT unit only. In your first Movement phase, this unit can make an ingress move.",,,
 orks_brute_bosses_enhancement_surly_as_a_squiggoth,orks_brute_bosses,SURLY AS A SQUIGGOTH,25,FALSE,"INFANTRY WARBOSS.
 Once per battle, if model is destroyed, on a 2+ return with 3 wounds.","INFANTRY WARBOSS model only. (Once per battle, per army) At the end of a phase in which this model is destroyed, roll one D6:
