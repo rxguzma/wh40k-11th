@@ -92,3 +92,10 @@ REDEPLOY_3,REDEPLOY 3,Redeploy 3,Movement Rules,Units,The source rule allows up 
 FORCE_DESPERATE_ESCAPE,FORCE DESPERATE ESCAPE,Force Desperate Escape,Informational - Enemy,Enemy Unit,An affected enemy unit that Falls Back must use Desperate Escape when the source rule applies.,TRUE,,,,,,908
 ENEMY_MINUS_1_HAZARD,ENEMY -1 HAZARD,Enemy -1 Hazard,Informational - Enemy,Enemy Unit,Apply -1 to the affected enemy unit Hazard rolls when the source rule applies.,TRUE,,,,,,909
 INGRESS_MOVE,INGRESS MOVE,Ingress Move,Movement Rules,Unit,The source rule allows the unit to make an ingress move at the specified time.,TRUE,,,,,,820
+ASSAULT,ASSAULT,Assault,Range - Weapon Rules,Ranged Weapon,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,,,,,,821
+ADVANCE_AND_CHARGE,ADVANCE AND CHARGE,Advance and Charge,Movement Rules,Unit,The affected unit can declare a charge in a turn in which it Advanced while this rule is active.,TRUE,,,,,,822
+RETURN_ON_2_PLUS,RETURN ON 2+,Return on 2+,Unit Rules,Unit,The affected model or unit can return on a 2+ when the source rule is triggered.,TRUE,,,,,,823
+COPY_WARBOSS_ABILITY,COPY WARBOSS ABILITY,Copy Warboss Ability,Unit Rules,Unit,The affected unit gains the referenced Warboss ability while the source rule applies.,TRUE,,,,,,824
+CHARACTER,CHARACTER,Character,Unit Rules,Unit,The affected unit has the CHARACTER keyword while this rule is active.,TRUE,,,,,,825
+RE_ROLL_BATTLE_SHOCK,RE-ROLL BATTLE-SHOCK,Re-roll Battle-shock,Unit Rules,Unit,The affected unit can re-roll the Battle-shock test specified by the source rule.,TRUE,,,,,,826
+RE_ROLL_ATTACK_DICE,RE-ROLL ATTACK DICE,Re-roll Attack Dice,Unit Rules,Unit,The affected unit can re-roll the attack dice specified by the source rule.,TRUE,,,,,,827

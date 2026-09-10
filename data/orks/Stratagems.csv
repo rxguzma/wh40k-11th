@@ -1,186 +1,186 @@
-Stratagem_ID,Detachment_ID,Stratagem_Name,CP_Cost,Short_Description,Long_Description,Tags,Tag Categories
+Stratagem_ID,Detachment_ID,Stratagem_Name,CP_Cost,Short_Description,Long_Description,Tags,Tag Categories,Default_Active
 orks_war_horde_stratagem_breakin_heads_1cp,orks_war_horde,BREAKIN' HEADS,1,Any phase: Attached INFANTRY takes D3 MW and is no longer Battle-shocked.,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
 
 TARGET: That ORKS INFANTRY unit. You can target that unit with this stratagem even though it is battle-shocked.
 
 EFFECT: Roll one D3:
 - Your unit suffers a number of mortal wounds equal to the result.
-- Your unit is no longer battle-shocked.",,
+- Your unit is no longer battle-shocked.",,,
 orks_war_horde_stratagem_hit_em_harder_1cp,orks_war_horde,HIT 'EM HARDER,1,Fight: Melee attacks gain [LETHAL HITS].,"WHEN: Fight phase, when a friendly ORKS unit is selected to fight.
 
 TARGET: That ORKS unit.
 
-EFFECT: Your unit's melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules]
+EFFECT: Your unit's melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],
 orks_war_horde_stratagem_orks_is_never_beaten_1cp,orks_war_horde,ORKS IS NEVER BEATEN,1,"Fight: non-TITANIC fight-on-death 
 on 4+ (3+ if RILED UP).","WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
 
 TARGET: That ORKS unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP.
-- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,
 orks_war_horde_stratagem_mow_em_down_1cp,orks_war_horde,MOW 'EM DOWN,1,Fight: Charging non-WALKER VEHICLE melee gains [CLEAVE 1] (or +1 CLEAVE).,"WHEN: Fight phase, when a friendly ORKS VEHICLE unit (excluding WALKER units) that made a charge move this turn is selected to fight.
 
 TARGET: That ORKS VEHICLE unit.
 
 EFFECT: Your unit's melee attacks have:
 - [CLEAVE 1]
-- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",[CLEAVE 1],[Melee - Weapon Rules]
+- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",[CLEAVE 1],[Melee - Weapon Rules],
 orks_war_horde_stratagem_fungus_fuel_injection_1cp,orks_war_horde,FUNGUS-FUEL INJECTION,1,"Movement: MOUNTED / VEHICLE +2"" M.","WHEN: Your Movement phase, when a friendly ORKS MOUNTED / VEHICLE unit is selected to move.
 
 TARGET: That ORKS MOUNTED / VEHICLE unit.
 
-EFFECT: Your unit has +2"" M.",[+2 M”],[Unit Stats]
+EFFECT: Your unit has +2"" M.",[+2 M”],[Unit Stats],
 orks_war_horde_stratagem_close_range_dakka_1cp,orks_war_horde,CLOSE-RANGE DAKKA,1,Shooting: ORKS unit’s ranged attacks gain [RAPID FIRE 1] (or +1 RAPID FIRE).,"WHEN: Your Shooting phase, when a friendly ORKS unit is selected to shoot.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit's ranged attacks have:
 - [RAPID FIRE 1]
-- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",[RAPID FIRE 1],[Range - Weapon Rules]
+- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",[RAPID FIRE 1],[Range - Weapon Rules],
 orks_freebooter_krew_stratagem_bash_and_grab_1cp,orks_freebooter_krew,Bash and Grab,1,FIGHT: ORKS can re‑roll To Wound within loot objective.,"WHEN: The Fight phase.
 
 TARGET: One ORKS unit from your army that has not been selected to fight this phase.
 
-EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective, you can re‑roll the wound roll.",[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers]
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective, you can re‑roll the wound roll.",[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],
 orks_freebooter_krew_stratagem_boardin_rush_1cp,orks_freebooter_krew,Boardin’ Rush,1,MOVEMENT: ORKS Advance flat 6″ instead of rolling.,"WHEN: Your Movement phase.
 
 TARGET: One ORKS unit from your army that has not been selected to move this phase.
 
-EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",[+6 M”],[Unit Stats]
+EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",[+6 M”],[Unit Stats],
 orks_rollin_deff_stratagem_brutal_broadside_1cp,orks_rollin_deff,Brutal Broadside,1,"SHOOTING: BATTLEWAGONs ranged attacks (excluding Firing Deck) have [RAPID FIRE X], where X equals the attack’s A.","WHEN: Your Shooting phase, when a friendly BATTLEWAGON unit is selected to shoot.
 
 TARGET: That BATTLEWAGON unit.
 
-EFFECT: Your unit’s ranged attacks (excluding attacks made by weapons selected with Firing Deck) have [RAPID FIRE X], where X is that attack’s A.",,
+EFFECT: Your unit’s ranged attacks (excluding attacks made by weapons selected with Firing Deck) have [RAPID FIRE X], where X is that attack’s A.",,,
 orks_more_dakka_stratagem_call_dat_dakka_1cp,orks_more_dakka,Call Dat Dakka?,1,"ENEMY SHOOTING: After enemy shot, ORKS INFANTRY can shoot back. Snap shooting but may only target that enemy.","WHEN: Your opponent’s Shooting phase, when an enemy unit that targeted a friendly ORKS INFANTRY unit has shot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit shoots using snap shooting, but while doing so your unit can only target that enemy unit.",,
+EFFECT: Your unit shoots using snap shooting, but while doing so your unit can only target that enemy unit.",,,
 orks_freebooter_krew_stratagem_deck_fraggers_1cp,orks_freebooter_krew,Deck Fraggers,1,SHOOTING: ORKS ranged get [BLAST] when targeting INFANTRY.,"WHEN: Your Shooting phase.
 
 TARGET: One ORKS unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",[BLAST],[Range - Weapon Rules]
+EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",[BLAST],[Range - Weapon Rules],
 orks_rollin_deff_stratagem_devastating_drift_1cp,orks_rollin_deff,Devastating Drift,1,FIGHT: A WAGON unit that charged this turn has melee attacks with [CLEAVE 1].,"WHEN: Your Fight phase, when a friendly WAGON unit that made a charge move this turn is selected to fight.
 
 TARGET: That WAGON unit.
 
-EFFECT: Your unit’s melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules]
+EFFECT: Your unit’s melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules],
 orks_freebooter_krew_stratagem_grab_and_bash_1cp,orks_freebooter_krew,Grab and Bash,1,"COMMAND: ORKS* within loot objective get the Waaagh! until next Command phase.
 *Excludes Gretchin.","WHEN: Your Command phase.
 
 TARGET: One ORKS unit from your army (excluding Gretchin units) that is within range of the loot objective.
 
-EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,
+EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,,
 orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunch,1,"CHARGE: After WAGON ends Charge, each engaged enemy make battle‑shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy]
+EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy],
 orks_freebooter_krew_stratagem_krump_and_run_1cp,orks_freebooter_krew,Krump and Run,1,"ENEMY MOVEMENT: After an enemy falls back, ORKS that was engaged can make a normal move of up to 6″.","WHEN: Your opponent’s Movement phase, just after an enemy unit falls back.
 
 TARGET: One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units.
 
-EFFECT: Your unit can make a normal move of up to 6″.",,
+EFFECT: Your unit can make a normal move of up to 6″.",,,
 orks_more_dakka_stratagem_long_uncontrolled_bursts_1cp,orks_more_dakka,"Long, Uncontrolled Bursts",1,SHOOTING: ORKS INFANTRY ranged have [IGNORES COVER].,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules]
+EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules],
 orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,orks_freebooter_krew,Rolling Loot‑Heap,1,SHOOTING: Flash Gitz ranged gain [ANTI‑VEHICLE 4+] for the phase.,"WHEN: Your Shooting phase.
 
 TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules]
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules],
 orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,SHOOTING: ORKS INFANTRY ranged target within 9″ have AP -1. ,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats]
+EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats],
 orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAGE,1,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.
 
-EFFECT: Unit's melee attacks have +1 A.",[+1 A],[Melee - Weapon Stats]
+EFFECT: Unit's melee attacks have +1 A.",[+1 A],[Melee - Weapon Stats],
 orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"Command Battle-shock step: ORKS INFANTRY 13+ models auto-pass Battle-shock for a visible ORKS unit within 12"".","WHEN: Start of the Battle-shock step of your Command phase.
 
 TARGET: One friendly ORKS INFANTRY unit of 13+ models.
 
-EFFECT: Select one visible friendly ORKS unit within 12"" of your unit. That unit's battle-shock rolls are automatically successful.",,
+EFFECT: Select one visible friendly ORKS unit within 12"" of your unit. That unit's battle-shock rolls are automatically successful.",,,
 orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,Movement: BEAST SNAGGA BOYZ / BOYZ +2 to Advance rolls.,"WHEN: Your Movement phase, when a friendly BEAST SNAGGA BOYZ / BOYZ unit is selected to move.
 
 TARGET: That BEAST SNAGGA BOYZ / BOYZ unit.
 
-EFFECT: Your unit has +2 to advance rolls.",,
+EFFECT: Your unit has +2 to advance rolls.",,,
 orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT TO DIE,1,Fight: MEGANOBZ / NOBZ fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP:
-- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,
 orks_bully_boyz_stratagem_armed_to_da_teef_1cp,orks_bully_boyz,ARMED TO DA TEEF,1,"Shooting or Fight: MEGANOBZ / NOBZ re-roll hit 1s; if RILED UP, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ / NOBZ unit is selected to attack.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Your unit's attacks can:
 - Re-roll hit rolls of 1.
-- If your unit is RILED UP, re-roll hit rolls.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers]
+- If your unit is RILED UP, re-roll hit rolls.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],
 orks_bully_boyz_stratagem_hulking_brutes_1cp,orks_bully_boyz,HULKING BRUTES,1,"Opp shooting: MEGANOBZ / NOBZ, S>T ranged -1 to Wound (1CP); or all ranged -1 to Wound (+1CP).","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
 
-Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Informational - Incoming]
+Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Informational - Incoming],
 orks_taktikal_brigade_stratagem_dubious_restraint_1cp,orks_taktikal_brigade,DUBIOUS RESTRAINT,1,Start/end of your Movement: BOYZ / KOMMANDOS / STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
 
 TARGET: One friendly BOYZ / KOMMANDOS / STORMBOYZ unit.
 
-EFFECT: Select one objective your unit is controlling. That objective is secured.",,
+EFFECT: Select one objective your unit is controlling. That objective is secured.",,,
 orks_taktikal_brigade_stratagem_mind_mostly_on_the_mission_1cp,orks_taktikal_brigade,MIND MOSTLY ON THE MISSION,1,Movement: BOYZ / KOMMANDOS / STORMBOYZ Advance/Fall Back can still start an action.,"WHEN: Your Movement phase, when a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make an advance/fall-back move.
 
 TARGET: That BOYZ / KOMMANDOS / STORMBOYZ unit.
 
-EFFECT: That move does not prevent your unit from being eligible to start an action.",,
+EFFECT: That move does not prevent your unit from being eligible to start an action.",,,
 orks_taktikal_brigade_stratagem_while_their_backs_are_turned_1cp,orks_taktikal_brigade,WHILE THEIR BACKS ARE TURNED,1,"End of opponent's Movement: unengaged BOYZ / KOMMANDOS / STORMBOYZ that was engaged can Normal move 6"".","WHEN: End of your opponent's Movement phase.
 
 TARGET: One friendly unengaged BOYZ / KOMMANDOS / STORMBOYZ unit that was engaged at the start of the phase.
 
-EFFECT: Your unit can make a normal move of up to 6"".",,
+EFFECT: Your unit can make a normal move of up to 6"".",,,
 orks_wreckas_stratagem_drive_by_bustin_1cp,orks_wreckas,DRIVE-BY BUSTIN',1,"Shooting: TRANSPORT 
 Firing Deck [+1 to hit].","WHEN: Your Shooting phase, when a friendly ORKS TRANSPORT unit is selected to shoot.
 
 TARGET: That ORKS TRANSPORT unit.
 
-EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers]
+EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],
 orks_wreckas_stratagem_grab_it_1cp,orks_wreckas,GRAB IT,1,"Shoot and Move BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 6"" onto an objective.","WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit has shot.
 
 TARGET: That BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit.
 
 EFFECT:
 - Your unit can make a normal move of up to 6"", and must end that move within range of an objective.
-- Your unit is not eligible to declare a charge until the end of the turn.",,
+- Your unit is not eligible to declare a charge until the end of the turn.",,,
 orks_wreckas_stratagem_gun_crazy_show_offs_1cp,orks_wreckas,GUN-CRAZY SHOW-OFFS,1,Opp shooting: FLASH GITZ / TANKBUSTAS hit by enemy can shoot back at same enemy.,"WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
 
 TARGET: One friendly FLASH GITZ / TANKBUSTAS unit hit by those attacks.
 
-EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,
+EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,,
 orks_da_big_hunt_stratagem_where_dya_fink_youre_going_1cp,orks_da_big_hunt,WHERE D'YA FINK YOU'RE GOING?,1,Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape;  MONSTERS / VEHICLES take an extra hazard rolls.,"WHEN: Your opponent's Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly BEAST SNAGGA unit.
 
 TARGET: That BEAST SNAGGA unit.
 
-EFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is a MONSTER / VEHICLE unit, that enemy unit makes three additional hazard rolls for each BEAST SNAGGA unit it is engaged with, with -1 from those hazard rolls if that enemy unit is battle-shocked.",,
+EFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is a MONSTER / VEHICLE unit, that enemy unit makes three additional hazard rolls for each BEAST SNAGGA unit it is engaged with, with -1 from those hazard rolls if that enemy unit is battle-shocked.",,,
 orks_da_big_hunt_stratagem_goaded_into_action_1cp,orks_da_big_hunt,GOADED INTO ACTION,1,"Opp Shooting: unengaged BEAST SNAGGA that lost a wound surge D6"" (re-roll if RILED UP).","WHEN: Your opponent's Shooting phase, when an enemy unit has shot.
 
 TARGET: One friendly unengaged BEAST SNAGGA unit that lost a wound as a result of those attacks.
 
-EFFECT: Your unit can make a surge move of up to D6"". If your unit is RILED UP, it can re-roll that D6.",,
+EFFECT: Your unit can make a surge move of up to D6"". If your unit is RILED UP, it can re-roll that D6.",,,
 orks_da_big_hunt_stratagem_instinctive_hunters_1cp,orks_da_big_hunt,INSTINCTIVE HUNTERS,1,"End of opp Fight: unengaged BEAST SNAGGA within 6"" of a battlefield edge goes into Strategic Reserves.","WHEN: End of your opponent's Fight phase.
 
 TARGET: One friendly unengaged BEAST SNAGGA unit within 6"" of a battlefield edge.
 
-EFFECT: Place your unit in strategic reserves.",,
+EFFECT: Place your unit in strategic reserves.",,,
 orks_madcap_meks_stratagem_vindictive_artillerists_1cp,orks_madcap_meks,VINDICTIVE ARTILLERISTS,1,"Shooting: MEK GUNZ choose Lethal Hits, or Sustained Hits 1, or Hazardous+Lethal+Sustained 1.","WHEN: Your Shooting phase, when a friendly MEK GUNZ unit is selected to shoot.
 
 TARGET: That MEK GUNZ unit.
@@ -188,102 +188,102 @@ TARGET: That MEK GUNZ unit.
 EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
-- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1] [HAZARDOUS],[Range - Weapon Rules] [Range - Weapon Rules] [Range - Weapon Rules]
+- Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1] [HAZARDOUS],[Range - Weapon Rules] [Range - Weapon Rules] [Range - Weapon Rules],
 orks_dread_mob_stratagem_crazed_rampage_1cp,orks_dread_mob,CRAZED RAMPAGE,1,Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
 
 TARGET: That ORKS WALKER unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +3 to the result if your unit has DEFF DREAD:
-- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,
 orks_dread_mob_stratagem_dread_power_1cp,orks_dread_mob,DREAD POWER,1,Movement: one WALKER is RILED UP,"WHEN: Your Movement phase.
 
 TARGET: One friendly ORKS WALKER unit.
 
-EFFECT: Your unit is RILED UP until the start of your next turn.",,
+EFFECT: Your unit is RILED UP until the start of your next turn.",,,
 orks_dread_mob_stratagem_stomping_juggernaut_1cp,orks_dread_mob,STOMPING JUGGERNAUT,1,Movement or Charge:  WALKER gains MOBILE.,"WHEN: Your Movement / Charge phase, when a friendly ORKS WALKER unit is selected to move or declares a charge.
 
 TARGET: That ORKS WALKER unit.
 
-EFFECT: Your unit has MOBILE.",,
+EFFECT: Your unit has MOBILE.",,,
 orks_blitz_brigade_stratagem_keep_it_runnin_1cp,orks_blitz_brigade,KEEP IT RUNNIN',1,"End of Fight:  IF IT WAS ELEGIBLE to FIGHT but its now unengaged
 INFANTRY thst is wholly within 6"" of TRANSPORT can embark.","WHEN: End of the Fight phase.
 
 TARGET: One friendly unengaged ORKS INFANTRY unit that was eligible to fight this phase and is wholly within 6"" of a friendly TRANSPORT unit that INFANTRY unit is able to embark within.
 
-EFFECT: Your INFANTRY unit embarks within that TRANSPORT unit.",,
+EFFECT: Your INFANTRY unit embarks within that TRANSPORT unit.",,,
 orks_blitz_brigade_stratagem_readied_brawlers_1cp,orks_blitz_brigade,READIED BRAWLERS,1,"Movement: after a WAGON ends a Normal move, embarked units can assault disembark.","WHEN: Your Movement phase, when a friendly WAGON unit ends a normal move.
 
 TARGET: That WAGON unit.
 
-EFFECT: Units embarked within your unit can make an assault disembark move.",,
+EFFECT: Units embarked within your unit can make an assault disembark move.",,,
 orks_blitz_brigade_stratagem_impending_krunch_1cp,orks_blitz_brigade,IMPENDING KRUNCH,1,"Charge: after WAGON ends a charge, each engaged enemy Battle-shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy]
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Informational - Enemy],
 orks_kult_of_speed_stratagem_delicious_eating_squigs_1cp,orks_kult_of_speed,DELICIOUS EATING SQUIGS,1,"Movement: RUKKATRUKK SQUIGBUGGIES heals 3 wounds on any number of friendly ORKS INFANTRY within 3"".","WHEN: Your Movement phase.
 
 TARGET: One friendly RUKKATRUKK SQUIGBUGGIES unit.
 
-EFFECT: Select any number of friendly ORKS INFANTRY units within 3"" of your unit. Each selected unit heals 3 wounds.",,
+EFFECT: Select any number of friendly ORKS INFANTRY units within 3"" of your unit. Each selected unit heals 3 wounds.",,,
 orks_kult_of_speed_stratagem_dakkastorm_1cp,orks_kult_of_speed,DAKKASTORM,1,Shooting: SPEED FREEKS ranged attacks have [SUSTAINED HITS 1].,"WHEN: Your Shooting phase, when a friendly SPEED FREEKS unit is selected to shoot.
 
 TARGET: That SPEED FREEKS unit.
 
-EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules]
+EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules],
 orks_kult_of_speed_stratagem_speediest_freeks_1cp,orks_kult_of_speed,SPEEDIEST FREEKS,1,Opp Shooting: ranged attacks vs SPEED FREEKS fail on an unmodified hit roll of 1-3.,"WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly SPEED FREEKS unit.
 
 TARGET: That SPEED FREEKS unit.
 
-EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",[INCOMING RANGE HIT 1-3 FAILS],[Informational - Incoming]
+EFFECT: Ranged attacks that target your unit fail on an unmodified hit roll of 1-3.",[INCOMING RANGE HIT 1-3 FAILS],[Informational - Incoming],
 orks_flyboyz_stratagem_flyin_headbutt_1cp,orks_flyboyz,FLYIN' HEADBUTT,1,"Any phase: destroyed ORKS AIRCRAFT skips Deadly Demise; one enemy within 12"" takes 8D6, each 4+ = 1 MW; then remove the aircraft.","WHEN: Any phase, when a friendly ORKS AIRCRAFT unit is destroyed, before rolling for any Deadly Demise.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit does not have the Deadly Demise ability. Select one enemy unit within 12"" of your unit and roll eight D6:
 - For each 4+, that enemy unit suffers 1 mortal wound.
-Then remove your unit from the battlefield.",,
+Then remove your unit from the battlefield.",,,
 orks_flyboyz_stratagem_long_uncontrolled_bursts_1cp,orks_flyboyz,"LONG, UNCONTROLLED BURSTS",1,Shooting: ORKS AIRCRAFT / DEFFKOPTAS re-roll hits vs FLY.,"WHEN: Your Shooting phase, when a friendly ORKS AIRCRAFT / DEFFKOPTAS unit is selected to shoot.
 
 TARGET: That ORKS AIRCRAFT / DEFFKOPTAS unit.
 
-EFFECT: When your unit's ranged attacks target a FLY unit, those attacks can re-roll hit rolls.",[RE-ROLL ALL HITS],[Range - Combat Modifiers]
+EFFECT: When your unit's ranged attacks target a FLY unit, those attacks can re-roll hit rolls.",[RE-ROLL ALL HITS],[Range - Combat Modifiers],
 orks_flyboyz_stratagem_whirligig_evasion_1cp,orks_flyboyz,WHIRLIGIG EVASION,1,"Opp Movement: unengaged DEFFKOPTAS within 8"" of an enemy that ended a move can Normal move D6"" (6"" if RILED UP).","WHEN: Your opponent's Movement phase, when an enemy unit ends a move.
 
 TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
 
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
-- Or, if your unit is RILED UP, up to 6"".",,
+- Or, if your unit is RILED UP, up to 6"".",,,
 orks_runt_swarm_stratagem_infested_war_zone_2cp,orks_runt_swarm,INFESTED WAR ZONE,2,"Any phase: when a GRETCHIN unit is destroyed after an enemy attacks, return an identical unit in Strategic Reserves at starting strength and full wounds.","WHEN: Any phase, when an enemy unit has attacked.
 
 TARGET: One friendly GRETCHIN unit that was just destroyed. You can target that unit with this stratagem even though that unit was just destroyed.
 
-EFFECT: Add a new GRETCHIN unit to your army identical to your destroyed unit, in strategic reserves at its starting strength, with its full wounds remaining.",,
+EFFECT: Add a new GRETCHIN unit to your army identical to your destroyed unit, in strategic reserves at its starting strength, with its full wounds remaining.",,,
 orks_runt_swarm_stratagem_scarper_1cp,orks_runt_swarm,SCARPER!,1,"Opponent Movement: unengaged GRETCHIN within 8"" of an enemy that ended a move can Normal move D6"", or 6"" if attached.","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged GRETCHIN unit.
 
 TARGET: That GRETCHIN unit.
 
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
-- Or, up to 6"" instead if your unit is an attached unit.",,
+- Or, up to 6"" instead if your unit is an attached unit.",,,
 orks_runt_swarm_stratagem_grot_shields_1cp,orks_runt_swarm,GROT SHIELDS,1,"Opponent Shooting: a nearby GRETCHIN unit can absorb hits against a non-GRETCHIN ORKS INFANTRY unit, suffering 1 mortal wound per intercepted hit.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
 
 TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
 
-EFFECT: When a hit roll for that enemy unit's ranged attacks that target that ORKS unit results in a hit, if a model in your GRETCHIN unit is on the battlefield, end the attack sequence for that attack and your GRETCHIN unit suffers 1 mortal wound.",,
+EFFECT: When a hit roll for that enemy unit's ranged attacks that target that ORKS unit results in a hit, if a model in your GRETCHIN unit is on the battlefield, end the attack sequence for that attack and your GRETCHIN unit suffers 1 mortal wound.",,,
 orks_shoota_boyz_stratagem_kustom_dakka_1cp,orks_shoota_boyz,KUSTOM DAKKA,1,Shooting: INFANTRY ranged [+1 To Wound] against non-MONSTER / VEHICLE units.,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks that target a unit (excluding MONSTER / VEHICLE units) have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers]
+EFFECT: Your unit's ranged attacks that target a unit (excluding MONSTER / VEHICLE units) have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers],
 orks_shoota_boyz_stratagem_clovin_dakka_1cp,orks_shoota_boyz,CLOVIN' DAKKA,1,"Shooting: INFANTRY ranged attacks against a unit within 9"" have [+1 AP].","WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks that target a unit within 9"" have +1 AP.",[+1 AP],[Range - Weapon Stats]
+EFFECT: Your unit's ranged attacks that target a unit within 9"" have +1 AP.",[+1 AP],[Range - Weapon Stats],
 orks_shoota_boyz_stratagem_never_enough_dakka_1cp,orks_shoota_boyz,NEVER ENOUGH DAKKA,1,Shooting: INFANTRY ranged attacks have [SUSTAINED HITS 1].,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules]
+EFFECT: Your unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules],

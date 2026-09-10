@@ -2,7 +2,7 @@ Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Dis
 orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,3,Take and Hold,Purge the Foe,ORKS melee [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],1
 orks_more_dakka,Orks,More Dakka!,orks_more_dakka_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,INFANTRY ranged have [ASSAULT].  In addition whe RILED UP ranged get  [SUSTAINED HITS 1],"Friendly ORKS INFANTRY units’ ranged attacks have [ASSAULT].
 
-In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules],0
+In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0
 orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective.",,,
 orks_rollin_deff,Orks,Rollin’ Deff,orks_rollin_deff_detachment_rule_thundering_wagons,THUNDERING WAGONS,1,Priority Assets,,"WAGON re‑rolls Charge & Advance flat 6"". 
 
@@ -56,7 +56,7 @@ orks_kult_of_speed,Orks,Kult of Speed,orks_kult_of_speed_detachment_rule_adrenal
 
 When a friendly SPEED FREEKS unit is selected to make an advance/fall-back move:
 That unit's ranged attacks have [ASSAULT] until the end of the turn.
-That move does not prevent that unit from being eligible to declare a charge.",[FALL BACK AND CHARGE],[Movement Rules],0
+That move does not prevent that unit from being eligible to declare a charge.",[ASSAULT] [ADVANCE AND CHARGE] [FALL BACK AND CHARGE],[Range - Weapon Rules] [Movement Rules] [Movement Rules],0
 orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Reconnaissance,,ORKS AIRCRAFT ignore Strategic Reserves points cap. Riled up ORKS AIRCRAFT / DEFFKOPTAS ranged +1 to hit.,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
 
 While a friendly ORKS AIRCRAFT / DEFFKOPTAS unit is RILED UP, this unit's ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0
@@ -80,4 +80,4 @@ orks_runt_swarm,Orks,Runt Swarm,orks_runt_swarm_detachment_rule_sneaky_little_gi
 When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action.",,,
 orks_shoota_boyz,Orks,Shoota Boyz,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,"INFANTRY ranged attacks have [ASSAULT]. If RILED UP, ranged attacks +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
 - [ASSAULT].
-- While this unit is RILED UP, +3"" R.",,,
+- While this unit is RILED UP, +3"" R.",[ASSAULT] [+3 R”],[Range - Weapon Rules] [Range - Weapon Stats],1
