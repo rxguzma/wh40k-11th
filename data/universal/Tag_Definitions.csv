@@ -81,3 +81,7 @@ MINUS_1_TO_WOUND_MELEE,-1 TO WOUND,-1 To Wound,Melee - Combat Modifiers,Melee At
 MINUS_1_TO_HIT_RANGE,-1 TO HIT,-1 To Hit,Range - Combat Modifiers,Ranged Attacks,Worsens Hit rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,HIT,WORSEN,1,507
 MINUS_1_TO_WOUND_RANGE,-1 TO WOUND,-1 To Wound,Range - Combat Modifiers,Ranged Attacks,Worsens Wound rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,WOUND,WORSEN,1,508
 OVERWATCH_RANGE,OVERWATCH,Overwatch,Range - Weapon Rules,Ranged Attacks,Applies Overwatch to Ranged attacks.,TRUE,WEAPON_RULE,RANGE,OVERWATCH,SET,1,614
+PLUS_1_WS_MELEE,+1 WS,+1 WS,Melee - Weapon Stats,Melee Weapons,Improves Weapon Skill by 1 for Melee weapons.,TRUE,WEAPON_STAT,MELEE,WS,IMPROVE,1,108
+SAVE_4_PLUS,SAVE 4+,Save 4+,Unit Stats,Unit,Sets the unit Save characteristic to 4+.,TRUE,UNIT_STAT,UNIT,SAVE,SET,4,7
+PLUS_3_RANGE,+3 R”,+3 R”,Range - Weapon Stats,Ranged Weapons,Adds 3 inches to the Range characteristic of Ranged weapons.,TRUE,WEAPON_STAT,RANGE,R,ADD,3,407
+FALL_BACK_AND_SHOOT,FALL BACK AND SHOOT,Fall Back and Shoot,Movement Rules,Unit,Falling Back does not prevent the unit from shooting when the source rule allows it.,TRUE,,,,,,803
