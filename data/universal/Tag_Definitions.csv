@@ -9,9 +9,9 @@ PLUS_3_A_MELEE,+3 A,+3 Attack,Melee - Weapon Stats,Melee Weapons,Adds 3 Attacks 
 PLUS_1_S_MELEE,+1 S,+1 Strength,Melee - Weapon Stats,Melee Weapons,Adds 1 Strength to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,S,ADD,1,8
 PLUS_1_AP_MELEE,+1 AP,+1 AP,Melee - Weapon Stats,Melee Weapons,Improves the AP of each Melee Weapon on the Unit by 1. Example: AP -1 becomes AP -2.,TRUE,WEAPON_STAT,MELEE,AP,IMPROVE,1,9
 PLUS_1_D_MELEE,+1 D,+1 Damage,Melee - Weapon Stats,Melee Weapons,Adds 1 Damage to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,D,ADD,1,10
-PLUS_5_PTS,+5 Pts,+5 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,5,11
-PLUS_10_PTS,+10 Pts,+10 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,10,12
-PLUS_20_PTS,+20 Pts,+20 Pts,Points,Unit,Changes the cost for each model in the unit.,FALSE,POINTS_PER_MODEL,UNIT,PTS,ADD,20,13
+PLUS_5_PTS,+5 Pts,+5 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,5,11
+PLUS_10_PTS,+10 Pts,+10 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,10,12
+PLUS_20_PTS,+20 Pts,+20 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,20,13
 PLUS_4_A_MELEE,+4 A,+4 Attacks,Melee - Weapon Stats,Melee Weapons,Adds 4 Attacks to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,4,14
 PLUS_2_S_MELEE,+2 S,+2 Strength,Melee - Weapon Stats,Melee Weapons,Adds 2 Strength to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,S,ADD,2,15
 PLUS_1_A_RANGE,+1 A,+1 Attack,Range - Weapon Stats,Ranged Weapons,Adds 1 Attack to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,A,ADD,1,16
@@ -37,3 +37,42 @@ INFO_ENEMY_MINUS_1_LD,ENEMY -1 LD,Enemy -1 Leadership,Informational - Enemy,Disp
 INFO_ENEMY_MINUS_2_M,ENEMY -2 M”,Enemy -2 Movement,Informational - Enemy,Display only,An affected enemy suffers -2 Movement as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,912
 INFO_ENEMY_GROUNDED,ENEMY GROUNDED,Enemy Grounded,Informational - Enemy,Display only,An affected enemy is grounded as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,913
 INFO_INCOMING_RANGE_HIT_1_3_FAILS,INCOMING RANGE HIT 1-3 FAILS,Incoming Ranged Hits 1-3 Fail,Informational - Incoming,Display only,Incoming ranged attacks fail on unmodified hit rolls of 1-3 as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,914
+PLUS_1_TO_HIT_MELEE,+1 TO HIT,+1 To Hit,Melee - Combat Modifiers,Melee Attacks,Improves Hit rolls by 1 for Melee attacks.,TRUE,ROLL_MODIFIER,MELEE,HIT,IMPROVE,1,201
+PLUS_1_TO_WOUND_MELEE,+1 TO WOUND,+1 To Wound,Melee - Combat Modifiers,Melee Attacks,Improves Wound rolls by 1 for Melee attacks.,TRUE,ROLL_MODIFIER,MELEE,WOUND,IMPROVE,1,202
+REROLL_1S_TO_HIT_MELEE,RE-ROLL 1S TO HIT,Re-roll 1s To Hit,Melee - Combat Modifiers,Melee Attacks,Re-roll Hit rolls of 1 for Melee attacks.,TRUE,REROLL,MELEE,HIT,ONES,1,203
+REROLL_ALL_HITS_MELEE,RE-ROLL ALL HITS,Re-roll All Hits,Melee - Combat Modifiers,Melee Attacks,Re-roll all Hit rolls for Melee attacks.,TRUE,REROLL,MELEE,HIT,ALL,1,204
+REROLL_1S_TO_WOUND_MELEE,RE-ROLL 1S TO WOUND,Re-roll 1s To Wound,Melee - Combat Modifiers,Melee Attacks,Re-roll Wound rolls of 1 for Melee attacks.,TRUE,REROLL,MELEE,WOUND,ONES,1,205
+REROLL_ALL_WOUNDS_MELEE,RE-ROLL ALL WOUNDS,Re-roll All Wounds,Melee - Combat Modifiers,Melee Attacks,Re-roll all Wound rolls for Melee attacks.,TRUE,REROLL,MELEE,WOUND,ALL,1,206
+LETHAL_HITS_MELEE,LETHAL HITS,Lethal Hits,Melee - Weapon Rules,Melee Weapons,Applies Lethal Hits to Melee weapons.,TRUE,WEAPON_RULE,MELEE,LETHAL_HITS,SET,1,301
+DEVASTATING_WOUNDS_MELEE,DEVASTATING WOUNDS,Devastating Wounds,Melee - Weapon Rules,Melee Weapons,Applies Devastating Wounds to Melee weapons.,TRUE,WEAPON_RULE,MELEE,DEVASTATING_WOUNDS,SET,1,302
+TWIN_LINKED_MELEE,TWIN-LINKED,Twin-linked,Melee - Weapon Rules,Melee Weapons,Applies Twin-linked to Melee weapons.,TRUE,WEAPON_RULE,MELEE,TWIN_LINKED,SET,1,303
+SUSTAINED_HITS_1_MELEE,SUSTAINED HITS 1,Sustained Hits 1,Melee - Weapon Rules,Melee Weapons,Applies Sustained Hits 1 to Melee weapons.,TRUE,WEAPON_RULE,MELEE,SUSTAINED_HITS,SET,1,304
+SUSTAINED_HITS_2_MELEE,SUSTAINED HITS 2,Sustained Hits 2,Melee - Weapon Rules,Melee Weapons,Applies Sustained Hits 2 to Melee weapons.,TRUE,WEAPON_RULE,MELEE,SUSTAINED_HITS,SET,2,305
+CLEAVE_1_MELEE,CLEAVE 1,Cleave 1,Melee - Weapon Rules,Melee Weapons,Adds 1 Melee attack per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,1,306
+CLEAVE_2_MELEE,CLEAVE 2,Cleave 2,Melee - Weapon Rules,Melee Weapons,Adds 2 Melee attacks per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,2,307
+ANTI_VEHICLE_3_MELEE,ANTI-VEHICLE 3+,Anti-Vehicle 3+,Melee - Weapon Rules,Melee Weapons,Applies Anti-Vehicle 3+ to Melee weapons.,TRUE,WEAPON_RULE,MELEE,ANTI_VEHICLE,SET,3,308
+ANTI_INFANTRY_4_MELEE,ANTI-INFANTRY 4+,Anti-Infantry 4+,Melee - Weapon Rules,Melee Weapons,Applies Anti-Infantry 4+ to Melee weapons.,TRUE,WEAPON_RULE,MELEE,ANTI_INFANTRY,SET,4,309
+PLUS_1_TO_HIT_RANGE,+1 TO HIT,+1 To Hit,Range - Combat Modifiers,Ranged Attacks,Improves Hit rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,HIT,IMPROVE,1,501
+PLUS_1_TO_WOUND_RANGE,+1 TO WOUND,+1 To Wound,Range - Combat Modifiers,Ranged Attacks,Improves Wound rolls by 1 for Ranged attacks.,TRUE,ROLL_MODIFIER,RANGE,WOUND,IMPROVE,1,502
+REROLL_1S_TO_HIT_RANGE,RE-ROLL 1S TO HIT,Re-roll 1s To Hit,Range - Combat Modifiers,Ranged Attacks,Re-roll Hit rolls of 1 for Ranged attacks.,TRUE,REROLL,RANGE,HIT,ONES,1,503
+REROLL_ALL_HITS_RANGE,RE-ROLL ALL HITS,Re-roll All Hits,Range - Combat Modifiers,Ranged Attacks,Re-roll all Hit rolls for Ranged attacks.,TRUE,REROLL,RANGE,HIT,ALL,1,504
+REROLL_1S_TO_WOUND_RANGE,RE-ROLL 1S TO WOUND,Re-roll 1s To Wound,Range - Combat Modifiers,Ranged Attacks,Re-roll Wound rolls of 1 for Ranged attacks.,TRUE,REROLL,RANGE,WOUND,ONES,1,505
+REROLL_ALL_WOUNDS_RANGE,RE-ROLL ALL WOUNDS,Re-roll All Wounds,Range - Combat Modifiers,Ranged Attacks,Re-roll all Wound rolls for Ranged attacks.,TRUE,REROLL,RANGE,WOUND,ALL,1,506
+LETHAL_HITS_RANGE,LETHAL HITS,Lethal Hits,Range - Weapon Rules,Ranged Weapons,Applies Lethal Hits to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,LETHAL_HITS,SET,1,601
+DEVASTATING_WOUNDS_RANGE,DEVASTATING WOUNDS,Devastating Wounds,Range - Weapon Rules,Ranged Weapons,Applies Devastating Wounds to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,DEVASTATING_WOUNDS,SET,1,602
+TWIN_LINKED_RANGE,TWIN-LINKED,Twin-linked,Range - Weapon Rules,Ranged Weapons,Applies Twin-linked to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,TWIN_LINKED,SET,1,603
+SUSTAINED_HITS_1_RANGE,SUSTAINED HITS 1,Sustained Hits 1,Range - Weapon Rules,Ranged Weapons,Applies Sustained Hits 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,SUSTAINED_HITS,SET,1,604
+SUSTAINED_HITS_2_RANGE,SUSTAINED HITS 2,Sustained Hits 2,Range - Weapon Rules,Ranged Weapons,Applies Sustained Hits 2 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,SUSTAINED_HITS,SET,2,605
+TORRENT_RANGE,TORRENT,Torrent,Range - Weapon Rules,Ranged Weapons,Applies Torrent to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,TORRENT,SET,1,606
+HEAVY_RANGE,HEAVY,Heavy,Range - Weapon Rules,Ranged Weapons,Applies Heavy to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,HEAVY,SET,1,607
+IGNORES_COVER_RANGE,IGNORES COVER,Ignores Cover,Range - Weapon Rules,Ranged Weapons,Applies Ignores Cover to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,IGNORES_COVER,SET,1,608
+BLAST_RANGE,BLAST,Blast,Range - Weapon Rules,Ranged Weapons,Applies Blast to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,BLAST,SET,1,609
+RAPID_FIRE_1_RANGE,RAPID FIRE 1,Rapid Fire 1,Range - Weapon Rules,Ranged Weapons,Applies Rapid Fire 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,RAPID_FIRE,SET,1,610
+MELTA_1_RANGE,MELTA 1,Melta 1,Range - Weapon Rules,Ranged Weapons,Applies Melta 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,MELTA,SET,1,611
+ANTI_VEHICLE_3_RANGE,ANTI-VEHICLE 3+,Anti-Vehicle 3+,Range - Weapon Rules,Ranged Weapons,Applies Anti-Vehicle 3+ to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,ANTI_VEHICLE,SET,3,612
+ANTI_INFANTRY_4_RANGE,ANTI-INFANTRY 4+,Anti-Infantry 4+,Range - Weapon Rules,Ranged Weapons,Applies Anti-Infantry 4+ to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,ANTI_INFANTRY,SET,4,613
+MINUS_1_SV,-1 SV,-1 Save,Unit Stats,Unit,Improves the Unit Save characteristic by 1.,TRUE,STAT,UNIT,SV,IMPROVE,1,705
+MINUS_1_LD,-1 LD,-1 Leadership,Unit Stats,Unit,Improves the Unit Leadership characteristic by 1.,TRUE,STAT,UNIT,LD,IMPROVE,1,706
+PLUS_15_PTS,+15 Pts,+15 Pts,Points,Unit,Adds 15 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,15,723
+PLUS_25_PTS,+25 Pts,+25 Pts,Points,Unit,Adds 25 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,25,725
+PLUS_30_PTS,+30 Pts,+30 Pts,Points,Unit,Adds 30 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,30,726
