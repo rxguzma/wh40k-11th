@@ -2,6 +2,7 @@
 import csv
 import hashlib
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -288,8 +289,79 @@ def validate():
                     f"{detachment_id!r} (line {line_no})"
                 )
 
+    validate_tag_contract(loaded)
     print("validation: OK")
     return True
+
+
+TAG_BRACKET = re.compile(r"\[([^\[\]]+)\]")
+TAGGED_ARMY_FILES = (
+    "Abilities.csv",
+    "Enhancements.csv",
+    "Stratagems.csv",
+    "Detachment_Definitions.csv",
+    "Army_Rules.csv",
+)
+EFFECT_FIELDS = ("Effect_Type", "Target", "Stat", "Operation", "Value")
+
+
+def normalize_tag_key(value):
+    return (
+        str(value or "")
+        .strip()
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+        .replace("\u2019", "'")
+        .upper()
+    )
+
+
+def normalize_category_key(value):
+    return (
+        str(value or "")
+        .strip()
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+        .lower()
+    )
+
+
+def validate_tag_contract(loaded):
+    library = {}
+    for line_no, row in loaded[("universal", "Tag_Definitions.csv")]:
+        display = (row.get("Display_Tag") or "").strip()
+        category = (row.get("Category") or "").strip()
+        if not display or not category:
+            fail(f"Tag_Definitions line {line_no}: Display_Tag and Category are required")
+        filled = [(row.get(field) or "").strip() for field in EFFECT_FIELDS]
+        filled_count = sum(1 for value in filled if value)
+        if filled_count not in (0, 5):
+            fail(
+                f"Tag_Definitions line {line_no} {display!r}: "
+                "Effect_Type/Target/Stat/Operation/Value must all be filled or all blank"
+            )
+        key = (normalize_tag_key(display), normalize_category_key(category))
+        if key in library:
+            fail(f"duplicate Tag_Definitions {display!r} / {category!r} (line {line_no})")
+        library[key] = row
+
+    for army in ARMIES:
+        for file_name in TAGGED_ARMY_FILES:
+            for line_no, row in loaded[(army, file_name)]:
+                tags = TAG_BRACKET.findall(row.get("Tags") or "")
+                categories = TAG_BRACKET.findall(row.get("Tag Categories") or "")
+                if tags and len(tags) != len(categories):
+                    fail(
+                        f"{army} {file_name} line {line_no}: "
+                        f"Tags ({len(tags)}) and Tag Categories ({len(categories)}) must match 1:1"
+                    )
+                for tag, category in zip(tags, categories):
+                    key = (normalize_tag_key(tag), normalize_category_key(category))
+                    if key not in library:
+                        fail(
+                            f"{army} {file_name} line {line_no}: "
+                            f"[{tag}] [{category}] is not in Tag_Definitions.csv"
+                        )
 
 
 def sha256_bytes(data):

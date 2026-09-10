@@ -120,3 +120,32 @@ CRITS_5_PLUS_MELEE,CRITS 5+,Crits 5+,Melee - Weapon Rules,Weapon,Critical hits o
 CRITS_5_PLUS_RANGE,CRITS 5+,Crits 5+,Range - Weapon Rules,Weapon,Critical hits on unmodified 5+ for ranged attacks.,TRUE,WEAPON_RULE,RANGE,CRITS,SET,5,923
 PLUS_1_ADVANCE,+1 ADVANCE,+1 Advance,Movement Rules,Unit,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
 PLUS_1_CHARGE,+1 CHARGE,+1 Charge,Movement Rules,Unit,Add 1 to the affected unit Charge roll while this rule is active.,TRUE,,,,,,925
+PLUS_2_A_RANGE,+2 A,+2 Attacks,Range - Weapon Stats,Ranged Weapons,Adds 2 Attacks to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,A,ADD,2,926
+PRECISION_MELEE,PRECISION,Precision,Melee - Weapon Rules,Melee Weapons,The affected melee weapon has Precision while this rule is active.,TRUE,WEAPON_RULE,MELEE,PRECISION,SET,1,927
+PRECISION_RANGE,PRECISION,Precision,Range - Weapon Rules,Ranged Weapons,The affected ranged weapon has Precision while this rule is active.,TRUE,WEAPON_RULE,RANGE,PRECISION,SET,1,928
+ANTI_MONSTER_3_MELEE,ANTI-MONSTER 3+,Anti-Monster 3+,Melee - Weapon Rules,Melee Weapons,Applies Anti-Monster 3+ to Melee weapons.,TRUE,WEAPON_RULE,MELEE,ANTI_MONSTER,SET,3,929
+ANTI_VEHICLE_4_RANGE,ANTI-VEHICLE 4+,Anti-Vehicle 4+,Range - Weapon Rules,Ranged Weapons,Applies Anti-Vehicle 4+ to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,ANTI_VEHICLE,SET,4,930
+HAZARDOUS_MELEE,HAZARDOUS,Hazardous,Melee - Weapon Rules,Melee Weapons,The affected melee weapon has Hazardous while this rule is active.,TRUE,WEAPON_RULE,MELEE,HAZARDOUS,SET,1,931
+HAZARDOUS_RANGE,HAZARDOUS,Hazardous,Range - Weapon Rules,Ranged Weapons,The affected ranged weapon has Hazardous while this rule is active.,TRUE,WEAPON_RULE,RANGE,HAZARDOUS,SET,1,932
+INVULNERABLE_SAVE_4_PLUS,INVULNERABLE SAVE 4+,Invulnerable Save 4+,Unit Rules,Unit,The affected unit has a 4++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,4,933
+INVULNERABLE_SAVE_5_PLUS,INVULNERABLE SAVE 5+,Invulnerable Save 5+,Unit Rules,Unit,The affected unit has a 5++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,934
+INVULNERABLE_SAVE_6_PLUS,INVULNERABLE SAVE 6+,Invulnerable Save 6+,Unit Rules,Unit,The affected unit has a 6++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,6,935
+PLUS_2_CHARGE,+2 CHARGE,+2 Charge,Movement Rules,Unit,Add 2 to Charge rolls while this rule is active.,TRUE,,,,,,936
+BATTLELINE,BATTLELINE,Battleline,Unit Rules,Unit,The affected unit has the Battleline rule.,TRUE,,,,,,937
+BENEFIT_OF_COVER,BENEFIT OF COVER,Benefit of Cover,Unit Rules,Unit,The affected unit has the Benefit of Cover.,TRUE,,,,,,938
+CLOSE_QUARTERS,CLOSE-QUARTERS,Close-Quarters,Range - Weapon Rules,Ranged Weapons,Close-quarters ranged rule. Highlight only.,TRUE,,,,,,939
+DEEP_STRIKE,DEEP STRIKE,Deep Strike,Unit Rules,Unit,The affected unit has Deep Strike.,TRUE,,,,,,940
+FALL_BACK_AND_CHARGE,FALL BACK AND CHARGE,Fall Back and Charge,Movement Rules,Unit,The affected unit can charge after Falling Back.,TRUE,,,,,,941
+FIGHT_ON_DEATH_2_PLUS,FIGHT ON DEATH 2+,Fight on Death 2+,Unit Rules,Unit,The affected unit fights on death on a 2+.,TRUE,,,,,,942
+HAZARDOUS_UNIT,HAZARDOUS,Hazardous,Unit Rules,Unit,Hazardous unit rule. Highlight only.,TRUE,,,,,,943
+HEROIC_INTERVENTION_0CP,HEROIC INTERVENTION 0CP,Heroic Intervention 0CP,Unit Rules,Unit,Heroic Intervention costs 0 CP.,TRUE,,,,,,944
+IGNORE_MOVE_MODIFIERS,IGNORE MOVE MODIFIERS,Ignore Move Modifiers,Movement Rules,Unit,Ignore modifiers to Move.,TRUE,,,,,,945
+INFILTRATORS,INFILTRATORS,Infiltrators,Unit Rules,Unit,The affected unit has Infiltrators.,TRUE,,,,,,946
+INGRESS,INGRESS,Ingress,Movement Rules,Unit,The affected unit can Ingress.,TRUE,,,,,,947
+KOMBI,KOMBI,Kombi,Range - Weapon Rules,Ranged Weapons,Kombi weapon rule. Highlight only.,TRUE,,,,,,948
+MOVE_THROUGH_MODELS,MOVE THROUGH MODELS,Move Through Models,Movement Rules,Unit,The affected unit can move through models.,TRUE,,,,,,949
+RE_ROLL_CHARGE,RE-ROLL CHARGE,Re-roll Charge,Movement Rules,Unit,The affected unit can re-roll Charge rolls.,TRUE,,,,,,950
+RILED_UP,RILED UP,Riled Up,Unit Rules,Unit,The affected unit is Riled Up.,TRUE,,,,,,951
+STEALTH,STEALTH,Stealth,Unit Rules,Unit,The affected unit has Stealth.,TRUE,,,,,,952
+STICKY_OBJECTIVES,STICKY OBJECTIVES,Sticky Objectives,Unit Rules,Unit,The affected unit has Sticky Objectives.,TRUE,,,,,,953
+STRATEGIC_RESERVES,STRATEGIC RESERVES,Strategic Reserves,Movement Rules,Unit,The affected unit can use Strategic Reserves.,TRUE,,,,,,954
