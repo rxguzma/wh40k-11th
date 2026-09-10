@@ -29,7 +29,7 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"POWER_KLAW_WARBOSS","column":"A","value":"6"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KUSTOM_MEGA_BLASTA_MEK","column":"D","value":"3"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"SHOKK_ATTACK_GUN_BIG_MEK_WITH_SHOKK_ATTACK_GUN","column":"St","value":"12"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"GUTRIPPA_HUNTER","column":"Weapon Abilities","value":"HUNTER: MONSTER/VEHICLE, LETHAL HITS"}]'
+          raw = r'[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"POWER_KLAW_WARBOSS","column":"A","value":"6"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KUSTOM_MEGA_BLASTA_MEK","column":"D","value":"3"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"SHOKK_ATTACK_GUN_BIG_MEK_WITH_SHOKK_ATTACK_GUN","column":"St","value":"12"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"GUTRIPPA_HUNTER:ability_2","mode":"insert","sets":{"Weapon_ID":"GUTRIPPA_HUNTER","Ability_Type":"LETHAL HITS","Separator_Before":", ","Sort_Order":"2"}}]'
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
