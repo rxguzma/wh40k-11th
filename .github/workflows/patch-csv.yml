@@ -29,7 +29,10 @@ jobs:
           import csv, json, os, sys
           from pathlib import Path
 
-          raw = r'[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"BEASTBOSS_ON_SQUIGOSAUR","column":"Hyperlink","value":"https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss-on-Squigosaur"}]'
+          raw = os.environ.get('PATCHES') or ''
+          if not raw.strip():
+              print('no PATCHES input; skip apply')
+              raise SystemExit(0)
           try:
               ops = json.loads(raw)
           except json.JSONDecodeError as e:
@@ -273,7 +276,7 @@ jobs:
               if path not in changed:
                   continue
               with path.open('w', newline='', encoding='utf-8') as f:
-                  csv.writer(f, lineterminator='\n').writerows(rows)
+                  csv.writer(f, lineterminator='\\n').writerows(rows)
           print('changed', ' '.join(str(p) for p in sorted(changed)))
           PY
 
