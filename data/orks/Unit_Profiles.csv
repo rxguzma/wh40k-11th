@@ -8,11 +8,11 @@ BIG_MEK,Big Mek,"6""",5,3+,6,7+,1,"INFANTRY, CHARACTER, EXPLOSIVES",https://waha
 BIG_MEK_DAKKARIG,Big Mek Dakkarig,"8""",8,3+ / 5++,11,7+,3,"VEHICLE, WALKER, BIG MEK, DAKKARIG",https://wahapedia.ru/wh40k11ed/factions/orks/Big-Mek-Dakkarig
 BIG_MEK_WITH_SHOKK_ATTACK_GUN,Big Mek with Shokk Attack Gun,"6""",5,4+,5,7+,1,"INFANTRY, BIG MEK, CHARACTER, EXPLOSIVES",https://wahapedia.ru/wh40k11ed/factions/orks/Big-Mek-With-Shokk-Attack-Gun
 BIGBOSS,Bigboss,"6""",5,4+,5,7+,1,"INFANTRY, CHARACTER, BIGBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Bigboss
-BOSS_SNIKROT,Boss Snikrot,"6""",5,5+ / 5++,6,6+,1,"INFANTRY, CHARACTER",https://wahapedia.ru/wh40k11ed/factions/orks/Boss-Snikrot
+BOSS_SNIKROT,Boss Snikrot,"6""",5,5+ / 5++,6,6+,1,"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, SMOKE",https://wahapedia.ru/wh40k11ed/factions/orks/Boss-Snikrot
 BOYZ,Boyz,"6""",5,5+,1,7+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, MOB",https://wahapedia.ru/wh40k11ed/factions/orks/Boyz
 BREAKA_BOYZ,Breaka Boyz,"6""",5,4+,2,7+,1,"INFANTRY, EXPLOSIVES",https://wahapedia.ru/wh40k11ed/factions/orks/Breaka-Boyz
 BURNA_BOYZ,Burna Boyz,"6""",5,5+,1,7,1,"INFANTRY, BURNA BOYZ",https://wahapedia.ru/wh40k11ed/factions/orks/Burna-Boyz
-DEFFKILLA_WARTRIKE,Deffkilla Wartrike,"12""",6,4+ / 5++,9,6+,3,"MOUNTED, CHARACTER",https://wahapedia.ru/wh40k11ed/factions/orks/Deffkilla-Wartrike
+DEFFKILLA_WARTRIKE,Deffkilla Wartrike,"12""",6,4+ / 5++,9,6+,3,"MOUNTED, CHARACTER, SPEED FREEKS, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Deffkilla-Wartrike
 DEFFKOPTAS,Deffkoptas,"12""",6,4+ / 6++,4,7+,2,"MOUNTED, EXPLOSIVES, FLY, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Deffkoptas
 FLASH_GITZ,Flash Gitz,"6""",5,4+,3,7+,1,"INFANTRY, EXPLOSIVES",https://wahapedia.ru/wh40k11ed/factions/orks/Flash-Gitz
 GHAZGHKULL_THRAKA,Ghazghkull Thraka,"8""",10,2+ / 4++,16,6+,4,"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Ghazghkull-Thraka
@@ -21,7 +21,7 @@ KILL_RIG,Kill Rig,"10""",10,3+ / 6++,16,7+,5,"MONSTER, BEAST SNAGGA, PSYKER, TRA
 KILLA_KANS,Killa Kans,"8""",7,3+ / 6++,5,8+,2,"VEHICLE, GROTS, WALKER",https://wahapedia.ru/wh40k11ed/factions/orks/Killa-Kans
 KOMMANDOS,Kommandos,"6""",5,5+,1,7+,1,"INFANTRY, EXPLOSIVES, SMOKE",https://wahapedia.ru/wh40k11ed/factions/orks/Kommandos
 LOOTAS,Lootas,"6""",5,5+,1,7,1,"INFANTRY, LOOTAS",https://wahapedia.ru/wh40k11ed/factions/orks/Lootas
-GROTSNIK,Mad Dok Grotsnik,"6""",5,5+,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, PAINBOY, MAD DOK GROTSNIK",https://wahapedia.ru/wh40k11ed/factions/orks/Mad-Dok-Grotsnik
+GROTSNIK,Mad Dok Grotsnik,"6""",5,5+ / 5++,4,7+,1,"INFANTRY, CHARACTER, EPIC HERO, PAINBOY, MAD DOK GROTSNIK",https://wahapedia.ru/wh40k11ed/factions/orks/Mad-Dok-Grotsnik
 MEK,Mek,"6""",5,5+,4,7+,1,"INFANTRY, CHARACTER, EXPLOSIVES",https://wahapedia.ru/wh40k11ed/factions/orks/Mek
 MOZROG_SKRAGBAD,Mozrog Skragbad,"10""",9,3+ / 4++,10,6+,3,"MONSTER, BEAST SNAGGA, CHARACTER, EPIC HERO",https://wahapedia.ru/wh40k11ed/factions/orks/Mozrog-Skragbad
 NOBZ,Nobz,"6""",5,4+,3,7+,1,"INFANTRY, EXPLOSIVES",https://wahapedia.ru/wh40k11ed/factions/orks/Nobz
@@ -55,4 +55,4 @@ BIGED_BOSSBUNKA,Big'ed Bossbunka,-,10,3+,12,7+,0,"FORTIFICATION, VEHICLE",https:
 BLITZA_BOMMER,Blitza-Bommer,-,9,3+ / 6++,12,7+,-,"VEHICLE, AIRCRAFT, FLY, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Blitza-bommer
 DAKKAJET,Dakkajet,-,9,3+ / 6++,12,7+,-,"VEHICLE, AIRCRAFT, FLY, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Dakkajet
 BURNA_BOMMER,Burna-Bommer,-,9,3+ / 6++,12,7+,-,"VEHICLE, AIRCRAFT, FLY, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Burna-bommer
-WAZBOM_BLASTAJET,Wazbom Blastajet,-,9,3+ / 6++,12,7+,-,"EPIC HERO, VEHICLE, AIRCRAFT, FLY, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Wazbom-Blastajet
+WAZBOM_BLASTAJET,Wazbom Blastajet,-,9,3+ / 6++,12,7+,-,"VEHICLE, AIRCRAFT, FLY, SMOKE, SPEED FREEKS",https://wahapedia.ru/wh40k11ed/factions/orks/Wazbom-Blastajet
