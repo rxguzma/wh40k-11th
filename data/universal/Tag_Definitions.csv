@@ -92,7 +92,7 @@ REDEPLOY_3,REDEPLOY 3,Redeploy 3,Movement Rules,Units,The source rule allows up 
 FORCE_DESPERATE_ESCAPE,FORCE DESPERATE ESCAPE,Force Desperate Escape,Info Only,Enemy Unit,An affected enemy unit that Falls Back must use Desperate Escape when the source rule applies.,TRUE,,,,,,908
 ENEMY_MINUS_1_HAZARD,ENEMY -1 HAZARD,Enemy -1 Hazard,Info Only,Enemy Unit,Apply -1 to the affected enemy unit Hazard rolls when the source rule applies.,TRUE,,,,,,909
 INGRESS_MOVE,INGRESS MOVE,Ingress Move,Movement Rules,Unit,The source rule allows the unit to make an ingress move at the specified time.,TRUE,,,,,,820
-ASSAULT,ASSAULT,Assault,Range - Weapon Rules,Ranged Weapon,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,,,,,,821
+ASSAULT,ASSAULT,Assault,Range - Weapon Rules,Ranged Weapon,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,WEAPON_RULE,RANGE,ASSAULT,SET,1,821
 ADVANCE_AND_CHARGE,ADVANCE AND CHARGE,Advance and Charge,Movement Rules,Unit,The affected unit can declare a charge in a turn in which it Advanced while this rule is active.,TRUE,,,,,,822
 RETURN_ON_2_PLUS,RETURN ON 2+,Return on 2+,Unit Rules,Unit,The affected model or unit can return on a 2+ when the source rule is triggered.,TRUE,,,,,,823
 COPY_WARBOSS_ABILITY,COPY WARBOSS ABILITY,Copy Warboss Ability,Unit Rules,Unit,The affected unit gains the referenced Warboss ability while the source rule applies.,TRUE,,,,,,824
@@ -132,7 +132,7 @@ INVULNERABLE_SAVE_6_PLUS,INVULNERABLE SAVE 6+,Invulnerable Save 6+,Unit Rules,Un
 PLUS_2_CHARGE,+2 CHARGE,+2 Charge,Movement Rules,Unit,Add 2 to Charge rolls while this rule is active.,TRUE,,,,,,936
 BATTLELINE,BATTLELINE,Battleline,Unit Rules,Unit,The affected unit has the Battleline rule.,TRUE,,,,,,937
 BENEFIT_OF_COVER,BENEFIT OF COVER,Benefit of Cover,Unit Rules,Unit,The affected unit has the Benefit of Cover.,TRUE,,,,,,938
-CLOSE_QUARTERS,CLOSE-QUARTERS,Close-Quarters,Range - Weapon Rules,Ranged Weapons,Close-quarters ranged rule. Highlight only.,TRUE,,,,,,939
+CLOSE_QUARTERS,CLOSE-QUARTERS,Close-Quarters,Range - Weapon Rules,Ranged Weapons,Close-quarters ranged rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,CLOSE_QUARTERS,SET,1,939
 DEEP_STRIKE,DEEP STRIKE,Deep Strike,Unit Rules,Unit,The affected unit has Deep Strike.,TRUE,,,,,,940
 FALL_BACK_AND_CHARGE,FALL BACK AND CHARGE,Fall Back and Charge,Movement Rules,Unit,The affected unit can charge after Falling Back.,TRUE,,,,,,941
 FIGHT_ON_DEATH_2_PLUS,FIGHT ON DEATH 2+,Fight on Death 2+,Unit Rules,Unit,The affected unit fights on death on a 2+.,TRUE,,,,,,942
@@ -141,7 +141,7 @@ HEROIC_INTERVENTION_0CP,HEROIC INTERVENTION 0CP,Heroic Intervention 0CP,Unit Rul
 IGNORE_MOVE_MODIFIERS,IGNORE MOVE MODIFIERS,Ignore Move Modifiers,Movement Rules,Unit,Ignore modifiers to Move.,TRUE,,,,,,945
 INFILTRATORS,INFILTRATORS,Infiltrators,Unit Rules,Unit,The affected unit has Infiltrators.,TRUE,,,,,,946
 INGRESS,INGRESS,Ingress,Movement Rules,Unit,The affected unit can Ingress.,TRUE,,,,,,947
-KOMBI,KOMBI,Kombi,Range - Weapon Rules,Ranged Weapons,Kombi weapon rule. Highlight only.,TRUE,,,,,,948
+KOMBI,KOMBI,Kombi,Range - Weapon Rules,Ranged Weapons,Kombi weapon rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,KOMBI,SET,1,948
 MOVE_THROUGH_MODELS,MOVE THROUGH MODELS,Move Through Models,Movement Rules,Unit,The affected unit can move through models.,TRUE,,,,,,949
 RE_ROLL_CHARGE,RE-ROLL CHARGE,Re-roll Charge,Movement Rules,Unit,The affected unit can re-roll Charge rolls.,TRUE,,,,,,950
 RILED_UP,RILED UP,Riled Up,Unit Rules,Unit,The affected unit is Riled Up.,TRUE,,,,,,951
