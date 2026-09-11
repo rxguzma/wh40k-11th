@@ -111,10 +111,10 @@ FIVE_PLUS_PLUS_INVUL,5++ Invul,5++ Invul,Unit Rules,Unit,The affected unit has a
 FIGHT_ON_DEATH,FIGHT ON DEATH,Fight on Death,Unit Rules,Unit,The affected unit can fight on death while this rule is active.,TRUE,,,,,,915
 FIGHT_ON_DEATH_3_PLUS,FIGHT ON DEATH 3+,Fight on Death 3+,Unit Rules,Unit,The affected unit can fight on death on a 3+ while this rule is active.,TRUE,,,,,,916
 FIGHT_ON_DEATH_4_PLUS,FIGHT ON DEATH 4+,Fight on Death 4+,Unit Rules,Unit,The affected unit can fight on death on a 4+ while this rule is active.,TRUE,,,,,,917
-FEEL_NO_PAIN_4_PLUS,FEEL NO PAIN 4+,Feel No Pain 4+,Unit Rules,Unit,The affected unit has Feel No Pain 4+ while this rule is active.,TRUE,,,,,,918
-FEEL_NO_PAIN_5_PLUS,FEEL NO PAIN 5+,Feel No Pain 5+,Unit Rules,Unit,The affected unit has Feel No Pain 5+ while this rule is active.,TRUE,,,,,,919
-FEEL_NO_PAIN_6_PLUS,FEEL NO PAIN 6+,Feel No Pain 6+,Unit Rules,Unit,The affected unit has Feel No Pain 6+ while this rule is active.,TRUE,,,,,,920
-SCOUT_6,"SCOUT 6""","Scout 6""",Movement Rules,Unit,"The affected unit has Scout 6"" while this rule is active.",TRUE,,,,,,921
+FEEL_NO_PAIN_4_PLUS,FNP 4+,FNP 4+,Unit Rules,Unit,The affected unit has Feel No Pain 4+ while this rule is active.,TRUE,KEYWORD,UNIT,KEYWORD,ADD,FNP 4+,918
+FEEL_NO_PAIN_5_PLUS,FNP 5+,FNP 5+,Unit Rules,Unit,The affected unit has Feel No Pain 5+ while this rule is active.,TRUE,KEYWORD,UNIT,KEYWORD,ADD,FNP 5+,919
+FEEL_NO_PAIN_6_PLUS,FNP 6+,FNP 6+,Unit Rules,Unit,The affected unit has Feel No Pain 6+ while this rule is active.,TRUE,KEYWORD,UNIT,KEYWORD,ADD,FNP 6+,920
+SCOUT_6,"SCOUT 6\"\"","Scout 6\"\"",Movement Rules,Unit,"The affected unit has Scout 6\"\" while this rule is active.",TRUE,,,,,,921
 CRITS_5_PLUS_MELEE,CRITS 5+,Crits 5+,Melee - Weapon Rules,Weapon,Critical hits on unmodified 5+ for melee attacks.,TRUE,WEAPON_RULE,MELEE,CRITS,SET,5,922
 CRITS_5_PLUS_RANGE,CRITS 5+,Crits 5+,Range - Weapon Rules,Weapon,Critical hits on unmodified 5+ for ranged attacks.,TRUE,WEAPON_RULE,RANGE,CRITS,SET,5,923
 PLUS_1_ADVANCE,+1 ADVANCE,+1 Advance,Movement Rules,Unit,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
