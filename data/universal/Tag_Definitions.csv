@@ -1,1 +1,2 @@
-PLACEHOLDER
+Tag_ID,Display_Tag,Title,Category,Affects,Description,Editable,Effect_Type,Target,Stat,Operation,Value,Sort_Order
+PLUS_1_W,+1 W,+1 Wound,Unit Stats,Unit,Adds 1 Wound to the Unit.,TRUE,STAT,UNIT,W,ADD,1,1
