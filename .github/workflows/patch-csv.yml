@@ -276,7 +276,7 @@ jobs:
               if path not in changed:
                   continue
               with path.open('w', newline='', encoding='utf-8') as f:
-                  csv.writer(f, lineterminator='\\n').writerows(rows)
+                  csv.writer(f, lineterminator='\n').writerows(rows)
           print('changed', ' '.join(str(p) for p in sorted(changed)))
           PY
 
