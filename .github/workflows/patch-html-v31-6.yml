@@ -20,6 +20,9 @@ jobs:
       - name: Patch V31.6
         run: python3 scripts/patch_html_v31_6.py
 
+      - name: Align eligibility schema
+        run: python3 scripts/patch_schema_eligibility_v31_6.py
+
       - name: Validate data and regenerate manifests
         run: python3 scripts/data_schema.py all
 
