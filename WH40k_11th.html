@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.27</title>
+  <title>WH40k 11th V31.28</title>
 
 
   <!--
@@ -32,9 +32,9 @@
 
     Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
 
-    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render in the same title row beside their Ability-like title, never underneath the title and never in separate Melee/Range subtitle rows. The title can wrap within its own space, but the scoped Tag group remains top-aligned beside it. Canonical Range and Melee scoped title Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
+    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.27; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.28; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -91,6 +91,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.28
+    Scope: Move scoped structured Tags out of the Ability-like title cell and back into the description cell. Tags appear directly with the description text with no Melee/Range subtitles, while the existing top Range/Melee controls continue to drive scoped Tag visibility. This restores normal Ability-name width and prevents tags from squeezing long names.
+    Risk areas: View Ability-like description/tag presentation only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.27
     Scope: Keep scoped Ability-like Tags in the same title row as the Ability name instead of allowing the Tag group to wrap underneath. Preserve the compact V31.26 presentation with no Melee/Range subtitles; the existing top Range/Melee controls remain the only scope labels and continue to drive scoped Tag visibility.
     Risk areas: View Ability-table title/tag layout only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
@@ -114,11 +120,6 @@
     Risk areas: Version switching only. Storage-not-ready protection remains, and roster/version checkpoint persistence is otherwise unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.23
-    Scope: Hide Ability-table items with effective order 8 or 9 from View mode entirely. Edit mode continues to show those items and their order controls so they can still be managed or moved back to orders 0-7.
-    Risk areas: View-mode Ability row visibility only. Ability ordering data, Edit-mode rows, Tag behavior, Weapon profiles, and Probable remain unchanged.
-  -->
 
 
 
@@ -646,11 +647,11 @@
     .ability-name-col { width: 43%; }
     .ability-description-col { width: 57%; }
     .ability-name-cell { font-weight: 900; }
-    .ability-title-inline { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; column-gap: 6px; min-width: 0; width: 100%; }
-    .ability-title-inline .ability-primary-name { display: block; min-width: 0; }
-    .ability-title-scoped-tags { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 3px; white-space: nowrap; justify-self: end; }
-    .ability-title-scoped-tag { display: inline-flex; align-items: center; }
-    .ability-title-scoped-tag .weapon-ability-badge { font-size: 0.72em; line-height: 1.05; padding: 3px 7px; }
+    .ability-title-inline { display: inline; }
+    .ability-title-inline .ability-primary-name { display: inline; }
+    .ability-title-scoped-tags { display: none; }
+    .ability-description-scoped-tags { display: inline; white-space: normal; }
+    .ability-description-scoped-tag { display: inline-flex; align-items: center; margin-left: 3px; vertical-align: middle; }
     .other-abilities-table col.other-ability-label-col { width: 34%; }
     .other-abilities-table col.other-ability-names-col { width: 66%; }
     .other-ability-label-cell { font-size: 15px; font-weight: 900; line-height: 1.2; vertical-align: top; }
@@ -7577,7 +7578,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.27";
+    const APP_VERSION = "31.28";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -21172,21 +21173,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderAbilityTitleScopedTags(ability, tagContext = null) {
-      if (!ability || appEditMode) return "";
-      return getAbilityProtectedModifierTagAssignments(ability).map(assignment => {
-        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-        if (isUnitLevelTagDefinition(definition)) return "";
-        const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
-        const visible = scope === "melee" || scope === "range"
-          ? isViewRosterWeaponKindVisible(scope)
-          : true;
-        const badge = renderProtectedAbilityTagBadge(
-          assignment.tag,
-          tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
-        );
-        if (!badge) return "";
-        return `<span class="ability-title-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
-      }).filter(Boolean).join("");
+      return "";
     }
 
     function renderAbilityLikeTitleScopedTags(sourceKind, sourceItem, entry, defaultOn = false) {
@@ -21748,9 +21735,29 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderAbilityShortDescriptionWithProtectedTags(ability, value, editable = false, tagContext = null) {
       const safeText = escapeHtml(String(value || ""));
-      return editable
+      const rendered = editable
         ? `<span class="ability-inline-editable-text" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${safeText}</span>`
         : safeText;
+      if (editable) return rendered;
+
+      const appendedTags = getAbilityProtectedModifierTagAssignments(ability).map(assignment => {
+        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        if (isUnitLevelTagDefinition(definition)) return "";
+        const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
+        const visible = scope === "melee" || scope === "range"
+          ? isViewRosterWeaponKindVisible(scope)
+          : true;
+        const badge = renderProtectedAbilityTagBadge(
+          assignment.tag,
+          tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
+        );
+        if (!badge) return "";
+        return `<span class="ability-description-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
+      }).filter(Boolean).join(" ");
+
+      return appendedTags
+        ? `${rendered}${rendered ? ` <span class="ability-description-scoped-tags">${appendedTags}</span>` : `<span class="ability-description-scoped-tags">${appendedTags}</span>`}`
+        : rendered;
     }
 
     function renderAbilityDescriptionText(ability, value, mode, roster, itemKey, fieldName, tagContext = null) {
@@ -28936,7 +28943,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.27',
+        version: 'V31.28',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
