@@ -230,7 +230,7 @@ COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,
 
 The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,,9,
 DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining,CORE: Damaged 1-6,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,0
-DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,
+DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OPERATIVE 3""]",[Unit Rules],0,
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,0,
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0,
 DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,1
@@ -260,7 +260,7 @@ ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-sh
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE,"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]",[+1 A] [+1 S] [HAZARDOUS],[Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Rules],0,0
-SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK)","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,
+SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK)","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OPERATIVE 3""]",[Unit Rules],0,
 STEALTH,Stealth,ANYTIME,CORE: Stealth,[STEALTH],[Unit Rules],0,1
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,0,
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,0,
@@ -330,8 +330,8 @@ KEEP_HUNTIN,Keep Huntin',"Once per Battle Round:  BEAST SNAGGAS 6"" are un-shoc
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",,,0,
 DODGE_DIS,Dodge Dis!,ANYTIME,This unit's attacks have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1
-BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,0
-BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,0
+BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OPERATIVE 3""]",[Unit Rules],0,0
+BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OPERATIVE 3""]",[Unit Rules],0,0
 COMPOSITION_BEASTBOSS_SQUIGOSAUR,Unit Composition (Beastboss on Squigosaur),"1 Beastboss on Squigosaur. Beastchoppa, Slugga, Jaws. Optional Thump Gun.","UNIT COMPOSITION: 1 Beastboss on Squigosaur model.
 
 This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
@@ -355,7 +355,7 @@ COMPOSITION_BIG_MEK_MA,Unit Composition (Big Mek in Mega Armour),1 Big Mek in Me
 This model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
 
 WARGEAR OPTIONS: This model can be equipped with one of the following: 1 Telleport Blasta; 1 Kustom Force Field. This model's Kustom Shoota can be replaced with one of the following: 1 Killsaw; 1 Kombi-weapon; 1 Kustom Mega-blasta.",,,9,
-SUPPORT_SHOKKA,Support Shokka,"Within 3"" of friendly ORKS INFANTRY (excluding other SAG)","While this model is within 3"" of a friendly ORKS INFANTRY unit (excluding BIG MEK WITH SHOKK ATTACK GUN units), this model has Lone Operative.",[LONE OPERATIVE],[Unit Rules],9,0
+SUPPORT_SHOKKA,Support Shokka,"Within 3"" of friendly ORKS INFANTRY (excluding other SAG)","While this model is within 3"" of a friendly ORKS INFANTRY unit (excluding BIG MEK WITH SHOKK ATTACK GUN units), this model has Lone Operative.","[LONE OPERATIVE 3""]",[Unit Rules],9,0
 EVEN_MORE_DAKKA,Even More Dakka,RILED UP — RANGE,"If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[SUSTAINED HITS 1],[Range - Weapon Rules],0,0
 BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER / VEHICLE,"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER / VEHICLE units), that weapon has +6 A.",[+6 A],[Range - Weapon Stats],0,0
 KUSTOM_DAKKA,Kustom Dakka,ANYTIME — RANGE,This unit's ranged attacks have [IGNORES COVER].,[IGNORES COVER],[Range - Weapon Rules],0,1
