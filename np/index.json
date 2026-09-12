@@ -1,73 +1,23 @@
 {
-  "latest": "1.17",
+  "latest": "1.18",
   "versions": [
-    {
-      "version": "1.17",
-      "file": "Np1.17.html"
-    },
-    {
-      "version": "1.16",
-      "file": "Np1.16.html"
-    },
-    {
-      "version": "1.15",
-      "file": "Np1.15.html"
-    },
-    {
-      "version": "1.14",
-      "file": "Np1.14.html"
-    },
-    {
-      "version": "1.13",
-      "file": "Np1.13.html"
-    },
-    {
-      "version": "1.12",
-      "file": "Np1.12.html"
-    },
-    {
-      "version": "1.11",
-      "file": "Np1.11.html"
-    },
-    {
-      "version": "1.10",
-      "file": "Np1.10.html"
-    },
-    {
-      "version": "1.09",
-      "file": "Np1.09.html"
-    },
-    {
-      "version": "1.08",
-      "file": "Np1.08.html"
-    },
-    {
-      "version": "1.07",
-      "file": "Np1.07.html"
-    },
-    {
-      "version": "1.06",
-      "file": "Np1.06.html"
-    },
-    {
-      "version": "1.05",
-      "file": "Np1.05.html"
-    },
-    {
-      "version": "1.04",
-      "file": "Np1.04.html"
-    },
-    {
-      "version": "1.03",
-      "file": "Np1.03.html"
-    },
-    {
-      "version": "1.02",
-      "file": "Np1.02.html"
-    },
-    {
-      "version": "1.01",
-      "file": "Np1.01.html"
-    }
+    {"version":"1.18","file":"Np1.18.html"},
+    {"version":"1.17","file":"Np1.17.html"},
+    {"version":"1.16","file":"Np1.16.html"},
+    {"version":"1.15","file":"Np1.15.html"},
+    {"version":"1.14","file":"Np1.14.html"},
+    {"version":"1.13","file":"Np1.13.html"},
+    {"version":"1.12","file":"Np1.12.html"},
+    {"version":"1.11","file":"Np1.11.html"},
+    {"version":"1.10","file":"Np1.10.html"},
+    {"version":"1.09","file":"Np1.09.html"},
+    {"version":"1.08","file":"Np1.08.html"},
+    {"version":"1.07","file":"Np1.07.html"},
+    {"version":"1.06","file":"Np1.06.html"},
+    {"version":"1.05","file":"Np1.05.html"},
+    {"version":"1.04","file":"Np1.04.html"},
+    {"version":"1.03","file":"Np1.03.html"},
+    {"version":"1.02","file":"Np1.02.html"},
+    {"version":"1.01","file":"Np1.01.html"}
   ]
 }
