@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Route Wahapedia links to Chrome
+      - name: Rebuild V31.16 from V31.12 and remove Unit add-panel outline
         run: python3 scripts/patch_html_v31_16.py
 
       - name: Validate and generate release history
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Route Wahapedia links to Chrome"
+          git commit -m "Rebuild V31.16 from V31.12 baseline"
           git push origin HEAD:main
