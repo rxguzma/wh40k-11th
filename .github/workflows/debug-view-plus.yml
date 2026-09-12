@@ -13,11 +13,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          echo '=== category add buttons ==='
-          grep -n -C 10 'category-add-button' WH40k_11th.html || true
-          echo '=== view detail panel ==='
-          grep -n -C 25 'function renderRosterUnitDetailPanel' WH40k_11th.html || true
-          echo '=== render roster unit panel calls ==='
-          grep -n -C 12 'renderRosterUnitDetailPanel' WH40k_11th.html || true
-          echo '=== getViewEditRoster ==='
-          grep -n -C 15 'function getViewEditRoster' WH40k_11th.html || true
+          echo '=== toggle section ==='
+          grep -n -C 25 'toggleSection(index' WH40k_11th.html || true
+          echo '=== stratagem selection ==='
+          grep -n -C 35 'toggleViewEditRosterEntryStratagemSelection' WH40k_11th.html || true
+          echo '=== active roster lookup ==='
+          grep -n -C 10 'function getActiveRoster' WH40k_11th.html || true
