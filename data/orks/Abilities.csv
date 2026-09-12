@@ -295,7 +295,9 @@ DREAD_ARD,Dread ’Ard,ANYTIME — incoming attacks,Attacks targeting this model
 FIRING_DECK_12,Firing Deck 12,CORE: Firing Deck 12,CORE: Firing Deck 12,,,0,
 FULLY_LOADED_BUTCHERY,Fully Loaded Butchery,Butcha Boyz gets +2A per embarked model (max +22A),This unit’s Butcha Boyz weapon has +2 A for each model embarked within this unit (to a maximum of +22 A),[+2 A],[Melee - Weapon Stats],0,
 GUT_HATCH,Gut Hatch,"When this unit ends a normal move, embarked units can assault disembark.","In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move (pg 12).",,,0,
-INTIMIDATING_MOTIVATION,Intimidating Motivation,"Once per Battle Round:  Start or End of Movement Orks 6"" un-shock and RILED UP.","Intimidating Motivation (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS unit within 6"" of this unit. That unit:
+INTIMIDATING_MOTIVATION,Intimidating Motivation,"Once per Battle Round
+Start or End of Movement
+Orks 6"" un-shock and RILED UP.","Intimidating Motivation (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS unit within 6"" of this unit. That unit:
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",,,0,
 MOBILE_ARSENAL,Mobile Arsenal,ANYTIME — RANGE,"In your shooting phase, this units ranged attacks can re-roll hit rolls of 1",[RE-ROLL 1S TO HIT],[Range - Combat Modifiers],0,1
@@ -305,7 +307,7 @@ PILIN_OUT,Pilin’ Out,"Enemy ends move within 8"": embarked units can rapid dis
 SPITEFUL_POWER_TRIP,Spiteful Power Trip,vs units with no T7+ models,This unit’s attacks that target a unit that has no models with a T of 7+ have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,0
 SUPREME_KUNNIN,Supreme Kunnin’,"Once per phase: when enemy ends move within 8"" and unengaged:
 
-- Moce D6"" 
+- Move D6"" 
 - RILED UP: Move 5""","Supreme Kunnin’ (Once per phase, per army): In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can:
 - Make a normal move of up to D6"".
 - Or: If this unit is RILED UP, make a normal move of up to 5"".",,,0,
