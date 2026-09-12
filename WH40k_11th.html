@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.30</title>
+  <title>WH40k 11th V31.31</title>
 
 
   <!--
@@ -33,9 +33,9 @@
     Unit-level compact-rule invariant: only Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP are promoted to the Unit-level tag line. The same whitelist applies to direct core Abilities and to structured Tags carried by another Ability. An Ability carrying one of these promoted Tags defaults to order 8 so its source row does not render in View but remains manageable in Edit. All other Unit-affecting Tags remain with their source Ability.
     Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
-    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
+    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately. Off-scope Tags are hidden with the app's .hidden class. An Ability-like row whose canonical scoped Tags are exclusively in the disabled scope remains visible but is muted; mixed Range+Melee rows stay normal and show only Tags for active scopes; unscoped rows remain normal. Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. The Range/Melee controls support three reachable states: Range only, Melee only, and Both. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.30; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.31; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.31
+    Scope: Make the top Range/Melee controls drive scoped Ability presentation correctly. Off-scope description Tags now hide reliably, opposite-scope-only Ability rows remain visible but muted, mixed-scope rows stay normal and show only active-scope Tags, and unscoped rows remain unchanged. The Range/Melee control behavior now exposes all three states: Range only, Melee only, and Both.
+    Risk areas: View Range/Melee filtering, scoped Ability-row presentation, and the Range/Melee button carousel only. Tag activation, Unit-level compact rules, Weapon selection state, Probable, and Edit controls remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.30
     Scope: Fix promoted Unit-level rule rendering after V31.29. Restore the FNP-specific compact-label helper still used by renderOtherAbilityTags so opening Units with promoted core rules such as Nazdreg's Deep Strike no longer throws a ReferenceError and blanks the Unit detail. The V31.29 whitelist and order-8 behavior are unchanged.
     Risk areas: Unit-level compact badge rendering only. Promotion whitelist, Ability ordering, scoped Tags, Weapon rules, Probable, and Edit controls remain unchanged.
@@ -115,11 +121,6 @@
     Risk areas: View Ability-table title/tag layout only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.26
-    Scope: Move non-Unit structured Ability-like Tags from description-side Melee/Range sections into the title cell beside the Ability, Enhancement, Detachment Rule, or Stratagem name. Range- and Melee-scoped title Tags now follow the existing View Range/Melee weapon filter immediately, eliminating the extra subtitle/tag rows. Unit-level Tags remain promoted to the Unit-level tag line.
-    Risk areas: View Ability-table title/tag layout and Range/Melee filter synchronization. Tag activation, Unit-level Tag promotion, derived Weapon rules, Probable, and Edit Tag management remain unchanged.
-  -->
 
 
 
@@ -596,7 +597,8 @@
     }
 
     .dark-table tr.view-ability-row-state-inactive,
-    .dark-table tr[data-view-roster-ability-state="inactive"] {
+    .dark-table tr[data-view-roster-ability-state="inactive"],
+    .dark-table tr.view-ability-scope-muted {
       opacity: .38;
     }
 
@@ -7581,7 +7583,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.30";
+    const APP_VERSION = "31.31";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -20638,9 +20640,28 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         const kind = String(row.dataset.viewRosterWeaponKind || "").trim().toLowerCase();
         row.classList.toggle("hidden", !isViewRosterWeaponKindVisible(kind));
       });
-      document.querySelectorAll("[data-view-ability-tag-scope]").forEach(node => {
+
+      const scopedTagNodes = Array.from(document.querySelectorAll("[data-view-ability-tag-scope]"));
+      scopedTagNodes.forEach(node => {
         const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
-        node.hidden = (scope === "range" || scope === "melee") && !isViewRosterWeaponKindVisible(scope);
+        const shouldHide = (scope === "range" || scope === "melee") && !isViewRosterWeaponKindVisible(scope);
+        node.classList.toggle("hidden", shouldHide);
+      });
+
+      document.querySelectorAll("tr.view-ability-scope-muted").forEach(row => {
+        row.classList.remove("view-ability-scope-muted");
+      });
+
+      const scopedRows = new Set(scopedTagNodes.map(node => node.closest("tr")).filter(Boolean));
+      scopedRows.forEach(row => {
+        const scopes = new Set(
+          Array.from(row.querySelectorAll("[data-view-ability-tag-scope]"))
+            .map(node => String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase())
+            .filter(scope => scope === "range" || scope === "melee")
+        );
+        if (!scopes.size) return;
+        const hasVisibleScope = Array.from(scopes).some(scope => isViewRosterWeaponKindVisible(scope));
+        row.classList.toggle("view-ability-scope-muted", !hasVisibleScope);
       });
     }
 
@@ -20652,19 +20673,20 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const isCurrentlyActive = viewRosterWeaponFilters[key] !== false;
       const isOtherActive = viewRosterWeaponFilters[otherKey] !== false;
 
-      // Both active: tapping one turns only that category off. Weapon row states are preserved while hidden.
       if (isCurrentlyActive && isOtherActive) {
+        // Both active: turn off the tapped scope and leave the other scope selected.
         viewRosterWeaponFilters[key] = false;
-      // Sole active category: keep it on so at least one remains active.
       } else if (isCurrentlyActive) {
-        return;
-      // One active + tapped inactive: switch directly to the tapped category without resetting either category's weapon states.
+        // Sole active scope: next carousel state is Both.
+        viewRosterWeaponFilters[otherKey] = true;
       } else if (isOtherActive) {
+        // One active + tapped inactive: switch directly to the tapped scope.
         viewRosterWeaponFilters[otherKey] = false;
         viewRosterWeaponFilters[key] = true;
       } else {
-        // Defensive recovery: an impossible all-off state restores the tapped category.
-        viewRosterWeaponFilters[key] = true;
+        // Defensive recovery: restore Both rather than leaving an all-off state.
+        viewRosterWeaponFilters.range = true;
+        viewRosterWeaponFilters.melee = true;
       }
 
       syncViewRosterWeaponFilterButtons();
@@ -21755,7 +21777,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
         );
         if (!badge) return "";
-        return `<span class="ability-description-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
+        return `<span class="ability-description-scoped-tag${visible ? "" : " hidden"}" data-view-ability-tag-scope="${escapeAttr(scope)}">${badge}</span>`;
       }).filter(Boolean).join(" ");
 
       return appendedTags
@@ -28996,7 +29018,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.30',
+        version: 'V31.31',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
