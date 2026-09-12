@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>WH40k New Page</title>
+  <style>
+    :root {
+      --color-bg-page: #0f1115;
+      --color-border-default: #2c313a;
+      --text-primary: #f1f3f4;
+      --text-muted: #9aa0a6;
+      --font-title: 20px;
+      --font-meta: 12px;
+      --grid-cell: 52px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--color-bg-page);
+      color: var(--text-primary);
+      font-family: Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      overflow-x: hidden;
+    }
+
+    .draft-grid {
+      display: grid;
+      grid-template-columns: repeat(8, var(--grid-cell));
+      grid-auto-rows: var(--grid-cell);
+      width: max-content;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border-default);
+      border-left: 1px solid var(--color-border-default);
+      background: var(--color-bg-page);
+    }
+
+    .grid-cell {
+      position: relative;
+      width: var(--grid-cell);
+      height: var(--grid-cell);
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .col-coordinate,
+    .row-coordinate {
+      position: absolute;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .col-coordinate {
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .row-coordinate {
+      left: 4px;
+      bottom: 4px;
+    }
+
+    .page-title {
+      grid-column: 1 / span 8;
+      grid-row: 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+      color: var(--text-primary);
+      font-size: var(--font-title);
+      font-weight: 900;
+      line-height: 1;
+      background: transparent;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <main id="grid" class="draft-grid" aria-label="Layout grid"></main>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const letters = 'ABCDEFGH';
+    const fragment = document.createDocumentFragment();
+
+    for (let row = 1; row <= 30; row += 1) {
+      for (let col = 1; col <= 8; col += 1) {
+        const cell = document.createElement('div');
+        cell.className = 'grid-cell';
+        cell.style.gridColumn = String(col);
+        cell.style.gridRow = String(row);
+
+        if (row === 1) {
+          const letter = document.createElement('span');
+          letter.className = 'col-coordinate';
+          letter.textContent = letters[col - 1];
+          cell.appendChild(letter);
+        }
+
+        if (col === 1) {
+          const number = document.createElement('span');
+          number.className = 'row-coordinate';
+          number.textContent = String(row);
+          cell.appendChild(number);
+        }
+
+        fragment.appendChild(cell);
+      }
+    }
+
+    const title = document.createElement('div');
+    title.className = 'page-title';
+    title.textContent = 'Army Builder';
+    fragment.appendChild(title);
+
+    grid.appendChild(fragment);
+  </script>
+</body>
+</html>
