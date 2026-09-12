@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.36</title>
+  <title>WH40k 11th V31.37</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.36; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.37; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.37
+    Scope: Keep Range | Melee | Other | All equal width while reducing each button to 48px so the complete filter group stays inside the Unit header on phone layouts. Adjacent-button spacing is 2px total. Height, labels, colors, and filter behavior are unchanged.
+    Risk areas: View roster filter-button width and horizontal spacing only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.36
     Scope: Make Range | Melee | Other | All exactly the same 60px width and reduce the visible separation between adjacent buttons to roughly half of the prior spacing. Height, labels, colors, and filtering behavior are unchanged.
     Risk areas: View roster filter-button sizing and spacing only.
@@ -115,11 +121,6 @@
     Risk areas: View roster filter-button sizing only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.32
-    Scope: Replace the View roster Range/Melee carousel with a single-select Range | Melee | Other | All filter. All is the default and is green whenever no specific filter is selected. Range and Melee show their matching Weapon rows and scoped Ability rows; Other shows unscoped/non-Range/non-Melee rows; All restores every Weapon and Ability row.
-    Risk areas: View roster header filter controls and View Weapon/Ability row visibility only. Weapon/Ability activation state, Tags, Probable, Edit mode, and roster data remain unchanged.
-  -->
 
 
 
@@ -5140,6 +5141,20 @@
       justify-self: start !important;
       white-space: nowrap !important;
     }
+
+    /* V31.37: equal-width roster filters fitted inside the Unit header. */
+    .view-roster-weapon-filter-button {
+      box-sizing: border-box !important;
+      width: 48px !important;
+      min-width: 48px !important;
+      max-width: 48px !important;
+      flex: 0 0 48px !important;
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+      white-space: nowrap !important;
+    }
 </style>
 </head>
 <body>
@@ -7625,7 +7640,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.36";
+    const APP_VERSION = "31.37";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29050,7 +29065,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.36',
+        version: 'V31.37',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
