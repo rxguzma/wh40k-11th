@@ -118,21 +118,21 @@ orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT T
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP:
-- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,,,"MEGA ARMOUR, NOBZ",
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
 orks_bully_boyz_stratagem_armed_to_da_teef_1cp,orks_bully_boyz,ARMED TO DA TEEF,1,"Shooting or Fight: MEGANOBZ / NOBZ re-roll hit 1s; if RILED UP, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ / NOBZ unit is selected to attack.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Your unit's attacks can:
 - Re-roll hit rolls of 1.
-- If your unit is RILED UP, re-roll hit rolls.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],,,"MEGA ARMOUR, NOBZ",
+- If your unit is RILED UP, re-roll hit rolls.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
 orks_bully_boyz_stratagem_hulking_brutes_1cp,orks_bully_boyz,HULKING BRUTES,1,"Opp shooting: MEGANOBZ / NOBZ, S>T ranged -1 to Wound (1CP); or all ranged -1 to Wound (+1CP).","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: Ranged attacks that target your unit with a S greater than your unit's T have -1 to wound rolls.
 
-Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Info Only],,,"MEGA ARMOUR, NOBZ",
+Or +1CP: Ranged attacks that target your unit have -1 to wound rolls.",[INCOMING RANGE -1 TO WOUND],[Info Only],,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
 orks_taktikal_brigade_stratagem_dubious_restraint_1cp,orks_taktikal_brigade,DUBIOUS RESTRAINT,1,Start/end of your Movement: BOYZ / KOMMANDOS / STORMBOYZ controlling an objective secures it.,"WHEN: Start/end of your Movement phase.
 
 TARGET: One friendly BOYZ / KOMMANDOS / STORMBOYZ unit.
