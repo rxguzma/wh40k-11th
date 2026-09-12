@@ -2,78 +2,40 @@ name: Publish HTML App
 
 on:
   push:
+    branches: [main]
     paths:
-      - 'app_upload/READY'
+      - 'WH40k_11th.html'
+      - 'scripts/publish_html.py'
+      - '.github/workflows/publish-html.yml'
 
 permissions:
   contents: write
+
+concurrency:
+  group: publish-html-main
+  cancel-in-progress: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Assemble and validate HTML
+      - name: Validate and retain the latest ten HTML versions
+        run: python3 scripts/publish_html.py
+
+      - name: Commit the release index and snapshots
         shell: bash
         run: |
-          if [ ! -f app_upload/READY ]; then
-            echo "No READY marker; nothing to publish."
+          set -euo pipefail
+          git add versions
+          if git diff --cached --quiet; then
+            echo "Release files already match the canonical HTML."
             exit 0
           fi
-
-          cat app_upload/part-* | base64 --decode | xz --decompress > WH40k_11th.html
-          VERSION=$(grep -oE 'const APP_VERSION = "[0-9]+(\.[0-9]+)*"' WH40k_11th.html | head -1 | sed -E 's/.*"([0-9.]+)"/\1/')
-          test -n "$VERSION"
-          grep -q "<title>WH40k 11th V${VERSION}</title>" WH40k_11th.html
-          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
-
-      - name: Retain latest ten versions
-        shell: bash
-        run: |
-          mkdir -p versions
-          cp WH40k_11th.html "versions/WH40k_11th_V${VERSION}.html"
-
-          python - <<'PY'
-          import json
-          import re
-          from pathlib import Path
-
-          versions_dir = Path('versions')
-          pattern = re.compile(r'^WH40k_11th_V(\d+(?:\.\d+)*)\.html$')
-
-          found = []
-          for path in versions_dir.glob('WH40k_11th_V*.html'):
-              match = pattern.match(path.name)
-              if match:
-                  version = match.group(1)
-                  key = tuple(int(part) for part in version.split('.'))
-                  found.append((key, version, path))
-
-          found.sort(key=lambda item: item[0], reverse=True)
-          keep = found[:10]
-          for _, _, path in found[10:]:
-              path.unlink()
-
-          payload = {
-              'latest': keep[0][1] if keep else '',
-              'versions': [
-                  {
-                      'version': version,
-                      'file': f'versions/{path.name}'
-                  }
-                  for _, version, path in keep
-              ]
-          }
-          (versions_dir / 'index.json').write_text(json.dumps(payload, indent=2) + '\n', encoding='utf-8')
-          PY
-
-      - name: Commit published app
-        shell: bash
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add WH40k_11th.html versions
-          git rm -r app_upload
-          git commit -m "App v${VERSION}"
-          git push
+          git commit -m "Publish HTML version history"
+          git push origin HEAD:main
