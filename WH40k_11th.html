@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.33</title>
+  <title>WH40k 11th V31.34</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.33; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.34; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.34
+    Scope: Reduce the horizontal footprint of Range | Melee | Other | All so the four controls remain inside the Unit header on phone layouts. Buttons are content-sized, cannot flex/grid-stretch, and use 4px horizontal padding. Height, filtering behavior, colors, and labels are unchanged.
+    Risk areas: View roster filter-button sizing only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.33
     Scope: Make the View roster Range | Melee | Other | All filter buttons compact instead of horizontally stretched. Button height, labels, colors, single-select behavior, and filtering logic are unchanged.
     Risk areas: View roster filter-button sizing only.
@@ -115,11 +121,6 @@
     Risk areas: Unit-level compact badge rendering only. Promotion whitelist, Ability ordering, scoped Tags, Weapon rules, Probable, and Edit controls remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.29
-    Scope: Restrict Unit-level compact rule promotion to Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP. Direct core Abilities and structured Tags from this whitelist render at Unit level; unrelated Unit-affecting Tags stay with their source Ability. Any Ability carrying one of the promoted structured Tags defaults to order 8, keeping its source row out of View while preserving it in Edit.
-    Risk areas: Unit-level compact rule placement and default Ability order for the promoted whitelist. Scoped description Tags, Weapon rules, Range/Melee filtering, Probable, and Edit controls remain unchanged.
-  -->
 
 
 
@@ -5108,6 +5109,20 @@
       padding-left: 10px !important;
       padding-right: 10px !important;
     }
+
+    /* V31.34: truly compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: max-content !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      justify-self: start !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+      white-space: nowrap !important;
+    }
 </style>
 </head>
 <body>
@@ -7593,7 +7608,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.33";
+    const APP_VERSION = "31.34";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29023,7 +29038,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.33',
+        version: 'V31.34',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
