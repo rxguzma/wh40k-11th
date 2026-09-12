@@ -21,7 +21,8 @@ jobs:
             echo "No READY marker; nothing to publish."
             exit 0
           fi
-          cat app_upload/part-* | base64 --decode > WH40k_11th.html
+          cat app_upload/part-* | base64 --decode > app_upload/app.html.gz
+          gzip -dc app_upload/app.html.gz > WH40k_11th.html
           VERSION=$(grep -oE 'const APP_VERSION = "[0-9]+(\.[0-9]+)*"' WH40k_11th.html | head -1 | sed -E 's/.*"([0-9.]+)"/\1/')
           test -n "$VERSION"
           grep -q "<title>WH40k 11th V${VERSION}</title>" WH40k_11th.html
