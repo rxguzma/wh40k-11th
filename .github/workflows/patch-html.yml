@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Fix Waha Chrome handoff
-        run: python3 scripts/patch_html_v31_17.py
+      - name: Build V31.18 from V31.17 and remove Unit add-panel outline
+        run: python3 scripts/patch_html_v31_18.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Fix Waha Chrome handoff in V31.17"
+          git commit -m "Build V31.18 from V31.17 baseline"
           git push origin HEAD:main
