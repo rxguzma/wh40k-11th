@@ -22,7 +22,7 @@ jobs:
           ref: main
 
       - name: Build V31.32 Range Melee Other All filter
-        run: python3 scripts/patch_html_v31_32.py
+        run: python3 scripts/run_patch_html_v31_32.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
