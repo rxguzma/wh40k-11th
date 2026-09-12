@@ -1,31 +1,13 @@
 {
   "dataset_sha256": "a2739cbcc46e4376e9d74ec736d30e9123e34215c42af12101df4aa123b4f3b9",
   "files": {
-    "Dispositions.csv": {
-      "bytes": 175,
-      "sha256": "f7fb83e49bff33ecec4d98b22d6c5b53ea29512dbafc1b12dfa6b41e4663318b"
-    },
-    "Primary_Mission_Matchups.csv": {
-      "bytes": 1810,
-      "sha256": "8a9932ae4524a9d3fc913c0e5579bd92c201a58436072de3d686e3fa0484e0e0"
-    },
-    "Primary_Missions.csv": {
-      "bytes": 1195,
-      "sha256": "b6ae0162326a4e154db8caa97526953167ca046a0dc131ebbdf4c973651adef3"
-    },
-    "Tag_Definitions.csv": {
-      "bytes": 23802,
-      "sha256": "ed3d888f3be11834c68739dbbb4c7ca8656c02a51c80324a65fe61040ae5758c"
-    },
-    "Universal_Abilities.csv": {
-      "bytes": 21695,
-      "sha256": "69fe542fa0e62e00be868d1f30c719523053d436f734121bdec207bff33ddd2b"
-    },
-    "Universal_Stratagems.csv": {
-      "bytes": 5940,
-      "sha256": "0dcec8479fd1119e9e5eae1e617f3d41ae83412e2489d80a0fa394cfd0773c0b"
-    }
+    "Dispositions.csv": { "bytes": 175, "sha256": "f7fb83e49bff33ecec4d98b22d6c5b53ea29512dbafc1b12dfa6b41e4663318b" },
+    "Primary_Mission_Matchups.csv": { "bytes": 1810, "sha256": "8a9932ae4524a9d3fc913c0e5579bd92c201a58436072de3d686e3fa0484e0e0" },
+    "Primary_Missions.csv": { "bytes": 1195, "sha256": "b6ae0162326a4e154db8caa97526953167ca046a0dc131ebbdf4c973651adef3" },
+    "Tag_Definitions.csv": { "bytes": 23802, "sha256": "ed3d888f3be11834c68739dbbb4c7ca8656c02a51c80324a65fe61040ae5758c" },
+    "Universal_Abilities.csv": { "bytes": 21695, "sha256": "69fe542fa0e62e00be868d1f30c719523053d436f734121bdec207bff33ddd2b" },
+    "Universal_Stratagems.csv": { "bytes": 5940, "sha256": "0dcec8479fd1119e9e5eae1e617f3d41ae83412e2489d80a0fa394cfd0773c0b" }
   },
-  "schema_sha256": "486a09db1416ac90d17146142df84099306b97d8e4ff651718e64b7f56c83c25",
+  "schema_sha256": "72fab0db096a97a789c347c621d24066a2a5819de76165ae20545065e5e79be9",
   "schema_version": 1
 }
