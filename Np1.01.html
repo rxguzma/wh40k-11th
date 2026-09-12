@@ -8,11 +8,16 @@
     :root {
       --color-bg-page: #0f1115;
       --color-border-default: #2c313a;
+      --color-button-bg: #2b313b;
+      --color-button-border: #48515f;
       --text-primary: #f1f3f4;
       --text-muted: #9aa0a6;
       --font-title: 20px;
+      --font-body: 14px;
       --font-meta: 12px;
       --grid-cell: 52px;
+      --button-height: 40px;
+      --button-radius: 8px;
     }
 
     * { box-sizing: border-box; }
@@ -89,12 +94,61 @@
       background: transparent;
       pointer-events: none;
     }
+
+    .version-bar {
+      width: min(416px, 100%);
+      margin: 8px auto 0;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid var(--color-border-default);
+      background: #171a21;
+    }
+
+    .version-label {
+      min-width: 0;
+      font-size: var(--font-body);
+      font-weight: 900;
+    }
+
+    .version-button {
+      min-width: 72px;
+      height: var(--button-height);
+      padding: 0 10px;
+      border: 1px solid var(--color-button-border);
+      border-radius: var(--button-radius);
+      background: var(--color-button-bg);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .version-button:disabled {
+      opacity: .5;
+    }
   </style>
 </head>
 <body>
   <main id="grid" class="draft-grid" aria-label="Layout grid"></main>
 
+  <div class="version-bar" aria-label="Version controls">
+    <div class="version-label">Np1.01</div>
+    <button id="updateButton" class="version-button" type="button">Update</button>
+    <button id="downloadButton" class="version-button" type="button">Download</button>
+  </div>
+
   <script>
+    const NP_VERSION = '1.01';
+    const RAW_ROOT = 'https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/';
+    const INDEX_PATH = 'np/index.json';
+
     const grid = document.getElementById('grid');
     const letters = 'ABCDEFGH';
     const fragment = document.createDocumentFragment();
@@ -128,8 +182,78 @@
     title.className = 'page-title';
     title.textContent = 'Army Builder';
     fragment.appendChild(title);
-
     grid.appendChild(fragment);
+
+    function versionFile(version) {
+      return `Np${version}.html`;
+    }
+
+    async function fetchText(path) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+      try {
+        const response = await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`, {
+          cache: 'no-store',
+          credentials: 'omit',
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.text();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function updateToLatest() {
+      const button = document.getElementById('updateButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Checking';
+      try {
+        const index = JSON.parse(await fetchText(INDEX_PATH));
+        const latest = String(index.latest || '').trim();
+        if (!latest) throw new Error('Missing latest version');
+        if (latest === NP_VERSION) {
+          button.textContent = 'Current';
+          setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+          return;
+        }
+
+        const html = await fetchText(versionFile(latest));
+        if (!html.includes(`const NP_VERSION = '${latest}'`)) throw new Error('Version mismatch');
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        window.location.href = url;
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    async function downloadRunningVersion() {
+      const button = document.getElementById('downloadButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Preparing';
+      try {
+        const html = await fetchText(versionFile(NP_VERSION));
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = versionFile(NP_VERSION);
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        button.textContent = 'Downloaded';
+        setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    document.getElementById('updateButton').addEventListener('click', updateToLatest);
+    document.getElementById('downloadButton').addEventListener('click', downloadRunningVersion);
   </script>
 </body>
 </html>
