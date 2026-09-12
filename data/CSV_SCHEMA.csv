@@ -146,3 +146,20 @@ army,Stratagems.csv,6,Long_Description,NO,AUTHORITATIVE,
 army,Stratagems.csv,7,Tags,NO,AUTHORITATIVE,Bracketed canonical Tags assigned to this stratagem.
 army,Stratagems.csv,8,Tag Categories,NO,AUTHORITATIVE,Bracketed category for each Tag; scope lives here rather than in (M)/(R) suffixes.
 army,Stratagems.csv,9,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
+universal,Eligibility_Rules.csv,1,Rule_ID,YES,AUTHORITATIVE,Stable global eligibility rule key.
+universal,Eligibility_Rules.csv,2,Item_Type,YES,AUTHORITATIVE,Target item category; matched generically against item type.
+universal,Eligibility_Rules.csv,3,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required.
+universal,Eligibility_Rules.csv,4,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+universal,Eligibility_Rules.csv,5,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes the item category ineligible.
+army,Detachment_Definitions.csv,14,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
+army,Detachment_Definitions.csv,15,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Detachment_Definitions.csv,16,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
+army,Enhancements.csv,11,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Enhancement.
+army,Enhancements.csv,12,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Enhancements.csv,13,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Enhancement ineligible.
+army,Army_Rules.csv,9,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
+army,Army_Rules.csv,10,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Army_Rules.csv,11,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
+army,Stratagems.csv,10,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Stratagem.
+army,Stratagems.csv,11,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Stratagems.csv,12,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Stratagem ineligible.
