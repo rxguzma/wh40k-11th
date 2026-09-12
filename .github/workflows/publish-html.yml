@@ -23,21 +23,126 @@ jobs:
         with:
           ref: main
 
-      - name: Validate and retain the latest ten HTML versions
-        run: python3 scripts/publish_html.py
-
-      - name: Commit the release index and snapshots
+      - name: Apply queued V31.7 maintenance patch
         shell: bash
         run: |
           set -euo pipefail
-          git add versions
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('WH40k_11th.html')
+          html = path.read_text(encoding='utf-8')
+
+          already_versioned = '<title>WH40k 11th V31.7</title>' in html
+          needs_version = '<title>WH40k 11th V31.6</title>' in html
+          if not already_versioned and not needs_version:
+              raise SystemExit('Expected V31.6 or V31.7 baseline.')
+
+          source_old = '''      (Array.isArray(effects) ? effects : []).forEach(effect => {
+        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
+        const stat = String(effect && effect.stat || "").trim().toUpperCase();
+        const operation = String(effect && effect.operation || "").trim().toUpperCase();
+        const value = String((effect && effect.value) ?? "").trim();'''
+          source_new = '''      (Array.isArray(effects) ? effects : []).forEach(effect => {
+        const sourceType = String(effect && effect.sourceType || "").trim().toUpperCase();
+        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
+        const stat = String(effect && effect.stat || "").trim().toUpperCase();
+        const operation = String(effect && effect.operation || "").trim().toUpperCase();
+        const value = String((effect && effect.value) ?? "").trim();'''
+
+          keyword_old = '''        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
+          const keyword = value.replace(/[.,]+$/, "").toUpperCase();'''
+          keyword_new = '''        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
+          // Tag definitions describe rule behavior; they must never manufacture datasheet Keywords.
+          // Genuine keyword mutations remain supported only through explicit normalized effects.
+          if (sourceType === "TAG_DEFINITION") return;
+          const keyword = value.replace(/[.,]+$/, "").toUpperCase();'''
+
+          if 'if (sourceType === "TAG_DEFINITION") return;' not in html:
+              if html.count(source_old) != 1:
+                  raise SystemExit(f'Expected one effective-profile effect parser, found {html.count(source_old)}.')
+              html = html.replace(source_old, source_new, 1)
+              if html.count(keyword_old) != 1:
+                  raise SystemExit(f'Expected one effective keyword effect block, found {html.count(keyword_old)}.')
+              html = html.replace(keyword_old, keyword_new, 1)
+
+          if needs_version:
+              replacements = {
+                  '<title>WH40k 11th V31.6</title>': '<title>WH40k 11th V31.7</title>',
+                  'The current baseline is WH40k_11th_V31.6;': 'The current baseline is WH40k_11th_V31.7;',
+                  'const APP_VERSION = "31.6";': 'const APP_VERSION = "31.7";',
+                  "version: 'V31.6',": "version: 'V31.7',",
+              }
+              for old, new in replacements.items():
+                  if html.count(old) != 1:
+                      raise SystemExit(f'Expected exactly one version marker: {old!r}; found {html.count(old)}.')
+                  html = html.replace(old, new, 1)
+
+              note = '''  <!--
+    CHANGE NOTE - WH40k_11th_V31.7
+    Scope: Prevent Tag_Definitions-derived Unit Rule tags from mutating effective Unit Keywords. Explicit normalized keyword effects remain supported. This stops FNP, Fight on Death, Lone Operative, and similar rule tags from appearing as datasheet Keywords or affecting keyword eligibility.
+    Risk areas: Effective Unit keyword modifiers and keyword eligibility only. Unit-rule tag display and Probable tag behavior remain unchanged.
+  -->
+
+'''
+              anchor = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.6\n'
+              if html.count(anchor) != 1:
+                  raise SystemExit('Could not find V31.6 change-note anchor.')
+              html = html.replace(anchor, note + anchor, 1)
+
+              html, removed = re.subn(
+                  r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.2\n.*?\n  -->\n',
+                  '\n',
+                  html,
+                  count=1,
+                  flags=re.S,
+              )
+              if removed != 1:
+                  raise SystemExit(f'Expected to retire one V31.2 change note, removed {removed}.')
+
+          if '<title>WH40k 11th V31.7</title>' not in html:
+              raise SystemExit('V31.7 title missing after patch.')
+          if 'const APP_VERSION = "31.7";' not in html:
+              raise SystemExit('V31.7 APP_VERSION missing after patch.')
+          if "version: 'V31.7'," not in html:
+              raise SystemExit('V31.7 InternalQuality version missing after patch.')
+          if html.count('CHANGE NOTE - WH40k_11th_V31.') != 5:
+              raise SystemExit('Expected exactly five detailed V31 change notes after patch.')
+          if 'if (sourceType === "TAG_DEFINITION") return;' not in html:
+              raise SystemExit('Keyword contamination guard missing after patch.')
+
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Validate runtime JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          html = Path('WH40k_11th.html').read_text(encoding='utf-8')
+          match = re.search(r'<script\s+id="wh40k-runtime"\s+type="text/wh40k-runtime">(.*?)</script>', html, re.S)
+          if not match:
+              raise SystemExit('Could not locate wh40k-runtime script.')
+          Path('/tmp/wh40k-runtime.js').write_text(match.group(1), encoding='utf-8')
+          PY
+          node --check /tmp/wh40k-runtime.js
+
+      - name: Validate and retain the latest ten HTML versions
+        run: python3 scripts/publish_html.py
+
+      - name: Commit the app, release index and snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add WH40k_11th.html versions
           if git diff --cached --quiet; then
             echo "Release files already match the canonical HTML."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Publish HTML version history"
+          git commit -m "Publish WH40k 11th V31.7"
           git push origin HEAD:main
-
-# publish V31.3
