@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPREME_KUNNIN","column":"Short_Description","value":"REACTIVE MOVE\\nOnce per phase\u003a\\nEnemy ends move within 8\" and this unit is unengaged\u003a\\n- Move D6\" \\n- RILED UP\u003a Move 5\""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DA_GRAND_WARLORDS_LADZ","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEAST_SNAGGA_FOLLOWING","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOSS_OF_DA_HUNT","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SPEEDNOB_SUPPORT","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPPORT_SHOKKA","column":"Tags","value":"[LONE OP 3\u0022]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
