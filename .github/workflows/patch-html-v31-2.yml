@@ -18,7 +18,7 @@ jobs:
           ref: main
 
       - name: Patch and validate V31.2
-        run: python3 scripts/patch_html_v31_2.py
+        run: python3 scripts/patch_html_v31_2_retry.py
 
       - name: Commit V31.2 canonical HTML
         shell: bash
