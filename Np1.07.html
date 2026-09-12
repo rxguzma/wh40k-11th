@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Np1.07</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    :root {
+      --color-bg-page: #0f1115;
+      --color-border-default: #2c313a;
+      --color-button-bg: #2b313b;
+      --color-button-border: #48515f;
+      --text-primary: #f1f3f4;
+      --text-muted: #9aa0a6;
+      --font-title: 20px;
+      --font-body: 14px;
+      --font-meta: 12px;
+      --grid-cell: 26px;
+      --button-height-standard: 24px;
+      --button-grid-gap: 2px;
+      --button-radius-standard: 6px;
+      --button-height: 40px;
+      --button-radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--color-bg-page);
+      color: var(--text-primary);
+      font-family: Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      overflow-x: hidden;
+    }
+
+    .draft-grid {
+      display: grid;
+      grid-template-columns: repeat(16, var(--grid-cell));
+      grid-auto-rows: var(--grid-cell);
+      width: max-content;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border-default);
+      border-left: 1px solid var(--color-border-default);
+      background: var(--color-bg-page);
+    }
+
+    .grid-cell {
+      position: relative;
+      width: var(--grid-cell);
+      height: var(--grid-cell);
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .col-coordinate,
+    .row-coordinate {
+      position: absolute;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .col-coordinate {
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .row-coordinate {
+      left: 4px;
+      bottom: 4px;
+    }
+
+    .page-title {
+      grid-column: 1 / span 16;
+      grid-row: 3 / span 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+      color: var(--text-primary);
+      font-size: var(--font-title);
+      font-weight: 900;
+      line-height: 1;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .standards-label {
+      grid-column: 2 / span 14;
+      grid-row: 6;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      color: var(--text-primary);
+      pointer-events: none;
+    }
+
+    .button-samples {
+      grid-column: 2 / span 14;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 156px 156px;
+      grid-auto-rows: var(--grid-cell);
+      column-gap: var(--grid-cell);
+      align-items: center;
+      justify-items: center;
+    }
+
+    .button-samples-bold { grid-row: 7 / span 10; }
+    .button-samples-regular { grid-row: 18 / span 10; }
+
+    .button-standard {
+      width: calc(100% - var(--button-grid-gap));
+      height: var(--button-height-standard);
+      padding: 0 10px;
+      border: 1px solid var(--color-button-border);
+      border-radius: var(--button-radius-standard);
+      background: var(--color-button-bg);
+      color: var(--text-primary);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .button-samples-regular .button-standard { font-weight: 400; }
+
+    .view-mode-buttons {
+      grid-column: 2 / span 9;
+      grid-row: 29;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, calc(var(--grid-cell) * 3));
+      align-items: center;
+      justify-items: center;
+    }
+
+    .view-mode-buttons .button-standard,
+    .samples-button {
+      font-family: Roboto, Arial, sans-serif;
+    }
+
+    .samples-button {
+      grid-column: 2 / span 3;
+      grid-row: 30;
+      z-index: 3;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .font-arial { font-family: Arial, sans-serif; }
+    .font-helvetica { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .font-sf { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
+    .font-inter { font-family: Inter, Arial, sans-serif; }
+    .font-roboto { font-family: Roboto, Arial, sans-serif; }
+    .font-open-sans { font-family: "Open Sans", Arial, sans-serif; }
+    .font-montserrat { font-family: Montserrat, Arial, sans-serif; }
+    .font-poppins { font-family: Poppins, Arial, sans-serif; }
+    .font-lato { font-family: Lato, Arial, sans-serif; }
+    .font-nunito { font-family: "Nunito Sans", Arial, sans-serif; }
+
+    .version-bar {
+      width: min(416px, 100%);
+      margin: 8px auto 0;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid var(--color-border-default);
+      background: #171a21;
+    }
+
+    .version-label {
+      min-width: 0;
+      font-size: var(--font-body);
+      font-weight: 900;
+    }
+
+    .version-button {
+      min-width: 72px;
+      height: var(--button-height);
+      padding: 0 10px;
+      border: 1px solid var(--color-button-border);
+      border-radius: var(--button-radius);
+      background: var(--color-button-bg);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .version-button:disabled { opacity: .5; }
+  </style>
+</head>
+<body>
+  <main id="grid" class="draft-grid" aria-label="Layout grid"></main>
+
+  <div class="version-bar" aria-label="Version controls">
+    <div class="version-label">Np1.07</div>
+    <button id="updateButton" class="version-button" type="button">Update</button>
+    <button id="downloadButton" class="version-button" type="button">Download</button>
+  </div>
+
+  <script>
+    const NP_VERSION = '1.07';
+    const RAW_ROOT = 'https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/';
+    const INDEX_PATH = 'np/index.json';
+
+    const grid = document.getElementById('grid');
+    const letters = 'ABCDEFGHIJKLMNOP';
+    const fragment = document.createDocumentFragment();
+
+    for (let row = 1; row <= 60; row += 1) {
+      for (let col = 1; col <= 16; col += 1) {
+        const cell = document.createElement('div');
+        cell.className = 'grid-cell';
+        cell.style.gridColumn = String(col);
+        cell.style.gridRow = String(row);
+
+        if (row === 1) {
+          const letter = document.createElement('span');
+          letter.className = 'col-coordinate';
+          letter.textContent = letters[col - 1];
+          cell.appendChild(letter);
+        }
+
+        if (col === 1) {
+          const number = document.createElement('span');
+          number.className = 'row-coordinate';
+          number.textContent = String(row);
+          cell.appendChild(number);
+        }
+
+        fragment.appendChild(cell);
+      }
+    }
+
+    const title = document.createElement('div');
+    title.className = 'page-title';
+    title.textContent = 'Army Builder';
+    fragment.appendChild(title);
+
+    const standardsLabel = document.createElement('div');
+    standardsLabel.className = 'standards-label';
+    standardsLabel.textContent = 'STANDARDS';
+    fragment.appendChild(standardsLabel);
+
+    const fonts = [
+      ['font-arial', 'Arial'],
+      ['font-helvetica', 'Helvetica Neue'],
+      ['font-sf', 'SF Pro'],
+      ['font-inter', 'Inter'],
+      ['font-roboto', 'Roboto'],
+      ['font-open-sans', 'Open Sans'],
+      ['font-montserrat', 'Montserrat'],
+      ['font-poppins', 'Poppins'],
+      ['font-lato', 'Lato'],
+      ['font-nunito', 'Nunito Sans']
+    ];
+
+    function addFontSamples(groupClass) {
+      const samples = document.createElement('div');
+      samples.className = `button-samples ${groupClass}`;
+
+      fonts.forEach(([className, name]) => {
+        const caps = document.createElement('button');
+        caps.type = 'button';
+        caps.className = `button-standard ${className}`;
+        caps.textContent = name.toUpperCase();
+        samples.appendChild(caps);
+
+        const normal = document.createElement('button');
+        normal.type = 'button';
+        normal.className = `button-standard ${className}`;
+        normal.textContent = name;
+        samples.appendChild(normal);
+      });
+
+      fragment.appendChild(samples);
+    }
+
+    addFontSamples('button-samples-bold');
+    addFontSamples('button-samples-regular');
+
+    const viewModeButtons = document.createElement('div');
+    viewModeButtons.className = 'view-mode-buttons';
+
+    ['View', 'Edit', 'Card'].forEach((label) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'button-standard font-roboto';
+      button.textContent = label;
+      viewModeButtons.appendChild(button);
+    });
+
+    fragment.appendChild(viewModeButtons);
+
+    const samplesButton = document.createElement('button');
+    samplesButton.type = 'button';
+    samplesButton.className = 'button-standard samples-button';
+    samplesButton.textContent = 'Samples';
+    fragment.appendChild(samplesButton);
+
+    grid.appendChild(fragment);
+
+    function versionFile(version) {
+      return `Np${version}.html`;
+    }
+
+    async function fetchText(path) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+      try {
+        const response = await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`, {
+          cache: 'no-store',
+          credentials: 'omit',
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.text();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function updateToLatest() {
+      const button = document.getElementById('updateButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Checking';
+      try {
+        const index = JSON.parse(await fetchText(INDEX_PATH));
+        const latest = String(index.latest || '').trim();
+        if (!latest) throw new Error('Missing latest version');
+        if (latest === NP_VERSION) {
+          button.textContent = 'Current';
+          setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+          return;
+        }
+
+        const html = await fetchText(versionFile(latest));
+        if (!html.includes(`const NP_VERSION = '${latest}'`)) throw new Error('Version mismatch');
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        window.location.href = url;
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    async function downloadRunningVersion() {
+      const button = document.getElementById('downloadButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Preparing';
+      try {
+        const html = await fetchText(versionFile(NP_VERSION));
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = versionFile(NP_VERSION);
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        button.textContent = 'Downloaded';
+        setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    document.getElementById('updateButton').addEventListener('click', updateToLatest);
+    document.getElementById('downloadButton').addEventListener('click', downloadRunningVersion);
+  </script>
+</body>
+</html>
