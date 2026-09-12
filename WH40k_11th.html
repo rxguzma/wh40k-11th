@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.16</title>
+  <title>WH40k 11th V31.17</title>
 
 
   <!--
@@ -22,7 +22,7 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.16; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.17; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +79,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.17
+    Scope: Fix iPhone Waha handoff by performing the Chrome custom-scheme navigation directly from the user's Waha tap instead of mutating the anchor and relying on target=_blank. The original HTTPS URL remains in the markup and only the click action is routed to googlechromes/googlechrome.
+    Risk areas: Unit Waha links only. Non-Wahapedia links and Unit row behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.16
     Scope: Route all Wahapedia links through the Chrome URL scheme so tapping Waha from the local iPhone HTML app hands the page to Chrome. Applies to normal anchors and Wahapedia URLs opened through window.open; all non-Wahapedia links are unchanged.
     Risk areas: External Wahapedia link routing only. iOS may still show its normal confirmation before handing the link to Chrome.
@@ -102,11 +108,6 @@
     Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.12
-    Scope: Increase vertical padding on Unit + panel Enhancement/Stratagem option buttons so multi-line labels fit comfortably inside their boxes.
-    Risk areas: Unit + panel option-button sizing only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
-  -->
 
 
 
@@ -7549,7 +7550,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.16";
+    const APP_VERSION = "31.17";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12264,11 +12265,29 @@
         || "";
     }
 
+    function toChromeWahaUrl(url) {
+      const value = String(url || "");
+      if (/^https:\/\//i.test(value)) return value.replace(/^https:\/\//i, "googlechromes://");
+      if (/^http:\/\//i.test(value)) return value.replace(/^http:\/\//i, "googlechrome://");
+      return value;
+    }
+
+    function openUnitWahaInChrome(event, url) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const chromeUrl = toChromeWahaUrl(url);
+      if (!chromeUrl) return false;
+      window.location.href = chromeUrl;
+      return false;
+    }
+
     function renderUnitWahaLink(unit, options = {}) {
       const url = getUnitWahapediaLink(unit);
       if (!url) return "";
       const buttonClass = options.button ? " unit-waha-button" : "";
-      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Waha</a>`;
+      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" onclick="return openUnitWahaInChrome(event, this.href)">Waha</a>`;
     }
 
 
@@ -28789,7 +28808,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.16',
+        version: 'V31.17',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -29443,35 +29462,5 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 })();
 </script>
   <!-- V31.16 WAHA_CHROME_ROUTER -->
-  <script>
-    (() => {
-      const wahaHttpsPattern = /^https:\/\/(?:www\.)?wahapedia\.ru\//i;
-      const wahaHttpPattern = /^http:\/\/(?:www\.)?wahapedia\.ru\//i;
-
-      function toChromeWahaUrl(value) {
-        const url = String(value || "");
-        if (wahaHttpsPattern.test(url)) return url.replace(/^https:\/\//i, "googlechromes://");
-        if (wahaHttpPattern.test(url)) return url.replace(/^http:\/\//i, "googlechrome://");
-        return url;
-      }
-
-      const nativeWindowOpen = typeof window.open === "function" ? window.open.bind(window) : null;
-      if (nativeWindowOpen) {
-        window.open = function(url, ...args) {
-          const routedUrl = typeof url === "string" ? toChromeWahaUrl(url) : url;
-          return nativeWindowOpen(routedUrl, ...args);
-        };
-      }
-
-      document.addEventListener("click", event => {
-        const target = event.target;
-        const anchor = target && typeof target.closest === "function" ? target.closest("a[href]") : null;
-        if (!anchor) return;
-        const href = anchor.getAttribute("href") || "";
-        const routedHref = toChromeWahaUrl(href);
-        if (routedHref !== href) anchor.setAttribute("href", routedHref);
-      }, true);
-    })();
-  </script>
 </body>
 </html>
