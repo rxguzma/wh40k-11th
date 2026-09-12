@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.22</title>
+  <title>WH40k 11th V31.23</title>
 
 
   <!--
@@ -26,7 +26,9 @@
 
     View-mode scoped Tag invariant: structured Ability-like Tags with canonical Melee or Range scope render under separate Melee and Range subtitles. When an active source Tag defines a reroll for a Weapon scope, the applicable effective Weapon profiles also display that reroll as a derived locked rule; the source Tag remains the only control for enabling or disabling it.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.22; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    View-mode Ability ordering invariant: Ability-table items whose effective order is 8 or 9 do not render at all in View mode. Edit mode continues to render them, including their order controls, so they remain manageable and can be moved back into visible orders 0-7.
+
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.23; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -83,6 +85,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.23
+    Scope: Hide Ability-table items with effective order 8 or 9 from View mode entirely. Edit mode continues to show those items and their order controls so they can still be managed or moved back to orders 0-7.
+    Risk areas: View-mode Ability row visibility only. Ability ordering data, Edit-mode rows, Tag behavior, Weapon profiles, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.22
     Scope: Separate View-mode structured Tags into Melee and Range sections using canonical Tag scope. Active hit/wound reroll Tags are now also promoted into each applicable effective Weapon profile as derived locked Weapon rules, while continuing to drive Probable through the same structured Tag definitions.
     Risk areas: View-mode Ability/Stratagem Tag presentation and derived Weapon ability display. Source Tag activation, canonical Melee/Range filtering, Weapon selection, and Probable lazy initialization remain unchanged.
@@ -106,11 +114,6 @@
     Risk areas: Unit Waha links only. Browser choice now follows the iPhone default browser setting instead of attempting to force Chrome.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.18
-    Scope: Build from V31.17 and remove the green outline from the Unit + Enhancement/Stratagem panel only.
-    Risk areas: Unit + panel border styling only. V31.17 behavior, including Waha Chrome handoff, remains unchanged.
-  -->
 
 
 
@@ -7559,7 +7562,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.22";
+    const APP_VERSION = "31.23";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -23791,7 +23794,10 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const hasEditableAbilities = appEditMode && showEdit && (hasEditableSpreadsheetAbilities || hasUnitEntry);
       const roster = getViewEditRoster();
       const descriptors = buildUnitAbilityRowDescriptors(abilities, entry, roster, editKey, isEditing);
-      const rows = descriptors.map((descriptor, rowIndex) => {
+      const visibleDescriptors = appEditMode
+        ? descriptors
+        : descriptors.filter(descriptor => ![8, 9].includes(Number(descriptor.order)));
+      const rows = visibleDescriptors.map((descriptor, rowIndex) => {
         let rowHtml = descriptor.render(rowIndex);
         if (!rowHtml) return rowHtml;
         if (appEditMode) {
@@ -28846,7 +28852,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.22',
+        version: 'V31.23',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
