@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"","row_id":"BULLY_BOYZ","mode":"replace_text","column":"Any_Keywords","from":"MEGANOBZ","to":"MEGA ARMOUR"},{"file":"data/orks/Stratagems.csv","id_column":"","row_id":"BULLY_BOYZ","mode":"replace_text","column":"Any_Keywords","from":"MEGANOBZ","to":"MEGA ARMOUR"},{"file":"data/orks/Enhancements.csv","id_column":"","row_id":"BULLY_BOYZ","mode":"replace_text","column":"Any_Keywords","from":"MEGANOBZ","to":"MEGA ARMOUR"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"","row_id":"BULLY_BOYZ","mode":"replace_text","column":"Any_Keywords","from":"MEGANOBZ","to":"MEGA ARMOUR"},{"file":"data/orks/Stratagems.csv","id_column":"","row_id":"BULLY_BOYZ","mode":"replace_text","column":"Any_Keywords","from":"MEGANOBZ","to":"MEGA ARMOUR"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
