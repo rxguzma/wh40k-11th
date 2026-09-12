@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.29</title>
+  <title>WH40k 11th V31.30</title>
 
 
   <!--
@@ -31,10 +31,11 @@
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
     Unit-level compact-rule invariant: only Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP are promoted to the Unit-level tag line. The same whitelist applies to direct core Abilities and to structured Tags carried by another Ability. An Ability carrying one of these promoted Tags defaults to order 8 so its source row does not render in View but remains manageable in Edit. All other Unit-affecting Tags remain with their source Ability.
+    Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
     View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.29; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.30; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -91,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.30
+    Scope: Fix promoted Unit-level rule rendering after V31.29. Restore the FNP-specific compact-label helper still used by renderOtherAbilityTags so opening Units with promoted core rules such as Nazdreg's Deep Strike no longer throws a ReferenceError and blanks the Unit detail. The V31.29 whitelist and order-8 behavior are unchanged.
+    Risk areas: Unit-level compact badge rendering only. Promotion whitelist, Ability ordering, scoped Tags, Weapon rules, Probable, and Edit controls remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.29
     Scope: Restrict Unit-level compact rule promotion to Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP. Direct core Abilities and structured Tags from this whitelist render at Unit level; unrelated Unit-affecting Tags stay with their source Ability. Any Ability carrying one of the promoted structured Tags defaults to order 8, keeping its source row out of View while preserving it in Edit.
     Risk areas: Unit-level compact rule placement and default Ability order for the promoted whitelist. Scoped description Tags, Weapon rules, Range/Melee filtering, Probable, and Edit controls remain unchanged.
@@ -114,11 +121,6 @@
     Risk areas: View Ability-table title/tag layout and Range/Melee filter synchronization. Tag activation, Unit-level Tag promotion, derived Weapon rules, Probable, and Edit Tag management remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.25
-    Scope: Promote canonical Unit-level structured Tags from Ability rows to the Unit-level tag line. Tags such as DEEP STRIKE now appear alongside Unit-level rules such as FNP while weapon-scoped Tags such as IGNORES COVER remain under their Melee/Range Ability sections. Unit-level structured badges preserve their original source Tag on/off state.
-    Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
-  -->
 
 
 
@@ -7579,7 +7581,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.29";
+    const APP_VERSION = "31.30";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -23599,6 +23601,17 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         || isPromotedUnitRuleKey(ability.name || ability.abilityName || "");
     }
 
+    function isUnitNameLevelFnpAbility(ability) {
+      if (!ability) return false;
+      const id = normalizePromotedUnitRuleKey(ability.abilityId || ability.id || "");
+      const name = normalizePromotedUnitRuleKey(ability.name || ability.abilityName || "");
+      const isFnpKey = key => key === "FNP"
+        || key.startsWith("FNP_")
+        || key === "FEEL_NO_PAIN"
+        || key.startsWith("FEEL_NO_PAIN_");
+      return isFnpKey(id) || isFnpKey(name);
+    }
+
     function getUnitNameLevelAbilities(unit) {
       return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelAbility(ability));
     }
@@ -28983,7 +28996,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.29',
+        version: 'V31.30',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
