@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.2</title>
+  <title>WH40k 11th V31.3</title>
 
 
   <!--
@@ -22,7 +22,7 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.2; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.3; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +79,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.3
+    Scope: Fix the Unit + add panel. Choice buttons now use compact 12px/meta typography and standard success-green selected state. The + panel now rerenders in both View and Edit, so View opens eligible Stratagems correctly. Eligibility also receives each source's configured faction keyword (ADEPTUS ASTARTES, TYRANIDS, ORKS) without faction-specific branching in the matcher.
+    Risk areas: Unit detail rerendering and keyword eligibility only. Existing Tags/Probable mechanics and unrelated roster behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.2
     Scope: The Unit detail + control is two-thirds of a normal category tab and opens a keyword-matched add panel. Edit shows eligible selected-Detachment Enhancements and reuses the existing max-one paid Enhancement path; View shows eligible selected-Detachment Stratagems with multi-select add/remove. Eligibility uses Required_Keywords, Any_Keywords, and Excluded_Keywords against the Unit effective Keywords, with all keywords treated identically.
     Risk areas: Unit detail rendering, normalized spreadsheet-source metadata, and roster Stratagem/Enhancement state. Existing Tags/Probable mechanics and unrelated Detachment reference/edit surfaces are unchanged.
@@ -101,10 +107,6 @@
     Scope: Nobz Edit uses per-combination counts instead of unit-wide weapon dropdowns. Five option rows start as default xN; + on another option steals from default and - returns those models. View shows only taken weapons as Name xN. Do not introduce kit objects or Weapon_Kits.csv.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V30.7
-    Scope: Add a compact + control at the far right of the Unit detail category row in both View and Edit. The + control is approximately one-third the width of a normal category button and is intentionally inert pending future behavior.
-  -->
 
 
 
@@ -838,6 +840,7 @@
       min-width: 0;
       height: auto;
       padding: 9px 4px;
+      font-size: var(--font-meta);
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: anywhere;
@@ -7502,7 +7505,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.2";
+    const APP_VERSION = "31.3";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -7518,6 +7521,7 @@
     const DATA_SOURCES = {
       Marines: {
         type: "army",
+        factionKeyword: "ADEPTUS ASTARTES",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/marines/Unit_Profiles.csv",
@@ -7540,6 +7544,7 @@
       },
       Nids: {
         type: "army",
+        factionKeyword: "TYRANIDS",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/nids/Unit_Profiles.csv",
@@ -7562,6 +7567,7 @@
       },
       Orks: {
         type: "army",
+        factionKeyword: "ORKS",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/orks/Unit_Profiles.csv",
@@ -16269,6 +16275,9 @@
       if (!item || !entry || !unit) return false;
       const effective = getEffectiveUnitProfile(entry, unit, roster);
       const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
+      const sourceConfig = getDataSourceConfig(activeArmyKey);
+      const factionKeyword = normalizeEligibilityKeyword(sourceConfig && sourceConfig.factionKeyword);
+      if (factionKeyword) unitKeywords.add(factionKeyword);
       const required = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Required_Keywords"));
       const any = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Any_Keywords"));
       const excluded = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Excluded_Keywords"));
@@ -16297,7 +16306,7 @@
           const points = cleanImportedText(item.points ?? "");
           const label = `${item.itemName || itemId || "Enhancement"}${points ? ` · ${points} pts` : ""}`;
           const nextValue = selected ? "" : itemId;
-          return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.updateViewEditRosterEntryEnhancementSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(nextValue)}')">${escapeHtml(label)}</button>`;
+          return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " green" : ""}" onclick="event.stopPropagation(); RosterActions.updateViewEditRosterEntryEnhancementSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(nextValue)}')">${escapeHtml(label)}</button>`;
         }).join("")}</div></div>`;
       }
 
@@ -16310,7 +16319,7 @@
         const selected = selectedKeys.has(itemKey);
         const cp = cleanImportedText(item.cpCost ?? "");
         const label = `${item.itemName || item.itemId || "Stratagem"}${cp ? ` · ${cp}CP` : ""}`;
-        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
+        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " green" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
       }).join("")}</div></div>`;
     }
 
@@ -27127,7 +27136,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         viewEditExpandedUnitRows[entryId] = true;
         const sections = getViewEditEntrySections(entryId);
         sections.add = !sections.add;
-        RosterRender.refreshViewEditEntryExpandedState(entryId);
+        RosterRender.refreshViewEditRosterDom();
       },
       toggleViewEditRosterEntryStratagemSelection(entryId, stratagemKey) {
         if (appEditMode || !entryId || !stratagemKey) return;
@@ -28584,7 +28593,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.2',
+        version: 'V31.3',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
