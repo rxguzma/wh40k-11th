@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.25</title>
+  <title>WH40k 11th V31.26</title>
 
 
   <!--
@@ -32,7 +32,9 @@
 
     Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.25; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render inline beside their Ability-like title, never in separate Melee/Range subtitle rows beneath the description. Canonical Range and Melee scoped title Tags follow the existing global View Range/Melee filter immediately; if a weapon category is hidden, Tags for that category are hidden too. Unit-level Tags remain on the Unit-level tag line.
+
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.26; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -89,6 +91,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.26
+    Scope: Move non-Unit structured Ability-like Tags from description-side Melee/Range sections into the title cell beside the Ability, Enhancement, Detachment Rule, or Stratagem name. Range- and Melee-scoped title Tags now follow the existing View Range/Melee weapon filter immediately, eliminating the extra subtitle/tag rows. Unit-level Tags remain promoted to the Unit-level tag line.
+    Risk areas: View Ability-table title/tag layout and Range/Melee filter synchronization. Tag activation, Unit-level Tag promotion, derived Weapon rules, Probable, and Edit Tag management remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.25
     Scope: Promote canonical Unit-level structured Tags from Ability rows to the Unit-level tag line. Tags such as DEEP STRIKE now appear alongside Unit-level rules such as FNP while weapon-scoped Tags such as IGNORES COVER remain under their Melee/Range Ability sections. Unit-level structured badges preserve their original source Tag on/off state.
     Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
@@ -112,11 +120,6 @@
     Risk areas: View-mode Ability/Stratagem Tag presentation and derived Weapon ability display. Source Tag activation, canonical Melee/Range filtering, Weapon selection, and Probable lazy initialization remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.21
-    Scope: Change View-mode Weapon selection to single-select behavior. Selecting one Weapon automatically mutes every other Weapon in that Unit's Weapon table; tapping the selected Weapon again returns all Weapons to Default. Tapping an auto-muted Weapon switches the selection directly to it. Muted is no longer a manual Weapon carousel state.
-    Risk areas: View-mode Weapon row selection state and Probable selected-Weapon handoff only. Ability row state cycling, Weapon filters, Weapon Tags, and Probable lazy initialization remain unchanged.
-  -->
 
 
 
@@ -642,6 +645,10 @@
     .ability-name-col { width: 43%; }
     .ability-description-col { width: 57%; }
     .ability-name-cell { font-weight: 900; }
+    .ability-title-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; min-width: 0; }
+    .ability-title-inline .ability-primary-name { display: inline; }
+    .ability-title-scoped-tags { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+    .ability-title-scoped-tag { display: inline-flex; align-items: center; }
     .other-abilities-table col.other-ability-label-col { width: 34%; }
     .other-abilities-table col.other-ability-names-col { width: 66%; }
     .other-ability-label-cell { font-size: 15px; font-weight: 900; line-height: 1.2; vertical-align: top; }
@@ -7568,7 +7575,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.25";
+    const APP_VERSION = "31.26";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12853,12 +12860,11 @@
       return label ? `<span class="roster-sent-item-provenance">${escapeHtml(label)}</span>` : "";
     }
 
-    function renderRosterSentItemNameCell(resolved, roster, nameHtml, extraNameClass = "") {
-      const safeNameHtml = String(nameHtml || "");
+    function renderRosterSentItemNameCell(resolved, roster, nameHtml, extraNameClass = "", titleTagsHtml = "") {
       const safeExtraClass = String(extraNameClass || "").trim();
-      const nameClass = `ability-primary-name roster-sent-item-name${safeExtraClass ? ` ${safeExtraClass}` : ""}`;
       const provenance = renderRosterSentItemProvenance(resolved, roster);
-      return `<td class="ability-name-cell roster-sent-item-name-cell"><span class="${escapeAttr(nameClass)}">${safeNameHtml}</span>${provenance}</td>`;
+      const titleHtml = renderAbilityTitleNameHtml(nameHtml, titleTagsHtml, `roster-sent-item-name${safeExtraClass ? ` ${safeExtraClass}` : ""}`);
+      return `<td class="ability-name-cell roster-sent-item-name-cell">${titleHtml}${provenance}</td>`;
     }
 
     function renderRosterSentAbilityDisplayRow(resolved, roster = null, rowIndex = 0, entry = null) {
@@ -12869,7 +12875,7 @@
       const itemKey = getAbilityItemEditKey(ability);
       const rowClass = rowIndex % 2 ? "alt" : "";
       const nameHtml = renderSpreadsheetOverrideValue(safeRoster, itemKey, "name", escapeHtml(ability.name));
-      const nameCell = renderRosterSentItemNameCell(resolved, safeRoster, nameHtml);
+      const nameCell = renderRosterSentItemNameCell(resolved, safeRoster, nameHtml, "", renderAbilityLikeTitleScopedTags("ability", ability, entry, getRosterTaggedSourceDefaultActive("ability", ability)));
       const descriptionCell = renderAbilityDescriptionCell(ability, itemKey, safeRoster, entry, { defaultTagsOn: getRosterTaggedSourceDefaultActive("ability", ability) });
       return `<tr class="${escapeAttr(rowClass)}">${nameCell}${descriptionCell}</tr>`;
     }
@@ -20626,6 +20632,10 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         const kind = String(row.dataset.viewRosterWeaponKind || "").trim().toLowerCase();
         row.classList.toggle("hidden", !isViewRosterWeaponKindVisible(kind));
       });
+      document.querySelectorAll("[data-view-ability-tag-scope]").forEach(node => {
+        const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
+        node.hidden = (scope === "range" || scope === "melee") && !isViewRosterWeaponKindVisible(scope);
+      });
     }
 
     function toggleViewRosterWeaponFilter(filterKey) {
@@ -21148,6 +21158,57 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function getAbilityProtectedModifierTags(ability) {
       return getAbilityProtectedModifierTagAssignments(ability).map(assignment => assignment.tag);
+    }
+
+    function getAbilityLikeTagSourceKey(sourceKind, sourceItem) {
+      const kind = String(sourceKind || "ability").trim().toLowerCase() || "ability";
+      if (!sourceItem) return "";
+      if (kind === "enhancement") return getDetachmentEnhancementItemEditKey(sourceItem);
+      if (kind === "detachment-rule") return getDetachmentRuleItemEditKey(sourceItem);
+      if (kind === "stratagem") return getDetachmentStratagemItemEditKey(sourceItem);
+      return getAbilityItemEditKey(getAbilitySourceItem(sourceItem) || sourceItem);
+    }
+
+    function renderAbilityTitleScopedTags(ability, tagContext = null) {
+      if (!ability || appEditMode) return "";
+      return getAbilityProtectedModifierTagAssignments(ability).map(assignment => {
+        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        if (isUnitLevelTagDefinition(definition)) return "";
+        const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
+        const visible = scope === "melee" || scope === "range"
+          ? isViewRosterWeaponKindVisible(scope)
+          : true;
+        const badge = renderProtectedAbilityTagBadge(
+          assignment.tag,
+          tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
+        );
+        if (!badge) return "";
+        return `<span class="ability-title-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
+      }).filter(Boolean).join("");
+    }
+
+    function renderAbilityLikeTitleScopedTags(sourceKind, sourceItem, entry, defaultOn = false) {
+      if (!sourceItem) return "";
+      const kind = String(sourceKind || "ability").trim().toLowerCase() || "ability";
+      const ability = kind === "ability"
+        ? sourceItem
+        : (entry ? getRosterTaggedSourceAbility(kind, sourceItem, entry) : null);
+      if (!ability) return "";
+      return renderAbilityTitleScopedTags(ability, {
+        entry,
+        defaultOn: defaultOn !== false,
+        sourceKind: kind,
+        sourceKey: getAbilityLikeTagSourceKey(kind, sourceItem)
+      });
+    }
+
+    function renderAbilityTitleNameHtml(nameHtml, titleTagsHtml = "", extraNameClass = "") {
+      const safeNameHtml = String(nameHtml || "");
+      const safeExtraClass = String(extraNameClass || "").trim();
+      const nameClass = `ability-primary-name${safeExtraClass ? ` ${safeExtraClass}` : ""}`;
+      const tags = String(titleTagsHtml || "");
+      if (!tags) return `<span class="${escapeAttr(nameClass)}">${safeNameHtml}</span>`;
+      return `<span class="ability-title-inline"><span class="${escapeAttr(nameClass)}">${safeNameHtml}</span><span class="ability-title-scoped-tags">${tags}</span></span>`;
     }
 
     // RosterRender ownership - V27.49: View-mode Unit panels are DOM-owned rather
@@ -21685,38 +21746,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderAbilityShortDescriptionWithProtectedTags(ability, value, editable = false, tagContext = null) {
       const safeText = escapeHtml(String(value || ""));
-      const rendered = editable
+      return editable
         ? `<span class="ability-inline-editable-text" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${safeText}</span>`
         : safeText;
-
-      if (editable) return rendered;
-
-      const grouped = { melee: [], range: [], other: [] };
-      getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
-        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-        if (isUnitLevelTagDefinition(definition)) return;
-        const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
-        const badge = renderProtectedAbilityTagBadge(
-          assignment.tag,
-          tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
-        );
-        if (scope === "melee") grouped.melee.push(badge);
-        else if (scope === "range") grouped.range.push(badge);
-        else grouped.other.push(badge);
-      });
-
-      const scopedSection = (label, badges) => badges.length
-        ? `<div class="ability-tag-scope-section"><div class="ability-primary-name ability-tag-scope-title">${escapeHtml(label)}</div><div class="ability-tag-scope-badges">${badges.join(" ")}</div></div>`
-        : "";
-      const appendedTags = [
-        scopedSection("Melee", grouped.melee),
-        scopedSection("Range", grouped.range),
-        grouped.other.length ? `<div class="ability-tag-scope-badges">${grouped.other.join(" ")}</div>` : ""
-      ].join("");
-
-      return appendedTags
-        ? `${rendered}${rendered ? `<div class="ability-appended-tags">${appendedTags}</div>` : appendedTags}`
-        : rendered;
     }
 
     function renderAbilityDescriptionText(ability, value, mode, roster, itemKey, fieldName, tagContext = null) {
@@ -22507,7 +22539,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         : `<div class="unit-ability-enhancement-description enhancement-detail-description" data-mode="short" data-short="${escapeAttr(shortValue)}" data-long="${escapeAttr(longValue)}" onclick="event.stopPropagation(); UI.toggleDescriptionCell(this)">${escapeHtml(displayValue)}</div>`;
       return `
         <tr class="${rowIndex % 2 ? "alt " : ""}unit-ability-enhancement-display-row" data-unit-ability-enhancement-entry-id="${escapeAttr(entry.entryId)}">
-          <td class="ability-name-cell"><span class="ability-primary-name enhancement-detail-name">${nameHtml}</span></td>
+          <td class="ability-name-cell">${renderAbilityTitleNameHtml(nameHtml, item ? renderAbilityLikeTitleScopedTags("enhancement", item, entry, getRosterTaggedSourceDefaultActive("enhancement", item)) : "", "enhancement-detail-name")}</td>
           <td class="ability-description-cell">${descriptionHtml}</td>
         </tr>
       `;
@@ -23024,7 +23056,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         const selectedName = `${selectedItem.itemName || selectedItem.itemId || "Stratagem"}${cp ? ` (${cp}CP)` : ""}`;
         return `
           <tr class="${(rowOffset + index) % 2 ? "alt " : ""}unit-ability-stratagem-display-row" data-unit-ability-stratagem-entry-id="${escapeAttr(entry.entryId)}" data-ability-stratagem-index="${index}">
-            <td class="ability-name-cell"><span class="ability-primary-name">${escapeHtml(selectedName)}</span></td>
+            <td class="ability-name-cell">${renderAbilityTitleNameHtml(escapeHtml(selectedName), renderAbilityLikeTitleScopedTags("stratagem", selectedItem, entry, getRosterTaggedSourceDefaultActive("stratagem", selectedItem)))}</td>
             <td class="ability-description-cell">${renderUnitAbilityStratagemDescription(selectedItem, roster, "", "", entry, getRosterTaggedSourceDefaultActive("stratagem", selectedItem))}</td>
           </tr>
         `;
@@ -23151,7 +23183,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const rowClass = rowIndex % 2 ? "alt" : "";
       return `
         <tr class="${escapeAttr(rowClass)}">
-          <td class="ability-name-cell"><span class="ability-primary-name">${renderSpreadsheetOverrideValue(safeRoster, itemKey, "name", escapeHtml(ability.name))}</span></td>
+          <td class="ability-name-cell">${renderAbilityTitleNameHtml(renderSpreadsheetOverrideValue(safeRoster, itemKey, "name", escapeHtml(ability.name)), renderAbilityLikeTitleScopedTags("ability", ability, entry, defaultTagsOn))}</td>
           ${renderAbilityDescriptionCell(ability, itemKey, safeRoster, entry, { defaultTagsOn })}
         </tr>
       `;
@@ -23650,7 +23682,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const nameHtml = renderDetachmentRuleReferenceName(item, roster);
       return `
         <tr class="${rowIndex % 2 ? "alt " : ""}unit-ability-detachment-rule-row" data-unit-ability-detachment-rule-entry-id="${escapeAttr(entry.entryId)}" data-ability-detachment-rule-index="${ruleIndex}" data-unit-ability-detachment-rule-key="${escapeAttr(itemKey)}">
-          <td class="ability-name-cell"><span class="ability-primary-name">${nameHtml}</span></td>
+          <td class="ability-name-cell">${renderAbilityTitleNameHtml(nameHtml, renderAbilityLikeTitleScopedTags("detachment-rule", item, entry, getRosterTaggedSourceDefaultActive("detachment-rule", item)))}</td>
           <td class="ability-description-cell">${renderUnitAbilityDetachmentRuleDescription(item, roster, "", "", entry, getRosterTaggedSourceDefaultActive("detachment-rule", item))}</td>
         </tr>
       `;
@@ -23769,19 +23801,19 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       }
       if (resolved.kind === "enhancement") {
         const item = resolved.item;
-        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderEnhancementReferenceName(item, roster), "enhancement-detail-name");
+        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderEnhancementReferenceName(item, roster), "enhancement-detail-name", renderAbilityLikeTitleScopedTags("enhancement", item, entry, getRosterTaggedSourceDefaultActive("enhancement", item)));
         const descriptionCell = `<td class="ability-description-cell">${renderUnitAbilityEnhancementDescription(item, roster, "", "", entry, getRosterTaggedSourceDefaultActive("enhancement", item))}</td>`;
         return `<tr class="${rowClass}unit-ability-enhancement-display-row">${nameCell}${descriptionCell}</tr>`;
       }
       if (resolved.kind === "detachment-rule") {
         const item = resolved.item;
-        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderDetachmentRuleReferenceName(item, roster));
+        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderDetachmentRuleReferenceName(item, roster), "", renderAbilityLikeTitleScopedTags("detachment-rule", item, entry, getRosterTaggedSourceDefaultActive("detachment-rule", item)));
         const descriptionCell = `<td class="ability-description-cell">${renderUnitAbilityDetachmentRuleDescription(item, roster, "", "", entry, getRosterTaggedSourceDefaultActive("detachment-rule", item))}</td>`;
         return `<tr class="${rowClass}unit-ability-detachment-rule-display-row">${nameCell}${descriptionCell}</tr>`;
       }
       if (resolved.kind === "stratagem") {
         const item = resolved.item;
-        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderDetachmentStratagemReferenceName(item, roster));
+        const nameCell = renderRosterSentItemNameCell(resolved, roster, renderDetachmentStratagemReferenceName(item, roster), "", renderAbilityLikeTitleScopedTags("stratagem", item, entry, getRosterTaggedSourceDefaultActive("stratagem", item)));
         const descriptionCell = `<td class="ability-description-cell">${renderUnitAbilityStratagemDescription(item, roster, "", "", entry, getRosterTaggedSourceDefaultActive("stratagem", item))}</td>`;
         return `<tr class="${rowClass}unit-ability-stratagem-display-row">${nameCell}${descriptionCell}</tr>`;
       }
@@ -28902,7 +28934,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.25',
+        version: 'V31.26',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
