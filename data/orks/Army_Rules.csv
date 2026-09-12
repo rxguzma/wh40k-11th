@@ -1,4 +1,4 @@
-Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Tag Categories,Default_Active
+Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 orks_army_rule_waaagh,Orks,WAAAGH!,"WARLORD: +1 CP
 Always: Re-roll Advances
 
@@ -14,4 +14,4 @@ While a unit is RILED UP:
 - That unit’s ranged attacks have [ASSAULT].
 - When that unit is selected to make an advance move, that advance move does not prevent that unit from being eligible to declare a charge.
 
-War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are RILED UP until the end of the next turn.",[GAIN 1 CP] [RE-ROLL ADVANCE] [5++ Invul] [ASSAULT] [ADVANCE AND CHARGE],[Unit Rules] [Movement Rules] [Unit Rules] [Range - Weapon Rules] [Movement Rules],0
+War Cry (Once per battle, per army): At the start of the Command phase, you can use this ability. If you do, friendly ORKS units with the Waaagh! ability are RILED UP until the end of the next turn.",[GAIN 1 CP] [RE-ROLL ADVANCE] [5++ Invul] [ASSAULT] [ADVANCE AND CHARGE],[Unit Rules] [Movement Rules] [Unit Rules] [Range - Weapon Rules] [Movement Rules],0,,,

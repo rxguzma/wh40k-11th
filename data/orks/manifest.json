@@ -1,21 +1,21 @@
 {
-  "dataset_sha256": "be2414aab1b765ba00340f5b9ae5a69e36504bd1ad07fe7aa0dbcce361216133",
+  "dataset_sha256": "4e68b19490f24c6fe6b9f966d14082949e3297a4c0134df70edba9c71420c3b1",
   "files": {
     "Abilities.csv": {
       "bytes": 71553,
       "sha256": "36799398a291fd2a50f3f88de50a33a6e6e0b5a714af79bce4f908ef58206d45"
     },
     "Army_Rules.csv": {
-      "bytes": 1068,
-      "sha256": "70bf0721ad98df799829bd326be8b351d250db8e436c5c09aae3ada1a3d0ff19"
+      "bytes": 1120,
+      "sha256": "b96bb9d54387cdc919a242fc4ed66fa59b28e07f710dacc9c8b08cc61706831c"
     },
     "Detachment_Definitions.csv": {
-      "bytes": 10236,
-      "sha256": "ae0994a5940eaf432ff6bacddf19258239c655942571d584140ba6b372a480c3"
+      "bytes": 10339,
+      "sha256": "f317c50ab67774e2840332cfc045479fb5a8d6560616cb769c969d1f8bbfc721"
     },
     "Enhancements.csv": {
-      "bytes": 17594,
-      "sha256": "608992d3211b3ec835eb11eebf6e019d1a9a4b06c224783adb80f871212b4d5e"
+      "bytes": 17784,
+      "sha256": "d59840d65f8f62c1b6cfb93cb737726ec55447712dc97f0b9c828ff9ccfc2e8b"
     },
     "Loadout_Abilities.csv": {
       "bytes": 96,
@@ -38,8 +38,8 @@
       "sha256": "10d22a12a7edc91e3a9678231c4e1621b1b971fa95e397fe9eef869d271310f7"
     },
     "Stratagems.csv": {
-      "bytes": 23790,
-      "sha256": "cfa1794e68f1a641a05269cd84546336fdbcba8b937b692672828f095501457d"
+      "bytes": 23995,
+      "sha256": "ae3088ba5c3857255991f40a36edcbea2d42835bc0e017b74e878d3774123f97"
     },
     "Unit_Abilities.csv": {
       "bytes": 8587,
@@ -61,15 +61,11 @@
       "bytes": 21122,
       "sha256": "b57af2c7c01c3052edb41b65c82678ef59e72f5bf206a696d70a6a0e76c5cd53"
     },
-    "Weapon_Quantities.csv": {
-      "bytes": 357,
-      "sha256": "f83297b6d18586d64d44d13d4e4a589bcd022c3696515fb86131d55906bc55b6"
-    },
     "Weapon_Stats.csv": {
       "bytes": 12573,
       "sha256": "24e58d99ee9b5f924b76aa48a369c6073d5ff17f74b4687ab2f7260d461bbc7a"
     }
   },
-  "schema_sha256": "72fab0db096a97a789c347c621d24066a2a5819de76165ae20545065e5e79be9",
+  "schema_sha256": "486a09db1416ac90d17146142df84099306b97d8e4ff651718e64b7f56c83c25",
   "schema_version": 1
 }
