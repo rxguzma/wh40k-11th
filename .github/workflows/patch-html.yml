@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.30 with promoted Unit badge runtime fix
-        run: python3 scripts/patch_html_v31_30.py
+      - name: Build V31.31 with Range Melee scoped Ability behavior
+        run: python3 scripts/patch_html_v31_31.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.30 promoted Unit badge runtime fix"
+          git commit -m "Build V31.31 Range Melee scoped Ability behavior"
           git push origin HEAD:main
