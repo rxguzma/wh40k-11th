@@ -40,3 +40,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Build V31.28 description-side scoped Ability Tags"
           git push origin HEAD:main
+
+# Retry after validation-check correction.
