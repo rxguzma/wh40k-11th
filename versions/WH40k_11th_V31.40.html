@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.30</title>
+  <title>WH40k 11th V31.40</title>
 
 
   <!--
@@ -30,12 +30,12 @@
 
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
-    Unit-level compact-rule invariant: only Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP are promoted to the Unit-level tag line. The same whitelist applies to direct core Abilities and to structured Tags carried by another Ability. An Ability carrying one of these promoted Tags defaults to order 8 so its source row does not render in View but remains manageable in Edit. All other Unit-affecting Tags remain with their source Ability.
+    Unit-level compact-rule invariant: only the approved structured Tags render on the Unit-level tag line: DEEP_STRIKE; LONE_OPERATIVE; LONE_OPERATIVE_3; FIGHTS_FIRST; STEALTH; INFILTRATORS; SCOUT_6 / SCOUTS_6; FIGHT_ON_DEATH and its explicit variants; and FNP / FEEL_NO_PAIN variants. Invulnerable Save is never promoted to this line. The Unit-level line renders from structured Tag assignments only; do not separately render a direct core Ability label for the same rule. An Ability carrying an approved Unit-level Tag defaults to order 8 so its source row does not render in View but remains manageable in Edit. All non-approved Tags remain with their source Ability.
     Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
-    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
+    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.30; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.40; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,34 +92,42 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.30
-    Scope: Fix promoted Unit-level rule rendering after V31.29. Restore the FNP-specific compact-label helper still used by renderOtherAbilityTags so opening Units with promoted core rules such as Nazdreg's Deep Strike no longer throws a ReferenceError and blanks the Unit detail. The V31.29 whitelist and order-8 behavior are unchanged.
-    Risk areas: Unit-level compact badge rendering only. Promotion whitelist, Ability ordering, scoped Tags, Weapon rules, Probable, and Edit controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.40
+    Scope: Add the approved New Page control beneath View/Edit and a phone-first drafting-grid screen. The grid fills the phone width with eight equal columns, visible A-H column labels and numbered rows, and begins with only the Army Builder title. Existing app typography, semantic colors, and button styling are reused.
+    Risk areas: title control layout and new-page navigation only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.29
-    Scope: Restrict Unit-level compact rule promotion to Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP. Direct core Abilities and structured Tags from this whitelist render at Unit level; unrelated Unit-affecting Tags stay with their source Ability. Any Ability carrying one of the promoted structured Tags defaults to order 8, keeping its source row out of View while preserving it in Edit.
-    Risk areas: Unit-level compact rule placement and default Ability order for the promoted whitelist. Scoped description Tags, Weapon rules, Range/Melee filtering, Probable, and Edit controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.39
+    Scope: Remove the Unit label from the View roster header and let Range | Melee | Other | All use the full first-column width. Preserve the V31.38 equal-width 2.5px-gap layout, 24px control height, shared View/Edit header height, filter behavior, and all stat-column geometry.
+    Risk areas: View roster header label/available filter width only.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.28
-    Scope: Move scoped structured Tags out of the Ability-like title cell and back into the description cell. Tags appear directly with the description text with no Melee/Range subtitles, while the existing top Range/Melee controls continue to drive scoped Tag visibility. This restores normal Ability-name width and prevents tags from squeezing long names.
-    Risk areas: View Ability-like description/tag presentation only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.38
+    Scope: Return to the V31.35 roster-filter visual baseline, then make Range | Melee | Other | All equal-width by sharing the remaining Unit-header space responsively. Adjacent spacing is 2.5px, exactly half the existing 5px shell-control gap. Filter controls remain 24px high and the View header is locked to the same row-height formula as Edit on desktop and phone layouts.
+    Risk areas: View roster filter layout and View header geometry only. Filter behavior, colors, labels, roster data, and Edit mode are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.27
-    Scope: Keep scoped Ability-like Tags in the same title row as the Ability name instead of allowing the Tag group to wrap underneath. Preserve the compact V31.26 presentation with no Melee/Range subtitles; the existing top Range/Melee controls remain the only scope labels and continue to drive scoped Tag visibility.
-    Risk areas: View Ability-table title/tag layout only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.35
+    Scope: Make the Unit-level compact-rule line explicit and approval-driven. Only Deep Strike, Lone Op, Lone Op 3", Fights First, Stealth, Infiltrators, Scout 6", Fight on Death variants, and FNP variants can render there. Invulnerable Save is excluded. Unit-level rules now render through the structured Tag path only, so the core Ability label is not separately rendered as a second copy.
+    Risk areas: Unit-level compact rule/tag placement only. Weapon/Ability filters, scoped Tags, Probable, Edit controls, and roster data are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.26
-    Scope: Move non-Unit structured Ability-like Tags from description-side Melee/Range sections into the title cell beside the Ability, Enhancement, Detachment Rule, or Stratagem name. Range- and Melee-scoped title Tags now follow the existing View Range/Melee weapon filter immediately, eliminating the extra subtitle/tag rows. Unit-level Tags remain promoted to the Unit-level tag line.
-    Risk areas: View Ability-table title/tag layout and Range/Melee filter synchronization. Tag activation, Unit-level Tag promotion, derived Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.34
+    Scope: Reduce the horizontal footprint of Range | Melee | Other | All so the four controls remain inside the Unit header on phone layouts. Buttons are content-sized, cannot flex/grid-stretch, and use 4px horizontal padding. Height, filtering behavior, colors, and labels are unchanged.
+    Risk areas: View roster filter-button sizing only.
   -->
+
+
+
+
+
+
+
+
 
 
 
@@ -5096,7 +5104,166 @@
       border: 0;
     }
 
-  </style>
+  
+    /* V31.33: compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      min-width: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    /* V31.34: truly compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: max-content !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      justify-self: start !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+      white-space: nowrap !important;
+    }
+
+    /* V31.38: responsive equal-width roster filters; View height matches Edit. */
+    .view-roster-head {
+      height: calc(var(--edit-header-button-height) + 20px) !important;
+      min-height: calc(var(--edit-header-button-height) + 20px) !important;
+      max-height: calc(var(--edit-header-button-height) + 20px) !important;
+    }
+
+    .view-roster-head .roster-view-head-title {
+      display: flex !important;
+      align-items: center !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      gap: 2.5px !important;
+      margin-left: 0 !important;
+    }
+
+    .view-roster-weapon-filter-button {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      height: var(--edit-header-button-height) !important;
+      min-height: var(--edit-header-button-height) !important;
+      max-height: var(--edit-header-button-height) !important;
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+      margin: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 430px) {
+      .view-roster-head {
+        height: calc(var(--edit-header-button-height) + 18px) !important;
+        min-height: calc(var(--edit-header-button-height) + 18px) !important;
+        max-height: calc(var(--edit-header-button-height) + 18px) !important;
+      }
+    }
+
+    /* V31.39: filters own the full first View-header column. */
+    .view-roster-head .roster-view-head-title {
+      gap: 0 !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+
+    /* V31.40: phone-first drafting grid for the approved New Page surface. */
+    :root {
+      --new-page-grid-label-width: 26px;
+      --new-page-grid-label-height: 24px;
+      --new-page-grid-cell: calc((100vw - var(--new-page-grid-label-width)) / 8);
+    }
+
+    .app-mode-button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, var(--btn-width-mini));
+      gap: var(--view-edit-multi-select-gap);
+      align-items: center;
+    }
+
+    .new-page-mode-toggle {
+      grid-column: 1 / span 2;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+    }
+
+    .new-page-screen {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow-x: hidden;
+      background: var(--color-bg-page);
+    }
+
+    .new-page-draft-grid {
+      display: grid;
+      grid-template-columns: var(--new-page-grid-label-width) repeat(8, var(--new-page-grid-cell));
+      grid-template-rows: var(--new-page-grid-label-height) repeat(20, var(--new-page-grid-cell));
+      width: 100vw;
+      background: var(--color-bg-page);
+      color: var(--text-body);
+    }
+
+    .new-page-grid-col-label,
+    .new-page-grid-row-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .new-page-grid-col-label,
+    .new-page-grid-row-label,
+    .new-page-grid-cell {
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .new-page-grid-cell {
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .new-page-grid-title {
+      grid-column: 2 / span 8;
+      grid-row: 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 0 var(--shell-control-gap);
+      color: var(--text-primary);
+      font-size: var(--font-title);
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 430px) {
+      .app-mode-button-grid {
+        grid-template-columns: repeat(3, var(--btn-width-mini-mobile));
+      }
+    }
+</style>
 </head>
 <body>
   <div class="app-sticky-header">
@@ -5107,13 +5274,210 @@
       <div id="appTitleDispositionPoints" class="title-detachment-name"></div>
     </div>
     <div class="title-right-actions">
-      <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
-      <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
-      <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+      <div class="app-mode-button-grid">
+        <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
+        <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
+        <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+        <button id="newPageModeToggle" class="secondary app-mode-button new-page-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('newpage')">New Page</button>
+      </div>
       <span id="appTitlePoints" class="title-points"></span>
     </div>
   </div>
   <div id="titleRosterMenu" class="title-roster-menu"></div>
+  </div>
+
+  <div id="newPageScreen" class="screen new-page-screen" aria-label="New page">
+    <div class="new-page-draft-grid" aria-label="Layout grid">
+      <div class="new-page-grid-col-label" style="grid-column:2;grid-row:1">A</div>
+      <div class="new-page-grid-col-label" style="grid-column:3;grid-row:1">B</div>
+      <div class="new-page-grid-col-label" style="grid-column:4;grid-row:1">C</div>
+      <div class="new-page-grid-col-label" style="grid-column:5;grid-row:1">D</div>
+      <div class="new-page-grid-col-label" style="grid-column:6;grid-row:1">E</div>
+      <div class="new-page-grid-col-label" style="grid-column:7;grid-row:1">F</div>
+      <div class="new-page-grid-col-label" style="grid-column:8;grid-row:1">G</div>
+      <div class="new-page-grid-col-label" style="grid-column:9;grid-row:1">H</div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:2">1</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:2"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:3">2</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:3"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:4">3</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:4"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:5">4</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:5"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:6">5</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:6"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:7">6</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:7"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:8">7</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:8"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:9">8</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:9"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:10">9</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:10"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:11">10</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:11"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:12">11</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:12"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:13">12</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:13"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:14">13</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:14"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:15">14</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:15"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:16">15</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:16"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:17">16</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:17"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:18">17</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:18"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:19">18</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:19"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:20">19</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:20"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:21">20</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:21"></div>
+      <div class="new-page-grid-title">Army Builder</div>
+    </div>
   </div>
 
   <div id="rosterScreen" class="screen active">
@@ -7581,7 +7945,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.30";
+    const APP_VERSION = "31.40";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -7877,7 +8241,7 @@
     const transientUiClassTimers = new WeakMap();
     const viewEditAddUnitButtonFeedbackTimers = new WeakMap();
     const viewEditSaveButtonFeedbackTimers = new WeakMap();
-    let viewRosterWeaponFilters = { range: true, melee: true };
+    let viewRosterWeaponFilters = { range: false, melee: false, other: false };
     let viewProbableSelectedWeaponByEntry = Object.create(null);
 
     // RosterActions ownership - V11.0: session-wide Edit roster movement lock.
@@ -11706,7 +12070,7 @@
       try {
         appEditMode = targetEditMode;
         if (targetEditMode) viewEditRosterDraft = roster;
-        else viewRosterWeaponFilters = { range: true, melee: true };
+        else viewRosterWeaponFilters = { range: false, melee: false, other: false };
         rosterRenderPassContext = { roster, models: null };
 
         const template = document.createElement("template");
@@ -11869,10 +12233,64 @@
       setEditMode(name === "editor");
     }
 
+
+    function showNewPageScreen() {
+      if (activeAppScreen === "cards") showArmyScreen({ commitCardsState: true });
+      closeTitleRosterMenu();
+
+      const rosterScreen = document.getElementById("rosterScreen");
+      const cardsScreen = document.getElementById("cardsScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      if (!newPageScreen) return;
+
+      if (rosterScreen) rosterScreen.classList.remove("active");
+      if (cardsScreen) cardsScreen.classList.remove("active");
+      newPageScreen.classList.add("active");
+      activeAppScreen = "newpage";
+
+      const newPageButton = document.getElementById("newPageModeToggle");
+      const viewButton = document.getElementById("viewModeToggle");
+      const editButton = document.getElementById("editModeToggle");
+      const cardsButton = document.getElementById("cardsModeToggle");
+      [viewButton, editButton, cardsButton].forEach(button => {
+        if (!button) return;
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      });
+      if (newPageButton) {
+        newPageButton.classList.add("active");
+        newPageButton.setAttribute("aria-pressed", "true");
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+
+    function hideNewPageScreen() {
+      const rosterScreen = document.getElementById("rosterScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      const newPageButton = document.getElementById("newPageModeToggle");
+
+      if (newPageScreen) newPageScreen.classList.remove("active");
+      if (rosterScreen) rosterScreen.classList.add("active");
+      activeAppScreen = "army";
+
+      if (newPageButton) {
+        newPageButton.classList.remove("active");
+        newPageButton.setAttribute("aria-pressed", "false");
+      }
+      updateEditModeToggle();
+    }
+
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
+
+      if (target === "newpage") {
+        showNewPageScreen();
+        return;
+      }
+
+      if (activeAppScreen === "newpage") hideNewPageScreen();
 
       if (target === "cards") {
         if (activeAppScreen !== "cards") showCardsScreen();
@@ -20604,18 +21022,22 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function resetViewRosterWeaponFilters() {
-      viewRosterWeaponFilters = { range: true, melee: true };
+      viewRosterWeaponFilters = { range: false, melee: false, other: false };
       resetViewRosterWeaponRowStates();
     }
 
+    function getViewRosterWeaponFilterKey() {
+      if (viewRosterWeaponFilters.range === true) return "range";
+      if (viewRosterWeaponFilters.melee === true) return "melee";
+      if (viewRosterWeaponFilters.other === true) return "other";
+      return "all";
+    }
+
     function syncViewRosterWeaponFilterButtons() {
+      const selectedKey = getViewRosterWeaponFilterKey();
       document.querySelectorAll("[data-view-roster-weapon-filter]").forEach(button => {
         const key = String(button.dataset.viewRosterWeaponFilter || "").trim().toLowerCase();
-        const active = key === "range"
-          ? viewRosterWeaponFilters.range !== false
-          : key === "melee"
-            ? viewRosterWeaponFilters.melee !== false
-            : false;
+        const active = key === selectedKey;
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", active ? "true" : "false");
       });
@@ -20627,45 +21049,58 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function isViewRosterWeaponKindVisible(kind) {
-      if (kind === "range") return viewRosterWeaponFilters.range !== false;
-      if (kind === "melee") return viewRosterWeaponFilters.melee !== false;
-      return true;
+      const selectedKey = getViewRosterWeaponFilterKey();
+      const cleanKind = String(kind || "").trim().toLowerCase();
+      if (selectedKey === "all") return true;
+      if (selectedKey === "range" || selectedKey === "melee") return cleanKind === selectedKey;
+      return cleanKind !== "range" && cleanKind !== "melee";
     }
 
     function syncViewRosterWeaponRows() {
       if (appEditMode) return;
+      const selectedKey = getViewRosterWeaponFilterKey();
+
       document.querySelectorAll("[data-view-roster-weapon-kind]").forEach(row => {
         const kind = String(row.dataset.viewRosterWeaponKind || "").trim().toLowerCase();
         row.classList.toggle("hidden", !isViewRosterWeaponKindVisible(kind));
       });
-      document.querySelectorAll("[data-view-ability-tag-scope]").forEach(node => {
-        const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
-        node.hidden = (scope === "range" || scope === "melee") && !isViewRosterWeaponKindVisible(scope);
+
+      document.querySelectorAll("[data-view-roster-ability-state]").forEach(row => {
+        const scopedTagNodes = Array.from(row.querySelectorAll("[data-view-ability-tag-scope]"));
+        const scopes = new Set(
+          scopedTagNodes
+            .map(node => String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase())
+            .filter(scope => scope === "range" || scope === "melee")
+        );
+
+        let visible = true;
+        if (selectedKey === "range" || selectedKey === "melee") {
+          visible = scopes.has(selectedKey);
+        } else if (selectedKey === "other") {
+          visible = scopes.size === 0;
+        }
+
+        row.classList.remove("view-ability-scope-muted");
+        row.classList.toggle("hidden", !visible);
+
+        scopedTagNodes.forEach(node => {
+          const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
+          const hideTag = selectedKey !== "all"
+            && (scope === "range" || scope === "melee")
+            && scope !== selectedKey;
+          node.classList.toggle("hidden", hideTag);
+        });
       });
     }
 
     function toggleViewRosterWeaponFilter(filterKey) {
       const key = String(filterKey || "").trim().toLowerCase();
-      if (key !== "range" && key !== "melee") return;
+      if (!["range", "melee", "other", "all"].includes(key)) return;
 
-      const otherKey = key === "range" ? "melee" : "range";
-      const isCurrentlyActive = viewRosterWeaponFilters[key] !== false;
-      const isOtherActive = viewRosterWeaponFilters[otherKey] !== false;
-
-      // Both active: tapping one turns only that category off. Weapon row states are preserved while hidden.
-      if (isCurrentlyActive && isOtherActive) {
-        viewRosterWeaponFilters[key] = false;
-      // Sole active category: keep it on so at least one remains active.
-      } else if (isCurrentlyActive) {
-        return;
-      // One active + tapped inactive: switch directly to the tapped category without resetting either category's weapon states.
-      } else if (isOtherActive) {
-        viewRosterWeaponFilters[otherKey] = false;
-        viewRosterWeaponFilters[key] = true;
-      } else {
-        // Defensive recovery: an impossible all-off state restores the tapped category.
-        viewRosterWeaponFilters[key] = true;
-      }
+      viewRosterWeaponFilters.range = false;
+      viewRosterWeaponFilters.melee = false;
+      viewRosterWeaponFilters.other = false;
+      if (key !== "all") viewRosterWeaponFilters[key] = true;
 
       syncViewRosterWeaponFilterButtons();
       syncViewRosterWeaponRows();
@@ -20673,15 +21108,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderViewRosterWeaponFilterButton(filterKey, label) {
       const key = String(filterKey || "").trim().toLowerCase();
-      const active = key === "range"
-        ? viewRosterWeaponFilters.range !== false
-        : viewRosterWeaponFilters.melee !== false;
+      const active = key === getViewRosterWeaponFilterKey();
       return `<button type="button" class="view-roster-weapon-filter-button ${active ? "active" : ""}" data-view-roster-weapon-filter="${escapeAttr(key)}" aria-pressed="${active ? "true" : "false"}" onclick="event.stopPropagation(); toggleViewRosterWeaponFilter('${key}')">${escapeHtml(label)}</button>`;
     }
 
     function renderRosterHeaderHtml(roster) {
       if (appEditMode) return renderViewEditRosterHeader(roster);
-      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-head-unit-label">Unit</span><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
+      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
     }
 
     function renderRosterEntryListHtml(roster) {
@@ -21755,7 +22188,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
         );
         if (!badge) return "";
-        return `<span class="ability-description-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
+        return `<span class="ability-description-scoped-tag${visible ? "" : " hidden"}" data-view-ability-tag-scope="${escapeAttr(scope)}">${badge}</span>`;
       }).filter(Boolean).join(" ");
 
       return appendedTags
@@ -23578,6 +24011,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       if (!key) return false;
       return key === "DEEP_STRIKE"
         || key === "LONE_OPERATIVE"
+        || key === "LONE_OPERATIVE_3"
         || key === "FIGHTS_FIRST"
         || key === "STEALTH"
         || key === "INFILTRATORS"
@@ -23588,11 +24022,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         || key === "FNP"
         || key.startsWith("FNP_")
         || key === "FEEL_NO_PAIN"
-        || key.startsWith("FEEL_NO_PAIN_")
-        || key === "INVULNERABLE_SAVE"
-        || key.startsWith("INVULNERABLE_SAVE_")
-        || key.endsWith("_INVUL")
-        || key.includes("_INVUL_");
+        || key.startsWith("FEEL_NO_PAIN_");
     }
 
     function isUnitNameLevelAbility(ability) {
@@ -23672,9 +24102,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitOtherAbilityTags(unit, entry = null) {
-      const coreTags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
-      const structuredTags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
-      const tags = [coreTags, structuredTags].filter(Boolean).join("");
+      const tags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
       return tags ? `<div class="unit-other-ability-tags">${tags}</div>` : "";
     }
 
@@ -28996,7 +29424,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.30',
+        version: 'V31.40',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

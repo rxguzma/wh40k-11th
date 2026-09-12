@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.39</title>
+  <title>WH40k 11th V31.40</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.39; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.40; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.40
+    Scope: Add the approved New Page control beneath View/Edit and a phone-first drafting-grid screen. The grid fills the phone width with eight equal columns, visible A-H column labels and numbered rows, and begins with only the Army Builder title. Existing app typography, semantic colors, and button styling are reused.
+    Risk areas: title control layout and new-page navigation only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.39
     Scope: Remove the Unit label from the View roster header and let Range | Melee | Other | All use the full first-column width. Preserve the V31.38 equal-width 2.5px-gap layout, 24px control height, shared View/Edit header height, filter behavior, and all stat-column geometry.
     Risk areas: View roster header label/available filter width only.
@@ -115,11 +121,6 @@
     Risk areas: View roster filter-button sizing only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.33
-    Scope: Make the View roster Range | Melee | Other | All filter buttons compact instead of horizontally stretched. Button height, labels, colors, single-select behavior, and filtering logic are unchanged.
-    Risk areas: View roster filter-button sizing only.
-  -->
 
 
 
@@ -5181,6 +5182,87 @@
       width: 100% !important;
       flex: 1 1 100% !important;
     }
+
+    /* V31.40: phone-first drafting grid for the approved New Page surface. */
+    :root {
+      --new-page-grid-label-width: 26px;
+      --new-page-grid-label-height: 24px;
+      --new-page-grid-cell: calc((100vw - var(--new-page-grid-label-width)) / 8);
+    }
+
+    .app-mode-button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, var(--btn-width-mini));
+      gap: var(--view-edit-multi-select-gap);
+      align-items: center;
+    }
+
+    .new-page-mode-toggle {
+      grid-column: 1 / span 2;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+    }
+
+    .new-page-screen {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow-x: hidden;
+      background: var(--color-bg-page);
+    }
+
+    .new-page-draft-grid {
+      display: grid;
+      grid-template-columns: var(--new-page-grid-label-width) repeat(8, var(--new-page-grid-cell));
+      grid-template-rows: var(--new-page-grid-label-height) repeat(20, var(--new-page-grid-cell));
+      width: 100vw;
+      background: var(--color-bg-page);
+      color: var(--text-body);
+    }
+
+    .new-page-grid-col-label,
+    .new-page-grid-row-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .new-page-grid-col-label,
+    .new-page-grid-row-label,
+    .new-page-grid-cell {
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .new-page-grid-cell {
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .new-page-grid-title {
+      grid-column: 2 / span 8;
+      grid-row: 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 0 var(--shell-control-gap);
+      color: var(--text-primary);
+      font-size: var(--font-title);
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 430px) {
+      .app-mode-button-grid {
+        grid-template-columns: repeat(3, var(--btn-width-mini-mobile));
+      }
+    }
 </style>
 </head>
 <body>
@@ -5192,13 +5274,210 @@
       <div id="appTitleDispositionPoints" class="title-detachment-name"></div>
     </div>
     <div class="title-right-actions">
-      <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
-      <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
-      <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+      <div class="app-mode-button-grid">
+        <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
+        <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
+        <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+        <button id="newPageModeToggle" class="secondary app-mode-button new-page-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('newpage')">New Page</button>
+      </div>
       <span id="appTitlePoints" class="title-points"></span>
     </div>
   </div>
   <div id="titleRosterMenu" class="title-roster-menu"></div>
+  </div>
+
+  <div id="newPageScreen" class="screen new-page-screen" aria-label="New page">
+    <div class="new-page-draft-grid" aria-label="Layout grid">
+      <div class="new-page-grid-col-label" style="grid-column:2;grid-row:1">A</div>
+      <div class="new-page-grid-col-label" style="grid-column:3;grid-row:1">B</div>
+      <div class="new-page-grid-col-label" style="grid-column:4;grid-row:1">C</div>
+      <div class="new-page-grid-col-label" style="grid-column:5;grid-row:1">D</div>
+      <div class="new-page-grid-col-label" style="grid-column:6;grid-row:1">E</div>
+      <div class="new-page-grid-col-label" style="grid-column:7;grid-row:1">F</div>
+      <div class="new-page-grid-col-label" style="grid-column:8;grid-row:1">G</div>
+      <div class="new-page-grid-col-label" style="grid-column:9;grid-row:1">H</div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:2">1</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:2"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:2"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:3">2</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:3"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:3"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:4">3</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:4"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:4"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:5">4</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:5"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:5"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:6">5</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:6"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:6"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:7">6</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:7"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:7"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:8">7</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:8"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:8"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:9">8</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:9"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:9"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:10">9</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:10"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:10"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:11">10</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:11"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:11"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:12">11</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:12"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:12"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:13">12</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:13"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:13"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:14">13</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:14"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:14"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:15">14</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:15"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:15"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:16">15</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:16"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:16"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:17">16</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:17"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:17"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:18">17</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:18"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:18"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:19">18</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:19"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:19"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:20">19</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:20"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:20"></div>
+      <div class="new-page-grid-row-label" style="grid-column:1;grid-row:21">20</div>
+      <div class="new-page-grid-cell" style="grid-column:2;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:3;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:4;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:5;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:6;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:7;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:8;grid-row:21"></div>
+      <div class="new-page-grid-cell" style="grid-column:9;grid-row:21"></div>
+      <div class="new-page-grid-title">Army Builder</div>
+    </div>
   </div>
 
   <div id="rosterScreen" class="screen active">
@@ -7666,7 +7945,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.39";
+    const APP_VERSION = "31.40";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -11954,10 +12233,64 @@
       setEditMode(name === "editor");
     }
 
+
+    function showNewPageScreen() {
+      if (activeAppScreen === "cards") showArmyScreen({ commitCardsState: true });
+      closeTitleRosterMenu();
+
+      const rosterScreen = document.getElementById("rosterScreen");
+      const cardsScreen = document.getElementById("cardsScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      if (!newPageScreen) return;
+
+      if (rosterScreen) rosterScreen.classList.remove("active");
+      if (cardsScreen) cardsScreen.classList.remove("active");
+      newPageScreen.classList.add("active");
+      activeAppScreen = "newpage";
+
+      const newPageButton = document.getElementById("newPageModeToggle");
+      const viewButton = document.getElementById("viewModeToggle");
+      const editButton = document.getElementById("editModeToggle");
+      const cardsButton = document.getElementById("cardsModeToggle");
+      [viewButton, editButton, cardsButton].forEach(button => {
+        if (!button) return;
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      });
+      if (newPageButton) {
+        newPageButton.classList.add("active");
+        newPageButton.setAttribute("aria-pressed", "true");
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+
+    function hideNewPageScreen() {
+      const rosterScreen = document.getElementById("rosterScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      const newPageButton = document.getElementById("newPageModeToggle");
+
+      if (newPageScreen) newPageScreen.classList.remove("active");
+      if (rosterScreen) rosterScreen.classList.add("active");
+      activeAppScreen = "army";
+
+      if (newPageButton) {
+        newPageButton.classList.remove("active");
+        newPageButton.setAttribute("aria-pressed", "false");
+      }
+      updateEditModeToggle();
+    }
+
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
+
+      if (target === "newpage") {
+        showNewPageScreen();
+        return;
+      }
+
+      if (activeAppScreen === "newpage") hideNewPageScreen();
 
       if (target === "cards") {
         if (activeAppScreen !== "cards") showCardsScreen();
@@ -29091,7 +29424,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.39',
+        version: 'V31.40',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
