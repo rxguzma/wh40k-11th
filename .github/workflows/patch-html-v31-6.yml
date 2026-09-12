@@ -1,0 +1,48 @@
+name: Patch HTML V31.6
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-html-v31-6.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Patch V31.6
+        run: python3 scripts/patch_html_v31_6.py
+
+      - name: Validate data and regenerate manifests
+        run: python3 scripts/data_schema.py all
+
+      - name: Publish version snapshot
+        run: python3 scripts/publish_html.py
+
+      - name: Verify expected data changes only
+        shell: bash
+        run: |
+          set -euo pipefail
+          unexpected=$(git status --porcelain | awk '{print $2}' | grep '^data/' | grep -v '^data/CSV_SCHEMA.csv$' | grep -v '^data/universal/Eligibility_Rules.csv$' | grep -v '/manifest.json$' || true)
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected normalized data changes:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+      - name: Commit V31.6 HTML and eligibility data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add WH40k_11th.html versions data/CSV_SCHEMA.csv data/universal/Eligibility_Rules.csv data/*/manifest.json
+          git commit -m "Add data-driven category eligibility in V31.6"
+          git push origin HEAD:main
