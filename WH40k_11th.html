@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.1</title>
+  <title>WH40k 11th V31.2</title>
 
 
   <!--
@@ -22,7 +22,7 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.1; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.2; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +79,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.2
+    Scope: The Unit detail + control is two-thirds of a normal category tab and opens a keyword-matched add panel. Edit shows eligible selected-Detachment Enhancements and reuses the existing max-one paid Enhancement path; View shows eligible selected-Detachment Stratagems with multi-select add/remove. Eligibility uses Required_Keywords, Any_Keywords, and Excluded_Keywords against the Unit effective Keywords, with all keywords treated identically.
+    Risk areas: Unit detail rendering, normalized spreadsheet-source metadata, and roster Stratagem/Enhancement state. Existing Tags/Probable mechanics and unrelated Detachment reference/edit surfaces are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.1
     Scope: Download is a real file link with native file sharing when supported, using a File prepared before the tap. Saving is owned by the loaded release, so an existing V31.0 host also gets the fix. A passive host source preserves a complete standalone HTML download without capturing rendered roster data. Update and Download share wider, taller button geometry. The new version number allows existing V31.0 copies to detect this release.
     Risk areas: Version header rendering and standalone download serialization. The existing game logic, Cards source, storage keys, and durable version-switch checkpoint are unchanged. Device save completion is never inferred from a click or a resolved share-sheet promise.
@@ -100,10 +106,6 @@
     Scope: Add a compact + control at the far right of the Unit detail category row in both View and Edit. The + control is approximately one-third the width of a normal category button and is intentionally inert pending future behavior.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V30.6
-    Scope: Remove Notes functionality from the companion. No Note button, no N badge, no roster Note rows, no unit ability Note rows. Load still strips leftover note data. Do not restore Notes UI.
-  -->
 
 
 
@@ -531,7 +533,7 @@
        Purpose: one stable base for expanded unit details and the shared dark
        reference tables used by Rules, Stratagems, Core Stratagems, and 2D6. */
     .unit-panel { display: none; background: var(--color-bg-card-alt); padding: 8px; border-bottom: 1px solid var(--color-border-default); width: 100%; }
-    .category-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, .333fr); gap: 8px; margin-bottom: 8px; }
+    .category-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, .666fr); gap: 8px; margin-bottom: 8px; }
     .category-button.active { background: var(--color-bg-button-active); }
     .subsection { display: none; border-radius: var(--btn-radius); overflow: hidden; border: 1px solid var(--color-border-default); width: 100%; margin-bottom: 8px; }
     .dark-table { width: 100%; table-layout: fixed; border-collapse: collapse; background: var(--color-bg-table); color: var(--color-text-body); font-size: 13px; }
@@ -788,7 +790,7 @@
 
     .selected-entry-detail-tabs {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, .333fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, .666fr);
       gap: 8px;
       padding: 8px;
     }
@@ -815,6 +817,36 @@
       font-size: var(--font-name);
       line-height: 1;
       align-self: stretch;
+    }
+
+    .category-add-button.active {
+      background: var(--color-bg-button-active);
+    }
+
+    .view-edit-unit-add-panel {
+      padding: 0 8px 8px;
+      background: var(--edit-roster-row-bg);
+    }
+
+    .view-edit-unit-add-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .view-edit-unit-add-option {
+      min-width: 0;
+      height: auto;
+      padding: 9px 4px;
+      line-height: 1.15;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .view-edit-unit-add-empty {
+      padding: 9px 4px;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
     }
 
     .selected-entry-detail-section {
@@ -7470,7 +7502,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.1";
+    const APP_VERSION = "31.2";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -16207,12 +16239,88 @@
       return viewEditOpenEntrySections[entryId];
     }
 
+
+    function normalizeEligibilityKeyword(value) {
+      return String(value || "").trim().replace(/\s+/g, " ").toUpperCase();
+    }
+
+    function parseEligibilityKeywordList(value) {
+      return String(value || "").split(",").map(normalizeEligibilityKeyword).filter(Boolean);
+    }
+
+    function getDetachmentItemEligibilityValue(item, columnName) {
+      if (!item) return "";
+      const directNames = {
+        Required_Keywords: ["requiredKeywords", "Required_Keywords"],
+        Any_Keywords: ["anyKeywords", "Any_Keywords"],
+        Excluded_Keywords: ["excludedKeywords", "Excluded_Keywords"]
+      };
+      for (const key of directNames[columnName] || []) {
+        const value = String(item[key] ?? "").trim();
+        if (value) return value;
+      }
+      const source = normalizeSpreadsheetSourceRowRecord(item.spreadsheetEditSource);
+      if (!source) return "";
+      const index = getSpreadsheetSourceColumnIndex(source, columnName);
+      return index >= 0 && Array.isArray(source.row) ? String(source.row[index] ?? "").trim() : "";
+    }
+
+    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster) {
+      if (!item || !entry || !unit) return false;
+      const effective = getEffectiveUnitProfile(entry, unit, roster);
+      const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
+      const required = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Required_Keywords"));
+      const any = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Any_Keywords"));
+      const excluded = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Excluded_Keywords"));
+      if (!required.every(keyword => unitKeywords.has(keyword))) return false;
+      if (any.length && !any.some(keyword => unitKeywords.has(keyword))) return false;
+      if (excluded.some(keyword => unitKeywords.has(keyword))) return false;
+      return true;
+    }
+
+    function renderViewEditRosterAddPanel(entry, unit) {
+      const roster = getViewEditRoster();
+      if (!entry || !unit || !roster) return "";
+
+      if (appEditMode) {
+        const selectedItem = getRosterEntryEnhancementItem(entry, roster);
+        const selectedId = String((selectedItem && selectedItem.itemId) || entry.enhancementItemId || "").trim();
+        let items = getAvailableEnhancementOptionsForRosterEntry(roster, entry.entryId)
+          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        if (selectedItem && !items.some(item => String(item.itemId || "").trim() === String(selectedItem.itemId || "").trim())) {
+          items = [selectedItem, ...items];
+        }
+        if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Enhancements.</div></div>`;
+        return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
+          const itemId = String(item.itemId || "").trim();
+          const selected = Boolean(selectedId && itemId === selectedId);
+          const points = cleanImportedText(item.points ?? "");
+          const label = `${item.itemName || itemId || "Enhancement"}${points ? ` · ${points} pts` : ""}`;
+          const nextValue = selected ? "" : itemId;
+          return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.updateViewEditRosterEntryEnhancementSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(nextValue)}')">${escapeHtml(label)}</button>`;
+        }).join("")}</div></div>`;
+      }
+
+      const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
+      const items = getRosterUnitSelectableStratagems(roster)
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+      if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
+      return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
+        const itemKey = getDetachmentStratagemItemEditKey(item);
+        const selected = selectedKeys.has(itemKey);
+        const cp = cleanImportedText(item.cpCost ?? "");
+        const label = `${item.itemName || item.itemId || "Stratagem"}${cp ? ` · ${cp}CP` : ""}`;
+        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
+      }).join("")}</div></div>`;
+    }
+
     function renderViewEditRosterUnitDetails(entry, unit) {
       const sections = getViewEditEntrySections(entry.entryId);
       const statsOpen = Boolean(sections.stats);
       const weaponsOpen = Boolean(sections.weapons);
       const abilitiesOpen = Boolean(sections.abilities);
       const keywordsOpen = Boolean(sections.keywords);
+      const addOpen = Boolean(sections.add);
       const unitEditKey = getUnitItemEditKey(unit);
       const isUnitEditing = appEditMode && activeUnitEditKey === unitEditKey;
 
@@ -16223,8 +16331,9 @@
               <button class="category-button ${weaponsOpen ? "active" : ""}" data-entry-section-button="weapons" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterSection('${UI.escapeJs(entry.entryId)}', 'weapons')">Weapons</button>
               <button class="category-button ${abilitiesOpen ? "active" : ""}" data-entry-section-button="abilities" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterSection('${UI.escapeJs(entry.entryId)}', 'abilities')">Abilities</button>
               <button class="category-button ${keywordsOpen ? "active" : ""}" data-entry-section-button="keywords" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterSection('${UI.escapeJs(entry.entryId)}', 'keywords')">Keywords</button>
-              <button class="category-add-button" type="button" aria-label="Add" onclick="event.stopPropagation()">+</button>
+              <button class="category-add-button${addOpen ? " active" : ""}" type="button" aria-label="Add" aria-expanded="${addOpen}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterAddPanel('${UI.escapeJs(entry.entryId)}')">+</button>
             </div>
+            ${addOpen ? renderViewEditRosterAddPanel(entry, unit) : ""}
 
             <div class="selected-entry-detail-section ${statsOpen ? "active" : ""}" data-entry-section="stats">
               ${renderUnitOtherAbilityLine(unit, "view-edit-unit-other-ability-line view-edit-stats-tags-row")}
@@ -27013,6 +27122,36 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         sections[section] = !sections[section];
         RosterRender.refreshViewEditEntryExpandedState(entryId);
       },
+      toggleViewEditRosterAddPanel(entryId) {
+        if (!entryId) return;
+        viewEditExpandedUnitRows[entryId] = true;
+        const sections = getViewEditEntrySections(entryId);
+        sections.add = !sections.add;
+        RosterRender.refreshViewEditEntryExpandedState(entryId);
+      },
+      toggleViewEditRosterEntryStratagemSelection(entryId, stratagemKey) {
+        if (appEditMode || !entryId || !stratagemKey) return;
+        const roster = getViewEditRoster();
+        const entry = getRosterEntryById(roster, entryId);
+        const unit = entry ? getUnitById(entry.unitId) : null;
+        if (!entry || !unit || isSpacerEntry(entry) || isRosterEntryPendingDeletion(entry)) return;
+        const cleanKey = String(stratagemKey || "").trim();
+        let keys = getRosterEntryUnitStratagemKeys(entry);
+        if (keys.includes(cleanKey)) {
+          keys = keys.filter(key => key !== cleanKey);
+        } else {
+          const candidate = getRosterUnitSelectableStratagems(roster).find(item => getDetachmentStratagemItemEditKey(item) === cleanKey);
+          if (!candidate || !detachmentItemMatchesUnitKeywords(candidate, entry, unit, roster)) return;
+          keys = [...keys, cleanKey];
+        }
+        entry.unitStratagemKeys = keys;
+        entry.unitStratagemKey = keys[0] || "";
+        synchronizeRosterUnitAbilityCollections(entry);
+        rosterWorkingStateDirty = true;
+        invalidateRosterModeDomCache("edit");
+        scheduleRosterModeDomCacheBuild("edit");
+        RosterRender.refreshViewEditRosterDom();
+      },
       updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {
         if (!appEditMode) return;
 
@@ -28445,7 +28584,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.1',
+        version: 'V31.2',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
