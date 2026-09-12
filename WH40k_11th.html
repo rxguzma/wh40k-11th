@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.18</title>
+  <title>WH40k 11th V31.19</title>
 
 
   <!--
@@ -22,7 +22,7 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.18; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.19; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +79,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.19
+    Scope: Restore Waha to a standard HTTPS link so a normal tap uses iOS link handling instead of the Chrome custom URL scheme. The link opens in a new browser context and stops Unit-row click propagation without preventing navigation.
+    Risk areas: Unit Waha links only. Browser choice now follows the iPhone default browser setting instead of attempting to force Chrome.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.18
     Scope: Build from V31.17 and remove the green outline from the Unit + Enhancement/Stratagem panel only.
     Risk areas: Unit + panel border styling only. V31.17 behavior, including Waha Chrome handoff, remains unchanged.
@@ -102,11 +108,6 @@
     Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.14
-    Scope: Increase the actual Unit + Enhancement/Stratagem option-button height so three-line labels sit fully inside their boxes. Minimum height is now 68px with 8px vertical padding.
-    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
-  -->
 
 
 
@@ -7551,7 +7552,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.18";
+    const APP_VERSION = "31.19";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12266,29 +12267,11 @@
         || "";
     }
 
-    function toChromeWahaUrl(url) {
-      const value = String(url || "");
-      if (/^https:\/\//i.test(value)) return value.replace(/^https:\/\//i, "googlechromes://");
-      if (/^http:\/\//i.test(value)) return value.replace(/^http:\/\//i, "googlechrome://");
-      return value;
-    }
-
-    function openUnitWahaInChrome(event, url) {
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      const chromeUrl = toChromeWahaUrl(url);
-      if (!chromeUrl) return false;
-      window.location.href = chromeUrl;
-      return false;
-    }
-
     function renderUnitWahaLink(unit, options = {}) {
       const url = getUnitWahapediaLink(unit);
       if (!url) return "";
       const buttonClass = options.button ? " unit-waha-button" : "";
-      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" onclick="return openUnitWahaInChrome(event, this.href)">Waha</a>`;
+      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Waha</a>`;
     }
 
 
@@ -28809,7 +28792,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.18',
+        version: 'V31.19',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
