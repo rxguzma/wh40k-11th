@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Np1.17</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+    :root {
+      --color-bg-page: #0f1115;
+      --color-bg-card: #171a21;
+      --color-border-default: #2c313a;
+      --color-button-bg: #2b313b;
+      --color-button-border: #48515f;
+      --color-green-bg: #1f5b35;
+      --color-green-border: #2e7d49;
+      --text-primary: #f1f3f4;
+      --text-secondary: #c4c7c5;
+      --text-muted: #9aa0a6;
+      --font-title: 20px;
+      --font-body: 14px;
+      --font-meta: 12px;
+      --grid-cell: 26px;
+      --button-height-standard: 24px;
+      --button-grid-gap: 2px;
+      --button-radius-standard: 6px;
+      --button-height: 40px;
+      --button-radius: 8px;
+      --header-radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--color-bg-page);
+      color: var(--text-primary);
+      font-family: Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      overflow-x: hidden;
+    }
+
+    .draft-grid {
+      display: grid;
+      grid-template-columns: repeat(16, var(--grid-cell));
+      grid-auto-rows: var(--grid-cell);
+      width: max-content;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border-default);
+      border-left: 1px solid var(--color-border-default);
+      background: var(--color-bg-page);
+    }
+
+    .grid-cell {
+      position: relative;
+      width: var(--grid-cell);
+      height: var(--grid-cell);
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .col-coordinate, .row-coordinate {
+      position: absolute;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .col-coordinate {
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .row-coordinate {
+      left: 4px;
+      bottom: 4px;
+    }
+
+    .button-standard {
+      width: calc(100% - var(--button-grid-gap));
+      height: var(--button-height-standard);
+      padding: 0 10px;
+      border: 1px solid var(--color-button-border);
+      border-radius: var(--button-radius-standard);
+      background: var(--color-button-bg);
+      color: var(--text-primary);
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .button-standard.active-green {
+      background: var(--color-green-bg);
+      border-color: var(--color-green-border);
+    }
+
+    .top-header-shell {
+      grid-column: 2 / span 14;
+      grid-row: 3 / span 5;
+      z-index: 2;
+      border: 1px solid var(--color-border-default);
+      border-radius: var(--header-radius);
+      background: var(--color-bg-card);
+    }
+
+    .top-roster-name {
+      grid-column: 3 / span 7;
+      grid-row: 3 / span 2;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      color: var(--text-primary);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-detachments {
+      grid-column: 3 / span 11;
+      grid-row: 5;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-summary {
+      grid-column: 3 / span 11;
+      grid-row: 6;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .top-summary-disposition { color: #80d6a3; }
+    .top-summary-rest { color: var(--text-muted); }
+
+    .top-mode-buttons {
+      grid-column: 10 / span 6;
+      grid-row: 4;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: repeat(3, calc(var(--grid-cell) * 2));
+      align-items: center;
+      justify-items: center;
+    }
+
+    .view-mode-buttons-caps {
+      grid-column: 2 / span 9;
+      grid-row: 20;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, calc(var(--grid-cell) * 3));
+      align-items: center;
+      justify-items: center;
+    }
+
+    .main-button-caps {
+      grid-column: 2 / span 3;
+      grid-row: 21;
+      z-index: 3;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .sample-button-standard {
+      grid-column: 2 / span 3;
+      grid-row: 24;
+      z-index: 3;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .sample-button-green {
+      grid-column: 2 / span 2;
+      grid-row: 25;
+      z-index: 3;
+      align-self: center;
+      justify-self: center;
+      background: var(--color-green-bg);
+      border-color: var(--color-green-border);
+    }
+
+    .version-bar {
+      width: min(416px, 100%);
+      margin: 8px auto 0;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid var(--color-border-default);
+      background: #171a21;
+    }
+
+    .version-label {
+      min-width: 0;
+      font-size: var(--font-body);
+      font-weight: 900;
+    }
+
+    .version-button {
+      min-width: 72px;
+      height: var(--button-height);
+      padding: 0 10px;
+      border: 1px solid var(--color-button-border);
+      border-radius: var(--button-radius);
+      background: var(--color-button-bg);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .version-button:disabled { opacity: .5; }
+  </style>
+</head>
+<body>
+  <main id="grid" class="draft-grid" aria-label="Main page layout grid"></main>
+
+  <div class="version-bar" aria-label="Version controls">
+    <div class="version-label">Np1.17</div>
+    <button id="updateButton" class="version-button" type="button">Update</button>
+    <button id="downloadButton" class="version-button" type="button">Download</button>
+  </div>
+
+  <script>
+    const NP_VERSION = '1.17';
+    const RAW_ROOT = 'https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/';
+    const INDEX_PATH = 'np/index.json';
+
+    const grid = document.getElementById('grid');
+    const letters = 'ABCDEFGHIJKLMNOP';
+
+    function addGridCells(fragment) {
+      for (let row = 1; row <= 60; row += 1) {
+        for (let col = 1; col <= 16; col += 1) {
+          const cell = document.createElement('div');
+          cell.className = 'grid-cell';
+          cell.style.gridColumn = String(col);
+          cell.style.gridRow = String(row);
+
+          if (row === 1) {
+            const letter = document.createElement('span');
+            letter.className = 'col-coordinate';
+            letter.textContent = letters[col - 1];
+            cell.appendChild(letter);
+          }
+
+          if (col === 1) {
+            const number = document.createElement('span');
+            number.className = 'row-coordinate';
+            number.textContent = String(row);
+            cell.appendChild(number);
+          }
+
+          fragment.appendChild(cell);
+        }
+      }
+    }
+
+    function addTopHeader(fragment, page) {
+      const shell = document.createElement('div');
+      shell.className = 'top-header-shell';
+      fragment.appendChild(shell);
+
+      const rosterName = document.createElement('div');
+      rosterName.className = 'top-roster-name';
+      rosterName.textContent = 'Winning ORKS';
+      fragment.appendChild(rosterName);
+
+      const detachments = document.createElement('div');
+      detachments.className = 'top-detachments';
+      detachments.textContent = 'Bully Boyz - Da Big Hunt - Wreckas';
+      fragment.appendChild(detachments);
+
+      const summary = document.createElement('div');
+      summary.className = 'top-summary';
+
+      const disposition = document.createElement('span');
+      disposition.className = 'top-summary-disposition';
+      disposition.textContent = 'Priority Assets';
+      summary.appendChild(disposition);
+
+      const rest = document.createElement('span');
+      rest.className = 'top-summary-rest';
+      rest.textContent = '- 1995 pts - 10 VPs';
+      summary.appendChild(rest);
+      fragment.appendChild(summary);
+
+      const modeButtons = document.createElement('div');
+      modeButtons.className = 'top-mode-buttons';
+
+      [
+        ['view', 'View'],
+        ['edit', 'Edit'],
+        ['cards', 'Cards']
+      ].forEach(([target, label]) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `button-standard${page === target ? ' active-green' : ''}`;
+        button.textContent = label;
+        button.addEventListener('click', () => renderPage(target));
+        modeButtons.appendChild(button);
+      });
+
+      fragment.appendChild(modeButtons);
+    }
+
+    function renderPage(page) {
+      grid.replaceChildren();
+      grid.setAttribute('aria-label', `${page.charAt(0).toUpperCase()}${page.slice(1)} page layout grid`);
+
+      const fragment = document.createDocumentFragment();
+      addGridCells(fragment);
+      addTopHeader(fragment, page);
+
+      const modeButtons = document.createElement('div');
+      modeButtons.className = 'view-mode-buttons-caps';
+
+      ['VIEW', 'EDIT', 'CARD'].forEach((label) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'button-standard';
+        button.textContent = label;
+        if (label === 'VIEW') button.addEventListener('click', () => renderPage('view'));
+        if (label === 'EDIT') button.addEventListener('click', () => renderPage('edit'));
+        if (label === 'CARD') button.addEventListener('click', () => renderPage('cards'));
+        modeButtons.appendChild(button);
+      });
+
+      fragment.appendChild(modeButtons);
+
+      const mainButton = document.createElement('button');
+      mainButton.type = 'button';
+      mainButton.className = 'button-standard main-button-caps';
+      mainButton.textContent = 'MAIN';
+      mainButton.addEventListener('click', () => renderPage('main'));
+      fragment.appendChild(mainButton);
+
+      if (page === 'main') {
+        const buttonSample = document.createElement('button');
+        buttonSample.type = 'button';
+        buttonSample.className = 'button-standard sample-button-standard';
+        buttonSample.textContent = 'BUTTON';
+        fragment.appendChild(buttonSample);
+
+        const greenSample = document.createElement('button');
+        greenSample.type = 'button';
+        greenSample.className = 'button-standard sample-button-green';
+        greenSample.textContent = 'GREEN';
+        fragment.appendChild(greenSample);
+      }
+
+      grid.appendChild(fragment);
+    }
+
+    renderPage('main');
+
+    function versionFile(version) { return `Np${version}.html`; }
+
+    async function fetchText(path) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+      try {
+        const response = await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`, {
+          cache: 'no-store',
+          credentials: 'omit',
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.text();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function updateToLatest() {
+      const button = document.getElementById('updateButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Checking';
+      try {
+        const index = JSON.parse(await fetchText(INDEX_PATH));
+        const latest = String(index.latest || '').trim();
+        if (!latest) throw new Error('Missing latest version');
+        if (latest === NP_VERSION) {
+          button.textContent = 'Current';
+          setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+          return;
+        }
+        const html = await fetchText(versionFile(latest));
+        if (!html.includes(`const NP_VERSION = '${latest}'`)) throw new Error('Version mismatch');
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        window.location.href = url;
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    async function downloadRunningVersion() {
+      const button = document.getElementById('downloadButton');
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.textContent = 'Preparing';
+      try {
+        const html = await fetchText(versionFile(NP_VERSION));
+        const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = versionFile(NP_VERSION);
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        button.textContent = 'Downloaded';
+        setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 900);
+      } catch (_) {
+        button.textContent = 'Retry';
+        button.disabled = false;
+      }
+    }
+
+    document.getElementById('updateButton').addEventListener('click', updateToLatest);
+    document.getElementById('downloadButton').addEventListener('click', downloadRunningVersion);
+  </script>
+</body>
+</html>
