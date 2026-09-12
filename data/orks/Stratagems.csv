@@ -41,63 +41,63 @@ orks_freebooter_krew_stratagem_bash_and_grab_1cp,orks_freebooter_krew,Bash and G
 
 TARGET: One ORKS unit from your army that has not been selected to fight this phase.
 
-EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective, you can re‑roll the wound roll.",[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],,,,
+EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective, you can re‑roll the wound roll.",[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],,ORKS,,
 orks_freebooter_krew_stratagem_boardin_rush_1cp,orks_freebooter_krew,Boardin’ Rush,1,MOVEMENT: ORKS Advance flat 6″ instead of rolling.,"WHEN: Your Movement phase.
 
 TARGET: One ORKS unit from your army that has not been selected to move this phase.
 
-EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",[+6 M”],[Unit Stats],,,,
+EFFECT: Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6″ to the Move characteristic of models in your unit.",[+6 M”],[Unit Stats],,ORKS,,
 orks_rollin_deff_stratagem_brutal_broadside_1cp,orks_rollin_deff,Brutal Broadside,1,"SHOOTING: BATTLEWAGONs ranged attacks (excluding Firing Deck) have [RAPID FIRE X], where X equals the attack’s A.","WHEN: Your Shooting phase, when a friendly BATTLEWAGON unit is selected to shoot.
 
 TARGET: That BATTLEWAGON unit.
 
-EFFECT: Your unit’s ranged attacks (excluding attacks made by weapons selected with Firing Deck) have [RAPID FIRE X], where X is that attack’s A.",,,,,,
+EFFECT: Your unit’s ranged attacks (excluding attacks made by weapons selected with Firing Deck) have [RAPID FIRE X], where X is that attack’s A.",,,,BATTLEWAGON,,
 orks_more_dakka_stratagem_call_dat_dakka_1cp,orks_more_dakka,Call Dat Dakka?,1,"ENEMY SHOOTING: After enemy shot, ORKS INFANTRY can shoot back. Snap shooting but may only target that enemy.","WHEN: Your opponent’s Shooting phase, when an enemy unit that targeted a friendly ORKS INFANTRY unit has shot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit shoots using snap shooting, but while doing so your unit can only target that enemy unit.",,,,,,
+EFFECT: Your unit shoots using snap shooting, but while doing so your unit can only target that enemy unit.",,,,"ORKS, INFANTRY",,
 orks_freebooter_krew_stratagem_deck_fraggers_1cp,orks_freebooter_krew,Deck Fraggers,1,SHOOTING: ORKS ranged get [BLAST] when targeting INFANTRY.,"WHEN: Your Shooting phase.
 
 TARGET: One ORKS unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",[BLAST],[Range - Weapon Rules],,,,
+EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",[BLAST],[Range - Weapon Rules],,ORKS,,
 orks_rollin_deff_stratagem_devastating_drift_1cp,orks_rollin_deff,Devastating Drift,1,FIGHT: A WAGON unit that charged this turn has melee attacks with [CLEAVE 1].,"WHEN: Your Fight phase, when a friendly WAGON unit that made a charge move this turn is selected to fight.
 
 TARGET: That WAGON unit.
 
-EFFECT: Your unit’s melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules],,,,
+EFFECT: Your unit’s melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules],,WAGON,,
 orks_freebooter_krew_stratagem_grab_and_bash_1cp,orks_freebooter_krew,Grab and Bash,1,"COMMAND: ORKS* within loot objective get the Waaagh! until next Command phase.
 *Excludes Gretchin.","WHEN: Your Command phase.
 
 TARGET: One ORKS unit from your army (excluding Gretchin units) that is within range of the loot objective.
 
-EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,,,,,
+EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,,,ORKS,,GRETCHIN
 orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunch,1,"CHARGE: After WAGON ends Charge, each engaged enemy make battle‑shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0,,,
+EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0,WAGON,,
 orks_freebooter_krew_stratagem_krump_and_run_1cp,orks_freebooter_krew,Krump and Run,1,"ENEMY MOVEMENT: After an enemy falls back, ORKS that was engaged can make a normal move of up to 6″.","WHEN: Your opponent’s Movement phase, just after an enemy unit falls back.
 
 TARGET: One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units.
 
-EFFECT: Your unit can make a normal move of up to 6″.",,,,,,
+EFFECT: Your unit can make a normal move of up to 6″.",,,,ORKS,,
 orks_more_dakka_stratagem_long_uncontrolled_bursts_1cp,orks_more_dakka,"Long, Uncontrolled Bursts",1,SHOOTING: ORKS INFANTRY ranged have [IGNORES COVER].,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules],,,,
+EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules],,"ORKS, INFANTRY",,
 orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,orks_freebooter_krew,Rolling Loot‑Heap,1,SHOOTING: Flash Gitz ranged gain [ANTI‑VEHICLE 4+] for the phase.,"WHEN: Your Shooting phase.
 
 TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase.
 
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules],,,,
+EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules],,FLASH GITZ,,
 orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,SHOOTING: ORKS INFANTRY ranged target within 9″ have AP -1. ,"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
-EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats],,,,
+EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats],,"ORKS, INFANTRY",,
 orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAGE,1,Fight: charging BOYZ melee +1 A.,"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.

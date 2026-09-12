@@ -2,15 +2,15 @@ Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Dis
 orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,3,Take and Hold,Purge the Foe,ORKS melee [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],1,ORKS,,
 orks_more_dakka,Orks,More Dakka!,orks_more_dakka_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,INFANTRY ranged have [ASSAULT].  In addition whe RILED UP ranged get  [SUSTAINED HITS 1],"Friendly ORKS INFANTRY units’ ranged attacks have [ASSAULT].
 
-In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,,,
-orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,,,
+In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,"ORKS, INFANTRY",,
+orks_freebooter_krew,Orks,Freebooter Krew,orks_freebooter_krew_detachment_rule_here_be_loot,HERE BE LOOT,2,Take and Hold,,"Start of Command: Select Loot objective. ORKS INFANTRY, MOUNTED, WALKER attacks gain [SUSTAINED HITS 1] if they STAND in it or TARGET units within it. ","At the start of your Command phase, select one objective marker; until the start of your next Command phase, that marker is your loot objective. Each time a model in an ORKS INFANTRY, ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has [SUSTAINED HITS 1] if the unit is within range of your loot objective or if the attack targets a unit within range of your loot objective.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,ORKS,"INFANTRY, MOUNTED, WALKER",
 orks_rollin_deff,Orks,Rollin’ Deff,orks_rollin_deff_detachment_rule_thundering_wagons,THUNDERING WAGONS,1,Priority Assets,,"WAGON re‑rolls Charge & Advance flat 6"". 
 
 BATTLEWAGON, HUNTA & KILL RIG.","Friendly BATTLEWAGON, HUNTA RIG, KILL RIG units have WAGON. 
 
 Friendly WAGON units can re‑roll charge rolls. When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6. 
 
-This detachment has the WAGONS tag and cannot be taken with another WAGONS detachment.",[RE-ROLL CHARGE] [ADVANCE 6],[Movement Rules] [Movement Rules],0,,,
+This detachment has the WAGONS tag and cannot be taken with another WAGONS detachment.",[RE-ROLL CHARGE] [ADVANCE 6],[Movement Rules] [Movement Rules],0,ORKS,"BATTLEWAGON, HUNTA RIG, KILL RIG, WAGON",
 orks_green_tide,Orks,Green Tide,orks_green_tide_detachment_rule_mob_handed_brutality,MOB-HANDED BRUTALITY,1,Take and Hold,,"BOYZ melee [SUSTAINED HITS 1].
 
 Charge, INFANTRY gains [LETHAL HITS: non-MONSTER / VEHICLE].","Friendly BOYZ units' melee attacks have [SUSTAINED HITS 1].
