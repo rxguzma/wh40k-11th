@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPREME_KUNNIN","column":"Short_Description","value":"Once per phase\u003a when enemy ends move within 8\" and unengaged\u003a\\n\\n- Move D6\" \\n- RILED UP\u003a Move 5\""},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"INTIMIDATING_MOTIVATION","column":"Short_Description","value":"Once per Battle Round\\nStart or End of Movement\\nOrks 6\" un-shock and RILED UP."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPREME_KUNNIN","column":"Short_Description","value":"Once per phase\u003a when enemy ends move within 8\" and unengaged\u003a\\n- Move D6\" \\n- RILED UP\u003a Move 5\""}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
