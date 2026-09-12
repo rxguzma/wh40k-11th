@@ -1,0 +1,299 @@
+name: Patch HTML App
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-html.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: patch-html-main
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Add Detachment Rule keyword editor
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('WH40k_11th.html')
+          text = path.read_text(encoding='utf-8')
+
+          def replace_once(old, new, label):
+              global text
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected 1 match, found {count}')
+              text = text.replace(old, new, 1)
+
+          # Sequential release metadata.
+          replace_once('<title>WH40k 11th V31.7</title>', '<title>WH40k 11th V31.8</title>', 'title version')
+          replace_once('The current baseline is WH40k_11th_V31.7;', 'The current baseline is WH40k_11th_V31.8;', 'maintenance baseline')
+          replace_once('const APP_VERSION = "31.7";', 'const APP_VERSION = "31.8";', 'APP_VERSION')
+          replace_once("version: 'V31.7',", "version: 'V31.8',", 'InternalQuality version')
+
+          note_marker = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.7\n'
+          if note_marker not in text:
+              raise SystemExit('release note insertion marker missing')
+          new_note = '''  <!--
+            CHANGE NOTE - WH40k_11th_V31.8
+            Scope: Add Detachment Rule eligibility keyword editing in Edit mode. Required, Any, and Excluded keyword fields open with the existing Detachment Rule editor, save through the current spreadsheet-edit row path, and immediately update runtime eligibility. Enhancements and Stratagems are intentionally unchanged in this chunk.
+            Risk areas: Detachment Rule edit rendering, Detachment_Definitions spreadsheet edits, and item-level eligibility values only.
+          -->
+
+'''
+          text = text.replace(note_marker, new_note + note_marker, 1)
+          old_note_pattern = re.compile(r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.3\n.*?\n  -->\n', re.S)
+          text, removed = old_note_pattern.subn('\n', text, count=1)
+          if removed != 1:
+              raise SystemExit(f'old release note removal: expected 1 match, found {removed}')
+
+          # Reusable eligibility editor styling; designed to be reused by later Enhancements/Stratagem chunks.
+          css_marker = '''    /* RosterRender ownership - V8.7/V8.6 Phase 2: Detachment Enhancement edit controls.
+'''
+          if css_marker not in text:
+              raise SystemExit('CSS insertion marker missing')
+          css = '''    /* RosterRender ownership - V31.8: generic Required/Any/Excluded keyword editor.
+       Reused by normalized eligibility-aware item editors; no faction or keyword is special-cased. */
+    .eligibility-keyword-editor {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--shell-control-gap);
+      min-width: 0;
+    }
+
+    .eligibility-keyword-editor-row {
+      display: grid;
+      grid-template-columns: minmax(104px, auto) minmax(0, 1fr);
+      gap: var(--shell-control-gap);
+      align-items: center;
+      min-width: 0;
+    }
+
+    .eligibility-keyword-editor-label {
+      color: var(--text-secondary);
+      font-size: var(--font-meta);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+'''
+          text = text.replace(css_marker, css + css_marker, 1)
+
+          # Generic renderer. This chunk wires it only to Detachment Rules.
+          helper_marker = '''    function renderDetachmentItemTagEditor(tagsValue, tagCategoriesValue, commonAttrs, fieldAttr, itemName = "Item") {
+'''
+          if helper_marker not in text:
+              raise SystemExit('keyword editor helper insertion marker missing')
+          helper = '''    function renderEligibilityKeywordEditor(item, commonAttrs, fieldAttributeName = "data-rule-field") {
+      const safeFieldAttribute = /^[a-z0-9-]+$/i.test(String(fieldAttributeName || "")) ? String(fieldAttributeName) : "data-rule-field";
+      const fields = [
+        ["requiredKeywords", "Required Keywords", "Required_Keywords"],
+        ["anyKeywords", "Any Keywords", "Any_Keywords"],
+        ["excludedKeywords", "Excluded Keywords", "Excluded_Keywords"]
+      ];
+      const rows = fields.map(([fieldName, label, columnName]) => {
+        const value = getDetachmentItemEligibilityValue(item, columnName);
+        return `<div class="eligibility-keyword-editor-row"><span class="eligibility-keyword-editor-label">${escapeHtml(label)}</span><span class="detachment-enhancement-edit-field description" ${commonAttrs} ${safeFieldAttribute}="${escapeAttr(fieldName)}" role="textbox" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(value)}</span></div>`;
+      }).join("");
+      return `<div class="eligibility-keyword-editor" aria-label="Eligibility Keywords" onclick="event.stopPropagation();">${rows}</div>`;
+    }
+
+'''
+          text = text.replace(helper_marker, helper + helper_marker, 1)
+
+          # Allow an explicitly edited blank value to override the original spreadsheet value.
+          old = '''      for (const key of directNames[columnName] || []) {
+        const value = String(item[key] ?? "").trim();
+        if (value) return value;
+      }
+'''
+          new = '''      for (const key of directNames[columnName] || []) {
+        if (!Object.prototype.hasOwnProperty.call(item, key)) continue;
+        return String(item[key] ?? "").trim();
+      }
+'''
+          replace_once(old, new, 'eligibility direct-value semantics')
+
+          # Teach Detachment Rule spreadsheet editing where the three canonical CSV columns live.
+          old = '''        itemName: ["Rule_Name"],
+        dpCost: ["DP_Cost"],
+        shortText: ["Short_Description"],
+        longText: ["Long_Description"],
+        tags: ["Tags"],
+        tagCategories: ["Tag Categories"]
+'''
+          new = '''        itemName: ["Rule_Name"],
+        dpCost: ["DP_Cost"],
+        shortText: ["Short_Description"],
+        longText: ["Long_Description"],
+        tags: ["Tags"],
+        tagCategories: ["Tag Categories"],
+        requiredKeywords: ["Required_Keywords"],
+        anyKeywords: ["Any_Keywords"],
+        excludedKeywords: ["Excluded_Keywords"]
+'''
+          replace_once(old, new, 'Detachment Rule source-column aliases')
+
+          # Read original keyword values from the authoritative source row for change detection.
+          old = '''    function getDetachmentRuleOriginalValue(item, fieldName) {
+      const source = getDetachmentRuleSpreadsheetEditSource(item);
+      if (source && source.originalEditableValues && source.originalEditableValues[fieldName] !== undefined) {
+        return fieldName === "dpCost" ? cleanImportedText(source.originalEditableValues[fieldName]) : String(source.originalEditableValues[fieldName] || "").trim();
+      }
+      return fieldName === "dpCost" ? cleanImportedText(item && item.dpCost || "") : String(item && item[fieldName] || "").trim();
+    }
+'''
+          new = '''    function getDetachmentRuleOriginalValue(item, fieldName) {
+      const source = getDetachmentRuleSpreadsheetEditSource(item);
+      const eligibilityColumns = {
+        requiredKeywords: "Required_Keywords",
+        anyKeywords: "Any_Keywords",
+        excludedKeywords: "Excluded_Keywords"
+      };
+      if (eligibilityColumns[fieldName] && source && Array.isArray(source.row)) {
+        const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);
+        if (columnIndex >= 0) return String(source.row[columnIndex] ?? "").trim();
+      }
+      if (source && source.originalEditableValues && source.originalEditableValues[fieldName] !== undefined) {
+        return fieldName === "dpCost" ? cleanImportedText(source.originalEditableValues[fieldName]) : String(source.originalEditableValues[fieldName] || "").trim();
+      }
+      if (eligibilityColumns[fieldName]) return getDetachmentItemEligibilityValue(item, eligibilityColumns[fieldName]);
+      return fieldName === "dpCost" ? cleanImportedText(item && item.dpCost || "") : String(item && item[fieldName] || "").trim();
+    }
+'''
+          replace_once(old, new, 'Detachment Rule original-value reader')
+
+          replace_once(
+              '["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].forEach(fieldName => {\n        const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);',
+              '["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].forEach(fieldName => {\n        const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);',
+              'Detachment Rule pending-row fields'
+          )
+          replace_once(
+              'return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].some(fieldName => {\n        const original = getDetachmentRuleOriginalValue(item, fieldName);',
+              'return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].some(fieldName => {\n        const original = getDetachmentRuleOriginalValue(item, fieldName);',
+              'Detachment Rule change-detection fields'
+          )
+
+          # Render the keyword box only for Detachment Rules in this chunk.
+          old = '''        const tagEditor = renderDetachmentItemTagEditor(sourceItem.tags || "", sourceItem.tagCategories || "", commonAttrs, 'data-rule-field="tags"', nameValue || "Rule");
+        return `
+'''
+          new = '''        const tagEditor = renderDetachmentItemTagEditor(sourceItem.tags || "", sourceItem.tagCategories || "", commonAttrs, 'data-rule-field="tags"', nameValue || "Rule");
+        const keywordEditorRow = itemType === "DETACHMENT_RULE"
+          ? `<tr class="${index % 2 ? "alt " : ""}ability-tags-full-row eligibility-keywords-full-row" data-detachment-rule-keywords-row="${escapeAttr(editKey)}"><td colspan="2">${renderEligibilityKeywordEditor(sourceItem, commonAttrs, "data-rule-field")}</td></tr>`
+          : "";
+        return `
+'''
+          replace_once(old, new, 'Detachment Rule keyword editor render setup')
+          old = '''          <tr class="${index % 2 ? "alt " : ""}ability-tags-full-row" data-detachment-rule-tags-row="${escapeAttr(editKey)}">
+            <td colspan="2">${tagEditor}</td>
+          </tr>
+        `;
+'''
+          new = '''          <tr class="${index % 2 ? "alt " : ""}ability-tags-full-row" data-detachment-rule-tags-row="${escapeAttr(editKey)}">
+            <td colspan="2">${tagEditor}</td>
+          </tr>
+          ${keywordEditorRow}
+        `;
+'''
+          replace_once(old, new, 'Detachment Rule keyword editor row')
+
+          # Save edited keyword values through the existing Detachment_Definitions TSV path.
+          old = '''            longText: normalizeImportedDescriptiveText(values.longText ?? item.longText ?? ""),
+            tags: normalizeImportedDescriptiveText(values.tags ?? item.tags ?? ""),
+            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? "")
+          };
+'''
+          new = '''            longText: normalizeImportedDescriptiveText(values.longText ?? item.longText ?? ""),
+            tags: normalizeImportedDescriptiveText(values.tags ?? item.tags ?? ""),
+            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? ""),
+            requiredKeywords: cleanImportedText(values.requiredKeywords ?? getDetachmentItemEligibilityValue(item, "Required_Keywords")),
+            anyKeywords: cleanImportedText(values.anyKeywords ?? getDetachmentItemEligibilityValue(item, "Any_Keywords")),
+            excludedKeywords: cleanImportedText(values.excludedKeywords ?? getDetachmentItemEligibilityValue(item, "Excluded_Keywords"))
+          };
+'''
+          # This block shape also exists in sibling editors, so target the occurrence inside saveDetachmentRuleEdit.
+          rule_save_start = text.find('      saveDetachmentRuleEdit(editKey) {')
+          if rule_save_start < 0:
+              raise SystemExit('saveDetachmentRuleEdit not found')
+          rule_save_end = text.find('      },', rule_save_start)
+          if rule_save_end < 0:
+              raise SystemExit('saveDetachmentRuleEdit end not found')
+          block = text[rule_save_start:rule_save_end]
+          if block.count(old) != 1:
+              raise SystemExit(f'Detachment Rule nextValues: expected 1 match in save block, found {block.count(old)}')
+          block = block.replace(old, new, 1)
+
+          old_mutation = '''          if (String(item.tags || "") !== nextValues.tags) { item.tags = nextValues.tags; changed = true; }
+          if (String(item.tagCategories || "") !== nextValues.tagCategories) { item.tagCategories = nextValues.tagCategories; changed = true; }
+
+          if (hasDetachmentRuleSpreadsheetChange(item, nextValues)) {
+'''
+          new_mutation = '''          if (String(item.tags || "") !== nextValues.tags) { item.tags = nextValues.tags; changed = true; }
+          if (String(item.tagCategories || "") !== nextValues.tagCategories) { item.tagCategories = nextValues.tagCategories; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Required_Keywords")) !== nextValues.requiredKeywords) { item.requiredKeywords = nextValues.requiredKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Any_Keywords")) !== nextValues.anyKeywords) { item.anyKeywords = nextValues.anyKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Excluded_Keywords")) !== nextValues.excludedKeywords) { item.excludedKeywords = nextValues.excludedKeywords; changed = true; }
+
+          if (hasDetachmentRuleSpreadsheetChange(item, nextValues)) {
+'''
+          if block.count(old_mutation) != 1:
+              raise SystemExit(f'Detachment Rule mutation block: expected 1 match, found {block.count(old_mutation)}')
+          block = block.replace(old_mutation, new_mutation, 1)
+          text = text[:rule_save_start] + block + text[rule_save_end:]
+
+          # Current normalized Detachment_Definitions fallback/header contract includes the new columns.
+          old = 'if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories"];'
+          new = 'if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Required_Keywords", "Any_Keywords", "Excluded_Keywords"];'
+          replace_once(old, new, 'Detachment_Definitions fallback headers')
+
+          # Static acceptance checks for this chunk.
+          checks = [
+              '<title>WH40k 11th V31.8</title>',
+              'const APP_VERSION = "31.8";',
+              "version: 'V31.8',",
+              'class="eligibility-keyword-editor"',
+              'data-rule-field="requiredKeywords"',
+              'data-rule-field="anyKeywords"',
+              'data-rule-field="excludedKeywords"',
+              'requiredKeywords: ["Required_Keywords"]',
+              'item.requiredKeywords = nextValues.requiredKeywords'
+          ]
+          missing = [value for value in checks if value not in text]
+          if missing:
+              raise SystemExit('static acceptance checks failed: ' + ', '.join(missing))
+
+          path.write_text(text, encoding='utf-8')
+          print('Patched WH40k_11th.html to V31.8')
+          PY
+
+      - name: Validate standalone release markers
+        run: python3 scripts/publish_html.py --root .
+
+      - name: Commit HTML and release history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add WH40k_11th.html versions
+          if git diff --cached --quiet; then
+            echo "No HTML changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add Detachment Rule keyword editor"
+          git push origin HEAD:main
