@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.41</title>
+  <title>WH40k 11th V31.42</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.41; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.42; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.42
+    Scope: New Page is now a separate local HTML surface. The existing New Page title button opens sibling file Np1.01.html, which acts as the stable local launcher and owns its own GitHub Update/Download flow. The obsolete embedded New Page screen was removed from the main HTML.
+    Risk areas: New Page navigation only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.41
     Scope: Correct New Page grid geometry. Every grid square now uses the existing 52px mobile action-control size instead of stretching to fill the viewport. Letter coordinates are embedded in the top-row squares and row numbers are embedded in the left-column squares; there is no separate label row or label column. Army Builder remains the only page content.
     Risk areas: New Page grid geometry only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
@@ -109,11 +115,6 @@
     Risk areas: View roster header label/available filter width only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.38
-    Scope: Return to the V31.35 roster-filter visual baseline, then make Range | Melee | Other | All equal-width by sharing the remaining Unit-header space responsively. Adjacent spacing is 2.5px, exactly half the existing 5px shell-control gap. Filter controls remain 24px high and the View header is locked to the same row-height formula as Edit on desktop and phone layouts.
-    Risk areas: View roster filter layout and View header geometry only. Filter behavior, colors, labels, roster data, and Edit mode are unchanged.
-  -->
 
 
   <!--
@@ -5290,178 +5291,12 @@
         <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
         <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
         <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
-        <button id="newPageModeToggle" class="secondary app-mode-button new-page-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('newpage')">New Page</button>
+        <button id="newPageModeToggle" class="secondary app-mode-button new-page-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); window.location.href='Np1.01.html'">New Page</button>
       </div>
       <span id="appTitlePoints" class="title-points"></span>
     </div>
   </div>
   <div id="titleRosterMenu" class="title-roster-menu"></div>
-  </div>
-
-  <div id="newPageScreen" class="screen new-page-screen" aria-label="New page">
-    <div class="new-page-draft-grid" aria-label="Layout grid">
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:1"><span class="new-page-grid-col-coordinate">A</span><span class="new-page-grid-row-coordinate">1</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:1"><span class="new-page-grid-col-coordinate">B</span></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:1"><span class="new-page-grid-col-coordinate">C</span></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:1"><span class="new-page-grid-col-coordinate">D</span></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:1"><span class="new-page-grid-col-coordinate">E</span></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:1"><span class="new-page-grid-col-coordinate">F</span></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:1"><span class="new-page-grid-col-coordinate">G</span></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:1"><span class="new-page-grid-col-coordinate">H</span></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:2"><span class="new-page-grid-row-coordinate">2</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:2"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:3"><span class="new-page-grid-row-coordinate">3</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:3"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:4"><span class="new-page-grid-row-coordinate">4</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:4"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:5"><span class="new-page-grid-row-coordinate">5</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:5"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:6"><span class="new-page-grid-row-coordinate">6</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:6"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:7"><span class="new-page-grid-row-coordinate">7</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:7"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:8"><span class="new-page-grid-row-coordinate">8</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:8"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:9"><span class="new-page-grid-row-coordinate">9</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:9"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:10"><span class="new-page-grid-row-coordinate">10</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:10"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:11"><span class="new-page-grid-row-coordinate">11</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:11"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:12"><span class="new-page-grid-row-coordinate">12</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:12"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:13"><span class="new-page-grid-row-coordinate">13</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:13"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:14"><span class="new-page-grid-row-coordinate">14</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:14"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:15"><span class="new-page-grid-row-coordinate">15</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:15"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:16"><span class="new-page-grid-row-coordinate">16</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:16"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:17"><span class="new-page-grid-row-coordinate">17</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:17"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:18"><span class="new-page-grid-row-coordinate">18</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:18"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:19"><span class="new-page-grid-row-coordinate">19</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:19"></div>
-      <div class="new-page-grid-cell" style="grid-column:1;grid-row:20"><span class="new-page-grid-row-coordinate">20</span></div>
-      <div class="new-page-grid-cell" style="grid-column:2;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:3;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:4;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:5;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:6;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:7;grid-row:20"></div>
-      <div class="new-page-grid-cell" style="grid-column:8;grid-row:20"></div>
-      <div class="new-page-grid-title">Army Builder</div>
-    </div>
   </div>
 
   <div id="rosterScreen" class="screen active">
@@ -7929,7 +7764,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.41";
+    const APP_VERSION = "31.42";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29408,7 +29243,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.41',
+        version: 'V31.42',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

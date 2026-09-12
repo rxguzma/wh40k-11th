@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.32</title>
+  <title>WH40k 11th V31.42</title>
 
 
   <!--
@@ -30,12 +30,12 @@
 
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
-    Unit-level compact-rule invariant: only Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP are promoted to the Unit-level tag line. The same whitelist applies to direct core Abilities and to structured Tags carried by another Ability. An Ability carrying one of these promoted Tags defaults to order 8 so its source row does not render in View but remains manageable in Edit. All other Unit-affecting Tags remain with their source Ability.
+    Unit-level compact-rule invariant: only the approved structured Tags render on the Unit-level tag line: DEEP_STRIKE; LONE_OPERATIVE; LONE_OPERATIVE_3; FIGHTS_FIRST; STEALTH; INFILTRATORS; SCOUT_6 / SCOUTS_6; FIGHT_ON_DEATH and its explicit variants; and FNP / FEEL_NO_PAIN variants. Invulnerable Save is never promoted to this line. The Unit-level line renders from structured Tag assignments only; do not separately render a direct core Ability label for the same rule. An Ability carrying an approved Unit-level Tag defaults to order 8 so its source row does not render in View but remains manageable in Edit. All non-approved Tags remain with their source Ability.
     Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
-    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line.
+    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.32; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.42; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,34 +92,42 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.32
-    Scope: Replace the View roster Range/Melee carousel with a single-select Range | Melee | Other | All filter. All is the default and is green whenever no specific filter is selected. Range and Melee show their matching Weapon rows and scoped Ability rows; Other shows unscoped/non-Range/non-Melee rows; All restores every Weapon and Ability row.
-    Risk areas: View roster header filter controls and View Weapon/Ability row visibility only. Weapon/Ability activation state, Tags, Probable, Edit mode, and roster data remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.42
+    Scope: New Page is now a separate local HTML surface. The existing New Page title button opens sibling file Np1.01.html, which acts as the stable local launcher and owns its own GitHub Update/Download flow. The obsolete embedded New Page screen was removed from the main HTML.
+    Risk areas: New Page navigation only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.31
-    Scope: Make the top Range/Melee controls drive scoped Ability presentation correctly. Off-scope description Tags now hide reliably, opposite-scope-only Ability rows remain visible but muted, mixed-scope rows stay normal and show only active-scope Tags, and unscoped rows remain unchanged. The Range/Melee control behavior now exposes all three states: Range only, Melee only, and Both.
-    Risk areas: View Range/Melee filtering, scoped Ability-row presentation, and the Range/Melee button carousel only. Tag activation, Unit-level compact rules, Weapon selection state, Probable, and Edit controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.41
+    Scope: Correct New Page grid geometry. Every grid square now uses the existing 52px mobile action-control size instead of stretching to fill the viewport. Letter coordinates are embedded in the top-row squares and row numbers are embedded in the left-column squares; there is no separate label row or label column. Army Builder remains the only page content.
+    Risk areas: New Page grid geometry only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.30
-    Scope: Fix promoted Unit-level rule rendering after V31.29. Restore the FNP-specific compact-label helper still used by renderOtherAbilityTags so opening Units with promoted core rules such as Nazdreg's Deep Strike no longer throws a ReferenceError and blanks the Unit detail. The V31.29 whitelist and order-8 behavior are unchanged.
-    Risk areas: Unit-level compact badge rendering only. Promotion whitelist, Ability ordering, scoped Tags, Weapon rules, Probable, and Edit controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.40
+    Scope: Add the approved New Page control beneath View/Edit and a phone-first drafting-grid screen. The grid fills the phone width with eight equal columns, visible A-H column labels and numbered rows, and begins with only the Army Builder title. Existing app typography, semantic colors, and button styling are reused.
+    Risk areas: title control layout and new-page navigation only. Existing View, Edit, Cards, roster data, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.29
-    Scope: Restrict Unit-level compact rule promotion to Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP. Direct core Abilities and structured Tags from this whitelist render at Unit level; unrelated Unit-affecting Tags stay with their source Ability. Any Ability carrying one of the promoted structured Tags defaults to order 8, keeping its source row out of View while preserving it in Edit.
-    Risk areas: Unit-level compact rule placement and default Ability order for the promoted whitelist. Scoped description Tags, Weapon rules, Range/Melee filtering, Probable, and Edit controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.39
+    Scope: Remove the Unit label from the View roster header and let Range | Melee | Other | All use the full first-column width. Preserve the V31.38 equal-width 2.5px-gap layout, 24px control height, shared View/Edit header height, filter behavior, and all stat-column geometry.
+    Risk areas: View roster header label/available filter width only.
   -->
 
+
+
   <!--
-    CHANGE NOTE - WH40k_11th_V31.28
-    Scope: Move scoped structured Tags out of the Ability-like title cell and back into the description cell. Tags appear directly with the description text with no Melee/Range subtitles, while the existing top Range/Melee controls continue to drive scoped Tag visibility. This restores normal Ability-name width and prevents tags from squeezing long names.
-    Risk areas: View Ability-like description/tag presentation only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.34
+    Scope: Reduce the horizontal footprint of Range | Melee | Other | All so the four controls remain inside the Unit header on phone layouts. Buttons are content-sized, cannot flex/grid-stretch, and use 4px horizontal padding. Height, filtering behavior, colors, and labels are unchanged.
+    Risk areas: View roster filter-button sizing only.
   -->
+
+
+
+
+
+
 
 
 
@@ -5098,7 +5106,177 @@
       border: 0;
     }
 
-  </style>
+  
+    /* V31.33: compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      min-width: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    /* V31.34: truly compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: max-content !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      justify-self: start !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+      white-space: nowrap !important;
+    }
+
+    /* V31.38: responsive equal-width roster filters; View height matches Edit. */
+    .view-roster-head {
+      height: calc(var(--edit-header-button-height) + 20px) !important;
+      min-height: calc(var(--edit-header-button-height) + 20px) !important;
+      max-height: calc(var(--edit-header-button-height) + 20px) !important;
+    }
+
+    .view-roster-head .roster-view-head-title {
+      display: flex !important;
+      align-items: center !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      gap: 2.5px !important;
+      margin-left: 0 !important;
+    }
+
+    .view-roster-weapon-filter-button {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      height: var(--edit-header-button-height) !important;
+      min-height: var(--edit-header-button-height) !important;
+      max-height: var(--edit-header-button-height) !important;
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+      margin: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 430px) {
+      .view-roster-head {
+        height: calc(var(--edit-header-button-height) + 18px) !important;
+        min-height: calc(var(--edit-header-button-height) + 18px) !important;
+        max-height: calc(var(--edit-header-button-height) + 18px) !important;
+      }
+    }
+
+    /* V31.39: filters own the full first View-header column. */
+    .view-roster-head .roster-view-head-title {
+      gap: 0 !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+
+    /* V31.41: fixed phone grid uses the same 52px mobile action size as the existing roster controls. */
+    :root {
+      --new-page-grid-cell: var(--btn-width-action-mobile);
+    }
+
+    .app-mode-button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, var(--btn-width-mini));
+      gap: var(--view-edit-multi-select-gap);
+      align-items: center;
+    }
+
+    .new-page-mode-toggle {
+      grid-column: 1 / span 2;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+    }
+
+    .new-page-screen {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow-x: hidden;
+      background: var(--color-bg-page);
+    }
+
+    .new-page-draft-grid {
+      display: grid;
+      grid-template-columns: repeat(8, var(--new-page-grid-cell));
+      grid-auto-rows: var(--new-page-grid-cell);
+      width: max-content;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border-default);
+      border-left: 1px solid var(--color-border-default);
+      background: var(--color-bg-page);
+      color: var(--text-body);
+    }
+
+    .new-page-grid-cell {
+      position: relative;
+      width: var(--new-page-grid-cell);
+      height: var(--new-page-grid-cell);
+      min-width: var(--new-page-grid-cell);
+      min-height: var(--new-page-grid-cell);
+      border-right: 1px solid var(--color-border-default);
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .new-page-grid-col-coordinate,
+    .new-page-grid-row-coordinate {
+      position: absolute;
+      color: var(--text-muted);
+      font-size: var(--font-meta);
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .new-page-grid-col-coordinate {
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .new-page-grid-row-coordinate {
+      left: 4px;
+      bottom: 4px;
+    }
+
+    .new-page-grid-title {
+      grid-column: 1 / span 8;
+      grid-row: 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 var(--shell-control-gap);
+      color: var(--text-primary);
+      font-size: var(--font-title);
+      font-weight: 900;
+      line-height: 1;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    @media (max-width: 430px) {
+      .app-mode-button-grid {
+        grid-template-columns: repeat(3, var(--btn-width-mini-mobile));
+      }
+    }
+</style>
 </head>
 <body>
   <div class="app-sticky-header">
@@ -5109,9 +5287,12 @@
       <div id="appTitleDispositionPoints" class="title-detachment-name"></div>
     </div>
     <div class="title-right-actions">
-      <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
-      <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
-      <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+      <div class="app-mode-button-grid">
+        <button id="viewModeToggle" class="secondary app-mode-button" aria-pressed="true" onclick="event.stopPropagation(); UI.selectAppMode('view')">View</button>
+        <button id="editModeToggle" class="secondary app-mode-button edit-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('edit')">Edit</button>
+        <button id="cardsModeToggle" class="secondary app-mode-button" aria-pressed="false" onclick="event.stopPropagation(); UI.selectAppMode('cards')">Cards</button>
+        <button id="newPageModeToggle" class="secondary app-mode-button new-page-mode-toggle" aria-pressed="false" onclick="event.stopPropagation(); window.location.href='Np1.01.html'">New Page</button>
+      </div>
       <span id="appTitlePoints" class="title-points"></span>
     </div>
   </div>
@@ -7583,7 +7764,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.32";
+    const APP_VERSION = "31.42";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -11871,10 +12052,64 @@
       setEditMode(name === "editor");
     }
 
+
+    function showNewPageScreen() {
+      if (activeAppScreen === "cards") showArmyScreen({ commitCardsState: true });
+      closeTitleRosterMenu();
+
+      const rosterScreen = document.getElementById("rosterScreen");
+      const cardsScreen = document.getElementById("cardsScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      if (!newPageScreen) return;
+
+      if (rosterScreen) rosterScreen.classList.remove("active");
+      if (cardsScreen) cardsScreen.classList.remove("active");
+      newPageScreen.classList.add("active");
+      activeAppScreen = "newpage";
+
+      const newPageButton = document.getElementById("newPageModeToggle");
+      const viewButton = document.getElementById("viewModeToggle");
+      const editButton = document.getElementById("editModeToggle");
+      const cardsButton = document.getElementById("cardsModeToggle");
+      [viewButton, editButton, cardsButton].forEach(button => {
+        if (!button) return;
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      });
+      if (newPageButton) {
+        newPageButton.classList.add("active");
+        newPageButton.setAttribute("aria-pressed", "true");
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+
+    function hideNewPageScreen() {
+      const rosterScreen = document.getElementById("rosterScreen");
+      const newPageScreen = document.getElementById("newPageScreen");
+      const newPageButton = document.getElementById("newPageModeToggle");
+
+      if (newPageScreen) newPageScreen.classList.remove("active");
+      if (rosterScreen) rosterScreen.classList.add("active");
+      activeAppScreen = "army";
+
+      if (newPageButton) {
+        newPageButton.classList.remove("active");
+        newPageButton.setAttribute("aria-pressed", "false");
+      }
+      updateEditModeToggle();
+    }
+
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
+
+      if (target === "newpage") {
+        showNewPageScreen();
+        return;
+      }
+
+      if (activeAppScreen === "newpage") hideNewPageScreen();
 
       if (target === "cards") {
         if (activeAppScreen !== "cards") showCardsScreen();
@@ -20698,7 +20933,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderRosterHeaderHtml(roster) {
       if (appEditMode) return renderViewEditRosterHeader(roster);
-      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-head-unit-label">Unit</span><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
+      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
     }
 
     function renderRosterEntryListHtml(roster) {
@@ -23595,6 +23830,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       if (!key) return false;
       return key === "DEEP_STRIKE"
         || key === "LONE_OPERATIVE"
+        || key === "LONE_OPERATIVE_3"
         || key === "FIGHTS_FIRST"
         || key === "STEALTH"
         || key === "INFILTRATORS"
@@ -23605,11 +23841,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         || key === "FNP"
         || key.startsWith("FNP_")
         || key === "FEEL_NO_PAIN"
-        || key.startsWith("FEEL_NO_PAIN_")
-        || key === "INVULNERABLE_SAVE"
-        || key.startsWith("INVULNERABLE_SAVE_")
-        || key.endsWith("_INVUL")
-        || key.includes("_INVUL_");
+        || key.startsWith("FEEL_NO_PAIN_");
     }
 
     function isUnitNameLevelAbility(ability) {
@@ -23689,9 +23921,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitOtherAbilityTags(unit, entry = null) {
-      const coreTags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
-      const structuredTags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
-      const tags = [coreTags, structuredTags].filter(Boolean).join("");
+      const tags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
       return tags ? `<div class="unit-other-ability-tags">${tags}</div>` : "";
     }
 
@@ -29013,7 +29243,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.32',
+        version: 'V31.42',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
