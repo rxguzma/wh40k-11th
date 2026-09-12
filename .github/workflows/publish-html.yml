@@ -22,7 +22,7 @@ jobs:
             exit 0
           fi
 
-          cat app_upload/part-* | base64 --decode | gzip -d > WH40k_11th.html
+          cat app_upload/part-* | base64 --decode | xz --decompress > WH40k_11th.html
           VERSION=$(grep -oE 'const APP_VERSION = "[0-9]+(\.[0-9]+)*"' WH40k_11th.html | head -1 | sed -E 's/.*"([0-9.]+)"/\1/')
           test -n "$VERSION"
           grep -q "<title>WH40k 11th V${VERSION}</title>" WH40k_11th.html
