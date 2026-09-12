@@ -6,8 +6,8 @@ start = source.index("action_anchor = '''")
 marker = "replace_once(action_anchor, action_new, 'RosterActions add-panel actions')"
 end = source.index(marker, start) + len(marker)
 
-replacement = r'''action_anchor = '''\''      updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {'''\''
-action_new = '''\''      toggleViewEditRosterAddPanel(entryId) {
+replacement = """action_anchor = '''      updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {'''
+action_new = '''      toggleViewEditRosterAddPanel(entryId) {
         if (!entryId) return;
         viewEditExpandedUnitRows[entryId] = true;
         const sections = getViewEditEntrySections(entryId);
@@ -20,7 +20,7 @@ action_new = '''\''      toggleViewEditRosterAddPanel(entryId) {
         const entry = getRosterEntryById(roster, entryId);
         const unit = entry ? getUnitById(entry.unitId) : null;
         if (!entry || !unit || isSpacerEntry(entry) || isRosterEntryPendingDeletion(entry)) return;
-        const cleanKey = String(stratagemKey || "").trim();
+        const cleanKey = String(stratagemKey || \"\").trim();
         let keys = getRosterEntryUnitStratagemKeys(entry);
         if (keys.includes(cleanKey)) {
           keys = keys.filter(key => key !== cleanKey);
@@ -30,15 +30,15 @@ action_new = '''\''      toggleViewEditRosterAddPanel(entryId) {
           keys = [...keys, cleanKey];
         }
         entry.unitStratagemKeys = keys;
-        entry.unitStratagemKey = keys[0] || "";
+        entry.unitStratagemKey = keys[0] || \"\";
         synchronizeRosterUnitAbilityCollections(entry);
         rosterWorkingStateDirty = true;
-        invalidateRosterModeDomCache("edit");
-        scheduleRosterModeDomCacheBuild("edit");
+        invalidateRosterModeDomCache(\"edit\");
+        scheduleRosterModeDomCacheBuild(\"edit\");
         RosterRender.refreshViewEditRosterDom();
       },
-      updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {'''\''
-replace_once(action_anchor, action_new, 'RosterActions add-panel actions')'''
+      updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {'''
+replace_once(action_anchor, action_new, 'RosterActions add-panel actions')"""
 
 patched = source[:start] + replacement + source[end:]
 exec(compile(patched, str(source_path), 'exec'), {'__name__': '__main__'})
