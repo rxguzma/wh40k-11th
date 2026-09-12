@@ -24,7 +24,21 @@ jobs:
         run: python3 scripts/patch_schema_eligibility_v31_6.py
 
       - name: Validate data and regenerate manifests
-        run: python3 scripts/data_schema.py all
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/data_schema.py all > /tmp/v31_6_validation.log 2>&1
+          status=$?
+          cat /tmp/v31_6_validation.log
+          if [ "$status" -ne 0 ]; then
+            cp /tmp/v31_6_validation.log v31_6_validation.log
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add v31_6_validation.log
+            git commit -m "Capture V31.6 validation failure"
+            git push origin HEAD:main
+            exit "$status"
+          fi
 
       - name: Publish version snapshot
         run: python3 scripts/publish_html.py
