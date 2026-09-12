@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.8</title>
+  <title>WH40k 11th V31.18</title>
 
 
   <!--
@@ -22,9 +22,9 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.8; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.18; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
-    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
+    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
 
   <!--
@@ -79,34 +79,44 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.8
-    Scope: Add Detachment Rule eligibility keyword editing in Edit mode. Required, Any, and Excluded keyword fields open with the existing Detachment Rule editor, save through the current spreadsheet-edit row path, and immediately update runtime eligibility. Enhancements and Stratagems are intentionally unchanged in this chunk.
-    Risk areas: Detachment Rule edit rendering, Detachment_Definitions spreadsheet edits, and item-level eligibility values only.
+    CHANGE NOTE - WH40k_11th_V31.18
+    Scope: Build from V31.17 and remove the green outline from the Unit + Enhancement/Stratagem panel only.
+    Risk areas: Unit + panel border styling only. V31.17 behavior, including Waha Chrome handoff, remains unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.7
-    Scope: Prevent Tag_Definitions-derived Unit Rule tags from mutating effective Unit Keywords. Explicit normalized keyword effects remain supported. This stops FNP, Fight on Death, Lone Operative, and similar rule tags from appearing as datasheet Keywords or affecting keyword eligibility.
-    Risk areas: Effective Unit keyword modifiers and keyword eligibility only. Unit-rule tag display and Probable tag behavior remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.17
+    Scope: Fix iPhone Waha handoff by performing the Chrome custom-scheme navigation directly from the user's Waha tap instead of mutating the anchor and relying on target=_blank. The original HTTPS URL remains in the markup and only the click action is routed to googlechromes/googlechrome.
+    Risk areas: Unit Waha links only. Non-Wahapedia links and Unit row behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.6
-    Scope: Adds Universal Eligibility_Rules.csv as the data-driven category eligibility layer. Category rules and item-level Required/Any/Excluded keyword rules now pass through the same generic matcher. ENHANCEMENT and UPGRADE category data exclude EPIC HERO without embedding EPIC HERO logic in HTML. Edit + does not open an Enhancement panel when the current Unit has no legal Enhancement choices.
-    Risk areas: Universal reference loading/cache, generic eligibility matching, and Edit + availability. View Stratagem behavior and existing Enhancement selection behavior for legal Units are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.16
+    Scope: Route all Wahapedia links through the Chrome URL scheme so tapping Waha from the local iPhone HTML app hands the page to Chrome. Applies to normal anchors and Wahapedia URLs opened through window.open; all non-Wahapedia links are unchanged.
+    Risk areas: External Wahapedia link routing only. iOS may still show its normal confirmation before handing the link to Chrome.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.5
-    Scope: Normal View + Stratagem selection now behaves like the existing Unit Ability workflow: selected Stratagems are rendered immediately inside the Unit Abilities table and are removed from Abilities when deselected. The + panel still owns eligibility and green selected state; Edit Enhancement behavior is unchanged.
-    Risk areas: Normal View Unit Abilities rendering and View Stratagem selection refresh only. Edit mode, Tags/Probable, and unrelated roster behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.15
+    Scope: Reduce the Unit + Enhancement/Stratagem option-button height from the oversized V31.14 setting while still leaving enough room for three-line labels. Minimum height is 60px with 6px vertical padding.
+    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.4
-    Scope: Fix the actual normal-View + button so it opens keyword-matched Stratagems using the existing View subsection toggle path. View Stratagem clicks now mutate the active roster directly and repaint the open panel so selected choices immediately show success green. Add-panel choice typography is reduced to 10px normal weight.
-    Risk areas: Normal View Unit detail + panel and its Stratagem selection state only. Edit Enhancements, Tags/Probable, and unrelated roster behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.14
+    Scope: Increase the actual Unit + Enhancement/Stratagem option-button height so three-line labels sit fully inside their boxes. Minimum height is now 68px with 8px vertical padding.
+    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -842,10 +852,11 @@
       gap: 8px;
     }
 
-    .view-edit-unit-add-option {
+    .category-button.view-edit-unit-add-option {
       min-width: 0;
+      min-height: 60px;
       height: auto;
-      padding: 9px 4px;
+      padding: 6px 4px;
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: anywhere;
@@ -1518,16 +1529,18 @@
 
     .eligibility-keyword-editor-row {
       display: grid;
-      grid-template-columns: minmax(104px, auto) minmax(0, 1fr);
-      gap: var(--shell-control-gap);
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 6px;
       min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
     }
 
     .eligibility-keyword-editor-label {
       color: var(--text-secondary);
       font-size: var(--font-meta);
-      font-weight: 400;
+      font-weight: 600;
       white-space: nowrap;
     }
 
@@ -3888,23 +3901,23 @@
 
     .version-history-list {
       display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: var(--shell-control-gap);
     }
 
     .version-history-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: var(--shell-control-gap);
-      align-items: center;
+      display: block;
+      min-width: 0;
     }
 
     .version-history-select {
       width: 100%;
       min-width: 0;
       min-height: var(--view-edit-control-height);
-      justify-content: flex-start;
-      padding: 0 var(--btn-padding-x-md);
+      justify-content: center;
+      padding: 0 2px;
       font-size: var(--font-meta);
+      white-space: nowrap;
     }
 
     .version-history-select.current {
@@ -3913,6 +3926,7 @@
     }
 
     .version-history-meta {
+      display: none;
       color: var(--text-muted);
       font-size: var(--font-badge);
       font-weight: 700;
@@ -7537,7 +7551,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.8";
+    const APP_VERSION = "31.18";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12252,11 +12266,29 @@
         || "";
     }
 
+    function toChromeWahaUrl(url) {
+      const value = String(url || "");
+      if (/^https:\/\//i.test(value)) return value.replace(/^https:\/\//i, "googlechromes://");
+      if (/^http:\/\//i.test(value)) return value.replace(/^http:\/\//i, "googlechrome://");
+      return value;
+    }
+
+    function openUnitWahaInChrome(event, url) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const chromeUrl = toChromeWahaUrl(url);
+      if (!chromeUrl) return false;
+      window.location.href = chromeUrl;
+      return false;
+    }
+
     function renderUnitWahaLink(unit, options = {}) {
       const url = getUnitWahapediaLink(unit);
       if (!url) return "";
       const buttonClass = options.button ? " unit-waha-button" : "";
-      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Waha</a>`;
+      return `<a class="unit-waha-link${buttonClass}" href="${escapeAttr(url)}" onclick="return openUnitWahaInChrome(event, this.href)">Waha</a>`;
     }
 
 
@@ -16349,13 +16381,21 @@
       return true;
     }
 
-    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster) {
-      if (!item || !entry || !unit) return false;
+    function getUnitEligibilityKeywordSet(entry, unit, roster) {
+      if (!entry || !unit) return new Set();
       const effective = getEffectiveUnitProfile(entry, unit, roster);
       const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
       const sourceConfig = getDataSourceConfig(activeArmyKey);
       const factionKeyword = normalizeEligibilityKeyword(sourceConfig && sourceConfig.factionKeyword);
       if (factionKeyword) unitKeywords.add(factionKeyword);
+      return unitKeywords;
+    }
+
+    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster, precomputedUnitKeywords = null) {
+      if (!item || !entry || !unit) return false;
+      const unitKeywords = precomputedUnitKeywords instanceof Set
+        ? precomputedUnitKeywords
+        : getUnitEligibilityKeywordSet(entry, unit, roster);
 
       const itemType = normalizeEligibilityKeyword(item.itemType || item.Item_Type || "");
       const categoryRules = itemType
@@ -16374,12 +16414,13 @@
     function renderViewEditRosterAddPanel(entry, unit) {
       const roster = getViewEditRoster();
       if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
 
       if (appEditMode) {
         const selectedItem = getRosterEntryEnhancementItem(entry, roster);
         const selectedId = String((selectedItem && selectedItem.itemId) || entry.enhancementItemId || "").trim();
         let items = getAvailableEnhancementOptionsForRosterEntry(roster, entry.entryId)
-          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
         if (selectedItem && !items.some(item => String(item.itemId || "").trim() === String(selectedItem.itemId || "").trim())) {
           items = [selectedItem, ...items];
         }
@@ -16396,7 +16437,7 @@
 
       const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
       const items = getRosterUnitSelectableStratagems(roster)
-        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
       if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
       return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
         const itemKey = getDetachmentStratagemItemEditKey(item);
@@ -16410,9 +16451,10 @@
     function renderRosterViewAddPanel(entry, unit) {
       const roster = getActiveRoster();
       if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
       const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
       const items = getRosterUnitSelectableStratagems(roster)
-        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
       if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
       return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
         const itemKey = getDetachmentStratagemItemEditKey(item);
@@ -20296,7 +20338,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderRosterUnitDetailPanel(entry, unit, index) {
       const effectiveProfile = getEffectiveUnitProfile(entry, unit, getActiveRoster());
-      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" id="btn-add-${index}" type="button" aria-label="Add" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'add')">+</button></div><div class="subsection active-unit-detail-box" id="add-${index}">${renderRosterViewAddPanel(entry, unit)}</div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderRosterViewAbilitiesBox(entry, unit)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}">${renderProbablePanel(entry, unit)}</div>`;
+      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" id="btn-add-${index}" type="button" aria-label="Add" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'add')">+</button></div><div class="subsection " id="add-${index}">${renderRosterViewAddPanel(entry, unit)}</div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderRosterViewAbilitiesBox(entry, unit)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}">${renderProbablePanel(entry, unit)}</div>`;
     }
 
     // RosterRender ownership: reserve one fixed-width inline Disposition control
@@ -21428,9 +21470,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     function renderEligibilityKeywordEditor(item, commonAttrs, fieldAttributeName = "data-rule-field") {
       const safeFieldAttribute = /^[a-z0-9-]+$/i.test(String(fieldAttributeName || "")) ? String(fieldAttributeName) : "data-rule-field";
       const fields = [
-        ["requiredKeywords", "Required Keywords", "Required_Keywords"],
-        ["anyKeywords", "Any Keywords", "Any_Keywords"],
-        ["excludedKeywords", "Excluded Keywords", "Excluded_Keywords"]
+        ["requiredKeywords", "Required", "Required_Keywords"],
+        ["anyKeywords", "Any", "Any_Keywords"],
+        ["excludedKeywords", "Excluded", "Excluded_Keywords"]
       ];
       const rows = fields.map(([fieldName, label, columnName]) => {
         const value = getDetachmentItemEligibilityValue(item, columnName);
@@ -28767,7 +28809,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.8',
+        version: 'V31.18',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -29420,5 +29462,6 @@ function viewEditUpdateDetachmentNameAt(index, value) {
   }
 })();
 </script>
+  <!-- V31.16 WAHA_CHROME_ROUTER -->
 </body>
 </html>
