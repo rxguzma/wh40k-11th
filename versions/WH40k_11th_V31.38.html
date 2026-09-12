@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.28</title>
+  <title>WH40k 11th V31.38</title>
 
 
   <!--
@@ -30,11 +30,12 @@
 
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
-    Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
+    Unit-level compact-rule invariant: only the approved structured Tags render on the Unit-level tag line: DEEP_STRIKE; LONE_OPERATIVE; LONE_OPERATIVE_3; FIGHTS_FIRST; STEALTH; INFILTRATORS; SCOUT_6 / SCOUTS_6; FIGHT_ON_DEATH and its explicit variants; and FNP / FEEL_NO_PAIN variants. Invulnerable Save is never promoted to this line. The Unit-level line renders from structured Tag assignments only; do not separately render a direct core Ability label for the same rule. An Ability carrying an approved Unit-level Tag defaults to order 8 so its source row does not render in View but remains manageable in Edit. All non-approved Tags remain with their source Ability.
+    Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
-    View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
+    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.28; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.38; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -91,34 +92,42 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.28
-    Scope: Move scoped structured Tags out of the Ability-like title cell and back into the description cell. Tags appear directly with the description text with no Melee/Range subtitles, while the existing top Range/Melee controls continue to drive scoped Tag visibility. This restores normal Ability-name width and prevents tags from squeezing long names.
-    Risk areas: View Ability-like description/tag presentation only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.38
+    Scope: Return to the V31.35 roster-filter visual baseline, then make Range | Melee | Other | All equal-width by sharing the remaining Unit-header space responsively. Adjacent spacing is 2.5px, exactly half the existing 5px shell-control gap. Filter controls remain 24px high and the View header is locked to the same row-height formula as Edit on desktop and phone layouts.
+    Risk areas: View roster filter layout and View header geometry only. Filter behavior, colors, labels, roster data, and Edit mode are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.27
-    Scope: Keep scoped Ability-like Tags in the same title row as the Ability name instead of allowing the Tag group to wrap underneath. Preserve the compact V31.26 presentation with no Melee/Range subtitles; the existing top Range/Melee controls remain the only scope labels and continue to drive scoped Tag visibility.
-    Risk areas: View Ability-table title/tag layout only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.35
+    Scope: Make the Unit-level compact-rule line explicit and approval-driven. Only Deep Strike, Lone Op, Lone Op 3", Fights First, Stealth, Infiltrators, Scout 6", Fight on Death variants, and FNP variants can render there. Invulnerable Save is excluded. Unit-level rules now render through the structured Tag path only, so the core Ability label is not separately rendered as a second copy.
+    Risk areas: Unit-level compact rule/tag placement only. Weapon/Ability filters, scoped Tags, Probable, Edit controls, and roster data are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.26
-    Scope: Move non-Unit structured Ability-like Tags from description-side Melee/Range sections into the title cell beside the Ability, Enhancement, Detachment Rule, or Stratagem name. Range- and Melee-scoped title Tags now follow the existing View Range/Melee weapon filter immediately, eliminating the extra subtitle/tag rows. Unit-level Tags remain promoted to the Unit-level tag line.
-    Risk areas: View Ability-table title/tag layout and Range/Melee filter synchronization. Tag activation, Unit-level Tag promotion, derived Weapon rules, Probable, and Edit Tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.34
+    Scope: Reduce the horizontal footprint of Range | Melee | Other | All so the four controls remain inside the Unit header on phone layouts. Buttons are content-sized, cannot flex/grid-stretch, and use 4px horizontal padding. Height, filtering behavior, colors, and labels are unchanged.
+    Risk areas: View roster filter-button sizing only.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.25
-    Scope: Promote canonical Unit-level structured Tags from Ability rows to the Unit-level tag line. Tags such as DEEP STRIKE now appear alongside Unit-level rules such as FNP while weapon-scoped Tags such as IGNORES COVER remain under their Melee/Range Ability sections. Unit-level structured badges preserve their original source Tag on/off state.
-    Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.33
+    Scope: Make the View roster Range | Melee | Other | All filter buttons compact instead of horizontally stretched. Button height, labels, colors, single-select behavior, and filtering logic are unchanged.
+    Risk areas: View roster filter-button sizing only.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.24
-    Scope: Remove the manual roster-Save blocker from app version switching. Update and retained-version buttons can now change versions while Edit has dirty roster state; the existing version-change checkpoint persists the live state before the next runtime mounts.
-    Risk areas: Version switching only. Storage-not-ready protection remains, and roster/version checkpoint persistence is otherwise unchanged.
+    CHANGE NOTE - WH40k_11th_V31.32
+    Scope: Replace the View roster Range/Melee carousel with a single-select Range | Melee | Other | All filter. All is the default and is green whenever no specific filter is selected. Range and Melee show their matching Weapon rows and scoped Ability rows; Other shows unscoped/non-Range/non-Melee rows; All restores every Weapon and Ability row.
+    Risk areas: View roster header filter controls and View Weapon/Ability row visibility only. Weapon/Ability activation state, Tags, Probable, Edit mode, and roster data remain unchanged.
   -->
+
+
+
+
+
+
+
+
 
 
 
@@ -5093,7 +5102,75 @@
       border: 0;
     }
 
-  </style>
+  
+    /* V31.33: compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      min-width: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    /* V31.34: truly compact View roster Range / Melee / Other / All buttons. */
+    .view-roster-weapon-filter-button {
+      flex: 0 0 auto !important;
+      width: max-content !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      justify-self: start !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+      white-space: nowrap !important;
+    }
+
+    /* V31.38: responsive equal-width roster filters; View height matches Edit. */
+    .view-roster-head {
+      height: calc(var(--edit-header-button-height) + 20px) !important;
+      min-height: calc(var(--edit-header-button-height) + 20px) !important;
+      max-height: calc(var(--edit-header-button-height) + 20px) !important;
+    }
+
+    .view-roster-head .roster-view-head-title {
+      display: flex !important;
+      align-items: center !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      gap: 2.5px !important;
+      margin-left: 0 !important;
+    }
+
+    .view-roster-weapon-filter-button {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      height: var(--edit-header-button-height) !important;
+      min-height: var(--edit-header-button-height) !important;
+      max-height: var(--edit-header-button-height) !important;
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+      margin: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 430px) {
+      .view-roster-head {
+        height: calc(var(--edit-header-button-height) + 18px) !important;
+        min-height: calc(var(--edit-header-button-height) + 18px) !important;
+        max-height: calc(var(--edit-header-button-height) + 18px) !important;
+      }
+    }
+</style>
 </head>
 <body>
   <div class="app-sticky-header">
@@ -7578,7 +7655,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.28";
+    const APP_VERSION = "31.38";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -7874,7 +7951,7 @@
     const transientUiClassTimers = new WeakMap();
     const viewEditAddUnitButtonFeedbackTimers = new WeakMap();
     const viewEditSaveButtonFeedbackTimers = new WeakMap();
-    let viewRosterWeaponFilters = { range: true, melee: true };
+    let viewRosterWeaponFilters = { range: false, melee: false, other: false };
     let viewProbableSelectedWeaponByEntry = Object.create(null);
 
     // RosterActions ownership - V11.0: session-wide Edit roster movement lock.
@@ -11703,7 +11780,7 @@
       try {
         appEditMode = targetEditMode;
         if (targetEditMode) viewEditRosterDraft = roster;
-        else viewRosterWeaponFilters = { range: true, melee: true };
+        else viewRosterWeaponFilters = { range: false, melee: false, other: false };
         rosterRenderPassContext = { roster, models: null };
 
         const template = document.createElement("template");
@@ -20601,18 +20678,22 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function resetViewRosterWeaponFilters() {
-      viewRosterWeaponFilters = { range: true, melee: true };
+      viewRosterWeaponFilters = { range: false, melee: false, other: false };
       resetViewRosterWeaponRowStates();
     }
 
+    function getViewRosterWeaponFilterKey() {
+      if (viewRosterWeaponFilters.range === true) return "range";
+      if (viewRosterWeaponFilters.melee === true) return "melee";
+      if (viewRosterWeaponFilters.other === true) return "other";
+      return "all";
+    }
+
     function syncViewRosterWeaponFilterButtons() {
+      const selectedKey = getViewRosterWeaponFilterKey();
       document.querySelectorAll("[data-view-roster-weapon-filter]").forEach(button => {
         const key = String(button.dataset.viewRosterWeaponFilter || "").trim().toLowerCase();
-        const active = key === "range"
-          ? viewRosterWeaponFilters.range !== false
-          : key === "melee"
-            ? viewRosterWeaponFilters.melee !== false
-            : false;
+        const active = key === selectedKey;
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", active ? "true" : "false");
       });
@@ -20624,45 +20705,58 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function isViewRosterWeaponKindVisible(kind) {
-      if (kind === "range") return viewRosterWeaponFilters.range !== false;
-      if (kind === "melee") return viewRosterWeaponFilters.melee !== false;
-      return true;
+      const selectedKey = getViewRosterWeaponFilterKey();
+      const cleanKind = String(kind || "").trim().toLowerCase();
+      if (selectedKey === "all") return true;
+      if (selectedKey === "range" || selectedKey === "melee") return cleanKind === selectedKey;
+      return cleanKind !== "range" && cleanKind !== "melee";
     }
 
     function syncViewRosterWeaponRows() {
       if (appEditMode) return;
+      const selectedKey = getViewRosterWeaponFilterKey();
+
       document.querySelectorAll("[data-view-roster-weapon-kind]").forEach(row => {
         const kind = String(row.dataset.viewRosterWeaponKind || "").trim().toLowerCase();
         row.classList.toggle("hidden", !isViewRosterWeaponKindVisible(kind));
       });
-      document.querySelectorAll("[data-view-ability-tag-scope]").forEach(node => {
-        const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
-        node.hidden = (scope === "range" || scope === "melee") && !isViewRosterWeaponKindVisible(scope);
+
+      document.querySelectorAll("[data-view-roster-ability-state]").forEach(row => {
+        const scopedTagNodes = Array.from(row.querySelectorAll("[data-view-ability-tag-scope]"));
+        const scopes = new Set(
+          scopedTagNodes
+            .map(node => String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase())
+            .filter(scope => scope === "range" || scope === "melee")
+        );
+
+        let visible = true;
+        if (selectedKey === "range" || selectedKey === "melee") {
+          visible = scopes.has(selectedKey);
+        } else if (selectedKey === "other") {
+          visible = scopes.size === 0;
+        }
+
+        row.classList.remove("view-ability-scope-muted");
+        row.classList.toggle("hidden", !visible);
+
+        scopedTagNodes.forEach(node => {
+          const scope = String(node.dataset.viewAbilityTagScope || "").trim().toLowerCase();
+          const hideTag = selectedKey !== "all"
+            && (scope === "range" || scope === "melee")
+            && scope !== selectedKey;
+          node.classList.toggle("hidden", hideTag);
+        });
       });
     }
 
     function toggleViewRosterWeaponFilter(filterKey) {
       const key = String(filterKey || "").trim().toLowerCase();
-      if (key !== "range" && key !== "melee") return;
+      if (!["range", "melee", "other", "all"].includes(key)) return;
 
-      const otherKey = key === "range" ? "melee" : "range";
-      const isCurrentlyActive = viewRosterWeaponFilters[key] !== false;
-      const isOtherActive = viewRosterWeaponFilters[otherKey] !== false;
-
-      // Both active: tapping one turns only that category off. Weapon row states are preserved while hidden.
-      if (isCurrentlyActive && isOtherActive) {
-        viewRosterWeaponFilters[key] = false;
-      // Sole active category: keep it on so at least one remains active.
-      } else if (isCurrentlyActive) {
-        return;
-      // One active + tapped inactive: switch directly to the tapped category without resetting either category's weapon states.
-      } else if (isOtherActive) {
-        viewRosterWeaponFilters[otherKey] = false;
-        viewRosterWeaponFilters[key] = true;
-      } else {
-        // Defensive recovery: an impossible all-off state restores the tapped category.
-        viewRosterWeaponFilters[key] = true;
-      }
+      viewRosterWeaponFilters.range = false;
+      viewRosterWeaponFilters.melee = false;
+      viewRosterWeaponFilters.other = false;
+      if (key !== "all") viewRosterWeaponFilters[key] = true;
 
       syncViewRosterWeaponFilterButtons();
       syncViewRosterWeaponRows();
@@ -20670,15 +20764,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderViewRosterWeaponFilterButton(filterKey, label) {
       const key = String(filterKey || "").trim().toLowerCase();
-      const active = key === "range"
-        ? viewRosterWeaponFilters.range !== false
-        : viewRosterWeaponFilters.melee !== false;
+      const active = key === getViewRosterWeaponFilterKey();
       return `<button type="button" class="view-roster-weapon-filter-button ${active ? "active" : ""}" data-view-roster-weapon-filter="${escapeAttr(key)}" aria-pressed="${active ? "true" : "false"}" onclick="event.stopPropagation(); toggleViewRosterWeaponFilter('${key}')">${escapeHtml(label)}</button>`;
     }
 
     function renderRosterHeaderHtml(roster) {
       if (appEditMode) return renderViewEditRosterHeader(roster);
-      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-head-unit-label">Unit</span><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
+      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-head-unit-label">Unit</span><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
     }
 
     function renderRosterEntryListHtml(roster) {
@@ -21742,7 +21834,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
       const appendedTags = getAbilityProtectedModifierTagAssignments(ability).map(assignment => {
         const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-        if (isUnitLevelTagDefinition(definition)) return "";
+        if (isPromotedUnitLevelTag(assignment.tag, definition)) return "";
         const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
         const visible = scope === "melee" || scope === "range"
           ? isViewRosterWeaponKindVisible(scope)
@@ -21752,7 +21844,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
         );
         if (!badge) return "";
-        return `<span class="ability-description-scoped-tag" data-view-ability-tag-scope="${escapeAttr(scope)}"${visible ? "" : " hidden"}>${badge}</span>`;
+        return `<span class="ability-description-scoped-tag${visible ? "" : " hidden"}" data-view-ability-tag-scope="${escapeAttr(scope)}">${badge}</span>`;
       }).filter(Boolean).join(" ");
 
       return appendedTags
@@ -23562,24 +23654,70 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       }).join("");
     }
 
+    function normalizePromotedUnitRuleKey(value) {
+      return String(value || "")
+        .trim()
+        .toUpperCase()
+        .replace(/[^A-Z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "");
+    }
+
+    function isPromotedUnitRuleKey(value) {
+      const key = normalizePromotedUnitRuleKey(value);
+      if (!key) return false;
+      return key === "DEEP_STRIKE"
+        || key === "LONE_OPERATIVE"
+        || key === "LONE_OPERATIVE_3"
+        || key === "FIGHTS_FIRST"
+        || key === "STEALTH"
+        || key === "INFILTRATORS"
+        || key === "SCOUT_6"
+        || key === "SCOUTS_6"
+        || key === "FIGHT_ON_DEATH"
+        || key.startsWith("FIGHT_ON_DEATH_")
+        || key === "FNP"
+        || key.startsWith("FNP_")
+        || key === "FEEL_NO_PAIN"
+        || key.startsWith("FEEL_NO_PAIN_");
+    }
+
+    function isUnitNameLevelAbility(ability) {
+      if (!ability) return false;
+      return isPromotedUnitRuleKey(ability.abilityId || ability.id || "")
+        || isPromotedUnitRuleKey(ability.name || ability.abilityName || "");
+    }
+
     function isUnitNameLevelFnpAbility(ability) {
-      const id = normalizeLookupId(ability && (ability.abilityId || ability.id || ""));
-      const name = String(ability && (ability.name || ability.abilityName || "") || "").trim().toUpperCase();
-      return /^FEEL_NO_PAIN_[456]$/.test(id)
-        || /^FNP [456]\+$/.test(name)
-        || /^FEEL NO PAIN [456]\+$/.test(name);
+      if (!ability) return false;
+      const id = normalizePromotedUnitRuleKey(ability.abilityId || ability.id || "");
+      const name = normalizePromotedUnitRuleKey(ability.name || ability.abilityName || "");
+      const isFnpKey = key => key === "FNP"
+        || key.startsWith("FNP_")
+        || key === "FEEL_NO_PAIN"
+        || key.startsWith("FEEL_NO_PAIN_");
+      return isFnpKey(id) || isFnpKey(name);
     }
 
     function getUnitNameLevelAbilities(unit) {
-      return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelFnpAbility(ability));
+      return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelAbility(ability));
     }
 
-    function isUnitLevelTagDefinition(definition) {
+    function isPromotedUnitLevelTag(tag, definition) {
+      if (isPromotedUnitRuleKey(tag)) return true;
       if (!definition) return false;
-      const target = String(definition.target || "").trim().toUpperCase();
-      const affects = String(definition.affects || "").trim().toUpperCase();
-      const category = String(definition.category || "").trim().toUpperCase();
-      return target === "UNIT" || affects === "UNIT" || category === "UNIT" || category.startsWith("UNIT ");
+      return isPromotedUnitRuleKey(definition.tagId)
+        || isPromotedUnitRuleKey(definition.id)
+        || isPromotedUnitRuleKey(definition.displayTag)
+        || isPromotedUnitRuleKey(definition.title);
+    }
+
+    function abilityHasPromotedUnitLevelRule(ability) {
+      if (!ability) return false;
+      if (isUnitNameLevelAbility(ability)) return true;
+      return getAbilityProtectedModifierTagAssignments(ability).some(assignment => {
+        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        return isPromotedUnitLevelTag(assignment.tag, definition);
+      });
     }
 
     function getRosterEntryUnitLevelStructuredTagRecords(entry, unit, roster = getDisplayedRosterForRosterScreen()) {
@@ -23590,7 +23728,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         if (!ability || ability.isMissingLink) return;
         getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
           const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-          if (!isUnitLevelTagDefinition(definition)) return;
+          if (!isPromotedUnitLevelTag(assignment.tag, definition)) return;
           const tagKey = normalizeAbilityTagPickerKey(getAbilityTagDisplayLabel(assignment.tag));
           if (!tagKey) return;
           const candidate = {
@@ -23620,9 +23758,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitOtherAbilityTags(unit, entry = null) {
-      const coreTags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
-      const structuredTags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
-      const tags = [coreTags, structuredTags].filter(Boolean).join("");
+      const tags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
       return tags ? `<div class="unit-other-ability-tags">${tags}</div>` : "";
     }
 
@@ -23836,6 +23972,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const rows = [];
       let sequence = 0;
       const push = (orderKey, defaultOrder, render, probableEligible = true, sourceRef = null) => {
+        if (sourceRef && abilityHasPromotedUnitLevelRule(sourceRef)) defaultOrder = 8;
         if (entry && sourceRef && rosterEntryHasHiddenSource(entry, sourceRef)) return;
         rows.push({
           orderKey,
@@ -28943,7 +29080,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.28',
+        version: 'V31.38',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
