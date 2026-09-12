@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.24</title>
+  <title>WH40k 11th V31.25</title>
 
 
   <!--
@@ -30,7 +30,9 @@
 
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.24; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
+
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.25; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -87,6 +89,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.25
+    Scope: Promote canonical Unit-level structured Tags from Ability rows to the Unit-level tag line. Tags such as DEEP STRIKE now appear alongside Unit-level rules such as FNP while weapon-scoped Tags such as IGNORES COVER remain under their Melee/Range Ability sections. Unit-level structured badges preserve their original source Tag on/off state.
+    Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.24
     Scope: Remove the manual roster-Save blocker from app version switching. Update and retained-version buttons can now change versions while Edit has dirty roster state; the existing version-change checkpoint persists the live state before the next runtime mounts.
     Risk areas: Version switching only. Storage-not-ready protection remains, and roster/version checkpoint persistence is otherwise unchanged.
@@ -110,11 +118,6 @@
     Risk areas: View-mode Weapon row selection state and Probable selected-Weapon handoff only. Ability row state cycling, Weapon filters, Weapon Tags, and Probable lazy initialization remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.20
-    Scope: Make Probable truly lazy in View mode. Opening a Unit no longer renders or calculates the Probable panel; the first Probable button click initializes it. Weapon, Ability, and Tag refresh hooks do nothing until Probable has been opened at least once for that rendered Unit detail.
-    Risk areas: View-mode Probable initialization and refresh timing only. Existing Probable calculations, controls, selected-weapon behavior, and non-Probable Unit sections are unchanged.
-  -->
 
 
 
@@ -7565,7 +7568,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.24";
+    const APP_VERSION = "31.25";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -16496,7 +16499,7 @@
             ${addOpen ? renderViewEditRosterAddPanel(entry, unit) : ""}
 
             <div class="selected-entry-detail-section ${statsOpen ? "active" : ""}" data-entry-section="stats">
-              ${renderUnitOtherAbilityLine(unit, "view-edit-unit-other-ability-line view-edit-stats-tags-row")}
+              ${renderUnitOtherAbilityLine(unit, "view-edit-unit-other-ability-line view-edit-stats-tags-row", entry)}
               ${isUnitEditing ? renderUnitProfileEditTable(unit, unitEditKey) : renderUnitProfileTable(unit, entry)}
             </div>
             <div class="selected-entry-detail-section ${weaponsOpen ? "active" : ""}" data-entry-section="weapons">
@@ -21026,7 +21029,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       if (isOpen) {
         if (existingOtherAbilityLine) existingOtherAbilityLine.remove();
       } else if (!existingOtherAbilityLine) {
-        const otherAbilityHtml = renderUnitOtherAbilityLine(unit, "view-unit-other-ability-line");
+        const otherAbilityHtml = renderUnitOtherAbilityLine(unit, "view-unit-other-ability-line", entry);
         if (otherAbilityHtml) row.insertAdjacentHTML("afterend", otherAbilityHtml);
       }
 
@@ -21691,6 +21694,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const grouped = { melee: [], range: [], other: [] };
       getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
         const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        if (isUnitLevelTagDefinition(definition)) return;
         const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
         const badge = renderProtectedAbilityTagBadge(
           assignment.tag,
@@ -23529,13 +23533,60 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelFnpAbility(ability));
     }
 
-    function renderUnitOtherAbilityTags(unit) {
-      const tags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
+    function isUnitLevelTagDefinition(definition) {
+      if (!definition) return false;
+      const target = String(definition.target || "").trim().toUpperCase();
+      const affects = String(definition.affects || "").trim().toUpperCase();
+      const category = String(definition.category || "").trim().toUpperCase();
+      return target === "UNIT" || affects === "UNIT" || category === "UNIT" || category.startsWith("UNIT ");
+    }
+
+    function getRosterEntryUnitLevelStructuredTagRecords(entry, unit, roster = getDisplayedRosterForRosterScreen()) {
+      if (!entry || !unit) return [];
+      const recordsByTag = new Map();
+      getRosterEntryAbilityTagSourceRecords(entry, unit, roster).forEach(record => {
+        const ability = record && record.ability;
+        if (!ability || ability.isMissingLink) return;
+        getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
+          const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+          if (!isUnitLevelTagDefinition(definition)) return;
+          const tagKey = normalizeAbilityTagPickerKey(getAbilityTagDisplayLabel(assignment.tag));
+          if (!tagKey) return;
+          const candidate = {
+            ability,
+            tag: assignment.tag,
+            category: assignment.category,
+            defaultOn: record.defaultOn !== false,
+            isOn: getRosterEntryAbilityTagState(entry, ability, assignment.tag, record.defaultOn !== false, assignment.category)
+          };
+          const existing = recordsByTag.get(tagKey);
+          if (!existing || (!existing.isOn && candidate.isOn)) recordsByTag.set(tagKey, candidate);
+        });
+      });
+      return Array.from(recordsByTag.values());
+    }
+
+    function renderRosterEntryUnitLevelStructuredTags(entry, unit) {
+      if (!entry || !unit) return "";
+      return getRosterEntryUnitLevelStructuredTagRecords(entry, unit)
+        .map(record => renderProtectedAbilityTagBadge(record.tag, {
+          entry,
+          ability: record.ability,
+          category: record.category,
+          defaultOn: record.defaultOn
+        }))
+        .join("");
+    }
+
+    function renderUnitOtherAbilityTags(unit, entry = null) {
+      const coreTags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
+      const structuredTags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
+      const tags = [coreTags, structuredTags].filter(Boolean).join("");
       return tags ? `<div class="unit-other-ability-tags">${tags}</div>` : "";
     }
 
-    function renderUnitOtherAbilityLine(unit, className = "") {
-      const tagsHtml = renderUnitOtherAbilityTags(unit);
+    function renderUnitOtherAbilityLine(unit, className = "", entry = null) {
+      const tagsHtml = renderUnitOtherAbilityTags(unit, entry);
       if (!tagsHtml) return "";
       const classes = ["unit-other-ability-line", className].filter(Boolean).join(" ");
       return `<div class="${classes}">${tagsHtml}</div>`;
@@ -28851,7 +28902,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.24',
+        version: 'V31.25',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

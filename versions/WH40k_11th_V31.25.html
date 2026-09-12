@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.15</title>
+  <title>WH40k 11th V31.25</title>
 
 
   <!--
@@ -22,7 +22,17 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.15; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    View-mode Weapon selection invariant: Weapon selection is single-select. Selecting one Weapon makes that Weapon Active and automatically mutes every other Weapon in that Unit's Weapon table. Tapping the Active Weapon again clears selection and restores every Weapon to Default. Muted is an automatic sibling state only and must not be restored as a manual carousel step.
+
+    View-mode scoped Tag invariant: structured Ability-like Tags with canonical Melee or Range scope render under separate Melee and Range subtitles. When an active source Tag defines a reroll for a Weapon scope, the applicable effective Weapon profiles also display that reroll as a derived locked rule; the source Tag remains the only control for enabling or disabling it.
+
+    View-mode Ability ordering invariant: Ability-table items whose effective order is 8 or 9 do not render at all in View mode. Edit mode continues to render them, including their order controls, so they remain manageable and can be moved back into visible orders 0-7.
+
+    Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
+
+    Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
+
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.25; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,34 +89,44 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.15
-    Scope: Reduce the Unit + Enhancement/Stratagem option-button height from the oversized V31.14 setting while still leaving enough room for three-line labels. Minimum height is 60px with 6px vertical padding.
-    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.25
+    Scope: Promote canonical Unit-level structured Tags from Ability rows to the Unit-level tag line. Tags such as DEEP STRIKE now appear alongside Unit-level rules such as FNP while weapon-scoped Tags such as IGNORES COVER remain under their Melee/Range Ability sections. Unit-level structured badges preserve their original source Tag on/off state.
+    Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.14
-    Scope: Increase the actual Unit + Enhancement/Stratagem option-button height so three-line labels sit fully inside their boxes. Minimum height is now 68px with 8px vertical padding.
-    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.24
+    Scope: Remove the manual roster-Save blocker from app version switching. Update and retained-version buttons can now change versions while Edit has dirty roster state; the existing version-change checkpoint persists the live state before the next runtime mounts.
+    Risk areas: Version switching only. Storage-not-ready protection remains, and roster/version checkpoint persistence is otherwise unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.13
-    Scope: Fix Unit + panel option sizing so three-line Enhancement/Stratagem labels fit inside their buttons. The add-option rule now outranks the generic category-button fixed height and uses a 56px minimum height with automatic row growth.
-    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.23
+    Scope: Hide Ability-table items with effective order 8 or 9 from View mode entirely. Edit mode continues to show those items and their order controls so they can still be managed or moved back to orders 0-7.
+    Risk areas: View-mode Ability row visibility only. Ability ordering data, Edit-mode rows, Tag behavior, Weapon profiles, and Probable remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.12
-    Scope: Increase vertical padding on Unit + panel Enhancement/Stratagem option buttons so multi-line labels fit comfortably inside their boxes.
-    Risk areas: Unit + panel option-button sizing only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.22
+    Scope: Separate View-mode structured Tags into Melee and Range sections using canonical Tag scope. Active hit/wound reroll Tags are now also promoted into each applicable effective Weapon profile as derived locked Weapon rules, while continuing to drive Probable through the same structured Tag definitions.
+    Risk areas: View-mode Ability/Stratagem Tag presentation and derived Weapon ability display. Source Tag activation, canonical Melee/Range filtering, Weapon selection, and Probable lazy initialization remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.11
-    Scope: Version history is now a compact ten-button grid: five version buttons per row across two rows instead of a long one-version-per-row list.
-    Risk areas: Version history presentation only. Version loading, Update, Download, retention, and release-index behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.21
+    Scope: Change View-mode Weapon selection to single-select behavior. Selecting one Weapon automatically mutes every other Weapon in that Unit's Weapon table; tapping the selected Weapon again returns all Weapons to Default. Tapping an auto-muted Weapon switches the selection directly to it. Muted is no longer a manual Weapon carousel state.
+    Risk areas: View-mode Weapon row selection state and Probable selected-Weapon handoff only. Ability row state cycling, Weapon filters, Weapon Tags, and Probable lazy initialization remain unchanged.
   -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7548,7 +7568,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.15";
+    const APP_VERSION = "31.25";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -16479,7 +16499,7 @@
             ${addOpen ? renderViewEditRosterAddPanel(entry, unit) : ""}
 
             <div class="selected-entry-detail-section ${statsOpen ? "active" : ""}" data-entry-section="stats">
-              ${renderUnitOtherAbilityLine(unit, "view-edit-unit-other-ability-line view-edit-stats-tags-row")}
+              ${renderUnitOtherAbilityLine(unit, "view-edit-unit-other-ability-line view-edit-stats-tags-row", entry)}
               ${isUnitEditing ? renderUnitProfileEditTable(unit, unitEditKey) : renderUnitProfileTable(unit, entry)}
             </div>
             <div class="selected-entry-detail-section ${weaponsOpen ? "active" : ""}" data-entry-section="weapons">
@@ -16666,10 +16686,6 @@
     function canReloadAppVersion() {
       if (!appStorageInitialized) {
         setVersionHistoryStatus("Wait for the app to finish loading before changing versions.", "error", true);
-        return false;
-      }
-      if (appEditMode && viewEditRosterDraftDirty) {
-        setVersionHistoryStatus("Save roster changes before changing app versions.", "error", true);
         return false;
       }
       return true;
@@ -19417,6 +19433,15 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           return;
         }
 
+        if (probableRule && (probableRule.key === "rerollHits" || probableRule.key === "rerollWounds")) {
+          const label = getAbilityTagDisplayLabel(item.tag);
+          const key = normalizeAbilityTagPickerKey(label);
+          if (!label || derivedRuleKeys.has(key)) return;
+          derivedRuleKeys.add(key);
+          derivedRules.push(label);
+          return;
+        }
+
         if (effectType === "WEAPON_RULE" || effectType === "RULE") {
           const label = getAbilityTagDisplayLabel(item.tag);
           const key = normalizeAbilityTagPickerKey(label);
@@ -20171,13 +20196,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     function refreshProbableSection(entryId) {
       const cleanEntryId = String(entryId || "").trim();
       if (!cleanEntryId || appEditMode) return false;
+      const body = Array.from(document.querySelectorAll("[data-probable-section-for]"))
+        .find(node => String(node.dataset.probableSectionFor || "") === cleanEntryId);
+      if (!body) return false;
       const roster = getActiveRoster();
       const entry = getRosterEntryById(roster, cleanEntryId);
       const unit = entry ? getUnitById(entry.unitId) : null;
       if (!entry || !unit) return false;
-      const body = Array.from(document.querySelectorAll("[data-probable-section-for]"))
-        .find(node => String(node.dataset.probableSectionFor || "") === cleanEntryId);
-      if (!body) return false;
       const wrapper = document.createElement("div");
       wrapper.innerHTML = renderProbablePanel(entry, unit);
       const replacement = wrapper.querySelector("[data-probable-section-for]");
@@ -20317,7 +20342,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderRosterUnitDetailPanel(entry, unit, index) {
       const effectiveProfile = getEffectiveUnitProfile(entry, unit, getActiveRoster());
-      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" id="btn-add-${index}" type="button" aria-label="Add" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'add')">+</button></div><div class="subsection active-unit-detail-box" id="add-${index}">${renderRosterViewAddPanel(entry, unit)}</div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderRosterViewAbilitiesBox(entry, unit)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}">${renderProbablePanel(entry, unit)}</div>`;
+      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" id="btn-add-${index}" type="button" aria-label="Add" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'add')">+</button></div><div class="subsection " id="add-${index}">${renderRosterViewAddPanel(entry, unit)}</div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderRosterViewAbilitiesBox(entry, unit)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}" data-probable-entry-id="${escapeAttr(entry.entryId || "")}"></div>`;
     }
 
     // RosterRender ownership: reserve one fixed-width inline Disposition control
@@ -20481,19 +20506,21 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function cycleViewRosterWeaponRowState(row) {
       if (appEditMode || !row || !row.matches("[data-view-roster-weapon-kind]")) return;
-      const currentState = String(row.dataset.viewRosterWeaponState || "default").trim().toLowerCase();
-      const nextState = currentState === "default"
-        ? "active"
-        : currentState === "active"
-          ? "inactive"
-          : "default";
       const group = String(row.dataset.viewRosterWeaponGroup || "");
       const tbody = row.closest("tbody");
-      const groupRows = group && tbody
-        ? Array.from(tbody.querySelectorAll("[data-view-roster-weapon-group]")).filter(candidate => String(candidate.dataset.viewRosterWeaponGroup || "") === group)
-        : [row];
+      if (!group || !tbody) return;
 
-      groupRows.forEach(candidate => {
+      const currentState = String(row.dataset.viewRosterWeaponState || "default").trim().toLowerCase();
+      const allWeaponRows = Array.from(tbody.querySelectorAll("[data-view-roster-weapon-group]"));
+      const clearingSelection = currentState === "active";
+
+      allWeaponRows.forEach(candidate => {
+        const candidateGroup = String(candidate.dataset.viewRosterWeaponGroup || "");
+        const nextState = clearingSelection
+          ? "default"
+          : candidateGroup === group
+            ? "active"
+            : "inactive";
         candidate.dataset.viewRosterWeaponState = nextState;
         candidate.classList.toggle("view-weapon-row-state-active", nextState === "active");
         candidate.classList.toggle("view-weapon-row-state-inactive", nextState === "inactive");
@@ -20501,15 +20528,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
       const entryId = String(row.dataset.probableEntryId || "").trim();
       const weaponKey = String(row.dataset.probableWeaponKey || "").trim();
-      if (entryId && weaponKey) {
-        if (nextState === "active") {
-          viewProbableSelectedWeaponByEntry[entryId] = weaponKey;
-        } else if (viewProbableSelectedWeaponByEntry[entryId] === weaponKey) {
-          const replacement = Array.from(document.querySelectorAll(".view-weapon-main-row[data-probable-entry-id]"))
-            .find(candidate => String(candidate.dataset.probableEntryId || "") === entryId && candidate.classList.contains("view-weapon-row-state-active"));
-          if (replacement) viewProbableSelectedWeaponByEntry[entryId] = String(replacement.dataset.probableWeaponKey || "");
-          else delete viewProbableSelectedWeaponByEntry[entryId];
-        }
+      if (entryId) {
+        if (!clearingSelection && weaponKey) viewProbableSelectedWeaponByEntry[entryId] = weaponKey;
+        else delete viewProbableSelectedWeaponByEntry[entryId];
         refreshProbableSection(entryId);
       }
     }
@@ -21008,7 +21029,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       if (isOpen) {
         if (existingOtherAbilityLine) existingOtherAbilityLine.remove();
       } else if (!existingOtherAbilityLine) {
-        const otherAbilityHtml = renderUnitOtherAbilityLine(unit, "view-unit-other-ability-line");
+        const otherAbilityHtml = renderUnitOtherAbilityLine(unit, "view-unit-other-ability-line", entry);
         if (otherAbilityHtml) row.insertAdjacentHTML("afterend", otherAbilityHtml);
       }
 
@@ -21040,7 +21061,30 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
 
-    function toggleSection(index, selectedSection) { const section = document.getElementById(`${selectedSection}-${index}`); const button = document.getElementById(`btn-${selectedSection}-${index}`); const isOpen = section.style.display === "block"; section.style.display = isOpen ? "none" : "block"; button.classList.toggle("active", !isOpen); }
+    function ensureProbableSectionRendered(index) {
+      const section = document.getElementById(`probable-${index}`);
+      if (!section) return false;
+      if (section.dataset.probableLoaded === "true") return true;
+      const entryId = String(section.dataset.probableEntryId || "").trim();
+      if (!entryId) return false;
+      const roster = getActiveRoster();
+      const entry = getRosterEntryById(roster, entryId);
+      const unit = entry ? getUnitById(entry.unitId) : null;
+      if (!entry || !unit) return false;
+      section.innerHTML = renderProbablePanel(entry, unit);
+      section.dataset.probableLoaded = "true";
+      return true;
+    }
+
+    function toggleSection(index, selectedSection) {
+      const section = document.getElementById(`${selectedSection}-${index}`);
+      const button = document.getElementById(`btn-${selectedSection}-${index}`);
+      if (!section || !button) return;
+      const isOpen = section.style.display === "block";
+      if (!isOpen && selectedSection === "probable") ensureProbableSectionRendered(index);
+      section.style.display = isOpen ? "none" : "block";
+      button.classList.toggle("active", !isOpen);
+    }
 
     function closeClosestUnitDetailSection(element) {
       if (!element) return;
@@ -21647,12 +21691,28 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
       if (editable) return rendered;
 
-      const appendedTags = getAbilityProtectedModifierTagAssignments(ability)
-        .map(assignment => renderProtectedAbilityTagBadge(
+      const grouped = { melee: [], range: [], other: [] };
+      getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
+        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        if (isUnitLevelTagDefinition(definition)) return;
+        const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
+        const badge = renderProtectedAbilityTagBadge(
           assignment.tag,
           tagContext ? { ...tagContext, ability, category: assignment.category } : { ability, category: assignment.category }
-        ))
-        .join(" ");
+        );
+        if (scope === "melee") grouped.melee.push(badge);
+        else if (scope === "range") grouped.range.push(badge);
+        else grouped.other.push(badge);
+      });
+
+      const scopedSection = (label, badges) => badges.length
+        ? `<div class="ability-tag-scope-section"><div class="ability-primary-name ability-tag-scope-title">${escapeHtml(label)}</div><div class="ability-tag-scope-badges">${badges.join(" ")}</div></div>`
+        : "";
+      const appendedTags = [
+        scopedSection("Melee", grouped.melee),
+        scopedSection("Range", grouped.range),
+        grouped.other.length ? `<div class="ability-tag-scope-badges">${grouped.other.join(" ")}</div>` : ""
+      ].join("");
 
       return appendedTags
         ? `${rendered}${rendered ? `<div class="ability-appended-tags">${appendedTags}</div>` : appendedTags}`
@@ -23258,9 +23318,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
           if (!appEditMode && entry && entry.entryId) {
             const innateTag = isInnateWeaponAbilityTag(weapon, ability);
-            const isOn = innateTag ? true : getRosterEntryWeaponTagState(entry, itemKey, ability, true);
-            const classes = `weapon-ability-badge weapon-view-tag-toggle ${isOn ? "tag-on" : "tag-off"}${innateTag ? " tag-locked" : ""}`;
-            if (innateTag) {
+            const derivedTag = (effectiveWeapon.derivedWeaponAbilities || []).some(rule =>
+              normalizeAbilityTagPickerKey(rule) === normalizeAbilityTagPickerKey(ability)
+            );
+            const lockedTag = innateTag || derivedTag;
+            const isOn = lockedTag ? true : getRosterEntryWeaponTagState(entry, itemKey, ability, true);
+            const classes = `weapon-ability-badge weapon-view-tag-toggle ${isOn ? "tag-on" : "tag-off"}${lockedTag ? " tag-locked" : ""}`;
+            if (lockedTag) {
               return `
                 <span class="weapon-ability-wrap">
                   <span class="${escapeAttr(classes)}" aria-disabled="true" data-weapon-tag="${escapeAttr(ability)}" data-weapon-tag-entry-id="${escapeAttr(entry.entryId)}" data-weapon-tag-item-key="${escapeAttr(itemKey)}">${abilityNameHtml}</span>
@@ -23469,13 +23533,60 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelFnpAbility(ability));
     }
 
-    function renderUnitOtherAbilityTags(unit) {
-      const tags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
+    function isUnitLevelTagDefinition(definition) {
+      if (!definition) return false;
+      const target = String(definition.target || "").trim().toUpperCase();
+      const affects = String(definition.affects || "").trim().toUpperCase();
+      const category = String(definition.category || "").trim().toUpperCase();
+      return target === "UNIT" || affects === "UNIT" || category === "UNIT" || category.startsWith("UNIT ");
+    }
+
+    function getRosterEntryUnitLevelStructuredTagRecords(entry, unit, roster = getDisplayedRosterForRosterScreen()) {
+      if (!entry || !unit) return [];
+      const recordsByTag = new Map();
+      getRosterEntryAbilityTagSourceRecords(entry, unit, roster).forEach(record => {
+        const ability = record && record.ability;
+        if (!ability || ability.isMissingLink) return;
+        getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
+          const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+          if (!isUnitLevelTagDefinition(definition)) return;
+          const tagKey = normalizeAbilityTagPickerKey(getAbilityTagDisplayLabel(assignment.tag));
+          if (!tagKey) return;
+          const candidate = {
+            ability,
+            tag: assignment.tag,
+            category: assignment.category,
+            defaultOn: record.defaultOn !== false,
+            isOn: getRosterEntryAbilityTagState(entry, ability, assignment.tag, record.defaultOn !== false, assignment.category)
+          };
+          const existing = recordsByTag.get(tagKey);
+          if (!existing || (!existing.isOn && candidate.isOn)) recordsByTag.set(tagKey, candidate);
+        });
+      });
+      return Array.from(recordsByTag.values());
+    }
+
+    function renderRosterEntryUnitLevelStructuredTags(entry, unit) {
+      if (!entry || !unit) return "";
+      return getRosterEntryUnitLevelStructuredTagRecords(entry, unit)
+        .map(record => renderProtectedAbilityTagBadge(record.tag, {
+          entry,
+          ability: record.ability,
+          category: record.category,
+          defaultOn: record.defaultOn
+        }))
+        .join("");
+    }
+
+    function renderUnitOtherAbilityTags(unit, entry = null) {
+      const coreTags = renderOtherAbilityTags(getUnitNameLevelAbilities(unit));
+      const structuredTags = renderRosterEntryUnitLevelStructuredTags(entry, unit);
+      const tags = [coreTags, structuredTags].filter(Boolean).join("");
       return tags ? `<div class="unit-other-ability-tags">${tags}</div>` : "";
     }
 
-    function renderUnitOtherAbilityLine(unit, className = "") {
-      const tagsHtml = renderUnitOtherAbilityTags(unit);
+    function renderUnitOtherAbilityLine(unit, className = "", entry = null) {
+      const tagsHtml = renderUnitOtherAbilityTags(unit, entry);
       if (!tagsHtml) return "";
       const classes = ["unit-other-ability-line", className].filter(Boolean).join(" ");
       return `<div class="${classes}">${tagsHtml}</div>`;
@@ -23733,7 +23844,10 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const hasEditableAbilities = appEditMode && showEdit && (hasEditableSpreadsheetAbilities || hasUnitEntry);
       const roster = getViewEditRoster();
       const descriptors = buildUnitAbilityRowDescriptors(abilities, entry, roster, editKey, isEditing);
-      const rows = descriptors.map((descriptor, rowIndex) => {
+      const visibleDescriptors = appEditMode
+        ? descriptors
+        : descriptors.filter(descriptor => ![8, 9].includes(Number(descriptor.order)));
+      const rows = visibleDescriptors.map((descriptor, rowIndex) => {
         let rowHtml = descriptor.render(rowIndex);
         if (!rowHtml) return rowHtml;
         if (appEditMode) {
@@ -28788,7 +28902,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.15',
+        version: 'V31.25',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -29441,5 +29555,6 @@ function viewEditUpdateDetachmentNameAt(index, value) {
   }
 })();
 </script>
+  <!-- V31.16 WAHA_CHROME_ROUTER -->
 </body>
 </html>
