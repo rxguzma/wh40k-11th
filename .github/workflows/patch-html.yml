@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.21 with single-select Weapons
-        run: python3 scripts/patch_html_v31_21.py
+      - name: Build V31.22 with scoped Tags and reroll Weapon profiles
+        run: python3 scripts/patch_html_v31_22.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.21 with single-select Weapons"
+          git commit -m "Build V31.22 scoped Tags and reroll Weapon profiles"
           git push origin HEAD:main
