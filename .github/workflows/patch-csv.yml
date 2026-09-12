@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NAZDREGS_KNOW_WOTZ","column":"Short_Description","value":"Ranged\u003a IGNORES COVER"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"LONE_OPERATIVE","column":"Display_Tag","value":"LONE OP"},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"LONE_OPERATIVE_3","mode":"insert","after_row_id":"LONE_OPERATIVE","sets":{"Display_Tag":"LONE OP 3\"","Title":"Lone Operative 3\"","Category":"Unit Rules","Affects":"Unit","Description":"The affected unit has Lone Operative under the 3\" proximity condition specified by the source rule.","Editable":"TRUE","Sort_Order":"833"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
