@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.25 with Unit-level structured Tags
-        run: python3 scripts/patch_html_v31_25.py
+      - name: Build V31.26 with inline scoped Ability Tags
+        run: python3 scripts/patch_html_v31_26.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.25 Unit-level structured Tags"
+          git commit -m "Build V31.26 inline scoped Ability Tags"
           git push origin HEAD:main
