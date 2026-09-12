@@ -5,38 +5,38 @@ TARGET: That ORKS INFANTRY unit. You can target that unit with this stratagem ev
 
 EFFECT: Roll one D3:
 - Your unit suffers a number of mortal wounds equal to the result.
-- Your unit is no longer battle-shocked.",,,,,,
+- Your unit is no longer battle-shocked.",,,,"ORKS, INFANTRY",,
 orks_war_horde_stratagem_hit_em_harder_1cp,orks_war_horde,HIT 'EM HARDER,1,Fight: Melee attacks gain [LETHAL HITS].,"WHEN: Fight phase, when a friendly ORKS unit is selected to fight.
 
 TARGET: That ORKS unit.
 
-EFFECT: Your unit's melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],,,,
+EFFECT: Your unit's melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],,ORKS,,
 orks_war_horde_stratagem_orks_is_never_beaten_1cp,orks_war_horde,ORKS IS NEVER BEATEN,1,"Fight: non-TITANIC fight-on-death 
 on 4+ (3+ if RILED UP).","WHEN: Fight phase, when an enemy unit targets a friendly ORKS unit (excluding TITANIC units).
 
 TARGET: That ORKS unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP.
-- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,,,,
+- On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,,ORKS,,TITANIC
 orks_war_horde_stratagem_mow_em_down_1cp,orks_war_horde,MOW 'EM DOWN,1,Fight: Charging non-WALKER VEHICLE melee gains [CLEAVE 1] (or +1 CLEAVE).,"WHEN: Fight phase, when a friendly ORKS VEHICLE unit (excluding WALKER units) that made a charge move this turn is selected to fight.
 
 TARGET: That ORKS VEHICLE unit.
 
 EFFECT: Your unit's melee attacks have:
 - [CLEAVE 1]
-- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",[CLEAVE 1],[Melee - Weapon Rules],,,,
+- Or if that attack already has [CLEAVE], +1 to the value of that [CLEAVE] (e.g. [CLEAVE 1] becomes [CLEAVE 2]).",[CLEAVE 1],[Melee - Weapon Rules],,"ORKS, VEHICLE",,WALKER
 orks_war_horde_stratagem_fungus_fuel_injection_1cp,orks_war_horde,FUNGUS-FUEL INJECTION,1,"Movement: MOUNTED / VEHICLE +2"" M.","WHEN: Your Movement phase, when a friendly ORKS MOUNTED / VEHICLE unit is selected to move.
 
 TARGET: That ORKS MOUNTED / VEHICLE unit.
 
-EFFECT: Your unit has +2"" M.",[+2 M”],[Unit Stats],,,,
+EFFECT: Your unit has +2"" M.",[+2 M”],[Unit Stats],,ORKS,"MOUNTED, VEHICLE",
 orks_war_horde_stratagem_close_range_dakka_1cp,orks_war_horde,CLOSE-RANGE DAKKA,1,Shooting: ORKS unit’s ranged attacks gain [RAPID FIRE 1] (or +1 RAPID FIRE).,"WHEN: Your Shooting phase, when a friendly ORKS unit is selected to shoot.
 
 TARGET: That ORKS unit.
 
 EFFECT: Your unit's ranged attacks have:
 - [RAPID FIRE 1]
-- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",[RAPID FIRE 1],[Range - Weapon Rules],,,,
+- Or if that attack already has [RAPID FIRE], +1 to the value of that [RAPID FIRE] (e.g. [RAPID FIRE 1] becomes [RAPID FIRE 2]).",[RAPID FIRE 1],[Range - Weapon Rules],,ORKS,,
 orks_freebooter_krew_stratagem_bash_and_grab_1cp,orks_freebooter_krew,Bash and Grab,1,FIGHT: ORKS can re‑roll To Wound within loot objective.,"WHEN: The Fight phase.
 
 TARGET: One ORKS unit from your army that has not been selected to fight this phase.

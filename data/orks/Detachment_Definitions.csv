@@ -1,5 +1,5 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,3,Take and Hold,Purge the Foe,ORKS melee [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],1,,,
+orks_war_horde,Orks,War Horde,orks_war_horde_detachment_rule_get_stuck_in,GET STUCK IN,3,Take and Hold,Purge the Foe,ORKS melee [SUSTAINED HITS 1].,Friendly ORKS units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],1,ORKS,,
 orks_more_dakka,Orks,More Dakka!,orks_more_dakka_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,INFANTRY ranged have [ASSAULT].  In addition whe RILED UP ranged get  [SUSTAINED HITS 1],"Friendly ORKS INFANTRY units’ ranged attacks have [ASSAULT].
 
 In your Shooting phase, if the Waaagh! is active for your army, friendly ORKS INFANTRY units’ ranged attacks have [SUSTAINED HITS 1].",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,,,
