@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_freebooter_krew_enhancement_da_kaptin","sets":{"Required_Keywords":"CHARACTER","Any_Keywords":"","Excluded_Keywords":""}},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_orbital_assault_force_stratagem_onward_for_the_emperor","sets":{"Required_Keywords":"","Any_Keywords":"","Excluded_Keywords":""}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_bully_boyz","mode":"replace_text","column":"Any_Keywords","from":"MEGA ARMOUR, NOBZ","to":"MEGANOBZ, MEGA ARMOUR, NOBZ"},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_bully_boyz","mode":"replace_text","column":"Any_Keywords","from":"MEGA ARMOUR, NOBZ","to":"MEGANOBZ, MEGA ARMOUR, NOBZ"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
