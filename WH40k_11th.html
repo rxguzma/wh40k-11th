@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.20</title>
+  <title>WH40k 11th V31.21</title>
 
 
   <!--
@@ -22,7 +22,9 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.20; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    View-mode Weapon selection invariant: Weapon selection is single-select. Selecting one Weapon makes that Weapon Active and automatically mutes every other Weapon in that Unit's Weapon table. Tapping the Active Weapon again clears selection and restores every Weapon to Default. Muted is an automatic sibling state only and must not be restored as a manual carousel step.
+
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.21; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +81,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.21
+    Scope: Change View-mode Weapon selection to single-select behavior. Selecting one Weapon automatically mutes every other Weapon in that Unit's Weapon table; tapping the selected Weapon again returns all Weapons to Default. Tapping an auto-muted Weapon switches the selection directly to it. Muted is no longer a manual Weapon carousel state.
+    Risk areas: View-mode Weapon row selection state and Probable selected-Weapon handoff only. Ability row state cycling, Weapon filters, Weapon Tags, and Probable lazy initialization remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.20
     Scope: Make Probable truly lazy in View mode. Opening a Unit no longer renders or calculates the Probable panel; the first Probable button click initializes it. Weapon, Ability, and Tag refresh hooks do nothing until Probable has been opened at least once for that rendered Unit detail.
     Risk areas: View-mode Probable initialization and refresh timing only. Existing Probable calculations, controls, selected-weapon behavior, and non-Probable Unit sections are unchanged.
@@ -102,11 +110,6 @@
     Risk areas: Unit Waha links only. Non-Wahapedia links and Unit row behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.16
-    Scope: Route all Wahapedia links through the Chrome URL scheme so tapping Waha from the local iPhone HTML app hands the page to Chrome. Applies to normal anchors and Wahapedia URLs opened through window.open; all non-Wahapedia links are unchanged.
-    Risk areas: External Wahapedia link routing only. iOS may still show its normal confirmation before handing the link to Chrome.
-  -->
 
 
 
@@ -7553,7 +7556,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.20";
+    const APP_VERSION = "31.21";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -20486,19 +20489,21 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function cycleViewRosterWeaponRowState(row) {
       if (appEditMode || !row || !row.matches("[data-view-roster-weapon-kind]")) return;
-      const currentState = String(row.dataset.viewRosterWeaponState || "default").trim().toLowerCase();
-      const nextState = currentState === "default"
-        ? "active"
-        : currentState === "active"
-          ? "inactive"
-          : "default";
       const group = String(row.dataset.viewRosterWeaponGroup || "");
       const tbody = row.closest("tbody");
-      const groupRows = group && tbody
-        ? Array.from(tbody.querySelectorAll("[data-view-roster-weapon-group]")).filter(candidate => String(candidate.dataset.viewRosterWeaponGroup || "") === group)
-        : [row];
+      if (!group || !tbody) return;
 
-      groupRows.forEach(candidate => {
+      const currentState = String(row.dataset.viewRosterWeaponState || "default").trim().toLowerCase();
+      const allWeaponRows = Array.from(tbody.querySelectorAll("[data-view-roster-weapon-group]"));
+      const clearingSelection = currentState === "active";
+
+      allWeaponRows.forEach(candidate => {
+        const candidateGroup = String(candidate.dataset.viewRosterWeaponGroup || "");
+        const nextState = clearingSelection
+          ? "default"
+          : candidateGroup === group
+            ? "active"
+            : "inactive";
         candidate.dataset.viewRosterWeaponState = nextState;
         candidate.classList.toggle("view-weapon-row-state-active", nextState === "active");
         candidate.classList.toggle("view-weapon-row-state-inactive", nextState === "inactive");
@@ -20506,15 +20511,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
       const entryId = String(row.dataset.probableEntryId || "").trim();
       const weaponKey = String(row.dataset.probableWeaponKey || "").trim();
-      if (entryId && weaponKey) {
-        if (nextState === "active") {
-          viewProbableSelectedWeaponByEntry[entryId] = weaponKey;
-        } else if (viewProbableSelectedWeaponByEntry[entryId] === weaponKey) {
-          const replacement = Array.from(document.querySelectorAll(".view-weapon-main-row[data-probable-entry-id]"))
-            .find(candidate => String(candidate.dataset.probableEntryId || "") === entryId && candidate.classList.contains("view-weapon-row-state-active"));
-          if (replacement) viewProbableSelectedWeaponByEntry[entryId] = String(replacement.dataset.probableWeaponKey || "");
-          else delete viewProbableSelectedWeaponByEntry[entryId];
-        }
+      if (entryId) {
+        if (!clearingSelection && weaponKey) viewProbableSelectedWeaponByEntry[entryId] = weaponKey;
+        else delete viewProbableSelectedWeaponByEntry[entryId];
         refreshProbableSection(entryId);
       }
     }
@@ -28816,7 +28815,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.20',
+        version: 'V31.21',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
