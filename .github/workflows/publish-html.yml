@@ -33,31 +33,37 @@ jobs:
 
           path = Path('WH40k_11th.html')
           html = path.read_text(encoding='utf-8')
-
           already_versioned = '<title>WH40k 11th V31.7</title>' in html
           needs_version = '<title>WH40k 11th V31.6</title>' in html
           if not already_versioned and not needs_version:
               raise SystemExit('Expected V31.6 or V31.7 baseline.')
 
-          source_old = '''      (Array.isArray(effects) ? effects : []).forEach(effect => {
-        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
-        const stat = String(effect && effect.stat || "").trim().toUpperCase();
-        const operation = String(effect && effect.operation || "").trim().toUpperCase();
-        const value = String((effect && effect.value) ?? "").trim();'''
-          source_new = '''      (Array.isArray(effects) ? effects : []).forEach(effect => {
-        const sourceType = String(effect && effect.sourceType || "").trim().toUpperCase();
-        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
-        const stat = String(effect && effect.stat || "").trim().toUpperCase();
-        const operation = String(effect && effect.operation || "").trim().toUpperCase();
-        const value = String((effect && effect.value) ?? "").trim();'''
-
-          keyword_old = '''        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
-          const keyword = value.replace(/[.,]+$/, "").toUpperCase();'''
-          keyword_new = '''        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
-          // Tag definitions describe rule behavior; they must never manufacture datasheet Keywords.
-          // Genuine keyword mutations remain supported only through explicit normalized effects.
-          if (sourceType === "TAG_DEFINITION") return;
-          const keyword = value.replace(/[.,]+$/, "").toUpperCase();'''
+          source_old = "\n".join([
+              '      (Array.isArray(effects) ? effects : []).forEach(effect => {',
+              '        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();',
+              '        const stat = String(effect && effect.stat || "").trim().toUpperCase();',
+              '        const operation = String(effect && effect.operation || "").trim().toUpperCase();',
+              '        const value = String((effect && effect.value) ?? "").trim();',
+          ])
+          source_new = "\n".join([
+              '      (Array.isArray(effects) ? effects : []).forEach(effect => {',
+              '        const sourceType = String(effect && effect.sourceType || "").trim().toUpperCase();',
+              '        const effectType = String(effect && effect.effectType || "").trim().toUpperCase();',
+              '        const stat = String(effect && effect.stat || "").trim().toUpperCase();',
+              '        const operation = String(effect && effect.operation || "").trim().toUpperCase();',
+              '        const value = String((effect && effect.value) ?? "").trim();',
+          ])
+          keyword_old = "\n".join([
+              '        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {',
+              '          const keyword = value.replace(/[.,]+$/, "").toUpperCase();',
+          ])
+          keyword_new = "\n".join([
+              '        if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {',
+              '          // Tag definitions describe rule behavior; they must never manufacture datasheet Keywords.',
+              '          // Genuine keyword mutations remain supported only through explicit normalized effects.',
+              '          if (sourceType === "TAG_DEFINITION") return;',
+              '          const keyword = value.replace(/[.,]+$/, "").toUpperCase();',
+          ])
 
           if 'if (sourceType === "TAG_DEFINITION") return;' not in html:
               if html.count(source_old) != 1:
@@ -79,38 +85,34 @@ jobs:
                       raise SystemExit(f'Expected exactly one version marker: {old!r}; found {html.count(old)}.')
                   html = html.replace(old, new, 1)
 
-              note = '''  <!--
-    CHANGE NOTE - WH40k_11th_V31.7
-    Scope: Prevent Tag_Definitions-derived Unit Rule tags from mutating effective Unit Keywords. Explicit normalized keyword effects remain supported. This stops FNP, Fight on Death, Lone Operative, and similar rule tags from appearing as datasheet Keywords or affecting keyword eligibility.
-    Risk areas: Effective Unit keyword modifiers and keyword eligibility only. Unit-rule tag display and Probable tag behavior remain unchanged.
-  -->
-
-'''
+              note = "\n".join([
+                  '  <!--',
+                  '    CHANGE NOTE - WH40k_11th_V31.7',
+                  '    Scope: Prevent Tag_Definitions-derived Unit Rule tags from mutating effective Unit Keywords. Explicit normalized keyword effects remain supported. This stops FNP, Fight on Death, Lone Operative, and similar rule tags from appearing as datasheet Keywords or affecting keyword eligibility.',
+                  '    Risk areas: Effective Unit keyword modifiers and keyword eligibility only. Unit-rule tag display and Probable tag behavior remain unchanged.',
+                  '  -->',
+                  '',
+                  '',
+              ])
               anchor = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.6\n'
               if html.count(anchor) != 1:
                   raise SystemExit('Could not find V31.6 change-note anchor.')
               html = html.replace(anchor, note + anchor, 1)
-
-              html, removed = re.subn(
-                  r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.2\n.*?\n  -->\n',
-                  '\n',
-                  html,
-                  count=1,
-                  flags=re.S,
-              )
+              html, removed = re.subn(r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.2\n.*?\n  -->\n', '\n', html, count=1, flags=re.S)
               if removed != 1:
                   raise SystemExit(f'Expected to retire one V31.2 change note, removed {removed}.')
 
-          if '<title>WH40k 11th V31.7</title>' not in html:
-              raise SystemExit('V31.7 title missing after patch.')
-          if 'const APP_VERSION = "31.7";' not in html:
-              raise SystemExit('V31.7 APP_VERSION missing after patch.')
-          if "version: 'V31.7'," not in html:
-              raise SystemExit('V31.7 InternalQuality version missing after patch.')
+          checks = [
+              '<title>WH40k 11th V31.7</title>',
+              'const APP_VERSION = "31.7";',
+              "version: 'V31.7',",
+              'if (sourceType === "TAG_DEFINITION") return;',
+          ]
+          for check in checks:
+              if check not in html:
+                  raise SystemExit(f'Missing required V31.7 marker: {check}')
           if html.count('CHANGE NOTE - WH40k_11th_V31.') != 5:
               raise SystemExit('Expected exactly five detailed V31 change notes after patch.')
-          if 'if (sourceType === "TAG_DEFINITION") return;' not in html:
-              raise SystemExit('Keyword contamination guard missing after patch.')
 
           path.write_text(html, encoding='utf-8')
           PY
