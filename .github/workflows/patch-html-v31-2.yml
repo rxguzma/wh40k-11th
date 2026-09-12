@@ -30,4 +30,4 @@ jobs:
           git commit -m "Add keyword-matched unit plus panel in V31.2"
           git push origin HEAD:main
 
-# retry after anchor correction
+# retry after Boyz faction-keyword test setup
