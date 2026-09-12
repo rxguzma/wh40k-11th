@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Compact version history grid
-        run: python3 scripts/patch_html_v31_11.py
+      - name: Increase Unit add-panel option height
+        run: python3 scripts/patch_html_v31_12.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Compact version history grid"
+          git commit -m "Increase Unit add-panel option height"
           git push origin HEAD:main
