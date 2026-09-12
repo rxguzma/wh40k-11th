@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Optimize Unit add-panel eligibility
-        run: python3 scripts/patch_html_v31_9.py
+      - name: Split Detachment keyword editor sections
+        run: python3 scripts/patch_html_v31_10.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Optimize Unit enhancement and stratagem panels"
+          git commit -m "Split Detachment keyword editor sections"
           git push origin HEAD:main
