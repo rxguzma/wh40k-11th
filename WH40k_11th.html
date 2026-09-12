@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.11</title>
+  <title>WH40k 11th V31.12</title>
 
 
   <!--
@@ -22,7 +22,7 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.11; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.12; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -79,6 +79,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.12
+    Scope: Increase vertical padding on Unit + panel Enhancement/Stratagem option buttons so multi-line labels fit comfortably inside their boxes.
+    Risk areas: Unit + panel option-button sizing only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.11
     Scope: Version history is now a compact ten-button grid: five version buttons per row across two rows instead of a long one-version-per-row list.
     Risk areas: Version history presentation only. Version loading, Update, Download, retention, and release-index behavior are unchanged.
@@ -102,11 +108,6 @@
     Risk areas: Detachment Rule edit rendering, Detachment_Definitions spreadsheet edits, and item-level eligibility values only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.7
-    Scope: Prevent Tag_Definitions-derived Unit Rule tags from mutating effective Unit Keywords. Explicit normalized keyword effects remain supported. This stops FNP, Fight on Death, Lone Operative, and similar rule tags from appearing as datasheet Keywords or affecting keyword eligibility.
-    Risk areas: Effective Unit keyword modifiers and keyword eligibility only. Unit-rule tag display and Probable tag behavior remain unchanged.
-  -->
 
 
 
@@ -848,7 +849,7 @@
     .view-edit-unit-add-option {
       min-width: 0;
       height: auto;
-      padding: 9px 4px;
+      padding: 12px 4px;
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: anywhere;
@@ -7543,7 +7544,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.11";
+    const APP_VERSION = "31.12";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -28783,7 +28784,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.11',
+        version: 'V31.12',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

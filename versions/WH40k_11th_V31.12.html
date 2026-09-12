@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.2</title>
+  <title>WH40k 11th V31.12</title>
 
 
   <!--
@@ -22,9 +22,9 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.2; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.12; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
-    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
+    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
 
   <!--
@@ -79,32 +79,44 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.2
-    Scope: The Unit detail + control is two-thirds of a normal category tab and opens a keyword-matched add panel. Edit shows eligible selected-Detachment Enhancements and reuses the existing max-one paid Enhancement path; View shows eligible selected-Detachment Stratagems with multi-select add/remove. Eligibility uses Required_Keywords, Any_Keywords, and Excluded_Keywords against the Unit effective Keywords, with all keywords treated identically.
-    Risk areas: Unit detail rendering, normalized spreadsheet-source metadata, and roster Stratagem/Enhancement state. Existing Tags/Probable mechanics and unrelated Detachment reference/edit surfaces are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.12
+    Scope: Increase vertical padding on Unit + panel Enhancement/Stratagem option buttons so multi-line labels fit comfortably inside their boxes.
+    Risk areas: Unit + panel option-button sizing only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.1
-    Scope: Download is a real file link with native file sharing when supported, using a File prepared before the tap. Saving is owned by the loaded release, so an existing V31.0 host also gets the fix. A passive host source preserves a complete standalone HTML download without capturing rendered roster data. Update and Download share wider, taller button geometry. The new version number allows existing V31.0 copies to detect this release.
-    Risk areas: Version header rendering and standalone download serialization. The existing game logic, Cards source, storage keys, and durable version-switch checkpoint are unchanged. Device save completion is never inferred from a click or a resolved share-sheet promise.
+    CHANGE NOTE - WH40k_11th_V31.11
+    Scope: Version history is now a compact ten-button grid: five version buttons per row across two rows instead of a long one-version-per-row list.
+    Risk areas: Version history presentation only. Version loading, Update, Download, retention, and release-index behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.0
-    Scope: Complete the Version/current label toggle, index-backed history, distinct Update and Download actions, visible failures, and durable storage checkpoint before switching releases. GitHub canonical HTML and versions/index.json are published together; keep the newest ten releases.
-    Risk areas: save/load checkpoint, roster utility rendering, and nested Cards frame initialization. Army/View/Edit/Cards source and existing persistence keys are preserved. Version remains V31.0 as directed.
+    CHANGE NOTE - WH40k_11th_V31.10
+    Scope: Detachment Rule keyword eligibility editing is now presented as three clearly separate edit sections: Required, Any, and Excluded. Data fields and save behavior are unchanged.
+    Risk areas: Detachment Rule keyword editor presentation only. Eligibility logic, CSV mapping, Enhancements, Stratagems, and unrelated roster UI are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V30.8
-    Scope: Nobz Edit uses per-combination counts instead of unit-wide weapon dropdowns. Five option rows start as default xN; + on another option steals from default and - returns those models. View shows only taken weapons as Name xN. Do not introduce kit objects or Weapon_Kits.csv.
+    CHANGE NOTE - WH40k_11th_V31.9
+    Scope: Remove the noticeable delay when opening Unit + panels for Enhancements or Stratagems. Eligibility now computes the Unit's effective keyword set once per panel render and reuses it for every candidate item instead of rebuilding the effective Unit profile once per candidate. Eligibility results and data-driven rules are unchanged.
+    Risk areas: Unit + panel eligibility filtering and performance only. Enhancement/Stratagem selection semantics, keyword rules, and unrelated roster rendering remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V30.7
-    Scope: Add a compact + control at the far right of the Unit detail category row in both View and Edit. The + control is approximately one-third the width of a normal category button and is intentionally inert pending future behavior.
+    CHANGE NOTE - WH40k_11th_V31.8
+    Scope: Add Detachment Rule eligibility keyword editing in Edit mode. Required, Any, and Excluded keyword fields open with the existing Detachment Rule editor, save through the current spreadsheet-edit row path, and immediately update runtime eligibility. Enhancements and Stratagems are intentionally unchanged in this chunk.
+    Risk areas: Detachment Rule edit rendering, Detachment_Definitions spreadsheet edits, and item-level eligibility values only.
   -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -837,10 +849,13 @@
     .view-edit-unit-add-option {
       min-width: 0;
       height: auto;
-      padding: 9px 4px;
+      padding: 12px 4px;
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: anywhere;
+
+      font-size: 10px;
+      font-weight: 400;
     }
 
     .view-edit-unit-add-empty {
@@ -1494,6 +1509,32 @@
       .detachment-enhancement-edit-row .ability-description-cell {
       white-space: normal;
       vertical-align: top;
+    }
+
+    /* RosterRender ownership - V31.8: generic Required/Any/Excluded keyword editor.
+       Reused by normalized eligibility-aware item editors; no faction or keyword is special-cased. */
+    .eligibility-keyword-editor {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--shell-control-gap);
+      min-width: 0;
+    }
+
+    .eligibility-keyword-editor-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+    }
+
+    .eligibility-keyword-editor-label {
+      color: var(--text-secondary);
+      font-size: var(--font-meta);
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     /* RosterRender ownership - V8.7/V8.6 Phase 2: Detachment Enhancement edit controls.
@@ -3853,23 +3894,23 @@
 
     .version-history-list {
       display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: var(--shell-control-gap);
     }
 
     .version-history-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: var(--shell-control-gap);
-      align-items: center;
+      display: block;
+      min-width: 0;
     }
 
     .version-history-select {
       width: 100%;
       min-width: 0;
       min-height: var(--view-edit-control-height);
-      justify-content: flex-start;
-      padding: 0 var(--btn-padding-x-md);
+      justify-content: center;
+      padding: 0 2px;
       font-size: var(--font-meta);
+      white-space: nowrap;
     }
 
     .version-history-select.current {
@@ -3878,6 +3919,7 @@
     }
 
     .version-history-meta {
+      display: none;
       color: var(--text-muted);
       font-size: var(--font-badge);
       font-weight: 700;
@@ -7502,7 +7544,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.2";
+    const APP_VERSION = "31.12";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -7518,6 +7560,7 @@
     const DATA_SOURCES = {
       Marines: {
         type: "army",
+        factionKeyword: "ADEPTUS ASTARTES",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/marines/Unit_Profiles.csv",
@@ -7540,6 +7583,7 @@
       },
       Nids: {
         type: "army",
+        factionKeyword: "TYRANIDS",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/nids/Unit_Profiles.csv",
@@ -7562,6 +7606,7 @@
       },
       Orks: {
         type: "army",
+        factionKeyword: "ORKS",
         requiredTabs: ["Unit_Profiles", "Unit_Abilities", "Unit_Weapons", "Unit_Points", "Weapon Stats", "Abilities", "Detachment_Definitions", "Enhancements", "Stratagems", "Army_Rules", "Weapon_Abilities", "Loadout_Options", "Loadout_Weapons", "Loadout_Abilities", "Loadout_Points", "Loadout_Compatibility"],
         githubTabs: {
           "Unit_Profiles": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/orks/Unit_Profiles.csv",
@@ -7584,11 +7629,12 @@
       },
       Universal: {
         type: "reference",
-        requiredTabs: ["Abilities", "Stratagems", "Tag_Definitions", "Dispositions", "Primary_Missions", "Primary_Mission_Matchups"],
+        requiredTabs: ["Abilities", "Stratagems", "Tag_Definitions", "Eligibility_Rules", "Dispositions", "Primary_Missions", "Primary_Mission_Matchups"],
         githubTabs: {
           "Abilities": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Universal_Abilities.csv",
           "Stratagems": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Universal_Stratagems.csv",
           "Tag_Definitions": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Tag_Definitions.csv",
+          "Eligibility_Rules": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Eligibility_Rules.csv",
           "Dispositions": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Dispositions.csv",
           "Primary_Missions": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Primary_Missions.csv",
           "Primary_Mission_Matchups": "https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/data/universal/Primary_Mission_Matchups.csv"
@@ -7620,6 +7666,7 @@
       "Abilities": Object.freeze({ file: "Universal_Abilities.csv", columns: Object.freeze(["Ability_ID", "Ability Name", "Order"]) }),
       "Stratagems": Object.freeze({ file: "Universal_Stratagems.csv", columns: Object.freeze(["Detachment_ID", "Item_Type", "Item_ID", "Item_Name"]) }),
       "Tag_Definitions": Object.freeze({ file: "Tag_Definitions.csv", columns: Object.freeze(["Tag_ID", "Display_Tag", "Category", "Editable", "Sort_Order"]) }),
+      "Eligibility_Rules": Object.freeze({ file: "Eligibility_Rules.csv", columns: Object.freeze(["Rule_ID", "Item_Type", "Required_Keywords", "Any_Keywords", "Excluded_Keywords"]) }),
       "Dispositions": Object.freeze({ file: "Dispositions.csv", columns: Object.freeze(["Disposition_ID", "Disposition_Name", "Sort_Order"]) }),
       "Primary_Missions": Object.freeze({ file: "Primary_Missions.csv", columns: Object.freeze(["Primary_Mission_ID", "Disposition_ID", "Mission_Name", "Sort_Order"]) }),
       "Primary_Mission_Matchups": Object.freeze({ file: "Primary_Mission_Matchups.csv", columns: Object.freeze(["Matchup_ID", "Your_Disposition_ID", "Opponent_Disposition_ID", "Primary_Mission_ID"]) })
@@ -7741,7 +7788,7 @@
     // RosterModel/RosterRender ownership - V18.0: unit weapon options are data-driven.
     // No unit names, unit IDs, weapon IDs, or option labels are hardcoded here.
 
-    let appData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] });
+    let appData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] });
 
     let rosterLibrary = null;
     rosterLibrary = normalizeRosterLibrary(null);
@@ -7828,7 +7875,7 @@
 
     let armyDataCache = {};
 
-    let universalAbilityData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] });
+    let universalAbilityData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] });
 
     let viewEditRosterStatusMessage = "";
 
@@ -8004,16 +8051,16 @@
         armyDataCache = dataCleared ? {} : normalizeArmyDataCache(savedArmyDataCache);
         const cachedUniversalAbilityData = dataCleared ? null : getCachedArmyData("Universal");
         universalAbilityData = dataCleared
-          ? normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] })
+          ? normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] })
           : (savedUniversalAbilityData
             ? normalizeData(savedUniversalAbilityData)
-            : (cachedUniversalAbilityData ? normalizeData({ units: [], weapons: [], abilities: cachedUniversalAbilityData.abilities || [], detachments: cachedUniversalAbilityData.detachments || [], tagDefinitions: cachedUniversalAbilityData.tagDefinitions || [] }) : normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] })));
+            : (cachedUniversalAbilityData ? normalizeData({ units: [], weapons: [], abilities: cachedUniversalAbilityData.abilities || [], detachments: cachedUniversalAbilityData.detachments || [], tagDefinitions: cachedUniversalAbilityData.tagDefinitions || [], eligibilityRules: cachedUniversalAbilityData.eligibilityRules || [] }) : normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] })));
         const cachedActiveArmyData = dataCleared ? null : getCachedArmyData(activeArmyKey);
         appData = dataCleared
-          ? normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] })
+          ? normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] })
           : (cachedActiveArmyData
             ? normalizeData(cloneData(cachedActiveArmyData))
-            : (savedData ? normalizeData(savedData) : normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] })));
+            : (savedData ? normalizeData(savedData) : normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] })));
 
         appData = applyUniversalAbilityDescriptions(appData);
 
@@ -8297,6 +8344,13 @@
       data.abilities = Array.isArray(data.abilities) ? data.abilities : [];
       data.detachments = Array.isArray(data.detachments) ? data.detachments : [];
       data.tagDefinitions = Array.isArray(data.tagDefinitions) ? data.tagDefinitions : [];
+      data.eligibilityRules = (Array.isArray(data.eligibilityRules) ? data.eligibilityRules : []).map(rule => ({
+        ruleId: cleanImportedText(rule && (rule.ruleId ?? rule.Rule_ID) || ""),
+        itemType: cleanImportedText(rule && (rule.itemType ?? rule.Item_Type) || "").toUpperCase(),
+        requiredKeywords: cleanImportedText(rule && (rule.requiredKeywords ?? rule.Required_Keywords) || ""),
+        anyKeywords: cleanImportedText(rule && (rule.anyKeywords ?? rule.Any_Keywords) || ""),
+        excludedKeywords: cleanImportedText(rule && (rule.excludedKeywords ?? rule.Excluded_Keywords) || "")
+      })).filter(rule => rule.ruleId && rule.itemType);
       data.unitWeaponOptions = Array.isArray(data.unitWeaponOptions) ? data.unitWeaponOptions : [];
       data.weaponQuantities = Array.isArray(data.weaponQuantities) ? data.weaponQuantities : [];
       data.weaponSections = Array.isArray(data.weaponSections) ? data.weaponSections : [];
@@ -9828,6 +9882,7 @@
       const validStats = new Set(["M", "T", "SV", "W", "LD", "OC"]);
 
       (Array.isArray(effects) ? effects : []).forEach(effect => {
+        const sourceType = String(effect && effect.sourceType || "").trim().toUpperCase();
         const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
         const stat = String(effect && effect.stat || "").trim().toUpperCase();
         const operation = String(effect && effect.operation || "").trim().toUpperCase();
@@ -9862,6 +9917,9 @@
         }
 
         if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
+          // Tag definitions describe rule behavior; they must never manufacture datasheet Keywords.
+          // Genuine keyword mutations remain supported only through explicit normalized effects.
+          if (sourceType === "TAG_DEFINITION") return;
           const keyword = value.replace(/[.,]+$/, "").toUpperCase();
           if (!keyword) return;
           if (operation === "ADD") addKeywords.push(keyword);
@@ -13721,6 +13779,9 @@
           ? ` <span class="detachment-edit-cost-group"><span class="detachment-enhancement-edit-separator">(</span><span class="detachment-enhancement-edit-field points" ${commonAttrs} data-rule-field="dpCost" role="textbox" contenteditable="true" inputmode="numeric" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(dpValue)}</span><span class="detachment-enhancement-edit-separator"> DP)</span></span>`
           : "";
         const tagEditor = renderDetachmentItemTagEditor(sourceItem.tags || "", sourceItem.tagCategories || "", commonAttrs, 'data-rule-field="tags"', nameValue || "Rule");
+        const keywordEditorRow = itemType === "DETACHMENT_RULE"
+          ? `<tr class="${index % 2 ? "alt " : ""}ability-tags-full-row eligibility-keywords-full-row" data-detachment-rule-keywords-row="${escapeAttr(editKey)}"><td colspan="2">${renderEligibilityKeywordEditor(sourceItem, commonAttrs, "data-rule-field")}</td></tr>`
+          : "";
         return `
           <tr class="${rowClass}" data-detachment-rule-edit-row="${escapeAttr(editKey)}">
             <td class="stratagem-name-cell">
@@ -13733,6 +13794,7 @@
           <tr class="${index % 2 ? "alt " : ""}ability-tags-full-row" data-detachment-rule-tags-row="${escapeAttr(editKey)}">
             <td colspan="2">${tagEditor}</td>
           </tr>
+          ${keywordEditorRow}
         `;
       }).join("");
       return rows || `<tr><td colspan="2">No rules found.</td></tr>`;
@@ -14546,7 +14608,10 @@
         shortText: ["Short_Description"],
         longText: ["Long_Description"],
         tags: ["Tags"],
-        tagCategories: ["Tag Categories"]
+        tagCategories: ["Tag Categories"],
+        requiredKeywords: ["Required_Keywords"],
+        anyKeywords: ["Any_Keywords"],
+        excludedKeywords: ["Excluded_Keywords"]
       };
       return getSpreadsheetSourceColumnIndex(source, aliasesByField[fieldName] || []);
     }
@@ -14612,9 +14677,19 @@
 
     function getDetachmentRuleOriginalValue(item, fieldName) {
       const source = getDetachmentRuleSpreadsheetEditSource(item);
+      const eligibilityColumns = {
+        requiredKeywords: "Required_Keywords",
+        anyKeywords: "Any_Keywords",
+        excludedKeywords: "Excluded_Keywords"
+      };
+      if (eligibilityColumns[fieldName] && source && Array.isArray(source.row)) {
+        const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);
+        if (columnIndex >= 0) return String(source.row[columnIndex] ?? "").trim();
+      }
       if (source && source.originalEditableValues && source.originalEditableValues[fieldName] !== undefined) {
         return fieldName === "dpCost" ? cleanImportedText(source.originalEditableValues[fieldName]) : String(source.originalEditableValues[fieldName] || "").trim();
       }
+      if (eligibilityColumns[fieldName]) return getDetachmentItemEligibilityValue(item, eligibilityColumns[fieldName]);
       return fieldName === "dpCost" ? cleanImportedText(item && item.dpCost || "") : String(item && item[fieldName] || "").trim();
     }
 
@@ -14622,7 +14697,7 @@
       const source = getDetachmentRuleSpreadsheetEditSource(item);
       if (!source || !Array.isArray(source.row) || !source.row.length) return null;
       const row = source.row.map(value => cleanImportedText(value));
-      ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].forEach(fieldName => {
+      ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].forEach(fieldName => {
         const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);
         if (columnIndex < 0) return;
         while (row.length <= columnIndex) row.push("");
@@ -14632,7 +14707,7 @@
     }
 
     function hasDetachmentRuleSpreadsheetChange(item, values) {
-      return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].some(fieldName => {
+      return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].some(fieldName => {
         const original = getDetachmentRuleOriginalValue(item, fieldName);
         const next = fieldName === "dpCost" ? cleanImportedText(values[fieldName]) : String(values[fieldName] ?? "").trim();
         return String(original || "") !== String(next || "");
@@ -14955,7 +15030,7 @@
       const name = String(sheetName || "").trim().toLowerCase();
       if (name === "weapon stats") return ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D"];
       if (name === "abilities") return ["Ability_ID", "Ability Name", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Order"];
-      if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
+      if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Required_Keywords", "Any_Keywords", "Excluded_Keywords"];
       if (name === "enhancements") return ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
       if (name === "stratagems") return ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
       if (name === "army_rules") return ["Army_Rule_ID", "Army_Name", "Rule_Name", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
@@ -16256,8 +16331,8 @@
         Excluded_Keywords: ["excludedKeywords", "Excluded_Keywords"]
       };
       for (const key of directNames[columnName] || []) {
-        const value = String(item[key] ?? "").trim();
-        if (value) return value;
+        if (!Object.prototype.hasOwnProperty.call(item, key)) continue;
+        return String(item[key] ?? "").trim();
       }
       const source = normalizeSpreadsheetSourceRowRecord(item.spreadsheetEditSource);
       if (!source) return "";
@@ -16265,28 +16340,62 @@
       return index >= 0 && Array.isArray(source.row) ? String(source.row[index] ?? "").trim() : "";
     }
 
-    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster) {
-      if (!item || !entry || !unit) return false;
-      const effective = getEffectiveUnitProfile(entry, unit, roster);
-      const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
-      const required = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Required_Keywords"));
-      const any = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Any_Keywords"));
-      const excluded = parseEligibilityKeywordList(getDetachmentItemEligibilityValue(item, "Excluded_Keywords"));
+    function getUniversalEligibilityRules() {
+      return universalAbilityData && Array.isArray(universalAbilityData.eligibilityRules)
+        ? universalAbilityData.eligibilityRules
+        : [];
+    }
+
+    function eligibilityValuesMatchUnitKeywords(requiredValue, anyValue, excludedValue, unitKeywords) {
+      const required = parseEligibilityKeywordList(requiredValue);
+      const any = parseEligibilityKeywordList(anyValue);
+      const excluded = parseEligibilityKeywordList(excludedValue);
       if (!required.every(keyword => unitKeywords.has(keyword))) return false;
       if (any.length && !any.some(keyword => unitKeywords.has(keyword))) return false;
       if (excluded.some(keyword => unitKeywords.has(keyword))) return false;
       return true;
     }
 
+    function getUnitEligibilityKeywordSet(entry, unit, roster) {
+      if (!entry || !unit) return new Set();
+      const effective = getEffectiveUnitProfile(entry, unit, roster);
+      const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
+      const sourceConfig = getDataSourceConfig(activeArmyKey);
+      const factionKeyword = normalizeEligibilityKeyword(sourceConfig && sourceConfig.factionKeyword);
+      if (factionKeyword) unitKeywords.add(factionKeyword);
+      return unitKeywords;
+    }
+
+    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster, precomputedUnitKeywords = null) {
+      if (!item || !entry || !unit) return false;
+      const unitKeywords = precomputedUnitKeywords instanceof Set
+        ? precomputedUnitKeywords
+        : getUnitEligibilityKeywordSet(entry, unit, roster);
+
+      const itemType = normalizeEligibilityKeyword(item.itemType || item.Item_Type || "");
+      const categoryRules = itemType
+        ? getUniversalEligibilityRules().filter(rule => normalizeEligibilityKeyword(rule && rule.itemType) === itemType)
+        : [];
+      if (categoryRules.some(rule => !eligibilityValuesMatchUnitKeywords(rule.requiredKeywords, rule.anyKeywords, rule.excludedKeywords, unitKeywords))) return false;
+
+      return eligibilityValuesMatchUnitKeywords(
+        getDetachmentItemEligibilityValue(item, "Required_Keywords"),
+        getDetachmentItemEligibilityValue(item, "Any_Keywords"),
+        getDetachmentItemEligibilityValue(item, "Excluded_Keywords"),
+        unitKeywords
+      );
+    }
+
     function renderViewEditRosterAddPanel(entry, unit) {
       const roster = getViewEditRoster();
       if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
 
       if (appEditMode) {
         const selectedItem = getRosterEntryEnhancementItem(entry, roster);
         const selectedId = String((selectedItem && selectedItem.itemId) || entry.enhancementItemId || "").trim();
         let items = getAvailableEnhancementOptionsForRosterEntry(roster, entry.entryId)
-          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
         if (selectedItem && !items.some(item => String(item.itemId || "").trim() === String(selectedItem.itemId || "").trim())) {
           items = [selectedItem, ...items];
         }
@@ -16297,21 +16406,51 @@
           const points = cleanImportedText(item.points ?? "");
           const label = `${item.itemName || itemId || "Enhancement"}${points ? ` · ${points} pts` : ""}`;
           const nextValue = selected ? "" : itemId;
-          return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.updateViewEditRosterEntryEnhancementSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(nextValue)}')">${escapeHtml(label)}</button>`;
+          return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " green" : ""}" onclick="event.stopPropagation(); RosterActions.updateViewEditRosterEntryEnhancementSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(nextValue)}')">${escapeHtml(label)}</button>`;
         }).join("")}</div></div>`;
       }
 
       const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
       const items = getRosterUnitSelectableStratagems(roster)
-        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
       if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
       return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
         const itemKey = getDetachmentStratagemItemEditKey(item);
         const selected = selectedKeys.has(itemKey);
         const cp = cleanImportedText(item.cpCost ?? "");
         const label = `${item.itemName || item.itemId || "Stratagem"}${cp ? ` · ${cp}CP` : ""}`;
-        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " active" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
+        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " green" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
       }).join("")}</div></div>`;
+    }
+
+    function renderRosterViewAddPanel(entry, unit) {
+      const roster = getActiveRoster();
+      if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
+      const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
+      const items = getRosterUnitSelectableStratagems(roster)
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
+      if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
+      return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
+        const itemKey = getDetachmentStratagemItemEditKey(item);
+        const selected = selectedKeys.has(itemKey);
+        const cp = cleanImportedText(item.cpCost ?? "");
+        const label = `${item.itemName || item.itemId || "Stratagem"}${cp ? ` · ${cp}CP` : ""}`;
+        return `<button type="button" class="category-button view-edit-unit-add-option${selected ? " green" : ""}" onclick="event.stopPropagation(); RosterActions.toggleViewEditRosterEntryStratagemSelection('${UI.escapeJs(entry.entryId)}', '${UI.escapeJs(itemKey)}')">${escapeHtml(label)}</button>`;
+      }).join("")}</div></div>`;
+    }
+
+    function refreshRosterViewAddPanel(entryId) {
+      const roster = getActiveRoster();
+      if (!roster || !entryId) return false;
+      const index = Array.isArray(roster.entries) ? roster.entries.findIndex(item => item && item.entryId === entryId) : -1;
+      if (index < 0) return false;
+      const entry = roster.entries[index];
+      const unit = entry ? getUnitById(entry.unitId) : null;
+      const panel = document.getElementById(`add-${index}`);
+      if (!entry || !unit || !panel) return false;
+      panel.innerHTML = renderRosterViewAddPanel(entry, unit);
+      return true;
     }
 
     function renderViewEditRosterUnitDetails(entry, unit) {
@@ -17894,14 +18033,22 @@
         "Stratagems"
       );
       const tagDefinitionRows = sheetToObjects(workbookSheets.Tag_Definitions || [], { sheetName: "Tag_Definitions", retainSourceRows: true });
+      const eligibilityRuleRows = sheetToObjects(workbookSheets.Eligibility_Rules || [], { sheetName: "Eligibility_Rules", retainSourceRows: true });
       mapCardsReferenceWorkbookRows(workbookSheets);
 
       const data = mapImportedSpreadsheetData([], [], abilityRows, detachmentRows);
       data.tagDefinitions = mapImportedTagDefinitions(tagDefinitionRows);
+      data.eligibilityRules = eligibilityRuleRows.map(row => ({
+        ruleId: cleanImportedText(getImportValue(row, "Rule_ID")),
+        itemType: cleanImportedText(getImportValue(row, "Item_Type")).toUpperCase(),
+        requiredKeywords: cleanImportedText(getImportValue(row, "Required_Keywords")),
+        anyKeywords: cleanImportedText(getImportValue(row, "Any_Keywords")),
+        excludedKeywords: cleanImportedText(getImportValue(row, "Excluded_Keywords"))
+      })).filter(rule => rule.ruleId && rule.itemType);
       const coreStratagemCount = (data.detachments || []).filter(item => isCoreStratagemItem(item)).length;
 
-      if ((!data.abilities.length && !coreStratagemCount) || !data.tagDefinitions.length) {
-        throw new Error("Universal GitHub CSVs loaded, but required Abilities/Core Stratagems or Tag Definitions were not recognized.");
+      if ((!data.abilities.length && !coreStratagemCount) || !data.tagDefinitions.length || !data.eligibilityRules.length) {
+        throw new Error("Universal GitHub CSVs loaded, but required Abilities/Core Stratagems, Tag Definitions, or Eligibility Rules were not recognized.");
       }
 
       data.__sourceNote = sourceNotes.length ? sourceNotes.join("; ") : "Universal references loaded from GitHub";
@@ -17932,7 +18079,7 @@
           weapons: [],
           abilities: cachedUniversal.abilities || [],
           detachments: cachedUniversal.detachments || [],
-          tagDefinitions: cachedUniversal.tagDefinitions || []
+          tagDefinitions: cachedUniversal.tagDefinitions || [], eligibilityRules: cachedUniversal.eligibilityRules || []
         });
         await idbSet(UNIVERSAL_ABILITY_CACHE_KEY, universalAbilityData);
         if (!options.silent) {
@@ -17945,10 +18092,10 @@
         const importedResult = await fetchUniversalAbilityDefinitions({
           manifest: liveManifest,
           cachedEntry,
-          forceSheetNames: ["Abilities", "Tag_Definitions"]
+          forceSheetNames: ["Abilities", "Tag_Definitions", "Eligibility_Rules"]
         });
         const imported = importedResult.data;
-        universalAbilityData = normalizeData({ units: [], weapons: [], abilities: imported.abilities || [], detachments: imported.detachments || [], tagDefinitions: imported.tagDefinitions || [] });
+        universalAbilityData = normalizeData({ units: [], weapons: [], abilities: imported.abilities || [], detachments: imported.detachments || [], tagDefinitions: imported.tagDefinitions || [], eligibilityRules: imported.eligibilityRules || [] });
         setCachedArmyData("Universal", universalAbilityData, "GitHub", true, {
           manifest: importedResult.manifest || liveManifest,
           sourceSheets: importedResult.sourceSheets
@@ -17964,7 +18111,7 @@
             weapons: [],
             abilities: cachedAfterFailure.abilities || [],
             detachments: cachedAfterFailure.detachments || [],
-            tagDefinitions: cachedAfterFailure.tagDefinitions || []
+            tagDefinitions: cachedAfterFailure.tagDefinitions || [], eligibilityRules: cachedAfterFailure.eligibilityRules || []
           });
           await idbSet(UNIVERSAL_ABILITY_CACHE_KEY, universalAbilityData);
           if (!options.silent) {
@@ -18809,9 +18956,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function clearAllViewEditData(openSection = "rosterSettings") {
       (rosterLibrary.rosters || []).forEach(roster => deleteCardsStateForRoster(roster.rosterId));
-      appData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] });
+      appData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] });
       armyDataCache = {};
-      universalAbilityData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [] });
+      universalAbilityData = normalizeData({ units: [], weapons: [], abilities: [], detachments: [], tagDefinitions: [], eligibilityRules: [] });
       activeArmyKey = "Marines";
 
       const r = createRoster();
@@ -20143,9 +20290,30 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       commitProbableSetting(context);
     }
 
+    function renderRosterViewAbilitiesBox(entry, unit) {
+      const roster = getActiveRoster();
+      const baseHtml = renderUnitAbilityBoxes(unit, entry, false);
+      const stratagemRows = renderUnitAbilityStratagemDisplayRows(entry, roster, 0);
+      if (!stratagemRows) return baseHtml;
+      return baseHtml.replace('</tbody>', `${stratagemRows}</tbody>`);
+    }
+
+    function refreshRosterViewAbilitiesPanel(entryId) {
+      const roster = getActiveRoster();
+      if (!roster || !entryId || !Array.isArray(roster.entries)) return false;
+      const index = roster.entries.findIndex(item => item && item.entryId === entryId);
+      if (index < 0) return false;
+      const entry = roster.entries[index];
+      const unit = entry ? getUnitById(entry.unitId) : null;
+      const panel = document.getElementById(`abilities-${index}`);
+      if (!entry || !unit || !panel) return false;
+      panel.innerHTML = renderRosterViewAbilitiesBox(entry, unit);
+      return true;
+    }
+
     function renderRosterUnitDetailPanel(entry, unit, index) {
       const effectiveProfile = getEffectiveUnitProfile(entry, unit, getActiveRoster());
-      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" type="button" aria-label="Add" onclick="event.stopPropagation()">+</button></div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderUnitAbilityBoxes(unit, entry, false)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}">${renderProbablePanel(entry, unit)}</div>`;
+      return `<div class="category-tabs"><button class="category-button" id="btn-weapons-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'weapons')">Weapons</button><button class="category-button" id="btn-abilities-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'abilities')">Abilities</button><button class="category-button" id="btn-keywords-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'keywords')">Keywords</button><button class="category-button" id="btn-probable-${index}" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'probable')">Probable</button><button class="category-add-button" id="btn-add-${index}" type="button" aria-label="Add" onclick="event.stopPropagation(); UI.toggleSection(${index}, 'add')">+</button></div><div class="subsection active-unit-detail-box" id="add-${index}">${renderRosterViewAddPanel(entry, unit)}</div><div class="subsection active-unit-detail-box" id="weapons-${index}">${renderWeapons(getWeaponsForRosterEntry(entry, unit), unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="abilities-${index}">${renderRosterViewAbilitiesBox(entry, unit)}</div><div class="subsection active-unit-detail-box" id="keywords-${index}">${renderKeywords(effectiveProfile.keywords, unit.unitId, false, entry)}</div><div class="subsection active-unit-detail-box" id="probable-${index}">${renderProbablePanel(entry, unit)}</div>`;
     }
 
     // RosterRender ownership: reserve one fixed-width inline Disposition control
@@ -21272,6 +21440,20 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         <div class="weapon-ability-detail ability-tag-edit-description" data-ability-tag-edit-description hidden></div>
         ${renderAbilityTagPicker(assignments)}
       </div>`;
+    }
+
+    function renderEligibilityKeywordEditor(item, commonAttrs, fieldAttributeName = "data-rule-field") {
+      const safeFieldAttribute = /^[a-z0-9-]+$/i.test(String(fieldAttributeName || "")) ? String(fieldAttributeName) : "data-rule-field";
+      const fields = [
+        ["requiredKeywords", "Required", "Required_Keywords"],
+        ["anyKeywords", "Any", "Any_Keywords"],
+        ["excludedKeywords", "Excluded", "Excluded_Keywords"]
+      ];
+      const rows = fields.map(([fieldName, label, columnName]) => {
+        const value = getDetachmentItemEligibilityValue(item, columnName);
+        return `<div class="eligibility-keyword-editor-row"><span class="eligibility-keyword-editor-label">${escapeHtml(label)}</span><span class="detachment-enhancement-edit-field description" ${commonAttrs} ${safeFieldAttribute}="${escapeAttr(fieldName)}" role="textbox" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(value)}</span></div>`;
+      }).join("");
+      return `<div class="eligibility-keyword-editor" aria-label="Eligibility Keywords" onclick="event.stopPropagation();">${rows}</div>`;
     }
 
     function renderDetachmentItemTagEditor(tagsValue, tagCategoriesValue, commonAttrs, fieldAttr, itemName = "Item") {
@@ -26621,7 +26803,10 @@ function viewEditUpdateDetachmentNameAt(index, value) {
             shortText: normalizeImportedDescriptiveText(values.shortText ?? item.shortText ?? ""),
             longText: normalizeImportedDescriptiveText(values.longText ?? item.longText ?? ""),
             tags: normalizeImportedDescriptiveText(values.tags ?? item.tags ?? ""),
-            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? "")
+            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? ""),
+            requiredKeywords: cleanImportedText(values.requiredKeywords ?? getDetachmentItemEligibilityValue(item, "Required_Keywords")),
+            anyKeywords: cleanImportedText(values.anyKeywords ?? getDetachmentItemEligibilityValue(item, "Any_Keywords")),
+            excludedKeywords: cleanImportedText(values.excludedKeywords ?? getDetachmentItemEligibilityValue(item, "Excluded_Keywords"))
           };
 
           if (String(item.itemName || "") !== nextValues.itemName) { item.itemName = nextValues.itemName; changed = true; }
@@ -26630,6 +26815,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           if (String(item.longText || "") !== nextValues.longText) { item.longText = nextValues.longText; item.longDescription = nextValues.longText; changed = true; }
           if (String(item.tags || "") !== nextValues.tags) { item.tags = nextValues.tags; changed = true; }
           if (String(item.tagCategories || "") !== nextValues.tagCategories) { item.tagCategories = nextValues.tagCategories; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Required_Keywords")) !== nextValues.requiredKeywords) { item.requiredKeywords = nextValues.requiredKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Any_Keywords")) !== nextValues.anyKeywords) { item.anyKeywords = nextValues.anyKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Excluded_Keywords")) !== nextValues.excludedKeywords) { item.excludedKeywords = nextValues.excludedKeywords; changed = true; }
 
           if (hasDetachmentRuleSpreadsheetChange(item, nextValues)) {
             const pendingRow = buildDetachmentRulePendingRow(item, nextValues);
@@ -27126,12 +27314,23 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         if (!entryId) return;
         viewEditExpandedUnitRows[entryId] = true;
         const sections = getViewEditEntrySections(entryId);
+        if (appEditMode && !sections.add) {
+          const roster = getViewEditRoster();
+          const entry = getRosterEntryById(roster, entryId);
+          const hasCurrentEnhancement = Boolean(entry && hasRosterEntryEnhancement(entry));
+          const hasEligibleEnhancement = Boolean(roster && getAvailableEnhancementOptionsForRosterEntry(roster, entryId).length);
+          if (!hasCurrentEnhancement && !hasEligibleEnhancement) {
+            sections.add = false;
+            RosterRender.refreshViewEditEntryExpandedState(entryId);
+            return;
+          }
+        }
         sections.add = !sections.add;
-        RosterRender.refreshViewEditEntryExpandedState(entryId);
+        RosterRender.refreshViewEditRosterDom();
       },
       toggleViewEditRosterEntryStratagemSelection(entryId, stratagemKey) {
         if (appEditMode || !entryId || !stratagemKey) return;
-        const roster = getViewEditRoster();
+        const roster = getActiveRoster();
         const entry = getRosterEntryById(roster, entryId);
         const unit = entry ? getUnitById(entry.unitId) : null;
         if (!entry || !unit || isSpacerEntry(entry) || isRosterEntryPendingDeletion(entry)) return;
@@ -27150,7 +27349,8 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         rosterWorkingStateDirty = true;
         invalidateRosterModeDomCache("edit");
         scheduleRosterModeDomCacheBuild("edit");
-        RosterRender.refreshViewEditRosterDom();
+        refreshRosterViewAddPanel(entryId);
+        refreshRosterViewAbilitiesPanel(entryId);
       },
       updateViewEditRosterEntryEnhancementSelection(entryId, itemId) {
         if (!appEditMode) return;
@@ -28584,7 +28784,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.2',
+        version: 'V31.12',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
