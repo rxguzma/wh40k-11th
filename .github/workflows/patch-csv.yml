@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPREME_KUNNIN","column":"Short_Description","value":"Once per phase\u003a when enemy ends move within 8\" and unengaged\u003a\\n- Move D6\" \\n- RILED UP\u003a Move 5\""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NAZDREGS_KNOW_WOTZ","column":"Short_Description","value":"Ranged: IGNORES COVER"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
