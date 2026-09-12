@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.6</title>
+  <title>WH40k 11th V31.16</title>
 
 
   <!--
@@ -22,9 +22,9 @@
 
     Probable active-Tag invariant: combat mechanics are derived exclusively from currently active structured Tags. Short/Long Description text and saved/manual Probable mechanical overrides must never affect combat math. Numeric rule variants come from Tag Value and must not be enumerated in Probable. Unit/Target/Cover controls remain scenario inputs.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.6; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.16; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
-    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
+    App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
 
   <!--
@@ -79,34 +79,44 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.6
-    Scope: Adds Universal Eligibility_Rules.csv as the data-driven category eligibility layer. Category rules and item-level Required/Any/Excluded keyword rules now pass through the same generic matcher. ENHANCEMENT and UPGRADE category data exclude EPIC HERO without embedding EPIC HERO logic in HTML. Edit + does not open an Enhancement panel when the current Unit has no legal Enhancement choices.
-    Risk areas: Universal reference loading/cache, generic eligibility matching, and Edit + availability. View Stratagem behavior and existing Enhancement selection behavior for legal Units are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.16
+    Scope: Route all Wahapedia links through the Chrome URL scheme so tapping Waha from the local iPhone HTML app hands the page to Chrome. Applies to normal anchors and Wahapedia URLs opened through window.open; all non-Wahapedia links are unchanged.
+    Risk areas: External Wahapedia link routing only. iOS may still show its normal confirmation before handing the link to Chrome.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.5
-    Scope: Normal View + Stratagem selection now behaves like the existing Unit Ability workflow: selected Stratagems are rendered immediately inside the Unit Abilities table and are removed from Abilities when deselected. The + panel still owns eligibility and green selected state; Edit Enhancement behavior is unchanged.
-    Risk areas: Normal View Unit Abilities rendering and View Stratagem selection refresh only. Edit mode, Tags/Probable, and unrelated roster behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.15
+    Scope: Reduce the Unit + Enhancement/Stratagem option-button height from the oversized V31.14 setting while still leaving enough room for three-line labels. Minimum height is 60px with 6px vertical padding.
+    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.4
-    Scope: Fix the actual normal-View + button so it opens keyword-matched Stratagems using the existing View subsection toggle path. View Stratagem clicks now mutate the active roster directly and repaint the open panel so selected choices immediately show success green. Add-panel choice typography is reduced to 10px normal weight.
-    Risk areas: Normal View Unit detail + panel and its Stratagem selection state only. Edit Enhancements, Tags/Probable, and unrelated roster behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.14
+    Scope: Increase the actual Unit + Enhancement/Stratagem option-button height so three-line labels sit fully inside their boxes. Minimum height is now 68px with 8px vertical padding.
+    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.3
-    Scope: Fix the Unit + add panel. Choice buttons now use compact 12px/meta typography and standard success-green selected state. The + panel now rerenders in both View and Edit, so View opens eligible Stratagems correctly. Eligibility also receives each source's configured faction keyword (ADEPTUS ASTARTES, TYRANIDS, ORKS) without faction-specific branching in the matcher.
-    Risk areas: Unit detail rerendering and keyword eligibility only. Existing Tags/Probable mechanics and unrelated roster behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.13
+    Scope: Fix Unit + panel option sizing so three-line Enhancement/Stratagem labels fit inside their buttons. The add-option rule now outranks the generic category-button fixed height and uses a 56px minimum height with automatic row growth.
+    Risk areas: Unit + panel option-button geometry only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.2
-    Scope: The Unit detail + control is two-thirds of a normal category tab and opens a keyword-matched add panel. Edit shows eligible selected-Detachment Enhancements and reuses the existing max-one paid Enhancement path; View shows eligible selected-Detachment Stratagems with multi-select add/remove. Eligibility uses Required_Keywords, Any_Keywords, and Excluded_Keywords against the Unit effective Keywords, with all keywords treated identically.
-    Risk areas: Unit detail rendering, normalized spreadsheet-source metadata, and roster Stratagem/Enhancement state. Existing Tags/Probable mechanics and unrelated Detachment reference/edit surfaces are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.12
+    Scope: Increase vertical padding on Unit + panel Enhancement/Stratagem option buttons so multi-line labels fit comfortably inside their boxes.
+    Risk areas: Unit + panel option-button sizing only. Eligibility, selection behavior, and unrelated roster layout are unchanged.
   -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -840,10 +850,11 @@
       gap: 8px;
     }
 
-    .view-edit-unit-add-option {
+    .category-button.view-edit-unit-add-option {
       min-width: 0;
+      min-height: 60px;
       height: auto;
-      padding: 9px 4px;
+      padding: 6px 4px;
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: anywhere;
@@ -1503,6 +1514,32 @@
       .detachment-enhancement-edit-row .ability-description-cell {
       white-space: normal;
       vertical-align: top;
+    }
+
+    /* RosterRender ownership - V31.8: generic Required/Any/Excluded keyword editor.
+       Reused by normalized eligibility-aware item editors; no faction or keyword is special-cased. */
+    .eligibility-keyword-editor {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--shell-control-gap);
+      min-width: 0;
+    }
+
+    .eligibility-keyword-editor-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+    }
+
+    .eligibility-keyword-editor-label {
+      color: var(--text-secondary);
+      font-size: var(--font-meta);
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     /* RosterRender ownership - V8.7/V8.6 Phase 2: Detachment Enhancement edit controls.
@@ -3862,23 +3899,23 @@
 
     .version-history-list {
       display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: var(--shell-control-gap);
     }
 
     .version-history-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: var(--shell-control-gap);
-      align-items: center;
+      display: block;
+      min-width: 0;
     }
 
     .version-history-select {
       width: 100%;
       min-width: 0;
       min-height: var(--view-edit-control-height);
-      justify-content: flex-start;
-      padding: 0 var(--btn-padding-x-md);
+      justify-content: center;
+      padding: 0 2px;
       font-size: var(--font-meta);
+      white-space: nowrap;
     }
 
     .version-history-select.current {
@@ -3887,6 +3924,7 @@
     }
 
     .version-history-meta {
+      display: none;
       color: var(--text-muted);
       font-size: var(--font-badge);
       font-weight: 700;
@@ -7511,7 +7549,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.6";
+    const APP_VERSION = "31.16";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -9849,6 +9887,7 @@
       const validStats = new Set(["M", "T", "SV", "W", "LD", "OC"]);
 
       (Array.isArray(effects) ? effects : []).forEach(effect => {
+        const sourceType = String(effect && effect.sourceType || "").trim().toUpperCase();
         const effectType = String(effect && effect.effectType || "").trim().toUpperCase();
         const stat = String(effect && effect.stat || "").trim().toUpperCase();
         const operation = String(effect && effect.operation || "").trim().toUpperCase();
@@ -9883,6 +9922,9 @@
         }
 
         if (effectType === "KEYWORD" && stat === "KEYWORD" && value) {
+          // Tag definitions describe rule behavior; they must never manufacture datasheet Keywords.
+          // Genuine keyword mutations remain supported only through explicit normalized effects.
+          if (sourceType === "TAG_DEFINITION") return;
           const keyword = value.replace(/[.,]+$/, "").toUpperCase();
           if (!keyword) return;
           if (operation === "ADD") addKeywords.push(keyword);
@@ -13742,6 +13784,9 @@
           ? ` <span class="detachment-edit-cost-group"><span class="detachment-enhancement-edit-separator">(</span><span class="detachment-enhancement-edit-field points" ${commonAttrs} data-rule-field="dpCost" role="textbox" contenteditable="true" inputmode="numeric" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(dpValue)}</span><span class="detachment-enhancement-edit-separator"> DP)</span></span>`
           : "";
         const tagEditor = renderDetachmentItemTagEditor(sourceItem.tags || "", sourceItem.tagCategories || "", commonAttrs, 'data-rule-field="tags"', nameValue || "Rule");
+        const keywordEditorRow = itemType === "DETACHMENT_RULE"
+          ? `<tr class="${index % 2 ? "alt " : ""}ability-tags-full-row eligibility-keywords-full-row" data-detachment-rule-keywords-row="${escapeAttr(editKey)}"><td colspan="2">${renderEligibilityKeywordEditor(sourceItem, commonAttrs, "data-rule-field")}</td></tr>`
+          : "";
         return `
           <tr class="${rowClass}" data-detachment-rule-edit-row="${escapeAttr(editKey)}">
             <td class="stratagem-name-cell">
@@ -13754,6 +13799,7 @@
           <tr class="${index % 2 ? "alt " : ""}ability-tags-full-row" data-detachment-rule-tags-row="${escapeAttr(editKey)}">
             <td colspan="2">${tagEditor}</td>
           </tr>
+          ${keywordEditorRow}
         `;
       }).join("");
       return rows || `<tr><td colspan="2">No rules found.</td></tr>`;
@@ -14567,7 +14613,10 @@
         shortText: ["Short_Description"],
         longText: ["Long_Description"],
         tags: ["Tags"],
-        tagCategories: ["Tag Categories"]
+        tagCategories: ["Tag Categories"],
+        requiredKeywords: ["Required_Keywords"],
+        anyKeywords: ["Any_Keywords"],
+        excludedKeywords: ["Excluded_Keywords"]
       };
       return getSpreadsheetSourceColumnIndex(source, aliasesByField[fieldName] || []);
     }
@@ -14633,9 +14682,19 @@
 
     function getDetachmentRuleOriginalValue(item, fieldName) {
       const source = getDetachmentRuleSpreadsheetEditSource(item);
+      const eligibilityColumns = {
+        requiredKeywords: "Required_Keywords",
+        anyKeywords: "Any_Keywords",
+        excludedKeywords: "Excluded_Keywords"
+      };
+      if (eligibilityColumns[fieldName] && source && Array.isArray(source.row)) {
+        const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);
+        if (columnIndex >= 0) return String(source.row[columnIndex] ?? "").trim();
+      }
       if (source && source.originalEditableValues && source.originalEditableValues[fieldName] !== undefined) {
         return fieldName === "dpCost" ? cleanImportedText(source.originalEditableValues[fieldName]) : String(source.originalEditableValues[fieldName] || "").trim();
       }
+      if (eligibilityColumns[fieldName]) return getDetachmentItemEligibilityValue(item, eligibilityColumns[fieldName]);
       return fieldName === "dpCost" ? cleanImportedText(item && item.dpCost || "") : String(item && item[fieldName] || "").trim();
     }
 
@@ -14643,7 +14702,7 @@
       const source = getDetachmentRuleSpreadsheetEditSource(item);
       if (!source || !Array.isArray(source.row) || !source.row.length) return null;
       const row = source.row.map(value => cleanImportedText(value));
-      ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].forEach(fieldName => {
+      ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].forEach(fieldName => {
         const columnIndex = getDetachmentRuleSourceColumn(source, fieldName);
         if (columnIndex < 0) return;
         while (row.length <= columnIndex) row.push("");
@@ -14653,7 +14712,7 @@
     }
 
     function hasDetachmentRuleSpreadsheetChange(item, values) {
-      return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories"].some(fieldName => {
+      return ["itemName", "dpCost", "shortText", "longText", "tags", "tagCategories", "requiredKeywords", "anyKeywords", "excludedKeywords"].some(fieldName => {
         const original = getDetachmentRuleOriginalValue(item, fieldName);
         const next = fieldName === "dpCost" ? cleanImportedText(values[fieldName]) : String(values[fieldName] ?? "").trim();
         return String(original || "") !== String(next || "");
@@ -14976,7 +15035,7 @@
       const name = String(sheetName || "").trim().toLowerCase();
       if (name === "weapon stats") return ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D"];
       if (name === "abilities") return ["Ability_ID", "Ability Name", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Order"];
-      if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
+      if (name === "detachment_definitions") return ["Detachment_ID", "Army_Name", "Detachment_Name", "Rule_ID", "Rule_Name", "DP_Cost", "Detachment_Disposition", "Detachment_Disposition_2", "Short_Description", "Long_Description", "Tags", "Tag Categories", "Required_Keywords", "Any_Keywords", "Excluded_Keywords"];
       if (name === "enhancements") return ["Enhancement_ID", "Detachment_ID", "Enhancement_Name", "Points", "Repeatable", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
       if (name === "stratagems") return ["Stratagem_ID", "Detachment_ID", "Stratagem_Name", "CP_Cost", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
       if (name === "army_rules") return ["Army_Rule_ID", "Army_Name", "Rule_Name", "Short_Description", "Long_Description", "Tags", "Tag Categories"];
@@ -16277,8 +16336,8 @@
         Excluded_Keywords: ["excludedKeywords", "Excluded_Keywords"]
       };
       for (const key of directNames[columnName] || []) {
-        const value = String(item[key] ?? "").trim();
-        if (value) return value;
+        if (!Object.prototype.hasOwnProperty.call(item, key)) continue;
+        return String(item[key] ?? "").trim();
       }
       const source = normalizeSpreadsheetSourceRowRecord(item.spreadsheetEditSource);
       if (!source) return "";
@@ -16302,13 +16361,21 @@
       return true;
     }
 
-    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster) {
-      if (!item || !entry || !unit) return false;
+    function getUnitEligibilityKeywordSet(entry, unit, roster) {
+      if (!entry || !unit) return new Set();
       const effective = getEffectiveUnitProfile(entry, unit, roster);
       const unitKeywords = new Set((effective && Array.isArray(effective.keywords) ? effective.keywords : getKeywordsForUnit(unit)).map(normalizeEligibilityKeyword).filter(Boolean));
       const sourceConfig = getDataSourceConfig(activeArmyKey);
       const factionKeyword = normalizeEligibilityKeyword(sourceConfig && sourceConfig.factionKeyword);
       if (factionKeyword) unitKeywords.add(factionKeyword);
+      return unitKeywords;
+    }
+
+    function detachmentItemMatchesUnitKeywords(item, entry, unit, roster, precomputedUnitKeywords = null) {
+      if (!item || !entry || !unit) return false;
+      const unitKeywords = precomputedUnitKeywords instanceof Set
+        ? precomputedUnitKeywords
+        : getUnitEligibilityKeywordSet(entry, unit, roster);
 
       const itemType = normalizeEligibilityKeyword(item.itemType || item.Item_Type || "");
       const categoryRules = itemType
@@ -16327,12 +16394,13 @@
     function renderViewEditRosterAddPanel(entry, unit) {
       const roster = getViewEditRoster();
       if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
 
       if (appEditMode) {
         const selectedItem = getRosterEntryEnhancementItem(entry, roster);
         const selectedId = String((selectedItem && selectedItem.itemId) || entry.enhancementItemId || "").trim();
         let items = getAvailableEnhancementOptionsForRosterEntry(roster, entry.entryId)
-          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+          .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
         if (selectedItem && !items.some(item => String(item.itemId || "").trim() === String(selectedItem.itemId || "").trim())) {
           items = [selectedItem, ...items];
         }
@@ -16349,7 +16417,7 @@
 
       const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
       const items = getRosterUnitSelectableStratagems(roster)
-        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
       if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
       return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
         const itemKey = getDetachmentStratagemItemEditKey(item);
@@ -16363,9 +16431,10 @@
     function renderRosterViewAddPanel(entry, unit) {
       const roster = getActiveRoster();
       if (!entry || !unit || !roster) return "";
+      const unitKeywords = getUnitEligibilityKeywordSet(entry, unit, roster);
       const selectedKeys = new Set(getRosterEntryUnitStratagemKeys(entry));
       const items = getRosterUnitSelectableStratagems(roster)
-        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster));
+        .filter(item => detachmentItemMatchesUnitKeywords(item, entry, unit, roster, unitKeywords));
       if (!items.length) return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-empty">No eligible Stratagems.</div></div>`;
       return `<div class="view-edit-unit-add-panel"><div class="view-edit-unit-add-grid">${items.map(item => {
         const itemKey = getDetachmentStratagemItemEditKey(item);
@@ -21376,6 +21445,20 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         <div class="weapon-ability-detail ability-tag-edit-description" data-ability-tag-edit-description hidden></div>
         ${renderAbilityTagPicker(assignments)}
       </div>`;
+    }
+
+    function renderEligibilityKeywordEditor(item, commonAttrs, fieldAttributeName = "data-rule-field") {
+      const safeFieldAttribute = /^[a-z0-9-]+$/i.test(String(fieldAttributeName || "")) ? String(fieldAttributeName) : "data-rule-field";
+      const fields = [
+        ["requiredKeywords", "Required", "Required_Keywords"],
+        ["anyKeywords", "Any", "Any_Keywords"],
+        ["excludedKeywords", "Excluded", "Excluded_Keywords"]
+      ];
+      const rows = fields.map(([fieldName, label, columnName]) => {
+        const value = getDetachmentItemEligibilityValue(item, columnName);
+        return `<div class="eligibility-keyword-editor-row"><span class="eligibility-keyword-editor-label">${escapeHtml(label)}</span><span class="detachment-enhancement-edit-field description" ${commonAttrs} ${safeFieldAttribute}="${escapeAttr(fieldName)}" role="textbox" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(value)}</span></div>`;
+      }).join("");
+      return `<div class="eligibility-keyword-editor" aria-label="Eligibility Keywords" onclick="event.stopPropagation();">${rows}</div>`;
     }
 
     function renderDetachmentItemTagEditor(tagsValue, tagCategoriesValue, commonAttrs, fieldAttr, itemName = "Item") {
@@ -26725,7 +26808,10 @@ function viewEditUpdateDetachmentNameAt(index, value) {
             shortText: normalizeImportedDescriptiveText(values.shortText ?? item.shortText ?? ""),
             longText: normalizeImportedDescriptiveText(values.longText ?? item.longText ?? ""),
             tags: normalizeImportedDescriptiveText(values.tags ?? item.tags ?? ""),
-            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? "")
+            tagCategories: normalizeImportedDescriptiveText(values.tagCategories ?? item.tagCategories ?? ""),
+            requiredKeywords: cleanImportedText(values.requiredKeywords ?? getDetachmentItemEligibilityValue(item, "Required_Keywords")),
+            anyKeywords: cleanImportedText(values.anyKeywords ?? getDetachmentItemEligibilityValue(item, "Any_Keywords")),
+            excludedKeywords: cleanImportedText(values.excludedKeywords ?? getDetachmentItemEligibilityValue(item, "Excluded_Keywords"))
           };
 
           if (String(item.itemName || "") !== nextValues.itemName) { item.itemName = nextValues.itemName; changed = true; }
@@ -26734,6 +26820,9 @@ function viewEditUpdateDetachmentNameAt(index, value) {
           if (String(item.longText || "") !== nextValues.longText) { item.longText = nextValues.longText; item.longDescription = nextValues.longText; changed = true; }
           if (String(item.tags || "") !== nextValues.tags) { item.tags = nextValues.tags; changed = true; }
           if (String(item.tagCategories || "") !== nextValues.tagCategories) { item.tagCategories = nextValues.tagCategories; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Required_Keywords")) !== nextValues.requiredKeywords) { item.requiredKeywords = nextValues.requiredKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Any_Keywords")) !== nextValues.anyKeywords) { item.anyKeywords = nextValues.anyKeywords; changed = true; }
+          if (String(getDetachmentItemEligibilityValue(item, "Excluded_Keywords")) !== nextValues.excludedKeywords) { item.excludedKeywords = nextValues.excludedKeywords; changed = true; }
 
           if (hasDetachmentRuleSpreadsheetChange(item, nextValues)) {
             const pendingRow = buildDetachmentRulePendingRow(item, nextValues);
@@ -28700,7 +28789,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.6',
+        version: 'V31.16',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -29353,5 +29442,36 @@ function viewEditUpdateDetachmentNameAt(index, value) {
   }
 })();
 </script>
+  <!-- V31.16 WAHA_CHROME_ROUTER -->
+  <script>
+    (() => {
+      const wahaHttpsPattern = /^https:\/\/(?:www\.)?wahapedia\.ru\//i;
+      const wahaHttpPattern = /^http:\/\/(?:www\.)?wahapedia\.ru\//i;
+
+      function toChromeWahaUrl(value) {
+        const url = String(value || "");
+        if (wahaHttpsPattern.test(url)) return url.replace(/^https:\/\//i, "googlechromes://");
+        if (wahaHttpPattern.test(url)) return url.replace(/^http:\/\//i, "googlechrome://");
+        return url;
+      }
+
+      const nativeWindowOpen = typeof window.open === "function" ? window.open.bind(window) : null;
+      if (nativeWindowOpen) {
+        window.open = function(url, ...args) {
+          const routedUrl = typeof url === "string" ? toChromeWahaUrl(url) : url;
+          return nativeWindowOpen(routedUrl, ...args);
+        };
+      }
+
+      document.addEventListener("click", event => {
+        const target = event.target;
+        const anchor = target && typeof target.closest === "function" ? target.closest("a[href]") : null;
+        if (!anchor) return;
+        const href = anchor.getAttribute("href") || "";
+        const routedHref = toChromeWahaUrl(href);
+        if (routedHref !== href) anchor.setAttribute("href", routedHref);
+      }, true);
+    })();
+  </script>
 </body>
 </html>
