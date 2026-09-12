@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.28</title>
+  <title>WH40k 11th V31.29</title>
 
 
   <!--
@@ -30,11 +30,11 @@
 
     Version-switching invariant: Update and retained-version buttons must not be blocked by viewEditRosterDraftDirty or require a separate manual roster Save. The version host's existing prepare/checkpoint path persists the live roster state before mounting the next app runtime. Storage-not-ready protection remains valid.
 
-    Unit-level structured Tag invariant: a Tag definition whose canonical Target or Affects is UNIT (or whose canonical Category is Unit-level) renders on the Unit-level tag line alongside Unit rules such as FNP, not inside the source Ability's Melee/Range Tag sections. The Unit-level badge keeps the source assignment's interactive on/off state. Weapon-scoped Tags remain on the source Ability and applicable Weapon profiles.
+    Unit-level compact-rule invariant: only Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP are promoted to the Unit-level tag line. The same whitelist applies to direct core Abilities and to structured Tags carried by another Ability. An Ability carrying one of these promoted Tags defaults to order 8 so its source row does not render in View but remains manageable in Edit. All other Unit-affecting Tags remain with their source Ability.
 
     View-mode scoped Ability Tag layout invariant: non-Unit structured Tags render with the Ability-like description text, not in the title cell and never in separate Melee/Range subtitle rows. Canonical Range and Melee scoped description Tags follow the existing global View Range/Melee filter immediately; Range and Melee are controls only and must not be rendered as subtitles or labels in Ability rows. Unit-level Tags remain on the Unit-level tag line.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.28; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.29; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -91,6 +91,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.29
+    Scope: Restrict Unit-level compact rule promotion to Deep Strike, Lone Operative, Fights First, Stealth, Infiltrators, Scout 6", Fight on Death, Invulnerable Save, and FNP. Direct core Abilities and structured Tags from this whitelist render at Unit level; unrelated Unit-affecting Tags stay with their source Ability. Any Ability carrying one of the promoted structured Tags defaults to order 8, keeping its source row out of View while preserving it in Edit.
+    Risk areas: Unit-level compact rule placement and default Ability order for the promoted whitelist. Scoped description Tags, Weapon rules, Range/Melee filtering, Probable, and Edit controls remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.28
     Scope: Move scoped structured Tags out of the Ability-like title cell and back into the description cell. Tags appear directly with the description text with no Melee/Range subtitles, while the existing top Range/Melee controls continue to drive scoped Tag visibility. This restores normal Ability-name width and prevents tags from squeezing long names.
     Risk areas: View Ability-like description/tag presentation only. Tag activation, Range/Melee filtering, Unit-level Tag promotion, Weapon rules, Probable, and Edit Tag management remain unchanged.
@@ -114,11 +120,6 @@
     Risk areas: Unit-level tag presentation and Ability structured-Tag placement. Weapon-scoped Tag behavior, derived Weapon rules, Probable, and Edit tag management remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.24
-    Scope: Remove the manual roster-Save blocker from app version switching. Update and retained-version buttons can now change versions while Edit has dirty roster state; the existing version-change checkpoint persists the live state before the next runtime mounts.
-    Risk areas: Version switching only. Storage-not-ready protection remains, and roster/version checkpoint persistence is otherwise unchanged.
-  -->
 
 
 
@@ -7578,7 +7579,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.28";
+    const APP_VERSION = "31.29";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -21742,7 +21743,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
       const appendedTags = getAbilityProtectedModifierTagAssignments(ability).map(assignment => {
         const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-        if (isUnitLevelTagDefinition(definition)) return "";
+        if (isPromotedUnitLevelTag(assignment.tag, definition)) return "";
         const scope = getTagDefinitionWeaponScope(definition, assignment.category).kind;
         const visible = scope === "melee" || scope === "range"
           ? isViewRosterWeaponKindVisible(scope)
@@ -23562,24 +23563,62 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       }).join("");
     }
 
-    function isUnitNameLevelFnpAbility(ability) {
-      const id = normalizeLookupId(ability && (ability.abilityId || ability.id || ""));
-      const name = String(ability && (ability.name || ability.abilityName || "") || "").trim().toUpperCase();
-      return /^FEEL_NO_PAIN_[456]$/.test(id)
-        || /^FNP [456]\+$/.test(name)
-        || /^FEEL NO PAIN [456]\+$/.test(name);
+    function normalizePromotedUnitRuleKey(value) {
+      return String(value || "")
+        .trim()
+        .toUpperCase()
+        .replace(/[^A-Z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "");
+    }
+
+    function isPromotedUnitRuleKey(value) {
+      const key = normalizePromotedUnitRuleKey(value);
+      if (!key) return false;
+      return key === "DEEP_STRIKE"
+        || key === "LONE_OPERATIVE"
+        || key === "FIGHTS_FIRST"
+        || key === "STEALTH"
+        || key === "INFILTRATORS"
+        || key === "SCOUT_6"
+        || key === "SCOUTS_6"
+        || key === "FIGHT_ON_DEATH"
+        || key.startsWith("FIGHT_ON_DEATH_")
+        || key === "FNP"
+        || key.startsWith("FNP_")
+        || key === "FEEL_NO_PAIN"
+        || key.startsWith("FEEL_NO_PAIN_")
+        || key === "INVULNERABLE_SAVE"
+        || key.startsWith("INVULNERABLE_SAVE_")
+        || key.endsWith("_INVUL")
+        || key.includes("_INVUL_");
+    }
+
+    function isUnitNameLevelAbility(ability) {
+      if (!ability) return false;
+      return isPromotedUnitRuleKey(ability.abilityId || ability.id || "")
+        || isPromotedUnitRuleKey(ability.name || ability.abilityName || "");
     }
 
     function getUnitNameLevelAbilities(unit) {
-      return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelFnpAbility(ability));
+      return getCoreAbilitiesForUnit(unit).filter(ability => ability && !ability.isMissingLink && isUnitNameLevelAbility(ability));
     }
 
-    function isUnitLevelTagDefinition(definition) {
+    function isPromotedUnitLevelTag(tag, definition) {
+      if (isPromotedUnitRuleKey(tag)) return true;
       if (!definition) return false;
-      const target = String(definition.target || "").trim().toUpperCase();
-      const affects = String(definition.affects || "").trim().toUpperCase();
-      const category = String(definition.category || "").trim().toUpperCase();
-      return target === "UNIT" || affects === "UNIT" || category === "UNIT" || category.startsWith("UNIT ");
+      return isPromotedUnitRuleKey(definition.tagId)
+        || isPromotedUnitRuleKey(definition.id)
+        || isPromotedUnitRuleKey(definition.displayTag)
+        || isPromotedUnitRuleKey(definition.title);
+    }
+
+    function abilityHasPromotedUnitLevelRule(ability) {
+      if (!ability) return false;
+      if (isUnitNameLevelAbility(ability)) return true;
+      return getAbilityProtectedModifierTagAssignments(ability).some(assignment => {
+        const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
+        return isPromotedUnitLevelTag(assignment.tag, definition);
+      });
     }
 
     function getRosterEntryUnitLevelStructuredTagRecords(entry, unit, roster = getDisplayedRosterForRosterScreen()) {
@@ -23590,7 +23629,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
         if (!ability || ability.isMissingLink) return;
         getAbilityProtectedModifierTagAssignments(ability).forEach(assignment => {
           const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
-          if (!isUnitLevelTagDefinition(definition)) return;
+          if (!isPromotedUnitLevelTag(assignment.tag, definition)) return;
           const tagKey = normalizeAbilityTagPickerKey(getAbilityTagDisplayLabel(assignment.tag));
           if (!tagKey) return;
           const candidate = {
@@ -23836,6 +23875,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const rows = [];
       let sequence = 0;
       const push = (orderKey, defaultOrder, render, probableEligible = true, sourceRef = null) => {
+        if (sourceRef && abilityHasPromotedUnitLevelRule(sourceRef)) defaultOrder = 8;
         if (entry && sourceRef && rosterEntryHasHiddenSource(entry, sourceRef)) return;
         rows.push({
           orderKey,
@@ -28943,7 +28983,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.28',
+        version: 'V31.29',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
