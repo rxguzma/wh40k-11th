@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.27 with same-line scoped Ability Tags
-        run: python3 scripts/patch_html_v31_27.py
+      - name: Build V31.28 with description-side scoped Ability Tags
+        run: python3 scripts/patch_html_v31_28.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.27 same-line scoped Ability Tags"
+          git commit -m "Build V31.28 description-side scoped Ability Tags"
           git push origin HEAD:main
