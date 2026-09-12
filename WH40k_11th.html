@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.38</title>
+  <title>WH40k 11th V31.39</title>
 
 
   <!--
@@ -33,9 +33,9 @@
     Unit-level compact-rule invariant: only the approved structured Tags render on the Unit-level tag line: DEEP_STRIKE; LONE_OPERATIVE; LONE_OPERATIVE_3; FIGHTS_FIRST; STEALTH; INFILTRATORS; SCOUT_6 / SCOUTS_6; FIGHT_ON_DEATH and its explicit variants; and FNP / FEEL_NO_PAIN variants. Invulnerable Save is never promoted to this line. The Unit-level line renders from structured Tag assignments only; do not separately render a direct core Ability label for the same rule. An Ability carrying an approved Unit-level Tag defaults to order 8 so its source row does not render in View but remains manageable in Edit. All non-approved Tags remain with their source Ability.
     Compact Unit badge renderer invariant: renderOtherAbilityTags() still uses isUnitNameLevelFnpAbility() only to shorten Feel No Pain labels to FNP X+. Keep that helper available even though the broader promotion decision is owned by isUnitNameLevelAbility()/isPromotedUnitRuleKey(). Removing the FNP label helper causes promoted core-rule rendering to throw and can blank an opened Unit detail.
 
-    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line.
+    View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.38; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.39; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.39
+    Scope: Remove the Unit label from the View roster header and let Range | Melee | Other | All use the full first-column width. Preserve the V31.38 equal-width 2.5px-gap layout, 24px control height, shared View/Edit header height, filter behavior, and all stat-column geometry.
+    Risk areas: View roster header label/available filter width only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.38
     Scope: Return to the V31.35 roster-filter visual baseline, then make Range | Melee | Other | All equal-width by sharing the remaining Unit-header space responsively. Adjacent spacing is 2.5px, exactly half the existing 5px shell-control gap. Filter controls remain 24px high and the View header is locked to the same row-height formula as Edit on desktop and phone layouts.
     Risk areas: View roster filter layout and View header geometry only. Filter behavior, colors, labels, roster data, and Edit mode are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: View roster filter-button sizing only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.32
-    Scope: Replace the View roster Range/Melee carousel with a single-select Range | Melee | Other | All filter. All is the default and is green whenever no specific filter is selected. Range and Melee show their matching Weapon rows and scoped Ability rows; Other shows unscoped/non-Range/non-Melee rows; All restores every Weapon and Ability row.
-    Risk areas: View roster header filter controls and View Weapon/Ability row visibility only. Weapon/Ability activation state, Tags, Probable, Edit mode, and roster data remain unchanged.
-  -->
 
 
 
@@ -5170,6 +5171,16 @@
         max-height: calc(var(--edit-header-button-height) + 18px) !important;
       }
     }
+
+    /* V31.39: filters own the full first View-header column. */
+    .view-roster-head .roster-view-head-title {
+      gap: 0 !important;
+    }
+
+    .view-roster-weapon-filter-actions {
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
 </style>
 </head>
 <body>
@@ -7655,7 +7666,7 @@
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.38";
+    const APP_VERSION = "31.39";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -20770,7 +20781,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
 
     function renderRosterHeaderHtml(roster) {
       if (appEditMode) return renderViewEditRosterHeader(roster);
-      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-head-unit-label">Unit</span><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
+      return `<div class="row head view-roster-head"><div class="cell roster-view-head-title"><span class="view-roster-weapon-filter-actions">${renderViewRosterWeaponFilterButton("range", "Range")}${renderViewRosterWeaponFilterButton("melee", "Melee")}${renderViewRosterWeaponFilterButton("other", "Other")}${renderViewRosterWeaponFilterButton("all", "All")}</span></div><div class="cell num">M"</div><div class="cell num">T</div><div class="cell num">SV</div><div class="cell num">W</div><div class="cell num">LD</div><div class="cell num">OC</div></div>`;
     }
 
     function renderRosterEntryListHtml(roster) {
@@ -29080,7 +29091,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.38',
+        version: 'V31.39',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
