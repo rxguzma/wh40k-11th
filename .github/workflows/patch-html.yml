@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.41 fixed phone grid
-        run: python3 scripts/patch_html_v31_41.py
+      - name: Build V31.42 NP local launcher
+        run: python3 scripts/patch_html_v31_42.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.41 fixed phone grid"
+          git commit -m "Build V31.42 NP local launcher"
           git push origin HEAD:main
