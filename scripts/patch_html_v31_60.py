@@ -23,48 +23,59 @@ if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
-# Deep Strike is a normal orange Unit tag whenever no Weapon is selected.
-# When a Weapon is selected, Deep Strike becomes an inactive tag using the
-# same gray font treatment as inactive Weapon tags. Do not reduce its opacity
-# simply because the Unit is expanded.
+# Deep Strike is standard until a Weapon is selected. While a Weapon is selected,
+# the Deep Strike font becomes Main muted gray and the whole Deep Strike element
+# is rendered at 50% opacity.
 old_keyword_css = '.unit-keyword.keyword-muted{color:rgba(241,164,88,.5)}'
-new_keyword_css = '.unit-keyword.keyword-muted{color:var(--muted)}'
+new_keyword_css = '.unit-keyword.keyword-muted{color:var(--muted);opacity:.5}'
 if np.count(old_keyword_css) != 1:
     raise SystemExit(f'Unit keyword muted CSS: expected 1 match, found {np.count(old_keyword_css)}')
 np = np.replace(old_keyword_css, new_keyword_css, 1)
 
+# Inactive Weapon name/stat fonts are 50% opacity. The active Weapon name/stat
+# fonts use Main's existing active green. Inactive Weapon Tag fonts remain gray.
+old_weapon_css = '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}\n.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}'
+new_weapon_css = '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{opacity:.5}\n.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3;opacity:1}\n.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}'
+if np.count(old_weapon_css) != 1:
+    raise SystemExit(f'Weapon muted CSS: expected 1 match, found {np.count(old_weapon_css)}')
+np = np.replace(old_weapon_css, new_weapon_css, 1)
+
+# Expanding the Unit alone must not mute Deep Strike.
 old_deep_sync = "if(deep){deep.style.display=nazdregOpen?'flex':'none';deep.classList.toggle('keyword-muted',nazdregOpen)}\n  syncWeaponLayout();"
 new_deep_sync = "if(deep)deep.style.display=nazdregOpen?'flex':'none';\n  syncWeaponLayout();"
 if np.count(old_deep_sync) != 1:
     raise SystemExit(f'Deep Strike detail sync: expected 1 match, found {np.count(old_deep_sync)}')
 np = np.replace(old_deep_sync, new_deep_sync, 1)
 
+# Deep Strike follows Weapon selection state immediately.
 old_selection = "const hasSelection=selectedWeaponIndex!==null&&visible.includes(selectedWeaponIndex);\n  const showWeapons=Boolean(nazdregOpen&&ordered.length);"
 new_selection = "const hasSelection=selectedWeaponIndex!==null&&visible.includes(selectedWeaponIndex);\n  const deep=grid.querySelector('.detail-deep-strike');\n  if(deep)deep.classList.toggle('keyword-muted',hasSelection);\n  const showWeapons=Boolean(nazdregOpen&&ordered.length);"
 if np.count(old_selection) != 1:
     raise SystemExit(f'Weapon selection state marker: expected 1 match, found {np.count(old_selection)}')
 np = np.replace(old_selection, new_selection, 1)
 
+# V31.59 kept the weapon-active JS state even though it removed the active-green
+# CSS rule. Restore only the visual rule and keep the current selection logic.
 for required in [
-    '.unit-keyword.keyword-muted{color:var(--muted)}',
-    "if(deep)deep.style.display=nazdregOpen?'flex':'none';",
+    "const active=hasSelection&&i===selectedWeaponIndex;",
+    "weaponRow.classList.toggle('weapon-active',active);",
+    "weaponRow.classList.toggle('weapon-muted',muted);",
+    "tagRow.classList.toggle('weapon-muted',muted);",
+    '.unit-keyword.keyword-muted{color:var(--muted);opacity:.5}',
+    '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{opacity:.5}',
+    '.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3;opacity:1}',
     "if(deep)deep.classList.toggle('keyword-muted',hasSelection);",
-    "const hasSelection=selectedWeaponIndex!==null&&visible.includes(selectedWeaponIndex);",
 ]:
     if required not in np:
         raise SystemExit('alternate View check failed: ' + required)
-if "deep.classList.toggle('keyword-muted',nazdregOpen)" in np:
-    raise SystemExit('Deep Strike is still muted merely because the Unit is open')
-if 'rgba(241,164,88,.5)' in np:
-    raise SystemExit('old half-opacity Deep Strike font rule still present')
 
 np_srcdoc = html.escape(np, quote=True)
 text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
 
 note = '''  <!--
     CHANGE NOTE - WH40k_11th_V31.60
-    Scope: Correct Deep Strike tag styling in alternate View. Deep Strike now uses its standard orange font whenever no Weapon is selected. Selecting a Weapon changes Deep Strike to the same muted gray font used by inactive Weapon tags; clearing Weapon selection restores the standard orange font. Expanding Nazdreg alone no longer makes Deep Strike translucent or muted.
-    Risk areas: Alternate View Deep Strike font state only. Weapon selection/filtering, Waha, expansion, live data, and canonical View/Edit/Cards are unchanged.
+    Scope: Correct alternate View selection styling. Deep Strike is standard while no Weapon is selected. When a Weapon is selected, Deep Strike uses Main muted gray text and its element is 50% opacity; clearing selection restores normal styling. Inactive Weapon name/stat fonts are 50% opacity. The selected Weapon name/stat fonts use Main active green #80d6a3. Inactive Weapon Tag fonts remain Main muted gray. Filtering, row-10 promotion, compact expansion, Waha, and live data are unchanged.
+    Risk areas: Alternate View Weapon-selection and Deep Strike presentation only.
   -->
 
 '''
@@ -83,10 +94,11 @@ for required in [
     'const APP_VERSION = "31.60";',
     "version: 'V31.60',",
     'CHANGE NOTE - WH40k_11th_V31.60',
-    'color:var(--muted)',
+    'color:var(--muted);opacity:.5',
+    'color:#80d6a3;opacity:1',
 ]:
     if required not in text:
         raise SystemExit('acceptance check failed: ' + required)
 
 out.write_text(text, encoding='utf-8')
-print('Built V31.60: Deep Strike standard by default, muted only with Weapon selection')
+print('Built V31.60: normal Deep Strike until selection, 50% inactive Weapons, active-green selected Weapon')
