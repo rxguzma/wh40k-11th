@@ -23,23 +23,31 @@ if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
-# Preserve every box/background/border exactly as-is. Selection changes font treatment only.
-# Inactive Weapon name/stats are 50% opacity, inactive tag text is muted gray at 50%,
-# and the selected Weapon name/stats use the existing active green font.
-old_weapon_css = ".weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}\n.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}"
-new_weapon_css = ".weapon-row.weapon-muted{opacity:1}\n.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}\n.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}\n.weapon-tags.weapon-muted{opacity:1}\n.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)}"
-if np.count(old_weapon_css) != 1:
-    raise SystemExit(f'Weapon muted CSS: expected 1 match, found {np.count(old_weapon_css)}')
-np = np.replace(old_weapon_css, new_weapon_css, 1)
+# Selection changes font treatment only. Boxes/backgrounds/borders stay unchanged.
+weapon_muted_rule = '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}'
+if weapon_muted_rule not in np:
+    raise SystemExit('inactive Weapon 50% font rule missing')
+np = np.replace(
+    weapon_muted_rule,
+    '.weapon-row.weapon-muted{opacity:1}\n' + weapon_muted_rule + '\n.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}',
+    1,
+)
 
-old_keyword_css = '.unit-keyword.keyword-muted{color:var(--muted)}'
-new_keyword_css = '.unit-keyword.keyword-muted{color:rgba(154,160,166,.5);opacity:1}'
-if np.count(old_keyword_css) != 1:
-    raise SystemExit(f'Unit keyword muted CSS: expected 1 match, found {np.count(old_keyword_css)}')
-np = np.replace(old_keyword_css, new_keyword_css, 1)
+tag_rule = '.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}'
+if tag_rule not in np:
+    raise SystemExit('inactive Weapon Tag rule missing')
+np = np.replace(
+    tag_rule,
+    '.weapon-tags.weapon-muted{opacity:1}\n.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)}',
+    1,
+)
 
-# The V31.58/V31.60 selection logic still marks the selected Weapon as weapon-active.
-# Require that behavior so the green selected state cannot silently disappear.
+keyword_rule = '.unit-keyword.keyword-muted{color:var(--muted)}'
+if keyword_rule not in np:
+    raise SystemExit('inactive Unit keyword rule missing')
+np = np.replace(keyword_rule, '.unit-keyword.keyword-muted{color:rgba(154,160,166,.5);opacity:1}', 1)
+
+# Keep selected Weapon green and all other visible Weapons muted to 50%.
 required_logic = [
     "const active=hasSelection&&i===selectedWeaponIndex;",
     "weaponRow.classList.toggle('weapon-active',active);",
@@ -67,7 +75,7 @@ text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
 
 note = '''  <!--
     CHANGE NOTE - WH40k_11th_V31.61
-    Scope: Correct alternate View selection visuals. Tag/button/box backgrounds and borders no longer change between selected and unselected states; only font treatment changes. When a Weapon is selected, its name and stats use the existing active green. Other visible Weapon name/stat text is 50% opacity. Other Weapon Tag text and Deep Strike text use muted gray at 50% opacity while their boxes remain visually identical. With no Weapon selected, all Weapon and Deep Strike text returns to normal styling.
+    Scope: Correct alternate View selection visuals. Tag/button/box backgrounds and borders remain identical before and after Weapon selection; only their text changes. The selected Weapon name and stats use existing active green. Other visible Weapon name/stat text is 50% opacity. Other Weapon Tag text and Deep Strike text use muted gray at 50% opacity while their boxes remain unchanged. Clearing Weapon selection restores all normal colors.
     Risk areas: Alternate View selected/inactive font styling only. Layout, filtering, expansion, Waha, live data, and canonical View/Edit/Cards are unchanged.
   -->
 
@@ -95,4 +103,4 @@ for required in [
         raise SystemExit('acceptance check failed: ' + required)
 
 out.write_text(text, encoding='utf-8')
-print('Built V31.61: boxes unchanged, active Weapon green, inactive Weapon/tag text at 50%')
+print('Built V31.61: unchanged boxes, active Weapon green, inactive Weapon/tag text at 50%')
