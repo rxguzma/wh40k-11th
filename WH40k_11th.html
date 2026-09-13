@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.79</title>
+  <title>WH40k 11th V31.80</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.79; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.80; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.80
+    Scope: Enforce the New View title source boundary. Every visible New View title value—roster name, Detachment list, Disposition, and points—is now read only from New Edit's header record through getNewEditHeaderData(). New View no longer consumes any preformatted legacy/global title summary or VP value, and its points text is formatted locally from New Edit's points field. Build-time checks explicitly reject direct Old Edit/model title access, Cards VP access, static roster title values, and the retired summaryRest dependency inside New View. Unit/Weapon data remains on its existing temporary legacy source and is not changed in this phase.
+    Risk areas: New View title/header linkage only. New Edit's temporary upstream Old Edit/model feed, New View Unit/Weapon linkage, Cards scoring, persistence, CSV data, Waha routing, and Probable are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.79
     Scope: Remove the remaining VP value from the legacy/global title renderer. Its title points string now contains roster points only, preventing Cards VP from appearing behind or alongside the New View title. New View title data remains sourced from New Edit as established in V31.78. No Unit/Weapon linkage changes are made.
     Risk areas: Global title points text only. New View/New Edit title linkage, Unit/Weapon data sources, Cards scoring itself, persistence, CSV data, Waha routing, and Probable are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: New Edit staged data/rendering plus temporary New View source restoration only. No Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, or unrelated UI is changed.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.75
-    Scope: Fix the New Edit Unit list layout so its visible Unit rows use the same compact displayed positions as the collapsed New View list. New View already dynamically compacts Unit 2 from its dormant authored row to the row immediately below Unit 1; New Edit now does the same by positioning its two live Unit rows consecutively from FIRST_UNIT_ROW. This removes the large empty gap while preserving the existing Old Edit/model -> New Edit -> New View data dependency. No additional Edit functionality is migrated.
-    Risk areas: New Edit visible Unit row positioning only. Unit data/order, New View layout and expansion behavior, legacy Edit, Cards, persistence, Waha routing, combat behavior, and CSV data remain unchanged.
-  -->
 
 
 
@@ -5637,7 +5638,7 @@ function refreshAlternateViewUnitsFromParent(){
 }
 window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;
 
-function refreshAlternateViewHeaderFromNewEdit(){
+function refreshNewViewTitleFromNewEdit(){
   let data=null;
   try{data=parent&amp;&amp;typeof parent.getNewEditHeaderData===&#x27;function&#x27;?parent.getNewEditHeaderData():null}catch(_){data=null}
   const name=grid.querySelector(&#x27;.top-roster-name&#x27;);
@@ -5647,11 +5648,11 @@ function refreshAlternateViewHeaderFromNewEdit(){
   if(name)name.textContent=data?String(data.rosterName||&#x27;&#x27;):&#x27;&#x27;;
   if(detachments)detachments.textContent=data?String(data.detachments||&#x27;&#x27;):&#x27;&#x27;;
   if(disposition)disposition.textContent=data?String(data.disposition||&#x27;&#x27;):&#x27;&#x27;;
-  if(rest)rest.textContent=data?String(data.summaryRest||&#x27;&#x27;):&#x27;&#x27;;
+  if(rest)rest.textContent=data?`- ${String(data.points??0)} pts`:&#x27;&#x27;;
   return Boolean(data);
 }
-window.refreshAlternateViewHeaderFromNewEdit=refreshAlternateViewHeaderFromNewEdit;
-function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(refreshAlternateViewHeaderFromNewEdit);requestAnimationFrame(refreshAlternateViewUnitsFromParent)}}
+window.refreshNewViewTitleFromNewEdit=refreshNewViewTitleFromNewEdit;
+function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(refreshNewViewTitleFromNewEdit);requestAnimationFrame(refreshAlternateViewUnitsFromParent)}}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -8522,7 +8523,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.79";
+    const APP_VERSION = "31.80";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12829,7 +12830,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       const npFrame = document.getElementById("npViewFrame");
       try {
         const npWindow = npFrame && npFrame.contentWindow;
-        if (npWindow && typeof npWindow.refreshAlternateViewHeaderFromNewEdit === "function") npWindow.refreshAlternateViewHeaderFromNewEdit();
+        if (npWindow && typeof npWindow.refreshNewViewTitleFromNewEdit === "function") npWindow.refreshNewViewTitleFromNewEdit();
         if (npWindow && typeof npWindow.refreshAlternateViewUnitsFromParent === "function") npWindow.refreshAlternateViewUnitsFromParent();
       } catch (_) {}
 
@@ -30137,7 +30138,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.79',
+        version: 'V31.80',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
