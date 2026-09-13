@@ -23,33 +23,25 @@ if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
-# Selection changes font treatment only. Boxes/backgrounds/borders stay unchanged.
-weapon_muted_rule = '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}'
-if weapon_muted_rule not in np:
-    raise SystemExit('inactive Weapon 50% font rule missing')
-np = np.replace(
-    weapon_muted_rule,
-    '.weapon-row.weapon-muted{opacity:1}\n' + weapon_muted_rule + '\n.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}',
-    1,
-)
+# Add final-state overrides only. Backgrounds, borders, button shells and tag boxes
+# remain unchanged; selection affects text only.
+visual_css = '''
+.weapon-row.weapon-muted{opacity:1!important}
+.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)!important}
+.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3!important}
+.weapon-tags.weapon-muted{opacity:1!important}
+.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
+.unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
+'''
+if visual_css.strip() in np:
+    raise SystemExit('V31.61 visual overrides already present')
+if '</style>' not in np:
+    raise SystemExit('alternate View style marker missing')
+np = np.replace('</style>', visual_css + '</style>', 1)
 
-tag_rule = '.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}'
-if tag_rule not in np:
-    raise SystemExit('inactive Weapon Tag rule missing')
-np = np.replace(
-    tag_rule,
-    '.weapon-tags.weapon-muted{opacity:1}\n.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)}',
-    1,
-)
-
-keyword_rule = '.unit-keyword.keyword-muted{color:var(--muted)}'
-if keyword_rule not in np:
-    raise SystemExit('inactive Unit keyword rule missing')
-np = np.replace(keyword_rule, '.unit-keyword.keyword-muted{color:rgba(154,160,166,.5);opacity:1}', 1)
-
-# Keep selected Weapon green and all other visible Weapons muted to 50%.
+# Selection logic must already mark the selected Weapon active, other Weapons muted,
+# their tags muted, and Deep Strike muted while a Weapon is selected.
 required_logic = [
-    "const active=hasSelection&&i===selectedWeaponIndex;",
     "weaponRow.classList.toggle('weapon-active',active);",
     "weaponRow.classList.toggle('weapon-muted',muted);",
     "tagRow.classList.toggle('weapon-muted',muted);",
@@ -60,12 +52,12 @@ if missing_logic:
     raise SystemExit('selection logic missing: ' + ', '.join(missing_logic))
 
 for required in [
-    '.weapon-row.weapon-muted{opacity:1}',
-    '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}',
-    '.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}',
-    '.weapon-tags.weapon-muted{opacity:1}',
-    '.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)}',
-    '.unit-keyword.keyword-muted{color:rgba(154,160,166,.5);opacity:1}',
+    '.weapon-row.weapon-muted{opacity:1!important}',
+    '.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)!important}',
+    '.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3!important}',
+    '.weapon-tags.weapon-muted{opacity:1!important}',
+    '.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)!important}',
+    '.unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}',
 ]:
     if required not in np:
         raise SystemExit('alternate View check failed: ' + required)
@@ -75,7 +67,7 @@ text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
 
 note = '''  <!--
     CHANGE NOTE - WH40k_11th_V31.61
-    Scope: Correct alternate View selection visuals. Tag/button/box backgrounds and borders remain identical before and after Weapon selection; only their text changes. The selected Weapon name and stats use existing active green. Other visible Weapon name/stat text is 50% opacity. Other Weapon Tag text and Deep Strike text use muted gray at 50% opacity while their boxes remain unchanged. Clearing Weapon selection restores all normal colors.
+    Scope: Correct alternate View selection visuals. Tag/button/box backgrounds and borders remain identical before and after Weapon selection; only their text changes. The selected Weapon name and stats use existing active green. Other visible Weapon name/stat text is 50% opacity. Other Weapon Tag text and Deep Strike text use muted gray at 50% opacity while their boxes remain unchanged. Clearing Weapon selection restores normal colors.
     Risk areas: Alternate View selected/inactive font styling only. Layout, filtering, expansion, Waha, live data, and canonical View/Edit/Cards are unchanged.
   -->
 
@@ -103,4 +95,4 @@ for required in [
         raise SystemExit('acceptance check failed: ' + required)
 
 out.write_text(text, encoding='utf-8')
-print('Built V31.61: unchanged boxes, active Weapon green, inactive Weapon/tag text at 50%')
+print('Built V31.61: boxes unchanged, active Weapon green, inactive text at 50%')
