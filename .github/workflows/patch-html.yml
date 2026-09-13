@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Trace V31.87 dynamic roster rows
+      - name: Build V31.87 dynamic roster rows
         run: python3 scripts/run_patch_html_v31_87.py
 
       - name: Validate and generate release history
