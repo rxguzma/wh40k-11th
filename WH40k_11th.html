@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.94</title>
+  <title>WH40k 11th V31.95</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.94; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.95; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.95
+    Scope: Transfer the existing Version / Update interface into New View without duplicating the version engine. New View row 5 now uses the fixed 16-column sheet grid: Version spans A:L and Update spans M:P. Version/current toggles a ten-release history panel rendered as two rows of five; retained-version buttons call the existing parent loadGithubVersion path. Update directly calls the existing updateToLatestVersion path and does not open or close the history panel. The parent exposes only a read-only version UI snapshot; GitHub history refresh, version checkpointing, host mounting, and update behavior remain owned by the existing version system.
+    Risk areas: New View version presentation and a read-only parent UI bridge only. Old View Version/Update/Download behavior, release host, roster/model processing, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.94
     Scope: Correct unified New View EDIT points to use the same canonical roster-model totals as Old Edit. getAlternateViewRosterRows now carries each Unit model's points.total, which already includes the selected Unit point option, active per-model point modifiers, and paid Enhancement points. In New View EDIT, column P is now a plain Edit-style numeric point value rather than a Points button/icon or guessed fallback field. The EDIT title point total is recalculated from the ordered Unit rows shown on that sheet, ignoring spacer rows, after the normal legacy title fields refresh. VIEW title behavior, the V31.92 processing lock, and the V31.93 frozen snapshot remain unchanged.
     Risk areas: Parent ordered-row point field plus unified New View EDIT row/title point presentation only. VIEW frozen-snapshot behavior, Old Edit, New Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.91
     Scope: New View header controls only. The grid control moves from the left of the ALL weapon filter to P4 and now uses a four-cell grid icon instead of the letter G. The ALL/SHOOT/MELEE/OTHER filter occupies M4:O4. A lock control is added at K4 using the exact old Edit open/closed lock SVG geometry and the same status colors: open/unlocked green (#80d6a3), closed/locked red (#ff9a9a). The new lock is visual/state-only in this release and is not connected to old Edit's roster-movement lock or processing-freeze behavior. New Edit retains its existing G grid control.
     Risk areas: New View row-4 control placement and icon rendering only. Unit data, weapons, filters, Old Edit, New Edit behavior, Cards, persistence, CSV data, Waha routing, and Probable logic remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.90
-    Scope: Begin the one-page View/Edit migration inside New View. VIEW and EDIT now switch locally within the same New View iframe instead of EDIT opening Old Edit. In the New View EDIT state, Range/Melee/Other/All, the Stats header, Unit profile stats, expanded details, and Weapons are not rendered. Each live Unit row shows only Move, Copy, Dead, and Points controls using the established New Edit button styling, placed in columns M, N, O, and P respectively. Move uses the existing menu/move glyph, Copy uses the existing copy glyph, Dead uses D, and Points displays the available Unit point value when present or P otherwise. These controls are presentation-only in this pass; no edit actions are migrated yet. VIEW behavior and direct Old Edit/model data sourcing remain unchanged.
-    Risk areas: New View local VIEW/EDIT switching and EDIT-state Unit-row presentation only. New Edit, Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, and New View VIEW-mode Unit/Weapon behavior remain unchanged.
   -->
 
 
@@ -5394,6 +5394,14 @@
 .draft-grid.grid-on{border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25)}
 .draft-grid.grid-on .grid-cell{visibility:visible}
 .version-bar{display:none!important}
+.new-view-version-row{grid-column:1/span 16;grid-row:5;z-index:130;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--bg)}
+.new-view-version-toggle{grid-column:1/span 12;justify-self:center;justify-content:space-between}
+.new-view-version-current{color:var(--muted)}
+.new-view-update-button{grid-column:13/span 4;justify-self:center}
+.new-view-version-history{grid-column:1/span 16;grid-row:6/span 2;z-index:130;width:100%;height:calc(var(--cell)*2);padding:1px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,var(--std));gap:var(--gap);background:var(--card);border:1px solid var(--border)}
+.new-view-version-history[hidden]{display:none!important}
+.new-view-version-option{width:100%;padding:0 2px;font-size:11px}
+.new-view-version-option:disabled{opacity:1}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3}
 .view-stat-header.unit-active .view-stat-label,.view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)}
@@ -5488,7 +5496,80 @@ function syncNewViewLockButton(button){
   button.setAttribute(&#x27;aria-label&#x27;,label);
   button.setAttribute(&#x27;aria-pressed&#x27;,locked?&#x27;true&#x27;:&#x27;false&#x27;);
 }
-function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){newViewHeaderLocked=false;frozenNewViewSnapshot=null;syncNewViewLockButton(lb);requestAnimationFrame(refreshNewView);return}const snapshot=captureNewViewSnapshot();frozenNewViewSnapshot=snapshot;activateNewViewSnapshot(snapshot);newViewHeaderLocked=true;syncNewViewLockButton(lb)};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb)}
+let newViewVersionHistoryOpen=false;
+function readNewViewVersionState(){
+  try{
+    if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.getVersionUiState===&#x27;function&#x27;)return parent.UI.getVersionUiState()||{};
+  }catch(_){}
+  return {};
+}
+function renderNewViewVersionHistory(){
+  const panel=grid.querySelector(&#x27;.new-view-version-history&#x27;);
+  if(!panel)return;
+  panel.hidden=!newViewVersionHistoryOpen;
+  panel.replaceChildren();
+  if(!newViewVersionHistoryOpen)return;
+  const state=readNewViewVersionState();
+  const current=String(state.current||&#x27;&#x27;);
+  const entries=Array.isArray(state.entries)?state.entries.slice(0,10):[];
+  entries.forEach(entry=&gt;{
+    const version=String(entry&amp;&amp;entry.version||&#x27;&#x27;);
+    if(!version)return;
+    const b=document.createElement(&#x27;button&#x27;);
+    b.type=&#x27;button&#x27;;
+    b.className=&#x27;button-standard new-view-version-option&#x27;+(version===current?&#x27; active-green&#x27;:&#x27;&#x27;);
+    b.textContent=&#x27;v&#x27;+version;
+    b.disabled=version===current||Boolean(state.busy);
+    b.onclick=event=&gt;{event.stopPropagation();if(b.disabled)return;try{parent.UI.loadGithubVersion(version)}catch(_){}};
+    panel.appendChild(b);
+  });
+}
+async function toggleNewViewVersionHistory(){
+  newViewVersionHistoryOpen=!newViewVersionHistoryOpen;
+  renderNewViewVersionHistory();
+  if(!newViewVersionHistoryOpen)return;
+  try{
+    if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.refreshGithubVersionHistory===&#x27;function&#x27;)await parent.UI.refreshGithubVersionHistory();
+  }catch(_){}
+  renderNewViewVersionHistory();
+}
+function addNewViewVersionControls(f){
+  const state=readNewViewVersionState();
+  const row=document.createElement(&#x27;div&#x27;);
+  row.className=&#x27;new-view-version-row&#x27;;
+  const version=document.createElement(&#x27;button&#x27;);
+  version.type=&#x27;button&#x27;;
+  version.className=&#x27;button-standard new-view-version-toggle&#x27;;
+  version.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;);
+  const label=document.createElement(&#x27;span&#x27;);
+  label.textContent=&#x27;Version&#x27;;
+  const current=document.createElement(&#x27;span&#x27;);
+  current.className=&#x27;new-view-version-current&#x27;;
+  current.textContent=&#x27;v&#x27;+String(state.current||&#x27;&#x27;);
+  version.append(label,current);
+  version.onclick=event=&gt;{event.stopPropagation();toggleNewViewVersionHistory();version.setAttribute(&#x27;aria-expanded&#x27;,newViewVersionHistoryOpen?&#x27;true&#x27;:&#x27;false&#x27;)};
+  const update=document.createElement(&#x27;button&#x27;);
+  update.type=&#x27;button&#x27;;
+  update.className=&#x27;button-standard new-view-update-button&#x27;;
+  update.textContent=&#x27;Update&#x27;;
+  update.disabled=Boolean(state.busy);
+  update.onclick=async event=&gt;{
+    event.stopPropagation();
+    if(update.disabled)return;
+    update.disabled=true;
+    try{
+      if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.updateToLatestVersion===&#x27;function&#x27;)await parent.UI.updateToLatestVersion();
+    }catch(_){}
+    finally{update.disabled=false;renderNewViewVersionHistory()}
+  };
+  row.append(version,update);
+  f.appendChild(row);
+  const history=document.createElement(&#x27;div&#x27;);
+  history.className=&#x27;new-view-version-history&#x27;;
+  history.hidden=true;
+  f.appendChild(history);
+}
+function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){newViewHeaderLocked=false;frozenNewViewSnapshot=null;syncNewViewLockButton(lb);requestAnimationFrame(refreshNewView);return}const snapshot=captureNewViewSnapshot();frozenNewViewSnapshot=snapshot;activateNewViewSnapshot(snapshot);newViewHeaderLocked=true;syncNewViewLockButton(lb)};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
@@ -8537,7 +8618,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.94";
+    const APP_VERSION = "31.95";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -17809,6 +17890,14 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       } catch (error) {
         return { filename, file: null, url: "", error: error.message || "This viewer could not prepare the HTML file." };
       }
+    }
+
+    function getVersionUiState() {
+      return {
+        current: APP_VERSION,
+        busy: Boolean(versionActionBusy),
+        entries: versionHistoryEntries.map(entry => ({ version: String(entry && entry.version || "") })).filter(entry => entry.version)
+      };
     }
 
     async function fetchGithubVersionHistory() { return getVersionHost().history(); }
@@ -29494,6 +29583,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       toggleViewEditUtilitySection,
       openViewEditUtilitySection,
       toggleVersionHistory,
+      getVersionUiState,
       refreshGithubVersionHistory,
       loadGithubVersion,
       updateToLatestVersion,
@@ -30192,7 +30282,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.94',
+        version: 'V31.95',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
