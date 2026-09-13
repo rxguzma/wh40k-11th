@@ -26,26 +26,19 @@ if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
-# From the new View, EDIT goes back through the parent router, so the first
-# press opens legacy Edit. Once the new Edit is visible, VIEW returns locally
-# to the new View and another EDIT stays on the new Edit surface.
+# From the new View, EDIT goes through the parent router so the first press
+# opens legacy Edit. On the new Edit surface, VIEW returns locally to new View.
 old_nav = "b.onclick=()=>{if(t==='edit'||(p==='edit'&&t==='view'))renderPage(t);else parent.UI.selectAppMode(t)};"
 new_nav = "b.onclick=()=>{if(p==='edit'&&t==='view')renderPage('view');else if(p==='edit'&&t==='edit')return;else parent.UI.selectAppMode(t)};"
 if np.count(old_nav) != 1:
     raise SystemExit(f'alternate navigation handler: expected 1 match, found {np.count(old_nav)}')
 np = np.replace(old_nav, new_nav, 1)
 
-# Expose a narrow parent hook that renders the already-built blank Edit page.
-initial_render = "renderPage('view');"
-if np.count(initial_render) != 1:
-    raise SystemExit(f'initial alternate View render: expected 1 match, found {np.count(initial_render)}')
-np = np.replace(initial_render, "window.showAlternateEditPage=()=>renderPage('edit');\nrenderPage('view');", 1)
-
 for required in [
     "if(p==='edit'&&t==='view')renderPage('view')",
     "else if(p==='edit'&&t==='edit')return",
     "else parent.UI.selectAppMode(t)",
-    "window.showAlternateEditPage=()=>renderPage('edit');",
+    "function renderPage(p)",
 ]:
     if required not in np:
         raise SystemExit('alternate Edit routing check failed: ' + required)
@@ -53,9 +46,9 @@ for required in [
 np_srcdoc = html.escape(np, quote=True)
 text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
 
-# Edit now mirrors View's two-press behavior: first press opens the existing
-# Edit mode; second press, when Edit is already active, opens the alternate
-# surface and renders the new Edit landing page.
+# Edit mirrors View's two-press behavior. First press enters existing Edit.
+# If Edit is already active, second press opens the alternate surface and calls
+# its existing global renderPage('edit') function to show the blank new Edit.
 edit_pattern = re.compile(
     r'''      if \(target === "edit"\) \{\n.*?\n      \}\n\n      if \(target === "view"\) \{''',
     re.S,
@@ -70,7 +63,7 @@ new_edit_branch = '''      if (target === "edit") {
           const npFrame = document.getElementById("npViewFrame");
           try {
             const npWindow = npFrame && npFrame.contentWindow;
-            if (npWindow && typeof npWindow.showAlternateEditPage === "function") npWindow.showAlternateEditPage();
+            if (npWindow && typeof npWindow.renderPage === "function") npWindow.renderPage("edit");
           } catch (_) {}
           return;
         }
@@ -106,9 +99,8 @@ checks = [
     "version: 'V31.72',",
     'CHANGE NOTE - WH40k_11th_V31.72',
     'if (appEditMode) {',
-    'typeof npWindow.showAlternateEditPage === "function"',
-    'npWindow.showAlternateEditPage();',
-    "window.showAlternateEditPage=()=&gt;renderPage(&#x27;edit&#x27;);",
+    'typeof npWindow.renderPage === "function"',
+    'npWindow.renderPage("edit");',
 ]
 missing = [value for value in checks if value not in text]
 if missing:
