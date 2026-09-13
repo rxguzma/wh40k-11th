@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.105</title>
+  <title>WH40k 11th V31.106</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.105; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.106; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.106
+    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
+    Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.105
     Scope: Correct the statement separator in the V31.104 shared Grid Mode icon renderer. This preserves the V31.104 UI behavior exactly: the active local mode is labeled VIEW or EDIT and highlighted green, and both modes use the same four-cell Grid Mode icon with persistent on/off indication.
     Risk areas: Syntax correction in the unified View/Edit grid-button renderer only. No UI placement, state logic, roster data, lock behavior, filters, Edit actions, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable behavior changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.102
     Scope: Standardize unified New View/Edit Weapon Tag boxes to the same compact visual contract as Unit detail boxes. Weapon Tags now use Roboto 12px bold, 24px standard height, 8px horizontal padding, a 1px button border, the standard 6px radius, shared button background, centered text, and the existing standard row gap. Weapon Tags remain content-sized with no fixed grid spans, so short Tags stay compact and long Tags expand to their text. Existing orange/muted/active semantic states remain unchanged.
     Risk areas: Unified New View/Edit Weapon Tag presentation only. Weapon/Tag data, filtering, selection, Unit detail-box width rules, roster behavior, persistence, Cards, Waha routing, Version controls, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.101
-    Scope: Bring the established Boyz-style selectable point option into unified New View EDIT without duplicating roster logic. Ordered Unit rows now carry the canonical roster entryId, selected point label, toggle-enabled state, and total points from getRosterEntryModels. EDIT renders the selected x-label beside the Unit name using the existing Boyz pill format. Tapping a selectable label delegates to the existing toggleViewEditRosterEntryPointOption action, then refreshes the unified Edit rows from the parent model so the label, column-P points, and Edit title total update together. Units with a non-clickable label show the same green static label. This is generic for all selectable point-option Units and does not hardcode Boyz or create duplicate Unit rows.
-    Risk areas: Unified New View EDIT Unit-name point-label presentation and its existing roster point-option action bridge only. VIEW, persistent grid/cache behavior, lock/frozen snapshot, Move/Copy/Dead controls, Old Edit, Cards, CSV data, Weapons, Waha routing, Version controls, and Probable remain unchanged.
   -->
 
 
@@ -5531,6 +5531,11 @@ function syncNewViewLockButton(button){
 }
 let newViewVersionHistoryOpen=false;
 let newViewVersionObserver=null;
+let newViewVersionObserverActive=false;
+let newViewVersionRafId=0;
+let newViewRefreshRafId=0;
+let newViewLockCounterBaseline=null;
+const newViewBackgroundCounters={observerCallbacks:0,versionLayoutPasses:0,liveRefreshes:0};
 const NEW_VIEW_VERSION_HISTORY_COLUMNS=[&#x27;1 / span 3&#x27;,&#x27;4 / span 3&#x27;,&#x27;7 / span 4&#x27;,&#x27;11 / span 3&#x27;,&#x27;14 / span 3&#x27;];
 function readNewViewVersionState(){
   try{
@@ -5547,7 +5552,7 @@ function getNewViewVersionRow(){
   const firstUnitRow=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
   return (lastUnitRow||(firstUnitRow-1))+5;
 }
-function positionNewViewVersionControls(){
+function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;
   const versionRow=getNewViewVersionRow();
   const rowValue=String(versionRow);
   const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
@@ -5573,16 +5578,74 @@ function newViewVersionMutationTouchesLayout(mutation){
   ));
 }
 function ensureNewViewVersionObserver(){
-  if(newViewVersionObserver)return;
-  newViewVersionObserver=new MutationObserver(mutations=&gt;{
-    if(mutations.some(newViewVersionMutationTouchesLayout))positionNewViewVersionControls();
-  });
-  newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
+  if(newViewProcessingLocked())return false;
+  if(!newViewVersionObserver){
+    newViewVersionObserver=new MutationObserver(mutations=&gt;{
+      if(newViewProcessingLocked())return;
+      newViewBackgroundCounters.observerCallbacks++;
+      if(mutations.some(newViewVersionMutationTouchesLayout))positionNewViewVersionControls();
+    });
+  }
+  if(!newViewVersionObserverActive){
+    newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
+    newViewVersionObserverActive=true;
+  }
+  return true;
 }
+function scheduleNewViewVersionPosition(){
+  if(newViewProcessingLocked())return false;
+  if(newViewVersionRafId)cancelAnimationFrame(newViewVersionRafId);
+  newViewVersionRafId=requestAnimationFrame(()=&gt;{
+    newViewVersionRafId=0;
+    if(newViewProcessingLocked())return;
+    positionNewViewVersionControls();
+  });
+  return true;
+}
+function scheduleNewViewRefresh(){
+  if(newViewProcessingLocked())return false;
+  if(newViewRefreshRafId)cancelAnimationFrame(newViewRefreshRafId);
+  newViewRefreshRafId=requestAnimationFrame(()=&gt;{
+    newViewRefreshRafId=0;
+    if(newViewProcessingLocked())return;
+    refreshNewView();
+  });
+  return true;
+}
+function suspendNewViewBackgroundWork(){
+  if(newViewVersionObserver&amp;&amp;newViewVersionObserverActive){
+    newViewVersionObserver.disconnect();
+    newViewVersionObserverActive=false;
+  }
+  if(newViewVersionRafId){cancelAnimationFrame(newViewVersionRafId);newViewVersionRafId=0;}
+  if(newViewRefreshRafId){cancelAnimationFrame(newViewRefreshRafId);newViewRefreshRafId=0;}
+  return true;
+}
+function resumeNewViewBackgroundWork(){
+  if(newViewProcessingLocked())return false;
+  ensureNewViewVersionObserver();
+  scheduleNewViewVersionPosition();
+  return true;
+}
+function getNewViewLockDiagnostics(){
+  const counters=Object.assign({},newViewBackgroundCounters);
+  const baseline=newViewLockCounterBaseline?Object.assign({},newViewLockCounterBaseline):null;
+  const unchanged=Boolean(newViewProcessingLocked()&amp;&amp;baseline)&amp;&amp;Object.keys(counters).every(key=&gt;counters[key]===baseline[key]);
+  return {
+    locked:newViewProcessingLocked(),
+    observerActive:newViewVersionObserverActive,
+    versionRafPending:Boolean(newViewVersionRafId),
+    refreshRafPending:Boolean(newViewRefreshRafId),
+    counters,
+    baseline,
+    unchangedWhileLocked:unchanged
+  };
+}
+window.getNewViewLockDiagnostics=getNewViewLockDiagnostics;
 function clearNewViewVersionHistoryButtons(){
   grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach(button=&gt;button.remove());
 }
-function renderNewViewVersionHistory(){
+function renderNewViewVersionHistory(){if(newViewProcessingLocked())return;
   clearNewViewVersionHistoryButtons();
   if(!newViewVersionHistoryOpen)return;
   const state=readNewViewVersionState();
@@ -5603,7 +5666,7 @@ function renderNewViewVersionHistory(){
     grid.appendChild(b);
   });
 }
-async function toggleNewViewVersionHistory(){
+async function toggleNewViewVersionHistory(){if(newViewProcessingLocked())return;
   newViewVersionHistoryOpen=!newViewVersionHistoryOpen;
   renderNewViewVersionHistory();
   const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
@@ -5665,7 +5728,7 @@ function addNewViewVersionControls(f){
 
   ensureNewViewVersionObserver();
   positionNewViewVersionControls();
-  requestAnimationFrame(positionNewViewVersionControls);
+  scheduleNewViewVersionPosition();
 }
 let lockedViewStateCache=null;
 let lockedViewStateLayers=[];
@@ -5794,6 +5857,8 @@ function beginLockedViewPreparedMode(){
     return false;
   }
   // Lock becomes true only after every prepared state is built and mounted.
+  suspendNewViewBackgroundWork();
+  newViewLockCounterBaseline=Object.assign({},newViewBackgroundCounters);
   newViewHeaderLocked=true;
   return true;
 }
@@ -5805,7 +5870,10 @@ function endLockedViewPreparedMode(){
   frozenNewViewSnapshot=null;
   const lockButton=grid.querySelector(&#x27;.new-view-lock-toggle&#x27;);
   if(lockButton)syncNewViewLockButton(lockButton);
-  return refreshNewView();
+  const ok=refreshNewView();
+  newViewLockCounterBaseline=null;
+  resumeNewViewBackgroundWork();
+  return ok;
 }
 function handleLockedViewPreparedClick(event){
   if(!newViewHeaderLocked||!lockedViewStateCache)return;
@@ -6202,7 +6270,7 @@ function refreshUnifiedEdit(){
 }
 window.refreshUnifiedEdit=refreshUnifiedEdit;
 
-function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
+function refreshNewView(){if(newViewProcessingLocked())return false;newViewBackgroundCounters.liveRefreshes++;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
 function ensurePersistentGridCells(){
   if(grid.querySelector(&#x27;.grid-cell&#x27;))return false;
   const background=document.createDocumentFragment();
@@ -6260,7 +6328,7 @@ function renderPage(p){
 
   if(p===&#x27;view&#x27;){
     if(newViewProcessingLocked())renderFrozenNewView();
-    else if(!renderCachedView())requestAnimationFrame(refreshNewView);
+    else if(!renderCachedView())scheduleNewViewRefresh();
   }
   if(p===&#x27;edit&#x27;){
     if(newViewHeaderLocked)requestAnimationFrame(refreshUnifiedEdit);
@@ -6269,8 +6337,8 @@ function renderPage(p){
 }
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
-async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
-async function downloadRunningVersion(){const b=document.getElementById(&#x27;downloadButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Preparing&#x27;;try{const n=versionFile(NP_VERSION),h=await fetchText(n),f=new File([h],n,{type:&#x27;text/html&#x27;});if(navigator.share&amp;&amp;navigator.canShare&amp;&amp;navigator.canShare({files:[f]})){b.textContent=&#x27;Save&#x27;;try{await navigator.share({files:[f],title:n})}catch(e){if(e&amp;&amp;e.name===&#x27;AbortError&#x27;){b.textContent=o;b.disabled=false;return}throw e}}else{const u=URL.createObjectURL(f),a=document.createElement(&#x27;a&#x27;);a.href=u;a.download=n;a.rel=&#x27;noopener&#x27;;document.body.appendChild(a);a.click();a.remove();setTimeout(()=&gt;URL.revokeObjectURL(u),30000)}b.textContent=&#x27;Done&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900)}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
+async function updateToLatest(){if(newViewProcessingLocked())return;const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
+async function downloadRunningVersion(){if(newViewProcessingLocked())return;const b=document.getElementById(&#x27;downloadButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Preparing&#x27;;try{const n=versionFile(NP_VERSION),h=await fetchText(n),f=new File([h],n,{type:&#x27;text/html&#x27;});if(navigator.share&amp;&amp;navigator.canShare&amp;&amp;navigator.canShare({files:[f]})){b.textContent=&#x27;Save&#x27;;try{await navigator.share({files:[f],title:n})}catch(e){if(e&amp;&amp;e.name===&#x27;AbortError&#x27;){b.textContent=o;b.disabled=false;return}throw e}}else{const u=URL.createObjectURL(f),a=document.createElement(&#x27;a&#x27;);a.href=u;a.download=n;a.rel=&#x27;noopener&#x27;;document.body.appendChild(a);a.click();a.remove();setTimeout(()=&gt;URL.revokeObjectURL(u),30000)}b.textContent=&#x27;Done&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900)}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
 document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;document.getElementById(&#x27;downloadButton&#x27;).onclick=downloadRunningVersion;
 &lt;/script&gt;
 &lt;/body&gt;
@@ -8799,7 +8867,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.105";
+    const APP_VERSION = "31.106";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30411,7 +30479,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.105',
+        version: 'V31.106',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
