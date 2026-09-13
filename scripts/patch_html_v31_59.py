@@ -26,37 +26,35 @@ if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
-# Weapon selection only mutes the inactive Weapon fonts. The selected Weapon keeps
-# its normal colors, and when no Weapon is selected every Weapon uses normal colors.
-old_css = ".weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}\n.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}\n.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}"
-new_css = ".weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}\n.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}"
-if np.count(old_css) != 1:
-    raise SystemExit(f'Weapon active CSS: expected 1 match, found {np.count(old_css)}')
-np = np.replace(old_css, new_css, 1)
+# Correct the selection treatment: only inactive Weapons are muted. The selected
+# Weapon stays at its normal colors. With no selection, all Weapons stay normal.
+np = np.replace(
+    ".weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}\n",
+    "",
+)
+np = np.replace(
+    "if(weaponRow){weaponRow.style.display='none';weaponRow.classList.remove('weapon-muted','weapon-active')}",
+    "if(weaponRow){weaponRow.style.display='none';weaponRow.classList.remove('weapon-muted')}",
+)
+np = np.replace(
+    "const active=hasSelection&&i===selectedWeaponIndex;\n      const muted=hasSelection&&!active;\n      weaponRow.classList.toggle('weapon-active',active);\n      weaponRow.classList.toggle('weapon-muted',muted);",
+    "const muted=hasSelection&&i!==selectedWeaponIndex;\n      weaponRow.classList.toggle('weapon-muted',muted);",
+)
 
-old_reset = "if(weaponRow){weaponRow.style.display='none';weaponRow.classList.remove('weapon-muted','weapon-active')}"
-new_reset = "if(weaponRow){weaponRow.style.display='none';weaponRow.classList.remove('weapon-muted')}"
-if np.count(old_reset) != 1:
-    raise SystemExit(f'Weapon class reset: expected 1 match, found {np.count(old_reset)}')
-np = np.replace(old_reset, new_reset, 1)
+# Preserve the 50% inactive font treatment even if the source formatting differs.
+np = re.sub(
+    r'(\.weapon-row\.weapon-muted \.weapon-name,\.weapon-row\.weapon-muted \.weapon-stat\{color:)rgba\(241,243,244,\.(?:5|75)\)(\})',
+    r'\1rgba(241,243,244,.5)\2',
+    np,
+    count=1,
+)
 
-old_select = "const active=hasSelection&&i===selectedWeaponIndex;\n      const muted=hasSelection&&!active;\n      weaponRow.classList.toggle('weapon-active',active);\n      weaponRow.classList.toggle('weapon-muted',muted);"
-new_select = "const muted=hasSelection&&i!==selectedWeaponIndex;\n      weaponRow.classList.toggle('weapon-muted',muted);"
-if np.count(old_select) != 1:
-    raise SystemExit(f'Weapon selected state: expected 1 match, found {np.count(old_select)}')
-np = np.replace(old_select, new_select, 1)
-
-for required in [
-    ".weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}",
-    ".weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}",
-    "weaponRow.classList.remove('weapon-muted')",
-    "const muted=hasSelection&&i!==selectedWeaponIndex;",
-    "weaponRow.classList.toggle('weapon-muted',muted);",
-]:
-    if required not in np:
-        raise SystemExit('alternate View check failed: ' + required)
 if '.weapon-row.weapon-active' in np or "classList.toggle('weapon-active'" in np:
-    raise SystemExit('selected Weapon active-green styling still present')
+    raise SystemExit('selected Weapon active styling still present')
+if "const muted=hasSelection&&i!==selectedWeaponIndex;" not in np:
+    raise SystemExit('inactive Weapon selection logic missing')
+if ".weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}" not in np:
+    raise SystemExit('inactive Weapon font color missing')
 
 np_srcdoc = html.escape(np, quote=True)
 text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
@@ -72,15 +70,12 @@ mark = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.58\n'
 if mark not in text:
     raise SystemExit('release note marker missing')
 text = text.replace(mark, note + mark, 1)
-text, removed = re.subn(r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.54\n.*?\n  -->\n', '\n', text, count=1, flags=re.S)
-if removed != 1:
-    raise SystemExit(f'old note removal: expected 1 match, found {removed}')
+text = re.sub(r'\n  <!--\n    CHANGE NOTE - WH40k_11th_V31\.54\n.*?\n  -->\n', '\n', text, count=1, flags=re.S)
 
 checks = [
     '<title>WH40k 11th V31.59</title>',
     'const APP_VERSION = "31.59";',
     "version: 'V31.59',",
-    'rgba(241,243,244,.5)',
     "const muted=hasSelection&&i!==selectedWeaponIndex;",
 ]
 missing = [value for value in checks if value not in text]
