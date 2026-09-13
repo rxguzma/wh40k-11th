@@ -85,9 +85,9 @@ checks = [
     'view-unit-row-first.unit-active .view-unit-name{color:#80d6a3}',
     'detail-deep-strike,.weapon-row-1,.weapon-tags-1{display:none}',
     'function toggleNazdregDetails()',
-    "row.onclick=toggleNazdregDetails",
-    "weaponRow.dataset.liveAvailable=weapon?'true':'false'",
-    "tagRow.dataset.liveAvailable=tags.length?'true':'false'",
+    'row.onclick=toggleNazdregDetails',
+    'weaponRow.dataset.liveAvailable=weapon?&#x27;true&#x27;:&#x27;false&#x27;',
+    'tagRow.dataset.liveAvailable=tags.length?&#x27;true&#x27;:&#x27;false&#x27;',
     'nazdregOpen=false;',
 ]
 missing = [value for value in checks if value not in text]
