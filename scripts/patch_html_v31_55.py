@@ -249,14 +249,10 @@ checks = [
     '<title>WH40k 11th V31.55</title>',
     'const APP_VERSION = "31.55";',
     "version: 'V31.55',",
-    'weapon-row weapon-muted',
     'selectedWeaponIndex',
     'const NAZDREG_MAX_EXPANSION_ROWS=12;',
+    'weaponRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);',
 ]
-# The muted class is added dynamically, so its literal static class pair is not
-# expected in source; verify the actual dynamic class toggle instead.
-checks.remove('weapon-row weapon-muted')
-checks.append("weaponRow.classList.toggle('weapon-muted',muted);")
 missing = [value for value in checks if value not in text]
 if missing:
     raise SystemExit('static acceptance checks failed: ' + ', '.join(missing))
