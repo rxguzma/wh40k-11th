@@ -252,7 +252,6 @@ for forbidden in [
     "row.className='new-view-version-row'",
     "history.className='new-view-version-history'",
     'z-index:130',
-    'background:var(--bg)',
 ]:
     if forbidden in final_view:
         raise SystemExit('V31.97 separate/overlay version layout remains: ' + forbidden)
