@@ -41,4 +41,4 @@ jobs:
           git commit -m "Build V31.72 second-press Edit routing"
           git push origin HEAD:main
 
-# Retry after tightening the alternate Edit render hook.
+# Retry using the existing alternate renderPage function.
