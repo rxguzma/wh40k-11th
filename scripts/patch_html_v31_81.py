@@ -154,7 +154,7 @@ for required in [
 # Parent Unit bridge may only refresh/read the New Edit iframe; no direct Old
 # Edit/model fallback is allowed in the New View -> New Edit boundary.
 bridge_start = text.index('    window.getNewEditUnitData = function(index) {')
-bridge_end = text.index('\n\n    window.getAlternateViewHeaderData = function()', bridge_start)
+bridge_end = text.index('\n\n    window.getNewEditHeaderData = function() {', bridge_start)
 unit_bridge = text[bridge_start:bridge_end]
 for required in [
     'document.getElementById("npEditFrame")',
