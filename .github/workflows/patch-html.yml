@@ -22,7 +22,7 @@ jobs:
           ref: main
 
       - name: Build V31.74 Edit-to-View Unit bridge
-        run: python3 scripts/patch_html_v31_74.py
+        run: python3 scripts/patch_html_v31_74_retry.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
