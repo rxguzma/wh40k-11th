@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.94</title>
+  <title>WH40k 11th V31.104</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.94; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.104; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,33 +92,33 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.94
-    Scope: Correct unified New View EDIT points to use the same canonical roster-model totals as Old Edit. getAlternateViewRosterRows now carries each Unit model's points.total, which already includes the selected Unit point option, active per-model point modifiers, and paid Enhancement points. In New View EDIT, column P is now a plain Edit-style numeric point value rather than a Points button/icon or guessed fallback field. The EDIT title point total is recalculated from the ordered Unit rows shown on that sheet, ignoring spacer rows, after the normal legacy title fields refresh. VIEW title behavior, the V31.92 processing lock, and the V31.93 frozen snapshot remain unchanged.
-    Risk areas: Parent ordered-row point field plus unified New View EDIT row/title point presentation only. VIEW frozen-snapshot behavior, Old Edit, New Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.104
+    Scope: Correct the unified New View/Edit mode controls. The single local mode button now displays the mode that is actually active and is highlighted green: VIEW in View mode and EDIT in Edit mode; tapping it still switches directly to the opposite local mode through the existing fast path. The grid control is also standardized across both modes: Edit no longer renders the legacy G and now uses the same four-cell Grid Mode icon, SVG styling, toggle behavior, and current on/off indication as View. Existing mode-specific placement is retained so View's filter layout is unchanged.
+    Risk areas: Unified New View/Edit mode-button presentation and grid-button presentation/state only. Lock behavior, prepared locked states, roster data, Edit actions, weapon filters, Version/Update/Download, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable behavior remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.93
-    Scope: Add the frozen New View snapshot behind the existing lock. Pressing Lock now copies the already-loaded New View header and ordered roster records into detached in-memory data before the lock state turns on, then rebinds Unit detail/Weapon/Ability interactions to those copied records. While locked, parent/model header and roster refresh entry points remain blocked by the V31.92 gate. If VIEW is re-rendered while still locked, its header and Unit rows are rebuilt only from the frozen snapshot. Range/Melee/Other/All and Unit open/close therefore continue to work against frozen data without requesting new roster/model data. Pressing Unlock turns the lock off, discards the snapshot, and schedules exactly one normal New View synchronization.
-    Risk areas: New View in-memory roster/header state and lock/unlock transition only. Existing lock icon/placement, unified Edit behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.103
+    Scope: Complete the next New View lock optimization on the current V31.102 unified-page baseline. Pressing the existing Lock now pre-renders every current Unit x weapon-filter combination once, before the lock state turns on, using the already-detached V31.93 snapshot. Those prepared DOM states are retained in memory. While locked, Unit open/close and the existing filter carousel only switch which prepared state is visible; they do not call applyActiveUnitDetails, syncUnitDetailVisibility, renderNewViewRosterRows, parent/model bridges, persistence, or animation-frame refreshes. All other locked View controls are inert, including any Probable control; Probable-looking controls are also visually disabled in prepared states. The live original View DOM remains mounted but hidden so Unlock can turn the lock off, discard the prepared states, and perform exactly one normal fresh synchronization. No UI control was added or moved.
+    Risk areas: New View locked-mode DOM/state handling only. Unlocked View behavior, unified Edit, current Boyz point-option behavior, persistent 40x16 grid fast path, compact Weapon Tags, Version/Update/Download, Old Edit, Cards, CSV data, Waha routing, and normal Probable behavior remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.92
-    Scope: Connect the existing New View lock button to the first processing-freeze gate. The existing newViewHeaderLocked state is now the actual New View lock state. While VIEW is locked, both direct New View header refresh and roster refresh entry points return before parent/model access, and the normal VIEW post-render path now funnels through one refreshNewView gate. Unlocked VIEW behavior remains the same two refreshes in the same order. The unified EDIT state remains live and unchanged. This pass does not add the frozen snapshot yet and does not change Unit/filter interaction behavior.
-    Risk areas: New View refresh entry points and VIEW/EDIT mode tracking only. Existing lock icon/placement, New View UI layout, unified Edit rows, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.102
+    Scope: Standardize unified New View/Edit Weapon Tag boxes to the same compact visual contract as Unit detail boxes. Weapon Tags now use Roboto 12px bold, 24px standard height, 8px horizontal padding, a 1px button border, the standard 6px radius, shared button background, centered text, and the existing standard row gap. Weapon Tags remain content-sized with no fixed grid spans, so short Tags stay compact and long Tags expand to their text. Existing orange/muted/active semantic states remain unchanged.
+    Risk areas: Unified New View/Edit Weapon Tag presentation only. Weapon/Tag data, filtering, selection, Unit detail-box width rules, roster behavior, persistence, Cards, Waha routing, Version controls, and Probable remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.91
-    Scope: New View header controls only. The grid control moves from the left of the ALL weapon filter to P4 and now uses a four-cell grid icon instead of the letter G. The ALL/SHOOT/MELEE/OTHER filter occupies M4:O4. A lock control is added at K4 using the exact old Edit open/closed lock SVG geometry and the same status colors: open/unlocked green (#80d6a3), closed/locked red (#ff9a9a). The new lock is visual/state-only in this release and is not connected to old Edit's roster-movement lock or processing-freeze behavior. New Edit retains its existing G grid control.
-    Risk areas: New View row-4 control placement and icon rendering only. Unit data, weapons, filters, Old Edit, New Edit behavior, Cards, persistence, CSV data, Waha routing, and Probable logic remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.101
+    Scope: Bring the established Boyz-style selectable point option into unified New View EDIT without duplicating roster logic. Ordered Unit rows now carry the canonical roster entryId, selected point label, toggle-enabled state, and total points from getRosterEntryModels. EDIT renders the selected x-label beside the Unit name using the existing Boyz pill format. Tapping a selectable label delegates to the existing toggleViewEditRosterEntryPointOption action, then refreshes the unified Edit rows from the parent model so the label, column-P points, and Edit title total update together. Units with a non-clickable label show the same green static label. This is generic for all selectable point-option Units and does not hardcode Boyz or create duplicate Unit rows.
+    Risk areas: Unified New View EDIT Unit-name point-label presentation and its existing roster point-option action bridge only. VIEW, persistent grid/cache behavior, lock/frozen snapshot, Move/Copy/Dead controls, Old Edit, Cards, CSV data, Weapons, Waha routing, Version controls, and Probable remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.90
-    Scope: Begin the one-page View/Edit migration inside New View. VIEW and EDIT now switch locally within the same New View iframe instead of EDIT opening Old Edit. In the New View EDIT state, Range/Melee/Other/All, the Stats header, Unit profile stats, expanded details, and Weapons are not rendered. Each live Unit row shows only Move, Copy, Dead, and Points controls using the established New Edit button styling, placed in columns M, N, O, and P respectively. Move uses the existing menu/move glyph, Copy uses the existing copy glyph, Dead uses D, and Points displays the available Unit point value when present or P otherwise. These controls are presentation-only in this pass; no edit actions are migrated yet. VIEW behavior and direct Old Edit/model data sourcing remain unchanged.
-    Risk areas: New View local VIEW/EDIT switching and EDIT-state Unit-row presentation only. New Edit, Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, and New View VIEW-mode Unit/Weapon behavior remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.100
+    Scope: Make the unified New View VIEW/EDIT toggle a true local fast path. The 40x16 coordinate/grid background is now created once and retained across mode switches instead of deleting and recreating 640 grid cells on every tap. Normal unlocked VIEW and EDIT switches reuse the already-loaded header and ordered roster rows in memory, so switching modes no longer re-runs getAlternateViewHeaderData/getAlternateViewRosterRows merely because the display mode changed. Live refresh entry points remain available and update the cache when New View is opened/refreshed from the parent. The VIEW lock contract is preserved: locked VIEW uses its frozen snapshot, while entering EDIT from a locked VIEW still performs the established live Edit refresh rather than reusing frozen data.
+    Risk areas: New View local mode-switch rendering/caching only. Unified Edit row presentation and points, direct model bridges, frozen View lock semantics, Version/Update/Download and V31.99 version-route restoration, Cards, Old Edit, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5378,13 +5378,13 @@
 .detail-deep-strike{grid-column:4/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;width:calc(100% - var(--gap));height:var(--std);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap}
 .weapon-header,.weapon-row,.weapon-tags{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.weapon-header{grid-row:9;border-top:1px solid var(--border)}.weapon-header-label,.weapon-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.weapon-name{grid-column:1/span 8;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wr1{grid-column:9}.wr2{grid-column:10/span 2}.wr3{grid-column:12}.wr4{grid-column:13}.wr5{grid-column:14}.wr6{grid-column:15/span 2}
 .weapon-row-1{grid-row:10}.weapon-tags-1{grid-row:11}.weapon-row-2{grid-row:12}.weapon-tags-2{grid-row:13}.weapon-row-3{grid-row:14}.weapon-tags-3{grid-row:15}.weapon-row-4{grid-row:16}.weapon-tags-4{grid-row:17}.weapon-row-5{grid-row:18}.weapon-tags-5{grid-row:19}
-.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
+.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 8px;border:1px solid var(--btnborder);display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
 .sample-button-standard{grid-column:2/span 3;grid-row:33;z-index:3;align-self:center;justify-self:center}.sample-button-green{grid-column:2/span 2;grid-row:34;z-index:3;align-self:center;justify-self:center;background:var(--green);border-color:var(--greenborder)}.font-sample{grid-column:2/span 8;z-index:3;display:flex;align-items:center;color:var(--text);font-family:Roboto,Arial,sans-serif;font-weight:700;white-space:nowrap}.font-sample-title{grid-row:35;font-size:var(--title)}.font-sample-body{grid-row:36;font-size:var(--body)}.font-sample-meta{grid-row:37;font-size:var(--meta)}
 .version-bar{width:min(416px,100%);margin:8px auto 0;padding:8px;display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;border:1px solid var(--border);background:var(--card)}.version-label{min-width:0;font-size:var(--body);font-weight:900}.version-button{min-width:72px;height:40px;padding:0 10px;border:1px solid var(--btnborder);border-radius:8px;background:var(--btn);color:var(--text);font:900 13px Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.version-button:disabled{opacity:.5}
 
 .grid-toggle{grid-column:13;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important}
 .view-grid-toggle{grid-column:16}
-.view-grid-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.grid-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .new-view-lock-toggle{grid-column:11;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important;color:#80d6a3!important;border-color:#80d6a3!important}
 .new-view-lock-toggle.locked{color:#ff9a9a!important;border-color:#ff9a9a!important}
 .new-view-lock-icon{width:18px;height:18px;stroke:currentColor}
@@ -5394,6 +5394,13 @@
 .draft-grid.grid-on{border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25)}
 .draft-grid.grid-on .grid-cell{visibility:visible}
 .version-bar{display:none!important}
+.new-view-version-toggle{grid-column:1/span 8;justify-self:stretch;align-self:center;justify-content:space-between}
+.new-view-version-current{color:var(--muted)}
+.new-view-update-button{grid-column:9/span 4;justify-self:stretch;align-self:center}
+.new-view-download-button{grid-column:13/span 4;justify-self:stretch;align-self:center;text-decoration:none}
+.new-view-download-button[aria-disabled=&quot;true&quot;]{opacity:.5}
+.new-view-version-option{justify-self:stretch;align-self:center;width:100%;padding:0 2px;font-size:11px}
+.new-view-version-option:disabled{opacity:1}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3}
 .view-stat-header.unit-active .view-stat-label,.view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)}
@@ -5421,6 +5428,15 @@
 .unified-edit-action{width:calc(var(--cell) - var(--gap));height:var(--std);align-self:center;justify-self:center;padding:0;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
 .unified-edit-action svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.4}
 
+
+.point-option-toggle{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;border:1px solid #48515f;background:#2b313b;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;cursor:pointer;user-select:none;-webkit-user-select:none;vertical-align:1px;white-space:nowrap;appearance:none;-webkit-appearance:none}
+.point-option-toggle:active{background:#3a4350;transform:translateY(1px)}
+.point-option-label-static{display:inline-block;margin-left:8px;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;vertical-align:1px;white-space:nowrap}
+
+.new-view-lock-original-hidden{display:none!important}
+.new-view-locked-state{display:contents}
+.new-view-locked-state[hidden]{display:none!important}
+.new-view-lock-disabled{opacity:.45!important;pointer-events:none!important}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5429,11 +5445,36 @@
 &lt;script&gt;
 const NP_VERSION=&#x27;1.37&#x27;,RAW_ROOT=&#x27;https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/&#x27;,INDEX_PATH=&#x27;np/index.json&#x27;,grid=document.getElementById(&#x27;grid&#x27;),letters=&#x27;ABCDEFGHIJKLMNOP&#x27;;
 function addGridCells(f){for(let r=1;r&lt;=40;r++)for(let c=1;c&lt;=16;c++){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;grid-cell&#x27;;x.style.gridColumn=c;x.style.gridRow=r;if(r===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;col-coordinate&#x27;;s.textContent=letters[c-1];x.appendChild(s)}if(c===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;row-coordinate&#x27;;s.textContent=r;x.appendChild(s)}f.appendChild(x)}}
-function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(t===&#x27;view&#x27;||t===&#x27;edit&#x27;)renderPage(t);else parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
+function addPageNavigation(f,p){
+  const m=document.createElement(&#x27;div&#x27;);
+  m.className=&#x27;top-mode-buttons&#x27;;
+
+  const toggle=document.createElement(&#x27;button&#x27;);
+  toggle.type=&#x27;button&#x27;;
+  toggle.className=&#x27;button-standard active-green&#x27;;
+  toggle.style.gridColumn=&#x27;2&#x27;;
+  toggle.textContent=p===&#x27;view&#x27;?&#x27;VIEW&#x27;:&#x27;EDIT&#x27;;
+  toggle.setAttribute(&#x27;aria-label&#x27;,p===&#x27;view&#x27;?&#x27;Switch to Edit&#x27;:&#x27;Switch to View&#x27;);
+  toggle.onclick=()=&gt;renderPage(p===&#x27;view&#x27;?&#x27;edit&#x27;:&#x27;view&#x27;);
+  m.appendChild(toggle);
+
+  const cards=document.createElement(&#x27;button&#x27;);
+  cards.type=&#x27;button&#x27;;
+  cards.className=&#x27;button-standard&#x27;;
+  cards.style.gridColumn=&#x27;3&#x27;;
+  cards.textContent=&#x27;CARDS&#x27;;
+  cards.setAttribute(&#x27;aria-label&#x27;,&#x27;Cards&#x27;);
+  cards.onclick=()=&gt;parent.UI.selectAppMode(&#x27;cards&#x27;);
+  m.appendChild(cards);
+
+  f.appendChild(m);
+}
 let newViewHeaderLocked=false;
 let activePageMode=&#x27;view&#x27;;
 let frozenNewViewSnapshot=null;
 let currentViewRosterRows=[];
+let cachedLiveViewHeader=null;
+let hasLiveViewCache=false;
 function cloneNewViewValue(value){
   if(value===undefined)return undefined;
   if(typeof structuredClone===&#x27;function&#x27;){
@@ -5488,7 +5529,319 @@ function syncNewViewLockButton(button){
   button.setAttribute(&#x27;aria-label&#x27;,label);
   button.setAttribute(&#x27;aria-pressed&#x27;,locked?&#x27;true&#x27;:&#x27;false&#x27;);
 }
-function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){newViewHeaderLocked=false;frozenNewViewSnapshot=null;syncNewViewLockButton(lb);requestAnimationFrame(refreshNewView);return}const snapshot=captureNewViewSnapshot();frozenNewViewSnapshot=snapshot;activateNewViewSnapshot(snapshot);newViewHeaderLocked=true;syncNewViewLockButton(lb)};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb)}
+let newViewVersionHistoryOpen=false;
+let newViewVersionObserver=null;
+const NEW_VIEW_VERSION_HISTORY_COLUMNS=[&#x27;1 / span 3&#x27;,&#x27;4 / span 3&#x27;,&#x27;7 / span 4&#x27;,&#x27;11 / span 3&#x27;,&#x27;14 / span 3&#x27;];
+function readNewViewVersionState(){
+  try{
+    if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.getVersionUiState===&#x27;function&#x27;)return parent.UI.getVersionUiState()||{};
+  }catch(_){}
+  return {};
+}
+function getNewViewVersionRow(){
+  let lastUnitRow=0;
+  grid.querySelectorAll(&#x27;.view-unit-row.dynamic-roster-row&#x27;).forEach(unit=&gt;{
+    const value=Number(unit.style.gridRow||0);
+    if(Number.isFinite(value))lastUnitRow=Math.max(lastUnitRow,value);
+  });
+  const firstUnitRow=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
+  return (lastUnitRow||(firstUnitRow-1))+5;
+}
+function positionNewViewVersionControls(){
+  const versionRow=getNewViewVersionRow();
+  const rowValue=String(versionRow);
+  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
+  const update=grid.querySelector(&#x27;.new-view-update-button&#x27;);
+  const download=grid.querySelector(&#x27;.new-view-download-button&#x27;);
+  [version,update,download].forEach(control=&gt;{if(control&amp;&amp;control.style.gridRow!==rowValue)control.style.gridRow=rowValue;});
+  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach((button,index)=&gt;{
+    button.style.gridRow=String(versionRow+1+Math.floor(index/5));
+    button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
+  });
+  return versionRow;
+}
+function newViewVersionMutationTouchesLayout(mutation){
+  if(mutation.type===&#x27;attributes&#x27;){
+    const target=mutation.target;
+    return Boolean(target&amp;&amp;target.classList&amp;&amp;target.classList.contains(&#x27;dynamic-roster-row&#x27;));
+  }
+  if(mutation.type!==&#x27;childList&#x27;)return false;
+  const nodes=[...mutation.addedNodes,...mutation.removedNodes];
+  return nodes.some(node=&gt;node&amp;&amp;node.nodeType===1&amp;&amp;(
+    (node.classList&amp;&amp;node.classList.contains(&#x27;dynamic-roster-row&#x27;)) ||
+    (typeof node.querySelector===&#x27;function&#x27;&amp;&amp;Boolean(node.querySelector(&#x27;.dynamic-roster-row&#x27;)))
+  ));
+}
+function ensureNewViewVersionObserver(){
+  if(newViewVersionObserver)return;
+  newViewVersionObserver=new MutationObserver(mutations=&gt;{
+    if(mutations.some(newViewVersionMutationTouchesLayout))positionNewViewVersionControls();
+  });
+  newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
+}
+function clearNewViewVersionHistoryButtons(){
+  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach(button=&gt;button.remove());
+}
+function renderNewViewVersionHistory(){
+  clearNewViewVersionHistoryButtons();
+  if(!newViewVersionHistoryOpen)return;
+  const state=readNewViewVersionState();
+  const current=String(state.current||&#x27;&#x27;);
+  const entries=Array.isArray(state.entries)?state.entries.slice(0,10):[];
+  const versionRow=getNewViewVersionRow();
+  entries.forEach((entry,index)=&gt;{
+    const version=String(entry&amp;&amp;entry.version||&#x27;&#x27;);
+    if(!version)return;
+    const b=document.createElement(&#x27;button&#x27;);
+    b.type=&#x27;button&#x27;;
+    b.className=&#x27;button-standard new-view-version-option&#x27;+(version===current?&#x27; active-green&#x27;:&#x27;&#x27;);
+    b.textContent=&#x27;v&#x27;+version;
+    b.disabled=version===current||Boolean(state.busy);
+    b.style.gridRow=String(versionRow+1+Math.floor(index/5));
+    b.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
+    b.onclick=event=&gt;{event.stopPropagation();if(b.disabled)return;try{parent.UI.loadGithubVersion(version)}catch(_){}};
+    grid.appendChild(b);
+  });
+}
+async function toggleNewViewVersionHistory(){
+  newViewVersionHistoryOpen=!newViewVersionHistoryOpen;
+  renderNewViewVersionHistory();
+  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
+  if(version)version.setAttribute(&#x27;aria-expanded&#x27;,newViewVersionHistoryOpen?&#x27;true&#x27;:&#x27;false&#x27;);
+  if(!newViewVersionHistoryOpen)return;
+  try{
+    if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.refreshGithubVersionHistory===&#x27;function&#x27;)await parent.UI.refreshGithubVersionHistory();
+  }catch(_){}
+  renderNewViewVersionHistory();
+}
+function addNewViewVersionControls(f){
+  const state=readNewViewVersionState();
+  const version=document.createElement(&#x27;button&#x27;);
+  version.type=&#x27;button&#x27;;
+  version.className=&#x27;button-standard new-view-version-toggle&#x27;;
+  version.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;);
+  const label=document.createElement(&#x27;span&#x27;);
+  label.textContent=&#x27;Version&#x27;;
+  const current=document.createElement(&#x27;span&#x27;);
+  current.className=&#x27;new-view-version-current&#x27;;
+  current.textContent=&#x27;v&#x27;+String(state.current||&#x27;&#x27;);
+  version.append(label,current);
+  version.onclick=event=&gt;{event.stopPropagation();toggleNewViewVersionHistory()};
+  f.appendChild(version);
+
+  const update=document.createElement(&#x27;button&#x27;);
+  update.type=&#x27;button&#x27;;
+  update.className=&#x27;button-standard new-view-update-button&#x27;;
+  update.textContent=&#x27;Update&#x27;;
+  update.disabled=Boolean(state.busy);
+  update.onclick=async event=&gt;{
+    event.stopPropagation();
+    if(update.disabled)return;
+    update.disabled=true;
+    try{
+      if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.updateToLatestVersion===&#x27;function&#x27;)await parent.UI.updateToLatestVersion();
+    }catch(_){}
+    finally{update.disabled=false;renderNewViewVersionHistory()}
+  };
+  f.appendChild(update);
+
+  const download=document.createElement(&#x27;a&#x27;);
+  download.className=&#x27;button-standard new-view-download-button&#x27;;
+  download.textContent=&#x27;Download&#x27;;
+  download.href=String(state.downloadUrl||&#x27;#&#x27;);
+  download.download=String(state.downloadFilename||&#x27;&#x27;);
+  download.target=&#x27;_blank&#x27;;
+  download.rel=&#x27;noopener&#x27;;
+  download.setAttribute(&#x27;aria-disabled&#x27;,Boolean(state.downloadBusy)?&#x27;true&#x27;:&#x27;false&#x27;);
+  download.onclick=event=&gt;{
+    event.stopPropagation();
+    if(download.getAttribute(&#x27;aria-disabled&#x27;)===&#x27;true&#x27;){event.preventDefault();return false;}
+    try{
+      if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.downloadRunningVersion===&#x27;function&#x27;)return parent.UI.downloadRunningVersion(event);
+    }catch(_){}
+    return true;
+  };
+  f.appendChild(download);
+
+  ensureNewViewVersionObserver();
+  positionNewViewVersionControls();
+  requestAnimationFrame(positionNewViewVersionControls);
+}
+let lockedViewStateCache=null;
+let lockedViewStateLayers=[];
+let lockedViewFilterOrder=[];
+function lockedViewStateKey(unitIndex,mode){
+  return (unitIndex===null?&#x27;none&#x27;:String(unitIndex))+&#x27;|&#x27;+String(mode||&#x27;&#x27;);
+}
+function getLockedViewFilterOrder(){
+  const modes=[];
+  if(typeof weaponFilterModes!==&#x27;undefined&#x27;&amp;&amp;Array.isArray(weaponFilterModes)){
+    weaponFilterModes.forEach(mode=&gt;{const value=String(mode||&#x27;&#x27;);if(value&amp;&amp;!modes.includes(value))modes.push(value)});
+  }
+  const current=String(weaponFilterMode||&#x27;&#x27;);
+  if(current&amp;&amp;!modes.includes(current))modes.unshift(current);
+  return modes.length?modes:[current||&#x27;ALL&#x27;];
+}
+function getLockedViewUnitIndexes(){
+  const indexes=[];
+  unitDataByIndex.forEach((data,index)=&gt;{if(data)indexes.push(index)});
+  return indexes;
+}
+function primeLockedViewLayer(layer){
+  layer.querySelectorAll(&#x27;.new-view-lock-toggle&#x27;).forEach(button=&gt;{
+    button.classList.add(&#x27;locked&#x27;);
+    button.classList.remove(&#x27;unlocked&#x27;);
+    button.innerHTML=newViewLockIcon(true);
+    button.setAttribute(&#x27;title&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-label&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-pressed&#x27;,&#x27;true&#x27;);
+  });
+  layer.querySelectorAll(&#x27;button,a,[role=&quot;button&quot;]&#x27;).forEach(control=&gt;{
+    const marker=[control.id,control.className,control.textContent,control.getAttribute(&#x27;aria-label&#x27;)].join(&#x27; &#x27;).toLowerCase();
+    if(marker.includes(&#x27;probable&#x27;)){
+      control.classList.add(&#x27;new-view-lock-disabled&#x27;);
+      control.setAttribute(&#x27;aria-disabled&#x27;,&#x27;true&#x27;);
+      if(&#x27;disabled&#x27; in control)control.disabled=true;
+    }
+  });
+}
+function cloneLockedViewState(unitIndex,mode){
+  const layer=document.createElement(&#x27;div&#x27;);
+  layer.className=&#x27;new-view-locked-state&#x27;;
+  layer.dataset.lockStateKey=lockedViewStateKey(unitIndex,mode);
+  layer.hidden=true;
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;))return;
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;new-view-locked-state&#x27;))return;
+    layer.appendChild(node.cloneNode(true));
+  });
+  primeLockedViewLayer(layer);
+  return layer;
+}
+function renderLockedViewCombination(unitIndex,mode){
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  const filter=grid.querySelector(&#x27;.view-filter-toggle&#x27;);
+  if(filter)filter.textContent=String(mode||&#x27;&#x27;);
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
+  if(typeof positionNewViewVersionControls===&#x27;function&#x27;)positionNewViewVersionControls();
+}
+function clearLockedViewPreparedDom(){
+  lockedViewStateLayers.forEach(layer=&gt;{if(layer&amp;&amp;layer.parentNode)layer.remove()});
+  lockedViewStateLayers=[];
+  lockedViewStateCache=null;
+  lockedViewFilterOrder=[];
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList)node.classList.remove(&#x27;new-view-lock-original-hidden&#x27;);
+  });
+}
+function buildLockedViewPreparedDom(){
+  clearLockedViewPreparedDom();
+  const savedUnit=activeUnitIndex;
+  const savedMode=weaponFilterMode;
+  lockedViewFilterOrder=getLockedViewFilterOrder();
+  const unitIndexes=[null,...getLockedViewUnitIndexes()];
+  const cache=new Map();
+  const layers=[];
+  if(typeof newViewVersionHistoryOpen!==&#x27;undefined&#x27;)newViewVersionHistoryOpen=false;
+  if(typeof clearNewViewVersionHistoryButtons===&#x27;function&#x27;)clearNewViewVersionHistoryButtons();
+  unitIndexes.forEach(unitIndex=&gt;{
+    lockedViewFilterOrder.forEach(mode=&gt;{
+      renderLockedViewCombination(unitIndex,mode);
+      const layer=cloneLockedViewState(unitIndex,mode);
+      cache.set(lockedViewStateKey(unitIndex,mode),layer);
+      layers.push(layer);
+    });
+  });
+  renderLockedViewCombination(savedUnit,savedMode);
+  lockedViewStateCache=cache;
+  lockedViewStateLayers=layers;
+  const originals=Array.from(grid.children).filter(node=&gt;!(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;)));
+  originals.forEach(node=&gt;node.classList&amp;&amp;node.classList.add(&#x27;new-view-lock-original-hidden&#x27;));
+  const fragment=document.createDocumentFragment();
+  layers.forEach(layer=&gt;fragment.appendChild(layer));
+  grid.appendChild(fragment);
+  selectedWeaponIndex=null;
+  showLockedViewPreparedState(savedUnit,savedMode);
+  return true;
+}
+function showLockedViewPreparedState(unitIndex,mode){
+  if(!lockedViewStateCache)return false;
+  let target=lockedViewStateCache.get(lockedViewStateKey(unitIndex,mode));
+  if(!target){
+    target=lockedViewStateCache.get(lockedViewStateKey(null,mode))||lockedViewStateLayers[0]||null;
+    unitIndex=null;
+  }
+  if(!target)return false;
+  lockedViewStateLayers.forEach(layer=&gt;{layer.hidden=layer!==target});
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  return true;
+}
+function beginLockedViewPreparedMode(){
+  if(activePageMode!==&#x27;view&#x27;||newViewHeaderLocked)return false;
+  const snapshot=captureNewViewSnapshot();
+  frozenNewViewSnapshot=snapshot;
+  activateNewViewSnapshot(snapshot);
+  try{
+    if(!buildLockedViewPreparedDom())throw new Error(&#x27;Locked View preparation failed&#x27;);
+  }catch(_){
+    clearLockedViewPreparedDom();
+    frozenNewViewSnapshot=null;
+    return false;
+  }
+  // Lock becomes true only after every prepared state is built and mounted.
+  newViewHeaderLocked=true;
+  return true;
+}
+function endLockedViewPreparedMode(){
+  if(!newViewHeaderLocked)return false;
+  // Unlock first, then discard prepared state and perform one fresh live sync.
+  newViewHeaderLocked=false;
+  clearLockedViewPreparedDom();
+  frozenNewViewSnapshot=null;
+  const lockButton=grid.querySelector(&#x27;.new-view-lock-toggle&#x27;);
+  if(lockButton)syncNewViewLockButton(lockButton);
+  return refreshNewView();
+}
+function handleLockedViewPreparedClick(event){
+  if(!newViewHeaderLocked||!lockedViewStateCache)return;
+  const target=event.target&amp;&amp;event.target.closest?event.target:null;
+  if(!target)return;
+  const unlock=target.closest(&#x27;.new-view-lock-toggle&#x27;);
+  if(unlock){
+    event.preventDefault();event.stopImmediatePropagation();
+    endLockedViewPreparedMode();
+    return;
+  }
+  const filter=target.closest(&#x27;.view-filter-toggle&#x27;);
+  if(filter){
+    event.preventDefault();event.stopImmediatePropagation();
+    const modes=lockedViewFilterOrder.length?lockedViewFilterOrder:getLockedViewFilterOrder();
+    const current=modes.indexOf(String(weaponFilterMode||&#x27;&#x27;));
+    const next=modes[(current&lt;0?0:current+1)%modes.length];
+    showLockedViewPreparedState(activeUnitIndex,next);
+    return;
+  }
+  const unit=target.closest(&#x27;.view-unit-row[data-roster-index]&#x27;);
+  if(unit){
+    event.preventDefault();event.stopImmediatePropagation();
+    const index=Number(unit.dataset.rosterIndex);
+    const next=activeUnitIndex===index?null:index;
+    showLockedViewPreparedState(next,weaponFilterMode);
+    return;
+  }
+  // Everything else in locked VIEW is inert, including Probable, navigation,
+  // version actions, Waha, edits, and any control that could start processing.
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}
+document.addEventListener(&#x27;click&#x27;,handleLockedViewPreparedClick,true);
+
+function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);const gridOn=grid.classList.contains(&#x27;grid-on&#x27;);gb.classList.toggle(&#x27;active-green&#x27;,gridOn);gb.setAttribute(&#x27;aria-pressed&#x27;,gridOn?&#x27;true&#x27;:&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){endLockedViewPreparedMode();return}beginLockedViewPreparedMode()};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
@@ -5720,11 +6073,15 @@ function renderNewViewRosterRows(rows){
 function refreshAlternateViewUnitsFromParent(){if(newViewProcessingLocked())return false;
   let rows=[];
   try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
-  return renderNewViewRosterRows(rows);
+  const ok=renderNewViewRosterRows(rows);
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
+  hasLiveViewCache=true;
+  return ok;
 }
 window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;
 function renderFrozenNewView(){
   if(!newViewProcessingLocked()||!frozenNewViewSnapshot)return false;
+  if(lockedViewStateCache)return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode);
   applyNewViewHeaderSnapshot(frozenNewViewSnapshot.header);
   const rows=cloneNewViewValue(frozenNewViewSnapshot.rows);
   return renderNewViewRosterRows(Array.isArray(rows)?rows:[]);
@@ -5750,7 +6107,30 @@ function addUnifiedEditUnit(f,data,rowIndex){
   r.dataset.rosterIndex=String(rowIndex);
   const n=document.createElement(&#x27;div&#x27;);
   n.className=&#x27;edit-unit-name&#x27;;
-  n.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  const nameText=document.createElement(&#x27;span&#x27;);
+  nameText.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  n.appendChild(nameText);
+  const pointLabel=String(data&amp;&amp;data.pointLabel||&#x27;&#x27;).trim();
+  if(pointLabel){
+    const canToggle=Boolean(data&amp;&amp;data.pointToggleEnabled&amp;&amp;data.entryId);
+    const label=document.createElement(canToggle?&#x27;button&#x27;:&#x27;span&#x27;);
+    if(canToggle)label.type=&#x27;button&#x27;;
+    label.className=canToggle?&#x27;point-option-toggle&#x27;:&#x27;point-option-label-static&#x27;;
+    label.textContent=pointLabel;
+    if(canToggle){
+      label.setAttribute(&#x27;aria-label&#x27;,&#x27;Change point option&#x27;);
+      label.onclick=(event)=&gt;{
+        event.stopPropagation();
+        try{
+          if(parent&amp;&amp;typeof parent.toggleViewEditRosterEntryPointOption===&#x27;function&#x27;){
+            parent.toggleViewEditRosterEntryPointOption(String(data.entryId||&#x27;&#x27;));
+          }
+        }catch(_){}
+        requestAnimationFrame(refreshUnifiedEdit);
+      };
+    }
+    n.appendChild(label);
+  }
   r.appendChild(n);
 
   const move=document.createElement(&#x27;button&#x27;);
@@ -5776,12 +6156,10 @@ function addUnifiedEditUnit(f,data,rowIndex){
   return r;
 }
 
-function refreshUnifiedEditRows(){
-  let rows=[];
-  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
+function renderUnifiedEditRows(rows){
   rows=Array.isArray(rows)?rows:[];
   grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;el.remove());
-  let cursor=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
+  let cursor=FIRST_UNIT_ROW;
   rows.forEach((data,rowIndex)=&gt;{
     if(data&amp;&amp;data.kind===&#x27;spacer&#x27;){
       const spacer=document.createElement(&#x27;div&#x27;);
@@ -5808,6 +6186,15 @@ function refreshUnifiedEditRows(){
   if(titlePoints)titlePoints.textContent=&#x27;- &#x27;+String(sheetPoints)+&#x27; pts&#x27;;
   return rows.some(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
 }
+function refreshUnifiedEditRows(){
+  let rows=[];
+  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
+  rows=Array.isArray(rows)?rows:[];
+  currentViewRosterRows=rows;
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
+  hasLiveViewCache=true;
+  return renderUnifiedEditRows(rows);
+}
 window.refreshUnifiedEditRows=refreshUnifiedEditRows;
 function refreshUnifiedEdit(){
   refreshNewViewTitleFromLegacy();
@@ -5816,7 +6203,70 @@ function refreshUnifiedEdit(){
 window.refreshUnifiedEdit=refreshUnifiedEdit;
 
 function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
-function renderPage(p){activePageMode=p;grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f,p);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f,p);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(()=&gt;{if(newViewProcessingLocked())renderFrozenNewView();else refreshNewView()})}if(p===&#x27;edit&#x27;){requestAnimationFrame(refreshUnifiedEdit)}}
+function ensurePersistentGridCells(){
+  if(grid.querySelector(&#x27;.grid-cell&#x27;))return false;
+  const background=document.createDocumentFragment();
+  addGridCells(background);
+  grid.appendChild(background);
+  return true;
+}
+function clearModeContent(){
+  Array.from(grid.children).forEach(node=&gt;{
+    if(!(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;)))node.remove();
+  });
+  grid.querySelectorAll(&#x27;.grid-cell[hidden]&#x27;).forEach(cell=&gt;{cell.hidden=false});
+}
+function restoreCachedLiveHeader(){
+  if(cachedLiveViewHeader)applyNewViewHeaderSnapshot(cachedLiveViewHeader);
+}
+function renderCachedView(){
+  if(!hasLiveViewCache)return false;
+  restoreCachedLiveHeader();
+  renderNewViewRosterRows(currentViewRosterRows);
+  return true;
+}
+function renderCachedEdit(){
+  if(!hasLiveViewCache)return false;
+  restoreCachedLiveHeader();
+  renderUnifiedEditRows(currentViewRosterRows);
+  return true;
+}
+function renderPage(p){
+  if(newViewHeaderLocked&amp;&amp;lockedViewStateCache){if(p!==&#x27;view&#x27;)return false;return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode)}
+  activePageMode=p;
+  ensurePersistentGridCells();
+  clearModeContent();
+  grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);
+  const f=document.createDocumentFragment();
+  addPageNavigation(f,p);
+  if(p===&#x27;view&#x27;){
+    addViewHeader(f,p);
+    addViewStatHeader(f);
+    addExpandedUnitMock(f);
+  }
+  if(p===&#x27;edit&#x27;){
+    addViewHeader(f,p);
+    const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);
+    if(viewOnly)viewOnly.remove();
+  }
+  if(p===&#x27;main&#x27;){
+    const b=document.createElement(&#x27;button&#x27;);
+    b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);
+    const g=document.createElement(&#x27;button&#x27;);
+    g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);
+    [[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)});
+  }
+  grid.appendChild(f);
+
+  if(p===&#x27;view&#x27;){
+    if(newViewProcessingLocked())renderFrozenNewView();
+    else if(!renderCachedView())requestAnimationFrame(refreshNewView);
+  }
+  if(p===&#x27;edit&#x27;){
+    if(newViewHeaderLocked)requestAnimationFrame(refreshUnifiedEdit);
+    else if(!renderCachedEdit())requestAnimationFrame(refreshUnifiedEdit);
+  }
+}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -5826,195 +6276,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 &lt;/body&gt;
 &lt;/html&gt;"></iframe>
   </div>
-
-  <div id="newEditPageScreen" class="screen np-view-screen" aria-label="New Edit page">
-    <iframe id="npEditFrame" class="np-view-frame" title="New Edit" srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot; /&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover&quot; /&gt;
-&lt;title&gt;Np1.37&lt;/title&gt;
-&lt;style&gt;
-@import url(&#x27;https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;family=Roboto+Condensed:wght@700&amp;display=swap&#x27;);
-:root{--bg:#0f1115;--card:#171a21;--border:#2c313a;--btn:#2b313b;--btnborder:#48515f;--green:#1f5b35;--greenborder:#2e7d49;--grid:#9ecbff;--text:#f1f3f4;--secondary:#c4c7c5;--muted:#9aa0a6;--orange:#f1a458;--cell:26px;--std:24px;--gap:2px;--radius:6px;--title:20px;--body:14px;--meta:12px}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;-webkit-tap-highlight-color:transparent}body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden}
-.draft-grid{display:grid;grid-template-columns:repeat(16,var(--cell));grid-auto-rows:var(--cell);width:max-content;margin:0 auto;border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25);background:var(--bg);isolation:isolate}
-.grid-cell{position:relative;z-index:100;width:var(--cell);height:var(--cell);border-right:1px solid rgba(158,203,255,.25);border-bottom:1px solid rgba(158,203,255,.25);pointer-events:none}.col-coordinate,.row-coordinate{position:absolute;z-index:101;color:var(--grid);opacity:.5;font-size:var(--meta);font-weight:700;line-height:1;user-select:none;pointer-events:none}.col-coordinate{top:4px;left:50%;transform:translateX(-50%)}.row-coordinate{left:4px;bottom:4px}
-.button-standard{width:calc(100% - var(--gap));height:var(--std);padding:0 10px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}.button-standard.active-green{background:var(--green);border-color:var(--greenborder)}
-.top-header-shell{grid-column:1/span 16;grid-row:1/span 4;z-index:2;border:1px solid var(--border);border-radius:12px;background:var(--card)}.top-roster-name{grid-column:2/span 7;grid-row:2;z-index:3;display:flex;align-items:center;min-width:0;color:var(--text);font:900 var(--title)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-detachments{grid-column:2/span 9;grid-row:3;z-index:3;display:flex;align-items:center;min-width:0;color:var(--muted);font:700 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-summary{grid-column:2/span 9;grid-row:4;z-index:3;display:flex;align-items:center;gap:6px;min-width:0;font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}.top-summary-disposition{color:#80d6a3}.top-summary-rest{color:var(--muted)}
-.top-mode-buttons{grid-column:11/span 6;grid-row:2;z-index:4;display:grid;grid-template-columns:repeat(3,calc(var(--cell)*2));align-items:center;justify-items:center}.top-mode-buttons .button-standard{height:var(--std)}.top-main-button{grid-column:15/span 2;grid-row:24;z-index:4;align-self:center;justify-self:center}.phase-buttons{grid-column:2/span 15;grid-row:6;z-index:3;display:grid;grid-template-columns:repeat(5,calc(var(--cell)*3));align-items:center;justify-items:center}
-.view-stat-header{grid-column:9/span 8;grid-row:6;z-index:3;display:grid;grid-template-columns:repeat(8,var(--cell));background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.view-stat-label{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}.view-stat-label:first-child{border-left:0}.vh-m{grid-column:1}.vh-t{grid-column:2/span 2}.vh-sv{grid-column:4/span 2}.vh-w{grid-column:6}.vh-ld{grid-column:7}.vh-oc{grid-column:8}
-.view-unit-row,.edit-unit-row{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.roster-spacer-row{grid-column:1/span 16;z-index:3;height:var(--cell);min-height:var(--cell)}.view-unit-name,.edit-unit-name{grid-column:1/span 5;height:var(--cell);min-width:0;padding-left:8px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}.unit-count-grid{grid-column:6/span 2;width:calc(100% - var(--gap));height:var(--std);justify-self:center;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:#80d6a3;font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center;white-space:nowrap}
-.view-unit-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif;text-align:center;white-space:nowrap}.s1{grid-column:9}.s2{grid-column:10/span 2}.s3{grid-column:12/span 2}.s4{grid-column:14}.s5{grid-column:15}.s6{grid-column:16}
-.edit-action{width:var(--std);height:var(--std);padding:0;justify-self:center;border:1px solid var(--muted);border-radius:50%;background:transparent;color:var(--secondary);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.a1{grid-column:10}.a2{grid-column:11}.a3{grid-column:12}.a4{grid-column:13}.a5{grid-column:14}.a6{grid-column:15}.edit-action-copy svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}.edit-unit-points{grid-column:16;justify-self:center;color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.new-edit-stats-field{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.new-edit-stats-title{grid-column:1/span 4;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}.new-edit-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap}
-.detail-unit-header{grid-column:1/span 16;grid-row:22;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.detail-unit-name{grid-column:1/span 5;padding-left:8px;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap}.detail-waha{grid-column:1/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;text-decoration:none}.detail-unit-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);font:700 var(--body)/1 Roboto,Arial,sans-serif}.du1{grid-column:9}.du2{grid-column:10/span 2}.du3{grid-column:12/span 2}.du4{grid-column:14}.du5{grid-column:15}.du6{grid-column:16}
-.detail-deep-strike{grid-column:4/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;width:calc(100% - var(--gap));height:var(--std);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap}
-.weapon-header,.weapon-row,.weapon-tags{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.weapon-header{grid-row:9;border-top:1px solid var(--border)}.weapon-header-label,.weapon-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.weapon-name{grid-column:1/span 8;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wr1{grid-column:9}.wr2{grid-column:10/span 2}.wr3{grid-column:12}.wr4{grid-column:13}.wr5{grid-column:14}.wr6{grid-column:15/span 2}
-.weapon-row-1{grid-row:10}.weapon-tags-1{grid-row:11}.weapon-row-2{grid-row:12}.weapon-tags-2{grid-row:13}.weapon-row-3{grid-row:14}.weapon-tags-3{grid-row:15}.weapon-row-4{grid-row:16}.weapon-tags-4{grid-row:17}.weapon-row-5{grid-row:18}.weapon-tags-5{grid-row:19}
-.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
-.sample-button-standard{grid-column:2/span 3;grid-row:33;z-index:3;align-self:center;justify-self:center}.sample-button-green{grid-column:2/span 2;grid-row:34;z-index:3;align-self:center;justify-self:center;background:var(--green);border-color:var(--greenborder)}.font-sample{grid-column:2/span 8;z-index:3;display:flex;align-items:center;color:var(--text);font-family:Roboto,Arial,sans-serif;font-weight:700;white-space:nowrap}.font-sample-title{grid-row:35;font-size:var(--title)}.font-sample-body{grid-row:36;font-size:var(--body)}.font-sample-meta{grid-row:37;font-size:var(--meta)}
-.version-bar{width:min(416px,100%);margin:8px auto 0;padding:8px;display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;border:1px solid var(--border);background:var(--card)}.version-label{min-width:0;font-size:var(--body);font-weight:900}.version-button{min-width:72px;height:40px;padding:0 10px;border:1px solid var(--btnborder);border-radius:8px;background:var(--btn);color:var(--text);font:900 13px Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.version-button:disabled{opacity:.5}
-
-.grid-toggle{grid-column:13;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important}
-.view-filter-toggle{grid-column:14/span 3;grid-row:4;z-index:102;align-self:center;justify-self:center}
-.draft-grid{border-top:0;border-left:0}
-.grid-cell{visibility:hidden}
-.draft-grid.grid-on{border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25)}
-.draft-grid.grid-on .grid-cell{visibility:visible}
-.version-bar{display:none!important}
-
-.view-unit-row.unit-active .view-unit-name{color:#80d6a3}
-.view-stat-header.unit-active .view-stat-label,.view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)}
-.detail-box-row,.weapon-header,.weapon-row-1,.weapon-tags-1,.weapon-row-2,.weapon-tags-2,.weapon-row-3,.weapon-tags-3,.weapon-row-4,.weapon-tags-4,.weapon-row-5,.weapon-tags-5{display:none}
-
-.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{opacity:.5}
-.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3;opacity:1}
-.weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}
-.unit-keyword.keyword-muted{color:var(--muted);opacity:.5}
-
-.weapon-row.weapon-muted{opacity:1!important}
-.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)!important}
-.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3!important}
-.weapon-tags.weapon-muted{opacity:1!important}
-.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
-.unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-
-.detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 calc(var(--cell)*3 - var(--gap));min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
-
-.view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
-.view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;main id=&quot;grid&quot; class=&quot;draft-grid&quot; aria-label=&quot;View page layout grid&quot;&gt;&lt;/main&gt;
-&lt;div class=&quot;version-bar&quot;&gt;&lt;div class=&quot;version-label&quot;&gt;Np1.37&lt;/div&gt;&lt;button id=&quot;updateButton&quot; class=&quot;version-button&quot; type=&quot;button&quot;&gt;Update&lt;/button&gt;&lt;button id=&quot;downloadButton&quot; class=&quot;version-button&quot; type=&quot;button&quot;&gt;Download&lt;/button&gt;&lt;/div&gt;
-&lt;script&gt;
-const NP_VERSION=&#x27;1.37&#x27;,RAW_ROOT=&#x27;https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/&#x27;,INDEX_PATH=&#x27;np/index.json&#x27;,grid=document.getElementById(&#x27;grid&#x27;),letters=&#x27;ABCDEFGHIJKLMNOP&#x27;;
-function addGridCells(f){for(let r=1;r&lt;=40;r++)for(let c=1;c&lt;=16;c++){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;grid-cell&#x27;;x.style.gridColumn=c;x.style.gridRow=r;if(r===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;col-coordinate&#x27;;s.textContent=letters[c-1];x.appendChild(s)}if(c===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;row-coordinate&#x27;;s.textContent=r;x.appendChild(s)}f.appendChild(x)}}
-function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(t===&#x27;edit&#x27;)return;parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
-function addViewHeader(f){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;;gb.textContent=&#x27;G&#x27;;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb)}
-function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
-function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
-function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
-function addEditUnit(f,name,count,pts,rowIndex){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;edit-unit-row dynamic-roster-row&#x27;;r.dataset.rosterIndex=String(rowIndex);addNameAndCount(r,name,count,&#x27;edit-unit-name&#x27;);const menu=document.createElement(&#x27;button&#x27;);menu.type=&#x27;button&#x27;;menu.className=&#x27;edit-action a1&#x27;;menu.textContent=&#x27;≡&#x27;;r.appendChild(menu);const cp=document.createElement(&#x27;button&#x27;);cp.type=&#x27;button&#x27;;cp.className=&#x27;edit-action edit-action-copy a2&#x27;;cp.setAttribute(&#x27;aria-label&#x27;,&#x27;Copy&#x27;);cp.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;r.appendChild(cp);[[&#x27;0&#x27;,&#x27;a3&#x27;],[&#x27;E&#x27;,&#x27;a4&#x27;],[&#x27;R&#x27;,&#x27;a5&#x27;],[&#x27;D&#x27;,&#x27;a6&#x27;]].forEach(([l,c])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;edit-action &#x27;+c;b.textContent=l;r.appendChild(b)});const p=document.createElement(&#x27;div&#x27;);p.className=&#x27;edit-unit-points&#x27;;p.textContent=pts;r.appendChild(p);r.onclick=e=&gt;{if(e.target.closest(&#x27;button&#x27;))return;newEditOpenRowIndex=newEditOpenRowIndex===rowIndex?null:rowIndex;refreshNewEditUnitsFromLegacy()};f.appendChild(r);return r}
-function addNewEditStatsField(f,rowIndex,data){
-  const field=document.createElement(&#x27;div&#x27;);field.className=&#x27;new-edit-stats-field&#x27;;field.dataset.rosterIndex=String(rowIndex);
-  const title=document.createElement(&#x27;div&#x27;);title.className=&#x27;new-edit-stats-title&#x27;;title.textContent=&#x27;Stats&#x27;;field.appendChild(title);
-  const labels=[&#x27;M&quot;&#x27;,&#x27;T&#x27;,&#x27;SV&#x27;,&#x27;W&#x27;,&#x27;LD&#x27;,&#x27;OC&#x27;];
-  const values=data?[data.m,data.t,data.sv,data.w,data.ld,data.oc]:[];
-  labels.forEach((label,i)=&gt;{const cell=document.createElement(&#x27;div&#x27;);cell.className=&#x27;new-edit-stat&#x27;;cell.dataset.statIndex=String(i);cell.style.gridColumn=String(5+(i*2))+&#x27;/span 2&#x27;;cell.textContent=label+&#x27; &#x27;+String(values[i]??&#x27;&#x27;);field.appendChild(cell)});
-  f.appendChild(field);
-  return field;
-}
-
-function addExpandedUnitMock(f){
-  const boxRow=document.createElement(&#x27;div&#x27;);boxRow.className=&#x27;detail-box-row&#x27;;
-  const detailCount=document.createElement(&#x27;div&#x27;);detailCount.className=&#x27;detail-box detail-count&#x27;;detailCount.textContent=&#x27;&#x27;;boxRow.appendChild(detailCount);
-  const w=document.createElement(&#x27;a&#x27;);w.className=&#x27;detail-box detail-waha&#x27;;w.textContent=&#x27;Waha&#x27;;w.href=&#x27;#&#x27;;w.onclick=e=&gt;{e.preventDefault();e.stopPropagation();const url=String(w.getAttribute(&#x27;href&#x27;)||&#x27;&#x27;).trim();if(!url||url===&#x27;#&#x27;)return;try{if(parent&amp;&amp;typeof parent.openAlternateViewWaha===&#x27;function&#x27;)parent.openAlternateViewWaha(url)}catch(_){}};boxRow.appendChild(w);f.appendChild(boxRow);
-  const wh=document.createElement(&#x27;div&#x27;);wh.className=&#x27;weapon-header&#x27;;const blank=document.createElement(&#x27;div&#x27;);blank.className=&#x27;weapon-name&#x27;;wh.appendChild(blank);[[&#x27;R&quot;&#x27;,&#x27;wr1&#x27;],[&#x27;A&#x27;,&#x27;wr2&#x27;],[&#x27;WS&#x27;,&#x27;wr3&#x27;],[&#x27;St&#x27;,&#x27;wr4&#x27;],[&#x27;AP&#x27;,&#x27;wr5&#x27;],[&#x27;D&#x27;,&#x27;wr6&#x27;]].forEach(([v,c])=&gt;{const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;weapon-header-label &#x27;+c;s.textContent=v;wh.appendChild(s)});f.appendChild(wh);
-  const weapons=[
-    [&#x27;weapon-row-1&#x27;,&#x27;Kustom Blasta X – Gatler&#x27;,[&#x27;24&quot;&#x27;,&#x27;6&#x27;,&#x27;4&#x27;,&#x27;9&#x27;,&#x27;-2&#x27;,&#x27;3&#x27;]],
-    [&#x27;weapon-row-2&#x27;,&#x27;Kustom Blasta X – Shoota&#x27;,[&#x27;18&quot;&#x27;,&#x27;4&#x27;,&#x27;4&#x27;,&#x27;5&#x27;,&#x27;-1&#x27;,&#x27;1&#x27;]],
-    [&#x27;weapon-row-3&#x27;,&#x27;Kustom Blasta X – Skorcha&#x27;,[&#x27;12&quot;&#x27;,&#x27;3&#x27;,&#x27;-&#x27;,&#x27;5&#x27;,&#x27;-1&#x27;,&#x27;1&#x27;]],
-    [&#x27;weapon-row-4&#x27;,&#x27;Kustom Blasta X (Melee)&#x27;,[&#x27;-&#x27;,&#x27;6&#x27;,&#x27;2&#x27;,&#x27;5&#x27;,&#x27;-1&#x27;,&#x27;1&#x27;]],
-    [&#x27;weapon-row-5&#x27;,&#x27;Moonchewa&#x27;,[&#x27;-&#x27;,&#x27;5&#x27;,&#x27;2&#x27;,&#x27;12&#x27;,&#x27;-2&#x27;,&#x27;3&#x27;]]
-  ];
-  weapons.forEach(([rc,name,stats])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-row &#x27;+rc;const nm=document.createElement(&#x27;div&#x27;);nm.className=&#x27;weapon-name&#x27;;nm.textContent=name;r.appendChild(nm);stats.forEach((v,i)=&gt;{const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;weapon-stat wr&#x27;+(i+1);s.textContent=v;r.appendChild(s)});f.appendChild(r)});
-  const tagRows=[
-    [&#x27;weapon-tags-1&#x27;,[[&#x27;HAZARDOUS&#x27;,1,4],[&#x27;IGNORES COVER&#x27;,5,4]]],
-    [&#x27;weapon-tags-2&#x27;,[[&#x27;LETHAL HITS: non-MONSTER / VEHICLE&#x27;,1,9],[&#x27;RAPID FIRE 2&#x27;,10,3],[&#x27;IGNORES COVER&#x27;,13,4]]],
-    [&#x27;weapon-tags-3&#x27;,[[&#x27;BLAST 1&#x27;,1,3],[&#x27;TORRENT&#x27;,4,3],[&#x27;IGNORES COVER&#x27;,7,4]]],
-    [&#x27;weapon-tags-4&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;EXTRA ATTACKS&#x27;,4,5]]],
-    [&#x27;weapon-tags-5&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;TWIN-LINKED&#x27;,4,4]]]
-  ];
-  tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;r.appendChild(x)});f.appendChild(r)});
-}
-
-
-let weaponFilterMode=&#x27;ALL&#x27;;
-function cycleWeaponFilter(){}
-const FIRST_UNIT_ROW=7;
-let newEditRosterRows=[];
-let newEditOpenRowIndex=null;
-
-let newEditHeaderData=null;
-function legacyHeaderForNewEdit(){
-  try{return parent&amp;&amp;typeof parent.getAlternateViewHeaderData===&#x27;function&#x27;?parent.getAlternateViewHeaderData():null}catch(_){return null}
-}
-function refreshNewEditHeaderFromLegacy(){
-  const data=legacyHeaderForNewEdit();
-  newEditHeaderData=data?{
-    rosterName:String(data.rosterName||&#x27;&#x27;),
-    detachments:String(data.detachments||&#x27;&#x27;),
-    disposition:String(data.disposition||&#x27;&#x27;),
-    points:Number(data.points)||0,
-    summaryRest:String(data.summaryRest||&#x27;&#x27;)
-  }:null;
-  const name=grid.querySelector(&#x27;.top-roster-name&#x27;);
-  const detachments=grid.querySelector(&#x27;.top-detachments&#x27;);
-  const disposition=grid.querySelector(&#x27;.top-summary-disposition&#x27;);
-  const rest=grid.querySelector(&#x27;.top-summary-rest&#x27;);
-  if(name)name.textContent=newEditHeaderData?newEditHeaderData.rosterName:&#x27;&#x27;;
-  if(detachments)detachments.textContent=newEditHeaderData?newEditHeaderData.detachments:&#x27;&#x27;;
-  if(disposition)disposition.textContent=newEditHeaderData?newEditHeaderData.disposition:&#x27;&#x27;;
-  if(rest)rest.textContent=newEditHeaderData?newEditHeaderData.summaryRest:&#x27;&#x27;;
-  return Boolean(newEditHeaderData);
-}
-function refreshNewEditUnitsFromLegacy(){
-  let rows=[];
-  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
-  newEditRosterRows=Array.isArray(rows)?rows:[];
-  if(newEditOpenRowIndex!==null){
-    const openData=newEditRosterRows[newEditOpenRowIndex];
-    if(!openData||openData.kind!==&#x27;unit&#x27;)newEditOpenRowIndex=null;
-  }
-  grid.querySelectorAll(&#x27;.dynamic-roster-row,.new-edit-stats-field&#x27;).forEach(el=&gt;el.remove());
-  let cursor=FIRST_UNIT_ROW;
-  let ok=false;
-  newEditRosterRows.forEach((data,rowIndex)=&gt;{
-    if(data&amp;&amp;data.kind===&#x27;spacer&#x27;){
-      const spacer=document.createElement(&#x27;div&#x27;);
-      spacer.className=&#x27;roster-spacer-row dynamic-roster-row&#x27;;
-      spacer.dataset.rosterIndex=String(rowIndex);
-      spacer.style.gridRow=String(cursor++);
-      grid.appendChild(spacer);
-      return;
-    }
-    if(!data||data.kind!==&#x27;unit&#x27;)return;
-    ok=true;
-    const f=document.createDocumentFragment();
-    const row=addEditUnit(f,String(data.name||&#x27;&#x27;),&#x27;&#x27;,&#x27;&#x27;,rowIndex);
-    row.style.gridRow=String(cursor++);
-    if(newEditOpenRowIndex===rowIndex){
-      const stats=addNewEditStatsField(f,rowIndex,data);
-      stats.style.gridRow=String(cursor++);
-    }
-    grid.appendChild(f);
-  });
-  refreshNewEditHeaderFromLegacy();
-  return ok;
-}
-window.getNewEditRosterRows=function(){return newEditRosterRows.slice()};
-window.getNewEditUnitData=function(index){
-  const clean=Math.max(0,Number(index)||0);
-  const units=newEditRosterRows.filter(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
-  return units[clean]||null;
-};
-window.refreshNewEditUnitsFromLegacy=refreshNewEditUnitsFromLegacy;
-function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;)requestAnimationFrame(refreshAlternateViewUnitsFromParent);if(p===&#x27;edit&#x27;)requestAnimationFrame(refreshNewEditUnitsFromLegacy)}
-renderPage(&#x27;edit&#x27;);
-function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
-async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
-async function downloadRunningVersion(){const b=document.getElementById(&#x27;downloadButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Preparing&#x27;;try{const n=versionFile(NP_VERSION),h=await fetchText(n),f=new File([h],n,{type:&#x27;text/html&#x27;});if(navigator.share&amp;&amp;navigator.canShare&amp;&amp;navigator.canShare({files:[f]})){b.textContent=&#x27;Save&#x27;;try{await navigator.share({files:[f],title:n})}catch(e){if(e&amp;&amp;e.name===&#x27;AbortError&#x27;){b.textContent=o;b.disabled=false;return}throw e}}else{const u=URL.createObjectURL(f),a=document.createElement(&#x27;a&#x27;);a.href=u;a.download=n;a.rel=&#x27;noopener&#x27;;document.body.appendChild(a);a.click();a.remove();setTimeout(()=&gt;URL.revokeObjectURL(u),30000)}b.textContent=&#x27;Done&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900)}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
-document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;document.getElementById(&#x27;downloadButton&#x27;).onclick=downloadRunningVersion;
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;"></iframe>
-  </div>
-
-
-  <div id="cardsScreen" class="screen">
+<div id="cardsScreen" class="screen">
     <iframe id="cardsAppFrame" class="cards-app-frame" title="WH40k mission cards" data-wh40k-srcdoc="&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -8537,7 +8799,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.94";
+    const APP_VERSION = "31.104";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12959,45 +13221,8 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       };
     };
 
-    window.getNewEditUnitData = function(index) {
-      const frame = document.getElementById("npEditFrame");
-      try {
-        const editWindow = frame && frame.contentWindow;
-        if (editWindow && typeof editWindow.refreshNewEditUnitsFromLegacy === "function") editWindow.refreshNewEditUnitsFromLegacy();
-        return editWindow && typeof editWindow.getNewEditUnitData === "function"
-          ? editWindow.getNewEditUnitData(index)
-          : null;
-      } catch (_) {
-        return null;
-      }
-    };
 
-    window.getNewEditRosterRows = function() {
-      const frame = document.getElementById("npEditFrame");
-      try {
-        const editWindow = frame && frame.contentWindow;
-        if (editWindow && typeof editWindow.refreshNewEditUnitsFromLegacy === "function") editWindow.refreshNewEditUnitsFromLegacy();
-        const rows = editWindow && typeof editWindow.getNewEditRosterRows === "function"
-          ? editWindow.getNewEditRosterRows()
-          : [];
-        return Array.isArray(rows) ? rows : [];
-      } catch (_) {
-        return [];
-      }
-    };
 
-    window.getNewEditHeaderData = function() {
-      const frame = document.getElementById("npEditFrame");
-      try {
-        const editWindow = frame && frame.contentWindow;
-        if (editWindow && typeof editWindow.refreshNewEditUnitsFromLegacy === "function") editWindow.refreshNewEditUnitsFromLegacy();
-        return editWindow && typeof editWindow.getNewEditHeaderData === "function"
-          ? editWindow.getNewEditHeaderData()
-          : null;
-      } catch (_) {
-        return null;
-      }
-    };
 
     window.getAlternateViewRosterRows = function() {
       const roster = appEditMode && viewEditRosterDraft ? getViewEditRoster() : getActiveRoster();
@@ -13006,22 +13231,10 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       return models.map(item => {
         if (item.isSpacer) return { kind: "spacer" };
         const data = window.getAlternateViewUnitData(unitIndex++);
-        return data ? Object.assign({ kind: "unit" }, data, { points: Math.max(0, Number(item.points && item.points.total) || 0) }) : null;
+        return data ? Object.assign({ kind: "unit" }, data, { entryId: String(item.entryId || ""), points: Math.max(0, Number(item.points && item.points.total) || 0), pointLabel: String(item.points && item.points.label || ""), pointToggleEnabled: Boolean(item.points && item.points.toggleEnabled) }) : null;
       }).filter(Boolean);
     };
 
-    window.openLegacyEditFromNewView = function() {
-      const newPageScreen = document.getElementById("newPageScreen");
-      const newEditPageScreen = document.getElementById("newEditPageScreen");
-      const rosterScreen = document.getElementById("rosterScreen");
-      if (newPageScreen) newPageScreen.classList.remove("active");
-      if (newEditPageScreen) newEditPageScreen.classList.remove("active");
-      if (rosterScreen) rosterScreen.classList.add("active");
-      document.body.classList.remove("np-view-screen-active");
-      activeAppScreen = "army";
-      if (!appEditMode) setEditMode(true);
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    };
 
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
@@ -13029,15 +13242,6 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       if (target === "newpage") {
         showNewPageScreen();
         return;
-      }
-
-      if (activeAppScreen === "neweditpage") {
-        const newEditPageScreen = document.getElementById("newEditPageScreen");
-        const rosterScreen = document.getElementById("rosterScreen");
-        if (newEditPageScreen) newEditPageScreen.classList.remove("active");
-        if (rosterScreen) rosterScreen.classList.add("active");
-        document.body.classList.remove("np-view-screen-active");
-        activeAppScreen = "army";
       }
 
       if (target === "view" && activeAppScreen === "newpage") {
@@ -13055,21 +13259,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
       if (target === "edit") {
         if (activeAppScreen === "cards") showArmyScreen({ commitCardsState: true });
-        if (appEditMode) {
-          showNewPageScreen();
-          if (newPageScreen) newPageScreen.classList.remove("active");
-          const newEditPageScreen = document.getElementById("newEditPageScreen");
-          if (newEditPageScreen) newEditPageScreen.classList.add("active");
-          activeAppScreen = "neweditpage";
-          const npEditFrame = document.getElementById("npEditFrame");
-          try {
-            const editWindow = npEditFrame && npEditFrame.contentWindow;
-            if (editWindow && typeof editWindow.refreshNewEditUnitsFromLegacy === "function") editWindow.refreshNewEditUnitsFromLegacy();
-          } catch (_) {}
-          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-          return;
-        }
-        setEditMode(true);
+        if (!appEditMode) setEditMode(true);
         return;
       }
 
@@ -17811,6 +18001,17 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       }
     }
 
+    function getVersionUiState() {
+      return {
+        current: APP_VERSION,
+        busy: Boolean(versionActionBusy),
+        downloadBusy: Boolean(versionDownloadBusy),
+        downloadUrl: APP_DOWNLOAD_DATA.url,
+        downloadFilename: APP_DOWNLOAD_DATA.filename,
+        entries: versionHistoryEntries.map(entry => ({ version: String(entry && entry.version || "") })).filter(entry => entry.version)
+      };
+    }
+
     async function fetchGithubVersionHistory() { return getVersionHost().history(); }
 
     function renderVersionHistoryBody() {
@@ -17893,10 +18094,27 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       if (versionActionBusy || !canReloadAppVersion()) return false;
       const target = normalizeAppVersion(version);
       if (target === APP_VERSION) { setVersionHistoryStatus(`v${APP_VERSION} is running.`, "success", true); return true; }
+      const restoreNewView = activeAppScreen === "newpage";
+      try {
+        if (restoreNewView) window.parent.__wh40kRestoreAppScreen = "newpage";
+        else if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen;
+      } catch (_) {}
       versionActionBusy = true;
       setVersionHistoryStatus(`Loading v${target}…`, "", true);
-      try { return await getVersionHost().load(target); }
-      catch (error) { setVersionHistoryStatus(error.message, "error", true); return false; }
+      try {
+        const loaded = await getVersionHost().load(target);
+        if (!loaded && restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        return loaded;
+      }
+      catch (error) {
+        if (restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        setVersionHistoryStatus(error.message, "error", true);
+        return false;
+      }
       finally { versionActionBusy = false; syncVersionBoxDom(); }
     }
 
@@ -29494,6 +29712,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       toggleViewEditUtilitySection,
       openViewEditUtilitySection,
       toggleVersionHistory,
+      getVersionUiState,
       refreshGithubVersionHistory,
       loadGithubVersion,
       updateToLatestVersion,
@@ -30192,7 +30411,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.94',
+        version: 'V31.104',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -30631,7 +30850,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     });
     ArmyBuilderModules.bootstrap.initialize().then(() => {
       if (!appStorageInitialized) throw new Error("App storage could not be opened. The current app was kept.");
+      let restoreNewView = false;
+      try { restoreNewView = window.parent.__wh40kRestoreAppScreen === "newpage"; } catch (_) {}
+      if (restoreNewView) showNewPageScreen();
       window.parent.WH40kVersionHost.ready(window, APP_VERSION);
+      if (restoreNewView) {
+        try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+      }
     }).catch(error => window.parent.WH40kVersionHost.failed(window, error.message));
 
     // V8.2 Architecture note:
