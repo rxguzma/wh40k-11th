@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.67</title>
+  <title>WH40k 11th V31.68</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.67; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.68; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.68
+    Scope: Restore the existing xN unit-count box on the first two alternate-View live Unit rows. The count is no longer prototype/hardcoded data; it comes from the same roster entry and canonical selected point option used by Main through getRosterEntryModelCount(). The existing .unit-count-grid styling is reused unchanged.
+    Risk areas: Alternate View first/second Unit count display only. Unit ordering, profile stats, Waha/core-ability row, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.67
     Scope: Make the alternate-View row under each wired Unit data-driven. Waha remains first, followed only by that active Unit's canonical CORE_ABILITY entries from Unit_Abilities.csv resolved through the existing runtime ability data. Remove the hardcoded Deep Strike badge. For the current first two Edit-order Units, Nazdreg therefore shows Waha + Deep Strike while Meganobz shows Waha only. Core-ability badges retain the existing Deep Strike badge visual standard and the existing Weapon-selection muted-text behavior.
     Risk areas: Alternate View first/second Unit detail row only. Unit ordering, profile stats, Waha URLs, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View first-two Unit wiring and shared expansion placement only. Canonical View/Edit/Cards, roster persistence, and combat behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.63
-    Scope: Remove Nazdreg-specific first-row lookup from alternate View. The first wired View row now binds to the first real unit returned in current Edit/roster order, including that unit's live name, stats, Waha link, Weapons, filtering, expansion, and Weapon-selection behavior. Reordering units in Edit therefore changes which unit is shown in the first wired row. No additional unit rows are wired in this version.
-    Risk areas: Alternate View first-unit data selection only. Existing first-row interaction/styling, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5607,6 +5608,9 @@ function refreshAlternateViewUnitsFromParent(){
     row.style.display=&#x27;grid&#x27;;
     const name=row.querySelector(&#x27;.view-unit-name&#x27;);
     if(name)name.textContent=String(data.name||&#x27;&#x27;);
+    let count=row.querySelector(&#x27;.unit-count-grid&#x27;);
+    if(!count){count=document.createElement(&#x27;div&#x27;);count.className=&#x27;unit-count-grid&#x27;;row.appendChild(count)}
+    count.textContent=&#x27;x&#x27;+String(data.count??1);
     [data.m,data.t,data.sv,data.w,data.ld,data.oc].forEach((value,statIndex)=&gt;{const cell=row.querySelector(&#x27;.s&#x27;+(statIndex+1));if(cell)cell.textContent=String(value??&#x27;&#x27;)});
     if(row.dataset.toggleBound!==&#x27;true&#x27;){
       row.dataset.toggleBound=&#x27;true&#x27;;
@@ -8093,7 +8097,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.67";
+    const APP_VERSION = "31.68";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12449,6 +12453,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       const weapons = entry && unit ? getWeaponsForRosterEntry(entry, unit).filter(item => item && !item.isMissingLink) : [];
       return {
         name: String(model.displayName || (model.unit && model.unit.name) || ""),
+        count: entry && unit ? getRosterEntryModelCount(entry, unit) : 1,
         m: String(stats.m ?? ""),
         t: String(stats.t ?? ""),
         sv: String(stats.sv ?? ""),
@@ -29625,7 +29630,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.67',
+        version: 'V31.68',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
