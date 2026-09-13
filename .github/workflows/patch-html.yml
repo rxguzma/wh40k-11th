@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.56 remove duplicate Nazdreg and Main button
+      - name: Build V31.56 remove duplicate Nazdreg and Main button retry
         run: python3 scripts/patch_html_v31_56.py
 
       - name: Validate and generate release history
