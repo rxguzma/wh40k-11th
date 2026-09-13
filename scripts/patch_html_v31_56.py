@@ -39,15 +39,10 @@ if removed_detail != 1:
     raise SystemExit(f'duplicate Nazdreg detail line: expected 1 match, found {removed_detail}')
 
 # Remove the lower MAIN navigation button entirely. VIEW / EDIT / CARDS remain.
-np, removed_main = re.subn(
-    r"(function addPageNavigation\(f,p\)\{.*?f\.appendChild\(m\));const b=document\.createElement\('button'\);b\.type='button';b\.className='button-standard top-main-button'\+\(p==='main'\?' active-green':''\);b\.textContent='MAIN';b\.onclick=\(\)=>renderPage\('main'\);f\.appendChild\(b\)\}",
-    r"\1}",
-    np,
-    count=1,
-    flags=re.S,
-)
-if removed_main != 1:
-    raise SystemExit(f'MAIN button removal: expected 1 match, found {removed_main}')
+main_code = "const b=document.createElement('button');b.type='button';b.className='button-standard top-main-button'+(p==='main'?' active-green':'');b.textContent='MAIN';b.onclick=()=>parent.UI.selectAppMode('view');f.appendChild(b)"
+if np.count(main_code) != 1:
+    raise SystemExit(f'MAIN button removal: expected 1 match, found {np.count(main_code)}')
+np = np.replace(main_code, '', 1)
 
 # Ensure the requested removals are real DOM removals, not merely hidden UI.
 if "h.className='detail-unit-header'" in np:
