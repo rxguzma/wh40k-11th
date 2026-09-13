@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.76</title>
+  <title>WH40k 11th V31.77</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.76; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.77; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.77
+    Scope: Remove VP total from the staged New Edit title contract. New Edit title line three now contains only active Disposition and roster points, for example “Priority Assets - 1995 pts”. The temporary Old Edit/model -> New Edit bridge no longer calculates or passes VP for this title. New View remains intentionally unlinked from New Edit and otherwise unchanged.
+    Risk areas: New Edit staged title data only. Unit data, Weapons, Old Edit behavior, New View behavior, Cards, persistence, CSV data, Waha routing, and Probable are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.76
     Scope: Stage the complete current New View data contract inside the separate New Edit page without linking New View to it yet. New Edit now copies from the existing Old Edit/model source and visibly renders the dynamic roster header, Unit count/profile stats, Waha/core-ability detail, and Weapon rows with stats, Tags, and scope for the first two Units. Unit detail/Weapon data is inspectable by opening a Unit in New Edit. New Edit stores those copied Unit records in its own unitDataByIndex array plus a local newEditHeaderData record and exposes both for the later linking phase. New View is deliberately restored to its existing legacy/model Unit source for this phase and its visible behavior is otherwise unchanged.
     Risk areas: New Edit staged data/rendering plus temporary New View source restoration only. No Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, or unrelated UI is changed.
@@ -115,11 +121,6 @@
     Risk areas: Second-press Edit routing and the new separate Edit screen only. Existing Edit content/functionality, new View content/functionality, Cards, roster data, persistence, Waha routing, Weapons, combat behavior, and CSV data remain unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.72
-    Scope: Make Edit use the same two-press navigation pattern as View. From canonical View, the first Edit press opens the existing/legacy Edit exactly as before. Pressing Edit again while Edit is already active opens the new blank Edit landing page created in V31.71. The new Edit page layout, 16-column 26px grid, formatting, header, Grid toggle, and intentionally blank content are unchanged. EDIT from the new View no longer jumps directly to the new Edit page.
-    Risk areas: App-mode Edit button routing only. Existing Edit implementation, new Edit layout, alternate View layout, Cards, roster data, persistence, Waha routing, Weapons, combat behavior, and CSV data remain unchanged.
-  -->
 
 
 
@@ -5946,7 +5947,6 @@ function refreshNewEditHeaderFromLegacy(){
     detachments:String(data.detachments||&#x27;&#x27;),
     disposition:String(data.disposition||&#x27;&#x27;),
     points:Number(data.points)||0,
-    vp:Number(data.vp)||0,
     summaryRest:String(data.summaryRest||&#x27;&#x27;)
   }:null;
   const name=grid.querySelector(&#x27;.top-roster-name&#x27;);
@@ -8505,7 +8505,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.76";
+    const APP_VERSION = "31.77";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12916,14 +12916,12 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         ? requestedOverride
         : rosterDisposition;
       const points = getRosterPoints(roster);
-      const vp = getCardsTotalVpForRoster(roster);
       return {
         rosterName: String(roster.name || "").trim() || "Army",
         detachments: detachmentNames.join(" - "),
         disposition: selectedDisposition || (detachmentNames.length ? "Disposition?" : ""),
         points,
-        vp,
-        summaryRest: `- ${points} pts - ${vp} VPs`
+        summaryRest: `- ${points} pts`
       };
     };
 
@@ -30120,7 +30118,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.76',
+        version: 'V31.77',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
