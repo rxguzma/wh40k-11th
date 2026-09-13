@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.61 selected and inactive visual states retry
+      - name: Build V31.61 selected and inactive visual states retry 2
         run: python3 scripts/patch_html_v31_61.py
 
       - name: Validate and generate release history
