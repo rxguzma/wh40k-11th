@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.83</title>
+  <title>WH40k 11th V31.84</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.83; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.84; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.84
+    Scope: Make Weapon Tag boxes content-sized in New View and New Edit instead of assigning fixed grid-cell spans per Tag. Tag rows now lay out left-to-right with the existing gap, height, padding, typography, colors, and one-line labels; short Tags remain compact and long Tags expand enough to display their full text. The live Weapon Tag renderer no longer forces grid display, and the authored placeholder Tag builder no longer applies per-Tag gridColumn spans. No Weapon data, Tag data, filtering, selection, profile, roster, Cards, persistence, or Probable behavior changes.
+    Risk areas: New View/New Edit Weapon Tag row layout only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.83
     Scope: Fix the V31.82 Unit detail-row width regression in New Edit and New View. Hiding singleton x1 in New View no longer causes the remaining Unit/core tag box to stretch across the vacated row. Quantity remains a fixed two-cell box when shown, each Unit/core tag remains its normal fixed three-cell standard box, and Waha remains the final fixed three-cell standard box. Detail boxes stay left-aligned in sequence. No data-source, singleton-count, Waha action, Weapon, title, or legacy migration behavior changes.
     Risk areas: New Edit/New View Unit detail-row box sizing only.
@@ -115,11 +121,6 @@
     Risk areas: New View title/header linkage only. New Edit's temporary upstream Old Edit/model feed, New View Unit/Weapon linkage, Cards scoring, persistence, CSV data, Waha routing, and Probable are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.79
-    Scope: Remove the remaining VP value from the legacy/global title renderer. Its title points string now contains roster points only, preventing Cards VP from appearing behind or alongside the New View title. New View title data remains sourced from New Edit as established in V31.78. No Unit/Weapon linkage changes are made.
-    Risk areas: Global title points text only. New View/New Edit title linkage, Unit/Weapon data sources, Cards scoring itself, persistence, CSV data, Waha routing, and Probable are unchanged.
-  -->
 
 
 
@@ -5374,7 +5375,7 @@
 .detail-deep-strike{grid-column:4/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;width:calc(100% - var(--gap));height:var(--std);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap}
 .weapon-header,.weapon-row,.weapon-tags{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.weapon-header{grid-row:9;border-top:1px solid var(--border)}.weapon-header-label,.weapon-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.weapon-name{grid-column:1/span 8;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wr1{grid-column:9}.wr2{grid-column:10/span 2}.wr3{grid-column:12}.wr4{grid-column:13}.wr5{grid-column:14}.wr6{grid-column:15/span 2}
 .weapon-row-1{grid-row:10}.weapon-tags-1{grid-row:11}.weapon-row-2{grid-row:12}.weapon-tags-2{grid-row:13}.weapon-row-3{grid-row:14}.weapon-tags-3{grid-row:15}.weapon-row-4{grid-row:16}.weapon-tags-4{grid-row:17}.weapon-row-5{grid-row:18}.weapon-tags-5{grid-row:19}
-.weapon-tags{min-height:var(--cell);grid-template-columns:repeat(16,var(--cell));padding:0;overflow:hidden}.weapon-tag{height:var(--std);width:calc(100% - var(--gap));justify-self:center;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
+.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
 .sample-button-standard{grid-column:2/span 3;grid-row:33;z-index:3;align-self:center;justify-self:center}.sample-button-green{grid-column:2/span 2;grid-row:34;z-index:3;align-self:center;justify-self:center;background:var(--green);border-color:var(--greenborder)}.font-sample{grid-column:2/span 8;z-index:3;display:flex;align-items:center;color:var(--text);font-family:Roboto,Arial,sans-serif;font-weight:700;white-space:nowrap}.font-sample-title{grid-row:35;font-size:var(--title)}.font-sample-body{grid-row:36;font-size:var(--body)}.font-sample-meta{grid-row:37;font-size:var(--meta)}
 .version-bar{width:min(416px,100%);margin:8px auto 0;padding:8px;display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;border:1px solid var(--border);background:var(--card)}.version-label{min-width:0;font-size:var(--body);font-weight:900}.version-button{min-width:72px;height:40px;padding:0 10px;border:1px solid var(--btnborder);border-radius:8px;background:var(--btn);color:var(--text);font:900 13px Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.version-button:disabled{opacity:.5}
 
@@ -5441,7 +5442,7 @@ function addExpandedUnitMock(f){
     [&#x27;weapon-tags-4&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;EXTRA ATTACKS&#x27;,4,5]]],
     [&#x27;weapon-tags-5&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;TWIN-LINKED&#x27;,4,4]]]
   ];
-  tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t,start,span])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;x.style.gridColumn=start+&#x27;/span &#x27;+span;r.appendChild(x)});f.appendChild(r)});
+  tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;r.appendChild(x)});f.appendChild(r)});
 }
 
 
@@ -5582,7 +5583,7 @@ function syncWeaponLayout(){
       weaponRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
       if(tagRow&amp;&amp;tagRow.dataset.liveAvailable===&#x27;true&#x27;){
         tagRow.style.gridRow=String(nextRow++);
-        tagRow.style.display=&#x27;grid&#x27;;
+        tagRow.style.display=&#x27;flex&#x27;;
         tagRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
       }
     });
@@ -5698,7 +5699,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 .detail-deep-strike{grid-column:4/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;width:calc(100% - var(--gap));height:var(--std);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap}
 .weapon-header,.weapon-row,.weapon-tags{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.weapon-header{grid-row:9;border-top:1px solid var(--border)}.weapon-header-label,.weapon-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.weapon-name{grid-column:1/span 8;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wr1{grid-column:9}.wr2{grid-column:10/span 2}.wr3{grid-column:12}.wr4{grid-column:13}.wr5{grid-column:14}.wr6{grid-column:15/span 2}
 .weapon-row-1{grid-row:10}.weapon-tags-1{grid-row:11}.weapon-row-2{grid-row:12}.weapon-tags-2{grid-row:13}.weapon-row-3{grid-row:14}.weapon-tags-3{grid-row:15}.weapon-row-4{grid-row:16}.weapon-tags-4{grid-row:17}.weapon-row-5{grid-row:18}.weapon-tags-5{grid-row:19}
-.weapon-tags{min-height:var(--cell);grid-template-columns:repeat(16,var(--cell));padding:0;overflow:hidden}.weapon-tag{height:var(--std);width:calc(100% - var(--gap));justify-self:center;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
+.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
 .sample-button-standard{grid-column:2/span 3;grid-row:33;z-index:3;align-self:center;justify-self:center}.sample-button-green{grid-column:2/span 2;grid-row:34;z-index:3;align-self:center;justify-self:center;background:var(--green);border-color:var(--greenborder)}.font-sample{grid-column:2/span 8;z-index:3;display:flex;align-items:center;color:var(--text);font-family:Roboto,Arial,sans-serif;font-weight:700;white-space:nowrap}.font-sample-title{grid-row:35;font-size:var(--title)}.font-sample-body{grid-row:36;font-size:var(--body)}.font-sample-meta{grid-row:37;font-size:var(--meta)}
 .version-bar{width:min(416px,100%);margin:8px auto 0;padding:8px;display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;border:1px solid var(--border);background:var(--card)}.version-label{min-width:0;font-size:var(--body);font-weight:900}.version-button{min-width:72px;height:40px;padding:0 10px;border:1px solid var(--btnborder);border-radius:8px;background:var(--btn);color:var(--text);font:900 13px Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.version-button:disabled{opacity:.5}
 
@@ -5765,7 +5766,7 @@ function addExpandedUnitMock(f){
     [&#x27;weapon-tags-4&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;EXTRA ATTACKS&#x27;,4,5]]],
     [&#x27;weapon-tags-5&#x27;,[[&#x27;CLEAVE 1&#x27;,1,3],[&#x27;TWIN-LINKED&#x27;,4,4]]]
   ];
-  tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t,start,span])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;x.style.gridColumn=start+&#x27;/span &#x27;+span;r.appendChild(x)});f.appendChild(r)});
+  tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;r.appendChild(x)});f.appendChild(r)});
 }
 
 
@@ -5906,7 +5907,7 @@ function syncWeaponLayout(){
       weaponRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
       if(tagRow&amp;&amp;tagRow.dataset.liveAvailable===&#x27;true&#x27;){
         tagRow.style.gridRow=String(nextRow++);
-        tagRow.style.display=&#x27;grid&#x27;;
+        tagRow.style.display=&#x27;flex&#x27;;
         tagRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
       }
     });
@@ -8542,7 +8543,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.83";
+    const APP_VERSION = "31.84";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30159,7 +30160,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.83',
+        version: 'V31.84',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
