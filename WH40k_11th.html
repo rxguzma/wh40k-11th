@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.58</title>
+  <title>WH40k 11th V31.59</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.58; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.59; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.59
+    Scope: Correct alternate View Weapon font behavior. When a Weapon is selected, only the inactive Weapon fonts use the existing muted treatment. The selected Weapon keeps its normal colors. When no Weapon is selected, all Weapon fonts use their normal colors. No selection logic, ordering, filtering, compact expansion, or live data wiring changed.
+    Risk areas: Alternate View Weapon font color only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.58
     Scope: In alternate View, when a Weapon is selected, its Weapon name and stat values use the existing active-green font color. Other visible Weapons remain present but their Weapon name/stat text is reduced from 75% to 50% opacity. Existing gray treatment for non-selected Weapon Tag text remains unchanged. Weapon selection ordering, row-10 promotion, filtering, compact expansion, and live data wiring are unchanged.
     Risk areas: Alternate View Weapon selected/muted font styling only. Unit styling, Waha, View/Edit/Cards navigation, roster persistence, and combat behavior are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View Weapon filtering, Weapon selection presentation, and dynamic expansion height only. Live Weapon/Waha data, canonical View/Edit/Cards, roster persistence, and combat behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.54
-    Scope: Move the alternate View Weapon stat header from row 11 to row 9. Preserve the expanded-row order by moving Weapon 1 from row 9 to row 10 and its tags from row 10 to row 11. All later Nazdreg rows remain in their existing positions, and the true expand/collapse behavior is unchanged.
-    Risk areas: Alternate View Nazdreg expanded rows 9-11 only. Live data wiring, Waha, filters, downstream expansion, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5366,7 +5367,6 @@
 .detail-waha,.detail-deep-strike,.weapon-header,.weapon-row-1,.weapon-tags-1,.weapon-row-2,.weapon-tags-2,.weapon-row-3,.weapon-tags-3,.weapon-row-4,.weapon-tags-4,.weapon-row-5,.weapon-tags-5{display:none}
 
 .weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}
-.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}
 .weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}
 .unit-keyword.keyword-muted{color:rgba(241,164,88,.5)}
 &lt;/style&gt;
@@ -8032,7 +8032,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.58";
+    const APP_VERSION = "31.59";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29571,7 +29571,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.58',
+        version: 'V31.59',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
