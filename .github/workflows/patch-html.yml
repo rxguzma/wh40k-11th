@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.62 full detail-row inactive styling
-        run: python3 scripts/patch_html_v31_62.py
+      - name: Build V31.63 Edit-order primary unit wiring
+        run: python3 scripts/patch_html_v31_63.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.62 full detail-row inactive styling"
+          git commit -m "Build V31.63 Edit-order primary unit wiring"
           git push origin HEAD:main
