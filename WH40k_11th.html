@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.96</title>
+  <title>WH40k 11th V31.97</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.96; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.97; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.97
+    Scope: Integrate New View Version / Update / Download into the actual 16-column sheet grid instead of rendering them inside a separate nested strip. The wrapper, strip background, and overlay z-index are removed. Version is a direct main-grid item at A:H, Update at I:L, and Download at M:P. Their grid row remains exactly five rows after the last rendered Unit and automatically follows Unit row changes. When Version is opened, the ten retained release buttons are also direct main-grid items across two rows of five rather than children of an overlay panel. Existing version, update, retained-release, and download functions remain unchanged.
+    Risk areas: New View version-control presentation only. Existing parent version engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.96
     Scope: Correct New View Version placement and restore the omitted Download action. The Version / Update / Download strip is no longer fixed near the top. In normal/collapsed View it is positioned exactly five grid rows after the last rendered Unit row and automatically follows Unit additions/removals/reordering. The existing main-button row is also respected so an expanded final Unit cannot overlap the strip. Version spans A:H and toggles retained history; Update spans I:L and directly runs the existing update-to-latest path; Download spans M:P and calls the existing downloadRunningVersion path with the existing prepared URL/filename so iPhone/Safari Save/Share behavior is preserved. Retained history remains two rows of five.
     Risk areas: New View bottom version-strip placement and Download presentation only. Existing version/update/download engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.93
     Scope: Add the frozen New View snapshot behind the existing lock. Pressing Lock now copies the already-loaded New View header and ordered roster records into detached in-memory data before the lock state turns on, then rebinds Unit detail/Weapon/Ability interactions to those copied records. While locked, parent/model header and roster refresh entry points remain blocked by the V31.92 gate. If VIEW is re-rendered while still locked, its header and Unit rows are rebuilt only from the frozen snapshot. Range/Melee/Other/All and Unit open/close therefore continue to work against frozen data without requesting new roster/model data. Pressing Unlock turns the lock off, discards the snapshot, and schedules exactly one normal New View synchronization.
     Risk areas: New View in-memory roster/header state and lock/unlock transition only. Existing lock icon/placement, unified Edit behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.92
-    Scope: Connect the existing New View lock button to the first processing-freeze gate. The existing newViewHeaderLocked state is now the actual New View lock state. While VIEW is locked, both direct New View header refresh and roster refresh entry points return before parent/model access, and the normal VIEW post-render path now funnels through one refreshNewView gate. Unlocked VIEW behavior remains the same two refreshes in the same order. The unified EDIT state remains live and unchanged. This pass does not add the frozen snapshot yet and does not change Unit/filter interaction behavior.
-    Risk areas: New View refresh entry points and VIEW/EDIT mode tracking only. Existing lock icon/placement, New View UI layout, unified Edit rows, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5394,15 +5394,12 @@
 .draft-grid.grid-on{border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25)}
 .draft-grid.grid-on .grid-cell{visibility:visible}
 .version-bar{display:none!important}
-.new-view-version-row{grid-column:1/span 16;z-index:130;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--bg)}
-.new-view-version-toggle{grid-column:1/span 8;justify-self:center;justify-content:space-between}
+.new-view-version-toggle{grid-column:1/span 8;justify-self:stretch;align-self:center;justify-content:space-between}
 .new-view-version-current{color:var(--muted)}
-.new-view-update-button{grid-column:9/span 4;justify-self:center}
-.new-view-download-button{grid-column:13/span 4;justify-self:center;text-decoration:none}
+.new-view-update-button{grid-column:9/span 4;justify-self:stretch;align-self:center}
+.new-view-download-button{grid-column:13/span 4;justify-self:stretch;align-self:center;text-decoration:none}
 .new-view-download-button[aria-disabled=&quot;true&quot;]{opacity:.5}
-.new-view-version-history{grid-column:1/span 16;z-index:130;width:100%;height:calc(var(--cell)*2);padding:1px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,var(--std));gap:var(--gap);background:var(--card);border:1px solid var(--border)}
-.new-view-version-history[hidden]{display:none!important}
-.new-view-version-option{width:100%;padding:0 2px;font-size:11px}
+.new-view-version-option{justify-self:stretch;align-self:center;width:100%;padding:0 2px;font-size:11px}
 .new-view-version-option:disabled{opacity:1}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3}
@@ -5500,44 +5497,45 @@ function syncNewViewLockButton(button){
 }
 let newViewVersionHistoryOpen=false;
 let newViewVersionObserver=null;
+const NEW_VIEW_VERSION_HISTORY_COLUMNS=[&#x27;1 / span 3&#x27;,&#x27;4 / span 3&#x27;,&#x27;7 / span 4&#x27;,&#x27;11 / span 3&#x27;,&#x27;14 / span 3&#x27;];
 function readNewViewVersionState(){
   try{
     if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.getVersionUiState===&#x27;function&#x27;)return parent.UI.getVersionUiState()||{};
   }catch(_){}
   return {};
 }
-function positionNewViewVersionControls(){
-  const row=grid.querySelector(&#x27;.new-view-version-row&#x27;);
-  const history=grid.querySelector(&#x27;.new-view-version-history&#x27;);
-  if(!row)return 0;
+function getNewViewVersionRow(){
   let lastUnitRow=0;
   grid.querySelectorAll(&#x27;.view-unit-row.dynamic-roster-row&#x27;).forEach(unit=&gt;{
     const value=Number(unit.style.gridRow||0);
     if(Number.isFinite(value))lastUnitRow=Math.max(lastUnitRow,value);
   });
   const firstUnitRow=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
-  const unitBasedRow=(lastUnitRow||(firstUnitRow-1))+5;
-  const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
-  const mainButtonRow=mainButton?Number(mainButton.style.gridRow||0):0;
-  const versionRow=Math.max(unitBasedRow,Number.isFinite(mainButtonRow)&amp;&amp;mainButtonRow&gt;0?mainButtonRow+3:0);
+  return (lastUnitRow||(firstUnitRow-1))+5;
+}
+function positionNewViewVersionControls(){
+  const versionRow=getNewViewVersionRow();
   const rowValue=String(versionRow);
-  if(row.style.gridRow!==rowValue)row.style.gridRow=rowValue;
-  if(history){
-    const historyValue=String(versionRow+1)+&#x27; / span 2&#x27;;
-    if(history.style.gridRow!==historyValue)history.style.gridRow=historyValue;
-  }
+  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
+  const update=grid.querySelector(&#x27;.new-view-update-button&#x27;);
+  const download=grid.querySelector(&#x27;.new-view-download-button&#x27;);
+  [version,update,download].forEach(control=&gt;{if(control&amp;&amp;control.style.gridRow!==rowValue)control.style.gridRow=rowValue;});
+  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach((button,index)=&gt;{
+    button.style.gridRow=String(versionRow+1+Math.floor(index/5));
+    button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
+  });
   return versionRow;
 }
 function newViewVersionMutationTouchesLayout(mutation){
   if(mutation.type===&#x27;attributes&#x27;){
     const target=mutation.target;
-    return Boolean(target&amp;&amp;target.classList&amp;&amp;(target.classList.contains(&#x27;dynamic-roster-row&#x27;)||target.classList.contains(&#x27;top-main-button&#x27;)));
+    return Boolean(target&amp;&amp;target.classList&amp;&amp;target.classList.contains(&#x27;dynamic-roster-row&#x27;));
   }
   if(mutation.type!==&#x27;childList&#x27;)return false;
   const nodes=[...mutation.addedNodes,...mutation.removedNodes];
   return nodes.some(node=&gt;node&amp;&amp;node.nodeType===1&amp;&amp;(
-    (node.classList&amp;&amp;(node.classList.contains(&#x27;dynamic-roster-row&#x27;)||node.classList.contains(&#x27;top-main-button&#x27;))) ||
-    (typeof node.querySelector===&#x27;function&#x27;&amp;&amp;Boolean(node.querySelector(&#x27;.dynamic-roster-row,.top-main-button&#x27;)))
+    (node.classList&amp;&amp;node.classList.contains(&#x27;dynamic-roster-row&#x27;)) ||
+    (typeof node.querySelector===&#x27;function&#x27;&amp;&amp;Boolean(node.querySelector(&#x27;.dynamic-roster-row&#x27;)))
   ));
 }
 function ensureNewViewVersionObserver(){
@@ -5547,16 +5545,17 @@ function ensureNewViewVersionObserver(){
   });
   newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
 }
+function clearNewViewVersionHistoryButtons(){
+  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach(button=&gt;button.remove());
+}
 function renderNewViewVersionHistory(){
-  const panel=grid.querySelector(&#x27;.new-view-version-history&#x27;);
-  if(!panel)return;
-  panel.hidden=!newViewVersionHistoryOpen;
-  panel.replaceChildren();
+  clearNewViewVersionHistoryButtons();
   if(!newViewVersionHistoryOpen)return;
   const state=readNewViewVersionState();
   const current=String(state.current||&#x27;&#x27;);
   const entries=Array.isArray(state.entries)?state.entries.slice(0,10):[];
-  entries.forEach(entry=&gt;{
+  const versionRow=getNewViewVersionRow();
+  entries.forEach((entry,index)=&gt;{
     const version=String(entry&amp;&amp;entry.version||&#x27;&#x27;);
     if(!version)return;
     const b=document.createElement(&#x27;button&#x27;);
@@ -5564,14 +5563,17 @@ function renderNewViewVersionHistory(){
     b.className=&#x27;button-standard new-view-version-option&#x27;+(version===current?&#x27; active-green&#x27;:&#x27;&#x27;);
     b.textContent=&#x27;v&#x27;+version;
     b.disabled=version===current||Boolean(state.busy);
+    b.style.gridRow=String(versionRow+1+Math.floor(index/5));
+    b.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
     b.onclick=event=&gt;{event.stopPropagation();if(b.disabled)return;try{parent.UI.loadGithubVersion(version)}catch(_){}};
-    panel.appendChild(b);
+    grid.appendChild(b);
   });
 }
 async function toggleNewViewVersionHistory(){
   newViewVersionHistoryOpen=!newViewVersionHistoryOpen;
   renderNewViewVersionHistory();
-  positionNewViewVersionControls();
+  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
+  if(version)version.setAttribute(&#x27;aria-expanded&#x27;,newViewVersionHistoryOpen?&#x27;true&#x27;:&#x27;false&#x27;);
   if(!newViewVersionHistoryOpen)return;
   try{
     if(parent&amp;&amp;parent.UI&amp;&amp;typeof parent.UI.refreshGithubVersionHistory===&#x27;function&#x27;)await parent.UI.refreshGithubVersionHistory();
@@ -5580,8 +5582,6 @@ async function toggleNewViewVersionHistory(){
 }
 function addNewViewVersionControls(f){
   const state=readNewViewVersionState();
-  const row=document.createElement(&#x27;div&#x27;);
-  row.className=&#x27;new-view-version-row&#x27;;
   const version=document.createElement(&#x27;button&#x27;);
   version.type=&#x27;button&#x27;;
   version.className=&#x27;button-standard new-view-version-toggle&#x27;;
@@ -5592,7 +5592,9 @@ function addNewViewVersionControls(f){
   current.className=&#x27;new-view-version-current&#x27;;
   current.textContent=&#x27;v&#x27;+String(state.current||&#x27;&#x27;);
   version.append(label,current);
-  version.onclick=event=&gt;{event.stopPropagation();toggleNewViewVersionHistory();version.setAttribute(&#x27;aria-expanded&#x27;,newViewVersionHistoryOpen?&#x27;true&#x27;:&#x27;false&#x27;)};
+  version.onclick=event=&gt;{event.stopPropagation();toggleNewViewVersionHistory()};
+  f.appendChild(version);
+
   const update=document.createElement(&#x27;button&#x27;);
   update.type=&#x27;button&#x27;;
   update.className=&#x27;button-standard new-view-update-button&#x27;;
@@ -5607,6 +5609,8 @@ function addNewViewVersionControls(f){
     }catch(_){}
     finally{update.disabled=false;renderNewViewVersionHistory()}
   };
+  f.appendChild(update);
+
   const download=document.createElement(&#x27;a&#x27;);
   download.className=&#x27;button-standard new-view-download-button&#x27;;
   download.textContent=&#x27;Download&#x27;;
@@ -5623,12 +5627,8 @@ function addNewViewVersionControls(f){
     }catch(_){}
     return true;
   };
-  row.append(version,update,download);
-  f.appendChild(row);
-  const history=document.createElement(&#x27;div&#x27;);
-  history.className=&#x27;new-view-version-history&#x27;;
-  history.hidden=true;
-  f.appendChild(history);
+  f.appendChild(download);
+
   ensureNewViewVersionObserver();
   positionNewViewVersionControls();
   requestAnimationFrame(positionNewViewVersionControls);
@@ -8682,7 +8682,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.96";
+    const APP_VERSION = "31.97";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30349,7 +30349,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.96',
+        version: 'V31.97',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
