@@ -14,8 +14,6 @@ def once(old, new, label):
     text = text.replace(old, new, 1)
 
 
-# Sequential release metadata. This patch is intentionally based on the current
-# V31.105 unified View/Edit baseline so the corrected mode/grid controls survive.
 once('<title>WH40k 11th V31.105</title>', '<title>WH40k 11th V31.106</title>', 'title')
 once('The current baseline is WH40k_11th_V31.105;', 'The current baseline is WH40k_11th_V31.106;', 'baseline')
 once('const APP_VERSION = "31.105";', 'const APP_VERSION = "31.106";', 'APP_VERSION')
@@ -42,14 +40,16 @@ for required in [
     if required not in view_np:
         raise SystemExit('V31.106 baseline contract missing: ' + required)
 
-old_observer_state = 'let newViewVersionObserver=null;'
-new_observer_state = '''let newViewVersionObserver=null;
+once(
+    'let newViewVersionObserver=null;',
+    '''let newViewVersionObserver=null;
 let newViewVersionObserverActive=false;
 let newViewVersionRafId=0;
 let newViewRefreshRafId=0;
 let newViewLockCounterBaseline=null;
-const newViewBackgroundCounters={observerCallbacks:0,versionLayoutPasses:0,liveRefreshes:0};'''
-once(old_observer_state, new_observer_state, 'New View background state')
+const newViewBackgroundCounters={observerCallbacks:0,versionLayoutPasses:0,liveRefreshes:0};''',
+    'New View background state',
+)
 
 once(
     'function positionNewViewVersionControls(){',
@@ -143,9 +143,11 @@ for old, new, label in [
 
 once('requestAnimationFrame(positionNewViewVersionControls);', 'scheduleNewViewVersionPosition();', 'version position RAF scheduler')
 
-old_refresh = 'function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}'
-new_refresh = 'function refreshNewView(){if(newViewProcessingLocked())return false;newViewBackgroundCounters.liveRefreshes++;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}'
-once(old_refresh, new_refresh, 'live View refresh counter')
+once(
+    'function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}',
+    'function refreshNewView(){if(newViewProcessingLocked())return false;newViewBackgroundCounters.liveRefreshes++;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}',
+    'live View refresh counter',
+)
 
 once(
     'else if(!renderCachedView())requestAnimationFrame(refreshNewView)',
@@ -153,15 +155,17 @@ once(
     'View fallback refresh scheduler',
 )
 
-old_lock_finish = '''  // Lock becomes true only after every prepared state is built and mounted.
+once(
+    '''  // Lock becomes true only after every prepared state is built and mounted.
   newViewHeaderLocked=true;
-  return true;'''
-new_lock_finish = '''  // Lock becomes true only after every prepared state is built and mounted.
+  return true;''',
+    '''  // Lock becomes true only after every prepared state is built and mounted.
   suspendNewViewBackgroundWork();
   newViewLockCounterBaseline=Object.assign({},newViewBackgroundCounters);
   newViewHeaderLocked=true;
-  return true;'''
-once(old_lock_finish, new_lock_finish, 'Lock background suspension')
+  return true;''',
+    'Lock background suspension',
+)
 
 old_unlock = r'''function endLockedViewPreparedMode(){
   if(!newViewHeaderLocked)return false;
@@ -190,32 +194,7 @@ if view_np.count(old_unlock) != 1:
     raise SystemExit(f'New View unlock block: expected 1 match, found {view_np.count(old_unlock)}')
 view_np = view_np.replace(old_unlock, new_unlock, 1)
 
-text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
-
-note = '''  <!--
-    CHANGE NOTE - WH40k_11th_V31.106
-    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
-    Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
-  -->
-
-'''
-mark = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.105\n'
-if mark in text:
-    text = text.replace(mark, note + mark, 1)
-elif '</body>' in text:
-    text = text.replace('</body>', note + '</body>', 1)
-else:
-    raise SystemExit('release note insertion point missing')
-
-notes = list(re.finditer(r'\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n', text, re.S))
-for note_match in reversed(notes[5:]):
-    text = text[:note_match.start()] + text[note_match.end():]
-
-vm = view_pat.search(text)
-if not vm:
-    raise SystemExit('Unified New View/Edit iframe missing after writeback')
-final_view = html.unescape(vm.group(2))
-
+# Validate the transformed in-memory iframe before encoding it back into srcdoc.
 required_view = [
     'let newViewVersionObserverActive=false;',
     'let newViewVersionRafId=0;',
@@ -247,26 +226,22 @@ required_view = [
     'function showLockedViewPreparedState(unitIndex,mode)',
 ]
 for value in required_view:
-    if value not in final_view:
-        raise SystemExit('V31.106 acceptance failed: ' + value)
+    if value not in view_np:
+        raise SystemExit('V31.106 transformed iframe acceptance failed: ' + value)
 
 for forbidden in [
     'requestAnimationFrame(positionNewViewVersionControls);',
     'else if(!renderCachedView())requestAnimationFrame(refreshNewView)',
 ]:
-    if forbidden in final_view:
+    if forbidden in view_np:
         raise SystemExit('V31.106 untracked locked-capable background path remains: ' + forbidden)
 
-# Audit the unified iframe. The four setTimeout calls are action-scoped legacy
-# update/download timers: one request abort timeout plus three button/blob cleanup
-# delays. They are not recurring/idle work, and both action entry points are now
-# lock-gated above. No recurring timer, idle callback, or ResizeObserver exists.
 audit_counts = {
-    'MutationObserver': final_view.count('new MutationObserver('),
-    'ResizeObserver': final_view.count('new ResizeObserver('),
-    'setInterval': final_view.count('setInterval('),
-    'setTimeout': final_view.count('setTimeout('),
-    'requestIdleCallback': final_view.count('requestIdleCallback('),
+    'MutationObserver': view_np.count('new MutationObserver('),
+    'ResizeObserver': view_np.count('new ResizeObserver('),
+    'setInterval': view_np.count('setInterval('),
+    'setTimeout': view_np.count('setTimeout('),
+    'requestIdleCallback': view_np.count('requestIdleCallback('),
 }
 print('V31.106 New View background audit:', audit_counts)
 if audit_counts['MutationObserver'] != 1:
@@ -276,6 +251,37 @@ if audit_counts['setTimeout'] != 4:
 for primitive in ['ResizeObserver','setInterval','requestIdleCallback']:
     if audit_counts[primitive]:
         raise SystemExit(f'V31.106 unhandled recurring New View primitive remains: {primitive} x{audit_counts[primitive]}')
+
+# Encode the verified iframe back into the app.
+text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
+
+# Verify unambiguous plain markers survived the srcdoc writeback itself.
+for marker in [
+    'let newViewVersionObserverActive=false;',
+    'function suspendNewViewBackgroundWork()',
+    'function getNewViewLockDiagnostics()',
+]:
+    if marker not in text:
+        raise SystemExit('V31.106 encoded iframe marker missing: ' + marker)
+
+note = '''  <!--
+    CHANGE NOTE - WH40k_11th_V31.106
+    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
+    Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
+  -->
+
+'''
+mark = '  <!--\n    CHANGE NOTE - WH40k_11th_V31.105\n'
+if mark in text:
+    text = text.replace(mark, note + mark, 1)
+elif '</body>' in text:
+    text = text.replace('</body>', note + '</body>', 1)
+else:
+    raise SystemExit('release note insertion point missing')
+
+notes = list(re.finditer(r'\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n', text, re.S))
+for note_match in reversed(notes[5:]):
+    text = text[:note_match.start()] + text[note_match.end():]
 
 required_outer = [
     '<title>WH40k 11th V31.106</title>',
