@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.67 data-driven core ability row
-        run: python3 scripts/patch_html_v31_67.py
+      - name: Build V31.68 live unit count wiring
+        run: python3 scripts/patch_html_v31_68.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.67 data-driven core ability row"
+          git commit -m "Build V31.68 live unit count wiring"
           git push origin HEAD:main
