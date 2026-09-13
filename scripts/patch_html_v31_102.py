@@ -125,10 +125,11 @@ for required in [
 for forbidden in [
     'padding:0 4px;',
     "font:700 var(--meta)/1 'Roboto Condensed',Roboto,Arial,sans-serif;",
-    "x.style.gridColumn=start+'/span '+span",
 ]:
-    if forbidden in final_view:
-        raise SystemExit('V31.102 retained obsolete Weapon Tag behavior: ' + forbidden)
+    if forbidden in final_tag:
+        raise SystemExit('V31.102 retained obsolete Weapon Tag base styling: ' + forbidden)
+if "x.style.gridColumn=start+'/span '+span" in final_view:
+    raise SystemExit('V31.102 restored fixed-span Weapon Tag behavior')
 
 for required in [
     '<title>WH40k 11th V31.102</title>',
