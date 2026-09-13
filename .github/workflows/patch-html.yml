@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_100.py'
+      - 'scripts/patch_html_v31_100_fast.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
           ref: main
 
       - name: Build V31.100 fast local View Edit toggle
-        run: python3 scripts/patch_html_v31_100.py
+        run: python3 scripts/patch_html_v31_100_fast.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
