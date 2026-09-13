@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.62</title>
+  <title>WH40k 11th V31.63</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.62; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.63; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.63
+    Scope: Remove Nazdreg-specific first-row lookup from alternate View. The first wired View row now binds to the first real unit returned in current Edit/roster order, including that unit's live name, stats, Waha link, Weapons, filtering, expansion, and Weapon-selection behavior. Reordering units in Edit therefore changes which unit is shown in the first wired row. No additional unit rows are wired in this version.
+    Risk areas: Alternate View first-unit data selection only. Existing first-row interaction/styling, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.62
     Scope: Apply Weapon-selection inactive styling to the entire Nazdreg detail row, not only Deep Strike. When a Weapon is selected, both Waha and Deep Strike text use muted gray at 50% while their button/tag shells, backgrounds and borders remain unchanged. Clearing selection restores their normal text. Existing selected Weapon green name/stats and 50% inactive Weapon name/stats and Tag text remain unchanged.
     Risk areas: Alternate View detail-row and Weapon-selection text styling only. Layout, filtering, expansion, live data, links, and canonical View/Edit/Cards are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View Weapon font color only.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.58
-    Scope: In alternate View, when a Weapon is selected, its Weapon name and stat values use the existing active-green font color. Other visible Weapons remain present but their Weapon name/stat text is reduced from 75% to 50% opacity. Existing gray treatment for non-selected Weapon Tag text remains unchanged. Weapon selection ordering, row-10 promotion, filtering, compact expansion, and live data wiring are unchanged.
-    Risk areas: Alternate View Weapon selected/muted font styling only. Unit styling, Waha, View/Edit/Cards navigation, roster persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5529,11 +5530,11 @@ function refreshNazdregFromParent(){
   const row=grid.querySelector(&#x27;.view-unit-row-first&#x27;);
   if(!row)return false;
   let data=null;
-  try{data=parent&amp;&amp;typeof parent.getAlternateViewNazdregData===&#x27;function&#x27;?parent.getAlternateViewNazdregData():null}catch(_){data=null}
+  try{data=parent&amp;&amp;typeof parent.getAlternateViewPrimaryUnitData===&#x27;function&#x27;?parent.getAlternateViewPrimaryUnitData():null}catch(_){data=null}
   if(!data){nazdregOpen=false;selectedWeaponIndex=null;row.style.display=&#x27;none&#x27;;syncNazdregDetailVisibility();return false}
   row.style.display=&#x27;grid&#x27;;
   const name=row.querySelector(&#x27;.view-unit-name&#x27;);
-  if(name)name.textContent=String(data.name||&#x27;Nazdreg&#x27;);
+  if(name)name.textContent=String(data.name||&#x27;&#x27;);
   [data.m,data.t,data.sv,data.w,data.ld,data.oc].forEach((value,index)=&gt;{const cell=row.querySelector(&#x27;.s&#x27;+(index+1));if(cell)cell.textContent=String(value??&#x27;&#x27;)});
   const waha=grid.querySelector(&#x27;.detail-waha&#x27;);
   if(waha){
@@ -5574,7 +5575,7 @@ function refreshNazdregFromParent(){
   return true;
 }
 window.refreshNazdregFromParent=refreshNazdregFromParent;
-function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,[&#x27;5&quot;&#x27;,&#x27;6&#x27;,&#x27;2+/5++&#x27;,&#x27;3&#x27;,&#x27;7+&#x27;,&#x27;1&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);addEditUnit(f,&#x27;edit-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,&#x27;175&#x27;);addEditUnit(f,&#x27;edit-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,&#x27;185&#x27;)}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;)requestAnimationFrame(refreshNazdregFromParent)}
+function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,[&#x27;5&quot;&#x27;,&#x27;6&#x27;,&#x27;2+/5++&#x27;,&#x27;3&#x27;,&#x27;7+&#x27;,&#x27;1&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);addEditUnit(f,&#x27;edit-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,&#x27;175&#x27;);addEditUnit(f,&#x27;edit-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,&#x27;185&#x27;)}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;)requestAnimationFrame(refreshNazdregFromParent)}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -8046,7 +8047,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.62";
+    const APP_VERSION = "31.63";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12391,27 +12392,17 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
-    window.getAlternateViewNazdregData = function() {
+    window.getAlternateViewPrimaryUnitData = function() {
       const roster = appEditMode && viewEditRosterDraft ? getViewEditRoster() : getActiveRoster();
       const models = getRosterEntryModels(roster);
-      const normalize = value => String(value || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "");
-      const model = models.find(item => {
-        if (!item || item.isSpacer || item.isNote || item.isDeleted || item.isMissingUnit) return false;
-        const candidates = [
-          item.displayName,
-          item.unit && item.unit.name,
-          item.entry && item.entry.unitId,
-          item.unit && item.unit.unitId
-        ].map(normalize).filter(Boolean);
-        return candidates.some(value => value === "nazdreg" || value.endsWith("nazdreg"));
-      });
+      const model = models.find(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
       if (!model) return null;
       const stats = model.stats || {};
       const entry = model.entry || (roster && Array.isArray(roster.entries) ? roster.entries.find(item => item && item.entryId === model.entryId) : null);
       const unit = model.unit || (entry ? getUnitById(entry.unitId) : null);
       const weapons = entry && unit ? getWeaponsForRosterEntry(entry, unit).filter(item => item && !item.isMissingLink) : [];
       return {
-        name: String(model.displayName || (model.unit && model.unit.name) || "Nazdreg"),
+        name: String(model.displayName || (model.unit && model.unit.name) || ""),
         m: String(stats.m ?? ""),
         t: String(stats.t ?? ""),
         sv: String(stats.sv ?? ""),
@@ -29585,7 +29576,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.62',
+        version: 'V31.63',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
