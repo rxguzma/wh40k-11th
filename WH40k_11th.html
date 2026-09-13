@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.93</title>
+  <title>WH40k 11th V31.94</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.93; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.94; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.94
+    Scope: Correct unified New View EDIT points to use the same canonical roster-model totals as Old Edit. getAlternateViewRosterRows now carries each Unit model's points.total, which already includes the selected Unit point option, active per-model point modifiers, and paid Enhancement points. In New View EDIT, column P is now a plain Edit-style numeric point value rather than a Points button/icon or guessed fallback field. The EDIT title point total is recalculated from the ordered Unit rows shown on that sheet, ignoring spacer rows, after the normal legacy title fields refresh. VIEW title behavior, the V31.92 processing lock, and the V31.93 frozen snapshot remain unchanged.
+    Risk areas: Parent ordered-row point field plus unified New View EDIT row/title point presentation only. VIEW frozen-snapshot behavior, Old Edit, New Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.93
     Scope: Add the frozen New View snapshot behind the existing lock. Pressing Lock now copies the already-loaded New View header and ordered roster records into detached in-memory data before the lock state turns on, then rebinds Unit detail/Weapon/Ability interactions to those copied records. While locked, parent/model header and roster refresh entry points remain blocked by the V31.92 gate. If VIEW is re-rendered while still locked, its header and Unit rows are rebuilt only from the frozen snapshot. Range/Melee/Other/All and Unit open/close therefore continue to work against frozen data without requesting new roster/model data. Pressing Unlock turns the lock off, discards the snapshot, and schedules exactly one normal New View synchronization.
     Risk areas: New View in-memory roster/header state and lock/unlock transition only. Existing lock icon/placement, unified Edit behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.90
     Scope: Begin the one-page View/Edit migration inside New View. VIEW and EDIT now switch locally within the same New View iframe instead of EDIT opening Old Edit. In the New View EDIT state, Range/Melee/Other/All, the Stats header, Unit profile stats, expanded details, and Weapons are not rendered. Each live Unit row shows only Move, Copy, Dead, and Points controls using the established New Edit button styling, placed in columns M, N, O, and P respectively. Move uses the existing menu/move glyph, Copy uses the existing copy glyph, Dead uses D, and Points displays the available Unit point value when present or P otherwise. These controls are presentation-only in this pass; no edit actions are migrated yet. VIEW behavior and direct Old Edit/model data sourcing remain unchanged.
     Risk areas: New View local VIEW/EDIT switching and EDIT-state Unit-row presentation only. New Edit, Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, and New View VIEW-mode Unit/Weapon behavior remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.89
-    Scope: Fix the remaining New View title refresh wiring after V31.88 removed New Edit from the data path. The parent screen-opening callback now calls refreshNewViewTitleFromLegacy instead of the retired refreshNewViewTitleFromNewEdit name, so roster name, Detachments, Disposition, and points refresh from getAlternateViewHeaderData whenever New View is opened. Unit/Weapon wiring and Old Edit routing are unchanged.
-    Risk areas: New View title/header refresh callback only.
   -->
 
 
@@ -5420,7 +5420,7 @@
 .unified-edit-unit-row .edit-unit-name{grid-column:1/span 11}
 .unified-edit-action{width:calc(var(--cell) - var(--gap));height:var(--std);align-self:center;justify-self:center;padding:0;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
 .unified-edit-action svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.4}
-.unified-edit-points{font-size:11px}
+
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5766,10 +5766,10 @@ function addUnifiedEditUnit(f,data,rowIndex){
   dead.type=&#x27;button&#x27;;dead.className=&#x27;unified-edit-action unified-edit-dead&#x27;;dead.style.gridColumn=&#x27;15&#x27;;dead.textContent=&#x27;D&#x27;;dead.setAttribute(&#x27;aria-label&#x27;,&#x27;Dead&#x27;);
   r.appendChild(dead);
 
-  const points=document.createElement(&#x27;button&#x27;);
-  points.type=&#x27;button&#x27;;points.className=&#x27;unified-edit-action unified-edit-points&#x27;;points.style.gridColumn=&#x27;16&#x27;;points.setAttribute(&#x27;aria-label&#x27;,&#x27;Points&#x27;);
-  const pointValue=data&amp;&amp;(data.points??data.pts??data.totalPoints??data.unitPoints);
-  points.textContent=pointValue===undefined||pointValue===null||pointValue===&#x27;&#x27;?&#x27;P&#x27;:String(pointValue);
+  const points=document.createElement(&#x27;div&#x27;);
+  points.className=&#x27;edit-unit-points unified-edit-points&#x27;;points.style.gridColumn=&#x27;16&#x27;;
+  const pointValue=Math.max(0,Number(data&amp;&amp;data.points)||0);
+  points.textContent=String(pointValue);
   r.appendChild(points);
 
   f.appendChild(r);
@@ -5799,12 +5799,24 @@ function refreshUnifiedEditRows(){
   });
   const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
   if(mainButton)mainButton.style.gridRow=String(cursor+1);
+  const sheetPoints=rows.reduce((sum,row)=&gt;{
+    if(!row||row.kind!==&#x27;unit&#x27;)return sum;
+    const value=Number(row.points);
+    return sum+(Number.isFinite(value)?Math.max(0,value):0);
+  },0);
+  const titlePoints=grid.querySelector(&#x27;.top-summary-rest&#x27;);
+  if(titlePoints)titlePoints.textContent=&#x27;- &#x27;+String(sheetPoints)+&#x27; pts&#x27;;
   return rows.some(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
 }
 window.refreshUnifiedEditRows=refreshUnifiedEditRows;
+function refreshUnifiedEdit(){
+  refreshNewViewTitleFromLegacy();
+  return refreshUnifiedEditRows();
+}
+window.refreshUnifiedEdit=refreshUnifiedEdit;
 
 function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
-function renderPage(p){activePageMode=p;grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f,p);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f,p);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(()=&gt;{if(newViewProcessingLocked())renderFrozenNewView();else refreshNewView()})}if(p===&#x27;edit&#x27;){requestAnimationFrame(refreshNewViewTitleFromLegacy);requestAnimationFrame(refreshUnifiedEditRows)}}
+function renderPage(p){activePageMode=p;grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f,p);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f,p);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(()=&gt;{if(newViewProcessingLocked())renderFrozenNewView();else refreshNewView()})}if(p===&#x27;edit&#x27;){requestAnimationFrame(refreshUnifiedEdit)}}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -8525,7 +8537,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.93";
+    const APP_VERSION = "31.94";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12994,7 +13006,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       return models.map(item => {
         if (item.isSpacer) return { kind: "spacer" };
         const data = window.getAlternateViewUnitData(unitIndex++);
-        return data ? Object.assign({ kind: "unit" }, data) : null;
+        return data ? Object.assign({ kind: "unit" }, data, { points: Math.max(0, Number(item.points && item.points.total) || 0) }) : null;
       }).filter(Boolean);
     };
 
@@ -30180,7 +30192,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.93',
+        version: 'V31.94',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
