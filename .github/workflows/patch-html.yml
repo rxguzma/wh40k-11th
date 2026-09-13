@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/patch_html_v31_106.py'
+      - 'scripts/run_patch_html_v31_106_fixed.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -28,7 +29,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python3 scripts/patch_html_v31_106.py 2>&1 | tee patch-v31-106.log
+          python3 scripts/run_patch_html_v31_106_fixed.py 2>&1 | tee patch-v31-106.log
 
       - name: Upload patch diagnostics
         if: always()
