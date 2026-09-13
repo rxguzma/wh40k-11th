@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.82</title>
+  <title>WH40k 11th V31.83</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.82; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.83; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.83
+    Scope: Fix the V31.82 Unit detail-row width regression in New Edit and New View. Hiding singleton x1 in New View no longer causes the remaining Unit/core tag box to stretch across the vacated row. Quantity remains a fixed two-cell box when shown, each Unit/core tag remains its normal fixed three-cell standard box, and Waha remains the final fixed three-cell standard box. Detail boxes stay left-aligned in sequence. No data-source, singleton-count, Waha action, Weapon, title, or legacy migration behavior changes.
+    Risk areas: New Edit/New View Unit detail-row box sizing only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.82
     Scope: Standardize the Unit detail line directly below the Unit name in both New Edit and New View. Quantity is now the first detail box, canonical Unit/core badges follow it, and Waha is always the last detail box. All three use one shared detail-box visual contract for height, border, radius, padding, typography, background, and spacing; only semantic text state differs. Quantity is moved out of the Unit profile row into this detail line. New Edit always shows the staged xN quantity. New View hides x1 only when the current canonical CSV/runtime point-option set contains exactly one option; x5 or any selectable/multi-option quantity remains visible. New Edit stages the new countOptionCount field from the existing Old Edit/model source, and New View continues to consume the complete Unit record only through New Edit.
     Risk areas: New Edit/New View Unit detail-row presentation and the staged Unit count-option metadata only. Title linkage, profile stats, Weapons, Weapon Tags/scope, Waha routing action, Old Edit behavior, Cards, persistence, CSV contents, and Probable are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Global title points text only. New View/New Edit title linkage, Unit/Weapon data sources, Cards scoring itself, persistence, CSV data, Waha routing, and Probable are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.78
-    Scope: Link every visible New View title/header value to the staged New Edit title record. New View roster name, selected Detachment list, active Disposition, and roster points now read only through New Edit's header contract; the old static title strings are removed from New View. New Edit refreshes its temporary Old Edit/model-fed title record on demand before returning it, so New View receives current title data even if New Edit was not opened first. This phase changes title/header linkage only: New View Unit/Weapon data remains on its existing source until separately approved. VP remains excluded from the title contract.
-    Risk areas: New View title/header data source and refresh only. Unit/Weapon linkage, Old Edit behavior, New Edit Unit data, Cards, persistence, CSV data, Waha routing, and Probable are unchanged.
-  -->
 
 
 
@@ -5402,7 +5403,7 @@
 .unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
 
 .detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:1 1 0;min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
+.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 calc(var(--cell)*3 - var(--gap));min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
 .view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
@@ -5726,7 +5727,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 .unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
 
 .detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:1 1 0;min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
+.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 calc(var(--cell)*3 - var(--gap));min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
 .view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
@@ -8541,7 +8542,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.82";
+    const APP_VERSION = "31.83";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30158,7 +30159,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.82',
+        version: 'V31.83',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
