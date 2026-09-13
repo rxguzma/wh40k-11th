@@ -27,8 +27,6 @@ if not vm:
     raise SystemExit('Unified New View/Edit iframe missing')
 view_np = html.unescape(vm.group(2))
 
-# Protect the current lock/prepared-state and V31.105 control contracts before
-# changing background behavior.
 for required in [
     'function beginLockedViewPreparedMode()',
     'function endLockedViewPreparedMode()',
@@ -44,9 +42,6 @@ for required in [
     if required not in view_np:
         raise SystemExit('V31.106 baseline contract missing: ' + required)
 
-# Track/cancel the only New View background observer and the two View RAF paths
-# that can otherwise remain queued across the lock transition. Counters increase
-# only when live work actually runs, allowing a locked baseline comparison.
 old_observer_state = 'let newViewVersionObserver=null;'
 new_observer_state = '''let newViewVersionObserver=null;
 let newViewVersionObserverActive=false;
@@ -56,13 +51,12 @@ let newViewLockCounterBaseline=null;
 const newViewBackgroundCounters={observerCallbacks:0,versionLayoutPasses:0,liveRefreshes:0};'''
 once(old_observer_state, new_observer_state, 'New View background state')
 
-# Any direct version-layout call must become a no-op once VIEW is locked.
-position_sig = 'function positionNewViewVersionControls(){'
-position_new = "function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;"
-once(position_sig, position_new, 'version position gate/counter')
+once(
+    'function positionNewViewVersionControls(){',
+    "function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;",
+    'version position gate/counter',
+)
 
-# Replace the always-connected MutationObserver with an explicitly suspendable
-# observer. Disconnecting at Lock also discards queued mutation notifications.
 old_observer = r'''function ensureNewViewVersionObserver(){
   if(newViewVersionObserver)return;
   newViewVersionObserver=new MutationObserver(mutations=>{
@@ -139,33 +133,26 @@ if view_np.count(old_observer) != 1:
     raise SystemExit(f'New View version observer block: expected 1 match, found {view_np.count(old_observer)}')
 view_np = view_np.replace(old_observer, new_observer, 1)
 
-# Version/history continuations can finish asynchronously after the user locks.
-# Their UI continuation must stop immediately once locked.
 for old, new, label in [
     ('function renderNewViewVersionHistory(){', 'function renderNewViewVersionHistory(){if(newViewProcessingLocked())return;', 'version history render gate'),
     ('async function toggleNewViewVersionHistory(){', 'async function toggleNewViewVersionHistory(){if(newViewProcessingLocked())return;', 'version history async gate'),
+    ('async function updateToLatest(){', 'async function updateToLatest(){if(newViewProcessingLocked())return;', 'legacy update lock gate'),
+    ('async function downloadRunningVersion(){', 'async function downloadRunningVersion(){if(newViewProcessingLocked())return;', 'legacy download lock gate'),
 ]:
     once(old, new, label)
 
-# The version controls used to leave an untracked RAF queued. Route it through
-# the cancellable scheduler instead.
 once('requestAnimationFrame(positionNewViewVersionControls);', 'scheduleNewViewVersionPosition();', 'version position RAF scheduler')
 
-# Count only actual live VIEW synchronizations, after the existing lock gate.
 old_refresh = 'function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}'
 new_refresh = 'function refreshNewView(){if(newViewProcessingLocked())return false;newViewBackgroundCounters.liveRefreshes++;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}'
 once(old_refresh, new_refresh, 'live View refresh counter')
 
-# Initial/fallback VIEW refresh is now cancellable if Lock is pressed before its
-# animation frame fires. EDIT RAF behavior remains unchanged.
-old_view_raf = 'else if(!renderCachedView())requestAnimationFrame(refreshNewView)'
-new_view_raf = 'else if(!renderCachedView())scheduleNewViewRefresh()'
-once(old_view_raf, new_view_raf, 'View fallback refresh scheduler')
+once(
+    'else if(!renderCachedView())requestAnimationFrame(refreshNewView)',
+    'else if(!renderCachedView())scheduleNewViewRefresh()',
+    'View fallback refresh scheduler',
+)
 
-# Lock preparation may create many DOM mutations. Disconnect/cancel all New View
-# background work BEFORE the lock flag turns on, so queued observer notifications
-# and RAF callbacks cannot execute afterward. Take the diagnostics baseline only
-# after preparation and suspension are complete.
 old_lock_finish = '''  // Lock becomes true only after every prepared state is built and mounted.
   newViewHeaderLocked=true;
   return true;'''
@@ -176,9 +163,6 @@ new_lock_finish = '''  // Lock becomes true only after every prepared state is b
   return true;'''
 once(old_lock_finish, new_lock_finish, 'Lock background suspension')
 
-# Unlock first, discard prepared state, perform exactly one fresh live sync while
-# the observer is still suspended, then resume the observer and one version-row
-# position RAF. This avoids observer churn during the live roster rebuild.
 old_unlock = r'''function endLockedViewPreparedMode(){
   if(!newViewHeaderLocked)return false;
   // Unlock first, then discard prepared state and perform one fresh live sync.
@@ -206,12 +190,11 @@ if view_np.count(old_unlock) != 1:
     raise SystemExit(f'New View unlock block: expected 1 match, found {view_np.count(old_unlock)}')
 view_np = view_np.replace(old_unlock, new_unlock, 1)
 
-# Write unified iframe back.
 text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
 
 note = '''  <!--
     CHANGE NOTE - WH40k_11th_V31.106
-    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is now explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations and direct version-position calls return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes stay at zero movement during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes the observer and schedules one version-control position pass. No UI controls are added or moved.
+    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
     Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
   -->
 
@@ -224,12 +207,10 @@ elif '</body>' in text:
 else:
     raise SystemExit('release note insertion point missing')
 
-# Retain only the five newest detailed V31 notes.
 notes = list(re.finditer(r'\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n', text, re.S))
 for note_match in reversed(notes[5:]):
     text = text[:note_match.start()] + text[note_match.end():]
 
-# Final acceptance checks.
 vm = view_pat.search(text)
 if not vm:
     raise SystemExit('Unified New View/Edit iframe missing after writeback')
@@ -256,6 +237,8 @@ required_view = [
     "function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;",
     'function renderNewViewVersionHistory(){if(newViewProcessingLocked())return;',
     'async function toggleNewViewVersionHistory(){if(newViewProcessingLocked())return;',
+    'async function updateToLatest(){if(newViewProcessingLocked())return;',
+    'async function downloadRunningVersion(){if(newViewProcessingLocked())return;',
     'else if(!renderCachedView())scheduleNewViewRefresh()',
     'scheduleNewViewVersionPosition();',
     "toggle.textContent=p==='view'?'VIEW':'EDIT';",
@@ -274,9 +257,10 @@ for forbidden in [
     if forbidden in final_view:
         raise SystemExit('V31.106 untracked locked-capable background path remains: ' + forbidden)
 
-# Audit recurring/background primitives inside the unified iframe. MutationObserver
-# is expected exactly once and is the observer now suspended by the lock. There
-# should be no timer/idle/resize observer loop hiding elsewhere in New View.
+# Audit the unified iframe. The four setTimeout calls are action-scoped legacy
+# update/download timers: one request abort timeout plus three button/blob cleanup
+# delays. They are not recurring/idle work, and both action entry points are now
+# lock-gated above. No recurring timer, idle callback, or ResizeObserver exists.
 audit_counts = {
     'MutationObserver': final_view.count('new MutationObserver('),
     'ResizeObserver': final_view.count('new ResizeObserver('),
@@ -287,9 +271,11 @@ audit_counts = {
 print('V31.106 New View background audit:', audit_counts)
 if audit_counts['MutationObserver'] != 1:
     raise SystemExit(f"V31.106 expected exactly one MutationObserver, found {audit_counts['MutationObserver']}")
-for primitive in ['ResizeObserver','setInterval','setTimeout','requestIdleCallback']:
+if audit_counts['setTimeout'] != 4:
+    raise SystemExit(f"V31.106 expected four action-scoped setTimeout calls, found {audit_counts['setTimeout']}")
+for primitive in ['ResizeObserver','setInterval','requestIdleCallback']:
     if audit_counts[primitive]:
-        raise SystemExit(f'V31.106 unhandled New View background primitive remains: {primitive} x{audit_counts[primitive]}')
+        raise SystemExit(f'V31.106 unhandled recurring New View primitive remains: {primitive} x{audit_counts[primitive]}')
 
 required_outer = [
     '<title>WH40k 11th V31.106</title>',
