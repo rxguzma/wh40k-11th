@@ -15,7 +15,7 @@ for outer_check in [
     source = source.replace(outer_check, '')
 
 final_marker = "for doc, label in [(final_view, 'New View'), (final_edit, 'New Edit')]:"
-iframe_checks = '''if "parent.getNewEditRosterRows==='function'" not in final_view:\n    raise SystemExit('New View ordered-row bridge missing after decode')\nif "parent.getAlternateViewRosterRows==='function'" not in final_edit:\n    raise SystemExit('New Edit ordered-row bridge missing after decode')\nfor doc, label in [(final_view, 'New View'), (final_edit, 'New Edit')]:\n    for required in ["data.kind==='spacer'", "data.kind==='unit'", "className='roster-spacer-row dynamic-roster-row'"]:\n        if required not in doc:\n            raise SystemExit(f'{label} dynamic-row acceptance failed: {required}')\n\n'''
+iframe_checks = '''if "parent.getNewEditRosterRows==='function'" not in final_view:\n    raise SystemExit('New View ordered-row bridge missing after decode')\nif "parent.getAlternateViewRosterRows==='function'" not in final_edit:\n    raise SystemExit('New Edit ordered-row bridge missing after decode')\nfor doc, label in [(final_view, 'New View'), (final_edit, 'New Edit')]:\n    for required in ["data.kind==='spacer'", "data.kind!=='unit'", "className='roster-spacer-row dynamic-roster-row'"]:\n        if required not in doc:\n            raise SystemExit(f'{label} dynamic-row acceptance failed: {required}')\n\n'''
 if source.count(final_marker) != 1:
     raise SystemExit('V31.87 final iframe check marker missing')
 source = source.replace(final_marker, iframe_checks + final_marker, 1)
