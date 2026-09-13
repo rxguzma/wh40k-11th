@@ -11,6 +11,12 @@ for fixed_class in ('view-unit-row-first','view-unit-row-second','edit-unit-row-
     view_np = css_rule.sub('', view_np)
     edit_np = css_rule.sub('', edit_np)
 
+for token in ('.view-unit-row-first','.view-unit-row-second','.edit-unit-row-first','.edit-unit-row-second'):
+    for label, doc in (('VIEW', view_np), ('EDIT', edit_np)):
+        pos = doc.find(token)
+        if pos >= 0:
+            print('REMAINING', label, token, repr(doc[max(0,pos-120):pos+220]))
+
 '''
 if source.count(needle) != 1:
     raise SystemExit('V31.87 writeback marker missing')
