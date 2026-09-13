@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DA_GRAND_WARLORDS_LADZ","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEAST_SNAGGA_FOLLOWING","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOSS_OF_DA_HUNT","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SPEEDNOB_SUPPORT","column":"Tags","value":"[LONE OP 3\u0022]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SUPPORT_SHOKKA","column":"Tags","value":"[LONE OP 3\u0022]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"NAZDREG","column":"Hyperlink","value":"googlechromes://wahapedia.ru/wh40k11ed/factions/orks/Nazdreg"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
