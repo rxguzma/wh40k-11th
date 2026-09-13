@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"__ALL__","mode":"replace_text","column":"Save","from":" / ","to":"/"},{"file":"data/tyranids/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"__ALL__","mode":"replace_text","column":"Save","from":" / ","to":"/"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"__ALL__","mode":"replace_text","column":"SV","from":" / ","to":"/"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
