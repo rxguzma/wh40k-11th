@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.100</title>
+  <title>WH40k 11th V31.101</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.100; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.101; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.101
+    Scope: Bring the established Boyz-style selectable point option into unified New View EDIT without duplicating roster logic. Ordered Unit rows now carry the canonical roster entryId, selected point label, toggle-enabled state, and total points from getRosterEntryModels. EDIT renders the selected x-label beside the Unit name using the existing Boyz pill format. Tapping a selectable label delegates to the existing toggleViewEditRosterEntryPointOption action, then refreshes the unified Edit rows from the parent model so the label, column-P points, and Edit title total update together. Units with a non-clickable label show the same green static label. This is generic for all selectable point-option Units and does not hardcode Boyz or create duplicate Unit rows.
+    Risk areas: Unified New View EDIT Unit-name point-label presentation and its existing roster point-option action bridge only. VIEW, persistent grid/cache behavior, lock/frozen snapshot, Move/Copy/Dead controls, Old Edit, Cards, CSV data, Weapons, Waha routing, Version controls, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.100
     Scope: Make the unified New View VIEW/EDIT toggle a true local fast path. The 40x16 coordinate/grid background is now created once and retained across mode switches instead of deleting and recreating 640 grid cells on every tap. Normal unlocked VIEW and EDIT switches reuse the already-loaded header and ordered roster rows in memory, so switching modes no longer re-runs getAlternateViewHeaderData/getAlternateViewRosterRows merely because the display mode changed. Live refresh entry points remain available and update the cache when New View is opened/refreshed from the parent. The VIEW lock contract is preserved: locked VIEW uses its frozen snapshot, while entering EDIT from a locked VIEW still performs the established live Edit refresh rather than reusing frozen data.
     Risk areas: New View local mode-switch rendering/caching only. Unified Edit row presentation and points, direct model bridges, frozen View lock semantics, Version/Update/Download and V31.99 version-route restoration, Cards, Old Edit, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.97
     Scope: Integrate New View Version / Update / Download into the actual 16-column sheet grid instead of rendering them inside a separate nested strip. The wrapper, strip background, and overlay z-index are removed. Version is a direct main-grid item at A:H, Update at I:L, and Download at M:P. Their grid row remains exactly five rows after the last rendered Unit and automatically follows Unit row changes. When Version is opened, the ten retained release buttons are also direct main-grid items across two rows of five rather than children of an overlay panel. Existing version, update, retained-release, and download functions remain unchanged.
     Risk areas: New View version-control presentation only. Existing parent version engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.96
-    Scope: Correct New View Version placement and restore the omitted Download action. The Version / Update / Download strip is no longer fixed near the top. In normal/collapsed View it is positioned exactly five grid rows after the last rendered Unit row and automatically follows Unit additions/removals/reordering. The existing main-button row is also respected so an expanded final Unit cannot overlap the strip. Version spans A:H and toggles retained history; Update spans I:L and directly runs the existing update-to-latest path; Download spans M:P and calls the existing downloadRunningVersion path with the existing prepared URL/filename so iPhone/Safari Save/Share behavior is preserved. Retained history remains two rows of five.
-    Risk areas: New View bottom version-strip placement and Download presentation only. Existing version/update/download engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5428,6 +5428,10 @@
 .unified-edit-action{width:calc(var(--cell) - var(--gap));height:var(--std);align-self:center;justify-self:center;padding:0;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
 .unified-edit-action svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.4}
 
+
+.point-option-toggle{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;border:1px solid #48515f;background:#2b313b;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;cursor:pointer;user-select:none;-webkit-user-select:none;vertical-align:1px;white-space:nowrap;appearance:none;-webkit-appearance:none}
+.point-option-toggle:active{background:#3a4350;transform:translateY(1px)}
+.point-option-label-static{display:inline-block;margin-left:8px;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;vertical-align:1px;white-space:nowrap}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5923,7 +5927,30 @@ function addUnifiedEditUnit(f,data,rowIndex){
   r.dataset.rosterIndex=String(rowIndex);
   const n=document.createElement(&#x27;div&#x27;);
   n.className=&#x27;edit-unit-name&#x27;;
-  n.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  const nameText=document.createElement(&#x27;span&#x27;);
+  nameText.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  n.appendChild(nameText);
+  const pointLabel=String(data&amp;&amp;data.pointLabel||&#x27;&#x27;).trim();
+  if(pointLabel){
+    const canToggle=Boolean(data&amp;&amp;data.pointToggleEnabled&amp;&amp;data.entryId);
+    const label=document.createElement(canToggle?&#x27;button&#x27;:&#x27;span&#x27;);
+    if(canToggle)label.type=&#x27;button&#x27;;
+    label.className=canToggle?&#x27;point-option-toggle&#x27;:&#x27;point-option-label-static&#x27;;
+    label.textContent=pointLabel;
+    if(canToggle){
+      label.setAttribute(&#x27;aria-label&#x27;,&#x27;Change point option&#x27;);
+      label.onclick=(event)=&gt;{
+        event.stopPropagation();
+        try{
+          if(parent&amp;&amp;typeof parent.toggleViewEditRosterEntryPointOption===&#x27;function&#x27;){
+            parent.toggleViewEditRosterEntryPointOption(String(data.entryId||&#x27;&#x27;));
+          }
+        }catch(_){}
+        requestAnimationFrame(refreshUnifiedEdit);
+      };
+    }
+    n.appendChild(label);
+  }
   r.appendChild(n);
 
   const move=document.createElement(&#x27;button&#x27;);
@@ -8591,7 +8618,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.100";
+    const APP_VERSION = "31.101";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -13023,7 +13050,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       return models.map(item => {
         if (item.isSpacer) return { kind: "spacer" };
         const data = window.getAlternateViewUnitData(unitIndex++);
-        return data ? Object.assign({ kind: "unit" }, data, { points: Math.max(0, Number(item.points && item.points.total) || 0) }) : null;
+        return data ? Object.assign({ kind: "unit" }, data, { entryId: String(item.entryId || ""), points: Math.max(0, Number(item.points && item.points.total) || 0), pointLabel: String(item.points && item.points.label || ""), pointToggleEnabled: Boolean(item.points && item.points.toggleEnabled) }) : null;
       }).filter(Boolean);
     };
 
@@ -30203,7 +30230,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.100',
+        version: 'V31.101',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
