@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.68</title>
+  <title>WH40k 11th V31.69</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.68; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.69; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.69
+    Scope: Correct alternate-View Waha navigation regression. The Waha control inside the srcdoc iframe now prevents its own navigation and passes the existing live Waha URL to Main. Main opens that URL in a new top-level browsing target, so the nested iframe no longer owns the external navigation. No Waha URL/data, layout, styling, roster, weapon, or persistence behavior is changed.
+    Risk areas: Alternate View Waha click routing only. Canonical View/Edit/Cards, CSV URLs, roster persistence, weapons, filters, combat behavior, and all other alternate-View rows are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.68
     Scope: Restore the existing xN unit-count box on the first two alternate-View live Unit rows. The count is no longer prototype/hardcoded data; it comes from the same roster entry and canonical selected point option used by Main through getRosterEntryModelCount(). The existing .unit-count-grid styling is reused unchanged.
     Risk areas: Alternate View first/second Unit count display only. Unit ordering, profile stats, Waha/core-ability row, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View Nazdreg Waha link only. No other unit links, View/Edit/Cards behavior, roster data, persistence, or combat logic changed.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.64
-    Scope: Wire the second alternate-View Unit to the second real Unit in current Edit/roster order. The second Unit now has the same live name/stats, open/collapse behavior, Waha link, ALL/SHOOT/MELEE/OTHER filtering, compact Weapon rows, Weapon selection, selected-green styling, inactive 50% styling, Tag/detail-row treatment, and dynamic expansion behavior as the first Unit. The shared detail panel appears directly below whichever of the first two Units is open; only one is open at a time. Reordering Edit changes both first and second View positions automatically.
-    Risk areas: Alternate View first-two Unit wiring and shared expansion placement only. Canonical View/Edit/Cards, roster persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5406,7 +5407,7 @@ function addNameAndCount(r,name,count,nameClass){const n=document.createElement(
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
 function addEditUnit(f,rowClass,name,count,pts){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;edit-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;edit-unit-name&#x27;);const menu=document.createElement(&#x27;button&#x27;);menu.type=&#x27;button&#x27;;menu.className=&#x27;edit-action a1&#x27;;menu.textContent=&#x27;≡&#x27;;r.appendChild(menu);const cp=document.createElement(&#x27;button&#x27;);cp.type=&#x27;button&#x27;;cp.className=&#x27;edit-action edit-action-copy a2&#x27;;cp.setAttribute(&#x27;aria-label&#x27;,&#x27;Copy&#x27;);cp.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;r.appendChild(cp);[[&#x27;0&#x27;,&#x27;a3&#x27;],[&#x27;E&#x27;,&#x27;a4&#x27;],[&#x27;R&#x27;,&#x27;a5&#x27;],[&#x27;D&#x27;,&#x27;a6&#x27;]].forEach(([l,c])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;edit-action &#x27;+c;b.textContent=l;r.appendChild(b)});const p=document.createElement(&#x27;div&#x27;);p.className=&#x27;edit-unit-points&#x27;;p.textContent=pts;r.appendChild(p);f.appendChild(r)}
 function addExpandedUnitMock(f){
-  const w=document.createElement(&#x27;a&#x27;);w.className=&#x27;button-standard detail-waha&#x27;;w.textContent=&#x27;Waha&#x27;;w.href=&#x27;#&#x27;;w.target=&#x27;_blank&#x27;;w.rel=&#x27;noopener&#x27;;w.onclick=e=&gt;e.stopPropagation();f.appendChild(w);
+  const w=document.createElement(&#x27;a&#x27;);w.className=&#x27;button-standard detail-waha&#x27;;w.textContent=&#x27;Waha&#x27;;w.href=&#x27;#&#x27;;w.onclick=e=&gt;{e.preventDefault();e.stopPropagation();const url=String(w.getAttribute(&#x27;href&#x27;)||&#x27;&#x27;).trim();if(!url||url===&#x27;#&#x27;)return;try{if(parent&amp;&amp;typeof parent.openAlternateViewWaha===&#x27;function&#x27;)parent.openAlternateViewWaha(url)}catch(_){}};f.appendChild(w);
   const wh=document.createElement(&#x27;div&#x27;);wh.className=&#x27;weapon-header&#x27;;const blank=document.createElement(&#x27;div&#x27;);blank.className=&#x27;weapon-name&#x27;;wh.appendChild(blank);[[&#x27;R&quot;&#x27;,&#x27;wr1&#x27;],[&#x27;A&#x27;,&#x27;wr2&#x27;],[&#x27;WS&#x27;,&#x27;wr3&#x27;],[&#x27;St&#x27;,&#x27;wr4&#x27;],[&#x27;AP&#x27;,&#x27;wr5&#x27;],[&#x27;D&#x27;,&#x27;wr6&#x27;]].forEach(([v,c])=&gt;{const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;weapon-header-label &#x27;+c;s.textContent=v;wh.appendChild(s)});f.appendChild(wh);
   const weapons=[
     [&#x27;weapon-row-1&#x27;,&#x27;Kustom Blasta X – Gatler&#x27;,[&#x27;24&quot;&#x27;,&#x27;6&#x27;,&#x27;4&#x27;,&#x27;9&#x27;,&#x27;-2&#x27;,&#x27;3&#x27;]],
@@ -8097,7 +8098,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.68";
+    const APP_VERSION = "31.69";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12482,6 +12483,18 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         })
       };
     };
+
+    function openAlternateViewWaha(url) {
+      const href = String(url || '').trim();
+      if (!/^https?:\/\//i.test(href)) return false;
+      try {
+        window.open(href, '_blank', 'noopener');
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+    window.openAlternateViewWaha = openAlternateViewWaha;
 
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
@@ -29630,7 +29643,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.68',
+        version: 'V31.69',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

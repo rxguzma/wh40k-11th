@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.59</title>
+  <title>WH40k 11th V31.69</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.59; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.69; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,34 +92,44 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.59
-    Scope: Correct alternate View Weapon font behavior. When a Weapon is selected, only the inactive Weapon fonts use the existing muted treatment. The selected Weapon keeps its normal colors. When no Weapon is selected, all Weapon fonts use their normal colors. No selection logic, ordering, filtering, compact expansion, or live data wiring changed.
-    Risk areas: Alternate View Weapon font color only.
+    CHANGE NOTE - WH40k_11th_V31.69
+    Scope: Correct alternate-View Waha navigation regression. The Waha control inside the srcdoc iframe now prevents its own navigation and passes the existing live Waha URL to Main. Main opens that URL in a new top-level browsing target, so the nested iframe no longer owns the external navigation. No Waha URL/data, layout, styling, roster, weapon, or persistence behavior is changed.
+    Risk areas: Alternate View Waha click routing only. Canonical View/Edit/Cards, CSV URLs, roster persistence, weapons, filters, combat behavior, and all other alternate-View rows are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.58
-    Scope: In alternate View, when a Weapon is selected, its Weapon name and stat values use the existing active-green font color. Other visible Weapons remain present but their Weapon name/stat text is reduced from 75% to 50% opacity. Existing gray treatment for non-selected Weapon Tag text remains unchanged. Weapon selection ordering, row-10 promotion, filtering, compact expansion, and live data wiring are unchanged.
-    Risk areas: Alternate View Weapon selected/muted font styling only. Unit styling, Waha, View/Edit/Cards navigation, roster persistence, and combat behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.68
+    Scope: Restore the existing xN unit-count box on the first two alternate-View live Unit rows. The count is no longer prototype/hardcoded data; it comes from the same roster entry and canonical selected point option used by Main through getRosterEntryModelCount(). The existing .unit-count-grid styling is reused unchanged.
+    Risk areas: Alternate View first/second Unit count display only. Unit ordering, profile stats, Waha/core-ability row, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.57
-    Scope: In alternate View, non-relevant Unit keyword text under the active Unit now uses the same 50%-opacity treatment as the active M/T/SV/W/LD/OC stat text. Deep Strike is marked as a Unit keyword and its orange font is rendered at 50% alpha while Nazdreg is open; the keyword button background/border, Waha link, Weapon filtering, Weapon selection, and compact expansion remain unchanged. This establishes the muted-keyword treatment for additional Unit keywords as they are wired.
-    Risk areas: Alternate View Unit keyword font treatment only. Live roster/Weapon data, View/Edit/Cards navigation, persistence, and combat behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.67
+    Scope: Make the alternate-View row under each wired Unit data-driven. Waha remains first, followed only by that active Unit's canonical CORE_ABILITY entries from Unit_Abilities.csv resolved through the existing runtime ability data. Remove the hardcoded Deep Strike badge. For the current first two Edit-order Units, Nazdreg therefore shows Waha + Deep Strike while Meganobz shows Waha only. Core-ability badges retain the existing Deep Strike badge visual standard and the existing Weapon-selection muted-text behavior.
+    Risk areas: Alternate View first/second Unit detail row only. Unit ordering, profile stats, Waha URLs, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.56
-    Scope: Remove the duplicate second Nazdreg header/stat line from the alternate View expanded content and delete the lower MAIN navigation button. The primary live Nazdreg row, Waha, Deep Strike, compact Weapon header/rows, Weapon filtering, selection-to-row-10 behavior, and muted non-selected Weapon styling remain unchanged.
-    Risk areas: Alternate View duplicate expanded Unit header and lower MAIN button only. Live data wiring, Weapon interactions, View/Edit/Cards navigation, roster persistence, and combat behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.66
+    Scope: Revert the V31.65 Nazdreg-specific Chrome URL conversion. Alternate View Waha now uses the unit hyperlink exactly as supplied by data again, so Chrome-link testing can be performed through Unit_Profiles.csv only.
+    Risk areas: Alternate View Waha URL assignment only. No roster data, other unit behavior, View/Edit/Cards behavior, persistence, or combat logic changed.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.55
-    Scope: Make alternate-View Weapon filtering and selection use compact dynamic rows. The Weapon stat header at row 9 now exists only when the open Unit has at least one Weapon visible under the current ALL/SHOOT/MELEE/OTHER filter. Visible Weapon and Tag rows stack continuously from row 10 with no reserved gaps, and downstream rows move up or down to match the actual expansion height. Tapping a visible Weapon selects it, moves it to row 10, leaves the other matching Weapons visible, mutes their Weapon text to 75% opacity, and changes their Tag text to Main muted gray. Tapping the selected Weapon again clears selection and restores normal ordering. This establishes the interaction pattern to reuse for each Unit as additional Units are wired.
-    Risk areas: Alternate View Weapon filtering, Weapon selection presentation, and dynamic expansion height only. Live Weapon/Waha data, canonical View/Edit/Cards, roster persistence, and combat behavior are unchanged.
+    CHANGE NOTE - WH40k_11th_V31.65
+    Scope: Test Chrome handoff for the alternate View Waha button on Nazdreg only. When the active unit name is exactly Nazdreg, its existing http/https Waha URL is converted to the Google Chrome iOS custom scheme. All other Waha links retain their existing URL and behavior.
+    Risk areas: Alternate View Nazdreg Waha link only. No other unit links, View/Edit/Cards behavior, roster data, persistence, or combat logic changed.
   -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5366,9 +5376,22 @@
 .view-stat-header.unit-active .view-stat-label,.view-unit-row-first.unit-active .view-unit-stat{color:rgba(241,243,244,.5)}
 .detail-waha,.detail-deep-strike,.weapon-header,.weapon-row-1,.weapon-tags-1,.weapon-row-2,.weapon-tags-2,.weapon-row-3,.weapon-tags-3,.weapon-row-4,.weapon-tags-4,.weapon-row-5,.weapon-tags-5{display:none}
 
-.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)}
+.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{opacity:.5}
+.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3;opacity:1}
 .weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}
-.unit-keyword.keyword-muted{color:rgba(241,164,88,.5)}
+.unit-keyword.keyword-muted{color:var(--muted);opacity:.5}
+
+.weapon-row.weapon-muted{opacity:1!important}
+.weapon-row.weapon-muted .weapon-name,.weapon-row.weapon-muted .weapon-stat{color:rgba(241,243,244,.5)!important}
+.weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3!important}
+.weapon-tags.weapon-muted{opacity:1!important}
+.weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
+.unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
+
+.detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
+
+.view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
+.view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5384,8 +5407,7 @@ function addNameAndCount(r,name,count,nameClass){const n=document.createElement(
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
 function addEditUnit(f,rowClass,name,count,pts){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;edit-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;edit-unit-name&#x27;);const menu=document.createElement(&#x27;button&#x27;);menu.type=&#x27;button&#x27;;menu.className=&#x27;edit-action a1&#x27;;menu.textContent=&#x27;≡&#x27;;r.appendChild(menu);const cp=document.createElement(&#x27;button&#x27;);cp.type=&#x27;button&#x27;;cp.className=&#x27;edit-action edit-action-copy a2&#x27;;cp.setAttribute(&#x27;aria-label&#x27;,&#x27;Copy&#x27;);cp.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;r.appendChild(cp);[[&#x27;0&#x27;,&#x27;a3&#x27;],[&#x27;E&#x27;,&#x27;a4&#x27;],[&#x27;R&#x27;,&#x27;a5&#x27;],[&#x27;D&#x27;,&#x27;a6&#x27;]].forEach(([l,c])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;edit-action &#x27;+c;b.textContent=l;r.appendChild(b)});const p=document.createElement(&#x27;div&#x27;);p.className=&#x27;edit-unit-points&#x27;;p.textContent=pts;r.appendChild(p);f.appendChild(r)}
 function addExpandedUnitMock(f){
-  const w=document.createElement(&#x27;a&#x27;);w.className=&#x27;button-standard detail-waha&#x27;;w.textContent=&#x27;Waha&#x27;;w.href=&#x27;#&#x27;;w.target=&#x27;_blank&#x27;;w.rel=&#x27;noopener&#x27;;w.onclick=e=&gt;e.stopPropagation();f.appendChild(w);
-  const ds=document.createElement(&#x27;div&#x27;);ds.className=&#x27;detail-deep-strike unit-keyword&#x27;;ds.textContent=&#x27;DEEP STRIKE&#x27;;f.appendChild(ds);
+  const w=document.createElement(&#x27;a&#x27;);w.className=&#x27;button-standard detail-waha&#x27;;w.textContent=&#x27;Waha&#x27;;w.href=&#x27;#&#x27;;w.onclick=e=&gt;{e.preventDefault();e.stopPropagation();const url=String(w.getAttribute(&#x27;href&#x27;)||&#x27;&#x27;).trim();if(!url||url===&#x27;#&#x27;)return;try{if(parent&amp;&amp;typeof parent.openAlternateViewWaha===&#x27;function&#x27;)parent.openAlternateViewWaha(url)}catch(_){}};f.appendChild(w);
   const wh=document.createElement(&#x27;div&#x27;);wh.className=&#x27;weapon-header&#x27;;const blank=document.createElement(&#x27;div&#x27;);blank.className=&#x27;weapon-name&#x27;;wh.appendChild(blank);[[&#x27;R&quot;&#x27;,&#x27;wr1&#x27;],[&#x27;A&#x27;,&#x27;wr2&#x27;],[&#x27;WS&#x27;,&#x27;wr3&#x27;],[&#x27;St&#x27;,&#x27;wr4&#x27;],[&#x27;AP&#x27;,&#x27;wr5&#x27;],[&#x27;D&#x27;,&#x27;wr6&#x27;]].forEach(([v,c])=&gt;{const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;weapon-header-label &#x27;+c;s.textContent=v;wh.appendChild(s)});f.appendChild(wh);
   const weapons=[
     [&#x27;weapon-row-1&#x27;,&#x27;Kustom Blasta X – Gatler&#x27;,[&#x27;24&quot;&#x27;,&#x27;6&#x27;,&#x27;4&#x27;,&#x27;9&#x27;,&#x27;-2&#x27;,&#x27;3&#x27;]],
@@ -5406,13 +5428,16 @@ function addExpandedUnitMock(f){
 }
 
 
-let nazdregOpen=false;
+let activeUnitIndex=null;
+let unitDataByIndex=[null,null];
 let weaponFilterMode=&#x27;ALL&#x27;;
 let selectedWeaponIndex=null;
 const weaponFilterModes=[&#x27;ALL&#x27;,&#x27;SHOOT&#x27;,&#x27;MELEE&#x27;,&#x27;OTHER&#x27;];
-const NAZDREG_MAX_EXPANSION_ROWS=12;
-const NAZDREG_DOWNSTREAM_BASE_ROW=20;
-const NAZDREG_COLLAPSED_GRID_ROWS=28;
+const UNIT_MAX_EXPANSION_ROWS=12;
+const SECOND_UNIT_AUTHORED_ROW=20;
+const COLLAPSED_GRID_ROWS=28;
+const FIRST_UNIT_ROW=7;
+function unitRow(index){return grid.querySelector(index===0?&#x27;.view-unit-row-first&#x27;:&#x27;.view-unit-row-second&#x27;)}
 function weaponMatchesFilter(row){
   if(weaponFilterMode===&#x27;ALL&#x27;)return true;
   return String(row&amp;&amp;row.dataset.scope||&#x27;OTHER&#x27;)===weaponFilterMode;
@@ -5425,109 +5450,50 @@ function getVisibleWeaponIndexes(){
   }
   return indexes;
 }
-function syncNazdregExpandedLayout(expansionRows){
-  const usedRows=nazdregOpen?Math.max(0,Number(expansionRows)||0):0;
-  const pullUp=NAZDREG_MAX_EXPANSION_ROWS-usedRows;
+function syncExpandedLayout(expansionRows){
+  const usedRows=activeUnitIndex===null?0:Math.max(0,Number(expansionRows)||0);
   [...grid.children].forEach(el=&gt;{
     if(el.classList.contains(&#x27;grid-cell&#x27;))return;
-    if(el.matches(&#x27;.detail-waha,.detail-deep-strike,.weapon-header,.weapon-row,.weapon-tags&#x27;))return;
+    if(el.matches(&#x27;.detail-waha,.detail-core-ability,.weapon-header,.weapon-row,.weapon-tags&#x27;))return;
     if(!el.dataset.baseGridRow){
       const authored=parseInt(getComputedStyle(el).gridRowStart,10);
-      if(Number.isFinite(authored)&amp;&amp;authored&gt;=NAZDREG_DOWNSTREAM_BASE_ROW)el.dataset.baseGridRow=String(authored);
+      if(Number.isFinite(authored)&amp;&amp;authored&gt;=SECOND_UNIT_AUTHORED_ROW)el.dataset.baseGridRow=String(authored);
     }
     const base=parseInt(el.dataset.baseGridRow||&#x27;&#x27;,10);
-    if(Number.isFinite(base))el.style.gridRow=String(base-pullUp);
+    if(!Number.isFinite(base))return;
+    let row=base-UNIT_MAX_EXPANSION_ROWS;
+    if(activeUnitIndex===0)row+=usedRows;
+    else if(activeUnitIndex===1&amp;&amp;base&gt;SECOND_UNIT_AUTHORED_ROW)row+=usedRows;
+    el.style.gridRow=String(row);
   });
-  const activeGridRows=NAZDREG_COLLAPSED_GRID_ROWS+usedRows;
+  const activeGridRows=COLLAPSED_GRID_ROWS+usedRows;
   grid.querySelectorAll(&#x27;.grid-cell&#x27;).forEach(cell=&gt;{
     const row=parseInt(cell.style.gridRow||&#x27;&#x27;,10);
     cell.hidden=Number.isFinite(row)&amp;&amp;row&gt;activeGridRows;
   });
 }
-function syncWeaponLayout(){
-  const filterButton=grid.querySelector(&#x27;.view-filter-toggle&#x27;);
-  if(filterButton)filterButton.textContent=weaponFilterMode;
-  const header=grid.querySelector(&#x27;.weapon-header&#x27;);
-  const visible=getVisibleWeaponIndexes();
-  if(selectedWeaponIndex!==null&amp;&amp;!visible.includes(selectedWeaponIndex))selectedWeaponIndex=null;
-  const ordered=selectedWeaponIndex===null?visible:[selectedWeaponIndex,...visible.filter(i=&gt;i!==selectedWeaponIndex)];
-  const hasSelection=selectedWeaponIndex!==null&amp;&amp;visible.includes(selectedWeaponIndex);
-  const showWeapons=Boolean(nazdregOpen&amp;&amp;ordered.length);
-  if(header){
-    header.style.display=showWeapons?&#x27;grid&#x27;:&#x27;none&#x27;;
-    header.style.gridRow=&#x27;9&#x27;;
-  }
-  let nextRow=10;
-  for(let i=1;i&lt;=5;i++){
-    const weaponRow=grid.querySelector(&#x27;.weapon-row-&#x27;+i);
-    const tagRow=grid.querySelector(&#x27;.weapon-tags-&#x27;+i);
-    if(weaponRow){weaponRow.style.display=&#x27;none&#x27;;weaponRow.classList.remove(&#x27;weapon-muted&#x27;,&#x27;weapon-active&#x27;)}
-    if(tagRow){tagRow.style.display=&#x27;none&#x27;;tagRow.classList.remove(&#x27;weapon-muted&#x27;)}
-  }
-  if(showWeapons){
-    ordered.forEach(i=&gt;{
-      const weaponRow=grid.querySelector(&#x27;.weapon-row-&#x27;+i);
-      const tagRow=grid.querySelector(&#x27;.weapon-tags-&#x27;+i);
-      if(!weaponRow)return;
-      weaponRow.style.gridRow=String(nextRow++);
-      weaponRow.style.display=&#x27;grid&#x27;;
-      const active=hasSelection&amp;&amp;i===selectedWeaponIndex;
-      const muted=hasSelection&amp;&amp;!active;
-      weaponRow.classList.toggle(&#x27;weapon-active&#x27;,active);
-      weaponRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
-      if(tagRow&amp;&amp;tagRow.dataset.liveAvailable===&#x27;true&#x27;){
-        tagRow.style.gridRow=String(nextRow++);
-        tagRow.style.display=&#x27;grid&#x27;;
-        tagRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
-      }
-    });
-  }
-  const expansionRows=nazdregOpen?(showWeapons?nextRow-8:1):0;
-  syncNazdregExpandedLayout(expansionRows);
-}
-function cycleWeaponFilter(){
-  const index=weaponFilterModes.indexOf(weaponFilterMode);
-  weaponFilterMode=weaponFilterModes[(index+1)%weaponFilterModes.length];
-  selectedWeaponIndex=null;
-  syncWeaponLayout();
-}
-function selectWeapon(index){
-  selectedWeaponIndex=selectedWeaponIndex===index?null:index;
-  syncWeaponLayout();
-}
-function syncNazdregDetailVisibility(){
-  const row=grid.querySelector(&#x27;.view-unit-row-first&#x27;);
-  const statHeader=grid.querySelector(&#x27;.view-stat-header&#x27;);
-  if(row)row.classList.toggle(&#x27;unit-active&#x27;,nazdregOpen);
-  if(statHeader)statHeader.classList.toggle(&#x27;unit-active&#x27;,nazdregOpen);
-  const waha=grid.querySelector(&#x27;.detail-waha&#x27;);
-  if(waha)waha.style.display=nazdregOpen&amp;&amp;waha.dataset.liveAvailable===&#x27;true&#x27;?&#x27;inline-flex&#x27;:&#x27;none&#x27;;
-  const deep=grid.querySelector(&#x27;.detail-deep-strike&#x27;);
-  if(deep){deep.style.display=nazdregOpen?&#x27;flex&#x27;:&#x27;none&#x27;;deep.classList.toggle(&#x27;keyword-muted&#x27;,nazdregOpen)}
-  syncWeaponLayout();
-}
-function toggleNazdregDetails(){
-  nazdregOpen=!nazdregOpen;
-  if(!nazdregOpen)selectedWeaponIndex=null;
-  syncNazdregDetailVisibility();
-}
-function refreshNazdregFromParent(){
-  const row=grid.querySelector(&#x27;.view-unit-row-first&#x27;);
-  if(!row)return false;
-  let data=null;
-  try{data=parent&amp;&amp;typeof parent.getAlternateViewNazdregData===&#x27;function&#x27;?parent.getAlternateViewNazdregData():null}catch(_){data=null}
-  if(!data){nazdregOpen=false;selectedWeaponIndex=null;row.style.display=&#x27;none&#x27;;syncNazdregDetailVisibility();return false}
-  row.style.display=&#x27;grid&#x27;;
-  const name=row.querySelector(&#x27;.view-unit-name&#x27;);
-  if(name)name.textContent=String(data.name||&#x27;Nazdreg&#x27;);
-  [data.m,data.t,data.sv,data.w,data.ld,data.oc].forEach((value,index)=&gt;{const cell=row.querySelector(&#x27;.s&#x27;+(index+1));if(cell)cell.textContent=String(value??&#x27;&#x27;)});
+function applyActiveUnitDetails(){
+  const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
   const waha=grid.querySelector(&#x27;.detail-waha&#x27;);
   if(waha){
-    const url=String(data.waha||&#x27;&#x27;).trim();
+    const url=String(data&amp;&amp;data.waha||&#x27;&#x27;).trim();
     waha.dataset.liveAvailable=url?&#x27;true&#x27;:&#x27;false&#x27;;
     waha.href=url||&#x27;#&#x27;;
   }
-  const weapons=Array.isArray(data.weapons)?data.weapons:[];
+  grid.querySelectorAll(&#x27;.detail-core-ability&#x27;).forEach(el=&gt;el.remove());
+  if(data){
+    const coreAbilities=Array.isArray(data.coreAbilities)?data.coreAbilities:[];
+    coreAbilities.slice(0,4).forEach((ability,index)=&gt;{
+      const label=String(ability&amp;&amp;ability.name||&#x27;&#x27;).trim();
+      if(!label)return;
+      const tag=document.createElement(&#x27;div&#x27;);
+      tag.className=&#x27;detail-deep-strike unit-keyword detail-core-ability&#x27;;
+      tag.textContent=label.toUpperCase();
+      tag.style.gridColumn=String(4+(index*3))+&#x27;/span 3&#x27;;
+      grid.appendChild(tag);
+    });
+  }
+  const weapons=data&amp;&amp;Array.isArray(data.weapons)?data.weapons:[];
   for(let i=1;i&lt;=5;i++){
     const weapon=weapons[i-1]||null;
     const weaponRow=grid.querySelector(&#x27;.weapon-row-&#x27;+i);
@@ -5552,15 +5518,115 @@ function refreshNazdregFromParent(){
       tagEls.forEach((el,index)=&gt;{el.textContent=String(tags[index]||&#x27;&#x27;);el.style.display=tags[index]?&#x27;inline-flex&#x27;:&#x27;none&#x27;});
     }
   }
-  if(row.dataset.toggleBound!==&#x27;true&#x27;){row.dataset.toggleBound=&#x27;true&#x27;;row.onclick=toggleNazdregDetails}
-  nazdregOpen=false;
+}
+function syncWeaponLayout(){
+  const filterButton=grid.querySelector(&#x27;.view-filter-toggle&#x27;);
+  if(filterButton)filterButton.textContent=weaponFilterMode;
+  const header=grid.querySelector(&#x27;.weapon-header&#x27;);
+  const visible=getVisibleWeaponIndexes();
+  if(selectedWeaponIndex!==null&amp;&amp;!visible.includes(selectedWeaponIndex))selectedWeaponIndex=null;
+  const ordered=selectedWeaponIndex===null?visible:[selectedWeaponIndex,...visible.filter(i=&gt;i!==selectedWeaponIndex)];
+  const hasSelection=selectedWeaponIndex!==null&amp;&amp;visible.includes(selectedWeaponIndex);
+  grid.querySelectorAll(&#x27;.detail-waha,.detail-core-ability&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;);el.classList.toggle(&#x27;detail-row-muted&#x27;,hasSelection)});
+  const showWeapons=Boolean(activeUnitIndex!==null&amp;&amp;ordered.length);
+  const activeRow=activeUnitIndex===1?FIRST_UNIT_ROW+1:FIRST_UNIT_ROW;
+  const detailStartRow=activeRow+1;
+  if(header){
+    header.style.display=showWeapons?&#x27;grid&#x27;:&#x27;none&#x27;;
+    header.style.gridRow=String(detailStartRow+1);
+  }
+  let nextRow=detailStartRow+2;
+  for(let i=1;i&lt;=5;i++){
+    const weaponRow=grid.querySelector(&#x27;.weapon-row-&#x27;+i);
+    const tagRow=grid.querySelector(&#x27;.weapon-tags-&#x27;+i);
+    if(weaponRow){weaponRow.style.display=&#x27;none&#x27;;weaponRow.classList.remove(&#x27;weapon-muted&#x27;,&#x27;weapon-active&#x27;)}
+    if(tagRow){tagRow.style.display=&#x27;none&#x27;;tagRow.classList.remove(&#x27;weapon-muted&#x27;)}
+  }
+  if(showWeapons){
+    ordered.forEach(i=&gt;{
+      const weaponRow=grid.querySelector(&#x27;.weapon-row-&#x27;+i);
+      const tagRow=grid.querySelector(&#x27;.weapon-tags-&#x27;+i);
+      if(!weaponRow)return;
+      weaponRow.style.gridRow=String(nextRow++);
+      weaponRow.style.display=&#x27;grid&#x27;;
+      const active=hasSelection&amp;&amp;i===selectedWeaponIndex;
+      const muted=hasSelection&amp;&amp;!active;
+      weaponRow.classList.toggle(&#x27;weapon-active&#x27;,active);
+      weaponRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
+      if(tagRow&amp;&amp;tagRow.dataset.liveAvailable===&#x27;true&#x27;){
+        tagRow.style.gridRow=String(nextRow++);
+        tagRow.style.display=&#x27;grid&#x27;;
+        tagRow.classList.toggle(&#x27;weapon-muted&#x27;,muted);
+      }
+    });
+  }
+  const expansionRows=activeUnitIndex===null?0:(showWeapons?nextRow-detailStartRow:1);
+  syncExpandedLayout(expansionRows);
+}
+function cycleWeaponFilter(){
+  const index=weaponFilterModes.indexOf(weaponFilterMode);
+  weaponFilterMode=weaponFilterModes[(index+1)%weaponFilterModes.length];
+  selectedWeaponIndex=null;
+  syncWeaponLayout();
+}
+function selectWeapon(index){
+  selectedWeaponIndex=selectedWeaponIndex===index?null:index;
+  syncWeaponLayout();
+}
+function syncUnitDetailVisibility(){
+  for(let index=0;index&lt;2;index++){
+    const row=unitRow(index);
+    if(row)row.classList.toggle(&#x27;unit-active&#x27;,activeUnitIndex===index);
+  }
+  const statHeader=grid.querySelector(&#x27;.view-stat-header&#x27;);
+  if(statHeader)statHeader.classList.toggle(&#x27;unit-active&#x27;,activeUnitIndex!==null);
+  const activeRow=activeUnitIndex===1?FIRST_UNIT_ROW+1:FIRST_UNIT_ROW;
+  const detailStartRow=activeRow+1;
+  const waha=grid.querySelector(&#x27;.detail-waha&#x27;);
+  if(waha){waha.style.gridRow=String(detailStartRow);waha.style.display=activeUnitIndex!==null&amp;&amp;waha.dataset.liveAvailable===&#x27;true&#x27;?&#x27;inline-flex&#x27;:&#x27;none&#x27;}
+  grid.querySelectorAll(&#x27;.detail-core-ability&#x27;).forEach(el=&gt;{
+    el.style.gridRow=String(detailStartRow);
+    el.style.display=activeUnitIndex!==null?&#x27;flex&#x27;:&#x27;none&#x27;;
+  });
+  syncWeaponLayout();
+}
+function toggleUnitDetails(index){
+  const next=activeUnitIndex===index?null:index;
+  activeUnitIndex=next;
   weaponFilterMode=&#x27;ALL&#x27;;
   selectedWeaponIndex=null;
-  syncNazdregDetailVisibility();
-  return true;
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
 }
-window.refreshNazdregFromParent=refreshNazdregFromParent;
-function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,[&#x27;5&quot;&#x27;,&#x27;6&#x27;,&#x27;2+/5++&#x27;,&#x27;3&#x27;,&#x27;7+&#x27;,&#x27;1&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);addEditUnit(f,&#x27;edit-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,&#x27;175&#x27;);addEditUnit(f,&#x27;edit-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,&#x27;185&#x27;)}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;)requestAnimationFrame(refreshNazdregFromParent)}
+function refreshAlternateViewUnitsFromParent(){
+  for(let index=0;index&lt;2;index++){
+    const row=unitRow(index);
+    if(!row)continue;
+    let data=null;
+    try{data=parent&amp;&amp;typeof parent.getAlternateViewUnitData===&#x27;function&#x27;?parent.getAlternateViewUnitData(index):null}catch(_){data=null}
+    unitDataByIndex[index]=data;
+    if(!data){row.style.display=&#x27;none&#x27;;continue}
+    row.style.display=&#x27;grid&#x27;;
+    const name=row.querySelector(&#x27;.view-unit-name&#x27;);
+    if(name)name.textContent=String(data.name||&#x27;&#x27;);
+    let count=row.querySelector(&#x27;.unit-count-grid&#x27;);
+    if(!count){count=document.createElement(&#x27;div&#x27;);count.className=&#x27;unit-count-grid&#x27;;row.appendChild(count)}
+    count.textContent=&#x27;x&#x27;+String(data.count??1);
+    [data.m,data.t,data.sv,data.w,data.ld,data.oc].forEach((value,statIndex)=&gt;{const cell=row.querySelector(&#x27;.s&#x27;+(statIndex+1));if(cell)cell.textContent=String(value??&#x27;&#x27;)});
+    if(row.dataset.toggleBound!==&#x27;true&#x27;){
+      row.dataset.toggleBound=&#x27;true&#x27;;
+      row.onclick=()=&gt;toggleUnitDetails(index);
+    }
+  }
+  activeUnitIndex=null;
+  weaponFilterMode=&#x27;ALL&#x27;;
+  selectedWeaponIndex=null;
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
+  return Boolean(unitDataByIndex[0]||unitDataByIndex[1]);
+}
+window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;
+function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addViewUnit(f,&#x27;view-unit-row-first&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addViewUnit(f,&#x27;view-unit-row-second&#x27;,&#x27;&#x27;,&#x27;&#x27;,[&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;]);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);addEditUnit(f,&#x27;edit-unit-row-first&#x27;,&#x27;Nazdreg&#x27;,&#x27;&#x27;,&#x27;175&#x27;);addEditUnit(f,&#x27;edit-unit-row-second&#x27;,&#x27;Meganobz&#x27;,&#x27;x5&#x27;,&#x27;185&#x27;)}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;)requestAnimationFrame(refreshAlternateViewUnitsFromParent)}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -8032,7 +8098,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.59";
+    const APP_VERSION = "31.69";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12339,7 +12405,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       const npFrame = document.getElementById("npViewFrame");
       try {
         const npWindow = npFrame && npFrame.contentWindow;
-        if (npWindow && typeof npWindow.refreshNazdregFromParent === "function") npWindow.refreshNazdregFromParent();
+        if (npWindow && typeof npWindow.refreshAlternateViewUnitsFromParent === "function") npWindow.refreshAlternateViewUnitsFromParent();
       } catch (_) {}
 
       const newPageButton = document.getElementById("newPageModeToggle");
@@ -12377,27 +12443,18 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
-    window.getAlternateViewNazdregData = function() {
+    window.getAlternateViewUnitData = function(index) {
       const roster = appEditMode && viewEditRosterDraft ? getViewEditRoster() : getActiveRoster();
-      const models = getRosterEntryModels(roster);
-      const normalize = value => String(value || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "");
-      const model = models.find(item => {
-        if (!item || item.isSpacer || item.isNote || item.isDeleted || item.isMissingUnit) return false;
-        const candidates = [
-          item.displayName,
-          item.unit && item.unit.name,
-          item.entry && item.entry.unitId,
-          item.unit && item.unit.unitId
-        ].map(normalize).filter(Boolean);
-        return candidates.some(value => value === "nazdreg" || value.endsWith("nazdreg"));
-      });
+      const models = getRosterEntryModels(roster).filter(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
+      const model = models[Math.max(0, Number(index) || 0)] || null;
       if (!model) return null;
       const stats = model.stats || {};
       const entry = model.entry || (roster && Array.isArray(roster.entries) ? roster.entries.find(item => item && item.entryId === model.entryId) : null);
       const unit = model.unit || (entry ? getUnitById(entry.unitId) : null);
       const weapons = entry && unit ? getWeaponsForRosterEntry(entry, unit).filter(item => item && !item.isMissingLink) : [];
       return {
-        name: String(model.displayName || (model.unit && model.unit.name) || "Nazdreg"),
+        name: String(model.displayName || (model.unit && model.unit.name) || ""),
+        count: entry && unit ? getRosterEntryModelCount(entry, unit) : 1,
         m: String(stats.m ?? ""),
         t: String(stats.t ?? ""),
         sv: String(stats.sv ?? ""),
@@ -12405,6 +12462,9 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         ld: String(stats.ld ?? ""),
         oc: String(stats.oc ?? ""),
         waha: getUnitWahapediaLink(unit),
+        coreAbilities: unit ? getCoreAbilitiesForUnit(unit)
+          .filter(ability => ability && !ability.isMissingLink)
+          .map(ability => ({ name: String(ability.name || ability.abilityId || "") })) : [],
         weapons: weapons.slice(0,5).map(weapon => {
           const range = String(weapon.range ?? "").trim();
           const melee = range === "-" || range.toLowerCase() === "melee" || /\(melee\)/i.test(String(weapon.name || ""));
@@ -12423,6 +12483,18 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         })
       };
     };
+
+    function openAlternateViewWaha(url) {
+      const href = String(url || '').trim();
+      if (!/^https?:\/\//i.test(href)) return false;
+      try {
+        window.open(href, '_blank', 'noopener');
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+    window.openAlternateViewWaha = openAlternateViewWaha;
 
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
@@ -29571,7 +29643,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.59',
+        version: 'V31.69',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
