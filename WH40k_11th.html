@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.71</title>
+  <title>WH40k 11th V31.72</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.71; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.72; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.72
+    Scope: Make Edit use the same two-press navigation pattern as View. From canonical View, the first Edit press opens the existing/legacy Edit exactly as before. Pressing Edit again while Edit is already active opens the new blank Edit landing page created in V31.71. The new Edit page layout, 16-column 26px grid, formatting, header, Grid toggle, and intentionally blank content are unchanged. EDIT from the new View no longer jumps directly to the new Edit page.
+    Risk areas: App-mode Edit button routing only. Existing Edit implementation, new Edit layout, alternate View layout, Cards, roster data, persistence, Waha routing, Weapons, combat behavior, and CSV data remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.71
     Scope: Start the Edit migration with a new blank Edit landing surface inside the approved alternate/new View layout. EDIT from the new View now stays in that embedded phone-first surface and renders the same 16-column 26px grid, shared roster header, navigation, typography, colors, spacing, and Grid toggle, with no Unit rows or migrated Edit functionality. The View-only weapon filter is omitted on the blank Edit surface. VIEW from the new Edit returns to the new View. Canonical/legacy Edit remains intact and unchanged so features can be migrated one at a time.
     Risk areas: Alternate/new View-to-Edit navigation and the new blank Edit landing scaffold only. Legacy Edit, canonical View, Cards, roster data, persistence, Waha routing, Weapons, combat behavior, and CSV data remain unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View first/second Unit count display only. Unit ordering, profile stats, Waha/core-ability row, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.67
-    Scope: Make the alternate-View row under each wired Unit data-driven. Waha remains first, followed only by that active Unit's canonical CORE_ABILITY entries from Unit_Abilities.csv resolved through the existing runtime ability data. Remove the hardcoded Deep Strike badge. For the current first two Edit-order Units, Nazdreg therefore shows Waha + Deep Strike while Meganobz shows Waha only. Core-ability badges retain the existing Deep Strike badge visual standard and the existing Weapon-selection muted-text behavior.
-    Risk areas: Alternate View first/second Unit detail row only. Unit ordering, profile stats, Waha URLs, Weapon filtering/selection, canonical View/Edit/Cards, persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5402,7 +5403,7 @@
 &lt;script&gt;
 const NP_VERSION=&#x27;1.37&#x27;,RAW_ROOT=&#x27;https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/&#x27;,INDEX_PATH=&#x27;np/index.json&#x27;,grid=document.getElementById(&#x27;grid&#x27;),letters=&#x27;ABCDEFGHIJKLMNOP&#x27;;
 function addGridCells(f){for(let r=1;r&lt;=40;r++)for(let c=1;c&lt;=16;c++){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;grid-cell&#x27;;x.style.gridColumn=c;x.style.gridRow=r;if(r===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;col-coordinate&#x27;;s.textContent=letters[c-1];x.appendChild(s)}if(c===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;row-coordinate&#x27;;s.textContent=r;x.appendChild(s)}f.appendChild(x)}}
-function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(t===&#x27;edit&#x27;||(p===&#x27;edit&#x27;&amp;&amp;t===&#x27;view&#x27;))renderPage(t);else parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
+function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(p===&#x27;edit&#x27;&amp;&amp;t===&#x27;view&#x27;)renderPage(&#x27;view&#x27;);else if(p===&#x27;edit&#x27;&amp;&amp;t===&#x27;edit&#x27;)return;else parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
 function addViewHeader(f){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;Winning ORKS&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;Bully Boyz - Da Big Hunt - Wreckas&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;Priority Assets&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;- 1995 pts - 10 VPs&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;;gb.textContent=&#x27;G&#x27;;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
@@ -8163,7 +8164,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.71";
+    const APP_VERSION = "31.72";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12586,8 +12587,16 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
       if (target === "edit") {
         if (activeAppScreen === "cards") showArmyScreen({ commitCardsState: true });
-        if (!appEditMode) setEditMode(true);
-        else updateEditModeToggle();
+        if (appEditMode) {
+          showNewPageScreen();
+          const npFrame = document.getElementById("npViewFrame");
+          try {
+            const npWindow = npFrame && npFrame.contentWindow;
+            if (npWindow && typeof npWindow.renderPage === "function") npWindow.renderPage("edit");
+          } catch (_) {}
+          return;
+        }
+        setEditMode(true);
         return;
       }
 
@@ -29710,7 +29719,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.71',
+        version: 'V31.72',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
