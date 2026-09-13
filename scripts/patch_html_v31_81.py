@@ -29,17 +29,16 @@ if not vm or not em:
 view_np = html.unescape(vm.group(2))
 edit_np = html.unescape(em.group(2))
 
-# Final display-data link for the staged migration: New View now reads its Unit
-# records only from New Edit. The complete record already staged in New Edit
-# carries name/count/profile stats, Waha, core abilities, Weapons, Weapon stats,
-# tags, and Range/Melee/Other scope.
-legacy_unit_call = 'parent.getAlternateViewUnitData(index)'
-new_edit_unit_call = 'parent.getNewEditUnitData(index)'
-if view_np.count(legacy_unit_call) != 1:
-    raise SystemExit(f'New View legacy Unit source: expected 1 match, found {view_np.count(legacy_unit_call)}')
-if view_np.count(new_edit_unit_call) != 0:
-    raise SystemExit(f'New View New Edit Unit source unexpectedly already present: {view_np.count(new_edit_unit_call)}')
-view_np = view_np.replace(legacy_unit_call, new_edit_unit_call, 1)
+# Final display-data link for the staged migration: replace the complete legacy
+# Unit-source expression, including its typeof guard, so New View contains no
+# direct reference to the Old Edit/model Unit bridge at all.
+legacy_unit_source = "parent&&typeof parent.getAlternateViewUnitData==='function'?parent.getAlternateViewUnitData(index):null"
+new_edit_unit_source = "parent&&typeof parent.getNewEditUnitData==='function'?parent.getNewEditUnitData(index):null"
+if view_np.count(legacy_unit_source) != 1:
+    raise SystemExit(f'New View legacy Unit source: expected 1 match, found {view_np.count(legacy_unit_source)}')
+if view_np.count(new_edit_unit_source) != 0:
+    raise SystemExit(f'New View New Edit Unit source unexpectedly already present: {view_np.count(new_edit_unit_source)}')
+view_np = view_np.replace(legacy_unit_source, new_edit_unit_source, 1)
 
 # Write New View back before updating the parent-facing bridge.
 text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
@@ -102,8 +101,10 @@ final_edit = html.unescape(em.group(2))
 
 if final_view.count('parent.getNewEditHeaderData()') != 1:
     raise SystemExit(f'New View header must read New Edit exactly once; found {final_view.count("parent.getNewEditHeaderData()")}')
-if final_view.count(new_edit_unit_call) != 1:
-    raise SystemExit(f'New View Unit data must read New Edit exactly once; found {final_view.count(new_edit_unit_call)}')
+if final_view.count('parent.getNewEditUnitData(index)') != 1:
+    raise SystemExit(f'New View Unit data must read New Edit exactly once; found {final_view.count("parent.getNewEditUnitData(index)")}')
+if final_view.count("typeof parent.getNewEditUnitData==='function'") != 1:
+    raise SystemExit(f'New View Unit guard must target New Edit exactly once; found {final_view.count("typeof parent.getNewEditUnitData===\'function\'")}')
 
 # Reject direct legacy/model display-data reads from New View.
 for forbidden in [
