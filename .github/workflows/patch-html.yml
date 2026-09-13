@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.88 direct New View legacy wiring
-        run: python3 scripts/patch_html_v31_88.py
+      - name: Build V31.89 New View title refresh fix
+        run: python3 scripts/patch_html_v31_89.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.88 direct New View to Old Edit wiring"
+          git commit -m "Build V31.89 New View title refresh wiring"
           git push origin HEAD:main
