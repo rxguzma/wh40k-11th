@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.98</title>
+  <title>WH40k 11th V31.99</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.98; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.99; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.99
+    Scope: Preserve New View across GitHub release switches. When loadGithubVersion starts while the top-level app is on New View, it records a one-shot route marker on the stable parent version host. After the replacement runtime completes bootstrap initialization, it restores New View before the host exposes the new runtime, then clears the marker. Failed loads clear the marker and retain the existing runtime. Old View/Edit/Cards version behavior is unchanged. Update-to-latest inherits the same behavior because it already routes through loadGithubVersion.
+    Risk areas: Version-switch routing only. New View rendering, unified Edit, lock/frozen snapshot, Version/Update/Download grid placement, Old View/Edit/Cards, roster persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.98
     Scope: Retire the obsolete standalone New Edit page after the View/Edit migration into New View. Remove its dedicated screen, iframe, proxy data bridges, second-press routing, and dead legacy route while preserving shared Edit styles/functions used by the unified New View EDIT mode. New View navigation is simplified to one reciprocal mode button at M:N and Cards at O:P, leaving K:L empty: VIEW is the default state and therefore shows EDIT; EDIT shows VIEW. Both states continue to render locally through renderPage without a page reload.
     Risk areas: New View header navigation and removal of dead standalone-New-Edit infrastructure only. Unified EDIT rows/actions, direct Alternate View/model bridges, New View lock/frozen snapshot, Version/Update/Download grid controls, Old Edit functionality, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.95
     Scope: Transfer the existing Version / Update interface into New View without duplicating the version engine. New View row 5 now uses the fixed 16-column sheet grid: Version spans A:L and Update spans M:P. Version/current toggles a ten-release history panel rendered as two rows of five; retained-version buttons call the existing parent loadGithubVersion path. Update directly calls the existing updateToLatestVersion path and does not open or close the history panel. The parent exposes only a read-only version UI snapshot; GitHub history refresh, version checkpointing, host mounting, and update behavior remain owned by the existing version system.
     Risk areas: New View version presentation and a read-only parent UI bridge only. Old View Version/Update/Download behavior, release host, roster/model processing, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.94
-    Scope: Correct unified New View EDIT points to use the same canonical roster-model totals as Old Edit. getAlternateViewRosterRows now carries each Unit model's points.total, which already includes the selected Unit point option, active per-model point modifiers, and paid Enhancement points. In New View EDIT, column P is now a plain Edit-style numeric point value rather than a Points button/icon or guessed fallback field. The EDIT title point total is recalculated from the ordered Unit rows shown on that sheet, ignoring spacer rows, after the normal legacy title fields refresh. VIEW title behavior, the V31.92 processing lock, and the V31.93 frozen snapshot remain unchanged.
-    Risk areas: Parent ordered-row point field plus unified New View EDIT row/title point presentation only. VIEW frozen-snapshot behavior, Old Edit, New Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -8517,7 +8517,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.98";
+    const APP_VERSION = "31.99";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -17812,10 +17812,27 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       if (versionActionBusy || !canReloadAppVersion()) return false;
       const target = normalizeAppVersion(version);
       if (target === APP_VERSION) { setVersionHistoryStatus(`v${APP_VERSION} is running.`, "success", true); return true; }
+      const restoreNewView = activeAppScreen === "newpage";
+      try {
+        if (restoreNewView) window.parent.__wh40kRestoreAppScreen = "newpage";
+        else if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen;
+      } catch (_) {}
       versionActionBusy = true;
       setVersionHistoryStatus(`Loading v${target}…`, "", true);
-      try { return await getVersionHost().load(target); }
-      catch (error) { setVersionHistoryStatus(error.message, "error", true); return false; }
+      try {
+        const loaded = await getVersionHost().load(target);
+        if (!loaded && restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        return loaded;
+      }
+      catch (error) {
+        if (restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        setVersionHistoryStatus(error.message, "error", true);
+        return false;
+      }
       finally { versionActionBusy = false; syncVersionBoxDom(); }
     }
 
@@ -30112,7 +30129,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.98',
+        version: 'V31.99',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -30551,7 +30568,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     });
     ArmyBuilderModules.bootstrap.initialize().then(() => {
       if (!appStorageInitialized) throw new Error("App storage could not be opened. The current app was kept.");
+      let restoreNewView = false;
+      try { restoreNewView = window.parent.__wh40kRestoreAppScreen === "newpage"; } catch (_) {}
+      if (restoreNewView) showNewPageScreen();
       window.parent.WH40kVersionHost.ready(window, APP_VERSION);
+      if (restoreNewView) {
+        try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+      }
     }).catch(error => window.parent.WH40kVersionHost.failed(window, error.message));
 
     // V8.2 Architecture note:
