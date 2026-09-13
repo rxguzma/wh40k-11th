@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.61</title>
+  <title>WH40k 11th V31.62</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.61; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.62; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.62
+    Scope: Apply Weapon-selection inactive styling to the entire Nazdreg detail row, not only Deep Strike. When a Weapon is selected, both Waha and Deep Strike text use muted gray at 50% while their button/tag shells, backgrounds and borders remain unchanged. Clearing selection restores their normal text. Existing selected Weapon green name/stats and 50% inactive Weapon name/stats and Tag text remain unchanged.
+    Risk areas: Alternate View detail-row and Weapon-selection text styling only. Layout, filtering, expansion, live data, links, and canonical View/Edit/Cards are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.61
     Scope: Correct alternate View selection visuals. Tag/button/box backgrounds and borders remain identical before and after Weapon selection; only their text changes. The selected Weapon name and stats use existing active green. Other visible Weapon name/stat text is 50% opacity. Other Weapon Tag text and Deep Strike text use muted gray at 50% opacity while their boxes remain unchanged. Clearing Weapon selection restores normal colors.
     Risk areas: Alternate View selected/inactive font styling only. Layout, filtering, expansion, Waha, live data, and canonical View/Edit/Cards are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View Weapon selected/muted font styling only. Unit styling, Waha, View/Edit/Cards navigation, roster persistence, and combat behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.57
-    Scope: In alternate View, non-relevant Unit keyword text under the active Unit now uses the same 50%-opacity treatment as the active M/T/SV/W/LD/OC stat text. Deep Strike is marked as a Unit keyword and its orange font is rendered at 50% alpha while Nazdreg is open; the keyword button background/border, Waha link, Weapon filtering, Weapon selection, and compact expansion remain unchanged. This establishes the muted-keyword treatment for additional Unit keywords as they are wired.
-    Risk areas: Alternate View Unit keyword font treatment only. Live roster/Weapon data, View/Edit/Cards navigation, persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5379,6 +5380,8 @@
 .weapon-tags.weapon-muted{opacity:1!important}
 .weapon-tags.weapon-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
 .unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
+
+.detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5462,8 +5465,7 @@ function syncWeaponLayout(){
   if(selectedWeaponIndex!==null&amp;&amp;!visible.includes(selectedWeaponIndex))selectedWeaponIndex=null;
   const ordered=selectedWeaponIndex===null?visible:[selectedWeaponIndex,...visible.filter(i=&gt;i!==selectedWeaponIndex)];
   const hasSelection=selectedWeaponIndex!==null&amp;&amp;visible.includes(selectedWeaponIndex);
-  const deep=grid.querySelector(&#x27;.detail-deep-strike&#x27;);
-  if(deep)deep.classList.toggle(&#x27;keyword-muted&#x27;,hasSelection);
+  grid.querySelectorAll(&#x27;.detail-waha,.detail-deep-strike&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;);el.classList.toggle(&#x27;detail-row-muted&#x27;,hasSelection)});
   const showWeapons=Boolean(nazdregOpen&amp;&amp;ordered.length);
   if(header){
     header.style.display=showWeapons?&#x27;grid&#x27;:&#x27;none&#x27;;
@@ -8044,7 +8046,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.61";
+    const APP_VERSION = "31.62";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29583,7 +29585,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.61',
+        version: 'V31.62',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
