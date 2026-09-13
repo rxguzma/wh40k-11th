@@ -1,6 +1,10 @@
 {
-  "latest": "31.49",
+  "latest": "31.50",
   "versions": [
+    {
+      "version": "31.50",
+      "file": "versions/WH40k_11th_V31.50.html"
+    },
     {
       "version": "31.49",
       "file": "versions/WH40k_11th_V31.49.html"
@@ -36,10 +40,6 @@
     {
       "version": "31.41",
       "file": "versions/WH40k_11th_V31.41.html"
-    },
-    {
-      "version": "31.40",
-      "file": "versions/WH40k_11th_V31.40.html"
     }
   ]
 }
