@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.48</title>
+  <title>WH40k 11th V31.49</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.48; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.49; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.49
+    Scope: Add open/closed interaction to the live Nazdreg row in alternate View. Nazdreg starts closed with rows 10-12 hidden. Tapping the Nazdreg unit row toggles it open, changes the Nazdreg unit-name font to the existing success green, and displays row 10 Deep Strike plus live row 11 Weapon and row 12 Weapon Tags when available. Tapping again returns the unit name to normal and hides rows 10-12. Reopening alternate View resets Nazdreg to closed.
+    Risk areas: Alternate View Nazdreg row and rows 10-12 only. Canonical View/Edit/Cards, roster persistence, weapon data, and all other alternate-View rows are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.48
     Scope: In the alternate View, move the existing Deep Strike row from grid row 24 to row 10, move the first Nazdreg Weapon row from row 28 to row 11, and move its existing Tag row from row 29 to row 12. Wire only that first Weapon row and its existing Tag badges to Nazdreg's real current Edit/active-roster Weapon data (name, R, A, WS, St, AP, D, and Weapon Ability labels). Leave every other transferred Weapon and mock row unchanged.
     Risk areas: Alternate View Nazdreg rows 10-12 and the existing Nazdreg parent data bridge only. Canonical View/Edit/Cards, roster persistence, combat behavior, and all other alternate-View rows are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View surface only. Canonical View/Edit/Cards, roster data, persistence, and combat behavior are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.44
-    Scope: Correct the alternate View transfer to preserve the literal Np1.37 drafting geometry instead of adapting it to the existing shell. The surface now uses the exact 16-column x 26px grid: roster name B2:H2, detachments B3:J3, summary B4:J4, View/Edit/Cards at K2:P3, row 5 left empty, and phase controls B6:P6. The Np header shell retains its original A1:P5 geometry. Drafting grid lines and coordinates remain hidden.
-    Risk areas: Alternate View geometry only. Second-press View routing, existing View/Edit/Cards behavior, roster data, persistence, and combat behavior are unchanged.
-  -->
 
 
 
@@ -5349,6 +5350,9 @@
 .draft-grid.grid-on{border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25)}
 .draft-grid.grid-on .grid-cell{visibility:visible}
 .version-bar{display:none!important}
+
+.view-unit-row-first.unit-active .view-unit-name{color:#80d6a3}
+.detail-deep-strike,.weapon-row-1,.weapon-tags-1{display:none}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5388,12 +5392,28 @@ function addExpandedUnitMock(f){
   tagRows.forEach(([rc,tags])=&gt;{const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;weapon-tags &#x27;+rc;tags.forEach(([t,start,span])=&gt;{const x=document.createElement(&#x27;span&#x27;);x.className=&#x27;weapon-tag&#x27;;x.textContent=t;x.style.gridColumn=start+&#x27;/span &#x27;+span;r.appendChild(x)});f.appendChild(r)});
 }
 
+
+let nazdregOpen=false;
+function syncNazdregDetailVisibility(){
+  const row=grid.querySelector(&#x27;.view-unit-row-first&#x27;);
+  if(row)row.classList.toggle(&#x27;unit-active&#x27;,nazdregOpen);
+  const deep=grid.querySelector(&#x27;.detail-deep-strike&#x27;);
+  if(deep)deep.style.display=nazdregOpen?&#x27;flex&#x27;:&#x27;none&#x27;;
+  const weaponRow=grid.querySelector(&#x27;.weapon-row-1&#x27;);
+  if(weaponRow)weaponRow.style.display=nazdregOpen&amp;&amp;weaponRow.dataset.liveAvailable===&#x27;true&#x27;?&#x27;grid&#x27;:&#x27;none&#x27;;
+  const tagRow=grid.querySelector(&#x27;.weapon-tags-1&#x27;);
+  if(tagRow)tagRow.style.display=nazdregOpen&amp;&amp;tagRow.dataset.liveAvailable===&#x27;true&#x27;?&#x27;grid&#x27;:&#x27;none&#x27;;
+}
+function toggleNazdregDetails(){
+  nazdregOpen=!nazdregOpen;
+  syncNazdregDetailVisibility();
+}
 function refreshNazdregFromParent(){
   const row=grid.querySelector(&#x27;.view-unit-row-first&#x27;);
   if(!row)return false;
   let data=null;
   try{data=parent&amp;&amp;typeof parent.getAlternateViewNazdregData===&#x27;function&#x27;?parent.getAlternateViewNazdregData():null}catch(_){data=null}
-  if(!data){row.style.display=&#x27;none&#x27;;return false}
+  if(!data){nazdregOpen=false;row.style.display=&#x27;none&#x27;;syncNazdregDetailVisibility();return false}
   row.style.display=&#x27;grid&#x27;;
   const name=row.querySelector(&#x27;.view-unit-name&#x27;);
   if(name)name.textContent=String(data.name||&#x27;Nazdreg&#x27;);
@@ -5401,7 +5421,7 @@ function refreshNazdregFromParent(){
   const weaponRow=grid.querySelector(&#x27;.weapon-row-1&#x27;);
   if(weaponRow){
     const weapon=data.weapon||null;
-    weaponRow.style.display=weapon?&#x27;grid&#x27;:&#x27;none&#x27;;
+    weaponRow.dataset.liveAvailable=weapon?&#x27;true&#x27;:&#x27;false&#x27;;
     if(weapon){
       const weaponName=weaponRow.querySelector(&#x27;.weapon-name&#x27;);
       if(weaponName)weaponName.textContent=String(weapon.name||&#x27;&#x27;);
@@ -5413,8 +5433,11 @@ function refreshNazdregFromParent(){
     const tags=data.weapon&amp;&amp;Array.isArray(data.weapon.tags)?data.weapon.tags:[];
     const tagEls=[...tagRow.querySelectorAll(&#x27;.weapon-tag&#x27;)];
     tagEls.forEach((el,index)=&gt;{el.textContent=String(tags[index]||&#x27;&#x27;);el.style.display=tags[index]?&#x27;inline-flex&#x27;:&#x27;none&#x27;});
-    tagRow.style.display=tags.length?&#x27;grid&#x27;:&#x27;none&#x27;;
+    tagRow.dataset.liveAvailable=tags.length?&#x27;true&#x27;:&#x27;false&#x27;;
   }
+  if(row.dataset.toggleBound!==&#x27;true&#x27;){row.dataset.toggleBound=&#x27;true&#x27;;row.onclick=toggleNazdregDetails}
+  nazdregOpen=false;
+  syncNazdregDetailVisibility();
   return true;
 }
 window.refreshNazdregFromParent=refreshNazdregFromParent;
@@ -7890,7 +7913,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.48";
+    const APP_VERSION = "31.49";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29424,7 +29447,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.48',
+        version: 'V31.49',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
