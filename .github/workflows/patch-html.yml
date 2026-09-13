@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.59 inactive Weapon font styling
+      - name: Build V31.59 inactive Weapon font styling retry
         run: python3 scripts/patch_html_v31_59.py
 
       - name: Validate and generate release history
