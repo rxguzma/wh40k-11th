@@ -40,3 +40,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Build V31.72 second-press Edit routing"
           git push origin HEAD:main
+
+# Retry after tightening the alternate Edit render hook.
