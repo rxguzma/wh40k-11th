@@ -40,3 +40,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Build V31.49 alternate View unit toggle"
           git push origin HEAD:main
+
+# Retry after V31.49 acceptance-check correction.
