@@ -31,12 +31,9 @@ old_state = "let frozenNewViewSnapshot=null;\nlet currentViewRosterRows=[];\nfun
 new_state = "let frozenNewViewSnapshot=null;\nlet currentViewRosterRows=[];\nlet cachedLiveViewHeader=null;\nlet hasLiveViewCache=false;\nfunction cloneNewViewValue(value){"
 once(old_state, new_state, 'New View live-cache state')
 
-# Cache each successful live header read, including the existing parent callback
-# when New View is opened from elsewhere in the app.
-old_header_tail = "  if(rest)rest.textContent=data?String(data.summaryRest||''):'';\n  return Boolean(data);\n}\nwindow.refreshNewViewTitleFromLegacy=refreshNewViewTitleFromLegacy;"
-new_header_tail = "  if(rest)rest.textContent=data?String(data.summaryRest||''):'';\n  if(!newViewProcessingLocked())cachedLiveViewHeader=data?captureNewViewHeaderSnapshot():null;\n  return Boolean(data);\n}\nwindow.refreshNewViewTitleFromLegacy=refreshNewViewTitleFromLegacy;"
-once(old_header_tail, new_header_tail, 'New View header cache write')
-
+# The existing parent screen-open path refreshes the header before the roster.
+# Capture that already-rendered live header when the roster refresh completes,
+# so a local VIEW/EDIT switch does not need another parent/model header read.
 old_roster_refresh = r'''function refreshAlternateViewUnitsFromParent(){if(newViewProcessingLocked())return false;
   let rows=[];
   try{rows=parent&&typeof parent.getAlternateViewRosterRows==='function'?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
@@ -47,11 +44,12 @@ new_roster_refresh = r'''function refreshAlternateViewUnitsFromParent(){if(newVi
   let rows=[];
   try{rows=parent&&typeof parent.getAlternateViewRosterRows==='function'?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
   const ok=renderNewViewRosterRows(rows);
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
   hasLiveViewCache=true;
   return ok;
 }
 window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;'''
-once(old_roster_refresh, new_roster_refresh, 'New View roster cache validity')
+once(old_roster_refresh, new_roster_refresh, 'New View roster/header cache validity')
 
 # Split EDIT rendering from EDIT live refresh so the local toggle can reuse the
 # existing ordered rows instead of walking the full parent model again.
@@ -94,6 +92,7 @@ function refreshUnifiedEditRows(){
   try{rows=parent&&typeof parent.getAlternateViewRosterRows==='function'?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
   rows=Array.isArray(rows)?rows:[];
   currentViewRosterRows=rows;
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
   hasLiveViewCache=true;
   return renderUnifiedEditRows(rows);
 }
@@ -218,6 +217,7 @@ required_view = [
     'addGridCells(background);',
     "grid.querySelectorAll('.grid-cell[hidden]').forEach",
     'currentViewRosterRows=rows;',
+    'cachedLiveViewHeader=captureNewViewHeaderSnapshot();',
     'hasLiveViewCache=true;',
     "else if(!renderCachedView())requestAnimationFrame(refreshNewView)",
     "else if(!renderCachedEdit())requestAnimationFrame(refreshUnifiedEdit)",
