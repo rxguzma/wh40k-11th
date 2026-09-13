@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.89</title>
+  <title>WH40k 11th V31.90</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.89; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.90; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.90
+    Scope: Begin the one-page View/Edit migration inside New View. VIEW and EDIT now switch locally within the same New View iframe instead of EDIT opening Old Edit. In the New View EDIT state, Range/Melee/Other/All, the Stats header, Unit profile stats, expanded details, and Weapons are not rendered. Each live Unit row shows only Move, Copy, Dead, and Points controls using the established New Edit button styling, placed in columns M, N, O, and P respectively. Move uses the existing menu/move glyph, Copy uses the existing copy glyph, Dead uses D, and Points displays the available Unit point value when present or P otherwise. These controls are presentation-only in this pass; no edit actions are migrated yet. VIEW behavior and direct Old Edit/model data sourcing remain unchanged.
+    Risk areas: New View local VIEW/EDIT switching and EDIT-state Unit-row presentation only. New Edit, Old Edit behavior, Cards, persistence, CSV data, Waha routing, Probable, and New View VIEW-mode Unit/Weapon behavior remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.89
     Scope: Fix the remaining New View title refresh wiring after V31.88 removed New Edit from the data path. The parent screen-opening callback now calls refreshNewViewTitleFromLegacy instead of the retired refreshNewViewTitleFromNewEdit name, so roster name, Detachments, Disposition, and points refresh from getAlternateViewHeaderData whenever New View is opened. Unit/Weapon wiring and Old Edit routing are unchanged.
     Risk areas: New View title/header refresh callback only.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.86
     Scope: Preserve the New View ALL / SHOOT / MELEE / OTHER filter across Unit open/close toggles and Unit-data refreshes. The filter now changes only when the user taps the filter control; ALL remains the initial page-load default. Unit toggling may still clear an individual Weapon selection, but it no longer changes the top filter. New View continues to source Unit data through New Edit.
     Risk areas: New View weapon-filter state only. New Edit, Unit data, Weapons, Tags, Waha routing, Cards, persistence, CSV data, and Probable are unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.85
-    Scope: Return New Edit's collapsed Unit list to the old Edit/Np1.37-style icon rows instead of showing profile Stats immediately. Tapping a New Edit Unit now toggles one compact Stats field for that Unit, showing M, T, SV, W, LD, and OC. The New Edit local unitDataByIndex cache is now refreshed independently of the visible row type, so New View continues to receive the same complete Unit records and profile Stats through getNewEditUnitData(). No New View data contract, CSV data, Old Edit behavior, Weapons, Waha routing, Cards, persistence, or Probable behavior changes.
-    Risk areas: New Edit Unit list presentation, Unit toggle, Stats-field presentation, and New Edit cache refresh only.
   -->
 
 
@@ -5411,6 +5411,11 @@
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
 .view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
+
+.unified-edit-unit-row .edit-unit-name{grid-column:1/span 11}
+.unified-edit-action{width:calc(var(--cell) - var(--gap));height:var(--std);align-self:center;justify-self:center;padding:0;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
+.unified-edit-action svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.4}
+.unified-edit-points{font-size:11px}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5419,7 +5424,7 @@
 &lt;script&gt;
 const NP_VERSION=&#x27;1.37&#x27;,RAW_ROOT=&#x27;https://raw.githubusercontent.com/rxguzma/wh40k-11th/main/&#x27;,INDEX_PATH=&#x27;np/index.json&#x27;,grid=document.getElementById(&#x27;grid&#x27;),letters=&#x27;ABCDEFGHIJKLMNOP&#x27;;
 function addGridCells(f){for(let r=1;r&lt;=40;r++)for(let c=1;c&lt;=16;c++){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;grid-cell&#x27;;x.style.gridColumn=c;x.style.gridRow=r;if(r===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;col-coordinate&#x27;;s.textContent=letters[c-1];x.appendChild(s)}if(c===1){const s=document.createElement(&#x27;span&#x27;);s.className=&#x27;row-coordinate&#x27;;s.textContent=r;x.appendChild(s)}f.appendChild(x)}}
-function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(t===&#x27;edit&#x27;&amp;&amp;parent&amp;&amp;typeof parent.openLegacyEditFromNewView===&#x27;function&#x27;)parent.openLegacyEditFromNewView();else parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
+function addPageNavigation(f,p){const m=document.createElement(&#x27;div&#x27;);m.className=&#x27;top-mode-buttons&#x27;;[[&#x27;view&#x27;,&#x27;VIEW&#x27;],[&#x27;edit&#x27;,&#x27;EDIT&#x27;],[&#x27;cards&#x27;,&#x27;CARDS&#x27;]].forEach(([t,l])=&gt;{const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard&#x27;+(p===t?&#x27; active-green&#x27;:&#x27;&#x27;);b.textContent=l;b.onclick=()=&gt;{if(t===&#x27;view&#x27;||t===&#x27;edit&#x27;)renderPage(t);else parent.UI.selectAppMode(t)};m.appendChild(b)});f.appendChild(m);}
 function addViewHeader(f){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;;gb.textContent=&#x27;G&#x27;;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
@@ -5666,7 +5671,66 @@ function refreshNewViewTitleFromLegacy(){
   return Boolean(data);
 }
 window.refreshNewViewTitleFromLegacy=refreshNewViewTitleFromLegacy;
-function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(refreshNewViewTitleFromLegacy);requestAnimationFrame(refreshAlternateViewUnitsFromParent)}}
+function addUnifiedEditUnit(f,data,rowIndex){
+  const r=document.createElement(&#x27;div&#x27;);
+  r.className=&#x27;edit-unit-row dynamic-roster-row unified-edit-unit-row&#x27;;
+  r.dataset.rosterIndex=String(rowIndex);
+  const n=document.createElement(&#x27;div&#x27;);
+  n.className=&#x27;edit-unit-name&#x27;;
+  n.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  r.appendChild(n);
+
+  const move=document.createElement(&#x27;button&#x27;);
+  move.type=&#x27;button&#x27;;move.className=&#x27;unified-edit-action unified-edit-move&#x27;;move.style.gridColumn=&#x27;13&#x27;;move.textContent=&#x27;≡&#x27;;move.setAttribute(&#x27;aria-label&#x27;,&#x27;Move&#x27;);
+  r.appendChild(move);
+
+  const copy=document.createElement(&#x27;button&#x27;);
+  copy.type=&#x27;button&#x27;;copy.className=&#x27;unified-edit-action unified-edit-copy&#x27;;copy.style.gridColumn=&#x27;14&#x27;;copy.setAttribute(&#x27;aria-label&#x27;,&#x27;Copy&#x27;);
+  copy.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;9&quot; height=&quot;9&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;
+  r.appendChild(copy);
+
+  const dead=document.createElement(&#x27;button&#x27;);
+  dead.type=&#x27;button&#x27;;dead.className=&#x27;unified-edit-action unified-edit-dead&#x27;;dead.style.gridColumn=&#x27;15&#x27;;dead.textContent=&#x27;D&#x27;;dead.setAttribute(&#x27;aria-label&#x27;,&#x27;Dead&#x27;);
+  r.appendChild(dead);
+
+  const points=document.createElement(&#x27;button&#x27;);
+  points.type=&#x27;button&#x27;;points.className=&#x27;unified-edit-action unified-edit-points&#x27;;points.style.gridColumn=&#x27;16&#x27;;points.setAttribute(&#x27;aria-label&#x27;,&#x27;Points&#x27;);
+  const pointValue=data&amp;&amp;(data.points??data.pts??data.totalPoints??data.unitPoints);
+  points.textContent=pointValue===undefined||pointValue===null||pointValue===&#x27;&#x27;?&#x27;P&#x27;:String(pointValue);
+  r.appendChild(points);
+
+  f.appendChild(r);
+  return r;
+}
+
+function refreshUnifiedEditRows(){
+  let rows=[];
+  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
+  rows=Array.isArray(rows)?rows:[];
+  grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;el.remove());
+  let cursor=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
+  rows.forEach((data,rowIndex)=&gt;{
+    if(data&amp;&amp;data.kind===&#x27;spacer&#x27;){
+      const spacer=document.createElement(&#x27;div&#x27;);
+      spacer.className=&#x27;roster-spacer-row dynamic-roster-row&#x27;;
+      spacer.dataset.rosterIndex=String(rowIndex);
+      spacer.style.gridRow=String(cursor++);
+      grid.appendChild(spacer);
+      return;
+    }
+    if(!data||data.kind!==&#x27;unit&#x27;)return;
+    const f=document.createDocumentFragment();
+    const row=addUnifiedEditUnit(f,data,rowIndex);
+    row.style.gridRow=String(cursor++);
+    grid.appendChild(f);
+  });
+  const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
+  if(mainButton)mainButton.style.gridRow=String(cursor+1);
+  return rows.some(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
+}
+window.refreshUnifiedEditRows=refreshUnifiedEditRows;
+
+function renderPage(p){grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(refreshNewViewTitleFromLegacy);requestAnimationFrame(refreshAlternateViewUnitsFromParent)}if(p===&#x27;edit&#x27;){requestAnimationFrame(refreshNewViewTitleFromLegacy);requestAnimationFrame(refreshUnifiedEditRows)}}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
 async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
@@ -8387,7 +8451,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.89";
+    const APP_VERSION = "31.90";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30042,7 +30106,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.89',
+        version: 'V31.90',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
