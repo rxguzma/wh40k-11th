@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_104.py'
+      - 'scripts/patch_html_v31_105.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.104 corrected View Edit controls
-        run: python3 scripts/patch_html_v31_104.py
+      - name: Build V31.105 corrected shared grid control
+        run: python3 scripts/patch_html_v31_105.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.104 corrected View Edit controls"
+          git commit -m "Build V31.105 corrected View Edit controls"
           git push origin HEAD:main
