@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.102</title>
+  <title>WH40k 11th V31.103</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.102; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.103; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.103
+    Scope: Complete the next New View lock optimization on the current V31.102 unified-page baseline. Pressing the existing Lock now pre-renders every current Unit x weapon-filter combination once, before the lock state turns on, using the already-detached V31.93 snapshot. Those prepared DOM states are retained in memory. While locked, Unit open/close and the existing filter carousel only switch which prepared state is visible; they do not call applyActiveUnitDetails, syncUnitDetailVisibility, renderNewViewRosterRows, parent/model bridges, persistence, or animation-frame refreshes. All other locked View controls are inert, including any Probable control; Probable-looking controls are also visually disabled in prepared states. The live original View DOM remains mounted but hidden so Unlock can turn the lock off, discard the prepared states, and perform exactly one normal fresh synchronization. No UI control was added or moved.
+    Risk areas: New View locked-mode DOM/state handling only. Unlocked View behavior, unified Edit, current Boyz point-option behavior, persistent 40x16 grid fast path, compact Weapon Tags, Version/Update/Download, Old Edit, Cards, CSV data, Waha routing, and normal Probable behavior remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.102
     Scope: Standardize unified New View/Edit Weapon Tag boxes to the same compact visual contract as Unit detail boxes. Weapon Tags now use Roboto 12px bold, 24px standard height, 8px horizontal padding, a 1px button border, the standard 6px radius, shared button background, centered text, and the existing standard row gap. Weapon Tags remain content-sized with no fixed grid spans, so short Tags stay compact and long Tags expand to their text. Existing orange/muted/active semantic states remain unchanged.
     Risk areas: Unified New View/Edit Weapon Tag presentation only. Weapon/Tag data, filtering, selection, Unit detail-box width rules, roster behavior, persistence, Cards, Waha routing, Version controls, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.99
     Scope: Preserve New View across GitHub release switches. When loadGithubVersion starts while the top-level app is on New View, it records a one-shot route marker on the stable parent version host. After the replacement runtime completes bootstrap initialization, it restores New View before the host exposes the new runtime, then clears the marker. Failed loads clear the marker and retain the existing runtime. Old View/Edit/Cards version behavior is unchanged. Update-to-latest inherits the same behavior because it already routes through loadGithubVersion.
     Risk areas: Version-switch routing only. New View rendering, unified Edit, lock/frozen snapshot, Version/Update/Download grid placement, Old View/Edit/Cards, roster persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.98
-    Scope: Retire the obsolete standalone New Edit page after the View/Edit migration into New View. Remove its dedicated screen, iframe, proxy data bridges, second-press routing, and dead legacy route while preserving shared Edit styles/functions used by the unified New View EDIT mode. New View navigation is simplified to one reciprocal mode button at M:N and Cards at O:P, leaving K:L empty: VIEW is the default state and therefore shows EDIT; EDIT shows VIEW. Both states continue to render locally through renderPage without a page reload.
-    Risk areas: New View header navigation and removal of dead standalone-New-Edit infrastructure only. Unified EDIT rows/actions, direct Alternate View/model bridges, New View lock/frozen snapshot, Version/Update/Download grid controls, Old Edit functionality, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5432,6 +5432,11 @@
 .point-option-toggle{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;border:1px solid #48515f;background:#2b313b;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;cursor:pointer;user-select:none;-webkit-user-select:none;vertical-align:1px;white-space:nowrap;appearance:none;-webkit-appearance:none}
 .point-option-toggle:active{background:#3a4350;transform:translateY(1px)}
 .point-option-label-static{display:inline-block;margin-left:8px;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;vertical-align:1px;white-space:nowrap}
+
+.new-view-lock-original-hidden{display:none!important}
+.new-view-locked-state{display:contents}
+.new-view-locked-state[hidden]{display:none!important}
+.new-view-lock-disabled{opacity:.45!important;pointer-events:none!important}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5662,7 +5667,181 @@ function addNewViewVersionControls(f){
   positionNewViewVersionControls();
   requestAnimationFrame(positionNewViewVersionControls);
 }
-function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){newViewHeaderLocked=false;frozenNewViewSnapshot=null;syncNewViewLockButton(lb);requestAnimationFrame(refreshNewView);return}const snapshot=captureNewViewSnapshot();frozenNewViewSnapshot=snapshot;activateNewViewSnapshot(snapshot);newViewHeaderLocked=true;syncNewViewLockButton(lb)};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
+let lockedViewStateCache=null;
+let lockedViewStateLayers=[];
+let lockedViewFilterOrder=[];
+function lockedViewStateKey(unitIndex,mode){
+  return (unitIndex===null?&#x27;none&#x27;:String(unitIndex))+&#x27;|&#x27;+String(mode||&#x27;&#x27;);
+}
+function getLockedViewFilterOrder(){
+  const modes=[];
+  if(typeof weaponFilterModes!==&#x27;undefined&#x27;&amp;&amp;Array.isArray(weaponFilterModes)){
+    weaponFilterModes.forEach(mode=&gt;{const value=String(mode||&#x27;&#x27;);if(value&amp;&amp;!modes.includes(value))modes.push(value)});
+  }
+  const current=String(weaponFilterMode||&#x27;&#x27;);
+  if(current&amp;&amp;!modes.includes(current))modes.unshift(current);
+  return modes.length?modes:[current||&#x27;ALL&#x27;];
+}
+function getLockedViewUnitIndexes(){
+  const indexes=[];
+  unitDataByIndex.forEach((data,index)=&gt;{if(data)indexes.push(index)});
+  return indexes;
+}
+function primeLockedViewLayer(layer){
+  layer.querySelectorAll(&#x27;.new-view-lock-toggle&#x27;).forEach(button=&gt;{
+    button.classList.add(&#x27;locked&#x27;);
+    button.classList.remove(&#x27;unlocked&#x27;);
+    button.innerHTML=newViewLockIcon(true);
+    button.setAttribute(&#x27;title&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-label&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-pressed&#x27;,&#x27;true&#x27;);
+  });
+  layer.querySelectorAll(&#x27;button,a,[role=&quot;button&quot;]&#x27;).forEach(control=&gt;{
+    const marker=[control.id,control.className,control.textContent,control.getAttribute(&#x27;aria-label&#x27;)].join(&#x27; &#x27;).toLowerCase();
+    if(marker.includes(&#x27;probable&#x27;)){
+      control.classList.add(&#x27;new-view-lock-disabled&#x27;);
+      control.setAttribute(&#x27;aria-disabled&#x27;,&#x27;true&#x27;);
+      if(&#x27;disabled&#x27; in control)control.disabled=true;
+    }
+  });
+}
+function cloneLockedViewState(unitIndex,mode){
+  const layer=document.createElement(&#x27;div&#x27;);
+  layer.className=&#x27;new-view-locked-state&#x27;;
+  layer.dataset.lockStateKey=lockedViewStateKey(unitIndex,mode);
+  layer.hidden=true;
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;))return;
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;new-view-locked-state&#x27;))return;
+    layer.appendChild(node.cloneNode(true));
+  });
+  primeLockedViewLayer(layer);
+  return layer;
+}
+function renderLockedViewCombination(unitIndex,mode){
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  const filter=grid.querySelector(&#x27;.view-filter-toggle&#x27;);
+  if(filter)filter.textContent=String(mode||&#x27;&#x27;);
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
+  if(typeof positionNewViewVersionControls===&#x27;function&#x27;)positionNewViewVersionControls();
+}
+function clearLockedViewPreparedDom(){
+  lockedViewStateLayers.forEach(layer=&gt;{if(layer&amp;&amp;layer.parentNode)layer.remove()});
+  lockedViewStateLayers=[];
+  lockedViewStateCache=null;
+  lockedViewFilterOrder=[];
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList)node.classList.remove(&#x27;new-view-lock-original-hidden&#x27;);
+  });
+}
+function buildLockedViewPreparedDom(){
+  clearLockedViewPreparedDom();
+  const savedUnit=activeUnitIndex;
+  const savedMode=weaponFilterMode;
+  lockedViewFilterOrder=getLockedViewFilterOrder();
+  const unitIndexes=[null,...getLockedViewUnitIndexes()];
+  const cache=new Map();
+  const layers=[];
+  if(typeof newViewVersionHistoryOpen!==&#x27;undefined&#x27;)newViewVersionHistoryOpen=false;
+  if(typeof clearNewViewVersionHistoryButtons===&#x27;function&#x27;)clearNewViewVersionHistoryButtons();
+  unitIndexes.forEach(unitIndex=&gt;{
+    lockedViewFilterOrder.forEach(mode=&gt;{
+      renderLockedViewCombination(unitIndex,mode);
+      const layer=cloneLockedViewState(unitIndex,mode);
+      cache.set(lockedViewStateKey(unitIndex,mode),layer);
+      layers.push(layer);
+    });
+  });
+  renderLockedViewCombination(savedUnit,savedMode);
+  lockedViewStateCache=cache;
+  lockedViewStateLayers=layers;
+  const originals=Array.from(grid.children).filter(node=&gt;!(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;)));
+  originals.forEach(node=&gt;node.classList&amp;&amp;node.classList.add(&#x27;new-view-lock-original-hidden&#x27;));
+  const fragment=document.createDocumentFragment();
+  layers.forEach(layer=&gt;fragment.appendChild(layer));
+  grid.appendChild(fragment);
+  selectedWeaponIndex=null;
+  showLockedViewPreparedState(savedUnit,savedMode);
+  return true;
+}
+function showLockedViewPreparedState(unitIndex,mode){
+  if(!lockedViewStateCache)return false;
+  let target=lockedViewStateCache.get(lockedViewStateKey(unitIndex,mode));
+  if(!target){
+    target=lockedViewStateCache.get(lockedViewStateKey(null,mode))||lockedViewStateLayers[0]||null;
+    unitIndex=null;
+  }
+  if(!target)return false;
+  lockedViewStateLayers.forEach(layer=&gt;{layer.hidden=layer!==target});
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  return true;
+}
+function beginLockedViewPreparedMode(){
+  if(activePageMode!==&#x27;view&#x27;||newViewHeaderLocked)return false;
+  const snapshot=captureNewViewSnapshot();
+  frozenNewViewSnapshot=snapshot;
+  activateNewViewSnapshot(snapshot);
+  try{
+    if(!buildLockedViewPreparedDom())throw new Error(&#x27;Locked View preparation failed&#x27;);
+  }catch(_){
+    clearLockedViewPreparedDom();
+    frozenNewViewSnapshot=null;
+    return false;
+  }
+  // Lock becomes true only after every prepared state is built and mounted.
+  newViewHeaderLocked=true;
+  return true;
+}
+function endLockedViewPreparedMode(){
+  if(!newViewHeaderLocked)return false;
+  // Unlock first, then discard prepared state and perform one fresh live sync.
+  newViewHeaderLocked=false;
+  clearLockedViewPreparedDom();
+  frozenNewViewSnapshot=null;
+  const lockButton=grid.querySelector(&#x27;.new-view-lock-toggle&#x27;);
+  if(lockButton)syncNewViewLockButton(lockButton);
+  return refreshNewView();
+}
+function handleLockedViewPreparedClick(event){
+  if(!newViewHeaderLocked||!lockedViewStateCache)return;
+  const target=event.target&amp;&amp;event.target.closest?event.target:null;
+  if(!target)return;
+  const unlock=target.closest(&#x27;.new-view-lock-toggle&#x27;);
+  if(unlock){
+    event.preventDefault();event.stopImmediatePropagation();
+    endLockedViewPreparedMode();
+    return;
+  }
+  const filter=target.closest(&#x27;.view-filter-toggle&#x27;);
+  if(filter){
+    event.preventDefault();event.stopImmediatePropagation();
+    const modes=lockedViewFilterOrder.length?lockedViewFilterOrder:getLockedViewFilterOrder();
+    const current=modes.indexOf(String(weaponFilterMode||&#x27;&#x27;));
+    const next=modes[(current&lt;0?0:current+1)%modes.length];
+    showLockedViewPreparedState(activeUnitIndex,next);
+    return;
+  }
+  const unit=target.closest(&#x27;.view-unit-row[data-roster-index]&#x27;);
+  if(unit){
+    event.preventDefault();event.stopImmediatePropagation();
+    const index=Number(unit.dataset.rosterIndex);
+    const next=activeUnitIndex===index?null:index;
+    showLockedViewPreparedState(next,weaponFilterMode);
+    return;
+  }
+  // Everything else in locked VIEW is inert, including Probable, navigation,
+  // version actions, Waha, edits, and any control that could start processing.
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}
+document.addEventListener(&#x27;click&#x27;,handleLockedViewPreparedClick,true);
+
+function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){endLockedViewPreparedMode();return}beginLockedViewPreparedMode()};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
@@ -5902,6 +6081,7 @@ function refreshAlternateViewUnitsFromParent(){if(newViewProcessingLocked())retu
 window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;
 function renderFrozenNewView(){
   if(!newViewProcessingLocked()||!frozenNewViewSnapshot)return false;
+  if(lockedViewStateCache)return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode);
   applyNewViewHeaderSnapshot(frozenNewViewSnapshot.header);
   const rows=cloneNewViewValue(frozenNewViewSnapshot.rows);
   return renderNewViewRosterRows(Array.isArray(rows)?rows:[]);
@@ -6052,6 +6232,7 @@ function renderCachedEdit(){
   return true;
 }
 function renderPage(p){
+  if(newViewHeaderLocked&amp;&amp;lockedViewStateCache){if(p!==&#x27;view&#x27;)return false;return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode)}
   activePageMode=p;
   ensurePersistentGridCells();
   clearModeContent();
@@ -8618,7 +8799,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.102";
+    const APP_VERSION = "31.103";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30230,7 +30411,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.102',
+        version: 'V31.103',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
