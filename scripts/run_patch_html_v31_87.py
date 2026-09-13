@@ -7,7 +7,7 @@ cleanup = r'''# Remove any remaining obsolete authored first/second-row CSS sele
 # Dynamic roster rows use inline grid-row placement, so these selectors are no
 # longer part of either New View or New Edit.
 for fixed_class in ('view-unit-row-first','view-unit-row-second','edit-unit-row-first','edit-unit-row-second'):
-    css_rule = re.compile(r'\\.' + re.escape(fixed_class) + r'\\{[^}]*\\}')
+    css_rule = re.compile(r'\.' + re.escape(fixed_class) + r'\{[^}]*\}')
     view_np = css_rule.sub('', view_np)
     edit_np = css_rule.sub('', edit_np)
 
