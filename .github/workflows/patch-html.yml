@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.81 New View data from New Edit
+      - name: Build V31.81 New View data from New Edit retry
         run: python3 scripts/patch_html_v31_81.py
 
       - name: Validate and generate release history
