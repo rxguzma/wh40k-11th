@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.55 compact Weapon selection
+      - name: Build V31.55 compact Weapon selection retry
         run: python3 scripts/patch_html_v31_55.py
 
       - name: Validate and generate release history
