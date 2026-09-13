@@ -20,27 +20,26 @@ replace_once('The current baseline is WH40k_11th_V31.71;', 'The current baseline
 replace_once('const APP_VERSION = "31.71";', 'const APP_VERSION = "31.72";', 'APP_VERSION')
 replace_once("version: 'V31.71',", "version: 'V31.72',", 'quality version')
 
-# Alternate/new surface navigation: from the new View, EDIT now returns to the
-# parent router so the first press opens the existing Edit. Once the new Edit is
-# visible, VIEW still returns locally to the new View and a repeated EDIT stays
-# on the new Edit surface.
 frame_pattern = re.compile(r'(<iframe id="npViewFrame" class="np-view-frame" title="Alternate View" srcdoc=")(.*?)("></iframe>)', re.S)
 match = frame_pattern.search(text)
 if not match:
     raise SystemExit('alternate View iframe not found')
 np = html.unescape(match.group(2))
 
+# From the new View, EDIT goes back through the parent router, so the first
+# press opens legacy Edit. Once the new Edit is visible, VIEW returns locally
+# to the new View and another EDIT stays on the new Edit surface.
 old_nav = "b.onclick=()=>{if(t==='edit'||(p==='edit'&&t==='view'))renderPage(t);else parent.UI.selectAppMode(t)};"
 new_nav = "b.onclick=()=>{if(p==='edit'&&t==='view')renderPage('view');else if(p==='edit'&&t==='edit')return;else parent.UI.selectAppMode(t)};"
 if np.count(old_nav) != 1:
     raise SystemExit(f'alternate navigation handler: expected 1 match, found {np.count(old_nav)}')
 np = np.replace(old_nav, new_nav, 1)
 
-render_marker = "}grid.appendChild(f)}\nrenderPage('view');"
-render_replacement = "}grid.appendChild(f)}\nwindow.showAlternateEditPage=()=>renderPage('edit');\nrenderPage('view');"
-if np.count(render_marker) != 1:
-    raise SystemExit(f'alternate render marker: expected 1 match, found {np.count(render_marker)}')
-np = np.replace(render_marker, render_replacement, 1)
+# Expose a narrow parent hook that renders the already-built blank Edit page.
+initial_render = "renderPage('view');"
+if np.count(initial_render) != 1:
+    raise SystemExit(f'initial alternate View render: expected 1 match, found {np.count(initial_render)}')
+np = np.replace(initial_render, "window.showAlternateEditPage=()=>renderPage('edit');\nrenderPage('view');", 1)
 
 for required in [
     "if(p==='edit'&&t==='view')renderPage('view')",
@@ -54,9 +53,9 @@ for required in [
 np_srcdoc = html.escape(np, quote=True)
 text = text[:match.start(2)] + np_srcdoc + text[match.end(2):]
 
-# Parent title routing: Edit behaves like View. First press enters the existing
-# Edit mode. If Edit is already active, the second press opens the alternate
-# surface and tells that iframe to render the new Edit landing page.
+# Edit now mirrors View's two-press behavior: first press opens the existing
+# Edit mode; second press, when Edit is already active, opens the alternate
+# surface and renders the new Edit landing page.
 edit_pattern = re.compile(
     r'''      if \(target === "edit"\) \{\n.*?\n      \}\n\n      if \(target === "view"\) \{''',
     re.S,
