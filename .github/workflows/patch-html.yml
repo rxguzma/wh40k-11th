@@ -7,23 +7,36 @@ on:
       - '.github/workflows/patch-html.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: patch-html-main
   cancel-in-progress: false
 
 jobs:
-  validate:
+  patch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: Validate current HTML release history
+      - name: Build V31.107 standardized Unit Detail row
+        run: python3 scripts/patch_html_v31_107.py
+
+      - name: Validate and generate release history
+        run: python3 scripts/publish_html.py --root .
+
+      - name: Commit HTML and release history
         shell: bash
         run: |
           set -euo pipefail
-          python3 scripts/publish_html.py --root .
-          git diff --exit-code -- WH40k_11th.html versions
+          git add WH40k_11th.html versions
+          if git diff --cached --quiet; then
+            echo "No HTML changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Build V31.107 standardized detail row"
+          git push origin HEAD:main
