@@ -21,8 +21,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.56 remove duplicate Nazdreg and Main button retry
-        run: python3 scripts/patch_html_v31_56.py
+      - name: Build V31.57 muted Unit keywords
+        run: python3 scripts/patch_html_v31_57.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.56 remove duplicate Nazdreg and Main button"
+          git commit -m "Build V31.57 muted Unit keywords"
           git push origin HEAD:main
