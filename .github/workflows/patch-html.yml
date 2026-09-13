@@ -4,58 +4,26 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_106.py'
-      - 'scripts/run_patch_html_v31_106_fixed.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: patch-html-main
   cancel-in-progress: false
 
 jobs:
-  patch:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: Build V31.106 suspend locked View background work
-        id: build
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -o pipefail
-          python3 scripts/run_patch_html_v31_106_fixed.py 2>&1 | tee patch-v31-106.log
-
-      - name: Upload patch diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: patch-v31-106-diagnostics
-          path: patch-v31-106.log
-          retention-days: 1
-
-      - name: Stop on patch failure
-        if: steps.build.outcome == 'failure'
-        run: exit 1
-
-      - name: Validate and generate release history
-        run: python3 scripts/publish_html.py --root .
-
-      - name: Commit HTML and release history
+      - name: Validate current HTML release history
         shell: bash
         run: |
           set -euo pipefail
-          git add WH40k_11th.html versions
-          if git diff --cached --quiet; then
-            echo "No HTML changes to commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.106 suspend locked View background work"
-          git push origin HEAD:main
+          python3 scripts/publish_html.py --root .
+          git diff --exit-code -- WH40k_11th.html versions
