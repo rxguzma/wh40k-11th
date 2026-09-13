@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.59 inactive Weapon font styling retry
+      - name: Build V31.59 Weapon font fix retry 2
         run: python3 scripts/patch_html_v31_59.py
 
       - name: Validate and generate release history
@@ -38,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.59 inactive Weapon font styling"
+          git commit -m "Build V31.59 Weapon font fix"
           git push origin HEAD:main
