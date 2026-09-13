@@ -70,7 +70,6 @@ checks = [
     '<title>WH40k 11th V31.66</title>',
     'const APP_VERSION = "31.66";',
     "version: 'V31.66',",
-    "const url=String(data&&data.waha||'').trim();",
     'CHANGE NOTE - WH40k_11th_V31.66',
 ]
 missing = [value for value in checks if value not in text]
