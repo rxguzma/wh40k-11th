@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"NAZDREG","column":"Hyperlink","value":"googlechromes://wahapedia.ru/wh40k11ed/factions/orks/Nazdreg"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"NAZDREG","column":"Hyperlink","value":"https://wahapedia.ru/wh40k11ed/factions/orks/Nazdreg"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
