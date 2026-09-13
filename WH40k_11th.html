@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.64</title>
+  <title>WH40k 11th V31.65</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.64; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.65; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.65
+    Scope: Test Chrome handoff for the alternate View Waha button on Nazdreg only. When the active unit name is exactly Nazdreg, its existing http/https Waha URL is converted to the Google Chrome iOS custom scheme. All other Waha links retain their existing URL and behavior.
+    Risk areas: Alternate View Nazdreg Waha link only. No other unit links, View/Edit/Cards behavior, roster data, persistence, or combat logic changed.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.64
     Scope: Wire the second alternate-View Unit to the second real Unit in current Edit/roster order. The second Unit now has the same live name/stats, open/collapse behavior, Waha link, ALL/SHOOT/MELEE/OTHER filtering, compact Weapon rows, Weapon selection, selected-green styling, inactive 50% styling, Tag/detail-row treatment, and dynamic expansion behavior as the first Unit. The shared detail panel appears directly below whichever of the first two Units is open; only one is open at a time. Reordering Edit changes both first and second View positions automatically.
     Risk areas: Alternate View first-two Unit wiring and shared expansion placement only. Canonical View/Edit/Cards, roster persistence, and combat behavior are unchanged.
@@ -115,11 +121,6 @@
     Risk areas: Alternate View selected/inactive font styling only. Layout, filtering, expansion, Waha, live data, and canonical View/Edit/Cards are unchanged.
   -->
 
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.60
-    Scope: Correct alternate View selection styling. Deep Strike is standard while no Weapon is selected. When a Weapon is selected, Deep Strike uses Main muted gray text and its element is 50% opacity; clearing selection restores normal styling. Inactive Weapon name/stat fonts are 50% opacity. The selected Weapon name/stat fonts use Main active green #80d6a3. Inactive Weapon Tag fonts remain Main muted gray. Filtering, row-10 promotion, compact expansion, Waha, and live data are unchanged.
-    Risk areas: Alternate View Weapon-selection and Deep Strike presentation only.
-  -->
 
 
 
@@ -5472,8 +5473,12 @@ function applyActiveUnitDetails(){
   const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
   const waha=grid.querySelector(&#x27;.detail-waha&#x27;);
   if(waha){
-    const url=String(data&amp;&amp;data.waha||&#x27;&#x27;).trim();
-    waha.dataset.liveAvailable=url?&#x27;true&#x27;:&#x27;false&#x27;;
+    const rawUrl=String(data&amp;&amp;data.waha||&#x27;&#x27;).trim();
+    const isNazdreg=String(data&amp;&amp;data.name||&#x27;&#x27;).trim().toLowerCase()===&#x27;nazdreg&#x27;;
+    const url=isNazdreg
+      ? rawUrl.replace(/^https:\/\//i,&#x27;googlechromes://&#x27;).replace(/^http:\/\//i,&#x27;googlechrome://&#x27;)
+      : rawUrl;
+    waha.dataset.liveAvailable=rawUrl?&#x27;true&#x27;:&#x27;false&#x27;;
     waha.href=url||&#x27;#&#x27;;
   }
   const weapons=data&amp;&amp;Array.isArray(data.weapons)?data.weapons:[];
@@ -8076,7 +8081,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.64";
+    const APP_VERSION = "31.65";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -29605,7 +29610,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.64',
+        version: 'V31.65',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
