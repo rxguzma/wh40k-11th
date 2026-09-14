@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.146</title>
+  <title>WH40k 11th V31.147</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.146; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.147; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.147
+    Scope: Phase 2 of New View Ability-driven mechanics. Active Ability titles now gate structured Unit-stat effects in New View. For an active Ability, its existing per-roster Tag On/Off state is respected by the existing effective Unit-profile engine. For an inactive Ability, only structured STAT/UNIT_STAT effects targeting UNIT are suppressed in a detached projection, so the saved Tag state is not changed. M, T, SV/Invul, W, LD, and OC update immediately through the existing Unit-scoped New View refresh. No Short/Long Description text is parsed. Weapon effects are not added in this phase, and Probable remains lazy and is not initialized by Ability or Tag changes. Lock remains a hard gate before Ability or Tag mutation.
+    Risk areas: New View Unit-stat projection and Ability-title refresh only. Persistent Tag state, Old View, Weapon mechanics, Probable execution policy, grid/layout, typography, colors, Cards, Waha, FIX mode, CSV data, and Version controls are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.146
     Scope: Phase 1 of New View Ability-driven mechanics. New View now maintains a transient, roster-entry-scoped Ability master gate keyed by entryId + Ability key. Tapping an Ability title updates this gate: Active means that Ability is mechanically eligible for later Unit/Weapon/Probable consumers; Inactive means it is not eligible. An opened Unit initializes with no mechanically-active Abilities until explicitly activated. Duplicate roster Units remain independent. New View Lock blocks Ability activation/deactivation before the gate changes. This phase deliberately does not apply Unit-stat or Weapon-stat modifiers yet and does not change Tag clicking, Tag colors, Tag layout, Tag saved state, CSV Default_Active, Old View behavior, or any calculator.
     Risk areas: New View transient Ability activation/eligibility plumbing only. No Unit/Weapon mechanical application, Probable execution, Tag mutation/persistence, CSV data, Old View, grid/layout, typography, colors, Cards, Waha, FIX mode, or Version-control behavior changed.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.143
     Scope: Unified New View Tag interaction. Ability Tags are now tappable and toggle the same per-roster Unit Tag state used by Old View; their CSV/default state remains the initial authority and their existing On/Off presentation remains unchanged. Weapon Tags are tappable only while their Weapon is selected; locked/innate Weapon Tags remain immutable and On. The custom Boyz Weapon renderer follows the same selected-Weapon and locked-Tag contract. Successful toggles persist through the existing roster library and refresh New View from the resulting roster state while preserving the open Unit and selected Weapon. New View Lock is a hard gate: locked snapshots remain inert and no Tag state write, persistence, recalculation, or refresh is started from a Tag click while locked. Ability-title Active and Short/Long description interactions remain separate from Tag state.
     Risk areas: New View Tag interaction and roster-state bridge only. No Tag palette, typography, box geometry, grid/layout, CSV data, Tag definitions, Weapon-selection rules, Probable activation policy, FIX mode, Cards, Waha, or Edit controls changed.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.142
-    Scope: Unified New View muted Weapon Tag presentation only. Muted Weapon Tags now use the exact V31.132 muted text color rgba(154,160,166,.5) and explicitly use the same 700-weight meta-size Roboto typography as the compact FNP/Waha boxes above the Weapon table. Their normal Tag background, border, dimensions, spacing, wrapping, and row geometry are unchanged. Active/orange Weapon Tag styling is unchanged, and V31.139 selection gating remains authoritative: Weapon Tags stay muted until their Weapon is selected. Ability Tag presentation/state is unchanged.
-    Risk areas: Unified New View muted Weapon Tag text color/typography only. No Tag data/state writes, Weapon selection, Ability behavior, CSV data, Probable, grid/layout, lock/FIX, Boyz data, Cards, Waha behavior, Edit, or persistence behavior changed.
   -->
 
 
@@ -7211,7 +7211,7 @@ function toggleNewViewAbilityActive(key){
     selectedAbilityKey=clean;
   }
   syncNewViewAbilityMechanicalGate();
-  syncWeaponLayout();
+  if(!refreshNewViewAfterTagMutation())syncWeaponLayout();
   return true;
 }
 function toggleNewViewAbilityDescription(key){
@@ -10130,7 +10130,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.146";
+    const APP_VERSION = "31.147";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -14565,9 +14565,12 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         model = models[Math.max(0, Number(index) || 0)] || null;
       }
       if (!model) return null;
-      const stats = model.stats || {};
+      const baseStats = model.stats || {};
       const entry = model.entry || (roster && Array.isArray(roster.entries) ? roster.entries.find(item => item && item.entryId === model.entryId) : null);
       const unit = model.unit || (entry ? getUnitById(entry.unitId) : null);
+      const stats = entry && unit
+        ? getAlternateViewEffectiveUnitStats(entry, unit, roster, baseStats)
+        : baseStats;
       const weapons = entry && unit ? getWeaponsForRosterEntry(entry, unit).filter(item => item && !item.isMissingLink) : [];
       const unitAbilities = entry && unit
         ? getAbilitiesForRosterEntry(entry, unit)
@@ -14736,6 +14739,53 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       if (!cleanEntryId || !cleanItemKey) return false;
       const active = newViewActiveAbilityKeysByEntry.get(cleanEntryId);
       return Boolean(active && active.has(cleanItemKey));
+    };
+
+    function getAlternateViewEffectiveUnitStats(entry, unit, roster, fallbackStats = {}) {
+      if (!entry || !unit) return fallbackStats || {};
+
+      // Work on a detached Tag-state projection so inactive New View Abilities
+      // can contribute zero Unit-stat effects without mutating saved roster state.
+      const projectedEntry = {
+        ...entry,
+        abilityTagStates: JSON.parse(JSON.stringify(entry.abilityTagStates || {}))
+      };
+
+      getAbilitiesForRosterEntry(entry, unit)
+        .filter(ability => ability && !ability.isMissingLink)
+        .forEach((ability, sequence) => {
+          const sourceItem = getAbilitySourceItem(ability) || ability;
+          const effectiveItem = getRosterEntryEffectiveAbility(entry, sourceItem) || sourceItem;
+          const rawItemKey = getAbilityItemEditKey(sourceItem) || sourceItem.abilityId || sourceItem.name || sequence;
+          const itemKey = String(rawItemKey ?? "").trim();
+
+          // Active Ability title = mechanically eligible. Its individual saved
+          // Tag On/Off states flow through unchanged into getEffectiveUnitProfile.
+          if (itemKey && window.isAlternateViewAbilityMechanicallyEligible(entry.entryId, itemKey)) return;
+
+          const defaultOn = getRosterTaggedSourceDefaultActive("ability", sourceItem);
+          getAbilityProtectedModifierTagAssignments(effectiveItem).forEach(assignment => {
+            const effect = getStructuredTagDefinitionEffect(assignment.tag, assignment.category);
+            const effectType = String(effect && (effect.effectType || effect.type) || "").trim().toUpperCase();
+            const target = String(effect && effect.target || "").trim().toUpperCase();
+
+            // Phase 2 is Unit stats only. Weapon effects, rules, rerolls, points,
+            // descriptions, and all other effect types are intentionally untouched.
+            if (!["STAT", "UNIT_STAT"].includes(effectType) || target !== "UNIT") return;
+
+            setRosterEntryAbilityTagState(
+              projectedEntry,
+              sourceItem,
+              assignment.tag,
+              false,
+              defaultOn,
+              assignment.category
+            );
+          });
+        });
+
+      const profile = getEffectiveUnitProfile(projectedEntry, unit, roster);
+      return profile && profile.stats ? profile.stats : (fallbackStats || {});
     };
 
     window.toggleAlternateViewAbilityTag = function(payload = {}) {
@@ -32006,7 +32056,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.146',
+        version: 'V31.147',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
