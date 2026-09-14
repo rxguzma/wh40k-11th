@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_134_view_muted_gray.py'
+      - 'scripts/patch_html_v31_135_ability_always_open.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.134 New View muted gray
-        run: python3 scripts/patch_html_v31_134_view_muted_gray.py
+      - name: Build V31.135 Ability always-open side detail
+        run: python3 scripts/patch_html_v31_135_ability_always_open.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.134 New View muted gray"
+          git commit -m "Build V31.135 Ability always-open side detail"
           git push origin HEAD:main
