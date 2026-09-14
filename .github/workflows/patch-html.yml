@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_137_ability_description_layout.py'
+      - 'scripts/patch_html_v31_138_new_view_tag_state_display.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.137 Ability description layout
-        run: python3 scripts/patch_html_v31_137_ability_description_layout.py
+      - name: Build V31.138 New View tag state display
+        run: python3 scripts/patch_html_v31_138_new_view_tag_state_display.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.137 Ability description layout"
+          git commit -m "Build V31.138 New View tag state display"
           git push origin HEAD:main
