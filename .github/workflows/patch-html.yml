@@ -4,40 +4,24 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_108_detail.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: patch-html-main
   cancel-in-progress: false
 
 jobs:
-  patch:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: Build V31.108 standardized Unit Detail row
-        run: python3 scripts/patch_html_v31_108_detail.py
-
-      - name: Validate and generate release history
-        run: python3 scripts/publish_html.py --root .
-
-      - name: Commit HTML and release history
-        shell: bash
+      - name: Validate existing V31.108
         run: |
-          set -euo pipefail
-          git add WH40k_11th.html versions
-          if git diff --cached --quiet; then
-            echo "No HTML changes to commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.108 standardized detail row"
-          git push origin HEAD:main
+          python3 scripts/publish_html.py --root .
+          git diff --exit-code -- WH40k_11th.html versions
