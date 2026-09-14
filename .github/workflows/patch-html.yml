@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_143_new_view_tag_interaction.py'
+      - 'scripts/patch_html_v31_144_active_unit_weapon_tags.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.143 New View Tag interaction
-        run: python3 scripts/patch_html_v31_143_new_view_tag_interaction.py
+      - name: Build V31.144 Active Unit and Weapon Tags
+        run: python3 scripts/patch_html_v31_144_active_unit_weapon_tags.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -38,6 +38,6 @@ jobs:
             exit 0
           fi
           git config user.name "github-actions[bot]"
-          git config user.email "4189828+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.143 New View Tag interaction"
+          git config user.email "41898282+rxguzma@users.noreply.github.com"
+          git commit -m "Build V31.144 Active Unit and Weapon Tags"
           git push origin HEAD:main
