@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.114</title>
+  <title>WH40k 11th V31.115</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.114; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.115; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.115
+    Scope: Replace the hidden V31.113 per-Unit FIX-note destination with a visible roster-level Fix Report in unified New View. The wrench still enters/exits lightweight selection mode at L4; the second tap now appends the exact selected Unit / Section / Item / Field / Current Value into a visible Fix Report box directly above Version. The box reuses the New View 16-column grid, Roboto typography, existing card/border/text/orange/green colors, and standard button geometry, with Done, Reset, and Copy All patterned after Spreadsheet Edits. Copy All produces LLM-ready text headed FIX REPORT with Unit, Selected, and Current Value blocks. Report rows persist inside the roster's existing spreadsheetEdits save object so they survive Save/reload/clone/export/import without becoming actual spreadsheet edits. Any FIX notes created by V31.113 are migrated once into the report and legacy Notes return to retired/hidden behavior. No CSV is modified.
+    Risk areas: New View report display/Version positioning, FIX report persistence inside spreadsheetEdits, Copy All/Done/Reset actions, and one-time V31.113 FIX-note migration. V31.114 Boyz sub-unit presentation, Lock/filter/Grid controls, unified Edit, Spreadsheet Edits proper, Version/Update/Download behavior, Cards, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.114
     Scope: Boyz New View weapon sub-units. When Boyz is expanded in VIEW, its Weapon area now shows exactly three independently tappable header rows: Boyz, Specials, and Nob. Headers reuse the existing weapon-header cells with R" / A / WS / St / AP / D and add no arrows, counts, controls, borders, or new colors. Initial approved contents are Boyz = Slugga/Shoota/Choppa; Specials = Big Shoota/Burna/Rokkit Launcha Blasta/Rokkit Launcha Busta; Nob = Kombi-skorcha Shoota/Kombi-skorcha Skorcha. Expanded rows reuse current New View weapon/stat/tag styling. Canonical Weapon_Quantities supplies x10/x20 quantities, appended directly to the weapon-name text as ×N so active/muted/normal states apply to the whole name. The rejected V31.110 flat weapon list is removed from unified EDIT.
     Risk areas: Boyz expanded Weapon presentation in unlocked New View and removal of the rejected V31.110 Edit-only flat list. Other Units, New View filters, Unit Detail, lock/frozen behavior, unified Edit rows, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.111
     Scope: Add the tabletop FIX/report wrench at L4 in unified New View using the existing 16-column grid, standard button geometry, Roboto typography, current icon stroke treatment, and existing green active color. First tap enters selection mode; individual Unit names, profile Stats, Weapon names/characteristics/Tags, core Abilities, and other Ability/Enhancement/Stratagem/Note-like displayed items can be marked without running their normal click action. Each mark stores structured context (Unit, section, item, field, current value), including individual profile Stats and Weapon characteristics. Second wrench tap saves one note-style FIX REPORT to localStorage and exits selection mode. The report engine uses one delegated click handler and the already-rendered New View cache/DOM only. Locked View explicitly permits the wrench and item marking while retaining prepared display-only Unit/filter switching and without parent/model refresh or Probable work.
     Risk areas: Unified New View L4 control, lightweight click interception while report mode is active, local FIX-report persistence, and the locked-view exception for this UI-only report interaction. Existing K4 Lock, M:O filter, P4 Grid Mode, Version/Update/Download strip, roster/model data, unified Edit, Old Edit, Cards, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.110
-    Scope: First Boyz weapon-parity pass in unified EDIT: render a flat Boyz weapon list with display counts sourced directly from data/orks/Weapon_Quantities.csv. The selected x10/x20 point option determines each displayed quantity, and the existing point-option refresh immediately re-renders the counts after a size change. Weapon order and names come from Unit_Weapons.csv and Weapon_Stats.csv. This pass intentionally does not add Boyz/Specials/Nob section grouping, Nob weapon-choice controls, compatibility rules, or loadout mutations.
-    Risk areas: Unified EDIT Boyz flat weapon/count presentation and Edit sheet height only. VIEW, other Units, point-option mutation logic, weapon sections, loadouts, Old Edit, Cards, lock behavior, Version controls, persistence, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5442,6 +5442,17 @@
 .new-view-report-toggle{grid-column:12;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important}
 .new-view-report-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .new-view-report-selected{outline:1px solid #80d6a3!important;outline-offset:-1px;color:#80d6a3!important}
+
+.new-view-fix-report-box{grid-column:1/span 16;z-index:4;display:none;align-self:stretch;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);overflow:hidden;color:var(--text);font-family:Roboto,Arial,sans-serif}
+.new-view-fix-report-title{height:var(--cell);display:flex;align-items:center;padding:0 8px;border-bottom:1px solid var(--border);font:900 var(--body)/1 Roboto,Arial,sans-serif}
+.new-view-fix-report-count{margin-left:auto;color:var(--muted);font:700 var(--meta)/1 Roboto,Arial,sans-serif}
+.new-view-fix-report-list{display:block}
+.new-view-fix-report-item{min-height:calc(var(--cell)*2);padding:5px 8px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden}
+.new-view-fix-report-unit{color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.new-view-fix-report-detail{color:var(--secondary);font:700 var(--meta)/1.2 Roboto,Arial,sans-serif;white-space:normal;overflow-wrap:anywhere}
+.new-view-fix-report-value{color:var(--orange)}
+.new-view-fix-report-actions{height:var(--cell);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:center;padding:1px 0}
+.new-view-fix-report-actions .button-standard{width:100%;height:var(--std);padding:0 4px}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5558,18 +5569,7 @@ function getNewViewVersionRow(){
   return (lastUnitRow||(firstUnitRow-1))+5;
 }
 function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;
-  const versionRow=getNewViewVersionRow();
-  const rowValue=String(versionRow);
-  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
-  const update=grid.querySelector(&#x27;.new-view-update-button&#x27;);
-  const download=grid.querySelector(&#x27;.new-view-download-button&#x27;);
-  [version,update,download].forEach(control=&gt;{if(control&amp;&amp;control.style.gridRow!==rowValue)control.style.gridRow=rowValue;});
-  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach((button,index)=&gt;{
-    button.style.gridRow=String(versionRow+1+Math.floor(index/5));
-    button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
-  });
-  syncNewViewFrameHeight();
-  return versionRow;
+  return layoutNewViewFixReportAndVersion();
 }
 function newViewVersionMutationTouchesLayout(mutation){
   if(mutation.type===&#x27;attributes&#x27;){
@@ -5893,6 +5893,8 @@ function handleLockedViewPreparedClick(event){
     endLockedViewPreparedMode();
     return;
   }
+  const reportBoxAction=target.closest(&#x27;.new-view-fix-report-box button&#x27;);
+  if(reportBoxAction)return;
   const reportToggle=target.closest(&#x27;.new-view-report-toggle&#x27;);
   if(reportToggle){
     event.preventDefault();event.stopImmediatePropagation();
@@ -5928,7 +5930,6 @@ function handleLockedViewPreparedClick(event){
 }
 document.addEventListener(&#x27;click&#x27;,handleLockedViewPreparedClick,true);
 
-const NEW_VIEW_REPORT_STORAGE_KEY=&#x27;wh40k:new-view-fix-reports:v1&#x27;;
 let newViewReportMode=false;
 const newViewReportSelections=new Map();
 const NEW_VIEW_STAT_FIELDS=[&#x27;M&#x27;,&#x27;T&#x27;,&#x27;SV&#x27;,&#x27;W&#x27;,&#x27;LD&#x27;,&#x27;OC&#x27;];
@@ -6084,19 +6085,6 @@ function describeNewViewReportTarget(target){
   record.key=[record.unitIndex??&#x27;&#x27;,record.unit,record.section,record.item,record.field,record.value].join(&#x27;\u001f&#x27;);
   return {el,record};
 }
-function readNewViewFixReports(){
-  try{
-    const raw=localStorage.getItem(NEW_VIEW_REPORT_STORAGE_KEY);
-    const parsed=raw?JSON.parse(raw):[];
-    return Array.isArray(parsed)?parsed:[];
-  }catch(_){return []}
-}
-function writeNewViewFixReports(reports){
-  try{
-    localStorage.setItem(NEW_VIEW_REPORT_STORAGE_KEY,JSON.stringify(reports));
-    return true;
-  }catch(_){return false}
-}
 function formatNewViewFixReportItem(item){
   const parts=[String(item.unit||&#x27;Unit&#x27;),String(item.section||&#x27;View&#x27;)];
   if(item.item&amp;&amp;item.item!==item.unit&amp;&amp;item.item!==item.field)parts.push(String(item.item));
@@ -6106,27 +6094,93 @@ function formatNewViewFixReportItem(item){
 }
 function saveNewViewFixReport(){
   const items=[...newViewReportSelections.values()].map(item=&gt;Object.assign({},item));
-  if(!items.length)return {ok:false,savedNotes:0};
-  const rosterNode=grid.querySelector(&#x27;.top-roster-name&#x27;);
-  const roster=newViewReportText(rosterNode)||&#x27;Roster&#x27;;
-  const createdAt=new Date().toISOString();
-  const report={
-    id:String(Date.now()),
-    type:&#x27;fix-report&#x27;,
-    title:&#x27;FIX&#x27;,
-    roster,
-    createdAt,
-    items,
-    body:items.map(formatNewViewFixReportItem).join(&#x27;\n&#x27;)
-  };
-  let result={ok:false,savedNotes:0};
+  if(!items.length)return {ok:false,count:newViewFixReportRows().length};
+  let result={ok:false,count:newViewFixReportRows().length};
   try{
-    if(parent&amp;&amp;typeof parent.saveNewViewFixReportToRoster===&#x27;function&#x27;){
-      result=parent.saveNewViewFixReportToRoster(report)||result;
-    }
-  }catch(_){result={ok:false,savedNotes:0}}
-  if(result&amp;&amp;result.ok)window.newViewLastFixReport=report;
+    if(parent&amp;&amp;typeof parent.saveNewViewFixReportItems===&#x27;function&#x27;)result=parent.saveNewViewFixReportItems(items)||result;
+  }catch(_){result={ok:false,count:newViewFixReportRows().length}}
+  if(result&amp;&amp;result.ok){
+    renderNewViewFixReportBox();
+    layoutNewViewFixReportAndVersion();
+  }
   return result;
+}
+function readNewViewFixReportItems(){
+  try{
+    if(parent&amp;&amp;typeof parent.getNewViewFixReportItems===&#x27;function&#x27;){
+      const items=parent.getNewViewFixReportItems();
+      return Array.isArray(items)?items:[];
+    }
+  }catch(_){}
+  return [];
+}
+function newViewFixReportRows(){return readNewViewFixReportItems()}
+function newViewFixReportGridRows(count){return count?Math.max(4,2+(Math.max(0,count)*2)):0}
+function formatNewViewFixReportVisibleValue(value){return String(value??&#x27;&#x27;).trim()}
+function buildNewViewFixReportBox(){
+  const box=document.createElement(&#x27;section&#x27;);
+  box.className=&#x27;new-view-fix-report-box&#x27;;
+  box.setAttribute(&#x27;aria-label&#x27;,&#x27;Fix Report&#x27;);
+  return box;
+}
+function renderNewViewFixReportBox(){
+  const box=grid.querySelector(&#x27;.new-view-fix-report-box&#x27;);
+  if(!box)return 0;
+  const items=newViewFixReportRows();
+  if(!items.length){box.style.display=&#x27;none&#x27;;box.innerHTML=&#x27;&#x27;;return 0}
+  box.style.display=&#x27;block&#x27;;
+  const title=document.createElement(&#x27;div&#x27;);
+  title.className=&#x27;new-view-fix-report-title&#x27;;
+  title.textContent=&#x27;Fix Report&#x27;;
+  const count=document.createElement(&#x27;span&#x27;);
+  count.className=&#x27;new-view-fix-report-count&#x27;;
+  count.textContent=String(items.length)+&#x27; item&#x27;+(items.length===1?&#x27;&#x27;:&#x27;s&#x27;);
+  title.appendChild(count);
+  const list=document.createElement(&#x27;div&#x27;);
+  list.className=&#x27;new-view-fix-report-list&#x27;;
+  items.forEach(item=&gt;{
+    const row=document.createElement(&#x27;div&#x27;);row.className=&#x27;new-view-fix-report-item&#x27;;
+    const unit=document.createElement(&#x27;div&#x27;);unit.className=&#x27;new-view-fix-report-unit&#x27;;unit.textContent=String(item&amp;&amp;item.unit||&#x27;Unit&#x27;);
+    const detail=document.createElement(&#x27;div&#x27;);detail.className=&#x27;new-view-fix-report-detail&#x27;;
+    const selected=String(item&amp;&amp;item.selected||&#x27;Item&#x27;);
+    const value=formatNewViewFixReportVisibleValue(item&amp;&amp;item.value);
+    detail.append(document.createTextNode(selected+&#x27; → &#x27;));
+    const valueSpan=document.createElement(&#x27;span&#x27;);valueSpan.className=&#x27;new-view-fix-report-value&#x27;;valueSpan.textContent=value;detail.appendChild(valueSpan);
+    row.append(unit,detail);list.appendChild(row);
+  });
+  const actions=document.createElement(&#x27;div&#x27;);actions.className=&#x27;new-view-fix-report-actions&#x27;;
+  const done=document.createElement(&#x27;button&#x27;);done.type=&#x27;button&#x27;;done.className=&#x27;button-standard&#x27;;done.textContent=&#x27;Done&#x27;;
+  const reset=document.createElement(&#x27;button&#x27;);reset.type=&#x27;button&#x27;;reset.className=&#x27;button-standard&#x27;;reset.textContent=&#x27;Reset&#x27;;
+  const copy=document.createElement(&#x27;button&#x27;);copy.type=&#x27;button&#x27;;copy.className=&#x27;button-standard active-green&#x27;;copy.textContent=&#x27;Copy All&#x27;;
+  const clear=()=&gt;{
+    try{if(parent&amp;&amp;typeof parent.clearNewViewFixReportItems===&#x27;function&#x27;)parent.clearNewViewFixReportItems()}catch(_){}
+    renderNewViewFixReportBox();
+    layoutNewViewFixReportAndVersion();
+  };
+  done.onclick=e=&gt;{e.preventDefault();e.stopPropagation();clear()};
+  reset.onclick=e=&gt;{e.preventDefault();e.stopPropagation();clear()};
+  copy.onclick=e=&gt;{e.preventDefault();e.stopPropagation();try{if(parent&amp;&amp;typeof parent.copyNewViewFixReportText===&#x27;function&#x27;)parent.copyNewViewFixReportText(copy)}catch(_){}};
+  actions.append(done,reset,copy);
+  box.replaceChildren(title,list,actions);
+  return newViewFixReportGridRows(items.length);
+}
+function layoutNewViewFixReportAndVersion(){
+  const baseVersionRow=getNewViewVersionRow();
+  const reportBox=grid.querySelector(&#x27;.new-view-fix-report-box&#x27;);
+  const reportRows=renderNewViewFixReportBox();
+  if(reportBox&amp;&amp;reportRows)reportBox.style.gridRow=String(baseVersionRow)+&#x27;/span &#x27;+String(reportRows);
+  const versionRow=baseVersionRow+reportRows;
+  const rowValue=String(versionRow);
+  const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
+  const update=grid.querySelector(&#x27;.new-view-update-button&#x27;);
+  const download=grid.querySelector(&#x27;.new-view-download-button&#x27;);
+  [version,update,download].forEach(control=&gt;{if(control&amp;&amp;control.style.gridRow!==rowValue)control.style.gridRow=rowValue});
+  grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach((button,index)=&gt;{
+    button.style.gridRow=String(versionRow+1+Math.floor(index/5));
+    button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
+  });
+  syncNewViewFrameHeight();
+  return versionRow;
 }
 function syncNewViewReportButtons(){
   grid.querySelectorAll(&#x27;.new-view-report-toggle&#x27;).forEach(button=&gt;{
@@ -6214,12 +6268,6 @@ function handleNewViewReportSelection(event){
   }
 }
 document.addEventListener(&#x27;click&#x27;,handleNewViewReportSelection,true);
-window.getNewViewFixReports=readNewViewFixReports;
-window.getNewViewLatestFixReport=function(){
-  const roster=newViewReportText(grid.querySelector(&#x27;.top-roster-name&#x27;));
-  return readNewViewFixReports().find(report=&gt;!roster||String(report&amp;&amp;report.roster||&#x27;&#x27;)===roster)||null;
-};
-
 function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);const gridOn=grid.classList.contains(&#x27;grid-on&#x27;);gb.classList.toggle(&#x27;active-green&#x27;,gridOn);gb.setAttribute(&#x27;aria-pressed&#x27;,gridOn?&#x27;true&#x27;:&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){endLockedViewPreparedMode();return}beginLockedViewPreparedMode()};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
@@ -6784,6 +6832,7 @@ function renderPage(p){
   if(p===&#x27;view&#x27;){
     addViewHeader(f,p);
     addNewViewReportButton(f);
+    f.appendChild(buildNewViewFixReportBox());
     addViewStatHeader(f);
     addExpandedUnitMock(f);
   }
@@ -9342,7 +9391,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.114";
+    const APP_VERSION = "31.115";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -11939,7 +11988,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     // RosterModel ownership - V8.5 Phase 1 / V8.15 extension: pending spreadsheet edit state.
     function createEmptySpreadsheetEdits() {
-      return { detachmentEnhancements: {}, detachmentRules: {}, detachmentStratagems: {}, units: {}, abilities: {}, weapons: {} };
+      return { detachmentEnhancements: {}, detachmentRules: {}, detachmentStratagems: {}, units: {}, abilities: {}, weapons: {}, fixReports: [] };
     }
 
     function normalizeSpreadsheetEditDoneKeys(value) {
@@ -12072,6 +12121,49 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       };
     }
 
+    function normalizeFixReportItems(value) {
+      const source = Array.isArray(value) ? value : [];
+      const seen = new Set();
+      const result = [];
+      source.forEach(raw => {
+        if (!raw || typeof raw !== "object") return;
+        const unit = String(raw.unit || "Unit").trim() || "Unit";
+        let selected = String(raw.selected || "").trim();
+        const section = String(raw.section || "").trim();
+        const item = String(raw.item || "").trim();
+        const field = String(raw.field || "").trim();
+        const valueText = String(raw.value ?? "").trim();
+        if (!selected) {
+          const parts = [];
+          if (section) parts.push(section);
+          if (item && item !== unit && item !== section) parts.push(item);
+          if (field && field !== item) parts.push(field);
+          selected = parts.join(" > ") || "Item";
+        }
+        const key = [unit, selected, valueText].join("\u001f");
+        if (seen.has(key)) return;
+        seen.add(key);
+        result.push({
+          unit,
+          selected,
+          value: valueText,
+          createdAt: String(raw.createdAt || "")
+        });
+      });
+      return result.slice(0, 200);
+    }
+
+    function formatFixReportCopyText(items) {
+      const rows = normalizeFixReportItems(items);
+      if (!rows.length) return "";
+      const blocks = rows.map(item => [
+        `Unit: ${item.unit}`,
+        `Selected: ${item.selected}`,
+        `Current Value: ${item.value}`
+      ].join("\n"));
+      return `FIX REPORT\n\n${blocks.join("\n\n")}`;
+    }
+
     function normalizeRosterSpreadsheetEdits(value) {
       const source = value && typeof value === "object" ? value : {};
       const normalizeGroup = (raw, normalizer) => {
@@ -12089,7 +12181,8 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
         detachmentStratagems: normalizeGroup(source.detachmentStratagems, normalizePendingDetachmentStratagemEdit),
         units: normalizeGroup(source.units, normalizePendingUnitSpreadsheetEdit),
         abilities: normalizeGroup(source.abilities, normalizePendingAbilitySpreadsheetEdit),
-        weapons: normalizeGroup(source.weapons, normalizePendingWeaponSpreadsheetEdit)
+        weapons: normalizeGroup(source.weapons, normalizePendingWeaponSpreadsheetEdit),
+        fixReports: normalizeFixReportItems(source.fixReports)
       };
     }
 
@@ -12700,30 +12793,41 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
     }
 
 
-    function isFixReportAbilityNote(note) {
-      return String(note && note.title || "").trim().toUpperCase() === "FIX";
-    }
-
     function stripAllRosterNotes(roster) {
       if (!roster) return roster;
       roster.rosterNotes = [];
+      if (!roster.spreadsheetEdits || typeof roster.spreadsheetEdits !== "object") roster.spreadsheetEdits = createEmptySpreadsheetEdits();
+      const migratedFixReports = normalizeFixReportItems(roster.spreadsheetEdits.fixReports);
+      const seenFixReports = new Set(migratedFixReports.map(item => [item.unit, item.selected, item.value].join("\u001f")));
       roster.entries = (Array.isArray(roster.entries) ? roster.entries : []).filter(entry => !isRosterNoteEntry(entry));
       (roster.entries || []).forEach(entry => {
         if (!entry || isSpacerEntry(entry) || isRosterNoteEntry(entry)) return;
-        const retainedFixNotes = normalizeRosterUnitAbilityNotes(entry).filter(isFixReportAbilityNote);
-        entry.abilityNoteTitle = retainedFixNotes.length ? retainedFixNotes[0].title : "Note";
-        entry.abilityNote = retainedFixNotes.length ? retainedFixNotes[0].text : "";
-        entry.abilityNotes = retainedFixNotes.map(item => ({ title: item.title, text: item.text }));
+        normalizeRosterUnitAbilityNotes(entry).forEach(note => {
+          if (String(note && note.title || "").trim().toUpperCase() !== "FIX") return;
+          const lines = String(note.text || "").split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+          const unitLine = lines.find(line => /^Unit:\s*/i.test(line));
+          const unit = unitLine ? unitLine.replace(/^Unit:\s*/i, "").trim() : "Unit";
+          lines.filter(line => !/^Unit:\s*/i.test(line)).forEach(line => {
+            const parts = line.split(/\s*>\s*/).map(part => part.trim()).filter(Boolean);
+            if (!parts.length) return;
+            const value = parts.length > 1 ? parts.pop() : "";
+            const selected = parts.join(" > ") || "Item";
+            const key = [unit, selected, value].join("\u001f");
+            if (seenFixReports.has(key)) return;
+            seenFixReports.add(key);
+            migratedFixReports.push({ unit, selected, value, createdAt: "" });
+          });
+        });
+        entry.abilityNoteTitle = "Note";
+        entry.abilityNote = "";
+        entry.abilityNotes = [];
         if (entry.abilitySortOrders && typeof entry.abilitySortOrders === "object") {
           Object.keys(entry.abilitySortOrders).forEach(key => {
             if (String(key).startsWith("note:")) delete entry.abilitySortOrders[key];
           });
         }
-        if (!entry.abilitySortOrders || typeof entry.abilitySortOrders !== "object") entry.abilitySortOrders = {};
-        retainedFixNotes.forEach((item, index) => {
-          entry.abilitySortOrders[`note:${index}`] = 1;
-        });
       });
+      roster.spreadsheetEdits.fixReports = normalizeFixReportItems(migratedFixReports);
       return roster;
     }
 
@@ -13791,57 +13895,52 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
     };
 
 
-    window.saveNewViewFixReportToRoster = function(report) {
-      const items = report && Array.isArray(report.items) ? report.items : [];
-      if (!items.length) return { ok: false, savedNotes: 0 };
+    window.getNewViewFixReportItems = function() {
       const roster = getViewEditRoster();
-      if (!roster || !Array.isArray(roster.entries)) return { ok: false, savedNotes: 0 };
+      if (!roster) return [];
+      return normalizeFixReportItems(getRosterSpreadsheetEdits(roster).fixReports);
+    };
 
-      const byEntryId = new Map();
-      items.forEach(item => {
-        const entryId = String(item && item.entryId || "").trim();
-        if (!entryId) return;
-        if (!byEntryId.has(entryId)) byEntryId.set(entryId, []);
-        byEntryId.get(entryId).push(item);
-      });
-
-      let savedNotes = 0;
-      byEntryId.forEach((unitItems, entryId) => {
-        const entry = getRosterEntryById(roster, entryId);
-        if (!entry || isSpacerEntry(entry) || isRosterNoteEntry(entry)) return;
-
-        const unitName = String(unitItems[0] && unitItems[0].unit || "").trim() || "Unit";
-        const lines = unitItems.map(item => {
-          const section = String(item && item.section || "View").trim() || "View";
-          const itemName = String(item && item.item || "").trim();
-          const field = String(item && item.field || "Item").trim() || "Item";
-          const value = String(item && item.value || "").trim();
-          const parts = [section];
-          if (itemName && itemName !== section) parts.push(itemName);
-          if (field && field !== itemName) parts.push(field);
-          if (value && value !== itemName && value !== field) parts.push(value);
-          return parts.join(" > ");
-        }).filter(Boolean);
-        if (!lines.length) return;
-
-        const currentNotes = normalizeRosterUnitAbilityNotes(entry);
-        const nextIndex = currentNotes.length;
-        const fixText = [`Unit: ${unitName}`, ...lines].join("\n");
-        entry.abilityNotes = currentNotes.concat([{ title: "FIX", text: fixText }]);
-        entry.abilityNoteTitle = entry.abilityNotes[0].title;
-        entry.abilityNote = entry.abilityNotes[0].text;
-        if (!entry.abilitySortOrders || typeof entry.abilitySortOrders !== "object") entry.abilitySortOrders = {};
-        entry.abilitySortOrders[`note:${nextIndex}`] = 1;
-        synchronizeRosterUnitAbilityCollections(entry);
-        savedNotes += 1;
-      });
-
-      if (!savedNotes) return { ok: false, savedNotes: 0 };
+    window.saveNewViewFixReportItems = function(items) {
+      const roster = getViewEditRoster();
+      if (!roster) return { ok: false, count: 0 };
+      const edits = getRosterSpreadsheetEdits(roster);
+      const current = normalizeFixReportItems(edits.fixReports);
+      const incoming = normalizeFixReportItems((Array.isArray(items) ? items : []).map(item => ({
+        unit: String(item && item.unit || "Unit"),
+        section: String(item && item.section || ""),
+        item: String(item && item.item || ""),
+        field: String(item && item.field || ""),
+        value: String(item && item.value ?? ""),
+        createdAt: new Date().toISOString()
+      })));
+      edits.fixReports = normalizeFixReportItems(current.concat(incoming));
+      roster.spreadsheetEdits = edits;
       viewEditRosterDraftDirty = true;
       rosterWorkingStateDirty = true;
-      invalidateRosterModeDomCache("view");
       persistRosterLibrary({ reason: "new-view-fix-report", skipNoteDeleteFinalize: true });
-      return { ok: true, savedNotes };
+      return { ok: incoming.length > 0, count: edits.fixReports.length };
+    };
+
+    window.clearNewViewFixReportItems = function() {
+      const roster = getViewEditRoster();
+      if (!roster) return false;
+      const edits = getRosterSpreadsheetEdits(roster);
+      edits.fixReports = [];
+      roster.spreadsheetEdits = edits;
+      viewEditRosterDraftDirty = true;
+      rosterWorkingStateDirty = true;
+      persistRosterLibrary({ reason: "new-view-fix-report-clear", skipNoteDeleteFinalize: true });
+      return true;
+    };
+
+    window.copyNewViewFixReportText = function(button) {
+      const roster = getViewEditRoster();
+      if (!roster) return false;
+      const text = formatFixReportCopyText(getRosterSpreadsheetEdits(roster).fixReports);
+      if (!text) return false;
+      RosterActions.copyTextToClipboardWithFeedback(text, button, "Copy All");
+      return true;
     };
 
     function selectAppMode(mode) {
@@ -24431,6 +24530,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitAbilityNoteEditRow(entry, editKey, note, noteIndex = 0, rowIndex = 0) {
+      return "";
       if (!entry || isRosterNoteEntry(entry) || !isFixReportAbilityNote(note)) return "";
       const noteTitle = String(note && note.title || "Note").trim() || "Note";
       const noteText = String(note && note.text || "");
@@ -24450,6 +24550,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitAbilityNoteEditRows(entry, editKey, rowOffset = 0) {
+      return "";
       if (!entry || isRosterNoteEntry(entry)) return "";
       const notes = getRosterEntryAbilityNotes(entry);
       return notes.map((note, index) => isFixReportAbilityNote(note)
@@ -31017,7 +31118,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.114',
+        version: 'V31.115',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
