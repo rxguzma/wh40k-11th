@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.126</title>
+  <title>WH40k 11th V31.127</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.126; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.127; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.127
+    Scope: Correct unified New View Unit Ability geometry. Each Ability is now one atomic content-driven block after Weapons: A-F is one centered Ability Name box spanning the full Ability height; G-P contains the Short Description above its structured Tags. Description text wraps and grows vertically as needed. Tags retain the existing Weapon Tag visual format, wrap as needed, and can grow vertically. The Ability Name grows with the combined Description/Tags height. The outer New View grid reserves the matching number of standard row-size units, eliminating clipped text, oversized implicit rows, and blank gaps between Abilities. Existing Old Edit authoritative Ability data/order, orders 8/9 visibility rule, Range/Melee/Other/All filtering, transient selection, V31.126 focus-row behavior, fonts, colors, borders, and grid dimensions are retained.
+    Risk areas: Unified New View Unit Ability layout/reflow and opened-Unit focus bounds only. No Old Edit, CSV schema/data, Weapon data/layout, Unit stats, Probable mechanics, Cards, Waha, persistence, lock behavior, or report storage changes.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.126
     Scope: In unified New View, when a Unit opens, reuse the existing M/T/SV/W/LD/OC stat-header element in the existing blank gray focus row immediately above that Unit. The header no longer remains visible in its old fixed row while a Unit is open because the same DOM element is visually repositioned to the top focus row. Closing the Unit restores the header to its normal authored position. No duplicate stat header or labels are created, and no stat header or stat-label elements are deleted. Existing grid dimensions, fonts, colors, stat columns, Unit row, focus separator, Unit data, and expanded content remain unchanged.
     Risk areas: Unified New View stat-header grid-row presentation while a Unit is focused only. No roster/CSV data, Unit/Weapon/Ability rendering, Edit, lock prepared-state behavior, report storage, Waha, Cards, Probable, persistence, or Version controls change.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.123
     Scope: Add two full-width blank gray focus rows around the currently opened Unit in unified View. One existing-card-gray row appears immediately above the active Unit and one immediately below the final visible Unit detail/weapon/tag row. The active Unit plus its expanded content remains inside the existing Unit wrap box between those separators; the selected-Weapon wrap remains unchanged. Separator rows disappear when the Unit closes or focus changes. No text or controls are added to the separators.
     Risk areas: Unified View expanded-Unit grid-row spacing only. Existing muted/active colors, Unit and selected-Weapon wrap boxes, roster/weapon data, filters, Boyz selection, lock/frozen behavior, scrolling/frame sizing, Edit, FIX, Cards, persistence, CSV data, Waha routing, Probable, and Version controls remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.122
-    Scope: Change the New View disposition text (for example, Priority Assets) from the active green treatment to the same standard muted text color used by the Detachment line (for example, Wreckas). Layout, typography, spacing, wording, and all behavior remain unchanged.
-    Risk areas: New View header disposition text color only.
   -->
 
 
@@ -5468,10 +5468,14 @@
 .view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:var(--card);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
 
 
-/* V31.125 Unit Ability grid layout in unified New View. */
-.unit-ability-name-row{grid-column:1/span 6;z-index:4;box-sizing:border-box;align-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 8px;overflow:hidden;background:var(--card);border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
-.unit-ability-description-row{grid-column:7/span 10;z-index:4;box-sizing:border-box;align-self:stretch;display:flex;align-items:center;padding:0 8px;overflow:hidden;white-space:normal;overflow-wrap:anywhere;background:var(--card);border-bottom:1px solid var(--border);color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
-.unit-ability-tags{grid-column:7/span 10;z-index:4;box-sizing:border-box;align-self:stretch;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer}
+/* V31.127 content-driven Unit Ability layout in unified New View. */
+.unit-ability-block{grid-column:1/span 16;z-index:4;box-sizing:border-box;align-self:start;display:grid;grid-template-columns:repeat(16,var(--cell));background:var(--card);cursor:pointer;overflow:visible}
+.unit-ability-block.has-tags{grid-template-rows:minmax(calc(var(--cell)*2),auto) minmax(var(--cell),auto)}
+.unit-ability-block:not(.has-tags){grid-template-rows:minmax(calc(var(--cell)*2),auto)}
+.unit-ability-name-row{grid-column:1/span 6;grid-row:1/-1;box-sizing:border-box;min-width:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}
+.unit-ability-description-row{grid-column:7/span 10;grid-row:1;box-sizing:border-box;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border-bottom:1px solid var(--border);color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif}
+.unit-ability-tags{grid-column:7/span 10;grid-row:2;box-sizing:border-box;min-width:0;min-height:var(--cell);display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:var(--card);border-bottom:1px solid var(--border)}
+.unit-ability-tags .weapon-tag{height:auto;min-height:var(--std);max-width:100%;white-space:normal;overflow:visible;text-align:center;line-height:1.1;padding-top:4px;padding-bottom:4px}
 .unit-ability-name-row.ability-muted,.unit-ability-description-row.ability-muted{color:rgba(241,243,244,.5)!important}
 .unit-ability-tags.ability-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
 .unit-ability-name-row.ability-active,.unit-ability-description-row.ability-active{color:#80d6a3!important}
@@ -6966,7 +6970,9 @@ function shiftViewFocusGridRow(el,delta){
   if(!Object.prototype.hasOwnProperty.call(el.dataset,&#x27;viewFocusOriginalGridRow&#x27;)){
     el.dataset.viewFocusOriginalGridRow=el.style.gridRow||&#x27;__EMPTY__&#x27;;
   }
-  el.style.gridRow=String(row+delta);
+  const spanMatch=String(el.style.gridRow||&#x27;&#x27;).match(/span\s+(\d+)/i);
+  const span=spanMatch?Math.max(1,Number(spanMatch[1])||1):1;
+  el.style.gridRow=String(row+delta)+(span&gt;1?&#x27; / span &#x27;+String(span):&#x27;&#x27;);
   return true;
 }
 function resetViewStatHeaderFocusPosition(){
@@ -7032,7 +7038,7 @@ function applyViewFocusSpacing(){
   };
   addContentNode(grid.querySelector(&#x27;.detail-box-row&#x27;));
   addContentNode(grid.querySelector(&#x27;.weapon-header:not(.boyz-subunit-node)&#x27;));
-  grid.querySelectorAll(&#x27;.unit-ability-name-row,.unit-ability-description-row,.unit-ability-tags,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(addContentNode);
+  grid.querySelectorAll(&#x27;.unit-ability-block,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(addContentNode);
   contentNodes.forEach(el=&gt;shiftViewFocusGridRow(el,1));
 
   addViewFocusSeparator(activeBaseRow,&#x27;top&#x27;);
@@ -7040,14 +7046,17 @@ function applyViewFocusSpacing(){
   let bottomRow=viewGridRowNumber(activeRow);
   contentNodes.forEach(el=&gt;{
     const row=viewGridRowNumber(el);
-    if(Number.isFinite(row))bottomRow=Math.max(bottomRow,row);
+    if(!Number.isFinite(row))return;
+    const spanMatch=String(el.style.gridRow||&#x27;&#x27;).match(/span\s+(\d+)/i);
+    const span=spanMatch?Math.max(1,Number(spanMatch[1])||1):1;
+    bottomRow=Math.max(bottomRow,row+span-1);
   });
   addViewFocusSeparator(bottomRow+1,&#x27;bottom&#x27;);
   if(typeof syncNewViewFrameHeight===&#x27;function&#x27;)syncNewViewFrameHeight();
 }
 
 function clearNewViewAbilityRows(){
-  grid.querySelectorAll(&#x27;.unit-ability-name-row,.unit-ability-description-row,.unit-ability-tags&#x27;).forEach(el=&gt;el.remove());
+  grid.querySelectorAll(&#x27;.unit-ability-block&#x27;).forEach(el=&gt;el.remove());
 }
 function newViewAbilityFilterScope(scope){
   const clean=String(scope||&#x27;all&#x27;).toLowerCase();
@@ -7073,19 +7082,9 @@ function selectNewViewAbility(key){
   selectedAbilityKey=selectedAbilityKey===clean?null:clean;
   syncWeaponLayout();
 }
-function makeNewViewAbilityCell(className,startRow,rowSpan,key,text,active){
-  const el=document.createElement(&#x27;div&#x27;);
-  el.className=className+&#x27; &#x27;+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
-  el.dataset.abilityKey=String(key||&#x27;&#x27;);
-  el.style.gridRow=String(startRow)+(rowSpan&gt;1?&#x27; / span &#x27;+String(rowSpan):&#x27;&#x27;);
-  el.textContent=String(text||&#x27;&#x27;);
-  el.onclick=event=&gt;{event.stopPropagation();selectNewViewAbility(key)};
-  grid.appendChild(el);
-  return el;
-}
 function newViewLastVisibleWeaponRow(detailStartRow){
   let bottom=detailStartRow;
-  grid.querySelectorAll(&#x27;.weapon-header,.weapon-row,.weapon-tags:not(.unit-ability-tags),.boyz-subunit-node&#x27;).forEach(el=&gt;{
+  grid.querySelectorAll(&#x27;.weapon-header,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(el=&gt;{
     if(!viewPresentationVisible(el))return;
     const row=parseInt(el.style.gridRow||getComputedStyle(el).gridRowStart,10);
     if(!Number.isFinite(row))return;
@@ -7094,6 +7093,51 @@ function newViewLastVisibleWeaponRow(detailStartRow){
     bottom=Math.max(bottom,row+span-1);
   });
   return bottom;
+}
+function makeNewViewAbilityBlock(startRow,key,ability,visibleTags,active){
+  const block=document.createElement(&#x27;div&#x27;);
+  block.className=&#x27;unit-ability-block &#x27;+(visibleTags.length?&#x27;has-tags &#x27;:&#x27;&#x27;)+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
+  block.dataset.abilityKey=String(key||&#x27;&#x27;);
+  block.style.gridRow=String(startRow);
+
+  const name=document.createElement(&#x27;div&#x27;);
+  name.className=&#x27;unit-ability-name-row &#x27;+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
+  name.textContent=String(ability&amp;&amp;ability.name||&#x27;&#x27;);
+  block.appendChild(name);
+
+  const description=document.createElement(&#x27;div&#x27;);
+  description.className=&#x27;unit-ability-description-row &#x27;+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
+  description.textContent=String(ability&amp;&amp;ability.description||&#x27;&#x27;);
+  block.appendChild(description);
+
+  let tags=null;
+  if(visibleTags.length){
+    tags=document.createElement(&#x27;div&#x27;);
+    tags.className=&#x27;unit-ability-tags &#x27;+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
+    visibleTags.forEach(tag=&gt;{
+      const badge=document.createElement(&#x27;span&#x27;);
+      badge.className=&#x27;weapon-tag&#x27;;
+      badge.textContent=String(tag&amp;&amp;tag.label||&#x27;&#x27;);
+      tags.appendChild(badge);
+    });
+    block.appendChild(tags);
+  }
+
+  block.onclick=event=&gt;{event.stopPropagation();selectNewViewAbility(key)};
+  grid.appendChild(block);
+
+  const cellPx=parseFloat(getComputedStyle(grid).getPropertyValue(&#x27;--cell&#x27;))||26;
+  const minRows=visibleTags.length?3:2;
+  const naturalHeight=Math.max(
+    block.scrollHeight,
+    description.scrollHeight+(tags?tags.scrollHeight:0),
+    name.scrollHeight,
+    cellPx*minRows
+  );
+  const rowSpan=Math.max(minRows,Math.ceil(naturalHeight/cellPx));
+  block.style.gridRow=String(startRow)+&#x27; / span &#x27;+String(rowSpan);
+  block.style.alignSelf=&#x27;stretch&#x27;;
+  return rowSpan;
 }
 function renderNewViewAbilitiesAndReflow(){
   clearNewViewAbilityRows();
@@ -7115,27 +7159,8 @@ function renderNewViewAbilitiesAndReflow(){
     const key=String(ability&amp;&amp;ability.key||ability&amp;&amp;ability.abilityId||&#x27;&#x27;);
     const active=Boolean(key&amp;&amp;String(selectedAbilityKey)===key);
     const visibleTags=newViewAbilityVisibleTags(ability).filter(tag=&gt;String(tag&amp;&amp;tag.label||&#x27;&#x27;).trim());
-    const blockRows=visibleTags.length?3:2;
-
-    makeNewViewAbilityCell(&#x27;unit-ability-name-row&#x27;,cursor,blockRows,key,ability&amp;&amp;ability.name,active);
-    makeNewViewAbilityCell(&#x27;unit-ability-description-row&#x27;,cursor,2,key,ability&amp;&amp;ability.description,active);
-
-    if(visibleTags.length){
-      const tagRow=document.createElement(&#x27;div&#x27;);
-      tagRow.className=&#x27;weapon-tags unit-ability-tags &#x27;+(active?&#x27;ability-active&#x27;:&#x27;ability-muted&#x27;);
-      tagRow.dataset.abilityKey=key;
-      tagRow.style.display=&#x27;flex&#x27;;
-      tagRow.style.gridRow=String(cursor+2);
-      visibleTags.forEach(tag=&gt;{
-        const badge=document.createElement(&#x27;span&#x27;);
-        badge.className=&#x27;weapon-tag&#x27;;
-        badge.textContent=String(tag.label||&#x27;&#x27;);
-        tagRow.appendChild(badge);
-      });
-      tagRow.onclick=event=&gt;{event.stopPropagation();selectNewViewAbility(key)};
-      grid.appendChild(tagRow);
-    }
-    cursor+=blockRows;
+    const rowSpan=makeNewViewAbilityBlock(cursor,key,ability,visibleTags,active);
+    cursor+=rowSpan;
   });
 
   const finalBottomRow=abilities.length?cursor-1:weaponBottomRow;
@@ -7155,7 +7180,7 @@ function syncViewSelectionPresentation(){
   const header=grid.querySelector(&#x27;.weapon-header:not(.boyz-subunit-node)&#x27;);
   if(viewPresentationVisible(detail))unitParts.push(detail);
   if(viewPresentationVisible(header))unitParts.push(header);
-  grid.querySelectorAll(&#x27;.unit-ability-name-row,.unit-ability-description-row,.unit-ability-tags,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(el=&gt;{
+  grid.querySelectorAll(&#x27;.unit-ability-block,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(el=&gt;{
     if(viewPresentationVisible(el)&amp;&amp;!unitParts.includes(el))unitParts.push(el);
   });
   addViewSelectionWrap(&#x27;view-open-unit-wrap&#x27;,activeRow,unitParts);
@@ -9785,7 +9810,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.126";
+    const APP_VERSION = "31.127";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31560,7 +31585,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.126',
+        version: 'V31.127',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
