@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.118</title>
+  <title>WH40k 11th V31.119</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.118; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.119; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.119
+    Scope: Refine unified New View Fix Report only. Newly captured report entries now preserve canonical Unit_ID and Weapon_ID from the rendered roster/Weapon data; Copy All and the visible report use Unit_ID instead of Unit display name and Weapon_ID instead of Weapon display name while keeping Current Value human-readable. Copy All now begins exactly with “FIX REPORT: Check the details called out below vs Waha and suggest changes.” The report surface now mirrors the Version row: it starts collapsed, toggles open by tapping the Fix Report row, and keeps only Done and Copy All as two four-column actions on the right; Reset is removed. Existing grid dimensions, Roboto fonts, colors, borders, Version positioning, and wrench behavior are reused.
+    Risk areas: Fix Report capture metadata, Copy All formatting, collapsed/open report layout, and locked-View report-row tapping only. Boyz sub-units, other Units, filters, unified Edit, Version controls, Cards, roster/CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.118
     Scope: Refine Boyz New View sub-units only. A Boyz / Specials / Nob sub-unit header now disappears completely when the current Range / Melee / Other / All filter leaves that sub-unit with no visible weapons. When a visible sub-unit is opened, the other visible sub-unit headers reuse the existing weapon-muted gray treatment; closing the focused sub-unit restores the next open sub-unit as focus, or normal header treatment when none remain open. Existing weapon rows, tags, selected-weapon top ordering, quantities, header stat-label behavior, grid sizing, fonts, and colors are otherwise unchanged.
     Risk areas: Boyz New View sub-unit visibility and header focus treatment only. Other Units, weapon data, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.115
     Scope: Replace the hidden V31.113 per-Unit FIX-note destination with a visible roster-level Fix Report in unified New View. The wrench still enters/exits lightweight selection mode at L4; the second tap now appends the exact selected Unit / Section / Item / Field / Current Value into a visible Fix Report box directly above Version. The box reuses the New View 16-column grid, Roboto typography, existing card/border/text/orange/green colors, and standard button geometry, with Done, Reset, and Copy All patterned after Spreadsheet Edits. Copy All produces LLM-ready text headed FIX REPORT with Unit, Selected, and Current Value blocks. Report rows persist inside the roster's existing spreadsheetEdits save object so they survive Save/reload/clone/export/import without becoming actual spreadsheet edits. Any FIX notes created by V31.113 are migrated once into the report and legacy Notes return to retired/hidden behavior. No CSV is modified.
     Risk areas: New View report display/Version positioning, FIX report persistence inside spreadsheetEdits, Copy All/Done/Reset actions, and one-time V31.113 FIX-note migration. V31.114 Boyz sub-unit presentation, Lock/filter/Grid controls, unified Edit, Spreadsheet Edits proper, Version/Update/Download behavior, Cards, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.114
-    Scope: Boyz New View weapon sub-units. When Boyz is expanded in VIEW, its Weapon area now shows exactly three independently tappable header rows: Boyz, Specials, and Nob. Headers reuse the existing weapon-header cells with R" / A / WS / St / AP / D and add no arrows, counts, controls, borders, or new colors. Initial approved contents are Boyz = Slugga/Shoota/Choppa; Specials = Big Shoota/Burna/Rokkit Launcha Blasta/Rokkit Launcha Busta; Nob = Kombi-skorcha Shoota/Kombi-skorcha Skorcha. Expanded rows reuse current New View weapon/stat/tag styling. Canonical Weapon_Quantities supplies x10/x20 quantities, appended directly to the weapon-name text as ×N so active/muted/normal states apply to the whole name. The rejected V31.110 flat weapon list is removed from unified EDIT.
-    Risk areas: Boyz expanded Weapon presentation in unlocked New View and removal of the rejected V31.110 Edit-only flat list. Other Units, New View filters, Unit Detail, lock/frozen behavior, unified Edit rows, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5444,15 +5444,17 @@
 .new-view-report-selected{outline:1px solid #80d6a3!important;outline-offset:-1px;color:#80d6a3!important}
 
 .new-view-fix-report-box{grid-column:1/span 16;z-index:4;display:none;align-self:stretch;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);overflow:hidden;color:var(--text);font-family:Roboto,Arial,sans-serif}
-.new-view-fix-report-title{height:var(--cell);display:flex;align-items:center;padding:0 8px;border-bottom:1px solid var(--border);font:900 var(--body)/1 Roboto,Arial,sans-serif}
-.new-view-fix-report-count{margin-left:auto;color:var(--muted);font:700 var(--meta)/1 Roboto,Arial,sans-serif}
+.new-view-fix-report-title{height:var(--cell);display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;padding:0;font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
+.new-view-fix-report-heading{grid-column:1/span 8;min-width:0;display:flex;align-items:center;gap:6px;padding:0 8px;white-space:nowrap;overflow:hidden}
+.new-view-fix-report-box.open .new-view-fix-report-title{border-bottom:1px solid var(--border)}
+.new-view-fix-report-count{color:var(--muted);font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap}
 .new-view-fix-report-list{display:block}
 .new-view-fix-report-item{min-height:calc(var(--cell)*2);padding:5px 8px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden}
 .new-view-fix-report-unit{color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .new-view-fix-report-detail{color:var(--secondary);font:700 var(--meta)/1.2 Roboto,Arial,sans-serif;white-space:normal;overflow-wrap:anywhere}
 .new-view-fix-report-value{color:var(--orange)}
-.new-view-fix-report-actions{height:var(--cell);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:center;padding:1px 0}
-.new-view-fix-report-actions .button-standard{width:100%;height:var(--std);padding:0 4px}
+.new-view-fix-report-actions{grid-column:9/span 8;height:var(--cell);display:grid;grid-template-columns:repeat(2,1fr);align-items:center}
+.new-view-fix-report-actions .button-standard{width:calc(100% - var(--gap));height:var(--std);padding:0 4px;justify-self:center}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5893,7 +5895,7 @@ function handleLockedViewPreparedClick(event){
     endLockedViewPreparedMode();
     return;
   }
-  const reportBoxAction=target.closest(&#x27;.new-view-fix-report-box button&#x27;);
+  const reportBoxAction=target.closest(&#x27;.new-view-fix-report-box&#x27;);
   if(reportBoxAction)return;
   const reportToggle=target.closest(&#x27;.new-view-report-toggle&#x27;);
   if(reportToggle){
@@ -5952,7 +5954,7 @@ function newViewReportUnitContext(el){
     const nameNode=rosterNode.querySelector(&#x27;.view-unit-name&#x27;);
     name=newViewReportText(nameNode);
   }
-  return {index:Number.isFinite(index)?index:null,name:name||&#x27;Unit&#x27;,entryId:String(data&amp;&amp;data.entryId||&#x27;&#x27;).trim()};
+  return {index:Number.isFinite(index)?index:null,name:name||&#x27;Unit&#x27;,entryId:String(data&amp;&amp;data.entryId||&#x27;&#x27;).trim(),unitId:String(data&amp;&amp;data.unitId||&#x27;&#x27;).trim()};
 }
 function newViewReportWeaponIndex(el){
   const holder=el&amp;&amp;el.closest?el.closest(&#x27;[class*=&quot;weapon-row-&quot;],[class*=&quot;weapon-tags-&quot;]&#x27;):null;
@@ -6077,13 +6079,33 @@ function describeNewViewReportTarget(target){
     unitIndex:unit.index,
     entryId:unit.entryId,
     unit:unit.name,
+    unitId:unit.unitId,
     section,
     item:item||value,
     field,
+    weaponId:section===&#x27;Weapon&#x27;?newViewReportWeaponId(el,unit):&#x27;&#x27;,
     value
   };
   record.key=[record.unitIndex??&#x27;&#x27;,record.unit,record.section,record.item,record.field,record.value].join(&#x27;\u001f&#x27;);
   return {el,record};
+}
+function newViewReportWeaponId(el,unit){
+  if(!el||!unit)return &#x27;&#x27;;
+  const explicit=el.closest(&#x27;[data-weapon-id]&#x27;);
+  if(explicit&amp;&amp;explicit.dataset&amp;&amp;explicit.dataset.weaponId)return String(explicit.dataset.weaponId||&#x27;&#x27;).trim();
+  const node=el.closest(&#x27;.weapon-row,.weapon-tags,[class*=&quot;weapon-row-&quot;],[class*=&quot;weapon-tags-&quot;]&#x27;);
+  if(!node)return &#x27;&#x27;;
+  let weaponIndex=-1;
+  [...node.classList].some(className=&gt;{
+    const match=String(className||&#x27;&#x27;).match(/^weapon-(?:row|tags)-(\d+)$/);
+    if(!match)return false;
+    weaponIndex=Math.max(0,Number(match[1])-1);
+    return true;
+  });
+  if(weaponIndex&lt;0||unit.index===null)return &#x27;&#x27;;
+  const data=unitDataByIndex[unit.index];
+  const weapons=Array.isArray(data&amp;&amp;data.weapons)?data.weapons:[];
+  return String(weapons[weaponIndex]&amp;&amp;weapons[weaponIndex].weaponId||&#x27;&#x27;).trim();
 }
 function formatNewViewFixReportItem(item){
   const parts=[String(item.unit||&#x27;Unit&#x27;),String(item.section||&#x27;View&#x27;)];
@@ -6115,9 +6137,11 @@ function readNewViewFixReportItems(){
   return [];
 }
 function newViewFixReportRows(){return readNewViewFixReportItems()}
-function newViewFixReportGridRows(count){return count?Math.max(4,2+(Math.max(0,count)*2)):0}
+let newViewFixReportOpen=false;
+function newViewFixReportGridRows(count){return count?(newViewFixReportOpen?1+(Math.max(0,count)*2):1):0}
 function formatNewViewFixReportVisibleValue(value){return String(value??&#x27;&#x27;).trim()}
 function buildNewViewFixReportBox(){
+  newViewFixReportOpen=false;
   const box=document.createElement(&#x27;section&#x27;);
   box.className=&#x27;new-view-fix-report-box&#x27;;
   box.setAttribute(&#x27;aria-label&#x27;,&#x27;Fix Report&#x27;);
@@ -6127,41 +6151,82 @@ function renderNewViewFixReportBox(){
   const box=grid.querySelector(&#x27;.new-view-fix-report-box&#x27;);
   if(!box)return 0;
   const items=newViewFixReportRows();
-  if(!items.length){box.style.display=&#x27;none&#x27;;box.innerHTML=&#x27;&#x27;;return 0}
+  if(!items.length){
+    newViewFixReportOpen=false;
+    box.classList.remove(&#x27;open&#x27;);
+    box.style.display=&#x27;none&#x27;;
+    box.innerHTML=&#x27;&#x27;;
+    return 0;
+  }
   box.style.display=&#x27;block&#x27;;
+  box.classList.toggle(&#x27;open&#x27;,newViewFixReportOpen);
+
   const title=document.createElement(&#x27;div&#x27;);
   title.className=&#x27;new-view-fix-report-title&#x27;;
-  title.textContent=&#x27;Fix Report&#x27;;
+  title.setAttribute(&#x27;aria-expanded&#x27;,newViewFixReportOpen?&#x27;true&#x27;:&#x27;false&#x27;);
+  title.tabIndex=0;
+
+  const heading=document.createElement(&#x27;div&#x27;);
+  heading.className=&#x27;new-view-fix-report-heading&#x27;;
+  const label=document.createElement(&#x27;span&#x27;);
+  label.textContent=&#x27;Fix Report&#x27;;
   const count=document.createElement(&#x27;span&#x27;);
   count.className=&#x27;new-view-fix-report-count&#x27;;
   count.textContent=String(items.length)+&#x27; item&#x27;+(items.length===1?&#x27;&#x27;:&#x27;s&#x27;);
-  title.appendChild(count);
+  heading.append(label,count);
+
+  const actions=document.createElement(&#x27;div&#x27;);
+  actions.className=&#x27;new-view-fix-report-actions&#x27;;
+  const done=document.createElement(&#x27;button&#x27;);
+  done.type=&#x27;button&#x27;;done.className=&#x27;button-standard&#x27;;done.textContent=&#x27;Done&#x27;;
+  const copy=document.createElement(&#x27;button&#x27;);
+  copy.type=&#x27;button&#x27;;copy.className=&#x27;button-standard active-green&#x27;;copy.textContent=&#x27;Copy All&#x27;;
+  done.onclick=e=&gt;{
+    e.preventDefault();e.stopPropagation();
+    try{if(parent&amp;&amp;typeof parent.clearNewViewFixReportItems===&#x27;function&#x27;)parent.clearNewViewFixReportItems()}catch(_){}
+    newViewFixReportOpen=false;
+    layoutNewViewFixReportAndVersion();
+  };
+  copy.onclick=e=&gt;{
+    e.preventDefault();e.stopPropagation();
+    try{if(parent&amp;&amp;typeof parent.copyNewViewFixReportText===&#x27;function&#x27;)parent.copyNewViewFixReportText(copy)}catch(_){}
+  };
+  actions.append(done,copy);
+  title.append(heading,actions);
+
+  const toggleOpen=()=&gt;{
+    newViewFixReportOpen=!newViewFixReportOpen;
+    layoutNewViewFixReportAndVersion();
+  };
+  title.onclick=e=&gt;{if(e.target.closest(&#x27;button&#x27;))return;toggleOpen()};
+  title.onkeydown=e=&gt;{
+    if(e.target.closest(&#x27;button&#x27;))return;
+    if(e.key===&#x27;Enter&#x27;||e.key===&#x27; &#x27;){e.preventDefault();toggleOpen()}
+  };
+
+  if(!newViewFixReportOpen){
+    box.replaceChildren(title);
+    return newViewFixReportGridRows(items.length);
+  }
+
   const list=document.createElement(&#x27;div&#x27;);
   list.className=&#x27;new-view-fix-report-list&#x27;;
   items.forEach(item=&gt;{
-    const row=document.createElement(&#x27;div&#x27;);row.className=&#x27;new-view-fix-report-item&#x27;;
-    const unit=document.createElement(&#x27;div&#x27;);unit.className=&#x27;new-view-fix-report-unit&#x27;;unit.textContent=String(item&amp;&amp;item.unit||&#x27;Unit&#x27;);
-    const detail=document.createElement(&#x27;div&#x27;);detail.className=&#x27;new-view-fix-report-detail&#x27;;
-    const selected=String(item&amp;&amp;item.selected||&#x27;Item&#x27;);
-    const value=formatNewViewFixReportVisibleValue(item&amp;&amp;item.value);
-    detail.append(document.createTextNode(selected+&#x27; → &#x27;));
-    const valueSpan=document.createElement(&#x27;span&#x27;);valueSpan.className=&#x27;new-view-fix-report-value&#x27;;valueSpan.textContent=value;detail.appendChild(valueSpan);
-    row.append(unit,detail);list.appendChild(row);
+    const row=document.createElement(&#x27;div&#x27;);
+    row.className=&#x27;new-view-fix-report-item&#x27;;
+    const unit=document.createElement(&#x27;div&#x27;);
+    unit.className=&#x27;new-view-fix-report-unit&#x27;;
+    unit.textContent=&#x27;Unit: &#x27;+String(item.unitId||item.unit||&#x27;Unit&#x27;);
+    const selected=document.createElement(&#x27;div&#x27;);
+    selected.className=&#x27;new-view-fix-report-detail&#x27;;
+    selected.textContent=&#x27;Selected: &#x27;+String(item.selected||&#x27;Item&#x27;);
+    const value=document.createElement(&#x27;div&#x27;);
+    value.className=&#x27;new-view-fix-report-detail new-view-fix-report-value&#x27;;
+    value.textContent=&#x27;Current Value: &#x27;+formatNewViewFixReportVisibleValue(item.value);
+    row.append(unit,selected,value);
+    list.appendChild(row);
   });
-  const actions=document.createElement(&#x27;div&#x27;);actions.className=&#x27;new-view-fix-report-actions&#x27;;
-  const done=document.createElement(&#x27;button&#x27;);done.type=&#x27;button&#x27;;done.className=&#x27;button-standard&#x27;;done.textContent=&#x27;Done&#x27;;
-  const reset=document.createElement(&#x27;button&#x27;);reset.type=&#x27;button&#x27;;reset.className=&#x27;button-standard&#x27;;reset.textContent=&#x27;Reset&#x27;;
-  const copy=document.createElement(&#x27;button&#x27;);copy.type=&#x27;button&#x27;;copy.className=&#x27;button-standard active-green&#x27;;copy.textContent=&#x27;Copy All&#x27;;
-  const clear=()=&gt;{
-    try{if(parent&amp;&amp;typeof parent.clearNewViewFixReportItems===&#x27;function&#x27;)parent.clearNewViewFixReportItems()}catch(_){}
-    renderNewViewFixReportBox();
-    layoutNewViewFixReportAndVersion();
-  };
-  done.onclick=e=&gt;{e.preventDefault();e.stopPropagation();clear()};
-  reset.onclick=e=&gt;{e.preventDefault();e.stopPropagation();clear()};
-  copy.onclick=e=&gt;{e.preventDefault();e.stopPropagation();try{if(parent&amp;&amp;typeof parent.copyNewViewFixReportText===&#x27;function&#x27;)parent.copyNewViewFixReportText(copy)}catch(_){}};
-  actions.append(done,reset,copy);
-  box.replaceChildren(title,list,actions);
+  box.replaceChildren(title,list);
   return newViewFixReportGridRows(items.length);
 }
 function layoutNewViewFixReportAndVersion(){
@@ -9422,7 +9487,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.118";
+    const APP_VERSION = "31.119";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12159,23 +12224,32 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       source.forEach(raw => {
         if (!raw || typeof raw !== "object") return;
         const unit = String(raw.unit || "Unit").trim() || "Unit";
-        let selected = String(raw.selected || "").trim();
+        const unitId = String(raw.unitId || "").trim();
         const section = String(raw.section || "").trim();
         const item = String(raw.item || "").trim();
         const field = String(raw.field || "").trim();
+        const weaponId = String(raw.weaponId || "").trim();
         const valueText = String(raw.value ?? "").trim();
-        if (!selected) {
+        let selected = String(raw.selected || "").trim();
+        if (section || item || field || weaponId) {
           const parts = [];
           if (section) parts.push(section);
-          if (item && item !== unit && item !== section) parts.push(item);
-          if (field && field !== item) parts.push(field);
-          selected = parts.join(" > ") || "Item";
+          const selectedItem = section.toUpperCase() === "WEAPON" && weaponId ? weaponId : item;
+          if (selectedItem && selectedItem !== unit && selectedItem !== section) parts.push(selectedItem);
+          if (field && field !== selectedItem) parts.push(field);
+          if (parts.length) selected = parts.join(" > ");
         }
-        const key = [unit, selected, valueText].join("\u001f");
+        if (!selected) selected = "Item";
+        const key = [unitId || unit, selected, valueText].join("\u001f");
         if (seen.has(key)) return;
         seen.add(key);
         result.push({
           unit,
+          unitId,
+          section,
+          item,
+          field,
+          weaponId,
           selected,
           value: valueText,
           createdAt: String(raw.createdAt || "")
@@ -12188,11 +12262,11 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       const rows = normalizeFixReportItems(items);
       if (!rows.length) return "";
       const blocks = rows.map(item => [
-        `Unit: ${item.unit}`,
+        `Unit: ${item.unitId || item.unit}`,
         `Selected: ${item.selected}`,
         `Current Value: ${item.value}`
       ].join("\n"));
-      return `FIX REPORT\n\n${blocks.join("\n\n")}`;
+      return `FIX REPORT: Check the details called out below vs Waha and suggest changes.\n\n${blocks.join("\n\n")}`;
     }
 
     function normalizeRosterSpreadsheetEdits(value) {
@@ -13939,9 +14013,11 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       const current = normalizeFixReportItems(edits.fixReports);
       const incoming = normalizeFixReportItems((Array.isArray(items) ? items : []).map(item => ({
         unit: String(item && item.unit || "Unit"),
+        unitId: String(item && item.unitId || ""),
         section: String(item && item.section || ""),
         item: String(item && item.item || ""),
         field: String(item && item.field || ""),
+        weaponId: String(item && item.weaponId || ""),
         value: String((item && item.value) ?? ""),
         createdAt: new Date().toISOString()
       })));
@@ -31149,7 +31225,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.118',
+        version: 'V31.119',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
