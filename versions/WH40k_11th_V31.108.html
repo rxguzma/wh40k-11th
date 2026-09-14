@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.98</title>
+  <title>WH40k 11th V31.108</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.98; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.108; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,33 +92,33 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.98
-    Scope: Retire the obsolete standalone New Edit page after the View/Edit migration into New View. Remove its dedicated screen, iframe, proxy data bridges, second-press routing, and dead legacy route while preserving shared Edit styles/functions used by the unified New View EDIT mode. New View navigation is simplified to one reciprocal mode button at M:N and Cards at O:P, leaving K:L empty: VIEW is the default state and therefore shows EDIT; EDIT shows VIEW. Both states continue to render locally through renderPage without a page reload.
-    Risk areas: New View header navigation and removal of dead standalone-New-Edit infrastructure only. Unified EDIT rows/actions, direct Alternate View/model bridges, New View lock/frozen snapshot, Version/Update/Download grid controls, Old Edit functionality, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.108
+    Scope: Make the Unit Detail row use the existing working Weapon Tag row/box behavior in unified New View/Edit. DEEP STRIKE/core ability, Waha, and count boxes no longer use fixed 2/3-grid-cell widths; they now size to their content like Weapon Tags. The row keeps its existing position, height, visibility logic, colors, actions, and standard gap/padding, with the same overflow behavior as Weapon Tags.
+    Risk areas: Unified New View/Edit Unit Detail row sizing only. V31.107 scrolling behavior is preserved. No Unit, Weapon, Ability, roster, Waha action, lock, Version, persistence, Cards, or Probable logic changes.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.97
-    Scope: Integrate New View Version / Update / Download into the actual 16-column sheet grid instead of rendering them inside a separate nested strip. The wrapper, strip background, and overlay z-index are removed. Version is a direct main-grid item at A:H, Update at I:L, and Download at M:P. Their grid row remains exactly five rows after the last rendered Unit and automatically follows Unit row changes. When Version is opened, the ten retained release buttons are also direct main-grid items across two rows of five rather than children of an overlay panel. Existing version, update, retained-release, and download functions remain unchanged.
-    Risk areas: New View version-control presentation only. Existing parent version engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.107
+    Scope: Fix New View mobile scrolling when a Unit is expanded. New View now preserves its existing collapsed iframe height but dynamically grows the iframe to the actual sheet height when Unit detail/Weapon rows push the grid lower, then shrinks back on collapse. Version-row positioning is included in the measurement. Prepared locked View states store and restore their required iframe height using the existing display-only state switch. No touch handlers, scroll interception, new UI controls, or visual styling are added.
+    Risk areas: New View iframe height synchronization only. V31.106 locked-background suspension, prepared locked states, VIEW/EDIT controls, shared Grid Mode, roster rendering, unified Edit, Version/Update/Download behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.96
-    Scope: Correct New View Version placement and restore the omitted Download action. The Version / Update / Download strip is no longer fixed near the top. In normal/collapsed View it is positioned exactly five grid rows after the last rendered Unit row and automatically follows Unit additions/removals/reordering. The existing main-button row is also respected so an expanded final Unit cannot overlap the strip. Version spans A:H and toggles retained history; Update spans I:L and directly runs the existing update-to-latest path; Download spans M:P and calls the existing downloadRunningVersion path with the existing prepared URL/filename so iPhone/Safari Save/Share behavior is preserved. Retained history remains two rows of five.
-    Risk areas: New View bottom version-strip placement and Download presentation only. Existing version/update/download engine, Old View, roster/model data, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.106
+    Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
+    Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.95
-    Scope: Transfer the existing Version / Update interface into New View without duplicating the version engine. New View row 5 now uses the fixed 16-column sheet grid: Version spans A:L and Update spans M:P. Version/current toggles a ten-release history panel rendered as two rows of five; retained-version buttons call the existing parent loadGithubVersion path. Update directly calls the existing updateToLatestVersion path and does not open or close the history panel. The parent exposes only a read-only version UI snapshot; GitHub history refresh, version checkpointing, host mounting, and update behavior remain owned by the existing version system.
-    Risk areas: New View version presentation and a read-only parent UI bridge only. Old View Version/Update/Download behavior, release host, roster/model processing, New View lock/frozen snapshot, unified Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.105
+    Scope: Correct the statement separator in the V31.104 shared Grid Mode icon renderer. This preserves the V31.104 UI behavior exactly: the active local mode is labeled VIEW or EDIT and highlighted green, and both modes use the same four-cell Grid Mode icon with persistent on/off indication.
+    Risk areas: Syntax correction in the unified View/Edit grid-button renderer only. No UI placement, state logic, roster data, lock behavior, filters, Edit actions, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable behavior changes.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.94
-    Scope: Correct unified New View EDIT points to use the same canonical roster-model totals as Old Edit. getAlternateViewRosterRows now carries each Unit model's points.total, which already includes the selected Unit point option, active per-model point modifiers, and paid Enhancement points. In New View EDIT, column P is now a plain Edit-style numeric point value rather than a Points button/icon or guessed fallback field. The EDIT title point total is recalculated from the ordered Unit rows shown on that sheet, ignoring spacer rows, after the normal legacy title fields refresh. VIEW title behavior, the V31.92 processing lock, and the V31.93 frozen snapshot remain unchanged.
-    Risk areas: Parent ordered-row point field plus unified New View EDIT row/title point presentation only. VIEW frozen-snapshot behavior, Old Edit, New Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.104
+    Scope: Correct the unified New View/Edit mode controls. The single local mode button now displays the mode that is actually active and is highlighted green: VIEW in View mode and EDIT in Edit mode; tapping it still switches directly to the opposite local mode through the existing fast path. The grid control is also standardized across both modes: Edit no longer renders the legacy G and now uses the same four-cell Grid Mode icon, SVG styling, toggle behavior, and current on/off indication as View. Existing mode-specific placement is retained so View's filter layout is unchanged.
+    Risk areas: Unified New View/Edit mode-button presentation and grid-button presentation/state only. Lock behavior, prepared locked states, roster data, Edit actions, weapon filters, Version/Update/Download, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable behavior remain unchanged.
   -->
 
 
@@ -5378,13 +5378,13 @@
 .detail-deep-strike{grid-column:4/span 3;grid-row:8;z-index:3;align-self:center;justify-self:center;width:calc(100% - var(--gap));height:var(--std);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap}
 .weapon-header,.weapon-row,.weapon-tags{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.weapon-header{grid-row:9;border-top:1px solid var(--border)}.weapon-header-label,.weapon-stat{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:700 var(--body)/1 Roboto,Arial,sans-serif}.weapon-name{grid-column:1/span 8;height:var(--cell);padding-left:8px;display:flex;align-items:center;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wr1{grid-column:9}.wr2{grid-column:10/span 2}.wr3{grid-column:12}.wr4{grid-column:13}.wr5{grid-column:14}.wr6{grid-column:15/span 2}
 .weapon-row-1{grid-row:10}.weapon-tags-1{grid-row:11}.weapon-row-2{grid-row:12}.weapon-tags-2{grid-row:13}.weapon-row-3{grid-row:14}.weapon-tags-3{grid-row:15}.weapon-row-4{grid-row:16}.weapon-tags-4{grid-row:17}.weapon-row-5{grid-row:18}.weapon-tags-5{grid-row:19}
-.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 &#x27;Roboto Condensed&#x27;,Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
+.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}.weapon-tag{height:var(--std);flex:0 0 auto;padding:0 8px;border:1px solid var(--btnborder);display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:var(--btn);color:var(--orange);font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}
 .sample-button-standard{grid-column:2/span 3;grid-row:33;z-index:3;align-self:center;justify-self:center}.sample-button-green{grid-column:2/span 2;grid-row:34;z-index:3;align-self:center;justify-self:center;background:var(--green);border-color:var(--greenborder)}.font-sample{grid-column:2/span 8;z-index:3;display:flex;align-items:center;color:var(--text);font-family:Roboto,Arial,sans-serif;font-weight:700;white-space:nowrap}.font-sample-title{grid-row:35;font-size:var(--title)}.font-sample-body{grid-row:36;font-size:var(--body)}.font-sample-meta{grid-row:37;font-size:var(--meta)}
 .version-bar{width:min(416px,100%);margin:8px auto 0;padding:8px;display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;border:1px solid var(--border);background:var(--card)}.version-label{min-width:0;font-size:var(--body);font-weight:900}.version-button{min-width:72px;height:40px;padding:0 10px;border:1px solid var(--btnborder);border-radius:8px;background:var(--btn);color:var(--text);font:900 13px Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center}.version-button:disabled{opacity:.5}
 
 .grid-toggle{grid-column:13;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important}
 .view-grid-toggle{grid-column:16}
-.view-grid-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.grid-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .new-view-lock-toggle{grid-column:11;grid-row:4;z-index:102;align-self:center;justify-self:center;width:var(--std)!important;height:var(--std)!important;padding:0!important;color:#80d6a3!important;border-color:#80d6a3!important}
 .new-view-lock-toggle.locked{color:#ff9a9a!important;border-color:#ff9a9a!important}
 .new-view-lock-icon{width:18px;height:18px;stroke:currentColor}
@@ -5419,7 +5419,7 @@
 .unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
 
 .detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 calc(var(--cell)*3 - var(--gap));min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
+.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0;overflow:hidden}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 auto;color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 auto;min-width:0;color:var(--orange)}.detail-waha{flex:0 0 auto;width:auto!important;text-decoration:none}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
 .view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
@@ -5428,6 +5428,15 @@
 .unified-edit-action{width:calc(var(--cell) - var(--gap));height:var(--std);align-self:center;justify-self:center;padding:0;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
 .unified-edit-action svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.4}
 
+
+.point-option-toggle{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;border:1px solid #48515f;background:#2b313b;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;cursor:pointer;user-select:none;-webkit-user-select:none;vertical-align:1px;white-space:nowrap;appearance:none;-webkit-appearance:none}
+.point-option-toggle:active{background:#3a4350;transform:translateY(1px)}
+.point-option-label-static{display:inline-block;margin-left:8px;color:#80d6a3;font:900 var(--meta)/1.2 Roboto,Arial,sans-serif;vertical-align:1px;white-space:nowrap}
+
+.new-view-lock-original-hidden{display:none!important}
+.new-view-locked-state{display:contents}
+.new-view-locked-state[hidden]{display:none!important}
+.new-view-lock-disabled{opacity:.45!important;pointer-events:none!important}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -5442,9 +5451,9 @@ function addPageNavigation(f,p){
 
   const toggle=document.createElement(&#x27;button&#x27;);
   toggle.type=&#x27;button&#x27;;
-  toggle.className=&#x27;button-standard&#x27;;
+  toggle.className=&#x27;button-standard active-green&#x27;;
   toggle.style.gridColumn=&#x27;2&#x27;;
-  toggle.textContent=p===&#x27;view&#x27;?&#x27;EDIT&#x27;:&#x27;VIEW&#x27;;
+  toggle.textContent=p===&#x27;view&#x27;?&#x27;VIEW&#x27;:&#x27;EDIT&#x27;;
   toggle.setAttribute(&#x27;aria-label&#x27;,p===&#x27;view&#x27;?&#x27;Switch to Edit&#x27;:&#x27;Switch to View&#x27;);
   toggle.onclick=()=&gt;renderPage(p===&#x27;view&#x27;?&#x27;edit&#x27;:&#x27;view&#x27;);
   m.appendChild(toggle);
@@ -5464,6 +5473,8 @@ let newViewHeaderLocked=false;
 let activePageMode=&#x27;view&#x27;;
 let frozenNewViewSnapshot=null;
 let currentViewRosterRows=[];
+let cachedLiveViewHeader=null;
+let hasLiveViewCache=false;
 function cloneNewViewValue(value){
   if(value===undefined)return undefined;
   if(typeof structuredClone===&#x27;function&#x27;){
@@ -5520,6 +5531,11 @@ function syncNewViewLockButton(button){
 }
 let newViewVersionHistoryOpen=false;
 let newViewVersionObserver=null;
+let newViewVersionObserverActive=false;
+let newViewVersionRafId=0;
+let newViewRefreshRafId=0;
+let newViewLockCounterBaseline=null;
+const newViewBackgroundCounters={observerCallbacks:0,versionLayoutPasses:0,liveRefreshes:0};
 const NEW_VIEW_VERSION_HISTORY_COLUMNS=[&#x27;1 / span 3&#x27;,&#x27;4 / span 3&#x27;,&#x27;7 / span 4&#x27;,&#x27;11 / span 3&#x27;,&#x27;14 / span 3&#x27;];
 function readNewViewVersionState(){
   try{
@@ -5536,7 +5552,7 @@ function getNewViewVersionRow(){
   const firstUnitRow=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
   return (lastUnitRow||(firstUnitRow-1))+5;
 }
-function positionNewViewVersionControls(){
+function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;newViewBackgroundCounters.versionLayoutPasses++;
   const versionRow=getNewViewVersionRow();
   const rowValue=String(versionRow);
   const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
@@ -5547,6 +5563,7 @@ function positionNewViewVersionControls(){
     button.style.gridRow=String(versionRow+1+Math.floor(index/5));
     button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
   });
+  syncNewViewFrameHeight();
   return versionRow;
 }
 function newViewVersionMutationTouchesLayout(mutation){
@@ -5562,16 +5579,74 @@ function newViewVersionMutationTouchesLayout(mutation){
   ));
 }
 function ensureNewViewVersionObserver(){
-  if(newViewVersionObserver)return;
-  newViewVersionObserver=new MutationObserver(mutations=&gt;{
-    if(mutations.some(newViewVersionMutationTouchesLayout))positionNewViewVersionControls();
-  });
-  newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
+  if(newViewProcessingLocked())return false;
+  if(!newViewVersionObserver){
+    newViewVersionObserver=new MutationObserver(mutations=&gt;{
+      if(newViewProcessingLocked())return;
+      newViewBackgroundCounters.observerCallbacks++;
+      if(mutations.some(newViewVersionMutationTouchesLayout))positionNewViewVersionControls();
+    });
+  }
+  if(!newViewVersionObserverActive){
+    newViewVersionObserver.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:[&#x27;style&#x27;]});
+    newViewVersionObserverActive=true;
+  }
+  return true;
 }
+function scheduleNewViewVersionPosition(){
+  if(newViewProcessingLocked())return false;
+  if(newViewVersionRafId)cancelAnimationFrame(newViewVersionRafId);
+  newViewVersionRafId=requestAnimationFrame(()=&gt;{
+    newViewVersionRafId=0;
+    if(newViewProcessingLocked())return;
+    positionNewViewVersionControls();
+  });
+  return true;
+}
+function scheduleNewViewRefresh(){
+  if(newViewProcessingLocked())return false;
+  if(newViewRefreshRafId)cancelAnimationFrame(newViewRefreshRafId);
+  newViewRefreshRafId=requestAnimationFrame(()=&gt;{
+    newViewRefreshRafId=0;
+    if(newViewProcessingLocked())return;
+    refreshNewView();
+  });
+  return true;
+}
+function suspendNewViewBackgroundWork(){
+  if(newViewVersionObserver&amp;&amp;newViewVersionObserverActive){
+    newViewVersionObserver.disconnect();
+    newViewVersionObserverActive=false;
+  }
+  if(newViewVersionRafId){cancelAnimationFrame(newViewVersionRafId);newViewVersionRafId=0;}
+  if(newViewRefreshRafId){cancelAnimationFrame(newViewRefreshRafId);newViewRefreshRafId=0;}
+  return true;
+}
+function resumeNewViewBackgroundWork(){
+  if(newViewProcessingLocked())return false;
+  ensureNewViewVersionObserver();
+  scheduleNewViewVersionPosition();
+  return true;
+}
+function getNewViewLockDiagnostics(){
+  const counters=Object.assign({},newViewBackgroundCounters);
+  const baseline=newViewLockCounterBaseline?Object.assign({},newViewLockCounterBaseline):null;
+  const unchanged=Boolean(newViewProcessingLocked()&amp;&amp;baseline)&amp;&amp;Object.keys(counters).every(key=&gt;counters[key]===baseline[key]);
+  return {
+    locked:newViewProcessingLocked(),
+    observerActive:newViewVersionObserverActive,
+    versionRafPending:Boolean(newViewVersionRafId),
+    refreshRafPending:Boolean(newViewRefreshRafId),
+    counters,
+    baseline,
+    unchangedWhileLocked:unchanged
+  };
+}
+window.getNewViewLockDiagnostics=getNewViewLockDiagnostics;
 function clearNewViewVersionHistoryButtons(){
   grid.querySelectorAll(&#x27;.new-view-version-option&#x27;).forEach(button=&gt;button.remove());
 }
-function renderNewViewVersionHistory(){
+function renderNewViewVersionHistory(){if(newViewProcessingLocked())return;
   clearNewViewVersionHistoryButtons();
   if(!newViewVersionHistoryOpen)return;
   const state=readNewViewVersionState();
@@ -5592,7 +5667,7 @@ function renderNewViewVersionHistory(){
     grid.appendChild(b);
   });
 }
-async function toggleNewViewVersionHistory(){
+async function toggleNewViewVersionHistory(){if(newViewProcessingLocked())return;
   newViewVersionHistoryOpen=!newViewVersionHistoryOpen;
   renderNewViewVersionHistory();
   const version=grid.querySelector(&#x27;.new-view-version-toggle&#x27;);
@@ -5654,9 +5729,190 @@ function addNewViewVersionControls(f){
 
   ensureNewViewVersionObserver();
   positionNewViewVersionControls();
-  requestAnimationFrame(positionNewViewVersionControls);
+  scheduleNewViewVersionPosition();
 }
-function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);if(p===&#x27;view&#x27;){gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;}else{gb.textContent=&#x27;G&#x27;}gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){newViewHeaderLocked=false;frozenNewViewSnapshot=null;syncNewViewLockButton(lb);requestAnimationFrame(refreshNewView);return}const snapshot=captureNewViewSnapshot();frozenNewViewSnapshot=snapshot;activateNewViewSnapshot(snapshot);newViewHeaderLocked=true;syncNewViewLockButton(lb)};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
+let lockedViewStateCache=null;
+let lockedViewStateLayers=[];
+let lockedViewFilterOrder=[];
+function lockedViewStateKey(unitIndex,mode){
+  return (unitIndex===null?&#x27;none&#x27;:String(unitIndex))+&#x27;|&#x27;+String(mode||&#x27;&#x27;);
+}
+function getLockedViewFilterOrder(){
+  const modes=[];
+  if(typeof weaponFilterModes!==&#x27;undefined&#x27;&amp;&amp;Array.isArray(weaponFilterModes)){
+    weaponFilterModes.forEach(mode=&gt;{const value=String(mode||&#x27;&#x27;);if(value&amp;&amp;!modes.includes(value))modes.push(value)});
+  }
+  const current=String(weaponFilterMode||&#x27;&#x27;);
+  if(current&amp;&amp;!modes.includes(current))modes.unshift(current);
+  return modes.length?modes:[current||&#x27;ALL&#x27;];
+}
+function getLockedViewUnitIndexes(){
+  const indexes=[];
+  unitDataByIndex.forEach((data,index)=&gt;{if(data)indexes.push(index)});
+  return indexes;
+}
+function primeLockedViewLayer(layer){
+  layer.querySelectorAll(&#x27;.new-view-lock-toggle&#x27;).forEach(button=&gt;{
+    button.classList.add(&#x27;locked&#x27;);
+    button.classList.remove(&#x27;unlocked&#x27;);
+    button.innerHTML=newViewLockIcon(true);
+    button.setAttribute(&#x27;title&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-label&#x27;,&#x27;Unlock&#x27;);
+    button.setAttribute(&#x27;aria-pressed&#x27;,&#x27;true&#x27;);
+  });
+  layer.querySelectorAll(&#x27;button,a,[role=&quot;button&quot;]&#x27;).forEach(control=&gt;{
+    const marker=[control.id,control.className,control.textContent,control.getAttribute(&#x27;aria-label&#x27;)].join(&#x27; &#x27;).toLowerCase();
+    if(marker.includes(&#x27;probable&#x27;)){
+      control.classList.add(&#x27;new-view-lock-disabled&#x27;);
+      control.setAttribute(&#x27;aria-disabled&#x27;,&#x27;true&#x27;);
+      if(&#x27;disabled&#x27; in control)control.disabled=true;
+    }
+  });
+}
+function cloneLockedViewState(unitIndex,mode){
+  const layer=document.createElement(&#x27;div&#x27;);
+  layer.className=&#x27;new-view-locked-state&#x27;;
+  layer.dataset.lockStateKey=lockedViewStateKey(unitIndex,mode);
+  layer.hidden=true;
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;))return;
+    if(node.classList&amp;&amp;node.classList.contains(&#x27;new-view-locked-state&#x27;))return;
+    layer.appendChild(node.cloneNode(true));
+  });
+  primeLockedViewLayer(layer);
+  layer.dataset.frameHeight=String(getNewViewFrameHeight());
+  return layer;
+}
+function renderLockedViewCombination(unitIndex,mode){
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  const filter=grid.querySelector(&#x27;.view-filter-toggle&#x27;);
+  if(filter)filter.textContent=String(mode||&#x27;&#x27;);
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
+  if(typeof positionNewViewVersionControls===&#x27;function&#x27;)positionNewViewVersionControls();
+}
+function clearLockedViewPreparedDom(){
+  lockedViewStateLayers.forEach(layer=&gt;{if(layer&amp;&amp;layer.parentNode)layer.remove()});
+  lockedViewStateLayers=[];
+  lockedViewStateCache=null;
+  lockedViewFilterOrder=[];
+  Array.from(grid.children).forEach(node=&gt;{
+    if(node.classList)node.classList.remove(&#x27;new-view-lock-original-hidden&#x27;);
+  });
+}
+function buildLockedViewPreparedDom(){
+  clearLockedViewPreparedDom();
+  const savedUnit=activeUnitIndex;
+  const savedMode=weaponFilterMode;
+  lockedViewFilterOrder=getLockedViewFilterOrder();
+  const unitIndexes=[null,...getLockedViewUnitIndexes()];
+  const cache=new Map();
+  const layers=[];
+  if(typeof newViewVersionHistoryOpen!==&#x27;undefined&#x27;)newViewVersionHistoryOpen=false;
+  if(typeof clearNewViewVersionHistoryButtons===&#x27;function&#x27;)clearNewViewVersionHistoryButtons();
+  unitIndexes.forEach(unitIndex=&gt;{
+    lockedViewFilterOrder.forEach(mode=&gt;{
+      renderLockedViewCombination(unitIndex,mode);
+      const layer=cloneLockedViewState(unitIndex,mode);
+      cache.set(lockedViewStateKey(unitIndex,mode),layer);
+      layers.push(layer);
+    });
+  });
+  renderLockedViewCombination(savedUnit,savedMode);
+  lockedViewStateCache=cache;
+  lockedViewStateLayers=layers;
+  const originals=Array.from(grid.children).filter(node=&gt;!(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;)));
+  originals.forEach(node=&gt;node.classList&amp;&amp;node.classList.add(&#x27;new-view-lock-original-hidden&#x27;));
+  const fragment=document.createDocumentFragment();
+  layers.forEach(layer=&gt;fragment.appendChild(layer));
+  grid.appendChild(fragment);
+  selectedWeaponIndex=null;
+  showLockedViewPreparedState(savedUnit,savedMode);
+  return true;
+}
+function showLockedViewPreparedState(unitIndex,mode){
+  if(!lockedViewStateCache)return false;
+  let target=lockedViewStateCache.get(lockedViewStateKey(unitIndex,mode));
+  if(!target){
+    target=lockedViewStateCache.get(lockedViewStateKey(null,mode))||lockedViewStateLayers[0]||null;
+    unitIndex=null;
+  }
+  if(!target)return false;
+  lockedViewStateLayers.forEach(layer=&gt;{layer.hidden=layer!==target});
+  activeUnitIndex=unitIndex;
+  weaponFilterMode=mode;
+  selectedWeaponIndex=null;
+  applyNewViewFrameHeight(Number(target.dataset.frameHeight)||0);
+  return true;
+}
+function beginLockedViewPreparedMode(){
+  if(activePageMode!==&#x27;view&#x27;||newViewHeaderLocked)return false;
+  const snapshot=captureNewViewSnapshot();
+  frozenNewViewSnapshot=snapshot;
+  activateNewViewSnapshot(snapshot);
+  try{
+    if(!buildLockedViewPreparedDom())throw new Error(&#x27;Locked View preparation failed&#x27;);
+  }catch(_){
+    clearLockedViewPreparedDom();
+    frozenNewViewSnapshot=null;
+    return false;
+  }
+  // Lock becomes true only after every prepared state is built and mounted.
+  suspendNewViewBackgroundWork();
+  newViewLockCounterBaseline=Object.assign({},newViewBackgroundCounters);
+  newViewHeaderLocked=true;
+  return true;
+}
+function endLockedViewPreparedMode(){
+  if(!newViewHeaderLocked)return false;
+  // Unlock first, then discard prepared state and perform one fresh live sync.
+  newViewHeaderLocked=false;
+  clearLockedViewPreparedDom();
+  frozenNewViewSnapshot=null;
+  const lockButton=grid.querySelector(&#x27;.new-view-lock-toggle&#x27;);
+  if(lockButton)syncNewViewLockButton(lockButton);
+  const ok=refreshNewView();
+  newViewLockCounterBaseline=null;
+  resumeNewViewBackgroundWork();
+  return ok;
+}
+function handleLockedViewPreparedClick(event){
+  if(!newViewHeaderLocked||!lockedViewStateCache)return;
+  const target=event.target&amp;&amp;event.target.closest?event.target:null;
+  if(!target)return;
+  const unlock=target.closest(&#x27;.new-view-lock-toggle&#x27;);
+  if(unlock){
+    event.preventDefault();event.stopImmediatePropagation();
+    endLockedViewPreparedMode();
+    return;
+  }
+  const filter=target.closest(&#x27;.view-filter-toggle&#x27;);
+  if(filter){
+    event.preventDefault();event.stopImmediatePropagation();
+    const modes=lockedViewFilterOrder.length?lockedViewFilterOrder:getLockedViewFilterOrder();
+    const current=modes.indexOf(String(weaponFilterMode||&#x27;&#x27;));
+    const next=modes[(current&lt;0?0:current+1)%modes.length];
+    showLockedViewPreparedState(activeUnitIndex,next);
+    return;
+  }
+  const unit=target.closest(&#x27;.view-unit-row[data-roster-index]&#x27;);
+  if(unit){
+    event.preventDefault();event.stopImmediatePropagation();
+    const index=Number(unit.dataset.rosterIndex);
+    const next=activeUnitIndex===index?null:index;
+    showLockedViewPreparedState(next,weaponFilterMode);
+    return;
+  }
+  // Everything else in locked VIEW is inert, including Probable, navigation,
+  // version actions, Waha, edits, and any control that could start processing.
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}
+document.addEventListener(&#x27;click&#x27;,handleLockedViewPreparedClick,true);
+
+function addViewHeader(f,p){const sh=document.createElement(&#x27;div&#x27;);sh.className=&#x27;top-header-shell&#x27;;f.appendChild(sh);const n=document.createElement(&#x27;div&#x27;);n.className=&#x27;top-roster-name&#x27;;n.textContent=&#x27;&#x27;;f.appendChild(n);const d=document.createElement(&#x27;div&#x27;);d.className=&#x27;top-detachments&#x27;;d.textContent=&#x27;&#x27;;f.appendChild(d);const s=document.createElement(&#x27;div&#x27;);s.className=&#x27;top-summary&#x27;;const a=document.createElement(&#x27;span&#x27;);a.className=&#x27;top-summary-disposition&#x27;;a.textContent=&#x27;&#x27;;const z=document.createElement(&#x27;span&#x27;);z.className=&#x27;top-summary-rest&#x27;;z.textContent=&#x27;&#x27;;s.append(a,z);f.appendChild(s);const gb=document.createElement(&#x27;button&#x27;);gb.type=&#x27;button&#x27;;gb.className=&#x27;button-standard grid-toggle&#x27;+(p===&#x27;view&#x27;?&#x27; view-grid-toggle&#x27;:&#x27;&#x27;);gb.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;4&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;4&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;rect x=&quot;14&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; rx=&quot;1&quot;&gt;&lt;/rect&gt;&lt;/svg&gt;&#x27;;gb.setAttribute(&#x27;aria-label&#x27;,&#x27;Toggle grid&#x27;);gb.setAttribute(&#x27;title&#x27;,&#x27;Toggle grid&#x27;);const gridOn=grid.classList.contains(&#x27;grid-on&#x27;);gb.classList.toggle(&#x27;active-green&#x27;,gridOn);gb.setAttribute(&#x27;aria-pressed&#x27;,gridOn?&#x27;true&#x27;:&#x27;false&#x27;);gb.onclick=()=&gt;{const on=!grid.classList.contains(&#x27;grid-on&#x27;);grid.classList.toggle(&#x27;grid-on&#x27;,on);gb.classList.toggle(&#x27;active-green&#x27;,on);gb.setAttribute(&#x27;aria-pressed&#x27;,on?&#x27;true&#x27;:&#x27;false&#x27;)};f.appendChild(gb);if(p===&#x27;view&#x27;){const lb=document.createElement(&#x27;button&#x27;);lb.type=&#x27;button&#x27;;lb.className=&#x27;button-standard new-view-lock-toggle&#x27;;syncNewViewLockButton(lb);lb.onclick=()=&gt;{if(newViewHeaderLocked){endLockedViewPreparedMode();return}beginLockedViewPreparedMode()};f.appendChild(lb)}const fb=document.createElement(&#x27;button&#x27;);fb.type=&#x27;button&#x27;;fb.className=&#x27;button-standard active-green view-filter-toggle&#x27;;fb.textContent=weaponFilterMode;fb.setAttribute(&#x27;aria-label&#x27;,&#x27;Weapon filter&#x27;);fb.onclick=cycleWeaponFilter;f.appendChild(fb);if(p===&#x27;view&#x27;)addNewViewVersionControls(f)}
 function addViewStatHeader(f){const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;view-stat-header&#x27;;[[&#x27;M&quot;&#x27;,&#x27;vh-m&#x27;],[&#x27;T&#x27;,&#x27;vh-t&#x27;],[&#x27;SV&#x27;,&#x27;vh-sv&#x27;],[&#x27;W&#x27;,&#x27;vh-w&#x27;],[&#x27;LD&#x27;,&#x27;vh-ld&#x27;],[&#x27;OC&#x27;,&#x27;vh-oc&#x27;]].forEach(([l,c])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-stat-label &#x27;+c;x.textContent=l;h.appendChild(x)});f.appendChild(h)}
 function addNameAndCount(r,name,count,nameClass){const n=document.createElement(&#x27;div&#x27;);n.className=nameClass;n.textContent=name;r.appendChild(n);if(count){const c=document.createElement(&#x27;div&#x27;);c.className=&#x27;unit-count-grid&#x27;;c.textContent=count;r.appendChild(c)}}
 function addViewUnit(f,rowClass,name,count,stats){const r=document.createElement(&#x27;div&#x27;);r.className=&#x27;view-unit-row &#x27;+rowClass;addNameAndCount(r,name,count,&#x27;view-unit-name&#x27;);stats.forEach((v,i)=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;view-unit-stat s&#x27;+(i+1);x.textContent=v;r.appendChild(x)});f.appendChild(r)}
@@ -5707,6 +5963,22 @@ function getVisibleWeaponIndexes(){
   }
   return indexes;
 }
+const NEW_VIEW_BASE_FRAME_HEIGHT=frameElement?Math.ceil(frameElement.getBoundingClientRect().height):806;
+function getNewViewFrameHeight(){
+  const gridHeight=Math.ceil(Math.max(grid.getBoundingClientRect().height,grid.scrollHeight||0));
+  return Math.max(NEW_VIEW_BASE_FRAME_HEIGHT,gridHeight);
+}
+function applyNewViewFrameHeight(height){
+  if(!frameElement)return 0;
+  const measured=Math.ceil(Number(height)||getNewViewFrameHeight());
+  const nextHeight=Math.max(NEW_VIEW_BASE_FRAME_HEIGHT,measured);
+  const cssHeight=String(nextHeight)+&#x27;px&#x27;;
+  if(frameElement.style.height!==cssHeight)frameElement.style.height=cssHeight;
+  return nextHeight;
+}
+function syncNewViewFrameHeight(){
+  return applyNewViewFrameHeight(getNewViewFrameHeight());
+}
 function syncExpandedLayout(expansionRows){
   const usedRows=activeUnitIndex===null?0:Math.max(0,Number(expansionRows)||0);
   let cursor=FIRST_UNIT_ROW;
@@ -5721,6 +5993,7 @@ function syncExpandedLayout(expansionRows){
     const row=parseInt(cell.style.gridRow||&#x27;&#x27;,10);
     cell.hidden=Number.isFinite(row)&amp;&amp;row&gt;activeGridRows;
   });
+  syncNewViewFrameHeight();
 }
 function applyActiveUnitDetails(){
   const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
@@ -5888,11 +6161,15 @@ function renderNewViewRosterRows(rows){
 function refreshAlternateViewUnitsFromParent(){if(newViewProcessingLocked())return false;
   let rows=[];
   try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
-  return renderNewViewRosterRows(rows);
+  const ok=renderNewViewRosterRows(rows);
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
+  hasLiveViewCache=true;
+  return ok;
 }
 window.refreshAlternateViewUnitsFromParent=refreshAlternateViewUnitsFromParent;
 function renderFrozenNewView(){
   if(!newViewProcessingLocked()||!frozenNewViewSnapshot)return false;
+  if(lockedViewStateCache)return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode);
   applyNewViewHeaderSnapshot(frozenNewViewSnapshot.header);
   const rows=cloneNewViewValue(frozenNewViewSnapshot.rows);
   return renderNewViewRosterRows(Array.isArray(rows)?rows:[]);
@@ -5918,7 +6195,30 @@ function addUnifiedEditUnit(f,data,rowIndex){
   r.dataset.rosterIndex=String(rowIndex);
   const n=document.createElement(&#x27;div&#x27;);
   n.className=&#x27;edit-unit-name&#x27;;
-  n.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  const nameText=document.createElement(&#x27;span&#x27;);
+  nameText.textContent=String(data&amp;&amp;data.name||&#x27;&#x27;);
+  n.appendChild(nameText);
+  const pointLabel=String(data&amp;&amp;data.pointLabel||&#x27;&#x27;).trim();
+  if(pointLabel){
+    const canToggle=Boolean(data&amp;&amp;data.pointToggleEnabled&amp;&amp;data.entryId);
+    const label=document.createElement(canToggle?&#x27;button&#x27;:&#x27;span&#x27;);
+    if(canToggle)label.type=&#x27;button&#x27;;
+    label.className=canToggle?&#x27;point-option-toggle&#x27;:&#x27;point-option-label-static&#x27;;
+    label.textContent=pointLabel;
+    if(canToggle){
+      label.setAttribute(&#x27;aria-label&#x27;,&#x27;Change point option&#x27;);
+      label.onclick=(event)=&gt;{
+        event.stopPropagation();
+        try{
+          if(parent&amp;&amp;typeof parent.toggleViewEditRosterEntryPointOption===&#x27;function&#x27;){
+            parent.toggleViewEditRosterEntryPointOption(String(data.entryId||&#x27;&#x27;));
+          }
+        }catch(_){}
+        requestAnimationFrame(refreshUnifiedEdit);
+      };
+    }
+    n.appendChild(label);
+  }
   r.appendChild(n);
 
   const move=document.createElement(&#x27;button&#x27;);
@@ -5944,12 +6244,10 @@ function addUnifiedEditUnit(f,data,rowIndex){
   return r;
 }
 
-function refreshUnifiedEditRows(){
-  let rows=[];
-  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
+function renderUnifiedEditRows(rows){
   rows=Array.isArray(rows)?rows:[];
   grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;el.remove());
-  let cursor=typeof FIRST_UNIT_ROW===&#x27;number&#x27;?FIRST_UNIT_ROW:7;
+  let cursor=FIRST_UNIT_ROW;
   rows.forEach((data,rowIndex)=&gt;{
     if(data&amp;&amp;data.kind===&#x27;spacer&#x27;){
       const spacer=document.createElement(&#x27;div&#x27;);
@@ -5976,6 +6274,15 @@ function refreshUnifiedEditRows(){
   if(titlePoints)titlePoints.textContent=&#x27;- &#x27;+String(sheetPoints)+&#x27; pts&#x27;;
   return rows.some(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
 }
+function refreshUnifiedEditRows(){
+  let rows=[];
+  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
+  rows=Array.isArray(rows)?rows:[];
+  currentViewRosterRows=rows;
+  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
+  hasLiveViewCache=true;
+  return renderUnifiedEditRows(rows);
+}
 window.refreshUnifiedEditRows=refreshUnifiedEditRows;
 function refreshUnifiedEdit(){
   refreshNewViewTitleFromLegacy();
@@ -5983,12 +6290,75 @@ function refreshUnifiedEdit(){
 }
 window.refreshUnifiedEdit=refreshUnifiedEdit;
 
-function refreshNewView(){if(newViewProcessingLocked())return false;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
-function renderPage(p){activePageMode=p;grid.replaceChildren();grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);const f=document.createDocumentFragment();addGridCells(f);addPageNavigation(f,p);if(p===&#x27;view&#x27;){addViewHeader(f,p);addViewStatHeader(f);addExpandedUnitMock(f)}if(p===&#x27;edit&#x27;){addViewHeader(f,p);const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);if(viewOnly)viewOnly.remove()}if(p===&#x27;main&#x27;){const b=document.createElement(&#x27;button&#x27;);b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);const g=document.createElement(&#x27;button&#x27;);g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);[[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)})}grid.appendChild(f);if(p===&#x27;view&#x27;){requestAnimationFrame(()=&gt;{if(newViewProcessingLocked())renderFrozenNewView();else refreshNewView()})}if(p===&#x27;edit&#x27;){requestAnimationFrame(refreshUnifiedEdit)}}
+function refreshNewView(){if(newViewProcessingLocked())return false;newViewBackgroundCounters.liveRefreshes++;refreshNewViewTitleFromLegacy();return refreshAlternateViewUnitsFromParent()}
+function ensurePersistentGridCells(){
+  if(grid.querySelector(&#x27;.grid-cell&#x27;))return false;
+  const background=document.createDocumentFragment();
+  addGridCells(background);
+  grid.appendChild(background);
+  return true;
+}
+function clearModeContent(){
+  Array.from(grid.children).forEach(node=&gt;{
+    if(!(node.classList&amp;&amp;node.classList.contains(&#x27;grid-cell&#x27;)))node.remove();
+  });
+  grid.querySelectorAll(&#x27;.grid-cell[hidden]&#x27;).forEach(cell=&gt;{cell.hidden=false});
+}
+function restoreCachedLiveHeader(){
+  if(cachedLiveViewHeader)applyNewViewHeaderSnapshot(cachedLiveViewHeader);
+}
+function renderCachedView(){
+  if(!hasLiveViewCache)return false;
+  restoreCachedLiveHeader();
+  renderNewViewRosterRows(currentViewRosterRows);
+  return true;
+}
+function renderCachedEdit(){
+  if(!hasLiveViewCache)return false;
+  restoreCachedLiveHeader();
+  renderUnifiedEditRows(currentViewRosterRows);
+  return true;
+}
+function renderPage(p){
+  if(newViewHeaderLocked&amp;&amp;lockedViewStateCache){if(p!==&#x27;view&#x27;)return false;return showLockedViewPreparedState(activeUnitIndex,weaponFilterMode)}
+  activePageMode=p;
+  ensurePersistentGridCells();
+  clearModeContent();
+  grid.setAttribute(&#x27;aria-label&#x27;,p[0].toUpperCase()+p.slice(1)+&#x27; page layout grid&#x27;);
+  const f=document.createDocumentFragment();
+  addPageNavigation(f,p);
+  if(p===&#x27;view&#x27;){
+    addViewHeader(f,p);
+    addViewStatHeader(f);
+    addExpandedUnitMock(f);
+  }
+  if(p===&#x27;edit&#x27;){
+    addViewHeader(f,p);
+    const viewOnly=f.querySelector(&#x27;.view-filter-toggle&#x27;);
+    if(viewOnly)viewOnly.remove();
+  }
+  if(p===&#x27;main&#x27;){
+    const b=document.createElement(&#x27;button&#x27;);
+    b.type=&#x27;button&#x27;;b.className=&#x27;button-standard sample-button-standard&#x27;;b.textContent=&#x27;BUTTON&#x27;;f.appendChild(b);
+    const g=document.createElement(&#x27;button&#x27;);
+    g.type=&#x27;button&#x27;;g.className=&#x27;button-standard sample-button-green&#x27;;g.textContent=&#x27;GREEN&#x27;;f.appendChild(g);
+    [[&#x27;font-sample font-sample-title&#x27;,&#x27;20PX ROBOTO&#x27;],[&#x27;font-sample font-sample-body&#x27;,&#x27;14PX ROBOTO&#x27;],[&#x27;font-sample font-sample-meta&#x27;,&#x27;12PX ROBOTO&#x27;]].forEach(([c,t])=&gt;{const x=document.createElement(&#x27;div&#x27;);x.className=c;x.textContent=t;f.appendChild(x)});
+  }
+  grid.appendChild(f);
+
+  if(p===&#x27;view&#x27;){
+    if(newViewProcessingLocked())renderFrozenNewView();
+    else if(!renderCachedView())scheduleNewViewRefresh();
+  }
+  if(p===&#x27;edit&#x27;){
+    if(newViewHeaderLocked)requestAnimationFrame(refreshUnifiedEdit);
+    else if(!renderCachedEdit())requestAnimationFrame(refreshUnifiedEdit);
+  }
+}
 renderPage(&#x27;view&#x27;);
 function versionFile(v){return `Np${v}.html`}async function fetchText(path){const c=new AbortController(),t=setTimeout(()=&gt;c.abort(),15000);try{const r=await fetch(`${RAW_ROOT}${path}?t=${Date.now()}`,{cache:&#x27;no-store&#x27;,credentials:&#x27;omit&#x27;,signal:c.signal});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.text()}finally{clearTimeout(t)}}
-async function updateToLatest(){const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
-async function downloadRunningVersion(){const b=document.getElementById(&#x27;downloadButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Preparing&#x27;;try{const n=versionFile(NP_VERSION),h=await fetchText(n),f=new File([h],n,{type:&#x27;text/html&#x27;});if(navigator.share&amp;&amp;navigator.canShare&amp;&amp;navigator.canShare({files:[f]})){b.textContent=&#x27;Save&#x27;;try{await navigator.share({files:[f],title:n})}catch(e){if(e&amp;&amp;e.name===&#x27;AbortError&#x27;){b.textContent=o;b.disabled=false;return}throw e}}else{const u=URL.createObjectURL(f),a=document.createElement(&#x27;a&#x27;);a.href=u;a.download=n;a.rel=&#x27;noopener&#x27;;document.body.appendChild(a);a.click();a.remove();setTimeout(()=&gt;URL.revokeObjectURL(u),30000)}b.textContent=&#x27;Done&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900)}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
+async function updateToLatest(){if(newViewProcessingLocked())return;const b=document.getElementById(&#x27;updateButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Checking&#x27;;try{const i=JSON.parse(await fetchText(INDEX_PATH)),l=String(i.latest||&#x27;&#x27;).trim();if(!l)throw new Error(&#x27;Missing latest version&#x27;);if(l===NP_VERSION){b.textContent=&#x27;Current&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900);return}const h=await fetchText(versionFile(l));if(!h.includes(`const NP_VERSION=&#x27;${l}&#x27;`)&amp;&amp;!h.includes(`const NP_VERSION = &#x27;${l}&#x27;`))throw new Error(&#x27;Version mismatch&#x27;);window.location.href=URL.createObjectURL(new Blob([h],{type:&#x27;text/html&#x27;}))}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
+async function downloadRunningVersion(){if(newViewProcessingLocked())return;const b=document.getElementById(&#x27;downloadButton&#x27;),o=b.textContent;b.disabled=true;b.textContent=&#x27;Preparing&#x27;;try{const n=versionFile(NP_VERSION),h=await fetchText(n),f=new File([h],n,{type:&#x27;text/html&#x27;});if(navigator.share&amp;&amp;navigator.canShare&amp;&amp;navigator.canShare({files:[f]})){b.textContent=&#x27;Save&#x27;;try{await navigator.share({files:[f],title:n})}catch(e){if(e&amp;&amp;e.name===&#x27;AbortError&#x27;){b.textContent=o;b.disabled=false;return}throw e}}else{const u=URL.createObjectURL(f),a=document.createElement(&#x27;a&#x27;);a.href=u;a.download=n;a.rel=&#x27;noopener&#x27;;document.body.appendChild(a);a.click();a.remove();setTimeout(()=&gt;URL.revokeObjectURL(u),30000)}b.textContent=&#x27;Done&#x27;;setTimeout(()=&gt;{b.textContent=o;b.disabled=false},900)}catch(_){b.textContent=&#x27;Retry&#x27;;b.disabled=false}}
 document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;document.getElementById(&#x27;downloadButton&#x27;).onclick=downloadRunningVersion;
 &lt;/script&gt;
 &lt;/body&gt;
@@ -8517,7 +8887,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.98";
+    const APP_VERSION = "31.108";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12949,7 +13319,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       return models.map(item => {
         if (item.isSpacer) return { kind: "spacer" };
         const data = window.getAlternateViewUnitData(unitIndex++);
-        return data ? Object.assign({ kind: "unit" }, data, { points: Math.max(0, Number(item.points && item.points.total) || 0) }) : null;
+        return data ? Object.assign({ kind: "unit" }, data, { entryId: String(item.entryId || ""), points: Math.max(0, Number(item.points && item.points.total) || 0), pointLabel: String(item.points && item.points.label || ""), pointToggleEnabled: Boolean(item.points && item.points.toggleEnabled) }) : null;
       }).filter(Boolean);
     };
 
@@ -17812,10 +18182,27 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       if (versionActionBusy || !canReloadAppVersion()) return false;
       const target = normalizeAppVersion(version);
       if (target === APP_VERSION) { setVersionHistoryStatus(`v${APP_VERSION} is running.`, "success", true); return true; }
+      const restoreNewView = activeAppScreen === "newpage";
+      try {
+        if (restoreNewView) window.parent.__wh40kRestoreAppScreen = "newpage";
+        else if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen;
+      } catch (_) {}
       versionActionBusy = true;
       setVersionHistoryStatus(`Loading v${target}…`, "", true);
-      try { return await getVersionHost().load(target); }
-      catch (error) { setVersionHistoryStatus(error.message, "error", true); return false; }
+      try {
+        const loaded = await getVersionHost().load(target);
+        if (!loaded && restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        return loaded;
+      }
+      catch (error) {
+        if (restoreNewView) {
+          try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+        }
+        setVersionHistoryStatus(error.message, "error", true);
+        return false;
+      }
       finally { versionActionBusy = false; syncVersionBoxDom(); }
     }
 
@@ -30112,7 +30499,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.98',
+        version: 'V31.108',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
@@ -30551,7 +30938,13 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     });
     ArmyBuilderModules.bootstrap.initialize().then(() => {
       if (!appStorageInitialized) throw new Error("App storage could not be opened. The current app was kept.");
+      let restoreNewView = false;
+      try { restoreNewView = window.parent.__wh40kRestoreAppScreen === "newpage"; } catch (_) {}
+      if (restoreNewView) showNewPageScreen();
       window.parent.WH40kVersionHost.ready(window, APP_VERSION);
+      if (restoreNewView) {
+        try { if (window.parent.__wh40kRestoreAppScreen === "newpage") delete window.parent.__wh40kRestoreAppScreen; } catch (_) {}
+      }
     }).catch(error => window.parent.WH40kVersionHost.failed(window, error.message));
 
     // V8.2 Architecture note:

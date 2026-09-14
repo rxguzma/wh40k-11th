@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.107</title>
+  <title>WH40k 11th V31.108</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.107; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.108; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.108
+    Scope: Make the Unit Detail row use the existing working Weapon Tag row/box behavior in unified New View/Edit. DEEP STRIKE/core ability, Waha, and count boxes no longer use fixed 2/3-grid-cell widths; they now size to their content like Weapon Tags. The row keeps its existing position, height, visibility logic, colors, actions, and standard gap/padding, with the same overflow behavior as Weapon Tags.
+    Risk areas: Unified New View/Edit Unit Detail row sizing only. V31.107 scrolling behavior is preserved. No Unit, Weapon, Ability, roster, Waha action, lock, Version, persistence, Cards, or Probable logic changes.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.107
     Scope: Fix New View mobile scrolling when a Unit is expanded. New View now preserves its existing collapsed iframe height but dynamically grows the iframe to the actual sheet height when Unit detail/Weapon rows push the grid lower, then shrinks back on collapse. Version-row positioning is included in the measurement. Prepared locked View states store and restore their required iframe height using the existing display-only state switch. No touch handlers, scroll interception, new UI controls, or visual styling are added.
     Risk areas: New View iframe height synchronization only. V31.106 locked-background suspension, prepared locked states, VIEW/EDIT controls, shared Grid Mode, roster rendering, unified Edit, Version/Update/Download behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.104
     Scope: Correct the unified New View/Edit mode controls. The single local mode button now displays the mode that is actually active and is highlighted green: VIEW in View mode and EDIT in Edit mode; tapping it still switches directly to the opposite local mode through the existing fast path. The grid control is also standardized across both modes: Edit no longer renders the legacy G and now uses the same four-cell Grid Mode icon, SVG styling, toggle behavior, and current on/off indication as View. Existing mode-specific placement is retained so View's filter layout is unchanged.
     Risk areas: Unified New View/Edit mode-button presentation and grid-button presentation/state only. Lock behavior, prepared locked states, roster data, Edit actions, weapon filters, Version/Update/Download, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable behavior remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.103
-    Scope: Complete the next New View lock optimization on the current V31.102 unified-page baseline. Pressing the existing Lock now pre-renders every current Unit x weapon-filter combination once, before the lock state turns on, using the already-detached V31.93 snapshot. Those prepared DOM states are retained in memory. While locked, Unit open/close and the existing filter carousel only switch which prepared state is visible; they do not call applyActiveUnitDetails, syncUnitDetailVisibility, renderNewViewRosterRows, parent/model bridges, persistence, or animation-frame refreshes. All other locked View controls are inert, including any Probable control; Probable-looking controls are also visually disabled in prepared states. The live original View DOM remains mounted but hidden so Unlock can turn the lock off, discard the prepared states, and perform exactly one normal fresh synchronization. No UI control was added or moved.
-    Risk areas: New View locked-mode DOM/state handling only. Unlocked View behavior, unified Edit, current Boyz point-option behavior, persistent 40x16 grid fast path, compact Weapon Tags, Version/Update/Download, Old Edit, Cards, CSV data, Waha routing, and normal Probable behavior remain unchanged.
   -->
 
 
@@ -5419,7 +5419,7 @@
 .unit-keyword.keyword-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
 
 .detail-row-muted{color:rgba(154,160,166,.5)!important;opacity:1!important}
-.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 calc(var(--cell)*2 - var(--gap));color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 calc(var(--cell)*3 - var(--gap));min-width:0;color:var(--orange)}.detail-waha{flex:0 0 calc(var(--cell)*3 - var(--gap));width:auto!important;text-decoration:none}
+.detail-box-row{grid-column:1/span 16;grid-row:8;z-index:3;display:none;align-items:center;justify-content:flex-start;gap:var(--gap);height:var(--cell);min-width:0;padding:1px 0;overflow:hidden}.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font:700 var(--meta)/1 Roboto,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-count{flex:0 0 auto;color:#80d6a3;font-weight:900}.detail-core-ability{flex:0 0 auto;min-width:0;color:var(--orange)}.detail-waha{flex:0 0 auto;width:auto!important;text-decoration:none}
 
 .view-unit-row.unit-active .view-unit-name{color:#80d6a3!important}
 .view-unit-row.unit-active .view-unit-stat{color:rgba(241,243,244,.5)!important}
@@ -8887,7 +8887,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.107";
+    const APP_VERSION = "31.108";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30499,7 +30499,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.107',
+        version: 'V31.108',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
