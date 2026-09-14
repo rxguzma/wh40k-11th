@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_128_open_unit_name_wrap.py'
+      - 'scripts/patch_html_v31_129_ability_buttons.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.128 open unit name wrap
-        run: python3 scripts/patch_html_v31_128_open_unit_name_wrap.py
+      - name: Build V31.129 ability buttons
+        run: python3 scripts/patch_html_v31_129_ability_buttons.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.128 open unit name wrap"
+          git commit -m "Build V31.129 ability buttons"
           git push origin HEAD:main
