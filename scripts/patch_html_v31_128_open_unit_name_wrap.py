@@ -54,6 +54,8 @@ if view_np.count(css_anchor) != 1:
     raise SystemExit(f"open Unit-name CSS anchor: expected 1 match, found {view_np.count(css_anchor)}")
 if ".view-unit-row.view-unit-name-expanded{" in view_np:
     raise SystemExit("V31.128 open Unit-name CSS already present")
+if "grid-column:" in expanded_css:
+    raise SystemExit("V31.128 must not change Unit-name column widths")
 view_np = view_np.replace(css_anchor, css_anchor + expanded_css, 1)
 
 # Measure the existing name cell at its authored width. If nowrap is clipping,
@@ -194,16 +196,17 @@ for expected in [
     if expected not in final_view:
         raise SystemExit("V31.128 View acceptance failed: " + expected)
 
-# Collapsed rows must retain the original clipping rules; do not globally wrap
-# every Unit name or widen the Unit-name grid columns.
+# Collapsed rows retain the original clipping rules. The V31.128 CSS itself is
+# explicitly forbidden from changing grid columns, so the existing A-E/name
+# width remains whatever the current baseline authored it to be.
 for required in [
     "white-space:nowrap",
     "overflow:hidden",
 ]:
     if required not in final_view:
         raise SystemExit("V31.128 collapsed Unit-name contract missing: " + required)
-if ".view-unit-name{grid-column:" not in final_view:
-    raise SystemExit("V31.128 Unit-name grid-column contract missing")
+if "grid-column:" in expanded_css:
+    raise SystemExit("V31.128 acceptance failed: expanded-name CSS changes columns")
 
 for expected in [
     "<title>WH40k 11th V31.128</title>",
