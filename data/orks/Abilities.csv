@@ -235,7 +235,7 @@ DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wo
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0,
 DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,1
 DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,0,
-FEEL_NO_PAIN_5,Feel No Pain 5+,ANYTIME,CORE: Feel No Pain 5+,[FEEL NO PAIN 5+],[Unit Rules],0,1
+FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: Feel No Pain 5+,[FEEL NO PAIN 5+],[Unit Rules],0,1
 FINDER_KEEPERZ,Finder Keeperz,RANGE: unit or target on an Objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
 - The target of that attack is within range of an objective",[+1 AP],[Range - Weapon Stats],0,0
@@ -341,8 +341,8 @@ This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
 WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,,9,
 SUPPORT,Support,CORE: Support,CORE: Support,,,9,
 LEADER,Leader,CORE: Leader,CORE: Leader,,,9,
-LONE_OPERATIVE,Lone Operative,CORE: Lone Operative,CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],0,
-FEEL_NO_PAIN_6,Feel No Pain 6+,CORE: Feel No Pain 6+,CORE: Feel No Pain 6+,[FEEL NO PAIN 6+],[Unit Rules],0,
+LONE_OPERATIVE,LONE OP,CORE: Lone Operative,CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],0,
+FEEL_NO_PAIN_6,FNP 6+,CORE: Feel No Pain 6+,CORE: Feel No Pain 6+,[FEEL NO PAIN 6+],[Unit Rules],0,
 UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,,0,
 KNUCKLE_IMPETUS,Knuckle Impetus,"On charge, D6 per engaged model: 4+ MW.","When this unit ends a charge move, you can select one enemy unit engaged with this unit. If you do, roll one D6 for each model in this unit engaged with that enemy unit:
 - For each 4+, that enemy unit suffers 1 mortal wound.",,,0,
