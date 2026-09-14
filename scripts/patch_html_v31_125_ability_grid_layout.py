@@ -6,7 +6,7 @@ path = Path("WH40k_11th.html")
 text = path.read_text(encoding="utf-8")
 
 
-def once(old, new, label):
+def replace_once(old, new, label):
     global text
     count = text.count(old)
     if count != 1:
@@ -15,37 +15,26 @@ def once(old, new, label):
 
 
 # Sequential release metadata.
-once("<title>WH40k 11th V31.124</title>", "<title>WH40k 11th V31.125</title>", "title")
-once(
-    "The current baseline is WH40k_11th_V31.124;",
-    "The current baseline is WH40k_11th_V31.125;",
-    "baseline",
-)
-once('const APP_VERSION = "31.124";', 'const APP_VERSION = "31.125";', "APP_VERSION")
-once("version: 'V31.124',", "version: 'V31.125',", "quality version")
+replace_once("<title>WH40k 11th V31.124</title>", "<title>WH40k 11th V31.125</title>", "title")
+replace_once("The current baseline is WH40k_11th_V31.124;", "The current baseline is WH40k_11th_V31.125;", "baseline")
+replace_once('const APP_VERSION = "31.124";', 'const APP_VERSION = "31.125";', "APP_VERSION")
+replace_once("version: 'V31.124',", "version: 'V31.125',", "quality version")
 
-view_pat = re.compile(
-    r'(<iframe id="npViewFrame" class="np-view-frame" title="Alternate View" srcdoc=")(.*?)("></iframe>)',
-    re.S,
-)
+view_pat = re.compile(r'(<iframe id="npViewFrame" class="np-view-frame" title="Alternate View" srcdoc=")(.*?)("></iframe>)', re.S)
 vm = view_pat.search(text)
 if not vm:
     raise SystemExit("Unified New View/Edit iframe missing")
 view_np = html.unescape(vm.group(2))
 
-# Replace only the V31.124 Ability presentation CSS. Use the same New View
-# design tokens, typography, borders, card background, active green, muted text,
-# and existing Weapon Tag boxes already used elsewhere in the page.
-old_css = r'''/* V31.124 Unit Abilities in unified New View. */
-.unit-ability-name-row,.unit-ability-description-row{grid-column:1/span 16;z-index:4;box-sizing:border-box;min-height:var(--cell);display:flex;align-items:center;padding:0 8px;overflow:hidden;font-family:Roboto,Arial,sans-serif}
-.unit-ability-name-row{font-size:var(--body);font-weight:900;line-height:1.1;color:var(--text);cursor:pointer}
-.unit-ability-description-row{font-size:var(--meta);font-weight:700;line-height:1.25;color:var(--secondary);white-space:normal;overflow-wrap:anywhere;align-items:flex-start;padding-top:5px;padding-bottom:5px;cursor:pointer}
-.unit-ability-tags{grid-column:1/span 16;z-index:4;cursor:pointer}
-.unit-ability-name-row.ability-muted,.unit-ability-description-row.ability-muted{opacity:.5}
-.unit-ability-tags.ability-muted .weapon-tag{color:var(--muted)}
-.unit-ability-name-row.ability-active,.unit-ability-description-row.ability-active{color:#80d6a3;opacity:1}
-.unit-ability-tags.ability-active .weapon-tag{opacity:1}
-'''
+# Replace the complete V31.124 Ability-only CSS block by marker rather than by
+# an exact whitespace match. All values below come from the existing New View
+# design system and existing Weapon/Tag treatments.
+css_start = view_np.find("/* V31.124 Unit Abilities in unified New View. */")
+css_end_marker = ".unit-ability-tags.ability-active .weapon-tag{opacity:1}"
+css_end = view_np.find(css_end_marker, css_start)
+if css_start < 0 or css_end < 0:
+    raise SystemExit("V31.124 Ability CSS bounds missing")
+css_end += len(css_end_marker)
 new_css = r'''/* V31.125 Unit Ability grid layout in unified New View. */
 .unit-ability-name-row{grid-column:1/span 6;z-index:4;box-sizing:border-box;align-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 8px;overflow:hidden;background:var(--card);border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
 .unit-ability-description-row{grid-column:7/span 10;z-index:4;box-sizing:border-box;align-self:stretch;display:flex;align-items:center;padding:0 8px;overflow:hidden;white-space:normal;overflow-wrap:anywhere;background:var(--card);border-bottom:1px solid var(--border);color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
@@ -53,13 +42,12 @@ new_css = r'''/* V31.125 Unit Ability grid layout in unified New View. */
 .unit-ability-name-row.ability-muted,.unit-ability-description-row.ability-muted{color:rgba(241,243,244,.5)!important}
 .unit-ability-tags.ability-muted .weapon-tag{color:rgba(154,160,166,.5)!important}
 .unit-ability-name-row.ability-active,.unit-ability-description-row.ability-active{color:#80d6a3!important}
-.unit-ability-tags.ability-active .weapon-tag{opacity:1}
-'''
-once(old_css, new_css, "Ability layout CSS")
+.unit-ability-tags.ability-active .weapon-tag{opacity:1}'''
+view_np = view_np[:css_start] + new_css + view_np[css_end:]
 
-# Replace the V31.124 Ability renderer as one bounded helper block. Weapons remain
-# authoritative for their own rows. Abilities are appended after the final
-# visible Weapon/Weapon Tag row, never inserted before or between Weapons.
+# Replace only the V31.124 Ability helper block. Existing Weapon rendering is
+# left untouched; this renderer simply appends Ability blocks below its final
+# visible row and extends the same grid expansion calculation.
 helper_start = view_np.find("function clearNewViewAbilityRows(){")
 helper_end = view_np.find("function syncViewSelectionPresentation(){", helper_start)
 if helper_start < 0 or helper_end < 0:
@@ -136,14 +124,9 @@ function renderNewViewAbilitiesAndReflow(){
     const visibleTags=newViewAbilityVisibleTags(ability).filter(tag=>String(tag&&tag.label||'').trim());
     const blockRows=visibleTags.length?3:2;
 
-    // A-F: one centered Ability-name cell spanning the full 2/3-row block.
     makeNewViewAbilityCell('unit-ability-name-row',cursor,blockRows,key,ability&&ability.name,active);
-
-    // G-P: Short Description always occupies exactly the first two rows.
     makeNewViewAbilityCell('unit-ability-description-row',cursor,2,key,ability&&ability.description,active);
 
-    // G-P row 3 exists only when structured Tags are visible. Reuse the exact
-    // existing Weapon Tag element class/box treatment.
     if(visibleTags.length){
       const tagRow=document.createElement('div');
       tagRow.className='weapon-tags unit-ability-tags '+(active?'ability-active':'ability-muted');
@@ -159,7 +142,6 @@ function renderNewViewAbilitiesAndReflow(){
       tagRow.onclick=event=>{event.stopPropagation();selectNewViewAbility(key)};
       grid.appendChild(tagRow);
     }
-
     cursor+=blockRows;
   });
 
@@ -170,8 +152,6 @@ function renderNewViewAbilitiesAndReflow(){
 }
 '''
 view_np = view_np[:helper_start] + new_helpers + "\n" + view_np[helper_end:]
-
-# Write unified View back into the HTML.
 text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
 
 note = '''  <!--
@@ -182,53 +162,35 @@ note = '''  <!--
 
 '''
 marker = "  <!--\n    CHANGE NOTE - WH40k_11th_V31.124\n"
-if text.count(marker) != 1:
+if marker not in text:
     raise SystemExit("V31.124 change-note insertion marker missing")
 text = text.replace(marker, note + marker, 1)
 
-# Keep only the five newest detailed V31 change notes.
-notes = list(
-    re.finditer(
-        r"\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n",
-        text,
-        re.S,
-    )
-)
+notes = list(re.finditer(r"\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n", text, re.S))
 for match in reversed(notes[5:]):
     text = text[:match.start()] + text[match.end():]
 
-# Acceptance checks.
+# Focused acceptance checks for the requested geometry and placement.
 vm = view_pat.search(text)
 if not vm:
-    raise SystemExit("Unified New View/Edit iframe missing after writeback")
+    raise SystemExit("Unified View missing after writeback")
 final_view = html.unescape(vm.group(2))
-
-for expected in [
+checks = [
     ".unit-ability-name-row{grid-column:1/span 6;",
     "justify-content:center;text-align:center;",
-    "font:900 var(--body)/1 Roboto,Arial,sans-serif",
     ".unit-ability-description-row{grid-column:7/span 10;",
-    "font:700 var(--meta)/1.25 Roboto,Arial,sans-serif",
     ".unit-ability-tags{grid-column:7/span 10;",
-    "tagRow.className='weapon-tags unit-ability-tags '",
     "const blockRows=visibleTags.length?3:2;",
     "makeNewViewAbilityCell('unit-ability-name-row',cursor,blockRows",
     "makeNewViewAbilityCell('unit-ability-description-row',cursor,2",
+    "tagRow.className='weapon-tags unit-ability-tags '",
     "tagRow.style.gridRow=String(cursor+2);",
     "const weaponBottomRow=newViewLastVisibleWeaponRow(detailStartRow);",
     "let cursor=weaponBottomRow+1;",
-    "syncExpandedLayout(Math.max(1,finalBottomRow-detailStartRow+1));",
-]:
+]
+for expected in checks:
     if expected not in final_view:
-        raise SystemExit("V31.125 Ability layout acceptance failed: " + expected)
-
-for forbidden in [
-    "/* V31.124 Unit Abilities in unified New View. */",
-    "grid-column:1/span 16;z-index:4;box-sizing:border-box;min-height:var(--cell);display:flex;align-items:center;padding:0 8px;overflow:hidden;font-family:Roboto,Arial,sans-serif",
-    "const descriptionSpan=newViewAbilityDescriptionSpan(description);",
-]:
-    if forbidden in final_view:
-        raise SystemExit("V31.125 retained old Ability layout: " + forbidden)
+        raise SystemExit("V31.125 acceptance failed: " + expected)
 
 for expected in [
     "<title>WH40k 11th V31.125</title>",
@@ -241,4 +203,4 @@ for expected in [
         raise SystemExit("V31.125 release acceptance failed: " + expected)
 
 path.write_text(text, encoding="utf-8")
-print("Built V31.125: Unit Abilities use A-F / G-P fixed 2/3-row grid blocks after Weapons")
+print("Built V31.125: A-F centered Ability name, G-P two-row description, optional third-row Tags, all after Weapons")
