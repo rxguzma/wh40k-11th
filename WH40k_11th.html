@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.145</title>
+  <title>WH40k 11th V31.146</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.145; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.146; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.146
+    Scope: Phase 1 of New View Ability-driven mechanics. New View now maintains a transient, roster-entry-scoped Ability master gate keyed by entryId + Ability key. Tapping an Ability title updates this gate: Active means that Ability is mechanically eligible for later Unit/Weapon/Probable consumers; Inactive means it is not eligible. An opened Unit initializes with no mechanically-active Abilities until explicitly activated. Duplicate roster Units remain independent. New View Lock blocks Ability activation/deactivation before the gate changes. This phase deliberately does not apply Unit-stat or Weapon-stat modifiers yet and does not change Tag clicking, Tag colors, Tag layout, Tag saved state, CSV Default_Active, Old View behavior, or any calculator.
+    Risk areas: New View transient Ability activation/eligibility plumbing only. No Unit/Weapon mechanical application, Probable execution, Tag mutation/persistence, CSV data, Old View, grid/layout, typography, colors, Cards, Waha, FIX mode, or Version-control behavior changed.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.145
     Scope: New View Tag performance. A Tag mutation is now strictly Unit-scoped. The parent New View data bridge accepts the clicked roster entryId and builds only that single roster-entry model instead of calling getRosterEntryModels() across the full roster. After a successful Ability or Weapon Tag toggle, New View replaces only the active Unit's cached data and redraws only that Unit's open details. It no longer calls getAlternateViewRosterRows(), renderNewViewRosterRows(), title/header refresh, Version layout, or any other roster-wide New View refresh from a Tag tap. The selected Weapon and Ability presentation state are preserved. New View Lock remains a hard gate before any Tag write or refresh.
     Risk areas: Tag-tap refresh scope only. Existing V31.144 Tag colors/presentation, Tag persistence, per-unit state, locked/innate Tags, Unit/Weapon selection rules, grid/layout, Probable activation policy, FIX mode, Cards, Waha, Edit, and CSV data are unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.142
     Scope: Unified New View muted Weapon Tag presentation only. Muted Weapon Tags now use the exact V31.132 muted text color rgba(154,160,166,.5) and explicitly use the same 700-weight meta-size Roboto typography as the compact FNP/Waha boxes above the Weapon table. Their normal Tag background, border, dimensions, spacing, wrapping, and row geometry are unchanged. Active/orange Weapon Tag styling is unchanged, and V31.139 selection gating remains authoritative: Weapon Tags stay muted until their Weapon is selected. Ability Tag presentation/state is unchanged.
     Risk areas: Unified New View muted Weapon Tag text color/typography only. No Tag data/state writes, Weapon selection, Ability behavior, CSV data, Probable, grid/layout, lock/FIX, Boyz data, Cards, Waha behavior, Edit, or persistence behavior changed.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.141
-    Scope: Unified New View muted Tag colors only. Restore the V31.132 muted Tag treatment: a muted Tag changes only to the existing muted text color while retaining the normal Tag box background/border. Remove the later rgba(154,160,166,.5) fill from muted Weapon and Ability Tag boxes. Active/orange Tag styling is unchanged. V31.139 remains authoritative for Weapon Tags staying muted until their Weapon is selected; V31.140 Ability Tag state precedence is unchanged. Focus/header separator rows, grid/layout, sizing, filters, Tag data, persistence, calculations, and behavior remain unchanged.
-    Risk areas: Unified New View muted Tag palette only. No Tag state logic, Weapon selection, Ability behavior, CSV data, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
   -->
 
 
@@ -7176,10 +7176,31 @@ function newViewAbilityStateToken(key){
 function newViewAbilityIsActive(key){
   return activeAbilityKeys.has(newViewAbilityStateToken(key));
 }
+function newViewAbilityMechanicallyEligible(key){
+  return Boolean(String(key||&#x27;&#x27;)&amp;&amp;newViewAbilityIsActive(key));
+}
+function newViewActiveAbilityKeysForUnit(data){
+  const abilities=Array.isArray(data&amp;&amp;data.abilities)?data.abilities:[];
+  return abilities.map(ability=&gt;String(ability&amp;&amp;ability.key||ability&amp;&amp;ability.abilityId||&#x27;&#x27;)).filter(key=&gt;key&amp;&amp;newViewAbilityMechanicallyEligible(key));
+}
+function syncNewViewAbilityMechanicalGate(data){
+  if(activeUnitIndex===null)return false;
+  const unitData=data||unitDataByIndex[activeUnitIndex];
+  const entryId=String(unitData&amp;&amp;unitData.entryId||&#x27;&#x27;).trim();
+  if(!entryId)return false;
+  const activeKeys=newViewActiveAbilityKeysForUnit(unitData);
+  try{
+    if(parent&amp;&amp;typeof parent.setAlternateViewActiveAbilities===&#x27;function&#x27;){
+      return Boolean(parent.setAlternateViewActiveAbilities(entryId,activeKeys));
+    }
+  }catch(_){}
+  return false;
+}
 function newViewAbilityUsesLongDescription(key){
   return longAbilityDescriptionKeys.has(newViewAbilityStateToken(key));
 }
 function toggleNewViewAbilityActive(key){
+  if(newViewProcessingLocked())return false;
   const clean=String(key||&#x27;&#x27;);
   const token=newViewAbilityStateToken(clean);
   if(activeAbilityKeys.has(token)){
@@ -7189,7 +7210,9 @@ function toggleNewViewAbilityActive(key){
     activeAbilityKeys.add(token);
     selectedAbilityKey=clean;
   }
+  syncNewViewAbilityMechanicalGate();
   syncWeaponLayout();
+  return true;
 }
 function toggleNewViewAbilityDescription(key){
   const token=newViewAbilityStateToken(key);
@@ -7353,6 +7376,7 @@ function renderNewViewAbilitiesAndReflow(){
   if(activePageMode!==&#x27;view&#x27;||activeUnitIndex===null)return 0;
   const data=unitDataByIndex[activeUnitIndex];
   if(!data)return 0;
+  syncNewViewAbilityMechanicalGate(data);
   const activeRow=unitRow(activeUnitIndex);
   const activeGridRow=activeRow?parseInt(activeRow.style.gridRow||getComputedStyle(activeRow).gridRowStart,10):NaN;
   if(!Number.isFinite(activeGridRow))return 0;
@@ -10106,7 +10130,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.145";
+    const APP_VERSION = "31.146";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -14683,6 +14707,36 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       }).filter(Boolean);
     };
 
+
+    // V31.146 New View-only Ability master gate. This transient state is keyed
+    // by roster entry so duplicate Units remain independent. It is deliberately
+    // separate from Old View abilityTagStates and CSV Default_Active.
+    const newViewActiveAbilityKeysByEntry = new Map();
+
+    window.setAlternateViewActiveAbilities = function(entryId, abilityKeys = []) {
+      const cleanEntryId = String(entryId || "").trim();
+      if (!cleanEntryId) return false;
+      const cleanKeys = Array.isArray(abilityKeys)
+        ? abilityKeys.map(key => String(key || "").trim()).filter(Boolean)
+        : [];
+      newViewActiveAbilityKeysByEntry.set(cleanEntryId, new Set(cleanKeys));
+      return true;
+    };
+
+    window.getAlternateViewActiveAbilities = function(entryId) {
+      const cleanEntryId = String(entryId || "").trim();
+      if (!cleanEntryId) return [];
+      const active = newViewActiveAbilityKeysByEntry.get(cleanEntryId);
+      return active ? Array.from(active) : [];
+    };
+
+    window.isAlternateViewAbilityMechanicallyEligible = function(entryId, itemKey) {
+      const cleanEntryId = String(entryId || "").trim();
+      const cleanItemKey = String(itemKey || "").trim();
+      if (!cleanEntryId || !cleanItemKey) return false;
+      const active = newViewActiveAbilityKeysByEntry.get(cleanEntryId);
+      return Boolean(active && active.has(cleanItemKey));
+    };
 
     window.toggleAlternateViewAbilityTag = function(payload = {}) {
       if (appEditMode) return { ok: false };
@@ -31952,7 +32006,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.145',
+        version: 'V31.146',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
