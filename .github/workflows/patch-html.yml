@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_140_ability_tag_state_precedence.py'
+      - 'scripts/patch_html_v31_141_restore_v31_132_muted_tags.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.140 Ability Tag state precedence
-        run: python3 scripts/patch_html_v31_140_ability_tag_state_precedence.py
+      - name: Build V31.141 Restore V31.132 muted Tag styling
+        run: python3 scripts/patch_html_v31_141_restore_v31_132_muted_tags.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.140 Ability Tag state precedence"
+          git commit -m "Build V31.141 Restore V31.132 muted Tag styling"
           git push origin HEAD:main
