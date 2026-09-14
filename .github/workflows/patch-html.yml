@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_148_new_view_ability_unit_gate.py'
+      - 'scripts/patch_html_v31_149_new_view_ability_weapon_stats.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.148 Ability-owned Unit stat gate
-        run: python3 scripts/patch_html_v31_148_new_view_ability_unit_gate.py
+      - name: Build V31.149 Ability-owned Weapon stat gate
+        run: python3 scripts/patch_html_v31_149_new_view_ability_weapon_stats.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+rxguzma@users.noreply.github.com"
-          git commit -m "Build V31.148 Ability-owned Unit stat gate"
+          git commit -m "Build V31.149 Ability-owned Weapon stat gate"
           git push origin HEAD:main
