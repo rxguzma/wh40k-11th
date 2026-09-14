@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_110_boyz_weapon_counts.py'
+      - 'scripts/patch_html_v31_111_report_wrench.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.110 Boyz weapon counts
-        run: python3 scripts/patch_html_v31_110_boyz_weapon_counts.py
+      - name: Build V31.111 report wrench
+        run: python3 scripts/patch_html_v31_111_report_wrench.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.110 Boyz weapon counts"
+          git commit -m "Build V31.111 report wrench"
           git push origin HEAD:main
