@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.127</title>
+  <title>WH40k 11th V31.128</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.127; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.128; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.128
+    Scope: Fix long Unit names in unified New View without changing the 16-column grid. Closed Unit rows retain the existing compact single-row/clipped presentation. When a Unit is opened, its existing Unit-name cell is measured at the authored width; only if the name is clipped does that active Unit row wrap and expand vertically by the minimum number of standard grid rows required. Existing detail, Weapon, Ability, later roster, focus separator, and bottom-bound rows shift by the same extra amount so nothing overlaps. Closing or changing focus restores the original single-row Unit geometry.
+    Risk areas: Unified New View opened-Unit name presentation and focus-row spacing only. No column widths, fonts, colors, Unit data, stats, Weapons, Abilities, Old Edit, CSV data, lock behavior, report storage, Cards, Waha, Probable, persistence, or Version-control behavior changes.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.127
     Scope: Correct unified New View Unit Ability geometry. Each Ability is now one atomic content-driven block after Weapons: A-F is one centered Ability Name box spanning the full Ability height; G-P contains the Short Description above its structured Tags. Description text wraps and grows vertically as needed. Tags retain the existing Weapon Tag visual format, wrap as needed, and can grow vertically. The Ability Name grows with the combined Description/Tags height. The outer New View grid reserves the matching number of standard row-size units, eliminating clipped text, oversized implicit rows, and blank gaps between Abilities. Existing Old Edit authoritative Ability data/order, orders 8/9 visibility rule, Range/Melee/Other/All filtering, transient selection, V31.126 focus-row behavior, fonts, colors, borders, and grid dimensions are retained.
     Risk areas: Unified New View Unit Ability layout/reflow and opened-Unit focus bounds only. No Old Edit, CSV schema/data, Weapon data/layout, Unit stats, Probable mechanics, Cards, Waha, persistence, lock behavior, or report storage changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.124
     Scope: Display normal Unit Abilities in unified New View using Old Edit as the authoritative resolved source. Visible Abilities follow the same roster-aware effective values, hidden state, and order used by Old Edit; effective orders 8 and 9 remain hidden. Each Ability renders between the Unit detail row and Weapons as Ability name, Short Description, then a dedicated structured-Tag row reusing the existing Weapon Tag boxes. Ability rows start muted and share one transient active selection with Weapons. Range/Melee/Other/All filtering applies to Abilities from structured Tag scope; mixed scoped Abilities show only the selected scope's Tags. Ability rows are included inside the existing open-Unit wrap and V31.123 focus separators.
     Risk areas: Unified New View Unit Ability display, filtering, transient Ability/Weapon selection presentation, expanded-Unit row sizing, and focus-wrap inclusion. Old Edit remains authoritative; no CSV schema, Ability editing, saved roster data, Probable mechanics, Cards, Waha, Version controls, or Unit/Weapon source data changes.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.123
-    Scope: Add two full-width blank gray focus rows around the currently opened Unit in unified View. One existing-card-gray row appears immediately above the active Unit and one immediately below the final visible Unit detail/weapon/tag row. The active Unit plus its expanded content remains inside the existing Unit wrap box between those separators; the selected-Weapon wrap remains unchanged. Separator rows disappear when the Unit closes or focus changes. No text or controls are added to the separators.
-    Risk areas: Unified View expanded-Unit grid-row spacing only. Existing muted/active colors, Unit and selected-Weapon wrap boxes, roster/weapon data, filters, Boyz selection, lock/frozen behavior, scrolling/frame sizing, Edit, FIX, Cards, persistence, CSV data, Waha routing, Probable, and Version controls remain unchanged.
   -->
 
 
@@ -5460,6 +5460,9 @@
 .view-stat-header .view-stat-label{opacity:.5}
 .view-unit-row:not(.unit-active) .view-unit-name,.view-unit-row:not(.unit-active) .view-unit-stat{opacity:.5}
 .view-unit-row.unit-active .view-unit-name{text-transform:uppercase}
+.view-unit-row.view-unit-name-expanded{height:auto;min-height:var(--cell);align-self:stretch}
+.view-unit-row.view-unit-name-expanded .view-unit-name{height:auto;min-height:var(--cell);align-self:stretch;white-space:normal;overflow:visible;overflow-wrap:anywhere;line-height:1.1;padding-top:4px;padding-bottom:4px}
+
 .weapon-header{opacity:.5}
 .detail-box-row .detail-box{opacity:.5}
 .draft-grid{position:relative}
@@ -6991,8 +6994,37 @@ function placeViewStatHeaderInFocusRow(row){
   return true;
 }
 
+function viewOpenUnitNameRowSpan(activeRow){
+  if(!activeRow)return 1;
+  const name=activeRow.querySelector(&#x27;.view-unit-name&#x27;);
+  if(!name)return 1;
+  const available=Math.max(0,name.clientWidth||0);
+  if(!available||name.scrollWidth&lt;=available+1)return 1;
+  const saved={
+    whiteSpace:name.style.whiteSpace,
+    height:name.style.height,
+    overflow:name.style.overflow,
+    overflowWrap:name.style.overflowWrap,
+    lineHeight:name.style.lineHeight,
+    paddingTop:name.style.paddingTop,
+    paddingBottom:name.style.paddingBottom
+  };
+  name.style.whiteSpace=&#x27;normal&#x27;;
+  name.style.height=&#x27;auto&#x27;;
+  name.style.overflow=&#x27;visible&#x27;;
+  name.style.overflowWrap=&#x27;anywhere&#x27;;
+  name.style.lineHeight=&#x27;1.1&#x27;;
+  name.style.paddingTop=&#x27;4px&#x27;;
+  name.style.paddingBottom=&#x27;4px&#x27;;
+  const cellPx=parseFloat(getComputedStyle(grid).getPropertyValue(&#x27;--cell&#x27;))||26;
+  const needed=Math.max(cellPx,name.scrollHeight||cellPx);
+  Object.keys(saved).forEach(key=&gt;{name.style[key]=saved[key]});
+  return Math.max(1,Math.ceil(needed/cellPx));
+}
+
 function clearViewFocusSpacing(){
   resetViewStatHeaderFocusPosition();
+  grid.querySelectorAll(&#x27;.view-unit-row.view-unit-name-expanded&#x27;).forEach(el=&gt;el.classList.remove(&#x27;view-unit-name-expanded&#x27;));
   grid.querySelectorAll(&#x27;.view-focus-separator&#x27;).forEach(el=&gt;el.remove());
   grid.querySelectorAll(&#x27;[data-view-focus-original-grid-row]&#x27;).forEach(el=&gt;{
     const original=el.dataset.viewFocusOriginalGridRow;
@@ -7016,17 +7048,27 @@ function applyViewFocusSpacing(){
   if(!activeRow||!viewPresentationVisible(activeRow))return;
   const activeBaseRow=viewGridRowNumber(activeRow);
   if(!Number.isFinite(activeBaseRow))return;
+  const activeNameRowSpan=viewOpenUnitNameRowSpan(activeRow);
+  const activeNameExtraRows=Math.max(0,activeNameRowSpan-1);
 
   // Reserve the top separator row. The active Unit moves down one row; every
   // later roster/spacer row moves down two rows to reserve both separators.
   grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;{
     const row=viewGridRowNumber(el);
     if(!Number.isFinite(row))return;
-    if(el===activeRow)shiftViewFocusGridRow(el,1);
-    else if(row&gt;activeBaseRow)shiftViewFocusGridRow(el,2);
+    if(el===activeRow){
+      shiftViewFocusGridRow(el,1);
+      if(activeNameExtraRows&gt;0){
+        const shiftedRow=viewGridRowNumber(el);
+        if(Number.isFinite(shiftedRow)){
+          el.classList.add(&#x27;view-unit-name-expanded&#x27;);
+          el.style.gridRow=String(shiftedRow)+&#x27; / span &#x27;+String(activeNameRowSpan);
+        }
+      }
+    }else if(row&gt;activeBaseRow)shiftViewFocusGridRow(el,2+activeNameExtraRows);
   });
   const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
-  if(mainButton&amp;&amp;viewGridRowNumber(mainButton)&gt;activeBaseRow)shiftViewFocusGridRow(mainButton,2);
+  if(mainButton&amp;&amp;viewGridRowNumber(mainButton)&gt;activeBaseRow)shiftViewFocusGridRow(mainButton,2+activeNameExtraRows);
 
   // Keep the entire expanded Unit stack together by moving its existing detail,
   // weapon, and tag rows down exactly one row with the Unit.
@@ -7039,11 +7081,11 @@ function applyViewFocusSpacing(){
   addContentNode(grid.querySelector(&#x27;.detail-box-row&#x27;));
   addContentNode(grid.querySelector(&#x27;.weapon-header:not(.boyz-subunit-node)&#x27;));
   grid.querySelectorAll(&#x27;.unit-ability-block,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(addContentNode);
-  contentNodes.forEach(el=&gt;shiftViewFocusGridRow(el,1));
+  contentNodes.forEach(el=&gt;shiftViewFocusGridRow(el,1+activeNameExtraRows));
 
   addViewFocusSeparator(activeBaseRow,&#x27;top&#x27;);
   placeViewStatHeaderInFocusRow(activeBaseRow);
-  let bottomRow=viewGridRowNumber(activeRow);
+  let bottomRow=viewGridRowNumber(activeRow)+activeNameExtraRows;
   contentNodes.forEach(el=&gt;{
     const row=viewGridRowNumber(el);
     if(!Number.isFinite(row))return;
@@ -9810,7 +9852,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.127";
+    const APP_VERSION = "31.128";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31585,7 +31627,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.127',
+        version: 'V31.128',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
