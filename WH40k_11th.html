@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.143</title>
+  <title>WH40k 11th V31.144</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.143; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.144; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.144
+    Scope: Unified New View active Unit/Weapon Tag presentation. An opened Unit is the active Unit, so its compact Unit-level Tags remain in their existing active/orange full-opacity treatment even after a Weapon is selected; Weapon focus no longer applies the muted detail-row class to those Unit Tags. A selected Weapon is the active Weapon, so all Tags shown for that selected Weapon use the existing active/orange full-opacity presentation. The same visual rule applies to Boyz custom Weapon rows. Stored roster Tag state, Tag click/write behavior introduced in V31.143, locked/innate handling, Tag data, selection mechanics, grid/layout, typography, box geometry, and persistence remain unchanged.
+    Risk areas: New View Unit-level Tag focus presentation and selected-Weapon Tag presentation only. No Ability Tag presentation, CSV data, Weapon/Unit stats, Probable, lock/FIX, Cards, Waha behavior, Edit, or persistence contract changed.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.143
     Scope: Unified New View Tag interaction. Ability Tags are now tappable and toggle the same per-roster Unit Tag state used by Old View; their CSV/default state remains the initial authority and their existing On/Off presentation remains unchanged. Weapon Tags are tappable only while their Weapon is selected; locked/innate Weapon Tags remain immutable and On. The custom Boyz Weapon renderer follows the same selected-Weapon and locked-Tag contract. Successful toggles persist through the existing roster library and refresh New View from the resulting roster state while preserving the open Unit and selected Weapon. New View Lock is a hard gate: locked snapshots remain inert and no Tag state write, persistence, recalculation, or refresh is started from a Tag click while locked. Ability-title Active and Short/Long description interactions remain separate from Tag state.
     Risk areas: New View Tag interaction and roster-state bridge only. No Tag palette, typography, box geometry, grid/layout, CSV data, Tag definitions, Weapon-selection rules, Probable activation policy, FIX mode, Cards, Waha, or Edit controls changed.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.140
     Scope: Unified New View Tag presentation precedence only. Ability Tags now carry an explicit Ability-owned state marker and their roster-backed On/Off state always outranks the Weapon-selection muting rule: an Ability Tag that is On uses the existing active Tag treatment even when no Weapon is selected; an Ability Tag that is Off remains in the existing muted treatment. V31.139 remains authoritative for ordinary Weapon Tags, which stay muted until their own Weapon is selected and then reveal their roster-backed state. No Tag click handlers are added in this phase. No Tag data, roster writes, persistence, calculations, Weapon selection, grid/layout, sizing, filters, Ability-title behavior, or lock behavior changes.
     Risk areas: Unified New View Ability Tag visual precedence only. No Weapon Tag gate changes, CSV data, Unit/Weapon calculations, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.139
-    Scope: Unified New View Weapon Tag presentation only. Every Weapon Tag remains in the existing muted Tag treatment while no Weapon is selected. When a Weapon is selected, only that Weapon's Tags are allowed to reveal their existing roster-backed active state; active Tags use the existing active/orange treatment and inactive Tags remain muted. Deselecting or switching Weapons immediately returns non-selected Weapon Tags to muted. Ability Tag state/display is unchanged. No Tag data, Tag writes, persistence, calculations, grid/layout, sizing, borders, filters, focus behavior, or Weapon selection behavior changes.
-    Risk areas: Unified New View Weapon Tag visual gating by selected Weapon only. No Ability Tag behavior, CSV data, roster mutation, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
   -->
 
 
@@ -6518,7 +6518,7 @@ function applyActiveUnitDetails(){
         const state=tagStates[index]||null;
         const tagActive=state?Boolean(state.active):true;
         const weaponSelected=selectedWeaponIndex===i;
-        const displayActive=weaponSelected&amp;&amp;tagActive;
+        const displayActive=weaponSelected;
         el.textContent=label;
         el.style.display=label?&#x27;inline-flex&#x27;:&#x27;none&#x27;;
         el.classList.toggle(&#x27;tag-state-on&#x27;,Boolean(label)&amp;&amp;displayActive);
@@ -6625,7 +6625,7 @@ function makeBoyzWeaponTags(template,weapon){
     const label=String(tags[index]||&#x27;&#x27;);
     const state=tagStates[index]||null;
     const tagActive=state?Boolean(state.active):true;
-    const displayActive=weaponSelected&amp;&amp;tagActive;
+    const displayActive=weaponSelected;
     el.textContent=label;
     el.style.display=label?&#x27;inline-flex&#x27;:&#x27;none&#x27;;
     el.classList.toggle(&#x27;tag-state-on&#x27;,Boolean(label)&amp;&amp;displayActive);
@@ -6711,7 +6711,7 @@ function syncWeaponLayout(){
   if(selectedWeaponIndex!==null&amp;&amp;!visible.includes(selectedWeaponIndex))selectedWeaponIndex=null;
   const ordered=selectedWeaponIndex===null?visible:[selectedWeaponIndex,...visible.filter(i=&gt;i!==selectedWeaponIndex)];
   const hasSelection=selectedWeaponIndex!==null&amp;&amp;visible.includes(selectedWeaponIndex);
-  grid.querySelectorAll(&#x27;.detail-box-row .detail-box&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;);el.classList.toggle(&#x27;detail-row-muted&#x27;,hasSelection)});
+  grid.querySelectorAll(&#x27;.detail-box-row .detail-box&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;,&#x27;detail-row-muted&#x27;)});
   const showWeapons=Boolean(activeUnitIndex!==null&amp;&amp;ordered.length);
   const activeUnitRow=activeUnitIndex===null?null:unitRow(activeUnitIndex);
   const activeRow=activeUnitRow?parseInt(activeUnitRow.style.gridRow||getComputedStyle(activeUnitRow).gridRowStart,10):FIRST_UNIT_ROW;
@@ -10105,7 +10105,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.143";
+    const APP_VERSION = "31.144";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31940,7 +31940,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.143',
+        version: 'V31.144',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
