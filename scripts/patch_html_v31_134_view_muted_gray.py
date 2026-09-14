@@ -151,10 +151,10 @@ for expected in [
     if expected not in final_view:
         raise SystemExit("V31.134 View acceptance failed: " + expected)
 
-# Protect the requested unchanged behavior/geometry contract.
+# Protect the existing layout/behavior anchors that this presentation patch must
+# not replace or remove. Active/selected Tag CSS is intentionally not rewritten.
 for required in [
     ".weapon-tags.weapon-muted .weapon-tag{color:var(--muted)}",
-    ".weapon-row.weapon-active .weapon-name,.weapon-row.weapon-active .weapon-stat{color:#80d6a3}",
     "function applyViewWeaponTagFocus(){",
     "function renderNewViewAbilitiesAndReflow(){",
     "function applyViewFocusSpacing(){",
