@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_117_boyz_subunit_headers_order.py'
+      - 'scripts/patch_html_v31_118_boyz_subunit_visibility_focus.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.117 Boyz subunit header/order behavior
-        run: python3 scripts/patch_html_v31_117_boyz_subunit_headers_order.py
+      - name: Build V31.118 Boyz subunit visibility/focus behavior
+        run: python3 scripts/patch_html_v31_118_boyz_subunit_visibility_focus.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.117 Boyz subunit header/order behavior"
+          git commit -m "Build V31.118 Boyz subunit visibility/focus behavior"
           git push origin HEAD:main
