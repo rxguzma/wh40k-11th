@@ -25,8 +25,7 @@ if not vm:
     raise SystemExit('Unified New View/Edit iframe missing')
 view_np = html.unescape(vm.group(2))
 
-# Preserve the current V31.107 scrolling fix and use the already-working Weapon
-# Tag row/box contract as the template for the Unit Detail row.
+# Preserve V31.107 scrolling and use the existing Weapon Tag row/box contract.
 for required in [
     'function syncNewViewFrameHeight()',
     '.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}',
@@ -37,37 +36,34 @@ for required in [
     if required not in view_np:
         raise SystemExit('V31.108 baseline contract missing: ' + required)
 
-# Keep the Unit Detail row's position/visibility behavior. Match the Weapon Tag
-# row's horizontal clipping behavior; its alignment, gap and padding already match.
-detail_rows = []
+# Unit Detail row already uses the same alignment/gap/padding as Weapon Tags.
+# Add the same overflow behavior without changing its grid position or visibility.
+row_matches = []
 for match in re.finditer(r'\.detail-box-row\{[^{}]*\}', view_np):
     rule = match.group(0)
     if 'grid-column:1/span 16' in rule and 'gap:var(--gap)' in rule:
-        detail_rows.append((match, rule))
-if len(detail_rows) != 1:
-    raise SystemExit(f'Unit Detail row CSS: expected 1 match, found {len(detail_rows)}')
-match, detail_row = detail_rows[0]
+        row_matches.append((match, rule))
+if len(row_matches) != 1:
+    raise SystemExit(f'Unit Detail row CSS: expected 1 match, found {len(row_matches)}')
+match, rule = row_matches[0]
 for required in ['align-items:center;', 'justify-content:flex-start;', 'gap:var(--gap);', 'padding:1px 0']:
-    if required not in detail_row:
+    if required not in rule:
         raise SystemExit('Unit Detail row contract changed unexpectedly: ' + required)
-if 'overflow:hidden' not in detail_row:
-    if detail_row.endswith(';}'):
-        detail_row = detail_row[:-1] + 'overflow:hidden}'
-    else:
-        detail_row = detail_row[:-1] + ';overflow:hidden}'
-view_np = view_np[:match.start()] + detail_row + view_np[match.end():]
+if 'overflow:hidden' not in rule:
+    rule = rule[:-1] + ('overflow:hidden}' if rule.endswith(';}') else ';overflow:hidden}')
+view_np = view_np[:match.start()] + rule + view_np[match.end():]
 
-# Remove the old fixed 2/3-cell widths. These boxes now size to their content,
-# exactly like Weapon Tags.
+# Remove only the old fixed-width rule for each box type. Some selectors have
+# additional state rules; those are intentionally left untouched.
 for selector in ['detail-count', 'detail-core-ability', 'detail-waha']:
-    matches = list(re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', view_np))
-    if len(matches) != 1:
-        raise SystemExit(f'{selector} CSS: expected 1 match, found {len(matches)}')
-    match = matches[0]
-    rule = match.group(0)
-    flex_matches = re.findall(r'flex:[^;]+;', rule)
-    if len(flex_matches) != 1:
-        raise SystemExit(f'{selector} flex rule: expected 1 match, found {len(flex_matches)}')
+    candidates = []
+    for match in re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', view_np):
+        rule = match.group(0)
+        if 'flex:' in rule and 'calc(var(--cell)' in rule:
+            candidates.append((match, rule))
+    if len(candidates) != 1:
+        raise SystemExit(f'{selector} fixed-width rule: expected 1 match, found {len(candidates)}')
+    match, rule = candidates[0]
     rule = re.sub(r'flex:[^;]+;', 'flex:0 0 auto;', rule, count=1)
     view_np = view_np[:match.start()] + rule + view_np[match.end():]
 
@@ -97,27 +93,23 @@ if not vm:
     raise SystemExit('Unified New View/Edit iframe missing after writeback')
 final_view = html.unescape(vm.group(2))
 
-final_detail_rows = [m.group(0) for m in re.finditer(r'\.detail-box-row\{[^{}]*\}', final_view) if 'grid-column:1/span 16' in m.group(0) and 'gap:var(--gap)' in m.group(0)]
-if len(final_detail_rows) != 1:
-    raise SystemExit(f'Final Unit Detail row CSS: expected 1 match, found {len(final_detail_rows)}')
-for required in ['align-items:center;', 'justify-content:flex-start;', 'gap:var(--gap);', 'padding:1px 0', 'overflow:hidden']:
-    if required not in final_detail_rows[0]:
-        raise SystemExit('V31.108 Unit Detail row acceptance failed: ' + required)
+final_rows = [m.group(0) for m in re.finditer(r'\.detail-box-row\{[^{}]*\}', final_view) if 'grid-column:1/span 16' in m.group(0) and 'gap:var(--gap)' in m.group(0)]
+if len(final_rows) != 1 or 'overflow:hidden' not in final_rows[0]:
+    raise SystemExit('V31.108 Unit Detail row acceptance failed')
 
 for selector in ['detail-count', 'detail-core-ability', 'detail-waha']:
-    matches = list(re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', final_view))
-    if len(matches) != 1:
-        raise SystemExit(f'Final {selector} CSS: expected 1 match, found {len(matches)}')
-    rule = matches[0].group(0)
-    if 'flex:0 0 auto;' not in rule:
+    rules = [m.group(0) for m in re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', final_view)]
+    if not any('flex:0 0 auto;' in rule for rule in rules):
         raise SystemExit(f'V31.108 {selector} is not content-sized')
-    if 'calc(var(--cell)' in rule:
+    if any('flex:' in rule and 'calc(var(--cell)' in rule for rule in rules):
         raise SystemExit(f'V31.108 {selector} retained fixed grid-cell width')
 
 for required in [
     'function syncNewViewFrameHeight()',
     '.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}',
     '.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);',
+    'function ensurePersistentGridCells()',
+    'function clearModeContent()',
 ]:
     if required not in final_view:
         raise SystemExit('V31.108 iframe acceptance failed: ' + required)
@@ -135,8 +127,6 @@ for required in [
 for forbidden in ['id="newEditPageScreen"', 'id="npEditFrame"', 'parent.getNewEdit']:
     if forbidden in text:
         raise SystemExit('V31.108 regressed retired standalone New Edit: ' + forbidden)
-if 'function ensurePersistentGridCells()' not in final_view or 'function clearModeContent()' not in final_view:
-    raise SystemExit('V31.108 regressed persistent-grid fast path')
 
 path.write_text(text, encoding='utf-8')
 print('Built V31.108: Unit Detail row now uses content-sized Weapon Tag behavior')
