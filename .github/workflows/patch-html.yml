@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_126_stat_header_focus_row.py'
+      - 'scripts/patch_html_v31_127_ability_content_layout.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.126 stat header focus row
-        run: python3 scripts/patch_html_v31_126_stat_header_focus_row.py
+      - name: Build V31.127 ability content layout
+        run: python3 scripts/patch_html_v31_127_ability_content_layout.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.126 stat header focus row"
+          git commit -m "Build V31.127 ability content layout"
           git push origin HEAD:main
