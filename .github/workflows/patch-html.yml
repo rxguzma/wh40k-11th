@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_124_unit_abilities.py'
+      - 'scripts/patch_html_v31_125_ability_grid_layout.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.124 Unit abilities
-        run: python3 scripts/patch_html_v31_124_unit_abilities.py
+      - name: Build V31.125 Ability grid layout
+        run: python3 scripts/patch_html_v31_125_ability_grid_layout.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.124 Unit abilities"
+          git commit -m "Build V31.125 Ability grid layout"
           git push origin HEAD:main
