@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.148</title>
+  <title>WH40k 11th V31.149</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.148; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.149; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.149
+    Scope: Phase 3 of New View Ability-driven mechanics. Ability Active is now the sole New View mechanical switch for Ability-owned structured WEAPON_STAT Tags targeting MELEE or RANGE. Active Abilities force those Weapon-stat Tags on and inactive Abilities force them off in a detached per-Unit projection, ignoring legacy per-Tag saved state and CSV Default_Active without mutating the real roster. New View Weapon A, BS/WS, S, AP, and D now come from the existing effective Weapon profile engine, which retains its existing MELEE/RANGE scope matching. Ability activation continues to refresh only the open Unit through the existing Unit-scoped path. Unit-stat behavior from V31.148 is unchanged. Weapon rules, roll modifiers, rerolls, and Probable execution are outside this phase and unchanged.
+    Risk areas: New View Weapon characteristic projection only. Old View, persistent Tag state, CSV data, Unit-stat mechanics, Probable execution, grid/layout, typography, colors, Weapon/Ability selection UI, Cards, Waha, FIX mode, and Version controls are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.148
     Scope: Phase 2 correction for New View Ability-driven Unit mechanics. Ability Active is now the sole mechanical switch for structured STAT/UNIT_STAT Tags targeting UNIT that belong to that Ability. In the detached New View projection, an active Ability forces those Unit-stat Tags on and an inactive Ability forces them off, regardless of legacy per-Tag saved state or CSV Default_Active. The real roster Tag state is not mutated. Unit stats continue to refresh only for the open Unit. Weapon effects and Probable remain outside this phase.
     Risk areas: New View Unit-stat projection only. Old View, persistent Tag state, CSV data, Weapon mechanics, Probable execution, grid/layout, typography, colors, Cards, Waha, FIX mode, and Version controls are unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.145
     Scope: New View Tag performance. A Tag mutation is now strictly Unit-scoped. The parent New View data bridge accepts the clicked roster entryId and builds only that single roster-entry model instead of calling getRosterEntryModels() across the full roster. After a successful Ability or Weapon Tag toggle, New View replaces only the active Unit's cached data and redraws only that Unit's open details. It no longer calls getAlternateViewRosterRows(), renderNewViewRosterRows(), title/header refresh, Version layout, or any other roster-wide New View refresh from a Tag tap. The selected Weapon and Ability presentation state are preserved. New View Lock remains a hard gate before any Tag write or refresh.
     Risk areas: Tag-tap refresh scope only. Existing V31.144 Tag colors/presentation, Tag persistence, per-unit state, locked/innate Tags, Unit/Weapon selection rules, grid/layout, Probable activation policy, FIX mode, Cards, Waha, Edit, and CSV data are unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.144
-    Scope: Unified New View active Unit/Weapon Tag presentation. An opened Unit is the active Unit, so its compact Unit-level Tags remain in their existing active/orange full-opacity treatment even after a Weapon is selected; Weapon focus no longer applies the muted detail-row class to those Unit Tags. A selected Weapon is the active Weapon, so all Tags shown for that selected Weapon use the existing active/orange full-opacity presentation. The same visual rule applies to Boyz custom Weapon rows. Stored roster Tag state, Tag click/write behavior introduced in V31.143, locked/innate handling, Tag data, selection mechanics, grid/layout, typography, box geometry, and persistence remain unchanged.
-    Risk areas: New View Unit-level Tag focus presentation and selected-Weapon Tag presentation only. No Ability Tag presentation, CSV data, Weapon/Unit stats, Probable, lock/FIX, Cards, Waha behavior, Edit, or persistence contract changed.
   -->
 
 
@@ -10130,7 +10130,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.148";
+    const APP_VERSION = "31.149";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -14644,16 +14644,19 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
               locked: Boolean(locked)
             };
           });
+          const effectiveWeapon = entry && unit
+            ? getAlternateViewEffectiveWeaponStats(entry, unit, roster, weapon)
+            : weapon;
           return {
             weaponId: String(weapon.weaponId || ""),
             quantity: entry && unit ? getRosterWeaponQuantity(entry, unit, weapon) : 0,
             name: String(weapon.name || weapon.weaponId || ""),
             range,
-            attacks: String(weapon.attacks ?? ""),
-            skill: String(weapon.skill ?? ""),
-            strength: String(weapon.strength ?? ""),
-            ap: String(weapon.ap ?? ""),
-            damage: String(weapon.damage ?? ""),
+            attacks: String(effectiveWeapon.attacks ?? weapon.attacks ?? ""),
+            skill: String(effectiveWeapon.skill ?? weapon.skill ?? ""),
+            strength: String(effectiveWeapon.strength ?? weapon.strength ?? ""),
+            ap: String(effectiveWeapon.ap ?? weapon.ap ?? ""),
+            damage: String(effectiveWeapon.damage ?? weapon.damage ?? ""),
             tags,
             tagStates,
             scope
@@ -14787,6 +14790,50 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
       const profile = getEffectiveUnitProfile(projectedEntry, unit, roster);
       return profile && profile.stats ? profile.stats : (fallbackStats || {});
+    };
+
+    function getAlternateViewEffectiveWeaponStats(entry, unit, roster, weapon) {
+      if (!entry || !unit || !weapon) return weapon || {};
+
+      const projectedEntry = {
+        ...entry,
+        abilityTagStates: JSON.parse(JSON.stringify(entry.abilityTagStates || {}))
+      };
+
+      getAbilitiesForRosterEntry(entry, unit)
+        .filter(ability => ability && !ability.isMissingLink)
+        .forEach((ability, sequence) => {
+          const sourceItem = getAbilitySourceItem(ability) || ability;
+          const effectiveItem = getRosterEntryEffectiveAbility(entry, sourceItem) || sourceItem;
+          const rawItemKey = getAbilityItemEditKey(sourceItem) || sourceItem.abilityId || sourceItem.name || sequence;
+          const itemKey = String(rawItemKey ?? "").trim();
+          const abilityActive = Boolean(
+            itemKey && window.isAlternateViewAbilityMechanicallyEligible(entry.entryId, itemKey)
+          );
+          const defaultOn = getRosterTaggedSourceDefaultActive("ability", sourceItem);
+
+          getAbilityProtectedModifierTagAssignments(effectiveItem).forEach(assignment => {
+            const effect = getStructuredTagDefinitionEffect(assignment.tag, assignment.category);
+            const effectType = String(effect && (effect.effectType || effect.type) || "").trim().toUpperCase();
+            const target = String(effect && effect.target || "").trim().toUpperCase();
+
+            // Phase 3 is Weapon characteristic modifiers only. The existing
+            // effective Weapon engine owns MELEE/RANGE scope matching and math.
+            // Weapon rules, roll modifiers, rerolls, and Probable stay untouched.
+            if (effectType !== "WEAPON_STAT" || !["MELEE", "RANGE"].includes(target)) return;
+
+            setRosterEntryAbilityTagState(
+              projectedEntry,
+              sourceItem,
+              assignment.tag,
+              abilityActive,
+              defaultOn,
+              assignment.category
+            );
+          });
+        });
+
+      return getRosterEntryEffectiveWeaponProfile(projectedEntry, unit, weapon, roster) || weapon;
     };
 
     window.toggleAlternateViewAbilityTag = function(payload = {}) {
@@ -32057,7 +32104,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.148',
+        version: 'V31.149',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
