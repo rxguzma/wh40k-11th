@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.136</title>
+  <title>WH40k 11th V31.137</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.136; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.137; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.137
+    Scope: Fix unified New View Ability description presentation. Ability descriptions now preserve authored line breaks with white-space:pre-line while continuing to wrap normally. When an Ability has no visible Tags, no Tag element/row is created and the Description fills the full F-P height of the Ability block, eliminating the blank phantom Tag row. When Tags are present, the Description plus actual Tags fill the right side and the A-E title continues to stretch to their combined height. Short and Long descriptions now follow the exact title Active/Inactive color state: muted gray when inactive and green when active. Short/Long toggling remains independent from Active state. V31.136 focus-row/muted-Tag presentation and all Weapon selection behavior remain unchanged.
+    Risk areas: Unified New View Ability presentation only. No Ability data/order/filter semantics, Old Edit authority, Weapon/Tag state behavior, Boyz data, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, or Version controls changed.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.136
     Scope: Correct unified New View muted-color direction. Weapon Tags are restored to their existing authored styling and are no longer recolored by the V31.134 override. The existing top and bottom open-Unit focus separator rows now follow the muted Weapon Tag palette by using the shared Tag/button background var(--btn). The existing M", T, SV, W, LD, and OC labels on the top row continue to use the muted Tag text/font treatment. Active/selected Tag styling is unchanged. Stat values, grid structure, spacing, sizing, borders, row placement, selection behavior, Weapons, Abilities, and all other behavior remain unchanged.
     Risk areas: Unified New View focus-row color presentation only. No Tag styling/state behavior, Edit presentation, data, CSVs, persistence, Probable, lock/FIX, Cards, Waha, or Version behavior changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.133
     Scope: Move unified New View Ability details beside their title buttons. Each Ability now occupies one full-width outer grid block: the Ability title remains A-E and two standard rows tall; when that Ability is open, its Short Description appears beside the title in F-P and its structured Tags appear immediately below the Description in the same F-P area. The right-side Description/Tag stack grows vertically as needed while the title remains anchored at the top-left. Abilities are stacked vertically so expanded side detail cannot overlap another Ability. The existing one-row gap after Weapons, standard muted title typography, independent per-Ability persistent open/close state, V31.131 Weapon Tag focus, lighter muted-Tag Unit separators, Ability filtering/data authority, and all other New View behavior remain unchanged.
     Risk areas: Unified New View Ability geometry/reflow only. No Ability data/order/filter semantics, Old Edit authority, Weapon/Boyz data, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, or Version controls changed.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.132
-    Scope: Refine unified New View Unit Ability controls. Ability titles now use the standard muted New View title typography/state: Roboto 900 at body size with line-height 1 and the existing 50% muted text color, while open Ability titles retain the existing green active state. Ability boxes are four grid columns wide, allowing four boxes across the 16-column grid, and remain two rows tall while collapsed. Ability expansion state is now independent per Ability and per Unit: opening another Ability no longer closes an already-open Ability, and each Short Description/Tag area remains open until that same Ability is tapped closed. The existing one-row gap after Weapons is retained. The full-width focus separator rows above and below the opened Unit now use the existing muted Tag gray rgba(154,160,166,.5) instead of the darker card gray.
-    Risk areas: Unified New View Ability presentation/transient expansion state and focus-separator color only. V31.131 Weapon Tag focus, Ability data/order/filtering and Old Edit authority, Weapon/Boyz rendering, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, and Version controls remain unchanged.
   -->
 
 
@@ -5471,13 +5471,14 @@
 .view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:rgba(154,160,166,.5);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
 
 
-/* V31.135 always-open Unit Ability side-detail layout in unified New View. */
+/* V31.137 Ability description layout/color fixes in unified New View. */
 .unit-ability-block{grid-column:1/span 16;z-index:4;box-sizing:border-box;align-self:start;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:stretch;min-width:0;min-height:calc(var(--cell)*2);background:transparent;overflow:visible}
 .unit-ability-button{grid-column:1/span 5;grid-row:1;box-sizing:border-box;align-self:stretch;min-width:0;min-height:calc(var(--cell)*2);height:auto;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 8px;white-space:normal;overflow:hidden;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:rgba(241,243,244,.5);font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
 .unit-ability-button.ability-active{color:#80d6a3!important}
-.unit-ability-detail{grid-column:6/span 11;grid-row:1;box-sizing:border-box;align-self:start;min-width:0;display:flex;flex-direction:column;align-items:stretch;background:transparent;overflow:visible}
-.unit-ability-description-row{box-sizing:border-box;width:100%;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
-.unit-ability-tags{box-sizing:border-box;width:100%;min-width:0;min-height:var(--cell);display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent}
+.unit-ability-detail{grid-column:6/span 11;grid-row:1;box-sizing:border-box;align-self:stretch;height:100%;min-width:0;display:flex;flex-direction:column;align-items:stretch;background:transparent;overflow:visible}
+.unit-ability-description-row{box-sizing:border-box;width:100%;min-width:0;min-height:calc(var(--cell)*2);flex:1 1 auto;display:flex;align-items:center;padding:4px 8px;white-space:pre-line;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:rgba(241,243,244,.5);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
+.unit-ability-block.ability-active .unit-ability-description-row{color:#80d6a3!important}
+.unit-ability-tags{box-sizing:border-box;width:100%;min-width:0;min-height:var(--cell);flex:0 0 auto;display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent}
 .unit-ability-tags .weapon-tag{height:auto;min-height:var(--std);max-width:100%;white-space:normal;overflow:visible;text-align:center;line-height:1.1;padding-top:4px;padding-bottom:4px}
 
 /* V31.136 New View focus rows follow existing muted Weapon Tags */
@@ -9967,7 +9968,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.136";
+    const APP_VERSION = "31.137";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31744,7 +31745,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.136',
+        version: 'V31.137',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
