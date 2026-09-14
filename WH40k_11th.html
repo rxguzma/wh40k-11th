@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.117</title>
+  <title>WH40k 11th V31.118</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.117; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.118; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.118
+    Scope: Refine Boyz New View sub-units only. A Boyz / Specials / Nob sub-unit header now disappears completely when the current Range / Melee / Other / All filter leaves that sub-unit with no visible weapons. When a visible sub-unit is opened, the other visible sub-unit headers reuse the existing weapon-muted gray treatment; closing the focused sub-unit restores the next open sub-unit as focus, or normal header treatment when none remain open. Existing weapon rows, tags, selected-weapon top ordering, quantities, header stat-label behavior, grid sizing, fonts, and colors are otherwise unchanged.
+    Risk areas: Boyz New View sub-unit visibility and header focus treatment only. Other Units, weapon data, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.117
     Scope: Refine Boyz New View sub-units only. Boyz / Specials / Nob headers now hide R" / A / WS / St / AP / D while collapsed and show those existing labels only while that sub-unit is open. Selecting a weapon now re-renders its sub-unit with that weapon and its existing Tag row moved to the top, matching the established New View selected-weapon ordering; deselecting restores the approved canonical order. No arrows, counts, new colors, new borders, or new controls are added.
     Risk areas: Boyz expanded Weapon sub-unit header labels and selected-weapon ordering only. Other Units, weapon data, quantities, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.114
     Scope: Boyz New View weapon sub-units. When Boyz is expanded in VIEW, its Weapon area now shows exactly three independently tappable header rows: Boyz, Specials, and Nob. Headers reuse the existing weapon-header cells with R" / A / WS / St / AP / D and add no arrows, counts, controls, borders, or new colors. Initial approved contents are Boyz = Slugga/Shoota/Choppa; Specials = Big Shoota/Burna/Rokkit Launcha Blasta/Rokkit Launcha Busta; Nob = Kombi-skorcha Shoota/Kombi-skorcha Skorcha. Expanded rows reuse current New View weapon/stat/tag styling. Canonical Weapon_Quantities supplies x10/x20 quantities, appended directly to the weapon-name text as ×N so active/muted/normal states apply to the whole name. The rejected V31.110 flat weapon list is removed from unified EDIT.
     Risk areas: Boyz expanded Weapon presentation in unlocked New View and removal of the rejected V31.110 Edit-only flat list. Other Units, New View filters, Unit Detail, lock/frozen behavior, unified Edit rows, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.113
-    Scope: Complete the New View wrench/FIX workflow. The second wrench tap no longer silently writes an isolated localStorage report. Selected items now save into the roster itself as one per-Unit FIX note, grouped by the exact Unit entryId and preserving the selected hierarchy down to Section / Item / Field / Current Value. FIX notes survive the existing roster Save/reload, clone, export, and import paths while retired legacy Notes remain stripped. Old Edit's existing per-Unit Note editor is selectively re-enabled only for FIX notes; the FIX title is locked and the note body remains editable through the existing Ability Save flow. After a successful second wrench tap, the L4 wrench briefly shows a green checkmark so the save is visible. No source CSV is modified.
-    Risk areas: FIX-report roster persistence, selective FIX-note editing in old Edit, and the New View wrench save confirmation only. V31.112 expanded-Unit row-gap fix, Lock/filter/Grid controls, unified Edit, Version/Update/Download, Cards, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -6413,6 +6413,7 @@ const BOYZ_NEW_VIEW_SUBUNITS=[
   {label:&#x27;Nob&#x27;,weaponIds:[&#x27;KOMBI_SKORCHA_SHOOTA&#x27;,&#x27;KOMBI_SKORCHA_SKORCHA&#x27;]}
 ];
 const boyzNewViewSubunitOpen={Boyz:false,Specials:false,Nob:false};
+let boyzNewViewActiveSubunit=&#x27;&#x27;;
 let boyzNewViewSelectedWeaponId=&#x27;&#x27;;
 function normalizeBoyzWeaponId(value){return String(value||&#x27;&#x27;).trim().toUpperCase()}
 function isBoyzNewViewData(data){return normalizeBoyzWeaponId(data&amp;&amp;data.unitId)===&#x27;BOYZ&#x27;||String(data&amp;&amp;data.name||&#x27;&#x27;).trim().toUpperCase()===&#x27;BOYZ&#x27;}
@@ -6441,9 +6442,10 @@ function refreshBoyzNewViewSelection(){
     if(tags)tags.classList.toggle(&#x27;weapon-muted&#x27;,muted);
   });
 }
-function makeBoyzSubunitHeader(template,label){
+function makeBoyzSubunitHeader(template,label,muted=false){
   const row=template.cloneNode(true);
   row.classList.add(&#x27;boyz-subunit-node&#x27;,&#x27;boyz-subunit-header&#x27;);
+  row.classList.toggle(&#x27;weapon-muted&#x27;,Boolean(muted));
   row.style.display=&#x27;grid&#x27;;
   const name=row.querySelector(&#x27;.weapon-name&#x27;);
   if(name)name.textContent=label;
@@ -6451,7 +6453,13 @@ function makeBoyzSubunitHeader(template,label){
   [...row.children].forEach(cell=&gt;{if(cell!==name)cell.style.visibility=open?&#x27;visible&#x27;:&#x27;hidden&#x27;});
   row.onclick=e=&gt;{
     e.stopPropagation();
-    boyzNewViewSubunitOpen[label]=!boyzNewViewSubunitOpen[label];
+    const nextOpen=!boyzNewViewSubunitOpen[label];
+    boyzNewViewSubunitOpen[label]=nextOpen;
+    if(nextOpen)boyzNewViewActiveSubunit=label;
+    else if(boyzNewViewActiveSubunit===label){
+      const fallback=BOYZ_NEW_VIEW_SUBUNITS.find(def=&gt;boyzNewViewSubunitOpen[def.label]);
+      boyzNewViewActiveSubunit=fallback?fallback.label:&#x27;&#x27;;
+    }
     renderBoyzNewViewSubunits(unitDataByIndex[activeUnitIndex]);
   };
   return row;
@@ -6504,10 +6512,24 @@ function renderBoyzNewViewSubunits(data){
   const allWeapons=Array.isArray(data.weapons)?data.weapons:[];
   const byId=new Map(allWeapons.map(weapon=&gt;[normalizeBoyzWeaponId(weapon&amp;&amp;weapon.weaponId),weapon]));
   const nodes=[];
-  BOYZ_NEW_VIEW_SUBUNITS.forEach(def=&gt;{
-    nodes.push(makeBoyzSubunitHeader(baseHeader,def.label));
+  const visibleDefs=BOYZ_NEW_VIEW_SUBUNITS.map(def=&gt;{
+    const weaponIds=def.weaponIds.filter(id=&gt;{
+      const weapon=byId.get(id);
+      return Boolean(weapon)&amp;&amp;boyzWeaponPassesFilter(weapon);
+    });
+    if(!weaponIds.length)boyzNewViewSubunitOpen[def.label]=false;
+    return {def,weaponIds};
+  }).filter(item=&gt;item.weaponIds.length);
+  const visibleLabels=new Set(visibleDefs.map(item=&gt;item.def.label));
+  if(!visibleLabels.has(boyzNewViewActiveSubunit)){
+    const fallback=visibleDefs.find(item=&gt;boyzNewViewSubunitOpen[item.def.label]);
+    boyzNewViewActiveSubunit=fallback?fallback.def.label:&#x27;&#x27;;
+  }
+  visibleDefs.forEach(({def,weaponIds})=&gt;{
+    const muted=Boolean(boyzNewViewActiveSubunit)&amp;&amp;boyzNewViewActiveSubunit!==def.label;
+    nodes.push(makeBoyzSubunitHeader(baseHeader,def.label,muted));
     if(!boyzNewViewSubunitOpen[def.label])return;
-    const orderedIds=def.weaponIds.slice();
+    const orderedIds=weaponIds.slice();
     const selected=normalizeBoyzWeaponId(boyzNewViewSelectedWeaponId);
     const selectedIndex=orderedIds.findIndex(id=&gt;normalizeBoyzWeaponId(id)===selected);
     if(selectedIndex&gt;0){
@@ -6516,7 +6538,7 @@ function renderBoyzNewViewSubunits(data){
     }
     orderedIds.forEach(id=&gt;{
       const weapon=byId.get(id);
-      if(!weapon||!boyzWeaponPassesFilter(weapon))return;
+      if(!weapon)return;
       nodes.push(makeBoyzWeaponRow(baseWeapon,weapon));
       const tagRow=makeBoyzWeaponTags(baseTags,weapon);
       if(tagRow)nodes.push(tagRow);
@@ -9400,7 +9422,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.117";
+    const APP_VERSION = "31.118";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31127,7 +31149,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.117',
+        version: 'V31.118',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
