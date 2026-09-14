@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.121</title>
+  <title>WH40k 11th V31.122</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.121; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.122; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.122
+    Scope: Change the New View disposition text (for example, Priority Assets) from the active green treatment to the same standard muted text color used by the Detachment line (for example, Wreckas). Layout, typography, spacing, wording, and all behavior remain unchanged.
+    Risk areas: New View header disposition text color only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.121
     Scope: Refine the unified New View Fix Report header presentation only. The left Fix Report segment now uses the same 12px/700 Roboto treatment as the Version control, with the item count aligned to the far right of the same eight-column segment like the current version number. Done and Copy All remain unchanged on the right. Collapsed/open behavior, report contents, canonical IDs, Copy All text, persistence, Version positioning, View selection presentation, and all other app behavior remain unchanged.
     Risk areas: Fix Report header typography/alignment only.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.118
     Scope: Refine Boyz New View sub-units only. A Boyz / Specials / Nob sub-unit header now disappears completely when the current Range / Melee / Other / All filter leaves that sub-unit with no visible weapons. When a visible sub-unit is opened, the other visible sub-unit headers reuse the existing weapon-muted gray treatment; closing the focused sub-unit restores the next open sub-unit as focus, or normal header treatment when none remain open. Existing weapon rows, tags, selected-weapon top ordering, quantities, header stat-label behavior, grid sizing, fonts, and colors are otherwise unchanged.
     Risk areas: Boyz New View sub-unit visibility and header focus treatment only. Other Units, weapon data, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.117
-    Scope: Refine Boyz New View sub-units only. Boyz / Specials / Nob headers now hide R" / A / WS / St / AP / D while collapsed and show those existing labels only while that sub-unit is open. Selecting a weapon now re-renders its sub-unit with that weapon and its existing Tag row moved to the top, matching the established New View selected-weapon ordering; deselecting restores the approved canonical order. No arrows, counts, new colors, new borders, or new controls are added.
-    Risk areas: Boyz expanded Weapon sub-unit header labels and selected-weapon ordering only. Other Units, weapon data, quantities, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5368,7 +5368,7 @@
 .draft-grid{display:grid;grid-template-columns:repeat(16,var(--cell));grid-auto-rows:var(--cell);width:max-content;margin:0 auto;border-top:1px solid rgba(158,203,255,.25);border-left:1px solid rgba(158,203,255,.25);background:var(--bg);isolation:isolate}
 .grid-cell{position:relative;z-index:100;width:var(--cell);height:var(--cell);border-right:1px solid rgba(158,203,255,.25);border-bottom:1px solid rgba(158,203,255,.25);pointer-events:none}.col-coordinate,.row-coordinate{position:absolute;z-index:101;color:var(--grid);opacity:.5;font-size:var(--meta);font-weight:700;line-height:1;user-select:none;pointer-events:none}.col-coordinate{top:4px;left:50%;transform:translateX(-50%)}.row-coordinate{left:4px;bottom:4px}
 .button-standard{width:calc(100% - var(--gap));height:var(--std);padding:0 10px;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:var(--text);font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}.button-standard.active-green{background:var(--green);border-color:var(--greenborder)}
-.top-header-shell{grid-column:1/span 16;grid-row:1/span 4;z-index:2;border:1px solid var(--border);border-radius:12px;background:var(--card)}.top-roster-name{grid-column:2/span 7;grid-row:2;z-index:3;display:flex;align-items:center;min-width:0;color:var(--text);font:900 var(--title)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-detachments{grid-column:2/span 9;grid-row:3;z-index:3;display:flex;align-items:center;min-width:0;color:var(--muted);font:700 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-summary{grid-column:2/span 9;grid-row:4;z-index:3;display:flex;align-items:center;gap:6px;min-width:0;font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}.top-summary-disposition{color:#80d6a3}.top-summary-rest{color:var(--muted)}
+.top-header-shell{grid-column:1/span 16;grid-row:1/span 4;z-index:2;border:1px solid var(--border);border-radius:12px;background:var(--card)}.top-roster-name{grid-column:2/span 7;grid-row:2;z-index:3;display:flex;align-items:center;min-width:0;color:var(--text);font:900 var(--title)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-detachments{grid-column:2/span 9;grid-row:3;z-index:3;display:flex;align-items:center;min-width:0;color:var(--muted);font:700 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top-summary{grid-column:2/span 9;grid-row:4;z-index:3;display:flex;align-items:center;gap:6px;min-width:0;font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden}.top-summary-disposition{color:var(--muted)}.top-summary-rest{color:var(--muted)}
 .top-mode-buttons{grid-column:11/span 6;grid-row:2;z-index:4;display:grid;grid-template-columns:repeat(3,calc(var(--cell)*2));align-items:center;justify-items:center}.top-mode-buttons .button-standard{height:var(--std)}.top-main-button{grid-column:15/span 2;grid-row:24;z-index:4;align-self:center;justify-self:center}.phase-buttons{grid-column:2/span 15;grid-row:6;z-index:3;display:grid;grid-template-columns:repeat(5,calc(var(--cell)*3));align-items:center;justify-items:center}
 .view-stat-header{grid-column:9/span 8;grid-row:6;z-index:3;display:grid;grid-template-columns:repeat(8,var(--cell));background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.view-stat-label{height:var(--cell);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}.view-stat-label:first-child{border-left:0}.vh-m{grid-column:1}.vh-t{grid-column:2/span 2}.vh-sv{grid-column:4/span 2}.vh-w{grid-column:6}.vh-ld{grid-column:7}.vh-oc{grid-column:8}
 .view-unit-row,.edit-unit-row{grid-column:1/span 16;z-index:3;display:grid;grid-template-columns:repeat(16,var(--cell));height:var(--cell);align-items:center;background:var(--card);border-bottom:1px solid var(--border)}.roster-spacer-row{grid-column:1/span 16;z-index:3;height:var(--cell);min-height:var(--cell)}.view-unit-name,.edit-unit-name{grid-column:1/span 5;height:var(--cell);min-width:0;padding-left:8px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif}.unit-count-grid{grid-column:6/span 2;width:calc(100% - var(--gap));height:var(--std);justify-self:center;border:1px solid var(--btnborder);border-radius:var(--radius);background:var(--btn);color:#80d6a3;font:900 var(--body)/1 Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center;white-space:nowrap}
@@ -9573,7 +9573,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.121";
+    const APP_VERSION = "31.122";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31311,7 +31311,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.121',
+        version: 'V31.122',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
