@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_116_fix_report_parse.py'
+      - 'scripts/patch_html_v31_117_boyz_subunit_headers_order.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.116 FIX report parse repair
-        run: python3 scripts/patch_html_v31_116_fix_report_parse.py
+      - name: Build V31.117 Boyz subunit header/order behavior
+        run: python3 scripts/patch_html_v31_117_boyz_subunit_headers_order.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.116 FIX report parse repair"
+          git commit -m "Build V31.117 Boyz subunit header/order behavior"
           git push origin HEAD:main
