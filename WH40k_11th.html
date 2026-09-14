@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.122</title>
+  <title>WH40k 11th V31.123</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.122; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.123; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.123
+    Scope: Add two full-width blank gray focus rows around the currently opened Unit in unified View. One existing-card-gray row appears immediately above the active Unit and one immediately below the final visible Unit detail/weapon/tag row. The active Unit plus its expanded content remains inside the existing Unit wrap box between those separators; the selected-Weapon wrap remains unchanged. Separator rows disappear when the Unit closes or focus changes. No text or controls are added to the separators.
+    Risk areas: Unified View expanded-Unit grid-row spacing only. Existing muted/active colors, Unit and selected-Weapon wrap boxes, roster/weapon data, filters, Boyz selection, lock/frozen behavior, scrolling/frame sizing, Edit, FIX, Cards, persistence, CSV data, Waha routing, Probable, and Version controls remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.122
     Scope: Change the New View disposition text (for example, Priority Assets) from the active green treatment to the same standard muted text color used by the Detachment line (for example, Wreckas). Layout, typography, spacing, wording, and all behavior remain unchanged.
     Risk areas: New View header disposition text color only.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.119
     Scope: Refine unified New View Fix Report only. Newly captured report entries now preserve canonical Unit_ID and Weapon_ID from the rendered roster/Weapon data; Copy All and the visible report use Unit_ID instead of Unit display name and Weapon_ID instead of Weapon display name while keeping Current Value human-readable. Copy All now begins exactly with “FIX REPORT: Check the details called out below vs Waha and suggest changes.” The report surface now mirrors the Version row: it starts collapsed, toggles open by tapping the Fix Report row, and keeps only Done and Copy All as two four-column actions on the right; Reset is removed. Existing grid dimensions, Roboto fonts, colors, borders, Version positioning, and wrench behavior are reused.
     Risk areas: Fix Report capture metadata, Copy All formatting, collapsed/open report layout, and locked-View report-row tapping only. Boyz sub-units, other Units, filters, unified Edit, Version controls, Cards, roster/CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.118
-    Scope: Refine Boyz New View sub-units only. A Boyz / Specials / Nob sub-unit header now disappears completely when the current Range / Melee / Other / All filter leaves that sub-unit with no visible weapons. When a visible sub-unit is opened, the other visible sub-unit headers reuse the existing weapon-muted gray treatment; closing the focused sub-unit restores the next open sub-unit as focus, or normal header treatment when none remain open. Existing weapon rows, tags, selected-weapon top ordering, quantities, header stat-label behavior, grid sizing, fonts, and colors are otherwise unchanged.
-    Risk areas: Boyz New View sub-unit visibility and header focus treatment only. Other Units, weapon data, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
   -->
 
 
@@ -5465,6 +5465,8 @@
 .draft-grid{position:relative}
 .view-open-unit-wrap,.view-selected-weapon-wrap{position:absolute;box-sizing:border-box;border:1px solid var(--border);border-radius:0;background:transparent;pointer-events:none;z-index:8}
 .view-selected-weapon-wrap{z-index:9}
+.view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:var(--card);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
+
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -6939,6 +6941,82 @@ function selectedViewWeaponParts(){
   }
   return {row,tags:viewPresentationVisible(tags)?tags:null};
 }
+function viewGridRowNumber(el){
+  if(!el)return NaN;
+  const inline=String(el.style.gridRow||&#x27;&#x27;).trim();
+  const computed=String(getComputedStyle(el).gridRowStart||&#x27;&#x27;).trim();
+  const value=parseInt(inline||computed,10);
+  return Number.isFinite(value)?value:NaN;
+}
+function shiftViewFocusGridRow(el,delta){
+  if(!el||!delta)return false;
+  const row=viewGridRowNumber(el);
+  if(!Number.isFinite(row))return false;
+  if(!Object.prototype.hasOwnProperty.call(el.dataset,&#x27;viewFocusOriginalGridRow&#x27;)){
+    el.dataset.viewFocusOriginalGridRow=el.style.gridRow||&#x27;__EMPTY__&#x27;;
+  }
+  el.style.gridRow=String(row+delta);
+  return true;
+}
+function clearViewFocusSpacing(){
+  grid.querySelectorAll(&#x27;.view-focus-separator&#x27;).forEach(el=&gt;el.remove());
+  grid.querySelectorAll(&#x27;[data-view-focus-original-grid-row]&#x27;).forEach(el=&gt;{
+    const original=el.dataset.viewFocusOriginalGridRow;
+    if(original===&#x27;__EMPTY__&#x27;)el.style.removeProperty(&#x27;grid-row&#x27;);
+    else el.style.gridRow=original;
+    delete el.dataset.viewFocusOriginalGridRow;
+  });
+}
+function addViewFocusSeparator(row,position){
+  if(!Number.isFinite(row))return null;
+  const separator=document.createElement(&#x27;div&#x27;);
+  separator.className=&#x27;view-focus-separator view-focus-separator-&#x27;+position;
+  separator.setAttribute(&#x27;aria-hidden&#x27;,&#x27;true&#x27;);
+  separator.style.gridRow=String(row);
+  grid.appendChild(separator);
+  return separator;
+}
+function applyViewFocusSpacing(){
+  if(activePageMode!==&#x27;view&#x27;||activeUnitIndex===null)return;
+  const activeRow=unitRow(activeUnitIndex);
+  if(!activeRow||!viewPresentationVisible(activeRow))return;
+  const activeBaseRow=viewGridRowNumber(activeRow);
+  if(!Number.isFinite(activeBaseRow))return;
+
+  // Reserve the top separator row. The active Unit moves down one row; every
+  // later roster/spacer row moves down two rows to reserve both separators.
+  grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;{
+    const row=viewGridRowNumber(el);
+    if(!Number.isFinite(row))return;
+    if(el===activeRow)shiftViewFocusGridRow(el,1);
+    else if(row&gt;activeBaseRow)shiftViewFocusGridRow(el,2);
+  });
+  const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
+  if(mainButton&amp;&amp;viewGridRowNumber(mainButton)&gt;activeBaseRow)shiftViewFocusGridRow(mainButton,2);
+
+  // Keep the entire expanded Unit stack together by moving its existing detail,
+  // weapon, and tag rows down exactly one row with the Unit.
+  const contentNodes=[];
+  const seen=new Set();
+  const addContentNode=el=&gt;{
+    if(!el||seen.has(el)||!viewPresentationVisible(el))return;
+    seen.add(el);contentNodes.push(el);
+  };
+  addContentNode(grid.querySelector(&#x27;.detail-box-row&#x27;));
+  addContentNode(grid.querySelector(&#x27;.weapon-header:not(.boyz-subunit-node)&#x27;));
+  grid.querySelectorAll(&#x27;.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(addContentNode);
+  contentNodes.forEach(el=&gt;shiftViewFocusGridRow(el,1));
+
+  addViewFocusSeparator(activeBaseRow,&#x27;top&#x27;);
+  let bottomRow=viewGridRowNumber(activeRow);
+  contentNodes.forEach(el=&gt;{
+    const row=viewGridRowNumber(el);
+    if(Number.isFinite(row))bottomRow=Math.max(bottomRow,row);
+  });
+  addViewFocusSeparator(bottomRow+1,&#x27;bottom&#x27;);
+  if(typeof syncNewViewFrameHeight===&#x27;function&#x27;)syncNewViewFrameHeight();
+}
+
 function syncViewSelectionPresentation(){
   if(typeof newViewHeaderLocked!==&#x27;undefined&#x27;&amp;&amp;newViewHeaderLocked)return;
   removeViewSelectionWraps();
@@ -6963,17 +7041,23 @@ function syncViewSelectionPresentation(){
 }
 const syncWeaponLayoutV31119=syncWeaponLayout;
 syncWeaponLayout=function(){
+  const focusLocked=typeof newViewHeaderLocked!==&#x27;undefined&#x27;&amp;&amp;newViewHeaderLocked;
+  if(!focusLocked)clearViewFocusSpacing();
   const result=syncWeaponLayoutV31119.apply(this,arguments);
+  if(!focusLocked)applyViewFocusSpacing();
   syncViewSelectionPresentation();
   return result;
 };
 const refreshBoyzNewViewSelectionV31119=refreshBoyzNewViewSelection;
 refreshBoyzNewViewSelection=function(){
+  const focusLocked=typeof newViewHeaderLocked!==&#x27;undefined&#x27;&amp;&amp;newViewHeaderLocked;
+  if(!focusLocked)clearViewFocusSpacing();
   const result=refreshBoyzNewViewSelectionV31119.apply(this,arguments);
+  if(!focusLocked)applyViewFocusSpacing();
   syncViewSelectionPresentation();
   return result;
 };
-window.addEventListener(&#x27;resize&#x27;,()=&gt;{if(activePageMode===&#x27;view&#x27;&amp;&amp;!newViewHeaderLocked)syncViewSelectionPresentation()});
+window.addEventListener(&#x27;resize&#x27;,()=&gt;{if(activePageMode===&#x27;view&#x27;&amp;&amp;!newViewHeaderLocked){clearViewFocusSpacing();applyViewFocusSpacing();syncViewSelectionPresentation()}});
 
 function ensurePersistentGridCells(){
   if(grid.querySelector(&#x27;.grid-cell&#x27;))return false;
@@ -9573,7 +9657,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.122";
+    const APP_VERSION = "31.123";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31311,7 +31395,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.122',
+        version: 'V31.123',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
