@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.135</title>
+  <title>WH40k 11th V31.145</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.135; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.145; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,33 +92,33 @@
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.135
-    Scope: Unified New View Ability interaction/presentation only. Abilities are now always shown as side-detail blocks: title in A-E and Short Description/structured Tags in F-P. The A-E title box stretches continuously to the full height of the F-P Description + Tags stack. Tapping an Ability title independently toggles its muted/green Active state. Tapping its Description independently toggles between the Old Edit-authoritative Short and Long description text. Ability interactions no longer clear or otherwise touch Weapon selection. Tags, Ability filtering/order/data authority, the one-row gap after Weapons, V31.131 Weapon Tag focus, V31.134 muted-gray presentation, open-Unit focus/wrap behavior, and all other New View behavior remain unchanged.
-    Risk areas: Unified New View Ability presentation/transient title and description state only. No Ability data editing, Weapon data/state behavior, Boyz data, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, or Version controls changed.
+    CHANGE NOTE - WH40k_11th_V31.145
+    Scope: New View Tag performance. A Tag mutation is now strictly Unit-scoped. The parent New View data bridge accepts the clicked roster entryId and builds only that single roster-entry model instead of calling getRosterEntryModels() across the full roster. After a successful Ability or Weapon Tag toggle, New View replaces only the active Unit's cached data and redraws only that Unit's open details. It no longer calls getAlternateViewRosterRows(), renderNewViewRosterRows(), title/header refresh, Version layout, or any other roster-wide New View refresh from a Tag tap. The selected Weapon and Ability presentation state are preserved. New View Lock remains a hard gate before any Tag write or refresh.
+    Risk areas: Tag-tap refresh scope only. Existing V31.144 Tag colors/presentation, Tag persistence, per-unit state, locked/innate Tags, Unit/Weapon selection rules, grid/layout, Probable activation policy, FIX mode, Cards, Waha, Edit, and CSV data are unchanged.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.134
-    Scope: New View presentation only. Use rgba(154,160,166,.5) for the existing top/bottom focus separator rows and for the interior/background of muted Weapon Tag boxes. When a Unit is open, the existing M", T, SV, W, LD, and OC stat header is marked only while it sits on the top separator row; its own background becomes transparent so the single full-width separator gray remains visually uniform across all 16 columns, and the stat labels use the same muted-Tag font treatment (Roboto 12px bold with muted text color). Active/selected Tag styling is unchanged. Stat values, grid structure, spacing, sizing, borders, row placement, selection logic, filtering, Abilities, Weapons, and all behavior remain unchanged.
-    Risk areas: Unified New View muted Weapon Tag background and focused stat-header presentation only. No Edit presentation, data, CSVs, persistence, Probable, lock/FIX, Cards, Waha, or Version behavior changes.
+    CHANGE NOTE - WH40k_11th_V31.144
+    Scope: Unified New View active Unit/Weapon Tag presentation. An opened Unit is the active Unit, so its compact Unit-level Tags remain in their existing active/orange full-opacity treatment even after a Weapon is selected; Weapon focus no longer applies the muted detail-row class to those Unit Tags. A selected Weapon is the active Weapon, so all Tags shown for that selected Weapon use the existing active/orange full-opacity presentation. The same visual rule applies to Boyz custom Weapon rows. Stored roster Tag state, Tag click/write behavior introduced in V31.143, locked/innate handling, Tag data, selection mechanics, grid/layout, typography, box geometry, and persistence remain unchanged.
+    Risk areas: New View Unit-level Tag focus presentation and selected-Weapon Tag presentation only. No Ability Tag presentation, CSV data, Weapon/Unit stats, Probable, lock/FIX, Cards, Waha behavior, Edit, or persistence contract changed.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.133
-    Scope: Move unified New View Ability details beside their title buttons. Each Ability now occupies one full-width outer grid block: the Ability title remains A-E and two standard rows tall; when that Ability is open, its Short Description appears beside the title in F-P and its structured Tags appear immediately below the Description in the same F-P area. The right-side Description/Tag stack grows vertically as needed while the title remains anchored at the top-left. Abilities are stacked vertically so expanded side detail cannot overlap another Ability. The existing one-row gap after Weapons, standard muted title typography, independent per-Ability persistent open/close state, V31.131 Weapon Tag focus, lighter muted-Tag Unit separators, Ability filtering/data authority, and all other New View behavior remain unchanged.
-    Risk areas: Unified New View Ability geometry/reflow only. No Ability data/order/filter semantics, Old Edit authority, Weapon/Boyz data, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, or Version controls changed.
+    CHANGE NOTE - WH40k_11th_V31.143
+    Scope: Unified New View Tag interaction. Ability Tags are now tappable and toggle the same per-roster Unit Tag state used by Old View; their CSV/default state remains the initial authority and their existing On/Off presentation remains unchanged. Weapon Tags are tappable only while their Weapon is selected; locked/innate Weapon Tags remain immutable and On. The custom Boyz Weapon renderer follows the same selected-Weapon and locked-Tag contract. Successful toggles persist through the existing roster library and refresh New View from the resulting roster state while preserving the open Unit and selected Weapon. New View Lock is a hard gate: locked snapshots remain inert and no Tag state write, persistence, recalculation, or refresh is started from a Tag click while locked. Ability-title Active and Short/Long description interactions remain separate from Tag state.
+    Risk areas: New View Tag interaction and roster-state bridge only. No Tag palette, typography, box geometry, grid/layout, CSV data, Tag definitions, Weapon-selection rules, Probable activation policy, FIX mode, Cards, Waha, or Edit controls changed.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.132
-    Scope: Refine unified New View Unit Ability controls. Ability titles now use the standard muted New View title typography/state: Roboto 900 at body size with line-height 1 and the existing 50% muted text color, while open Ability titles retain the existing green active state. Ability boxes are four grid columns wide, allowing four boxes across the 16-column grid, and remain two rows tall while collapsed. Ability expansion state is now independent per Ability and per Unit: opening another Ability no longer closes an already-open Ability, and each Short Description/Tag area remains open until that same Ability is tapped closed. The existing one-row gap after Weapons is retained. The full-width focus separator rows above and below the opened Unit now use the existing muted Tag gray rgba(154,160,166,.5) instead of the darker card gray.
-    Risk areas: Unified New View Ability presentation/transient expansion state and focus-separator color only. V31.131 Weapon Tag focus, Ability data/order/filtering and Old Edit authority, Weapon/Boyz rendering, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, and Version controls remain unchanged.
+    CHANGE NOTE - WH40k_11th_V31.142
+    Scope: Unified New View muted Weapon Tag presentation only. Muted Weapon Tags now use the exact V31.132 muted text color rgba(154,160,166,.5) and explicitly use the same 700-weight meta-size Roboto typography as the compact FNP/Waha boxes above the Weapon table. Their normal Tag background, border, dimensions, spacing, wrapping, and row geometry are unchanged. Active/orange Weapon Tag styling is unchanged, and V31.139 selection gating remains authoritative: Weapon Tags stay muted until their Weapon is selected. Ability Tag presentation/state is unchanged.
+    Risk areas: Unified New View muted Weapon Tag text color/typography only. No Tag data/state writes, Weapon selection, Ability behavior, CSV data, Probable, grid/layout, lock/FIX, Boyz data, Cards, Waha behavior, Edit, or persistence behavior changed.
   -->
 
   <!--
-    CHANGE NOTE - WH40k_11th_V31.131
-    Scope: Add active-Weapon Tag focus in unified New View. With no Weapon selected, every Weapon Tag row that is normally visible remains visible in the existing muted treatment. When a Weapon becomes active, only that Weapon's separate Tag row remains visible; all other Weapon Tag rows disappear while every Weapon name/stat row remains visible. The Weapon stack compacts by exactly the removed Tag rows, existing Unit Abilities reflow immediately below the compacted Weapon area, the gray focus separators and open-Unit wrap continue to bound the visible Unit content, and the selected-Weapon wrap includes the active Tag row when present. Selecting a different Weapon switches the visible Tag row; deselecting restores all normally-visible muted Weapon Tag rows. Boyz sub-unit Weapons use the same behavior.
-    Risk areas: Unified New View Weapon Tag-row visibility/compaction and Boyz direct-selection reflow only. Ability Tags are explicitly excluded. No Weapon/Ability data, filter semantics, Unit stats, Edit, CSV data, lock/frozen state, FIX reports, Cards, Waha, Probable, persistence, or Version-control behavior changes.
+    CHANGE NOTE - WH40k_11th_V31.141
+    Scope: Unified New View muted Tag colors only. Restore the V31.132 muted Tag treatment: a muted Tag changes only to the existing muted text color while retaining the normal Tag box background/border. Remove the later rgba(154,160,166,.5) fill from muted Weapon and Ability Tag boxes. Active/orange Tag styling is unchanged. V31.139 remains authoritative for Weapon Tags staying muted until their Weapon is selected; V31.140 Ability Tag state precedence is unchanged. Focus/header separator rows, grid/layout, sizing, filters, Tag data, persistence, calculations, and behavior remain unchanged.
+    Risk areas: Unified New View muted Tag palette only. No Tag state logic, Weapon selection, Ability behavior, CSV data, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
   -->
 
 
@@ -5471,20 +5471,31 @@
 .view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:rgba(154,160,166,.5);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
 
 
-/* V31.135 always-open Unit Ability side-detail layout in unified New View. */
+/* V31.137 Ability description layout/color fixes in unified New View. */
 .unit-ability-block{grid-column:1/span 16;z-index:4;box-sizing:border-box;align-self:start;display:grid;grid-template-columns:repeat(16,var(--cell));align-items:stretch;min-width:0;min-height:calc(var(--cell)*2);background:transparent;overflow:visible}
 .unit-ability-button{grid-column:1/span 5;grid-row:1;box-sizing:border-box;align-self:stretch;min-width:0;min-height:calc(var(--cell)*2);height:auto;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 8px;white-space:normal;overflow:hidden;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:rgba(241,243,244,.5);font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
 .unit-ability-button.ability-active{color:#80d6a3!important}
-.unit-ability-detail{grid-column:6/span 11;grid-row:1;box-sizing:border-box;align-self:start;min-width:0;display:flex;flex-direction:column;align-items:stretch;background:transparent;overflow:visible}
-.unit-ability-description-row{box-sizing:border-box;width:100%;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
-.unit-ability-tags{box-sizing:border-box;width:100%;min-width:0;min-height:var(--cell);display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent}
+.unit-ability-detail{grid-column:6/span 11;grid-row:1;box-sizing:border-box;align-self:stretch;height:100%;min-width:0;display:flex;flex-direction:column;align-items:stretch;background:transparent;overflow:visible}
+.unit-ability-description-row{box-sizing:border-box;width:100%;min-width:0;min-height:calc(var(--cell)*2);flex:1 1 auto;display:flex;align-items:center;padding:4px 8px;white-space:pre-line;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:rgba(241,243,244,.5);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
+.unit-ability-block.ability-active .unit-ability-description-row{color:#80d6a3!important}
+.unit-ability-tags{box-sizing:border-box;width:100%;min-width:0;min-height:var(--cell);flex:0 0 auto;display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent}
 .unit-ability-tags .weapon-tag{height:auto;min-height:var(--std);max-width:100%;white-space:normal;overflow:visible;text-align:center;line-height:1.1;padding-top:4px;padding-bottom:4px}
 
-/* V31.134 New View muted-gray presentation */
-.view-focus-separator{background:rgba(154,160,166,.5)}
+
+
+/* V31.138 roster-backed Tag state display in unified New View. */
+.weapon-tags .weapon-tag.tag-state-on,.unit-ability-tags .weapon-tag.tag-state-on{background:var(--btn)!important;color:var(--orange)!important}
+.weapon-tags .weapon-tag.tag-state-off{color:rgba(154,160,166,.5)!important;font:700 var(--meta)/1 Roboto,Arial,sans-serif!important}
+.unit-ability-tags .weapon-tag.tag-state-off{color:var(--muted)!important}
+
+/* V31.140 Ability Tag state outranks Weapon-selection muting. */
+.unit-ability-tags .weapon-tag.ability-tag-state.tag-state-on{background:var(--btn)!important;color:var(--orange)!important;opacity:1!important}
+.unit-ability-tags .weapon-tag.ability-tag-state.tag-state-off{color:var(--muted)!important;opacity:1!important}
+
+/* V31.136 New View focus rows follow existing muted Weapon Tags */
+.view-focus-separator{background:var(--btn)}
 .view-stat-header.view-stat-header-focus{background:transparent}
 .view-stat-header.view-stat-header-focus .view-stat-label{color:var(--muted);font:700 var(--meta)/1 Roboto,Arial,sans-serif}
-.weapon-tags.weapon-muted .weapon-tag{background:rgba(154,160,166,.5)}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -6499,9 +6510,27 @@ function applyActiveUnitDetails(){
     const tagRow=grid.querySelector(&#x27;.weapon-tags-&#x27;+i);
     if(tagRow){
       const tags=weapon&amp;&amp;Array.isArray(weapon.tags)?weapon.tags:[];
+      const tagStates=weapon&amp;&amp;Array.isArray(weapon.tagStates)?weapon.tagStates:[];
       tagRow.dataset.liveAvailable=tags.length?&#x27;true&#x27;:&#x27;false&#x27;;
       const tagEls=[...tagRow.querySelectorAll(&#x27;.weapon-tag&#x27;)];
-      tagEls.forEach((el,index)=&gt;{el.textContent=String(tags[index]||&#x27;&#x27;);el.style.display=tags[index]?&#x27;inline-flex&#x27;:&#x27;none&#x27;});
+      tagEls.forEach((el,index)=&gt;{
+        const label=String(tags[index]||&#x27;&#x27;);
+        const state=tagStates[index]||null;
+        const tagActive=state?Boolean(state.active):true;
+        const weaponSelected=selectedWeaponIndex===i;
+        const displayActive=weaponSelected;
+        el.textContent=label;
+        el.style.display=label?&#x27;inline-flex&#x27;:&#x27;none&#x27;;
+        el.classList.toggle(&#x27;tag-state-on&#x27;,Boolean(label)&amp;&amp;displayActive);
+        el.classList.toggle(&#x27;tag-state-off&#x27;,Boolean(label)&amp;&amp;!displayActive);
+        el.classList.toggle(&#x27;tag-state-locked&#x27;,Boolean(label)&amp;&amp;Boolean(state&amp;&amp;state.locked));
+        el.dataset.tagActive=tagActive?&#x27;true&#x27;:&#x27;false&#x27;;
+        el.dataset.tagLocked=state&amp;&amp;state.locked?&#x27;true&#x27;:&#x27;false&#x27;;
+        el.dataset.weaponSelected=weaponSelected?&#x27;true&#x27;:&#x27;false&#x27;;
+        el.dataset.weaponIndex=String(i);
+        el.dataset.tagIndex=String(index);
+        el.onclick=event=&gt;{event.stopPropagation();toggleNewViewWeaponTag(i,index)};
+      });
     }
   }
 }
@@ -6589,8 +6618,25 @@ function makeBoyzWeaponTags(template,weapon){
   row.className=&#x27;weapon-tags boyz-subunit-node boyz-subunit-tags&#x27;;
   row.style.display=&#x27;flex&#x27;;
   row.dataset.weaponId=String(weapon.weaponId||&#x27;&#x27;);
+  const tagStates=Array.isArray(weapon.tagStates)?weapon.tagStates:[];
+  const weaponSelected=normalizeBoyzWeaponId(boyzNewViewSelectedWeaponId)===normalizeBoyzWeaponId(weapon.weaponId);
   const tagEls=[...row.querySelectorAll(&#x27;.weapon-tag&#x27;)];
-  tagEls.forEach((el,index)=&gt;{el.textContent=String(tags[index]||&#x27;&#x27;);el.style.display=tags[index]?&#x27;inline-flex&#x27;:&#x27;none&#x27;});
+  tagEls.forEach((el,index)=&gt;{
+    const label=String(tags[index]||&#x27;&#x27;);
+    const state=tagStates[index]||null;
+    const tagActive=state?Boolean(state.active):true;
+    const displayActive=weaponSelected;
+    el.textContent=label;
+    el.style.display=label?&#x27;inline-flex&#x27;:&#x27;none&#x27;;
+    el.classList.toggle(&#x27;tag-state-on&#x27;,Boolean(label)&amp;&amp;displayActive);
+    el.classList.toggle(&#x27;tag-state-off&#x27;,Boolean(label)&amp;&amp;!displayActive);
+    el.classList.toggle(&#x27;tag-state-locked&#x27;,Boolean(label)&amp;&amp;Boolean(state&amp;&amp;state.locked));
+    el.dataset.tagActive=tagActive?&#x27;true&#x27;:&#x27;false&#x27;;
+    el.dataset.tagLocked=state&amp;&amp;state.locked?&#x27;true&#x27;:&#x27;false&#x27;;
+    el.dataset.weaponSelected=weaponSelected?&#x27;true&#x27;:&#x27;false&#x27;;
+    el.dataset.tagIndex=String(index);
+    el.onclick=event=&gt;{event.stopPropagation();toggleBoyzNewViewWeaponTag(String(weapon.weaponId||&#x27;&#x27;),index)};
+  });
   return row;
 }
 function renderBoyzNewViewSubunits(data){
@@ -6665,7 +6711,7 @@ function syncWeaponLayout(){
   if(selectedWeaponIndex!==null&amp;&amp;!visible.includes(selectedWeaponIndex))selectedWeaponIndex=null;
   const ordered=selectedWeaponIndex===null?visible:[selectedWeaponIndex,...visible.filter(i=&gt;i!==selectedWeaponIndex)];
   const hasSelection=selectedWeaponIndex!==null&amp;&amp;visible.includes(selectedWeaponIndex);
-  grid.querySelectorAll(&#x27;.detail-box-row .detail-box&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;);el.classList.toggle(&#x27;detail-row-muted&#x27;,hasSelection)});
+  grid.querySelectorAll(&#x27;.detail-box-row .detail-box&#x27;).forEach(el=&gt;{el.classList.remove(&#x27;keyword-muted&#x27;,&#x27;detail-row-muted&#x27;)});
   const showWeapons=Boolean(activeUnitIndex!==null&amp;&amp;ordered.length);
   const activeUnitRow=activeUnitIndex===null?null:unitRow(activeUnitIndex);
   const activeRow=activeUnitRow?parseInt(activeUnitRow.style.gridRow||getComputedStyle(activeUnitRow).gridRowStart,10):FIRST_UNIT_ROW;
@@ -7151,6 +7197,91 @@ function toggleNewViewAbilityDescription(key){
   else longAbilityDescriptionKeys.add(token);
   syncWeaponLayout();
 }
+function refreshNewViewAfterTagMutation(){
+  if(newViewProcessingLocked()||activeUnitIndex===null)return false;
+  const rowIndex=activeUnitIndex;
+  const currentData=unitDataByIndex[rowIndex];
+  const entryId=String(currentData&amp;&amp;currentData.entryId||&#x27;&#x27;).trim();
+  if(!currentData||!entryId)return false;
+  const savedWeapon=selectedWeaponIndex!==null&amp;&amp;Array.isArray(currentData.weapons)?currentData.weapons[selectedWeaponIndex-1]:null;
+  const savedWeaponId=String(savedWeapon&amp;&amp;savedWeapon.weaponId||&#x27;&#x27;);
+  const savedAbility=selectedAbilityKey;
+  let fresh=null;
+  try{
+    if(parent&amp;&amp;typeof parent.getAlternateViewUnitData===&#x27;function&#x27;)fresh=parent.getAlternateViewUnitData(0,entryId);
+  }catch(_){fresh=null}
+  if(!fresh)return false;
+  const nextData=Object.assign({},currentData,fresh,{kind:&#x27;unit&#x27;,entryId});
+  unitDataByIndex[rowIndex]=nextData;
+  if(Array.isArray(currentViewRosterRows)&amp;&amp;currentViewRosterRows[rowIndex]&amp;&amp;currentViewRosterRows[rowIndex].kind===&#x27;unit&#x27;){
+    currentViewRosterRows[rowIndex]=Object.assign({},currentViewRosterRows[rowIndex],fresh,{kind:&#x27;unit&#x27;,entryId});
+  }
+  selectedWeaponIndex=null;
+  if(savedWeaponId&amp;&amp;Array.isArray(nextData.weapons)){
+    const restoredWeaponIndex=nextData.weapons.findIndex(weapon=&gt;String(weapon&amp;&amp;weapon.weaponId||&#x27;&#x27;)===savedWeaponId);
+    if(restoredWeaponIndex&gt;=0)selectedWeaponIndex=restoredWeaponIndex+1;
+  }
+  selectedAbilityKey=savedAbility;
+  applyActiveUnitDetails();
+  syncUnitDetailVisibility();
+  return true;
+}
+function toggleNewViewAbilityTag(key,tag){
+  if(newViewProcessingLocked()||!tag||tag.locked)return false;
+  const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
+  const entryId=String(data&amp;&amp;data.entryId||&#x27;&#x27;);
+  const rawTag=String(tag.tag||tag.label||&#x27;&#x27;).trim();
+  if(!entryId||!rawTag)return false;
+  let result=null;
+  try{
+    if(parent&amp;&amp;typeof parent.toggleAlternateViewAbilityTag===&#x27;function&#x27;){
+      result=parent.toggleAlternateViewAbilityTag({
+        entryId,
+        sourceKind:String(tag.sourceKind||&#x27;ability&#x27;),
+        itemKey:String(key||&#x27;&#x27;),
+        tag:rawTag,
+        category:String(tag.category||&#x27;&#x27;),
+        defaultOn:tag.defaultOn!==false
+      });
+    }
+  }catch(_){result=null}
+  if(!result||!result.ok)return false;
+  return refreshNewViewAfterTagMutation();
+}
+function toggleNewViewWeaponTag(weaponIndex,tagIndex){
+  if(newViewProcessingLocked()||selectedWeaponIndex!==weaponIndex)return false;
+  const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
+  const weapon=data&amp;&amp;Array.isArray(data.weapons)?data.weapons[weaponIndex-1]:null;
+  const state=weapon&amp;&amp;Array.isArray(weapon.tagStates)?weapon.tagStates[tagIndex]:null;
+  const tag=String(state&amp;&amp;state.tag||weapon&amp;&amp;Array.isArray(weapon.tags)&amp;&amp;weapon.tags[tagIndex]||&#x27;&#x27;).trim();
+  if(!data||!weapon||!tag||state&amp;&amp;state.locked)return false;
+  let result=null;
+  try{
+    if(parent&amp;&amp;typeof parent.toggleAlternateViewWeaponTag===&#x27;function&#x27;){
+      result=parent.toggleAlternateViewWeaponTag({entryId:String(data.entryId||&#x27;&#x27;),weaponKey:String(weapon.weaponId||&#x27;&#x27;),tag});
+    }
+  }catch(_){result=null}
+  if(!result||!result.ok)return false;
+  return refreshNewViewAfterTagMutation();
+}
+function toggleBoyzNewViewWeaponTag(weaponId,tagIndex){
+  if(newViewProcessingLocked())return false;
+  const cleanWeaponId=normalizeBoyzWeaponId(weaponId);
+  if(!cleanWeaponId||normalizeBoyzWeaponId(boyzNewViewSelectedWeaponId)!==cleanWeaponId)return false;
+  const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
+  const weapon=data&amp;&amp;Array.isArray(data.weapons)?data.weapons.find(item=&gt;normalizeBoyzWeaponId(item&amp;&amp;item.weaponId)===cleanWeaponId):null;
+  const state=weapon&amp;&amp;Array.isArray(weapon.tagStates)?weapon.tagStates[tagIndex]:null;
+  const tag=String(state&amp;&amp;state.tag||weapon&amp;&amp;Array.isArray(weapon.tags)&amp;&amp;weapon.tags[tagIndex]||&#x27;&#x27;).trim();
+  if(!data||!weapon||!tag||state&amp;&amp;state.locked)return false;
+  let result=null;
+  try{
+    if(parent&amp;&amp;typeof parent.toggleAlternateViewWeaponTag===&#x27;function&#x27;){
+      result=parent.toggleAlternateViewWeaponTag({entryId:String(data.entryId||&#x27;&#x27;),weaponKey:String(weapon.weaponId||&#x27;&#x27;),tag});
+    }
+  }catch(_){result=null}
+  if(!result||!result.ok)return false;
+  return refreshNewViewAfterTagMutation();
+}
 function newViewLastVisibleWeaponRow(detailStartRow){
   let bottom=detailStartRow;
   grid.querySelectorAll(&#x27;.weapon-header,.weapon-row,.weapon-tags,.boyz-subunit-node&#x27;).forEach(el=&gt;{
@@ -7193,8 +7324,15 @@ function makeNewViewAbilityBlock(startRow,key,ability,visibleTags,active,useLong
     tags.className=&#x27;unit-ability-tags&#x27;;
     visibleTags.forEach(tag=&gt;{
       const badge=document.createElement(&#x27;span&#x27;);
-      badge.className=&#x27;weapon-tag&#x27;;
+      const tagActive=Boolean(tag&amp;&amp;tag.active);
+      badge.className=&#x27;weapon-tag ability-tag-state &#x27;+(tagActive?&#x27;tag-state-on&#x27;:&#x27;tag-state-off&#x27;)+(tag&amp;&amp;tag.locked?&#x27; tag-state-locked&#x27;:&#x27;&#x27;);
       badge.textContent=String(tag&amp;&amp;tag.label||&#x27;&#x27;);
+      badge.dataset.tagActive=tagActive?&#x27;true&#x27;:&#x27;false&#x27;;
+      badge.dataset.tagLocked=tag&amp;&amp;tag.locked?&#x27;true&#x27;:&#x27;false&#x27;;
+      badge.dataset.tagValue=String(tag&amp;&amp;tag.tag||tag&amp;&amp;tag.label||&#x27;&#x27;);
+      badge.dataset.tagCategory=String(tag&amp;&amp;tag.category||&#x27;&#x27;);
+      badge.dataset.tagDefaultOn=tag&amp;&amp;tag.defaultOn===false?&#x27;false&#x27;:&#x27;true&#x27;;
+      badge.onclick=event=&gt;{event.stopPropagation();toggleNewViewAbilityTag(key,tag)};
       tags.appendChild(badge);
     });
     tags.onclick=event=&gt;{event.stopPropagation()};
@@ -9968,7 +10106,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.135";
+    const APP_VERSION = "31.145";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -14387,10 +14525,21 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
-    window.getAlternateViewUnitData = function(index) {
+    window.getAlternateViewUnitData = function(index, entryId = "") {
       const roster = appEditMode && viewEditRosterDraft ? getViewEditRoster() : getActiveRoster();
-      const models = getRosterEntryModels(roster).filter(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
-      const model = models[Math.max(0, Number(index) || 0)] || null;
+      const requestedEntryId = String(entryId || "").trim();
+      let model = null;
+      if (requestedEntryId && roster && Array.isArray(roster.entries)) {
+        const entryIndex = roster.entries.findIndex(item => item && String(item.entryId || "").trim() === requestedEntryId);
+        const targetEntry = entryIndex >= 0 ? roster.entries[entryIndex] : null;
+        if (targetEntry && !isSpacerEntry(targetEntry) && !isRosterNoteEntry(targetEntry) && !isRosterEntryPendingDeletion(targetEntry)) {
+          model = getRosterEntryModel(targetEntry, entryIndex, roster, null);
+          if (model && (model.isSpacer || model.isNote || model.isDeleted || model.isMissingUnit)) model = null;
+        }
+      } else {
+        const models = getRosterEntryModels(roster).filter(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
+        model = models[Math.max(0, Number(index) || 0)] || null;
+      }
       if (!model) return null;
       const stats = model.stats || {};
       const entry = model.entry || (roster && Array.isArray(roster.entries) ? roster.entries.find(item => item && item.entryId === model.entryId) : null);
@@ -14410,13 +14559,18 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
               if (sourceRef && rosterEntryHasHiddenSource(entry, sourceRef)) return null;
               const order = getRosterEntryAbilitySortOrder(entry, orderKey, defaultOrder);
               if (order === 8 || order === 9) return null;
+              const defaultTagsOn = getRosterTaggedSourceDefaultActive("ability", sourceItem);
               const tags = getAbilityProtectedModifierTagAssignments(effectiveItem).map(assignment => {
                 const definition = getTagDefinitionByTagAndCategory(assignment.tag, assignment.category);
                 if (isPromotedUnitLevelTag(assignment.tag, definition)) return null;
                 return {
                   label: getAbilityTagDisplayLabel(assignment.tag),
+                  tag: String(assignment.tag || ""),
                   category: String(assignment.category || ""),
-                  scope: getTagDefinitionWeaponScope(definition, assignment.category).kind
+                  scope: getTagDefinitionWeaponScope(definition, assignment.category).kind,
+                  defaultOn: Boolean(defaultTagsOn),
+                  active: getRosterEntryAbilityTagState(entry, sourceItem, assignment.tag, defaultTagsOn, assignment.category),
+                  locked: false
                 };
               }).filter(Boolean);
               return {
@@ -14454,6 +14608,15 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
           const range = String(weapon.range ?? "").trim();
           const melee = range === "-" || range.toLowerCase() === "melee" || /\(melee\)/i.test(String(weapon.name || ""));
           const scope = melee ? "MELEE" : (range ? "SHOOT" : "OTHER");
+          const tags = splitWeaponAbilities(weapon.weaponAbility);
+          const tagStates = tags.map(tag => {
+            const locked = isInnateWeaponAbilityTag(weapon, tag);
+            return {
+              tag: String(tag || ""),
+              active: locked ? true : getRosterEntryWeaponTagState(entry, weapon, tag, true),
+              locked: Boolean(locked)
+            };
+          });
           return {
             weaponId: String(weapon.weaponId || ""),
             quantity: entry && unit ? getRosterWeaponQuantity(entry, unit, weapon) : 0,
@@ -14464,7 +14627,8 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
             strength: String(weapon.strength ?? ""),
             ap: String(weapon.ap ?? ""),
             damage: String(weapon.damage ?? ""),
-            tags: splitWeaponAbilities(weapon.weaponAbility),
+            tags,
+            tagStates,
             scope
           };
         })
@@ -14519,6 +14683,49 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       }).filter(Boolean);
     };
 
+
+    window.toggleAlternateViewAbilityTag = function(payload = {}) {
+      if (appEditMode) return { ok: false };
+      const roster = getActiveRoster();
+      const entryId = String(payload.entryId || "").trim();
+      const sourceKind = String(payload.sourceKind || "ability").trim().toLowerCase() || "ability";
+      const itemKey = String(payload.itemKey || "").trim();
+      const tag = String(payload.tag || "").trim();
+      const category = String(payload.category || "").trim();
+      const defaultOn = payload.defaultOn !== false;
+      const entry = getRosterEntryById(roster, entryId);
+      const ability = resolveRosterTaggedSourceAbility(sourceKind, itemKey, roster, entry);
+      if (!entry || !ability || !tag) return { ok: false };
+
+      const current = getRosterEntryAbilityTagState(entry, ability, tag, defaultOn, category);
+      const next = !current;
+      if (!setRosterEntryAbilityTagState(entry, ability, tag, next, defaultOn, category)) return { ok: false };
+      rosterWorkingStateDirty = true;
+      invalidateRosterModeDomCache("view");
+      invalidateRosterModeDomCache("edit");
+      persistRosterLibrary({ reason: "new-view-ability-tag", skipNoteDeleteFinalize: true });
+      return { ok: true, active: next };
+    };
+
+    window.toggleAlternateViewWeaponTag = function(payload = {}) {
+      if (appEditMode) return { ok: false };
+      const roster = getActiveRoster();
+      const entryId = String(payload.entryId || "").trim();
+      const weaponKey = String(payload.weaponKey || payload.weaponId || "").trim();
+      const tag = String(payload.tag || "").trim();
+      const entry = getRosterEntryById(roster, entryId);
+      if (!entry || !weaponKey || !tag) return { ok: false };
+      if (isInnateWeaponAbilityTag(weaponKey, tag)) return { ok: false, locked: true, active: true };
+
+      const current = getRosterEntryWeaponTagState(entry, weaponKey, tag, true);
+      const next = !current;
+      if (!setRosterEntryWeaponTagState(entry, weaponKey, tag, next, true)) return { ok: false };
+      rosterWorkingStateDirty = true;
+      invalidateRosterModeDomCache("view");
+      invalidateRosterModeDomCache("edit");
+      persistRosterLibrary({ reason: "new-view-weapon-tag", skipNoteDeleteFinalize: true });
+      return { ok: true, active: next };
+    };
 
     window.getNewViewFixReportItems = function() {
       const roster = getViewEditRoster();
@@ -31745,7 +31952,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.135',
+        version: 'V31.145',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,

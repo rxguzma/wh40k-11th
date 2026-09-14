@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.144</title>
+  <title>WH40k 11th V31.145</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.144; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.145; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.145
+    Scope: New View Tag performance. A Tag mutation is now strictly Unit-scoped. The parent New View data bridge accepts the clicked roster entryId and builds only that single roster-entry model instead of calling getRosterEntryModels() across the full roster. After a successful Ability or Weapon Tag toggle, New View replaces only the active Unit's cached data and redraws only that Unit's open details. It no longer calls getAlternateViewRosterRows(), renderNewViewRosterRows(), title/header refresh, Version layout, or any other roster-wide New View refresh from a Tag tap. The selected Weapon and Ability presentation state are preserved. New View Lock remains a hard gate before any Tag write or refresh.
+    Risk areas: Tag-tap refresh scope only. Existing V31.144 Tag colors/presentation, Tag persistence, per-unit state, locked/innate Tags, Unit/Weapon selection rules, grid/layout, Probable activation policy, FIX mode, Cards, Waha, Edit, and CSV data are unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.144
     Scope: Unified New View active Unit/Weapon Tag presentation. An opened Unit is the active Unit, so its compact Unit-level Tags remain in their existing active/orange full-opacity treatment even after a Weapon is selected; Weapon focus no longer applies the muted detail-row class to those Unit Tags. A selected Weapon is the active Weapon, so all Tags shown for that selected Weapon use the existing active/orange full-opacity presentation. The same visual rule applies to Boyz custom Weapon rows. Stored roster Tag state, Tag click/write behavior introduced in V31.143, locked/innate handling, Tag data, selection mechanics, grid/layout, typography, box geometry, and persistence remain unchanged.
     Risk areas: New View Unit-level Tag focus presentation and selected-Weapon Tag presentation only. No Ability Tag presentation, CSV data, Weapon/Unit stats, Probable, lock/FIX, Cards, Waha behavior, Edit, or persistence contract changed.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.141
     Scope: Unified New View muted Tag colors only. Restore the V31.132 muted Tag treatment: a muted Tag changes only to the existing muted text color while retaining the normal Tag box background/border. Remove the later rgba(154,160,166,.5) fill from muted Weapon and Ability Tag boxes. Active/orange Tag styling is unchanged. V31.139 remains authoritative for Weapon Tags staying muted until their Weapon is selected; V31.140 Ability Tag state precedence is unchanged. Focus/header separator rows, grid/layout, sizing, filters, Tag data, persistence, calculations, and behavior remain unchanged.
     Risk areas: Unified New View muted Tag palette only. No Tag state logic, Weapon selection, Ability behavior, CSV data, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.140
-    Scope: Unified New View Tag presentation precedence only. Ability Tags now carry an explicit Ability-owned state marker and their roster-backed On/Off state always outranks the Weapon-selection muting rule: an Ability Tag that is On uses the existing active Tag treatment even when no Weapon is selected; an Ability Tag that is Off remains in the existing muted treatment. V31.139 remains authoritative for ordinary Weapon Tags, which stay muted until their own Weapon is selected and then reveal their roster-backed state. No Tag click handlers are added in this phase. No Tag data, roster writes, persistence, calculations, Weapon selection, grid/layout, sizing, filters, Ability-title behavior, or lock behavior changes.
-    Risk areas: Unified New View Ability Tag visual precedence only. No Weapon Tag gate changes, CSV data, Unit/Weapon calculations, Probable, lock/FIX, Boyz data, Cards, Waha, Edit, or persistence behavior changed.
   -->
 
 
@@ -7198,32 +7198,33 @@ function toggleNewViewAbilityDescription(key){
   syncWeaponLayout();
 }
 function refreshNewViewAfterTagMutation(){
-  if(newViewProcessingLocked())return false;
-  const currentData=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
-  const savedEntryId=String(currentData&amp;&amp;currentData.entryId||&#x27;&#x27;);
-  const savedWeapon=selectedWeaponIndex!==null&amp;&amp;currentData&amp;&amp;Array.isArray(currentData.weapons)?currentData.weapons[selectedWeaponIndex-1]:null;
+  if(newViewProcessingLocked()||activeUnitIndex===null)return false;
+  const rowIndex=activeUnitIndex;
+  const currentData=unitDataByIndex[rowIndex];
+  const entryId=String(currentData&amp;&amp;currentData.entryId||&#x27;&#x27;).trim();
+  if(!currentData||!entryId)return false;
+  const savedWeapon=selectedWeaponIndex!==null&amp;&amp;Array.isArray(currentData.weapons)?currentData.weapons[selectedWeaponIndex-1]:null;
   const savedWeaponId=String(savedWeapon&amp;&amp;savedWeapon.weaponId||&#x27;&#x27;);
   const savedAbility=selectedAbilityKey;
-  let rows=[];
-  try{rows=parent&amp;&amp;typeof parent.getAlternateViewRosterRows===&#x27;function&#x27;?parent.getAlternateViewRosterRows():[]}catch(_){rows=[]}
-  const ok=renderNewViewRosterRows(rows);
-  if(savedEntryId){
-    const restoredIndex=rows.findIndex(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;&amp;&amp;String(row.entryId||&#x27;&#x27;)===savedEntryId);
-    if(restoredIndex&gt;=0)activeUnitIndex=restoredIndex;
+  let fresh=null;
+  try{
+    if(parent&amp;&amp;typeof parent.getAlternateViewUnitData===&#x27;function&#x27;)fresh=parent.getAlternateViewUnitData(0,entryId);
+  }catch(_){fresh=null}
+  if(!fresh)return false;
+  const nextData=Object.assign({},currentData,fresh,{kind:&#x27;unit&#x27;,entryId});
+  unitDataByIndex[rowIndex]=nextData;
+  if(Array.isArray(currentViewRosterRows)&amp;&amp;currentViewRosterRows[rowIndex]&amp;&amp;currentViewRosterRows[rowIndex].kind===&#x27;unit&#x27;){
+    currentViewRosterRows[rowIndex]=Object.assign({},currentViewRosterRows[rowIndex],fresh,{kind:&#x27;unit&#x27;,entryId});
   }
   selectedWeaponIndex=null;
-  const restoredData=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
-  if(savedWeaponId&amp;&amp;restoredData&amp;&amp;Array.isArray(restoredData.weapons)){
-    const restoredWeaponIndex=restoredData.weapons.findIndex(weapon=&gt;String(weapon&amp;&amp;weapon.weaponId||&#x27;&#x27;)===savedWeaponId);
+  if(savedWeaponId&amp;&amp;Array.isArray(nextData.weapons)){
+    const restoredWeaponIndex=nextData.weapons.findIndex(weapon=&gt;String(weapon&amp;&amp;weapon.weaponId||&#x27;&#x27;)===savedWeaponId);
     if(restoredWeaponIndex&gt;=0)selectedWeaponIndex=restoredWeaponIndex+1;
   }
   selectedAbilityKey=savedAbility;
   applyActiveUnitDetails();
   syncUnitDetailVisibility();
-  refreshNewViewTitleFromLegacy();
-  cachedLiveViewHeader=captureNewViewHeaderSnapshot();
-  hasLiveViewCache=true;
-  return ok;
+  return true;
 }
 function toggleNewViewAbilityTag(key,tag){
   if(newViewProcessingLocked()||!tag||tag.locked)return false;
@@ -10105,7 +10106,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.144";
+    const APP_VERSION = "31.145";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -14524,10 +14525,21 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     // UI ownership: direct title navigation replaces the retired cycling-only
     // interaction while preserving every existing screen save checkpoint.
-    window.getAlternateViewUnitData = function(index) {
+    window.getAlternateViewUnitData = function(index, entryId = "") {
       const roster = appEditMode && viewEditRosterDraft ? getViewEditRoster() : getActiveRoster();
-      const models = getRosterEntryModels(roster).filter(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
-      const model = models[Math.max(0, Number(index) || 0)] || null;
+      const requestedEntryId = String(entryId || "").trim();
+      let model = null;
+      if (requestedEntryId && roster && Array.isArray(roster.entries)) {
+        const entryIndex = roster.entries.findIndex(item => item && String(item.entryId || "").trim() === requestedEntryId);
+        const targetEntry = entryIndex >= 0 ? roster.entries[entryIndex] : null;
+        if (targetEntry && !isSpacerEntry(targetEntry) && !isRosterNoteEntry(targetEntry) && !isRosterEntryPendingDeletion(targetEntry)) {
+          model = getRosterEntryModel(targetEntry, entryIndex, roster, null);
+          if (model && (model.isSpacer || model.isNote || model.isDeleted || model.isMissingUnit)) model = null;
+        }
+      } else {
+        const models = getRosterEntryModels(roster).filter(item => item && !item.isSpacer && !item.isNote && !item.isDeleted && !item.isMissingUnit);
+        model = models[Math.max(0, Number(index) || 0)] || null;
+      }
       if (!model) return null;
       const stats = model.stats || {};
       const entry = model.entry || (roster && Array.isArray(roster.entries) ? roster.entries.find(item => item && item.entryId === model.entryId) : null);
@@ -31940,7 +31952,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.144',
+        version: 'V31.145',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
