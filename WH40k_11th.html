@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.131</title>
+  <title>WH40k 11th V31.132</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.131; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.132; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.132
+    Scope: Refine unified New View Unit Ability controls. Ability titles now use the standard muted New View title typography/state: Roboto 900 at body size with line-height 1 and the existing 50% muted text color, while open Ability titles retain the existing green active state. Ability boxes are four grid columns wide, allowing four boxes across the 16-column grid, and remain two rows tall while collapsed. Ability expansion state is now independent per Ability and per Unit: opening another Ability no longer closes an already-open Ability, and each Short Description/Tag area remains open until that same Ability is tapped closed. The existing one-row gap after Weapons is retained. The full-width focus separator rows above and below the opened Unit now use the existing muted Tag gray rgba(154,160,166,.5) instead of the darker card gray.
+    Risk areas: Unified New View Ability presentation/transient expansion state and focus-separator color only. V31.131 Weapon Tag focus, Ability data/order/filtering and Old Edit authority, Weapon/Boyz rendering, Unit stats, Probable, lock/FIX, Cards, Waha, CSV data, persistence, and Version controls remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.131
     Scope: Add active-Weapon Tag focus in unified New View. With no Weapon selected, every Weapon Tag row that is normally visible remains visible in the existing muted treatment. When a Weapon becomes active, only that Weapon's separate Tag row remains visible; all other Weapon Tag rows disappear while every Weapon name/stat row remains visible. The Weapon stack compacts by exactly the removed Tag rows, existing Unit Abilities reflow immediately below the compacted Weapon area, the gray focus separators and open-Unit wrap continue to bound the visible Unit content, and the selected-Weapon wrap includes the active Tag row when present. Selecting a different Weapon switches the visible Tag row; deselecting restores all normally-visible muted Weapon Tag rows. Boyz sub-unit Weapons use the same behavior.
     Risk areas: Unified New View Weapon Tag-row visibility/compaction and Boyz direct-selection reflow only. Ability Tags are explicitly excluded. No Weapon/Ability data, filter semantics, Unit stats, Edit, CSV data, lock/frozen state, FIX reports, Cards, Waha, Probable, persistence, or Version-control behavior changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.128
     Scope: Fix long Unit names in unified New View without changing the 16-column grid. Closed Unit rows retain the existing compact single-row/clipped presentation. When a Unit is opened, its existing Unit-name cell is measured at the authored width; only if the name is clipped does that active Unit row wrap and expand vertically by the minimum number of standard grid rows required. Existing detail, Weapon, Ability, later roster, focus separator, and bottom-bound rows shift by the same extra amount so nothing overlaps. Closing or changing focus restores the original single-row Unit geometry.
     Risk areas: Unified New View opened-Unit name presentation and focus-row spacing only. No column widths, fonts, colors, Unit data, stats, Weapons, Abilities, Old Edit, CSV data, lock behavior, report storage, Cards, Waha, Probable, persistence, or Version-control behavior changes.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.127
-    Scope: Correct unified New View Unit Ability geometry. Each Ability is now one atomic content-driven block after Weapons: A-F is one centered Ability Name box spanning the full Ability height; G-P contains the Short Description above its structured Tags. Description text wraps and grows vertically as needed. Tags retain the existing Weapon Tag visual format, wrap as needed, and can grow vertically. The Ability Name grows with the combined Description/Tags height. The outer New View grid reserves the matching number of standard row-size units, eliminating clipped text, oversized implicit rows, and blank gaps between Abilities. Existing Old Edit authoritative Ability data/order, orders 8/9 visibility rule, Range/Melee/Other/All filtering, transient selection, V31.126 focus-row behavior, fonts, colors, borders, and grid dimensions are retained.
-    Risk areas: Unified New View Unit Ability layout/reflow and opened-Unit focus bounds only. No Old Edit, CSV schema/data, Weapon data/layout, Unit stats, Probable mechanics, Cards, Waha, persistence, lock behavior, or report storage changes.
   -->
 
 
@@ -5468,16 +5468,16 @@
 .draft-grid{position:relative}
 .view-open-unit-wrap,.view-selected-weapon-wrap{position:absolute;box-sizing:border-box;border:1px solid var(--border);border-radius:0;background:transparent;pointer-events:none;z-index:8}
 .view-selected-weapon-wrap{z-index:9}
-.view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:var(--card);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
+.view-focus-separator{grid-column:1/span 16;height:var(--cell);align-self:stretch;justify-self:stretch;background:rgba(154,160,166,.5);border:1px solid var(--border);border-radius:4px;box-sizing:border-box;pointer-events:none;z-index:7}
 
 
 /* V31.129 compact Unit Ability buttons in unified New View. */
-.unit-ability-block{z-index:4;box-sizing:border-box;align-self:start;display:grid;grid-template-columns:repeat(5,var(--cell));grid-template-rows:repeat(2,var(--cell));align-content:start;min-width:0;background:transparent;overflow:visible}
+.unit-ability-block{z-index:4;box-sizing:border-box;align-self:start;display:grid;grid-template-columns:repeat(4,var(--cell));grid-template-rows:repeat(2,var(--cell));align-content:start;min-width:0;background:transparent;overflow:visible}
 .unit-ability-block.ability-expanded{grid-template-rows:repeat(2,var(--cell)) minmax(calc(var(--cell)*2),auto) minmax(var(--cell),auto)}
-.unit-ability-button{grid-column:1/span 5;grid-row:1/span 2;box-sizing:border-box;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 8px;white-space:normal;overflow:hidden;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text);font:900 var(--body)/1.05 Roboto,Arial,sans-serif;cursor:pointer}
+.unit-ability-button{grid-column:1/span 4;grid-row:1/span 2;box-sizing:border-box;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 8px;white-space:normal;overflow:hidden;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:rgba(241,243,244,.5);font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
 .unit-ability-button.ability-active{color:#80d6a3!important}
-.unit-ability-description-row{grid-column:1/span 5;grid-row:3;box-sizing:border-box;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
-.unit-ability-tags{grid-column:1/span 5;grid-row:4;box-sizing:border-box;min-width:0;min-height:var(--cell);display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent;cursor:pointer}
+.unit-ability-description-row{grid-column:1/span 4;grid-row:3;box-sizing:border-box;min-width:0;min-height:calc(var(--cell)*2);display:flex;align-items:center;padding:4px 8px;white-space:normal;overflow:visible;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--secondary);font:700 var(--meta)/1.25 Roboto,Arial,sans-serif;cursor:pointer}
+.unit-ability-tags{grid-column:1/span 4;grid-row:4;box-sizing:border-box;min-width:0;min-height:var(--cell);display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:visible;background:transparent;cursor:pointer}
 .unit-ability-tags .weapon-tag{height:auto;min-height:var(--std);max-width:100%;white-space:normal;overflow:visible;text-align:center;line-height:1.1;padding-top:4px;padding-bottom:4px}
 .unit-ability-description-row.ability-active{color:#80d6a3!important}
 .unit-ability-tags.ability-active .weapon-tag{opacity:1}
@@ -6394,6 +6394,7 @@ const HIDE_SINGLETON_COUNT=true;
 let weaponFilterMode=&#x27;ALL&#x27;;
 let selectedWeaponIndex=null;
 let selectedAbilityKey=null;
+const openAbilityKeys=new Set();
 const weaponFilterModes=[&#x27;ALL&#x27;,&#x27;SHOOT&#x27;,&#x27;MELEE&#x27;,&#x27;OTHER&#x27;];
 const UNIT_MAX_EXPANSION_ROWS=12;
 const COLLAPSED_GRID_ROWS=28;
@@ -7116,10 +7117,23 @@ function newViewAbilityVisibleTags(ability){
   if(weaponFilterMode===&#x27;ALL&#x27;||weaponFilterMode===&#x27;OTHER&#x27;)return tags;
   return tags.filter(tag=&gt;newViewAbilityFilterScope(tag&amp;&amp;tag.scope)===weaponFilterMode);
 }
+function newViewAbilityOpenToken(key){
+  return String(activeUnitIndex)+&#x27;::&#x27;+String(key||&#x27;&#x27;);
+}
+function newViewAbilityIsOpen(key){
+  return openAbilityKeys.has(newViewAbilityOpenToken(key));
+}
 function selectNewViewAbility(key){
   const clean=String(key||&#x27;&#x27;);
+  const token=newViewAbilityOpenToken(clean);
   selectedWeaponIndex=null;
-  selectedAbilityKey=selectedAbilityKey===clean?null:clean;
+  if(openAbilityKeys.has(token)){
+    openAbilityKeys.delete(token);
+    if(String(selectedAbilityKey)===clean)selectedAbilityKey=null;
+  }else{
+    openAbilityKeys.add(token);
+    selectedAbilityKey=clean;
+  }
   syncWeaponLayout();
 }
 function newViewLastVisibleWeaponRow(detailStartRow){
@@ -7138,7 +7152,7 @@ function makeNewViewAbilityBlock(startRow,laneStart,key,ability,visibleTags,acti
   const block=document.createElement(&#x27;div&#x27;);
   block.className=&#x27;unit-ability-block&#x27;+(active?&#x27; ability-expanded ability-active&#x27;:&#x27;&#x27;);
   block.dataset.abilityKey=String(key||&#x27;&#x27;);
-  block.style.gridColumn=String(laneStart)+&#x27; / span 5&#x27;;
+  block.style.gridColumn=String(laneStart)+&#x27; / span 4&#x27;;
   block.style.gridRow=String(startRow)+&#x27; / span 2&#x27;;
 
   const button=document.createElement(&#x27;div&#x27;);
@@ -7201,14 +7215,14 @@ function renderNewViewAbilitiesAndReflow(){
   // Exactly one empty grid row separates Weapons from the first Ability buttons.
   const abilityStartRow=weaponBottomRow+2;
   let cursor=abilityStartRow;
-  for(let i=0;i&lt;abilities.length;i+=3){
-    const group=abilities.slice(i,i+3);
+  for(let i=0;i&lt;abilities.length;i+=4){
+    const group=abilities.slice(i,i+4);
     let groupSpan=2;
     group.forEach((ability,slot)=&gt;{
       const key=String(ability&amp;&amp;ability.key||ability&amp;&amp;ability.abilityId||&#x27;&#x27;);
-      const active=Boolean(key&amp;&amp;String(selectedAbilityKey)===key);
+      const active=Boolean(key&amp;&amp;newViewAbilityIsOpen(key));
       const visibleTags=newViewAbilityVisibleTags(ability).filter(tag=&gt;String(tag&amp;&amp;tag.label||&#x27;&#x27;).trim());
-      const laneStart=1+(slot*5);
+      const laneStart=1+(slot*4);
       const rowSpan=makeNewViewAbilityBlock(cursor,laneStart,key,ability,visibleTags,active);
       groupSpan=Math.max(groupSpan,rowSpan);
     });
@@ -9941,7 +9955,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.131";
+    const APP_VERSION = "31.132";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31716,7 +31730,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.131',
+        version: 'V31.132',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
