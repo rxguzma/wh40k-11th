@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_123_view_focus_separators.py'
+      - 'scripts/patch_html_v31_124_unit_abilities.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.123 View focus separators
-        run: python3 scripts/patch_html_v31_123_view_focus_separators.py
+      - name: Build V31.124 Unit abilities
+        run: python3 scripts/patch_html_v31_124_unit_abilities.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.123 View focus separators"
+          git commit -m "Build V31.124 Unit abilities"
           git push origin HEAD:main
