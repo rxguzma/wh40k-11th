@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_121_fix_report_visual_parity.py'
+      - 'scripts/patch_html_v31_122_disposition_standard_color.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.121 Fix Report visual parity
-        run: python3 scripts/patch_html_v31_121_fix_report_visual_parity.py
+      - name: Build V31.122 disposition standard color
+        run: python3 scripts/patch_html_v31_122_disposition_standard_color.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.121 Fix Report visual parity"
+          git commit -m "Build V31.122 disposition standard color"
           git push origin HEAD:main
