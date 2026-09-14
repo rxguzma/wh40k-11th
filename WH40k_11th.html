@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.112</title>
+  <title>WH40k 11th V31.113</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.112; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.113; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.113
+    Scope: Complete the New View wrench/FIX workflow. The second wrench tap no longer silently writes an isolated localStorage report. Selected items now save into the roster itself as one per-Unit FIX note, grouped by the exact Unit entryId and preserving the selected hierarchy down to Section / Item / Field / Current Value. FIX notes survive the existing roster Save/reload, clone, export, and import paths while retired legacy Notes remain stripped. Old Edit's existing per-Unit Note editor is selectively re-enabled only for FIX notes; the FIX title is locked and the note body remains editable through the existing Ability Save flow. After a successful second wrench tap, the L4 wrench briefly shows a green checkmark so the save is visible. No source CSV is modified.
+    Risk areas: FIX-report roster persistence, selective FIX-note editing in old Edit, and the New View wrench save confirmation only. V31.112 expanded-Unit row-gap fix, Lock/filter/Grid controls, unified Edit, Version/Update/Download, Cards, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.112
     Scope: Remove the blank grid row that can appear between an opened Unit row and its Unit-level Tags/Waha detail row in unified New View. Expanded detail rows are now re-anchored after the roster finishes its final expansion/collapse reflow, so switching directly from another open Unit cannot leave the detail stack attached to the Unit's stale pre-reflow row. The Unit detail row remains immediately below the active Unit, followed by the existing Weapon header, Weapon rows, and Tag rows with unchanged grid sizing, fonts, colors, and controls.
     Risk areas: Unified New View expanded-Unit row positioning only. No roster data, Unit/Weapon content, Tag rendering, filter logic, Lock prepared-state behavior, report wrench, unified Edit, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable logic changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.109
     Scope: Put the shared Grid Mode button in the exact same location in unified VIEW and EDIT. The base grid control now occupies P4 in both modes; VIEW keeps its existing P4 placement and EDIT moves from M4 to P4. The existing four-cell icon, green on/off indication, click behavior, and VIEW/EDIT active-mode labels remain unchanged.
     Risk areas: Unified New View/Edit Grid Mode placement only. No roster data, Unit Detail, lock behavior, weapon filters, Edit actions, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable behavior changes.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.108
-    Scope: Make the Unit Detail row use the existing working Weapon Tag row/box behavior in unified New View/Edit. DEEP STRIKE/core ability, Waha, and count boxes no longer use fixed 2/3-grid-cell widths; they now size to their content like Weapon Tags. The row keeps its existing position, height, visibility logic, colors, actions, and standard gap/padding, with the same overflow behavior as Weapon Tags.
-    Risk areas: Unified New View/Edit Unit Detail row sizing only. V31.107 scrolling behavior is preserved. No Unit, Weapon, Ability, roster, Waha action, lock, Version, persistence, Cards, or Probable logic changes.
   -->
 
 
@@ -5954,7 +5954,7 @@ function newViewReportUnitContext(el){
     const nameNode=rosterNode.querySelector(&#x27;.view-unit-name&#x27;);
     name=newViewReportText(nameNode);
   }
-  return {index:Number.isFinite(index)?index:null,name:name||&#x27;Unit&#x27;};
+  return {index:Number.isFinite(index)?index:null,name:name||&#x27;Unit&#x27;,entryId:String(data&amp;&amp;data.entryId||&#x27;&#x27;).trim()};
 }
 function newViewReportWeaponIndex(el){
   const holder=el&amp;&amp;el.closest?el.closest(&#x27;[class*=&quot;weapon-row-&quot;],[class*=&quot;weapon-tags-&quot;]&#x27;):null;
@@ -6077,6 +6077,7 @@ function describeNewViewReportTarget(target){
 
   const record={
     unitIndex:unit.index,
+    entryId:unit.entryId,
     unit:unit.name,
     section,
     item:item||value,
@@ -6108,24 +6109,27 @@ function formatNewViewFixReportItem(item){
 }
 function saveNewViewFixReport(){
   const items=[...newViewReportSelections.values()].map(item=&gt;Object.assign({},item));
-  if(!items.length)return null;
+  if(!items.length)return {ok:false,savedNotes:0};
   const rosterNode=grid.querySelector(&#x27;.top-roster-name&#x27;);
   const roster=newViewReportText(rosterNode)||&#x27;Roster&#x27;;
   const createdAt=new Date().toISOString();
   const report={
     id:String(Date.now()),
     type:&#x27;fix-report&#x27;,
-    title:&#x27;FIX REPORT&#x27;,
+    title:&#x27;FIX&#x27;,
     roster,
     createdAt,
     items,
     body:items.map(formatNewViewFixReportItem).join(&#x27;\n&#x27;)
   };
-  const reports=readNewViewFixReports();
-  reports.unshift(report);
-  writeNewViewFixReports(reports.slice(0,50));
-  window.newViewLastFixReport=report;
-  return report;
+  let result={ok:false,savedNotes:0};
+  try{
+    if(parent&amp;&amp;typeof parent.saveNewViewFixReportToRoster===&#x27;function&#x27;){
+      result=parent.saveNewViewFixReportToRoster(report)||result;
+    }
+  }catch(_){result={ok:false,savedNotes:0}}
+  if(result&amp;&amp;result.ok)window.newViewLastFixReport=report;
+  return result;
 }
 function syncNewViewReportButtons(){
   grid.querySelectorAll(&#x27;.new-view-report-toggle&#x27;).forEach(button=&gt;{
@@ -6134,6 +6138,23 @@ function syncNewViewReportButtons(){
     button.setAttribute(&#x27;aria-label&#x27;,newViewReportMode?&#x27;Save report&#x27;:&#x27;Report&#x27;);
     button.setAttribute(&#x27;title&#x27;,newViewReportMode?&#x27;Save report&#x27;:&#x27;Report&#x27;);
   });
+}
+const NEW_VIEW_REPORT_WRENCH_HTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M14.7 6.3a4 4 0 0 0-5.2-5.2l2.2 2.2-2.8 2.8-2.2-2.2a4 4 0 0 0 5.2 5.2L4.3 16.7a2.1 2.1 0 0 0 3 3l7.6-7.6a4 4 0 0 0 5.2-5.2l-2.2 2.2-2.8-2.8 2.2-2.2Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&#x27;;
+const NEW_VIEW_REPORT_CHECK_HTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M5 12.5l4.2 4.2L19 7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&#x27;;
+let newViewReportSavedTimer=0;
+function showNewViewReportSaved(){
+  if(newViewReportSavedTimer)clearTimeout(newViewReportSavedTimer);
+  grid.querySelectorAll(&#x27;.new-view-report-toggle&#x27;).forEach(button=&gt;{
+    button.innerHTML=NEW_VIEW_REPORT_CHECK_HTML;
+    button.classList.add(&#x27;active-green&#x27;);
+    button.setAttribute(&#x27;aria-label&#x27;,&#x27;Saved&#x27;);
+    button.setAttribute(&#x27;title&#x27;,&#x27;Saved&#x27;);
+  });
+  newViewReportSavedTimer=setTimeout(()=&gt;{
+    newViewReportSavedTimer=0;
+    grid.querySelectorAll(&#x27;.new-view-report-toggle&#x27;).forEach(button=&gt;{button.innerHTML=NEW_VIEW_REPORT_WRENCH_HTML});
+    syncNewViewReportButtons();
+  },700);
 }
 function refreshNewViewReportMarks(){
   grid.querySelectorAll(&#x27;.new-view-report-selected&#x27;).forEach(el=&gt;el.classList.remove(&#x27;new-view-report-selected&#x27;));
@@ -6151,11 +6172,12 @@ function refreshNewViewReportMarks(){
 }
 function toggleNewViewReportMode(){
   if(newViewReportMode){
-    saveNewViewFixReport();
+    const result=saveNewViewFixReport();
     newViewReportMode=false;
     newViewReportSelections.clear();
     refreshNewViewReportMarks();
     syncNewViewReportButtons();
+    if(result&amp;&amp;result.ok)showNewViewReportSaved();
     return false;
   }
   newViewReportMode=true;
@@ -6168,7 +6190,7 @@ function addNewViewReportButton(f){
   const button=document.createElement(&#x27;button&#x27;);
   button.type=&#x27;button&#x27;;
   button.className=&#x27;button-standard new-view-report-toggle&#x27;;
-  button.innerHTML=&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M14.7 6.3a4 4 0 0 0-5.2-5.2l2.2 2.2-2.8 2.8-2.2-2.2a4 4 0 0 0 5.2 5.2L4.3 16.7a2.1 2.1 0 0 0 3 3l7.6-7.6a4 4 0 0 0 5.2-5.2l-2.2 2.2-2.8-2.8 2.2-2.2Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&#x27;;
+  button.innerHTML=NEW_VIEW_REPORT_WRENCH_HTML;
   button.onclick=event=&gt;{event.stopPropagation();toggleNewViewReportMode()};
   f.appendChild(button);
   syncNewViewReportButtons();
@@ -9237,7 +9259,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.112";
+    const APP_VERSION = "31.113";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -12595,20 +12617,29 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
     }
 
 
+    function isFixReportAbilityNote(note) {
+      return String(note && note.title || "").trim().toUpperCase() === "FIX";
+    }
+
     function stripAllRosterNotes(roster) {
       if (!roster) return roster;
       roster.rosterNotes = [];
       roster.entries = (Array.isArray(roster.entries) ? roster.entries : []).filter(entry => !isRosterNoteEntry(entry));
       (roster.entries || []).forEach(entry => {
         if (!entry || isSpacerEntry(entry) || isRosterNoteEntry(entry)) return;
-        entry.abilityNoteTitle = "Note";
-        entry.abilityNote = "";
-        entry.abilityNotes = [];
+        const retainedFixNotes = normalizeRosterUnitAbilityNotes(entry).filter(isFixReportAbilityNote);
+        entry.abilityNoteTitle = retainedFixNotes.length ? retainedFixNotes[0].title : "Note";
+        entry.abilityNote = retainedFixNotes.length ? retainedFixNotes[0].text : "";
+        entry.abilityNotes = retainedFixNotes.map(item => ({ title: item.title, text: item.text }));
         if (entry.abilitySortOrders && typeof entry.abilitySortOrders === "object") {
           Object.keys(entry.abilitySortOrders).forEach(key => {
             if (String(key).startsWith("note:")) delete entry.abilitySortOrders[key];
           });
         }
+        if (!entry.abilitySortOrders || typeof entry.abilitySortOrders !== "object") entry.abilitySortOrders = {};
+        retainedFixNotes.forEach((item, index) => {
+          entry.abilitySortOrders[`note:${index}`] = 1;
+        });
       });
       return roster;
     }
@@ -13673,6 +13704,59 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
       }).filter(Boolean);
     };
 
+
+    window.saveNewViewFixReportToRoster = function(report) {
+      const items = report && Array.isArray(report.items) ? report.items : [];
+      if (!items.length) return { ok: false, savedNotes: 0 };
+      const roster = getViewEditRoster();
+      if (!roster || !Array.isArray(roster.entries)) return { ok: false, savedNotes: 0 };
+
+      const byEntryId = new Map();
+      items.forEach(item => {
+        const entryId = String(item && item.entryId || "").trim();
+        if (!entryId) return;
+        if (!byEntryId.has(entryId)) byEntryId.set(entryId, []);
+        byEntryId.get(entryId).push(item);
+      });
+
+      let savedNotes = 0;
+      byEntryId.forEach((unitItems, entryId) => {
+        const entry = getRosterEntryById(roster, entryId);
+        if (!entry || isSpacerEntry(entry) || isRosterNoteEntry(entry)) return;
+
+        const unitName = String(unitItems[0] && unitItems[0].unit || "").trim() || "Unit";
+        const lines = unitItems.map(item => {
+          const section = String(item && item.section || "View").trim() || "View";
+          const itemName = String(item && item.item || "").trim();
+          const field = String(item && item.field || "Item").trim() || "Item";
+          const value = String(item && item.value || "").trim();
+          const parts = [section];
+          if (itemName && itemName !== section) parts.push(itemName);
+          if (field && field !== itemName) parts.push(field);
+          if (value && value !== itemName && value !== field) parts.push(value);
+          return parts.join(" > ");
+        }).filter(Boolean);
+        if (!lines.length) return;
+
+        const currentNotes = normalizeRosterUnitAbilityNotes(entry);
+        const nextIndex = currentNotes.length;
+        const fixText = [`Unit: ${unitName}`, ...lines].join("\n");
+        entry.abilityNotes = currentNotes.concat([{ title: "FIX", text: fixText }]);
+        entry.abilityNoteTitle = entry.abilityNotes[0].title;
+        entry.abilityNote = entry.abilityNotes[0].text;
+        if (!entry.abilitySortOrders || typeof entry.abilitySortOrders !== "object") entry.abilitySortOrders = {};
+        entry.abilitySortOrders[`note:${nextIndex}`] = 1;
+        synchronizeRosterUnitAbilityCollections(entry);
+        savedNotes += 1;
+      });
+
+      if (!savedNotes) return { ok: false, savedNotes: 0 };
+      viewEditRosterDraftDirty = true;
+      rosterWorkingStateDirty = true;
+      invalidateRosterModeDomCache("view");
+      persistRosterLibrary({ reason: "new-view-fix-report", skipNoteDeleteFinalize: true });
+      return { ok: true, savedNotes };
+    };
 
     function selectAppMode(mode) {
       const target = String(mode || "").trim().toLowerCase();
@@ -24261,15 +24345,14 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitAbilityNoteEditRow(entry, editKey, note, noteIndex = 0, rowIndex = 0) {
-      return "";
-      if (!entry || isRosterNoteEntry(entry)) return "";
+      if (!entry || isRosterNoteEntry(entry) || !isFixReportAbilityNote(note)) return "";
       const noteTitle = String(note && note.title || "Note").trim() || "Note";
       const noteText = String(note && note.text || "");
       return `
         <tr class="${rowIndex % 2 ? "alt " : ""}detachment-enhancement-edit-row" data-unit-ability-note-entry-id="${escapeAttr(entry.entryId)}" data-ability-note-index="${noteIndex}">
           <td class="ability-name-cell">
             <div class="ability-name-order-wrap">
-              <span class="ability-name-order-main detachment-enhancement-edit-field name" data-ability-edit-key="${escapeAttr(editKey)}" data-ability-note-entry-id="${escapeAttr(entry.entryId)}" data-ability-note-index="${noteIndex}" data-ability-note-field="abilityNoteTitle" role="textbox" contenteditable="true" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(noteTitle)}</span>
+              <span class="ability-name-order-main detachment-enhancement-edit-field name" data-ability-edit-key="${escapeAttr(editKey)}" data-ability-note-entry-id="${escapeAttr(entry.entryId)}" data-ability-note-index="${noteIndex}" data-ability-note-field="abilityNoteTitle" role="textbox" contenteditable="false" spellcheck="false" onclick="event.stopPropagation();">${escapeHtml(noteTitle)}</span>
               ${renderUnitAbilityOrderCounter(entry, editKey, getUnitAbilityOrderKey("note", noteIndex), 1)}
             </div>
           </td>
@@ -24281,12 +24364,11 @@ function viewEditUpdateDetachmentNameAt(index, value) {
     }
 
     function renderUnitAbilityNoteEditRows(entry, editKey, rowOffset = 0) {
-      return "";
       if (!entry || isRosterNoteEntry(entry)) return "";
       const notes = getRosterEntryAbilityNotes(entry);
-      const rows = notes.slice();
-      rows.push({ title: notes.length ? "Note" : getRosterEntryAbilityNoteTitle(entry), text: "" });
-      return rows.map((note, index) => renderUnitAbilityNoteEditRow(entry, editKey, note, index, rowOffset + index)).join("");
+      return notes.map((note, index) => isFixReportAbilityNote(note)
+        ? renderUnitAbilityNoteEditRow(entry, editKey, note, index, rowOffset + index)
+        : "").join("");
     }
 
     function refreshAbilityEditRowStriping(tbody) {
@@ -30849,7 +30931,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.112',
+        version: 'V31.113',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
