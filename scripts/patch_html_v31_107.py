@@ -26,88 +26,54 @@ if not vm:
     raise SystemExit('Unified New View/Edit iframe missing')
 view_np = html.unescape(vm.group(2))
 
-# Use the already-working Weapon Tag row/box behavior as the template.
-weapon_row_match = re.search(r'\.weapon-tags\{[^{}]*\}', view_np)
-if not weapon_row_match:
-    raise SystemExit('Weapon Tag row CSS missing')
-weapon_row = weapon_row_match.group(0)
+# The working Weapon Tag row/box contract is the template. Do not change it.
 for required in [
-    'display:flex;',
-    'align-items:center;',
-    'justify-content:flex-start;',
-    'gap:var(--gap);',
-    'padding:1px 0;',
-    'overflow:hidden',
-]:
-    if required not in weapon_row:
-        raise SystemExit('Weapon Tag row template changed unexpectedly: ' + required)
-
-weapon_tag_rules = []
-for match in re.finditer(r'\.weapon-tag\{[^{}]*\}', view_np):
-    rule = match.group(0)
-    if 'flex:0 0 auto' in rule and 'background:var(--btn)' in rule and 'padding:0 8px' in rule:
-        weapon_tag_rules.append(rule)
-if len(weapon_tag_rules) != 1:
-    raise SystemExit(f'Weapon Tag box template: expected 1 match, found {len(weapon_tag_rules)}')
-weapon_tag = weapon_tag_rules[0]
-for required in [
-    'height:var(--std);',
-    'flex:0 0 auto;',
-    'padding:0 8px;',
-    'border:1px solid var(--btnborder);',
-    'border-radius:var(--radius);',
+    '.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}',
+    'flex:0 0 auto;padding:0 8px;border:1px solid var(--btnborder);',
     'font:700 var(--meta)/1 Roboto,Arial,sans-serif;',
-    'white-space:nowrap;',
+    '.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);',
 ]:
-    if required not in weapon_tag:
-        raise SystemExit('Weapon Tag box template changed unexpectedly: ' + required)
+    if required not in view_np:
+        raise SystemExit('Existing compact-row contract missing: ' + required)
 
-# The Unit Detail row keeps its grid position and visibility behavior, but uses
-# the exact same horizontal row geometry as Weapon Tags.
-detail_row_match = re.search(r'\.detail-box-row\{[^{}]*\}', view_np)
-if not detail_row_match:
-    raise SystemExit('Unit Detail row CSS missing')
-detail_row = detail_row_match.group(0)
+# Keep the Unit Detail row in its existing grid position/visibility logic, but
+# give it the same horizontal clipping behavior as the Weapon Tag row.
+detail_rows = []
+for match in re.finditer(r'\.detail-box-row\{[^{}]*\}', view_np):
+    rule = match.group(0)
+    if 'grid-column:1/span 16' in rule and 'gap:var(--gap)' in rule:
+        detail_rows.append((match, rule))
+if len(detail_rows) != 1:
+    raise SystemExit(f'Unit Detail row CSS: expected 1 match, found {len(detail_rows)}')
+match, detail_row = detail_rows[0]
+for required in ['align-items:center;', 'justify-content:flex-start;', 'gap:var(--gap);', 'padding:1px 0']:
+    if required not in detail_row:
+        raise SystemExit('Unit Detail row contract changed unexpectedly: ' + required)
+if 'overflow:hidden' not in detail_row:
+    detail_row = detail_row[:-1] + ';overflow:hidden}' if not detail_row.endswith(';}') else detail_row[:-1] + 'overflow:hidden}'
+view_np = view_np[:match.start()] + detail_row + view_np[match.end():]
 
-# Normalize only the row-format properties; preserve grid-column/grid-row/z-index/display/height.
-for prop, value in [
-    ('align-items', 'center'),
-    ('justify-content', 'flex-start'),
-    ('gap', 'var(--gap)'),
-    ('padding', '1px 0'),
-    ('overflow', 'hidden'),
-]:
-    pattern = rf'{re.escape(prop)}:[^;}}]+;?'
-    replacement = f'{prop}:{value};'
-    if re.search(pattern, detail_row):
-        detail_row = re.sub(pattern, replacement, detail_row, count=1)
-    else:
-        detail_row = detail_row[:-1] + replacement + '}'
-
-view_np = view_np[:detail_row_match.start()] + detail_row + view_np[detail_row_match.end():]
-
-# Remove the old fixed grid-cell widths from Unit Detail boxes. They now size to
-# their content exactly like Weapon Tags. Keep their semantic color/cursor rules.
+# This is the actual discrepancy: Unit Detail boxes still have old fixed
+# 2/3-cell flex bases. Make them content-sized exactly like Weapon Tags.
 for selector in ['detail-count', 'detail-core-ability', 'detail-waha']:
-    pattern = re.compile(rf'(\.{re.escape(selector)}\{{)([^{{}}]*)(\}})')
-    match = pattern.search(view_np)
-    if not match:
-        raise SystemExit(f'{selector} CSS missing')
-    body = match.group(2)
-    flex_matches = re.findall(r'flex:[^;]+;', body)
+    matches = list(re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', view_np))
+    if len(matches) != 1:
+        raise SystemExit(f'{selector} CSS: expected 1 match, found {len(matches)}')
+    match = matches[0]
+    rule = match.group(0)
+    flex_matches = re.findall(r'flex:[^;]+;', rule)
     if len(flex_matches) != 1:
         raise SystemExit(f'{selector} flex rule: expected 1 match, found {len(flex_matches)}')
-    body = re.sub(r'flex:[^;]+;', 'flex:0 0 auto;', body, count=1)
-    replacement = match.group(1) + body + match.group(3)
-    view_np = view_np[:match.start()] + replacement + view_np[match.end():]
+    rule = re.sub(r'flex:[^;]+;', 'flex:0 0 auto;', rule, count=1)
+    view_np = view_np[:match.start()] + rule + view_np[match.end():]
 
 # Write unified iframe back.
 text = text[:vm.start(2)] + html.escape(view_np, quote=True) + text[vm.end(2):]
 
 note = '''  <!--
     CHANGE NOTE - WH40k_11th_V31.107
-    Scope: Standardize the Unit Detail row to the existing working Weapon Tag row behavior in unified New View/Edit. DEEP STRIKE/core ability, Waha, and count boxes no longer use fixed grid-cell widths; they now size to content with the same left-aligned flex-row geometry, gap, padding, and overflow behavior as Weapon Tags. Existing compact box visuals, colors, actions, grid position, row height, and visibility behavior are preserved.
-    Risk areas: Unified New View/Edit Unit Detail row sizing/layout only. No Unit, Weapon, Ability, roster, Waha action, lock, Version, persistence, Cards, or Probable logic changes.
+    Scope: Make the Unit Detail row use the existing working Weapon Tag row/box behavior in unified New View/Edit. DEEP STRIKE/core ability, Waha, and count boxes no longer use fixed 2/3-grid-cell widths; they now size to their content like Weapon Tags. The row keeps its existing position, height, visibility logic, colors, actions, and standard gap/padding, with the same overflow behavior as Weapon Tags.
+    Risk areas: Unified New View/Edit Unit Detail row sizing only. No Unit, Weapon, Ability, roster, Waha action, lock, Version, persistence, Cards, or Probable logic changes.
   -->
 
 '''
@@ -119,7 +85,7 @@ elif '</body>' in text:
 else:
     raise SystemExit('release note insertion point missing')
 
-# Retain only the five newest V31 detailed notes.
+# Retain only the five newest detailed V31 notes.
 notes = list(re.finditer(r'\n?  <!--\n    CHANGE NOTE - WH40k_11th_V31\.\d+\n.*?\n  -->\n', text, re.S))
 for note_match in reversed(notes[5:]):
     text = text[:note_match.start()] + text[note_match.end():]
@@ -130,40 +96,34 @@ if not vm:
     raise SystemExit('Unified New View/Edit iframe missing after writeback')
 final_view = html.unescape(vm.group(2))
 
-final_detail_row_match = re.search(r'\.detail-box-row\{[^{}]*\}', final_view)
-if not final_detail_row_match:
-    raise SystemExit('Final Unit Detail row CSS missing')
-final_detail_row = final_detail_row_match.group(0)
-for required in [
-    'align-items:center;',
-    'justify-content:flex-start;',
-    'gap:var(--gap);',
-    'padding:1px 0;',
-    'overflow:hidden;',
-]:
-    if required not in final_detail_row:
+final_detail_rows = [m.group(0) for m in re.finditer(r'\.detail-box-row\{[^{}]*\}', final_view) if 'grid-column:1/span 16' in m.group(0) and 'gap:var(--gap)' in m.group(0)]
+if len(final_detail_rows) != 1:
+    raise SystemExit(f'Final Unit Detail row CSS: expected 1 match, found {len(final_detail_rows)}')
+for required in ['align-items:center;', 'justify-content:flex-start;', 'gap:var(--gap);', 'padding:1px 0', 'overflow:hidden']:
+    if required not in final_detail_rows[0]:
         raise SystemExit('V31.107 Unit Detail row acceptance failed: ' + required)
 
 for selector in ['detail-count', 'detail-core-ability', 'detail-waha']:
-    match = re.search(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', final_view)
-    if not match:
-        raise SystemExit(f'Final {selector} CSS missing')
-    rule = match.group(0)
+    matches = list(re.finditer(rf'\.{re.escape(selector)}\{{[^{{}}]*\}}', final_view))
+    if len(matches) != 1:
+        raise SystemExit(f'Final {selector} CSS: expected 1 match, found {len(matches)}')
+    rule = matches[0].group(0)
     if 'flex:0 0 auto;' not in rule:
         raise SystemExit(f'V31.107 {selector} is not content-sized')
     if 'calc(var(--cell)' in rule:
         raise SystemExit(f'V31.107 {selector} retained fixed grid-cell width')
 
 for required in [
+    '.weapon-tags{min-height:var(--cell);display:flex;align-items:center;justify-content:flex-start;gap:var(--gap);padding:1px 0;overflow:hidden}',
     '.detail-box{height:var(--std);padding:0 8px;border:1px solid var(--btnborder);',
-    'font:700 var(--meta)/1 Roboto,Arial,sans-serif;',
     '<title>WH40k 11th V31.107</title>',
     'The current baseline is WH40k_11th_V31.107;',
     'const APP_VERSION = "31.107";',
     "version: 'V31.107',",
     'CHANGE NOTE - WH40k_11th_V31.107',
 ]:
-    if required not in (final_view if required.startswith('.') or required.startswith('font:') else text):
+    target = final_view if required.startswith('.') else text
+    if required not in target:
         raise SystemExit('V31.107 acceptance failed: ' + required)
 
 # Protect the unified-page contract.
@@ -174,4 +134,4 @@ if 'function ensurePersistentGridCells()' not in final_view or 'function clearMo
     raise SystemExit('V31.107 regressed persistent-grid fast path')
 
 path.write_text(text, encoding='utf-8')
-print('Built V31.107: Unit Detail row now follows Weapon Tag row sizing/layout')
+print('Built V31.107: Unit Detail row now uses content-sized Weapon Tag behavior')
