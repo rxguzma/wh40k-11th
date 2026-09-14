@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.120</title>
+  <title>WH40k 11th V31.121</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.120; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.121; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.121
+    Scope: Refine the unified New View Fix Report header presentation only. The left Fix Report segment now uses the same 12px/700 Roboto treatment as the Version control, with the item count aligned to the far right of the same eight-column segment like the current version number. Done and Copy All remain unchanged on the right. Collapsed/open behavior, report contents, canonical IDs, Copy All text, persistence, Version positioning, View selection presentation, and all other app behavior remain unchanged.
+    Risk areas: Fix Report header typography/alignment only.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.120
     Scope: Change unified New View selection presentation only. Unit/profile rows now start in the existing 50% muted treatment until opened; the open Unit keeps the established active styling and displays its name in CAPS. Visible normal and Boyz weapon rows/tags now start muted and only the selected weapon uses the existing active/unmuted treatment. Add a non-layout border around the currently open Unit from its name row through all visible detail/weapon/tag rows, plus a second border around the selected weapon and its associated tags. Both borders reuse the existing button/grid border color and do not add grid rows, padding, spacing, fonts, colors, or controls.
     Risk areas: Unified New View visual selection state and overlay borders only. Roster/weapon data, Unit/weapon click behavior, Boyz sub-unit logic, filters, lock/frozen state generation, scrolling, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.117
     Scope: Refine Boyz New View sub-units only. Boyz / Specials / Nob headers now hide R" / A / WS / St / AP / D while collapsed and show those existing labels only while that sub-unit is open. Selecting a weapon now re-renders its sub-unit with that weapon and its existing Tag row moved to the top, matching the established New View selected-weapon ordering; deselecting restores the approved canonical order. No arrows, counts, new colors, new borders, or new controls are added.
     Risk areas: Boyz expanded Weapon sub-unit header labels and selected-weapon ordering only. Other Units, weapon data, quantities, filters, Unit Detail, lock/frozen behavior, unified Edit, FIX reports, Version controls, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.116
-    Scope: Repair the V31.115 startup failure caused by one invalid JavaScript expression in the visible FIX Report save bridge. The expression mixed logical AND and nullish coalescing without required parentheses, preventing the application script from parsing. V31.116 adds the required grouping only. No FIX Report layout, selection, persistence, Copy All/Done/Reset behavior, Boyz sub-unit presentation, roster data, CSV data, Version controls, Cards, Waha routing, or Probable behavior changes.
-    Risk areas: FIX Report parent save bridge syntax only.
   -->
 
 
@@ -5444,10 +5444,10 @@
 .new-view-report-selected{outline:1px solid #80d6a3!important;outline-offset:-1px;color:#80d6a3!important}
 
 .new-view-fix-report-box{grid-column:1/span 16;z-index:4;display:none;align-self:stretch;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);overflow:hidden;color:var(--text);font-family:Roboto,Arial,sans-serif}
-.new-view-fix-report-title{height:var(--cell);display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;padding:0;font:900 var(--body)/1 Roboto,Arial,sans-serif;cursor:pointer}
-.new-view-fix-report-heading{grid-column:1/span 8;min-width:0;display:flex;align-items:center;gap:6px;padding:0 8px;white-space:nowrap;overflow:hidden}
+.new-view-fix-report-title{height:var(--cell);display:grid;grid-template-columns:repeat(16,var(--cell));align-items:center;padding:0;cursor:pointer}
+.new-view-fix-report-heading{grid-column:1/span 8;min-width:0;height:var(--std);display:flex;align-items:center;justify-content:space-between;padding:0 10px;color:var(--text);font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:700;line-height:1;white-space:nowrap;overflow:hidden}
 .new-view-fix-report-box.open .new-view-fix-report-title{border-bottom:1px solid var(--border)}
-.new-view-fix-report-count{color:var(--muted);font:700 var(--meta)/1 Roboto,Arial,sans-serif;white-space:nowrap}
+.new-view-fix-report-count{color:var(--muted);font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:700;line-height:1;white-space:nowrap;margin-left:8px}
 .new-view-fix-report-list{display:block}
 .new-view-fix-report-item{min-height:calc(var(--cell)*2);padding:5px 8px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden}
 .new-view-fix-report-unit{color:var(--text);font:900 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -9573,7 +9573,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.120";
+    const APP_VERSION = "31.121";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -31311,7 +31311,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.120',
+        version: 'V31.121',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
