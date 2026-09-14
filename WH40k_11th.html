@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.106</title>
+  <title>WH40k 11th V31.107</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.106; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.107; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.107
+    Scope: Fix New View mobile scrolling when a Unit is expanded. New View now preserves its existing collapsed iframe height but dynamically grows the iframe to the actual sheet height when Unit detail/Weapon rows push the grid lower, then shrinks back on collapse. Version-row positioning is included in the measurement. Prepared locked View states store and restore their required iframe height using the existing display-only state switch. No touch handlers, scroll interception, new UI controls, or visual styling are added.
+    Risk areas: New View iframe height synchronization only. V31.106 locked-background suspension, prepared locked states, VIEW/EDIT controls, shared Grid Mode, roster rendering, unified Edit, Version/Update/Download behavior, Old Edit, Cards, persistence, CSV data, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.106
     Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
     Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.103
     Scope: Complete the next New View lock optimization on the current V31.102 unified-page baseline. Pressing the existing Lock now pre-renders every current Unit x weapon-filter combination once, before the lock state turns on, using the already-detached V31.93 snapshot. Those prepared DOM states are retained in memory. While locked, Unit open/close and the existing filter carousel only switch which prepared state is visible; they do not call applyActiveUnitDetails, syncUnitDetailVisibility, renderNewViewRosterRows, parent/model bridges, persistence, or animation-frame refreshes. All other locked View controls are inert, including any Probable control; Probable-looking controls are also visually disabled in prepared states. The live original View DOM remains mounted but hidden so Unlock can turn the lock off, discard the prepared states, and perform exactly one normal fresh synchronization. No UI control was added or moved.
     Risk areas: New View locked-mode DOM/state handling only. Unlocked View behavior, unified Edit, current Boyz point-option behavior, persistent 40x16 grid fast path, compact Weapon Tags, Version/Update/Download, Old Edit, Cards, CSV data, Waha routing, and normal Probable behavior remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.102
-    Scope: Standardize unified New View/Edit Weapon Tag boxes to the same compact visual contract as Unit detail boxes. Weapon Tags now use Roboto 12px bold, 24px standard height, 8px horizontal padding, a 1px button border, the standard 6px radius, shared button background, centered text, and the existing standard row gap. Weapon Tags remain content-sized with no fixed grid spans, so short Tags stay compact and long Tags expand to their text. Existing orange/muted/active semantic states remain unchanged.
-    Risk areas: Unified New View/Edit Weapon Tag presentation only. Weapon/Tag data, filtering, selection, Unit detail-box width rules, roster behavior, persistence, Cards, Waha routing, Version controls, and Probable remain unchanged.
   -->
 
 
@@ -5563,6 +5563,7 @@ function positionNewViewVersionControls(){if(newViewProcessingLocked())return 0;
     button.style.gridRow=String(versionRow+1+Math.floor(index/5));
     button.style.gridColumn=NEW_VIEW_VERSION_HISTORY_COLUMNS[index%5];
   });
+  syncNewViewFrameHeight();
   return versionRow;
 }
 function newViewVersionMutationTouchesLayout(mutation){
@@ -5779,6 +5780,7 @@ function cloneLockedViewState(unitIndex,mode){
     layer.appendChild(node.cloneNode(true));
   });
   primeLockedViewLayer(layer);
+  layer.dataset.frameHeight=String(getNewViewFrameHeight());
   return layer;
 }
 function renderLockedViewCombination(unitIndex,mode){
@@ -5842,6 +5844,7 @@ function showLockedViewPreparedState(unitIndex,mode){
   activeUnitIndex=unitIndex;
   weaponFilterMode=mode;
   selectedWeaponIndex=null;
+  applyNewViewFrameHeight(Number(target.dataset.frameHeight)||0);
   return true;
 }
 function beginLockedViewPreparedMode(){
@@ -5960,6 +5963,22 @@ function getVisibleWeaponIndexes(){
   }
   return indexes;
 }
+const NEW_VIEW_BASE_FRAME_HEIGHT=frameElement?Math.ceil(frameElement.getBoundingClientRect().height):806;
+function getNewViewFrameHeight(){
+  const gridHeight=Math.ceil(Math.max(grid.getBoundingClientRect().height,grid.scrollHeight||0));
+  return Math.max(NEW_VIEW_BASE_FRAME_HEIGHT,gridHeight);
+}
+function applyNewViewFrameHeight(height){
+  if(!frameElement)return 0;
+  const measured=Math.ceil(Number(height)||getNewViewFrameHeight());
+  const nextHeight=Math.max(NEW_VIEW_BASE_FRAME_HEIGHT,measured);
+  const cssHeight=String(nextHeight)+&#x27;px&#x27;;
+  if(frameElement.style.height!==cssHeight)frameElement.style.height=cssHeight;
+  return nextHeight;
+}
+function syncNewViewFrameHeight(){
+  return applyNewViewFrameHeight(getNewViewFrameHeight());
+}
 function syncExpandedLayout(expansionRows){
   const usedRows=activeUnitIndex===null?0:Math.max(0,Number(expansionRows)||0);
   let cursor=FIRST_UNIT_ROW;
@@ -5974,6 +5993,7 @@ function syncExpandedLayout(expansionRows){
     const row=parseInt(cell.style.gridRow||&#x27;&#x27;,10);
     cell.hidden=Number.isFinite(row)&amp;&amp;row&gt;activeGridRows;
   });
+  syncNewViewFrameHeight();
 }
 function applyActiveUnitDetails(){
   const data=activeUnitIndex===null?null:unitDataByIndex[activeUnitIndex];
@@ -8867,7 +8887,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.106";
+    const APP_VERSION = "31.107";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30479,7 +30499,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.106',
+        version: 'V31.107',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
