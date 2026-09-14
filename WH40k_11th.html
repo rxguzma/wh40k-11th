@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>WH40k 11th V31.109</title>
+  <title>WH40k 11th V31.110</title>
 
 
   <!--
@@ -35,7 +35,7 @@
 
     View-mode Weapon/Ability filter invariant: the roster header controls are Range, Melee, Other, All in that order and are single-select. All is the default and is Active/green whenever Range, Melee, and Other are all off. Range shows Range Weapon rows and Ability-like rows carrying canonical Range-scoped Tags. Melee shows Melee Weapon rows and Ability-like rows carrying canonical Melee-scoped Tags. Other shows rows that are neither Range nor Melee, including unscoped Ability-like rows. All shows every Weapon and Ability-like row. Mixed Range+Melee Ability rows appear in both matching filters and show only the selected scope's Tags. Unit-level Tags remain on the Unit-level tag line. The View roster header has no Unit text label; Range | Melee | Other | All fill the entire first roster column without changing the shared View/Edit header height.
 
-    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.109; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
+    Keep release naming short and sequential. The current baseline is WH40k_11th_V31.110; keep future release names short and sequential. Do not append feature descriptions, status phrases, or long suffixes to the filename.
 
     App version distribution invariant: GitHub /versions is the authoritative selectable release folder for the HTML app. Keep only the ten newest WH40k_11th_V*.html release files there; when an eleventh version is published, delete the oldest version file. versions/index.json is the authoritative release list. The Version/current label toggles history without an arrow. Version history renders as two rows of five version buttons for the ten retained releases, never as a one-version-per-row list. The host runs releases in a fresh same-origin iframe, keeps the previous runtime on failed loads, and downloads its pristine standalone source. Do not replace a live document with document.write; do not change storage origins. Download must be a user-activated link or native file share; prepare the File before the tap, and never claim a save completed merely because a link was clicked. The passive wh40k-release-host-source script is required to reconstruct standalone downloads when running inside a previously loaded host. APP_VERSION, the document title, the release filename, and InternalQuality version must stay aligned.
   -->
@@ -92,6 +92,12 @@
   -->
 
   <!--
+    CHANGE NOTE - WH40k_11th_V31.110
+    Scope: First Boyz weapon-parity pass in unified EDIT: render a flat Boyz weapon list with display counts sourced directly from data/orks/Weapon_Quantities.csv. The selected x10/x20 point option determines each displayed quantity, and the existing point-option refresh immediately re-renders the counts after a size change. Weapon order and names come from Unit_Weapons.csv and Weapon_Stats.csv. This pass intentionally does not add Boyz/Specials/Nob section grouping, Nob weapon-choice controls, compatibility rules, or loadout mutations.
+    Risk areas: Unified EDIT Boyz flat weapon/count presentation and Edit sheet height only. VIEW, other Units, point-option mutation logic, weapon sections, loadouts, Old Edit, Cards, lock behavior, Version controls, persistence, Waha routing, and Probable remain unchanged.
+  -->
+
+  <!--
     CHANGE NOTE - WH40k_11th_V31.109
     Scope: Put the shared Grid Mode button in the exact same location in unified VIEW and EDIT. The base grid control now occupies P4 in both modes; VIEW keeps its existing P4 placement and EDIT moves from M4 to P4. The existing four-cell icon, green on/off indication, click behavior, and VIEW/EDIT active-mode labels remain unchanged.
     Risk areas: Unified New View/Edit Grid Mode placement only. No roster data, Unit Detail, lock behavior, weapon filters, Edit actions, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable behavior changes.
@@ -113,12 +119,6 @@
     CHANGE NOTE - WH40k_11th_V31.106
     Scope: Suspend remaining New View background processing while the existing Lock is on, rebased on the current V31.105 unified View/Edit baseline. The Version layout MutationObserver is explicitly disconnected before Lock becomes active and reattached only after Unlock's one live roster/header synchronization. Pending Version-position and initial/fallback View-refresh animation frames are tracked and cancelled on Lock. Version/history async UI continuations, direct version-position calls, and the iframe's legacy Update/Download helper entry points return immediately if View is locked. Internal diagnostics expose observer/RAF state plus three live-work counters; their baseline is captured after lock preparation so unchangedWhileLocked remains true only when observer callbacks, version layout passes, and live refreshes do not move during the locked period. Unlock keeps the observer suspended during its single fresh synchronization, then resumes it and schedules one version-control position pass. No UI controls are added or moved.
     Risk areas: New View background observer/RAF lifecycle and internal diagnostics only. V31.103 prepared locked states, V31.105 VIEW/EDIT and shared Grid Mode controls, unlocked View behavior, unified Edit, Boyz point options, compact Weapon Tags, Version/Update/Download actions, Old Edit, Cards, persistence, CSV data, Waha routing, and normal Probable behavior remain unchanged.
-  -->
-
-  <!--
-    CHANGE NOTE - WH40k_11th_V31.105
-    Scope: Correct the statement separator in the V31.104 shared Grid Mode icon renderer. This preserves the V31.104 UI behavior exactly: the active local mode is labeled VIEW or EDIT and highlighted green, and both modes use the same four-cell Grid Mode icon with persistent on/off indication.
-    Risk areas: Syntax correction in the unified View/Edit grid-button renderer only. No UI placement, state logic, roster data, lock behavior, filters, Edit actions, Version/Update/Download, Cards, persistence, CSV data, Waha routing, or Probable behavior changes.
   -->
 
 
@@ -5437,6 +5437,10 @@
 .new-view-locked-state{display:contents}
 .new-view-locked-state[hidden]{display:none!important}
 .new-view-lock-disabled{opacity:.45!important;pointer-events:none!important}
+
+.unified-edit-weapon-row{grid-column:1/span 16;min-height:var(--cell);display:flex;align-items:center;padding:0 8px;overflow:hidden;color:var(--secondary);font:700 var(--body)/1 Roboto,Arial,sans-serif;white-space:nowrap}
+.unified-edit-weapon-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.unified-edit-weapon-count{flex:0 0 auto;margin-left:6px;color:var(--orange);font-weight:900}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -6244,6 +6248,40 @@ function addUnifiedEditUnit(f,data,rowIndex){
   return r;
 }
 
+const BOYZ_UNIFIED_EDIT_WEAPONS=[{&quot;id&quot;:&quot;BIG_SHOOTA&quot;,&quot;name&quot;:&quot;Big Shoota&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;BURNA&quot;,&quot;name&quot;:&quot;Burna&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;KOMBI_ROKKIT_BUSTA&quot;,&quot;name&quot;:&quot;Kombi-rokkit – Busta Rokkit&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;KOMBI_ROKKIT_SHOOTA&quot;,&quot;name&quot;:&quot;Kombi-rokkit – Shoota&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;KOMBI_SKORCHA_SHOOTA&quot;,&quot;name&quot;:&quot;Kombi-skorcha – Shoota&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;KOMBI_SKORCHA_SKORCHA&quot;,&quot;name&quot;:&quot;Kombi-skorcha – Skorcha&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;KUSTOM_SHOOTA&quot;,&quot;name&quot;:&quot;Kustom Shoota&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;ROKKIT_LAUNCHA_BLASTA&quot;,&quot;name&quot;:&quot;Rokkit Launcha – Blasta&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;ROKKIT_LAUNCHA_BUSTA&quot;,&quot;name&quot;:&quot;Rokkit Launcha – Busta&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;SHOOTA&quot;,&quot;name&quot;:&quot;Shoota&quot;,&quot;x10&quot;:6,&quot;x20&quot;:12},{&quot;id&quot;:&quot;SLUGGA&quot;,&quot;name&quot;:&quot;Slugga&quot;,&quot;x10&quot;:9,&quot;x20&quot;:18},{&quot;id&quot;:&quot;BIG_CHOPPA&quot;,&quot;name&quot;:&quot;Big Choppa&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;CHOPPA&quot;,&quot;name&quot;:&quot;Choppa&quot;,&quot;x10&quot;:9,&quot;x20&quot;:18},{&quot;id&quot;:&quot;KUSTOM_CHOPPA&quot;,&quot;name&quot;:&quot;Kustom Choppa&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2},{&quot;id&quot;:&quot;POWER_KLAW&quot;,&quot;name&quot;:&quot;Power Klaw&quot;,&quot;x10&quot;:1,&quot;x20&quot;:2}];
+function isBoyzUnifiedEditUnit(data){
+  const unitId=String(data&amp;&amp;data.unitId||data&amp;&amp;data.id||&#x27;&#x27;).trim().toUpperCase();
+  const name=String(data&amp;&amp;data.name||&#x27;&#x27;).trim().toUpperCase();
+  return unitId===&#x27;BOYZ&#x27;||name===&#x27;BOYZ&#x27;;
+}
+function getBoyzUnifiedEditSize(data){
+  const label=String(data&amp;&amp;data.pointLabel||&#x27;&#x27;).trim().toLowerCase();
+  return label===&#x27;x20&#x27;?&#x27;x20&#x27;:label===&#x27;x10&#x27;?&#x27;x10&#x27;:&#x27;&#x27;;
+}
+function addBoyzUnifiedEditWeaponRows(fragment,data,rowIndex,cursor){
+  if(!isBoyzUnifiedEditUnit(data))return cursor;
+  const size=getBoyzUnifiedEditSize(data);
+  if(!size)return cursor;
+  BOYZ_UNIFIED_EDIT_WEAPONS.forEach(weapon=&gt;{
+    const qty=Number(weapon&amp;&amp;weapon[size]);
+    if(!Number.isFinite(qty))return;
+    const row=document.createElement(&#x27;div&#x27;);
+    row.className=&#x27;dynamic-roster-row unified-edit-weapon-row&#x27;;
+    row.dataset.rosterIndex=String(rowIndex);
+    row.dataset.weaponId=String(weapon&amp;&amp;weapon.id||&#x27;&#x27;);
+    row.style.gridRow=String(cursor++);
+    const name=document.createElement(&#x27;span&#x27;);
+    name.className=&#x27;unified-edit-weapon-name&#x27;;
+    name.textContent=String(weapon&amp;&amp;weapon.name||weapon&amp;&amp;weapon.id||&#x27;&#x27;);
+    const count=document.createElement(&#x27;span&#x27;);
+    count.className=&#x27;unified-edit-weapon-count&#x27;;
+    count.textContent=&#x27;×&#x27;+String(qty);
+    row.append(name,count);
+    fragment.appendChild(row);
+  });
+  return cursor;
+}
+
 function renderUnifiedEditRows(rows){
   rows=Array.isArray(rows)?rows:[];
   grid.querySelectorAll(&#x27;.dynamic-roster-row&#x27;).forEach(el=&gt;el.remove());
@@ -6261,6 +6299,7 @@ function renderUnifiedEditRows(rows){
     const f=document.createDocumentFragment();
     const row=addUnifiedEditUnit(f,data,rowIndex);
     row.style.gridRow=String(cursor++);
+    cursor=addBoyzUnifiedEditWeaponRows(f,data,rowIndex,cursor);
     grid.appendChild(f);
   });
   const mainButton=grid.querySelector(&#x27;.top-main-button&#x27;);
@@ -6272,6 +6311,7 @@ function renderUnifiedEditRows(rows){
   },0);
   const titlePoints=grid.querySelector(&#x27;.top-summary-rest&#x27;);
   if(titlePoints)titlePoints.textContent=&#x27;- &#x27;+String(sheetPoints)+&#x27; pts&#x27;;
+  if(typeof syncNewViewFrameHeight===&#x27;function&#x27;)requestAnimationFrame(syncNewViewFrameHeight);
   return rows.some(row=&gt;row&amp;&amp;row.kind===&#x27;unit&#x27;);
 }
 function refreshUnifiedEditRows(){
@@ -8887,7 +8927,7 @@ document.getElementById(&#x27;updateButton&#x27;).onclick=updateToLatest;documen
 
     const UNIVERSAL_ABILITY_CACHE_KEY = "warhammer_indexeddb_universal_ability_data";
 
-    const APP_VERSION = "31.109";
+    const APP_VERSION = "31.110";
     const APP_DOWNLOAD_DATA = prepareVersionDownload();
     const APP_GITHUB_REPOSITORY = "rxguzma/wh40k-11th";
     const APP_GITHUB_BRANCH = "main";
@@ -30499,7 +30539,7 @@ function viewEditUpdateDetachmentNameAt(index, value) {
       const regressionsOk = Object.values(regressions).every(function(check) { return check.ok; });
 
       return {
-        version: 'V31.109',
+        version: 'V31.110',
         activeRoster,
         editRosterDraft,
         modules: moduleChecks,
