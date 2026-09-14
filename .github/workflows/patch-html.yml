@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_html_v31_113_fix_report_notes.py'
+      - 'scripts/patch_html_v31_114_boyz_subunits.py'
       - '.github/workflows/patch-html.yml'
 
 permissions:
@@ -22,8 +22,8 @@ jobs:
         with:
           ref: main
 
-      - name: Build V31.113 FIX report notes
-        run: python3 scripts/patch_html_v31_113_fix_report_notes.py
+      - name: Build V31.114 Boyz New View sub-units
+        run: python3 scripts/patch_html_v31_114_boyz_subunits.py
 
       - name: Validate and generate release history
         run: python3 scripts/publish_html.py --root .
@@ -39,5 +39,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build V31.113 FIX report notes"
+          git commit -m "Build V31.114 Boyz New View sub-units"
           git push origin HEAD:main
