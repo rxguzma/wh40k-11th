@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_SKORCHA_SHOOTA","sets":{"Weapon Name":"Shoota"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_SKORCHA_SKORCHA","sets":{"Weapon Name":"Skorcha"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_ROKKIT_BUSTA","sets":{"Weapon Name":"Busta Rokkit"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_ROKKIT_SHOOTA","sets":{"Weapon Name":"Shoota"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__NOBZ_LOADOUT__BIG_SKORCHA_KUSTOM_CHOPPA","column":"Option_Name","value":"Big Skorcha + Kustom Choppa (1 in 5)"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__NOBZ_LOADOUT__KUSTOM_BIG_SHOOTA_KUSTOM_CHOPPA","column":"Option_Name","value":"Kustom Big Shoota + Kustom Choppa (1 in 5)"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__NOBZ_LOADOUT__BIG_CHOPPA","column":"Option_Name","value":"Big Choppa (1 in 5)"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__NOBZ_LOADOUT__PAIRED_KRUMPAS","column":"Option_Name","value":"Paired Krumpas (1 in 5)"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
