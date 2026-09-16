@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","mode":"insert","sets":{"Unit_ID":"NOBZ"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","mode":"delete"},{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","mode":"insert","sets":{"Unit_ID":"NOBZ"},"after_row_id":"KUSTOM_KRUMPA"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
