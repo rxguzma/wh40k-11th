@@ -29,8 +29,8 @@ DERANGED_SNOTLING_ASSAULT,Deranged Snotling Assault,Enemy Hit = Battle shock,"In
 DERANGED_SNOTLING_ASSAULT_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Deranged Snotling Assault,After shooting: one enemy unit hit must take a Battle-shock test.,"After this model shoots, choose one enemy unit hit by at least one of its attacks. That unit takes a Battle-shock test.",,,0,1,
 DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no saves,"Each time an attack with this weapon scores a Critical Wound, no saving throw can be made and the target suffers mortal wounds equal to the weapon’s Damage characteristic.",[DEVASTATING WOUNDS] [DEVASTATING WOUNDS],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
 DISTRACTION_GROT,Distraction Grot,Once: 5++ in Shooting,"Once per battle, in your opponent’s Shooting phase, before making a saving throw for a model in this unit, it can deploy the distraction grot. If it does, until the end of the phase, models in this unit have a 5+ invulnerable save.",[INVULNERABLE SAVE 5+],[Unit Rules],0,1,
-DOKS_TOOLZ,Dok’s Toolz,ANYTIME,Models in his unit have the Feel No Pain 5+ ability.,[FEEL NO PAIN 5+],[Unit Rules],0,1,1
-DOKS_TOOLZ_PAINBOY,Dok’s Toolz,ANYTIME,This unit has Feel No Pain 5+.,[FEEL NO PAIN 5+],[Unit Rules],0,1,1
+DOKS_TOOLZ,Dok’s Toolz,ANYTIME,Models in his unit have the Feel No Pain 5+ ability.,[FEEL NO PAIN 5+],[Unit Rules],0,2,1
+DOKS_TOOLZ_PAINBOY,Dok’s Toolz,ANYTIME,This unit has Feel No Pain 5+.,[FEEL NO PAIN 5+],[Unit Rules],0,2,1
 DRIVE_BY_DAKKA,Drive-by Dakka,"RANGE: Target within 9""","Each time a model in this unit makes a ranged attack that targets a unit within 9"" , improve the Armour Penetration characteristic of that attack by 1.",[+1 AP],[Range - Weapon Stats],0,1,0
 DRIVE_BY_DAKKA_2,Drive-by Dakka,"RANGE: Target within 9""","Each time a model in this unit makes a ranged attack that targets a unit within 9"" , improve the Armour Penetration characteristic of that attack by 1.",[+1 AP],[Range - Weapon Stats],0,1,0
 FINEST_HOUR,Finest Hour,"Once per battle, start of the Fight, +3 to Attacks in - and get DEVASTATING WOUNDS. DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.","Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability. DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.",[+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Melee - Weapon Rules],0,1,
@@ -83,7 +83,7 @@ LEADER_WURRBOY,Leader: Wurrboy,LEADER: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BO
 LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: GRETCHIN,,,9,3,
 MAKARI,Makari,"Sv: 2++, W:1, Ld: 8, OC: 1Cannot re-roll Invul Save",,,,0,1,
 MEKANIAK,Mekaniak,"End of Movement. Select Vehicle 3"", repair D3 wounds and +1 To Hit.","At the end of your Movement phase, you can select one friendly ORKS VEHICLE model within 3"" of this model. That VEHICLE model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
-MEKBOY,Mekboy,"Within 3"" of friendly ORKS VEHICLE","While this model is within 3"" of one or more friendly ORKS VEHICLE units, this model has the Lone Operative ability.",[LONE OPERATIVE],[Unit Rules],0,1,0
+MEKBOY,Mekboy,"Within 3"" of friendly ORKS VEHICLE","While this model is within 3"" of one or more friendly ORKS VEHICLE units, this model has the Lone Operative ability.",[LONE OPERATIVE],[Unit Rules],0,2,0
 MIGHT_IS_RIGHT,Might is Right,CHARGE this turn — MELEE,"If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
 - +2 S",[+3 A] [+2 S],[Melee - Weapon Stats] [Melee - Weapon Stats],0,1,0
@@ -99,7 +99,7 @@ NOB_ON_SMASHA_SQUIG,Nob on Smasha Squig,Nob has 4 Wounds,,,,0,1,
 NOB_ON_SMASHA_SQUIG_2,Nob On Smasha Squig,Nob = 4 Wounds,,,,0,1,
 NOB_WITH_TANK_HAMMER_5_SMASH_HAMMERS,Nob with Tank Hammer 5 Smash Hammers,Breaka Boyz 6 Wargear,,,,0,1,
 ONE_LAST_KILL,One Last Kill,Fight on death on 2+.,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
-- On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],0,1,
+- On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],0,2,
 PATROL_SQUAD,Patrol Squad,Split into two units,"At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models.",,,0,1,
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: Friendly ORKS within 6"" — MELEE","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
@@ -230,12 +230,12 @@ COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,
 
 The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,,9,3,
 DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining,CORE: Damaged 1-6,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,0
-DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,1,
+DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,0,1,
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0,1,
-DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,1,1
+DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,2,1
 DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,0,1,
-FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: Feel No Pain 5+,[FEEL NO PAIN 5+],[Unit Rules],0,1,1
+FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: Feel No Pain 5+,[FEEL NO PAIN 5+],[Unit Rules],0,2,1
 FINDER_KEEPERZ,Finder Keeperz,RANGE: unit or target on an Objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
 - The target of that attack is within range of an objective",[+1 AP],[Range - Weapon Stats],0,1,0
@@ -245,7 +245,7 @@ Place one Accusatory Grot token next to that enemy unit to remind you.",,,0,1,
 GET_OUT_DA_WAY,Get Out da Way!,CHARGE: excludes MONSTER / VEHICLE models,"While making a charge move, this unit can move through models (excluding MONSTER / VEHICLE models).",[MOVE THROUGH MODELS],[Movement Rules],0,1,0
 HIGH_SPEED_CARNAGE,High-speed Carnage,CHARGE this turn — MELEE,"If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D.",[+1 S] [+1 D],[Melee - Weapon Stats] [Melee - Weapon Stats],0,1,0
 IDOL_OF_BELLIGERENCE,Idol of Belligerence,Disembarking units are RILED UP,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is RILED UP until the start of your next turn.",,,0,1,
-INFILTRATORS,Infiltrators,ANYTIME,CORE: Infiltrators,[INFILTRATORS],[Unit Rules],0,1,1
+INFILTRATORS,Infiltrators,ANYTIME,CORE: Infiltrators,[INFILTRATORS],[Unit Rules],0,2,1
 INVULNERABLE_SAVE_4,Invulnerable Save 4+,ANYTIME,INVULNERABLE SAVE 4+,[INVULNERABLE SAVE 4+],[Unit Rules],0,1,1
 INVULNERABLE_SAVE_5,Invulnerable Save 5+,ANYTIME,INVULNERABLE SAVE 5+,[INVULNERABLE SAVE 5+],[Unit Rules],0,1,1
 INVULNERABLE_SAVE_6,Invulnerable Save 6+,ANYTIME,INVULNERABLE SAVE 6+,[INVULNERABLE SAVE 6+],[Unit Rules],0,1,1
@@ -260,8 +260,8 @@ ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-sh
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE,"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]",[+1 A] [+1 S] [HAZARDOUS],[Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Rules],0,1,0
-SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK)","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,1,
-STEALTH,Stealth,ANYTIME,CORE: Stealth,[STEALTH],[Unit Rules],0,1,1
+SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK)","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,
+STEALTH,Stealth,ANYTIME,CORE: Stealth,[STEALTH],[Unit Rules],0,2,1
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,0,1,
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,0,1,
 WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME,This unit is RILED UP.,[RILED UP] [5++ Invul],[Unit Rules] [Unit Rules],0,1,1
@@ -332,8 +332,8 @@ KEEP_HUNTIN,Keep Huntin',"Once per Battle Round:  BEAST SNAGGAS 6"" are un-shoc
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",,,0,1,
 DODGE_DIS,Dodge Dis!,ANYTIME,This unit's attacks have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,1
-BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,1,0
-BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,1,0
+BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,0
+BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,0
 COMPOSITION_BEASTBOSS_SQUIGOSAUR,Unit Composition (Beastboss on Squigosaur),"1 Beastboss on Squigosaur. Beastchoppa, Slugga, Jaws. Optional Thump Gun.","UNIT COMPOSITION: 1 Beastboss on Squigosaur model.
 
 This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
@@ -341,8 +341,8 @@ This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
 WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,,9,3,
 SUPPORT,Support,CORE: Support,CORE: Support,,,9,3,
 LEADER,Leader,CORE: Leader,CORE: Leader,,,9,3,
-LONE_OPERATIVE,LONE OP,CORE: Lone Operative,CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],0,1,
-FEEL_NO_PAIN_6,FNP 6+,CORE: Feel No Pain 6+,CORE: Feel No Pain 6+,[FEEL NO PAIN 6+],[Unit Rules],0,1,
+LONE_OPERATIVE,LONE OP,CORE: Lone Operative,CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],0,2,
+FEEL_NO_PAIN_6,FNP 6+,CORE: Feel No Pain 6+,CORE: Feel No Pain 6+,[FEEL NO PAIN 6+],[Unit Rules],0,2,
 UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,,0,1,
 KNUCKLE_IMPETUS,Knuckle Impetus,"On charge, D6 per engaged model: 4+ MW.","When this unit ends a charge move, you can select one enemy unit engaged with this unit. If you do, roll one D6 for each model in this unit engaged with that enemy unit:
 - For each 4+, that enemy unit suffers 1 mortal wound.",,,0,1,
@@ -458,6 +458,6 @@ LED_BY_WARBIKERS,LED BY (WARBIKERS),Can be led by: DEFFKILLA WARTRIKE,,,,9,3,
 LED_BY_GRETCHIN,LED BY (GRETCHIN),"Can be led by: ZODGROD WORTSNAGGA, RUNTHERD",,,,9,3,
 LED_BY_SQUIGHOG_BOYZ,LED BY (SQUIGHOG BOYZ),Can be led by: PAINBOSS,,,,9,3,
 GUNWAGON_ZZAP_GUN_POINTS,Gunwagon Zzap Gun,Gunwagon Zzap Gun +10 Pts,A Gunwagon equipped with a Zzap Gun costs +10 points.,[+10 Pts],[Points],8,4,
-BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,,1,,
-SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,,1,,
-BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,,1,,
+BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,,1,1,
+SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,,1,1,
+BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,,1,1,
