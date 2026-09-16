@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_bully_boyz","column":"Short_Description","value":"MEGANOBZ / NOBZ melee - SUSTAINED HITS 1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","sets":{"Weapon Name":"Paired Krumpas","R\"":"-","A":"3","WS":"3","St":"10","AP":"-2","D":"2"}},{"file":"data/orks/Loadout_Weapons.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__MELEE_NOBZ__PAIRED_KRUMPAS","column":"Weapon_ID","value":"PAIRED_KRUMPAS"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"PAIRED_KRUMPAS:ability_1","sets":{"Weapon_ID":"PAIRED_KRUMPAS","Ability_Type":"RE-ROLL ALL HITS","Sort_Order":"1"}},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"PAIRED_KRUMPAS:ability_2","sets":{"Weapon_ID":"PAIRED_KRUMPAS","Ability_Type":"RE-ROLL ALL WOUNDS","Separator_Before":", ","Sort_Order":"2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
