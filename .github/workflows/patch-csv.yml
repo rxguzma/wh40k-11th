@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ARROGANT_INVULNERABILITY","column":"Order","value":"2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__FNP5_TAGS__","mode":"replace_text","column":"Tags","from":"FEEL NO PAIN 5+","to":"FNP 5+"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__FNP6_TAGS__","mode":"replace_text","column":"Tags","from":"FEEL NO PAIN 6+","to":"FNP 6+"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
