@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","mode":"delete"},{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","mode":"insert","sets":{"Unit_ID":"NOBZ"},"after_row_id":"KUSTOM_KRUMPA"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","sets":{"Weapon_ID":"PAIRED_KRUMPA","Weapon Name":"Paired Krumpa"}},{"file":"data/orks/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"PAIRED_KRUMPAS","sets":{"Weapon_ID":"PAIRED_KRUMPA"}},{"file":"data/orks/Loadout_Weapons.csv","id_column":"Loadout_Option_ID","row_id":"NOBZ__MELEE_NOBZ__PAIRED_KRUMPAS","sets":{"Weapon_ID":"PAIRED_KRUMPA"}},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"PAIRED_KRUMPAS:ability_1","sets":{"Weapon_ID":"PAIRED_KRUMPA","Weapon_Ability_ID":"PAIRED_KRUMPA:ability_1"}},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"PAIRED_KRUMPAS:ability_2","sets":{"Weapon_ID":"PAIRED_KRUMPA","Weapon_Ability_ID":"PAIRED_KRUMPA:ability_2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
