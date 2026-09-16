@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"SCOUT_6","sets":{"Display_Tag":"Scout 6”","Title":"Scout 6”","Description":"The affected unit has Scout 6” while this rule is active."}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"SCOUT_6","sets":{"Display_Tag":"Scout 6”","Title":"Scout 6”","Description":"The affected unit has Scout 6” while this rule is active."}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
