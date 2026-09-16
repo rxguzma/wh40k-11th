@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"BOYZ","mode":"replace_text","column":"Row_Label","from":"Kombi-skorcha – ","to":""},{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"BOYZ","mode":"replace_text","column":"Row_Label","from":"Kombi-rokkit – ","to":""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_SKORCHA_SHOOTA","sets":{"Weapon Name":"Shoota"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_SKORCHA_SKORCHA","sets":{"Weapon Name":"Skorcha"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_ROKKIT_BUSTA","sets":{"Weapon Name":"Busta Rokkit"}},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"KOMBI_ROKKIT_SHOOTA","sets":{"Weapon Name":"Shoota"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
