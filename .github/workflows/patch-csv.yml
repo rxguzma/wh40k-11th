@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__VISIBILITY_COLUMN__","mode":"add_column","column":"Visibility_ID","after_column":"Order"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__VISIBILITY_ORDER_8__","mode":"fill_blank_where","match_column":"Order","match_value":"8","column":"Visibility_ID","value":"4"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__VISIBILITY_ORDER_9__","mode":"fill_blank_where","match_column":"Order","match_value":"9","column":"Visibility_ID","value":"3"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"__VISIBILITY_ORDER_0__","mode":"fill_blank_where","match_column":"Order","match_value":"0","column":"Visibility_ID","value":"1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SCOUTS_6","sets":{"Ability Name":"Scout 6”","Tags":"[SCOUT 6”]"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
