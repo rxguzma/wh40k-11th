@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"orks_army_rule_da_boss","mode":"insert","sets":{"Army_Name":"Orks","Rule_Name":"DA BOSS","Short_Description":"WARLORD gains +1 CP","Long_Description":"At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP.","Tags":"","Tag Categories":"","Default_Active":"1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"orks_army_rule_da_boss","sets":{"Army_Name":"Orks","Rule_Name":"DA BOSS","Short_Description":"WARLORD gains +1 CP","Long_Description":"At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP."}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
