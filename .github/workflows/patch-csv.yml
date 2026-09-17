@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"ADRENAL_SURGE","sets":{"Short_Description":"2 Units in SYNAPSE\\nCritical Hits on 5+","Tags":"MELEE"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_invasion_fleet_stratagem_adrenal_surge","sets":{"Short_Description":"2 Units in SYNAPSE\\nCritical Hits on 5+","Tags":"[CRITS 5+]","Tag Categories":"[Melee - Weapon Rules]"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
