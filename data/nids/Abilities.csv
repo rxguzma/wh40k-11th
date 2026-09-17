@@ -78,7 +78,8 @@ Enemy cannot start/end Advance within 6"". Also, if it ends within 3"", roll a D
 Bio-minefield: Enemy units cannot start or end an Advance move within 6"" of this unit.
 
 Floating Death: Each time an enemy unit ends a move within 3"" of a model in this unit, and each time a model in this unit ends a move within 3"" of an enemy unit, roll one D6: on a 2-5, that enemy unit suffers 1 mortal wound; on a 6, that enemy unit suffers D3 mortal wounds. The model in this unit that caused that roll is then destroyed.",,,0,1,
-SUBTERRANEAN_HUNTER,Subterranean Hunter,"End of Fight: if not in Engagement, go to Strategic Reserves","At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],0,1,
+SUBTERRANEAN_HUNTER,Subterranean Hunter,"End of ANY Fight phase
+If not Engaged, go to Reserves","At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],0,1,
 SUBTERRANEAN_TUNNELS,Subterranean Tunnels,"Deep Strike more than 6"". Cannot charge this turn.","In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel.
 
 If it does, this model can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",[DEEP STRIKE],[Unit Rules],0,1,
