@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_invasion_fleet_stratagem_endless_swarm","column":"Short_Description","value":"2 GAUNTS IN SYNAPSE\\nBring back D3+3"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_invasion_fleet_stratagem_predatory_imperative","column":"Short_Description","value":"2 Units in SYNAPSE\\nExtra Hyper-adaptation"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_invasion_fleet_stratagem_rapid_regeneration","column":"Short_Description","value":"SYNAPSE FNP 5+\\nOtherwise FNP 6+"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
