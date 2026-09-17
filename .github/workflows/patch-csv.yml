@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MIGHT_IS_RIGHT","column":"Short_Description","value":"CHARGE this turn.\nMELEE\u003a +3 A and +2 S"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_bully_boyz_detachment_rule_displays_of_savagery","column":"Short_Description","value":"MEGANOBZ / NOBZ\nMELEE\u003a SUSTAINED HITS 1"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
