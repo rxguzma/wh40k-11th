@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"orks_runt_swarm_enhancement_extra_sneaky","column":"Description","value":"GRETCHIN only.\\nDetection: -3”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"orks_runt_swarm_enhancement_extra_sneaky","column":"Description","value":"GRETCHIN only.\\nDetection\\u003A -3”"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
