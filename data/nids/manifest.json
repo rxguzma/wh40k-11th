@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "86d920ba75bd74138b077077611f383eedd356b2a8b20be7c36f076eff3b9ab5",
+  "dataset_sha256": "9a663cbe1afe16df930afce50c9d95bedf516ad5fae8fe622cc18b9896dea2e9",
   "files": {
     "Abilities.csv": {
       "bytes": 22638,
@@ -26,16 +26,16 @@
       "sha256": "e39ed2d1a72eb6fdbb8fa8e3043da9b29a7333ab9727f8be01adc46494dfc17e"
     },
     "Loadout_Options.csv": {
-      "bytes": 1033,
-      "sha256": "56521a940632dbae74a04c3b21c8cd3bf2d15e7d60e961f1ea4459a0c62315f3"
+      "bytes": 2767,
+      "sha256": "ccfac4945e1405f1f3c996d4d39fb14348b033798b56071e67d6efd525a5e0fd"
     },
     "Loadout_Points.csv": {
       "bytes": 56,
       "sha256": "6a9a169f749ccc2db0b2ad86515a945b749ddf604d9f7b516bc6abd8fa435251"
     },
     "Loadout_Weapons.csv": {
-      "bytes": 632,
-      "sha256": "258b1ac2eb7bf1783b6672defa4cb166fe579716c4ceee9ca8f12b36fd3a097c"
+      "bytes": 1620,
+      "sha256": "2f4fe5ecc392847b4bf07354f0bbbc98d899429bcd80c9f1fe26de72134dfc86"
     },
     "Stratagems.csv": {
       "bytes": 14831,
@@ -46,8 +46,8 @@
       "sha256": "c00bda5a3e0706ba38d8f300c1664ae21e84ae2236966b4460a6cc8212473d7a"
     },
     "Unit_Points.csv": {
-      "bytes": 2283,
-      "sha256": "d8638b1d468e8eced8e451951f6a3217bced379ac32482446f63f242de994241"
+      "bytes": 2313,
+      "sha256": "57ac20c6948561ba8069928ab7aa876e788c4f7e36198689b603ef616c32b02e"
     },
     "Unit_Profiles.csv": {
       "bytes": 7483,
@@ -58,12 +58,12 @@
       "sha256": "d42b9a524992c435d39f8c45649443cddb1213e08acffa7aa3f248a42e92fd96"
     },
     "Weapon_Abilities.csv": {
-      "bytes": 5876,
-      "sha256": "620f1fecd82a4c04321af963f523d839715495ee26478a65aa8a1004b78bf432"
+      "bytes": 5940,
+      "sha256": "9299b8181a46e7ec11e890ddd5db744a671507416e14c1160a1b8cc81f5797df"
     },
     "Weapon_Stats.csv": {
-      "bytes": 5487,
-      "sha256": "109f9bdce1cde04966c0bfb8cd7bedbf86447edaad9c576ea7b6ecf9219528a5"
+      "bytes": 5721,
+      "sha256": "f1692ab8a32019526b6830629f788bff2bc69866fa184c91e4f30cb4b3e2da7b"
     }
   },
   "schema_sha256": "63ee77f618255b12212a0c6f158879a645c81cee43bc0339bd5cc8969910780c",
