@@ -44,7 +44,8 @@ TARGET: Up to two TYRANIDS units from your army that are within Synapse Range of
 EFFECT: Select one Hyper-adaptation. Until the start of your next Command phase, that Hyper-adaptation is active for those selected units in addition to any other that may be active for your army.
 
 RESTRICTIONS: You cannot select the same Hyper-adaptation you selected at the start of the first battle round.",,,,TYRANIDS,,
-tyranids_invasion_fleet_stratagem_rapid_regeneration,tyranids_invasion_fleet,Rapid Regeneration,1,6+++ or 5+++,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
+tyranids_invasion_fleet_stratagem_rapid_regeneration,tyranids_invasion_fleet,Rapid Regeneration,1,"SYNAPSE FNP 5+
+Otherwise FNP 6+","WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
