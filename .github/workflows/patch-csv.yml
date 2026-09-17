@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"AGGRESSIVE_LEADER_BEAST","column":"Short_Description","value":"Enemy shoots and destroys a model\\nSurge up to D6\""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"ADRENAL_SURGE","sets":{"Short_Description":"2 Units in SYNAPSE\\nCritical Hits on 5+","Tags":"MELEE"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
