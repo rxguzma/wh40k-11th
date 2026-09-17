@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","mode":"replace_text","column":"Unit_ID","from":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","to":"CARNIFEXES"},{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"CARNIFEXES","mode":"dedupe_by_key","key_column":"Point_Option_ID"},{"file":"data/nids/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","mode":"replace_text","column":"Unit_ID","from":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","to":"CARNIFEXES"},{"file":"data/nids/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"CARNIFEXES","mode":"dedupe_by_key","key_column":"Ability_ID"},{"file":"data/nids/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","mode":"replace_text","column":"Unit_ID","from":"CARNIFEX_VENOM_CANNON_CRUSHING_CLAWS","to":"CARNIFEXES"},{"file":"data/nids/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CARNIFEXES","mode":"dedupe_by_key","key_column":"Weapon_ID"},{"file":"data/nids/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"HEAVY_VENOM_CANNON","mode":"delete"},{"file":"data/nids/Unit_Weapons.csv","id_column":"Weapon_ID","row_id":"CARNIFEX_CRUSHING_CLAWS","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Abilities.csv","id_column":"Ability_ID","row_id":"SWALLOW_WHOLE","column":"Description","value":"GAPING MAW + Critical Wounds vs INFANTRY, MOUNTED or BEASTS\\nResult: Regain D3+2 wounds"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
