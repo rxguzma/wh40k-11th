@@ -170,7 +170,8 @@ orks_wreckas_stratagem_gun_crazy_show_offs_1cp,orks_wreckas,GUN-CRAZY SHOW-OFFS,
 TARGET: One friendly FLASH GITZ / TANKBUSTAS unit hit by those attacks.
 
 EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,,,,"FLASH GITZ, TANKBUSTAS",
-orks_da_big_hunt_stratagem_where_dya_fink_youre_going_1cp,orks_da_big_hunt,WHERE D'YA FINK YOU'RE GOING?,1,Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape;  MONSTERS / VEHICLES take an extra hazard rolls.,"WHEN: Your opponent's Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly BEAST SNAGGA unit.
+orks_da_big_hunt_stratagem_where_dya_fink_youre_going_1cp,orks_da_big_hunt,WHERE D'YA FINK YOU'RE GOING?,1,"Opp Movement: enemy Falling Back from BEAST SNAGGA must desperate-escape;
+MONSTERS / VEHICLES take an extra hazard rolls.","WHEN: Your opponent's Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly BEAST SNAGGA unit.
 
 TARGET: That BEAST SNAGGA unit.
 
@@ -193,7 +194,8 @@ EFFECT: Your unit's ranged attacks have:
 - [LETHAL HITS]
 - Or [SUSTAINED HITS 1]
 - Or [HAZARDOUS], [LETHAL HITS], [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1] [HAZARDOUS],[Range - Weapon Rules] [Range - Weapon Rules] [Range - Weapon Rules],,MEK GUNZ,,
-orks_dread_mob_stratagem_crazed_rampage_1cp,orks_dread_mob,CRAZED RAMPAGE,1,Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD  Excludes: TITANIC,"WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
+orks_dread_mob_stratagem_crazed_rampage_1cp,orks_dread_mob,CRAZED RAMPAGE,1,"Fight: WALKER fight-on-death on 4+ or +3 if DEFF DREAD
+Excludes: TITANIC","WHEN: Fight phase, when an enemy unit targets a friendly ORKS WALKER unit (excluding TITANIC units).
 
 TARGET: That ORKS WALKER unit.
 

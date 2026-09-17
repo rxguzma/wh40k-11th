@@ -170,7 +170,8 @@ WARGEAR_OPTIONS_DEFFKOPTAS,Wargear Options (Deffkoptas),1 of 3 = kustom mega-bla
 WILD_RIDE,Wild Ride,"Ignore modifiers to Move, Advance or Charge",You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for this unit.,[IGNORE MOVE MODIFIERS],[Movement Rules],0,1,
 AERIAL_MANOEUVRE,Aerial Manoeuvre,End opponent turn: if unengaged,"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],0,1,0
 AMMO_RUNTS,Ammo Runts,Once per battle — RANGE,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
-BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking= +1 to wound vs MONSTER / VEHICLE   Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking= +1 to wound vs MONSTER / VEHICLE
+Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls until the end of the turn",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
@@ -265,7 +266,8 @@ STEALTH,Stealth,ANYTIME,CORE: Stealth,[STEALTH],[Unit Rules],0,2,1
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,0,1,
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,0,1,
 WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME,This unit is RILED UP.,[RILED UP] [5++ Invul],[Unit Rules] [Unit Rules],0,1,1
-WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain LETHAL HITS and PSYCHIC  Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain LETHAL HITS and PSYCHIC
+Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[LETHAL HITS],[Melee - Weapon Rules],0,1,
 TIDE_OF_MUSCLE,Tide of Muscle,CHARGE this turn — MELEE,"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],0,1,0
@@ -367,7 +369,8 @@ GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un
 - Is RILED UP until the start of your next turn.",,,0,1,
 FUEL_MIXA_GROB,Fuel-mixa Grob,ADVANCE,This unit has +1 to advance rolls.,[+1 M”],[Unit Stats],0,1,0
 CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,0,1,
-CANT_CUT_DAT_BIT,Can't Cut Dat Bit,Once per battle.  Crude Surgery is D3+3,"Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
+CANT_CUT_DAT_BIT,Can't Cut Dat Bit,"Once per battle.
+Crude Surgery is D3+3","Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
 HARDY_BILIOUS,Hardy Bioniks,Incoming attack Strength > Toughness: -1 to Wound.,"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
