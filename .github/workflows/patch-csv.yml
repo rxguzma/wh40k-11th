@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"__line_break_audit__","mode":"replace_text","column":"Short_Description","from":" MELEE\u003a","to":"\nMELEE\u003a"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"__line_break_audit__","mode":"replace_text","column":"Short_Description","from":" MELEE\u003a","to":"\nMELEE\u003a"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
