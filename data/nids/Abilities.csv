@@ -11,13 +11,7 @@ ALPHA_LEADER,Alpha Leader,Leading = Unit re-rolls the Hit roll.,"While this mode
 ALPHA_WARRIOR,Alpha Warrior,Unit gains SUSTAINED HITS 1 ability.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
 BIO_STIMULUS,Bio-stimulus,"Shoot an enemy, then, in MELEE, 
 ALL Tyranids have extra -1 AP","In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly Tyranids unit makes a melee attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per turn.",[+1 AP],[Melee - Weapon Stats],0,1,
-BLISTERING_ASSAULT,Blistering Assault,"Lost a wound to ANY shots.
-Move D6+2"" to CLOSEST Enemy
-Ok to end in Engagement.","Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit lost one or more wounds as a result of those attacks, this unit can make a Blistering Assault move. 
-
-If it does, roll one D6, adding 2 to the result: each model in this unit can be moved a distance in inches up to the result, but this unit must finish that move as close as possible to the closest enemy unit. 
-
-When doing so, those models can be moved within Engagement Range of that enemy unit. Each unit can only make one Blistering Assault move per phase.",,,0,1,
+BLISTERING_ASSAULT,Blistering Assault,"Enemy SHOOTING: Lose a wound → Surge up to D6+2""","In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit lost a wound as a result of those attacks, this unit can make a surge move of up to D6+2"".",,,0,1,
 BOUNDING_LEAP,Bounding Leap,Advance and Charge.,This unit is eligible to declare a charge in a turn in which it Advanced.,[ADVANCE AND CHARGE],[Movement Rules],0,1,
 BROOD_PROGENITOR_AURA_AND_PSYCHIC,Brood Progenitor (Aura and Psychic),"Termagant 6"" RANGED have LETHAL HITS","While a friendly Termagants unit is within 6"" of this model, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",[LETHAL HITS],[Range - Weapon Rules],0,1,
 BURNING_SPRAY,Burning Spray,Hit enemy loses Benefit of Cover this Shooting phase.,"In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",[IGNORES COVER],[Range - Weapon Rules],0,1,
