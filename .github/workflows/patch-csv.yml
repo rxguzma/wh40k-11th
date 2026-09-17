@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SWALLOW_WHOLE","column":"Short_Description","value":"GAPING MAW + Critical Wounds vs INFANTRY, MOUNTED or BEASTS\\nResult\u003a Regain D3+2 wounds"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SUBTERRANEAN_HUNTER","column":"Short_Description","value":"End of ANY Fight phase\\nIf not Engaged, go to Reserves"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
