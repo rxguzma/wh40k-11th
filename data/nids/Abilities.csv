@@ -108,5 +108,6 @@ FOUL_SPORES_AURA,Foul Spores (Aura),"Friendly TYRANIDS within 6"" have Stealth."
 TYRANNOFEX_ACID_SPRAY_POINTS,Acid Spray,+10 Pts,Each Tyrannofex equipped with an Acid Spray costs +10 points.,[+10 Pts],[Points],8,4,
 TYRANNOFEX_RUPTURE_CANNON_POINTS,Rupture Cannon,+20 Pts,Each Tyrannofex equipped with a Rupture Cannon costs +20 points.,[+20 Pts],[Points],8,4,
 ALPHA_WARRIOR_TYRANID_PRIME_WITH_LASH_WHIP,Alpha Warrior,UNIT all weapons: SUSTAIN 1,Weapons equipped by models in this model's unit have the [SUSTAINED HITS 1] ability.,[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
-AGGRESSIVE_LEADER_BEAST,Aggressive Leader-beast,"Enemy shoots and destroys a model: surge move up to D6"".","In your opponent's Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,,0,1,
+AGGRESSIVE_LEADER_BEAST,Aggressive Leader-beast,"Enemy shoots and destroys a model
+Surge up to D6""","In your opponent's Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,,0,1,
 LEADER_TYRANID_PRIME_WITH_LASH_WHIP,Leader: Tyranid Prime with Lash Whip,"Leader: Gaunts, Warriors","LEADER: HORMAGAUNTS, TERMAGANTS, TYRANID WARRIORS WITH MELEE BIO-WEAPONS, TYRANID WARRIORS WITH RANGED BIO-WEAPONS",,,9,3,
