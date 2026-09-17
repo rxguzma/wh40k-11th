@@ -502,17 +502,15 @@ space_marines_gladius_task_force_stratagem_armour_of_contempt_1cp,space_marines_
 When targeted: Attacks against this unit have -1 AP until that enemy unit has attacked.","Enemy SHOOTING / FIGHT
 When targeted: Attacks against this unit have -1 AP until that enemy unit has attacked.",,,0,,,
 space_marines_gladius_task_force_stratagem_adaptive_strategy_1cp,space_marines_gladius_task_force,ADAPTIVE STRATEGY,1,"COMMAND phase
-Select one combat doctrine for one ADEPTUS ASTARTES unit until your next Command phase.","COMMAND phase
+Select different doctrine","COMMAND phase
 Select one combat doctrine for one ADEPTUS ASTARTES unit until your next Command phase.",,,0,,,
-space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_gladius_task_force,A WORTHY DEATH,1,"FIGHT phase
-When targeted, if this unit has not fought: Destroyed model rolls D6; on 4+ keep it until this unit has fought or end of phase.","FIGHT phase
+space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_gladius_task_force,A WORTHY DEATH,1,Fight on Death 4+,"FIGHT phase
 When targeted, if this unit has not fought: Destroyed model rolls D6; on 4+ keep it until this unit has fought or end of phase.",,,0,,,
-space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,"SHOOTING phase
-RANGED: IGNORES COVER","SHOOTING phase
+space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: IGNORES COVER,"SHOOTING phase
 RANGED: IGNORES COVER",[IGNORES COVER],[Range - Weapon Rules],0,,,
-space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,"FIGHT phase
-MELEE: LANCE","FIGHT phase
+space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: LANCE,"FIGHT phase
 MELEE: LANCE",[LANCE],[Melee - Weapon Rules],0,,,
-space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT
-Enemy ends a move within 8"" of unengaged ADEPTUS ASTARTES INFANTRY / MOUNTED: Normal move up to D6"".","Enemy MOVEMENT
+space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT within 8”
+INFANTRY / MOUNTED
+Reactive Move D6”","Enemy MOVEMENT
 Enemy ends a move within 8"" of unengaged ADEPTUS ASTARTES INFANTRY / MOUNTED: Normal move up to D6"".",,,0,,,
