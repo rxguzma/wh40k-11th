@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_bully_boyz_stratagem_hulking_brutes_1cp","column":"Short_Description","value":"Enemy SHOOTING\\nMEGANOBZ / NOBZ\\n1 CP\u003A -1 To Wound for higher Strength\\n2 CP\u003A -1 To Wound for any weapons"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"orks_army_rule_da_boss","mode":"insert","sets":{"Army_Name":"Orks","Rule_Name":"DA BOSS","Short_Description":"WARLORD gains +1 CP","Long_Description":"At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP.","Tags":"","Tag Categories":"","Default_Active":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
