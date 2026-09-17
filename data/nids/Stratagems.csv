@@ -14,11 +14,12 @@ tyranids_ambush_predators_stratagem_scanner_gheist_1cp,tyranids_ambush_predators
 TARGET: One friendly unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit.
 
 EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],,,"DEATHLEAPER, LICTOR, NEUROLICTOR",
-tyranids_invasion_fleet_stratagem_adrenal_surge,tyranids_invasion_fleet,Adrenal Surge,2,Critical Hits on 5+,"WHEN: Fight phase.
+tyranids_invasion_fleet_stratagem_adrenal_surge,tyranids_invasion_fleet,Adrenal Surge,2,"2 Units in SYNAPSE
+Critical Hits on 5+","WHEN: Fight phase.
 
 TARGET: Up to two Tyranids units from your army that are within Synapse Range of your army and are eligible to fight, or one other Tyranids unit from your army that is eligible to fight.
 
-EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",[CRITS 5+] [CRITS 5+],[Melee - Weapon Rules] [Range - Weapon Rules],0,TYRANIDS,,
+EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",[CRITS 5+],[Melee - Weapon Rules],0,TYRANIDS,,
 tyranids_invasion_fleet_stratagem_death_frenzy,tyranids_invasion_fleet,Death Frenzy,1,Fight on Death on 4+,"WHEN: Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
