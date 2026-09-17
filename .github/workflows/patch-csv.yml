@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KOMBI_SKORCHA_KUSTOM_CHOPPA","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KOMBI_SKORCHA_POWER_KLAW","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KOMBI_ROKKIT_KUSTOM_CHOPPA","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KOMBI_ROKKIT_POWER_KLAW","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KUSTOM_SHOOTA_KUSTOM_CHOPPA","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__KUSTOM_SHOOTA_POWER_KLAW","column":"Allocation_Count","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"BOYZ__NOB_LOADOUT__BIG_CHOPPA","column":"Allocation_Count","value":""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_da_big_hunt","column":"Short_Description","value":"BEAST SNAGGAs attacks that target MONSTER / VEHICLE unit have +1 AP."}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
