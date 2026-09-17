@@ -25,7 +25,8 @@ tyranids_invasion_fleet_stratagem_death_frenzy,tyranids_invasion_fleet,Death Fre
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making attacks, and is then removed from play.",[FIGHT ON DEATH 4+],[Unit Rules],0,TYRANIDS,,
-tyranids_invasion_fleet_stratagem_endless_swarm,tyranids_invasion_fleet,Endless Swarm,1,Bring back Gaunts,"WHEN: Your Command phase.
+tyranids_invasion_fleet_stratagem_endless_swarm,tyranids_invasion_fleet,Endless Swarm,1,"2 GAUNTS IN SYNAPSE
+Bring back D3+3","WHEN: Your Command phase.
 
 TARGET: Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other Endless Multitude unit from your army.
 
@@ -35,7 +36,8 @@ tyranids_invasion_fleet_stratagem_overrun,tyranids_invasion_fleet,Overrun,1,Bett
 TARGET: That Tyranids unit.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a Consolidation move, it can move up to 6"" instead of up to 3"", provided your unit can end its Consolidation move in Unit Coherency and within Engagement Range of one or more enemy units. If your unit is within Synapse Range of your army and not within Engagement Range of any enemy units, instead of making that Consolidation move, it can instead make a Normal move of up to 6"".",,,,TYRANIDS,,
-tyranids_invasion_fleet_stratagem_predatory_imperative,tyranids_invasion_fleet,Predatory Imperative,1,Extra Hyper-adaptation until next Command phase.,"WHEN: Your Command phase.
+tyranids_invasion_fleet_stratagem_predatory_imperative,tyranids_invasion_fleet,Predatory Imperative,1,"2 Units in SYNAPSE
+Extra Hyper-adaptation","WHEN: Your Command phase.
 
 TARGET: Up to two TYRANIDS units from your army that are within Synapse Range of your army, or one other TYRANIDS unit from your army.
 
