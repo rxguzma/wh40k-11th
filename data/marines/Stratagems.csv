@@ -498,3 +498,21 @@ space_marines_ironstorm_spearhead_stratagem_mercy_is_weakness_2cp,space_marines_
 space_marines_ironstorm_spearhead_stratagem_vengeful_animus_1cp,space_marines_ironstorm_spearhead,Vengeful Animus,1,Destroyed VEHICLE with Deadly Demise: automatically inflict its Deadly Demise mortal wounds.,"WHEN: Any phase, just after an ADEPTUS ASTARTES VEHICLE with Deadly Demise is destroyed. TARGET: That destroyed model. EFFECT: Do not roll to see whether Deadly Demise triggers; its mortal wounds are inflicted automatically.",,,,"ADEPTUS ASTARTES, VEHICLE",,
 space_marines_ironstorm_spearhead_stratagem_ancient_fury_1cp,space_marines_ironstorm_spearhead,Ancient Fury,1,"Command: WALKER gets +1 Move, Toughness, Leadership, OC and +1 TO HIT until next Command.","WHEN: Your Command phase. TARGET: One ADEPTUS ASTARTES WALKER model. EFFECT: Until your next Command phase, improve Move, Toughness, Leadership and Objective Control by 1, and add 1 to Hit rolls for its attacks.",,,,"ADEPTUS ASTARTES, WALKER",,
 space_marines_ironstorm_spearhead_stratagem_power_of_the_machine_spirit_1cp,space_marines_ironstorm_spearhead,Power of the Machine Spirit,1,Opponent Shooting: VEHICLE reduced below Half-strength can shoot back only at the attacker.,"WHEN: Opponent Shooting phase, after an enemy unit resolves its attacks. TARGET: One ADEPTUS ASTARTES VEHICLE unit reduced to Below Half-strength by those attacks. EFFECT: That unit can shoot as if it were your Shooting phase, but only at that enemy unit and only if it is an eligible target.",,,,"ADEPTUS ASTARTES, VEHICLE",,
+space_marines_gladius_task_force_stratagem_armour_of_contempt_1cp,space_marines_gladius_task_force,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
+When targeted: Attacks against this unit have -1 AP until that enemy unit has attacked.","Enemy SHOOTING / FIGHT
+When targeted: Attacks against this unit have -1 AP until that enemy unit has attacked.",,,0,,,
+space_marines_gladius_task_force_stratagem_adaptive_strategy_1cp,space_marines_gladius_task_force,ADAPTIVE STRATEGY,1,"COMMAND phase
+Select one combat doctrine for one ADEPTUS ASTARTES unit until your next Command phase.","COMMAND phase
+Select one combat doctrine for one ADEPTUS ASTARTES unit until your next Command phase.",,,0,,,
+space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_gladius_task_force,A WORTHY DEATH,1,"FIGHT phase
+When targeted, if this unit has not fought: Destroyed model rolls D6; on 4+ keep it until this unit has fought or end of phase.","FIGHT phase
+When targeted, if this unit has not fought: Destroyed model rolls D6; on 4+ keep it until this unit has fought or end of phase.",,,0,,,
+space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,"SHOOTING phase
+RANGED: IGNORES COVER","SHOOTING phase
+RANGED: IGNORES COVER",[IGNORES COVER],[Range - Weapon Rules],0,,,
+space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,"FIGHT phase
+MELEE: LANCE","FIGHT phase
+MELEE: LANCE",[LANCE],[Melee - Weapon Rules],0,,,
+space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT
+Enemy ends a move within 8"" of unengaged ADEPTUS ASTARTES INFANTRY / MOUNTED: Normal move up to D6"".","Enemy MOVEMENT
+Enemy ends a move within 8"" of unengaged ADEPTUS ASTARTES INFANTRY / MOUNTED: Normal move up to D6"".",,,0,,,
