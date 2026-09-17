@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_bully_boyz_stratagem_too_arrogant_to_die_1cp","column":"Short_Description","value":"MEGANOBZ / NOBZ\nMELEE\u003a Fight-on-death on 4+\nRILED UP on 3+"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"KRUMPIN_TIME","column":"Short_Description","value":"MELEE RILED UP\u003a +1 To Hit"},{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_bully_boyz_detachment_rule_displays_of_savagery","column":"Short_Description","value":"MEGANOBZ / NOBZ\nMELEE\u003a SUSTAINED HITS 1"},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_bully_boyz_stratagem_armed_to_da_teef_1cp","column":"Short_Description","value":"MEGANOBZ / NOBZ\nSHOOT or MELE\u003a re-roll hit 1s\nRILED UP re-roll ALL hits."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ARROGANT_INVULNERABILITY","column":"Short_Description","value":"Incoming attacks\u003a -1 AP"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
