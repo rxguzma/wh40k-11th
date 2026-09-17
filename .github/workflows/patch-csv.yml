@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"unused","mode":"replace_text","column":"Short_Description","from":"Enemy ends move within 8\": embarked units can rapid disembark","to":"Enemy ends move 8\"\\nEmbarked can Rapid disembark"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"unused","mode":"replace_text","column":"Long_Description","from":"Enemy ends move within 8\": embarked units can rapid disembark","to":"Enemy ends move 8\"\\nEmbarked can Rapid disembark"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"unused","mode":"replace_text","column":"Short_Description","from":"Enemy ends move within 8\"\\u003A embarked units can rapid disembark","to":"Enemy ends move 8\"\\nEmbarked can Rapid disembark"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"unused","mode":"replace_text","column":"Long_Description","from":"Enemy ends move within 8\"\\u003A embarked units can rapid disembark","to":"Enemy ends move 8\"\\nEmbarked can Rapid disembark"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
