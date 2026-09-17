@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_runt_swarm_enhancement_extra_sneaky","column":"Short_Description","value":"GRETCHIN only.\\nDetection\u003A -3”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TYRANT_GUARD__TYRANT_GUARD_WEAPON__TYRANT_GUARD_CRUSHING_CLAWS","sets":{"Option_Name":"Crushing claws and rending claws","Default":"FALSE","Sort_Order":"3"}},{"file":"data/nids/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TYRANT_GUARD__TYRANT_GUARD_WEAPON__TYRANT_GUARD_BONE_CLEAVER","sets":{"Option_Name":"Bone cleaver, lash whip and rending claws","Default":"FALSE","Sort_Order":"2"}},{"file":"data/nids/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TYRANT_GUARD__TYRANT_GUARD_WEAPON__TYRANT_GUARD_SCYTHING_TALONS","sets":{"Option_Name":"Scything talons and rending claws","Default":"TRUE","Sort_Order":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
