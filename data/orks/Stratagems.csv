@@ -113,13 +113,17 @@ orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,Movement: B
 TARGET: That BEAST SNAGGA BOYZ / BOYZ unit.
 
 EFFECT: Your unit has +2 to advance rolls.",[+2 ADVANCE],[Movement Rules],0,,"BEAST SNAGGA BOYZ, BOYZ",
-orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT TO DIE,1,Fight: MEGANOBZ / NOBZ fight-on-death on 4+ (3+ if RILED UP).,"WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
+orks_bully_boyz_stratagem_too_arrogant_to_die_1cp,orks_bully_boyz,TOO ARROGANT TO DIE,1,"MEGANOBZ / NOBZ
+MELEE: Fight-on-death on 4+
+RILED UP on 3+","WHEN: Fight phase, when an enemy unit targets a friendly MEGANOBZ / NOBZ unit.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if your unit is RILED UP:
 - On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
-orks_bully_boyz_stratagem_armed_to_da_teef_1cp,orks_bully_boyz,ARMED TO DA TEEF,1,"Shooting or Fight: MEGANOBZ / NOBZ re-roll hit 1s; if RILED UP, re-roll hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ / NOBZ unit is selected to attack.
+orks_bully_boyz_stratagem_armed_to_da_teef_1cp,orks_bully_boyz,ARMED TO DA TEEF,1,"MEGANOBZ / NOBZ
+SHOOT or MELE: re-roll hit 1s
+RILED UP re-roll ALL hits.","WHEN: Your Shooting phase or the Fight phase, when a friendly MEGANOBZ / NOBZ unit is selected to attack.
 
 TARGET: That MEGANOBZ / NOBZ unit.
 
