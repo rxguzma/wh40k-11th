@@ -163,14 +163,6 @@ space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,space_marines_
 TARGET: One Adeptus Astartes unit from your army.
 
 EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",[IGNORES COVER] [+1 AP],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,,
-space_marines_shadowmark_talon_stratagem_feint_and_thrust_1cp,space_marines_shadowmark_talon,FEINT AND THRUST,1,"ANY: Fallback Shoot and Charge.
-PHOBOS & SCOUTS: Also Adv.","WHEN: Your Movement phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back. 
-
-If it is a PHOBOS or SCOUT SQUAD unit, it is also eligible to shoot and declare a charge in a turn in which it Advanced.",[FALL BACK AND SHOOT] [FALL BACK AND CHARGE] [ADVANCE AND CHARGE],[Movement Rules] [Movement Rules] [Movement Rules],,ADEPTUS ASTARTES,,
 space_marines_stormlance_task_force_stratagem_full_throttle_2cp,space_marines_stormlance_task_force,FULL THROTTLE,2,"MOVEMENT: Auto Advance
 9"" Mounted, 6"" for Vehicles (No Walkers)","WHEN: Your Movement phase.
 
@@ -224,21 +216,11 @@ TARGET: One DEATHWING INFANTRY or DEATHWING WALKER unit from your army that is w
 EFFECT: Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.
 
 RESTRICTIONS: Note that even if this charge is successful, your unit does not receive any Charge bonus this turn.",,,,"ADEPTUS ASTARTES, DEATHWING","INFANTRY, WALKER",
-space_marines_shadowmark_talon_stratagem_into_darkness_1cp,space_marines_shadowmark_talon,INTO DARKNESS,1,Return to Reserves. PHOBOS & SCOUTS return 2 units.,"WHEN: End of your opponent’s Fight phase.
-
-TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
-
-EFFECT: Remove those units from the battlefield and place them into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],,"ADEPTUS ASTARTES, INFANTRY",,
 dark_angels_lions_blade_task_force_stratagem_knights_of_iron_1cp,dark_angels_lions_blade_task_force,KNIGHTS OF IRON,1,Moving. Ravenwing move thru terrain.,"WHEN: Your Movement phase or your Charge phase.
 
 TARGET: One RAVENWING unit from your army.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a Normal, Advance or Charge move, it can move horizontally through terrain features.",,,,"ADEPTUS ASTARTES, RAVENWING",,
-space_marines_shadowmark_talon_stratagem_lay_low_the_tyrants_1cp,space_marines_shadowmark_talon,LAY LOW THE TYRANTS,1,Unit gets PRECISION,"WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
-
-EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"ADEPTUS ASTARTES, INFANTRY",,
 dark_angels_wrath_of_the_rock_stratagem_leonine_aggression_1cp,dark_angels_wrath_of_the_rock,LEONINE AGGRESSION,1,"REACTIVE CHARGE within 3""
 DEATHWING within 6""","WHEN: End of your opponent’s Charge phase.
 
@@ -306,11 +288,6 @@ TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models em
 EFFECT: Your INFANTRY unit can embark within that TRANSPORT.
 
 RESTRICTIONS: You cannot target an INFANTRY unit that is within Engagement Range of one or more enemy units, that cannot normally embark within that TRANSPORT, or that disembarked from a TRANSPORT this turn.",,,,ADEPTUS ASTARTES,"INFANTRY, TRANSPORT",
-space_marines_shadowmark_talon_stratagem_raptorial_vigilance_1cp,space_marines_shadowmark_talon,RAPTORIAL VIGILANCE,1,"React D6"" or PHOBOS & SCOUTS 6""","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move. You cannot target a unit that is within Engagement Range of one or more enemy units.
-
-EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit.",,,,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
 dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp,dark_angels_inner_circle_task_force,RELIC TELEPORTARIUM,1,"Deathwing with Deepstrike:  6"" Deep Strike","WHEN: Your Movement phase.
 
 TARGET: One DEATHWING unit from your army that is arriving using the Deep Strike ability this phase.
@@ -384,14 +361,6 @@ Also, Battle Shock.","WHEN: Your Shooting phase.
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",,,,"ADEPTUS ASTARTES, INFANTRY",,
-space_marines_shadowmark_talon_stratagem_stunning_fusillade_1cp,space_marines_shadowmark_talon,STUNNING FUSILLADE,1,"Enemy 12\"" away +1 BS and +1 AP.
-If destroyed model, Battle Shock","WHEN: Your Shooting phase.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12"" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. 
-
-If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",,,,"ADEPTUS ASTARTES, INFANTRY",,
 space_marines_vanguard_spearhead_stratagem_surgical_strikes_2cp,space_marines_vanguard_spearhead,Surgical Strikes,2,Unit gets PRECISION,"WHEN: Fight phase.
 
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
