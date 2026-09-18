@@ -264,19 +264,22 @@ TARGET: One friendly unengaged DEFFKOPTAS unit within 8"" of that enemy unit.
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, if your unit is RILED UP, up to 6"".",,,,DEFFKOPTAS,,
-orks_runt_swarm_stratagem_infested_war_zone_2cp,orks_runt_swarm,INFESTED WAR ZONE,2,"Any phase: when a GRETCHIN unit is destroyed after an enemy attacks, return an identical unit in Strategic Reserves at starting strength and full wounds.","WHEN: Any phase, when an enemy unit has attacked.
+orks_runt_swarm_stratagem_infested_war_zone_2cp,orks_runt_swarm,INFESTED WAR ZONE,2,"Any phase
+Destroyed GRETCHIN unit is returned and in RESERVES.","WHEN: Any phase, when an enemy unit has attacked.
 
 TARGET: One friendly GRETCHIN unit that was just destroyed. You can target that unit with this stratagem even though that unit was just destroyed.
 
 EFFECT: Add a new GRETCHIN unit to your army identical to your destroyed unit, in strategic reserves at its starting strength, with its full wounds remaining.",,,,GRETCHIN,,
-orks_runt_swarm_stratagem_scarper_1cp,orks_runt_swarm,SCARPER!,1,"Opponent Movement: unengaged GRETCHIN within 8"" of an enemy that ended a move can Normal move D6"", or 6"" if attached.","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged GRETCHIN unit.
+orks_runt_swarm_stratagem_scarper_1cp,orks_runt_swarm,SCARPER!,1,"REACTIVE MOVE
+GRETCHIN within 8” of enemy can Normal Move D6” (or 6” if attached).","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged GRETCHIN unit.
 
 TARGET: That GRETCHIN unit.
 
 EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, up to 6"" instead if your unit is an attached unit.",,,,GRETCHIN,,
-orks_runt_swarm_stratagem_grot_shields_1cp,orks_runt_swarm,GROT SHIELDS,1,"Opponent Shooting: a nearby GRETCHIN unit can absorb hits against a non-GRETCHIN ORKS INFANTRY unit, suffering 1 mortal wound per intercepted hit.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
+orks_runt_swarm_stratagem_grot_shields_1cp,orks_runt_swarm,GROT SHIELDS,1,"Opponent Shooting
+GRETCHIN within 3” absorb hits for INFANTRY unit, suffer 1 mortal per intercepted hit.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
 
 TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
 

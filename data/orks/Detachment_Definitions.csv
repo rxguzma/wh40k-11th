@@ -78,7 +78,7 @@ Roar of Mork (psychic level 1): In your Movement phase, if this unit is not batt
 Visions of Violence (psychic level 1): At the start of the Fight phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked.
 - This unit has Fights First.",[FIGHTS FIRST],[Unit Rules],0,"ORKS, PSYKER",,
-orks_runt_swarm,Orks,Runt Swarm,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,1,Priority Assets,,GRETCHIN have BATTLELINE. Advance/Fall Back does not prevent GRETCHIN from starting an action.,"Friendly GRETCHIN units have BATTLELINE.
+orks_runt_swarm,Orks,Runt Swarm,orks_runt_swarm_detachment_rule_sneaky_little_gitz,SNEAKY LITTLE GITZ,1,Priority Assets,,GRETCHIN have BATTLELINE. GRETCHIN can start an action after Advancing / Falling Back.,"Friendly GRETCHIN units have BATTLELINE.
 When a friendly GRETCHIN unit is selected to make an advance/fall-back move, that move does not prevent this unit from being eligible to start an action.",,,,GRETCHIN,,
 orks_shoota_boyz,Orks,Shoota Boyz,orks_shoota_boyz_detachment_rule_dakka_dakka_dakka,DAKKA! DAKKA! DAKKA!,1,Purge the Foe,,"INFANTRY ranged attacks have [ASSAULT]. If RILED UP, ranged attacks +3"" R.","Friendly ORKS INFANTRY units' ranged attacks have:
 - [ASSAULT].
