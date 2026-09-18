@@ -477,17 +477,23 @@ TARGET: That ADEPTUS ASTARTES INFANTRY/MOUNTED unit.
 EFFECT: Your unit can make a normal move of up to D6"".",,,0,,,
 space_marines_assault_brethren_stratagem_armour_of_contempt_1cp,space_marines_assault_brethren,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
 Attacks: -1 AP","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
+
 TARGET: That ADEPTUS ASTARTES unit.
+
 EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,0,,,
 space_marines_assault_brethren_stratagem_gene_wrought_might_1cp,space_marines_assault_brethren,GENE-WROUGHT MIGHT,1,"FIGHT: MELEE have LANCE
 In ASSAULT: LANCE & +1 AP","WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
+
 TARGET: That ADEPTUS ASTARTES unit.
+
 EFFECT: Your unit’s melee attacks have:
 • [LANCE].
 • Or: If the assault doctrine is active for your unit, [LANCE] and +1 AP.",[LANCE],[Melee - Weapon Rules],0,,,
 space_marines_assault_brethren_stratagem_duty_in_death_1cp,space_marines_assault_brethren,DUTY IN DEATH,1,"Fight on Death 4+
 In ASSAULT: Fight on Death 3+","WHEN: Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
+
 TARGET: That ADEPTUS ASTARTES unit.
+
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if the assault doctrine is active for your unit:
 • On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,0,,,
 space_marines_tactical_brethren_stratagem_armour_of_contempt_1cp,space_marines_tactical_brethren,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
