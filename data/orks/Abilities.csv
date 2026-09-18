@@ -29,8 +29,8 @@ DERANGED_SNOTLING_ASSAULT,Deranged Snotling Assault,Enemy Hit = Battle shock,"In
 DERANGED_SNOTLING_ASSAULT_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Deranged Snotling Assault,After shooting: one enemy unit hit must take a Battle-shock test.,"After this model shoots, choose one enemy unit hit by at least one of its attacks. That unit takes a Battle-shock test.",,,0,1,
 DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no saves,"Each time an attack with this weapon scores a Critical Wound, no saving throw can be made and the target suffers mortal wounds equal to the weapon’s Damage characteristic.",[DEVASTATING WOUNDS] [DEVASTATING WOUNDS],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
 DISTRACTION_GROT,Distraction Grot,Once: 5++ in Shooting,"Once per battle, in your opponent’s Shooting phase, before making a saving throw for a model in this unit, it can deploy the distraction grot. If it does, until the end of the phase, models in this unit have a 5+ invulnerable save.",[INVULNERABLE SAVE 5+],[Unit Rules],0,1,
-DOKS_TOOLZ,Dok’s Toolz,ANYTIME,Models in his unit have the Feel No Pain 5+ ability.,[FNP 5+],[Unit Rules],0,2,1
-DOKS_TOOLZ_PAINBOY,Dok’s Toolz,ANYTIME,This unit has Feel No Pain 5+.,[FNP 5+],[Unit Rules],0,2,1
+DOKS_TOOLZ,Dok’s Toolz,ANYTIME,Models in his unit have the FNP 5+ ability.,[FNP 5+],[Unit Rules],0,2,1
+DOKS_TOOLZ_PAINBOY,Dok’s Toolz,ANYTIME,This unit has FNP 5+.,[FNP 5+],[Unit Rules],0,2,1
 DRIVE_BY_DAKKA,Drive-by Dakka,"RANGE: Target within 9""","Each time a model in this unit makes a ranged attack that targets a unit within 9"" , improve the Armour Penetration characteristic of that attack by 1.",[+1 AP],[Range - Weapon Stats],0,1,0
 DRIVE_BY_DAKKA_2,Drive-by Dakka,"RANGE: Target within 9""","Each time a model in this unit makes a ranged attack that targets a unit within 9"" , improve the Armour Penetration characteristic of that attack by 1.",[+1 AP],[Range - Weapon Stats],0,1,0
 FINEST_HOUR,Finest Hour,"Once per battle, start of the Fight, +3 to Attacks in - and get DEVASTATING WOUNDS. DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.","Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability. DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.",[+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Melee - Weapon Rules],0,1,
@@ -237,7 +237,7 @@ DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wo
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0,1,
 DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,2,1
 DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,0,1,
-FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: Feel No Pain 5+,[FNP 5+],[Unit Rules],0,2,1
+FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: FNP 5+,[FNP 5+],[Unit Rules],0,2,1
 FINDER_KEEPERZ,Finder Keeperz,RANGE: unit or target on an Objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
 - The target of that attack is within range of an objective",[+1 AP],[Range - Weapon Stats],0,1,0
@@ -345,7 +345,7 @@ WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,,9,3,
 SUPPORT,Support,CORE: Support,CORE: Support,,,9,3,
 LEADER,Leader,CORE: Leader,CORE: Leader,,,9,3,
 LONE_OPERATIVE,LONE OP,CORE: Lone Operative,CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],0,2,
-FEEL_NO_PAIN_6,FNP 6+,CORE: Feel No Pain 6+,CORE: Feel No Pain 6+,[FNP 6+],[Unit Rules],0,2,
+FEEL_NO_PAIN_6,FNP 6+,CORE: FNP 6+,CORE: FNP 6+,[FNP 6+],[Unit Rules],0,2,
 UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,,0,1,
 KNUCKLE_IMPETUS,Knuckle Impetus,"On charge, D6 per engaged model: 4+ MW.","When this unit ends a charge move, you can select one enemy unit engaged with this unit. If you do, roll one D6 for each model in this unit engaged with that enemy unit:
 - For each 4+, that enemy unit suffers 1 mortal wound.",,,0,1,

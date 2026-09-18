@@ -49,7 +49,7 @@ Otherwise FNP 6+","WHEN: Your opponent’s Shooting phase or the Fight phase, ju
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
-EFFECT: Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, until the end of the phase, models in your unit have the Feel No Pain 5+ ability instead.",[FNP 6+] [FNP 5+],[Unit Rules] [Unit Rules],0,TYRANIDS,,
+EFFECT: Until the end of the phase, models in your unit have the FNP 6+ ability. If your unit is within Synapse Range of your army, until the end of the phase, models in your unit have the FNP 5+ ability instead.",[FNP 6+] [FNP 5+],[Unit Rules] [Unit Rules],0,TYRANIDS,,
 tyranids_subterranean_assault_stratagem_adaptive_optimisation,tyranids_subterranean_assault,Adaptive Optimisation,1,Mawloc & Trygons get SYNAPSE,"WHEN: Command phase.
 
 TARGET: One Mawloc or Trygon unit from your army.
@@ -87,11 +87,11 @@ Go back to Reserves","WHEN: End of your opponent’s Fight phase.
 TARGET: One Tyranids unit or up to two Burrower units from your army that are not within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],,TYRANIDS,,
-tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,tyranids_talons_of_the_norn_queen,Catalytic Biofortification,1,"ANY PHASE: When a NORN ASSIMILATOR suffers a mortal wound, that unit has Feel No Pain 4+ against mortal wounds.","WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
+tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,tyranids_talons_of_the_norn_queen,Catalytic Biofortification,1,"ANY PHASE: When a NORN ASSIMILATOR suffers a mortal wound, that unit has FNP 4+ against mortal wounds.","WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
 
 TARGET: That NORN ASSIMILATOR unit.
 
-EFFECT: Your unit has Feel No Pain 4+ against mortal wounds.",[FNP 4+],[Unit Rules],0,NORN ASSIMILATOR,,
+EFFECT: Your unit has FNP 4+ against mortal wounds.",[FNP 4+],[Unit Rules],0,NORN ASSIMILATOR,,
 tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,tyranids_talons_of_the_norn_queen,Lesser Prey,1,"FIGHT: When a NORN ASSIMILATOR or NORN EMISSARY unit is selected to fight, its melee attacks have +2 Strength.","WHEN: Fight phase, when a friendly NORN ASSIMILATOR/NORN EMISSARY unit is selected to fight.
 
 TARGET: That NORN ASSIMILATOR/NORN EMISSARY unit.
