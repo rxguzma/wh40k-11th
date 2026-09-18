@@ -70,3 +70,17 @@ vs HIDDEN: Re-roll WOUND 1s
 In ASSAULT: Re-roll WOUND 1-2","PHOBOS model only. This unit’s attacks that target a hidden unit can:
 • Re-roll wound rolls of 1.
 • Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,,0,,,
+space_marines_gravis_linebreaker_force_enhancement_indefatigable_fortitude,space_marines_gravis_linebreaker_force,INDEFATIGABLE FORTITUDE,,FALSE,"GRAVIS only
+vs S > T: -1 to Wound",GRAVIS model only. Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls.,,,0,,,
+space_marines_gravis_linebreaker_force_enhancement_relentless_advance,space_marines_gravis_linebreaker_force,RELENTLESS ADVANCE,,FALSE,"GRAVIS only
+SCOUTS 5""","GRAVIS model only. This unit has Scouts 5"".",,,0,,,
+space_marines_gravis_siege_force_enhancement_immovable_conquerors_upgrade,space_marines_gravis_siege_force,IMMOVABLE CONQUERORS UPGRADE,,FALSE,"GRAVIS only
++1 OC",GRAVIS unit only. This unit has +1 OC.,,,0,,,
+space_marines_gravis_siege_force_enhancement_narthecius_gauntlet,space_marines_gravis_siege_force,NARTHECIUS GAUNTLET,,FALSE,"APOTHECARY BIOLOGIS only
+COMMAND: Heal D3+1 wounds","APOTHECARY BIOLOGIS model only. In your Command phase, this unit heals D3+1 wounds.",,,0,,,
+space_marines_stormlance_task_force_enhancement_supercharged_engines_upgrade,space_marines_stormlance_task_force,SUPERCHARGED ENGINES UPGRADE,,FALSE,"MOUNTED only
+Re-roll ADVANCE",ADEPTUS ASTARTES MOUNTED unit only. This unit can re-roll advance rolls.,,,0,,,
+space_marines_stormlance_task_force_enhancement_auspex_triangulation_shrines_upgrade,space_marines_stormlance_task_force,AUSPEX TRIANGULATION SHRINES UPGRADE,,FALSE,"SPEEDER only
+SHOOTING: Enemy within 12"" is SPOTTED
+SPOTTED: +3"" Detection Range","ADEPTUS ASTARTES SPEEDER unit only. At the start of your Shooting phase, select one visible enemy unit within 12"" of this unit. That enemy unit is spotted:
+• While a unit is spotted, that unit has +3"" detection range.",,,0,,,

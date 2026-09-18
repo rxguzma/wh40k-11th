@@ -13,3 +13,9 @@ If Move: Cannot CHARGE","When a friendly PHOBOS or SCOUT SQUAD unit has shot:
 • Or: That unit can make a normal move up to D6"". That unit is not eligible to declare a charge until the end of the turn.",,,0,,,
 space_marines_phobos_shock_force,Space Marines,PHOBOS SHOCK FORCE,space_marines_phobos_shock_force_detachment_rule_vanguard_ambushers,VANGUARD AMBUSHERS,,,,"End MOVEMENT: HIDDEN PHOBOS
 Attacks: Re-roll WOUND 1s","At the end of your Movement phase, if a friendly PHOBOS unit is hidden, that unit’s attacks can re-roll wound rolls of 1 until the end of the turn.",,,0,,,
+space_marines_gravis_linebreaker_force,Space Marines,GRAVIS LINEBREAKER FORCE,space_marines_gravis_linebreaker_force_detachment_rule_walking_fortress,WALKING FORTRESS,,,,After NORMAL MOVE: RANGED lose HEAVY & +1 Hit,"In a turn a friendly GRAVIS unit made a normal move, that unit’s ranged attacks:
+• Do not have [HEAVY].
+• Have +1 to hit rolls.",,,0,,,
+space_marines_gravis_siege_force,Space Marines,GRAVIS SIEGE FORCE,space_marines_gravis_siege_force_detachment_rule_indomitable_defence,INDOMITABLE DEFENCE,,,,"GRAVIS on OBJECTIVE
+vs S > T: -1 to Wound","While a friendly GRAVIS unit is within range of an objective, attacks that target that unit with a S greater than that unit’s T have -1 to wound rolls.",,,0,,,
+space_marines_stormlance_task_force,Space Marines,STORMLANCE TASK FORCE,space_marines_stormlance_task_force_detachment_rule_lightning_fast_strike,LIGHTNING-FAST STRIKE,,,,"MOUNTED / SPEEDER: +2"" M","Friendly ADEPTUS ASTARTES MOUNTED/SPEEDER units have +2"" M.",,,0,,,

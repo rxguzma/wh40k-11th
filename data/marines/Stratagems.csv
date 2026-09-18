@@ -194,3 +194,62 @@ PHOBOS: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an enemy unit t
 TARGET: That PHOBOS unit.
 
 EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
+space_marines_gravis_linebreaker_force_stratagem_annihilating_force_1cp,space_marines_gravis_linebreaker_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
+Attacks: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
+
+TARGET: That GRAVIS unit.
+
+EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],,0,,,
+space_marines_gravis_linebreaker_force_stratagem_purgation_push_1cp,space_marines_gravis_linebreaker_force,PURGATION PUSH,1,"After SHOOTING & unengaged: Move 5"" onto OBJECTIVE
+Cannot CHARGE / EMBARK","WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
+
+TARGET: That GRAVIS unit.
+
+EFFECT:
+• If your unit is unengaged, your unit can make a normal move of up to 5"", and must end that move within range of an objective.
+• Your unit is not eligible to declare a charge or embark within a TRANSPORT until the end of the turn.",,,0,,,
+space_marines_gravis_linebreaker_force_stratagem_armoured_impact_1cp,space_marines_gravis_linebreaker_force,ARMOURED IMPACT,1,"After CHARGE: D6 per engaged model
+Each 3+: 1 MW","WHEN: Your Charge phase, when a friendly GRAVIS unit ends a charge move.
+
+TARGET: That GRAVIS unit.
+
+EFFECT: When your unit ends a charge move, you can select one enemy unit engaged with your unit. If you do, roll one D6 for each model in your unit engaged with that enemy unit:
+• For each 3+, that enemy unit suffers 1 mortal wound.",,,0,,,
+space_marines_gravis_siege_force_stratagem_annihilating_force_1cp,space_marines_gravis_siege_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
+Attacks: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
+
+TARGET: That GRAVIS unit.
+
+EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],,0,,,
+space_marines_gravis_siege_force_stratagem_stand_unyielding_1cp,space_marines_gravis_siege_force,STAND UNYIELDING,1,"End MOVEMENT
+Secure controlled OBJECTIVE","WHEN: End of your Movement phase.
+
+TARGET: One friendly GRAVIS unit.
+
+EFFECT: Select one objective your unit is controlling. That objective is secured.",,,0,,,
+space_marines_gravis_siege_force_stratagem_suppression_volleys_1cp,space_marines_gravis_siege_force,SUPPRESSION VOLLEYS,1,"After SHOOTING: Enemy hit takes BATTLE-SHOCK
+-1 to BATTLE-SHOCK roll","WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
+
+TARGET: That GRAVIS unit.
+
+EFFECT: Select one enemy unit hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,,,
+space_marines_stormlance_task_force_stratagem_wind_swift_evasion_1cp,space_marines_stormlance_task_force,WIND-SWIFT EVASION,1,"End FIGHT
+MOUNTED: NORMAL MOVE if unengaged
+FALL BACK if engaged","WHEN: End of the Fight phase.
+
+TARGET: One friendly ADEPTUS ASTARTES MOUNTED unit that was eligible to fight this phase.
+
+EFFECT:
+• If your unit is unengaged, your unit can make a normal move.
+• Or: If your unit is engaged, your unit can make a fall-back move.",,,0,,,
+space_marines_stormlance_task_force_stratagem_sudden_onslaught_1cp,space_marines_stormlance_task_force,SUDDEN ONSLAUGHT,1,"MOUNTED / SPEEDER ADVANCE: 6""","WHEN: Your Movement phase, when a friendly ADEPTUS ASTARTES MOUNTED/SPEEDER unit is selected to make an advance move.
+
+TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
+
+EFFECT: Your unit can change its advance rolls to a 6.",,,0,,,
+space_marines_stormlance_task_force_stratagem_hurtling_targets_1cp,space_marines_stormlance_task_force,HURTLING TARGETS,1,"Enemy SHOOTING
+MOUNTED / SPEEDER: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an enemy unit targets a friendly ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
+
+TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
+
+EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
