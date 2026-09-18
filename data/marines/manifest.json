@@ -1,9 +1,9 @@
 {
-  "dataset_sha256": "7ca12f0919e4274d31fbadb8012cf99745ba5a55852db3dc76a2c0fb6c919b6e",
+  "dataset_sha256": "dca999a86056209c5fd9692c85c5162aa08afbf7e54a7fe68956155891742fd2",
   "files": {
     "Abilities.csv": {
-      "bytes": 74520,
-      "sha256": "749e03dcea78eeb4dc6f31fee1bce29463f504a87d6b59be1ab065e23f324fbf"
+      "bytes": 77279,
+      "sha256": "69dc294fc91a84500b0bb12133a96e81ac173cd0f22cb0eea5c70427b97481c2"
     },
     "Army_Rules.csv": {
       "bytes": 2472,
@@ -42,28 +42,28 @@
       "sha256": "88c788ec54defabbac38365c47968f9abdc43d0c80f2b536be11cbce89433f86"
     },
     "Unit_Abilities.csv": {
-      "bytes": 15015,
-      "sha256": "86e89aec1ed434e044c3b0694a2d2810de3b07e1eed9890c7a5fe5e7ba1dc2df"
+      "bytes": 15697,
+      "sha256": "81af72ff3b097c5001b8101bf9164313c90cfd53b351d505eebfef88699de89a"
     },
     "Unit_Points.csv": {
       "bytes": 4284,
       "sha256": "2a2f90b5911bfa88ea557716f36c53cc48814285f3c4dc99605d95caaf855b70"
     },
     "Unit_Profiles.csv": {
-      "bytes": 18804,
-      "sha256": "7832edbf7cd69ed03e40496f57d35c472560c497c29a1e4d298c38ed1c9c6861"
+      "bytes": 19120,
+      "sha256": "4624069414b18ce144f385d19a1f39cb4ae71bb61e0389d8efc85242764acd31"
     },
     "Unit_Weapons.csv": {
-      "bytes": 17097,
-      "sha256": "215d829aefd4d2000d7dd4eec90816d7d87635ed90584080f8c060a598eacb11"
+      "bytes": 18830,
+      "sha256": "16efa1f9bf9ab10c3d0a92c45f73ae119cfc12ac6d002d226ac04286e78941ba"
     },
     "Weapon_Abilities.csv": {
-      "bytes": 28347,
-      "sha256": "0bee7e73d8bc9f8d84c52b42bfe458f82df15732efb7b545a9be26c526491560"
+      "bytes": 29234,
+      "sha256": "1c383daf5524da6d512c0053259d9b3f0ea4988ead0a274be93462ae49a9229e"
     },
     "Weapon_Stats.csv": {
-      "bytes": 20279,
-      "sha256": "487b220d0ac1c7508d002a08d6214595e1148e8cd1db3d1c420f868803f2fa14"
+      "bytes": 20917,
+      "sha256": "9c0c40e03bcca0ad46d4aaa83c6eed20449e4bfd8b08a36adf62d739c12796b1"
     }
   },
   "schema_sha256": "63ee77f618255b12212a0c6f158879a645c81cee43bc0339bd5cc8969910780c",
