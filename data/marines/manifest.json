@@ -1,9 +1,9 @@
 {
-  "dataset_sha256": "01eb9149b71e23acb150c3735e9d1183d206a009a0459133be90107b15a726fc",
+  "dataset_sha256": "f349d915e3a1e4ccb465eca5fccdc36f5c33008a1cec407a0fb279a182576421",
   "files": {
     "Abilities.csv": {
-      "bytes": 78714,
-      "sha256": "084bca2d835c70ee0efc31a35bc10828592474bf355e1b40facad0533fa25a78"
+      "bytes": 78661,
+      "sha256": "508b37df6e02af6893eaef93ae5819ab79c7078c99082af8ba0f071dc4b60b81"
     },
     "Army_Rules.csv": {
       "bytes": 2472,
@@ -42,28 +42,28 @@
       "sha256": "88c788ec54defabbac38365c47968f9abdc43d0c80f2b536be11cbce89433f86"
     },
     "Unit_Abilities.csv": {
-      "bytes": 16194,
-      "sha256": "4f398a094b92734e440c0c38fddbeea334895c3c98247c744a17a0beee6f0df2"
+      "bytes": 16372,
+      "sha256": "7f80385bdcd27b905edc934982c45f2ea1308dc8d738ac0c3b8091fc441d730d"
     },
     "Unit_Points.csv": {
-      "bytes": 3899,
-      "sha256": "7d4dac997f883863b2676ffaafb30cfdb5671abc40bec4038e122fbf91983898"
+      "bytes": 3872,
+      "sha256": "afba76c1df6a70c574c3806621a92917a8a2cded07c3f7455ce3f487c6f5ab53"
     },
     "Unit_Profiles.csv": {
-      "bytes": 18318,
-      "sha256": "c51202698fe8e8ce9aecacaac1625ecc42df7831d6c4e354a4c0512d7fcf3646"
+      "bytes": 18431,
+      "sha256": "c0bfb1e844bfb4dc0962ad1638ca310dc07b9fd65b2b3ad4bc24f4e642bd1449"
     },
     "Unit_Weapons.csv": {
-      "bytes": 18943,
-      "sha256": "75b2524f6a1cefd9a2803ff444efd9240c1142f1784e49f97a0ff54049ca2499"
+      "bytes": 19287,
+      "sha256": "24650c9efc3f8c024107bd27b169af57de40a4088034a8df54447d183d391378"
     },
     "Weapon_Abilities.csv": {
-      "bytes": 30114,
-      "sha256": "917897e695ac0e1b2f8748fc9ecafe677f99118908b8988c899b052296af6c01"
+      "bytes": 30929,
+      "sha256": "482fc3706119ed4852430b346145ea070aa30b13cae8fbfc5891d2c0468f6609"
     },
     "Weapon_Stats.csv": {
-      "bytes": 21244,
-      "sha256": "ab40fd94fb94acfa43454fa4f82a71fbf8ff9cc2cc2f1de889bb29943a01e3a6"
+      "bytes": 21339,
+      "sha256": "3fe42b1db8fa5e9c5bcc0395f4cdd1c443c170c19b5c8edbe04bfbf9a80d6af9"
     }
   },
   "schema_sha256": "63ee77f618255b12212a0c6f158879a645c81cee43bc0339bd5cc8969910780c",

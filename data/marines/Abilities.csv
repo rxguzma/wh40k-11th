@@ -123,8 +123,6 @@ Jump Intercessors, Vanguard Vets",Leader: This model can be attached to the foll
 LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,9,3,
-LEADER_SUBODEN_KHAN,Leader: Suboden Khan,"Can Lead: MOUNTED
-Outriders",LEADER: OUTRIDER SQUAD,,,9,3,
 LITANY_OF_HATE,Litany of Hate,Add +1 to Wound for this unit’s melee weapons,This unit’s melee weapons have +1 to Wound rolls.,[+1 TO WOUND],[Melee - Combat Modifiers],0,1,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away.","Cannot be shot at if 12"" away.",[LONE OPERATIVE],[Unit Rules],0,1,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,0,1,
@@ -216,8 +214,12 @@ SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE","This unit h
 SHIELD_DOME,Shield Dome,5++,The bearer has a 5+ invulnerable save.,[INVULNERABLE SAVE 5+],[Unit Rules],0,1,
 SHOCK_ASSAULT,Shock Assault,RE-ROLL 1S TO WOUND or RE-ROLL ALL WOUNDS if on an objective.,"Each time a model in this unit targets an enemy unit with a - attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers],0,1,
 SILENT_FURY,Silent Fury,+1 Attacks for every character killed,"Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",,,0,1,
-SKILLED_RIDERS,Skilled Riders,"Unit can move horizontally through terrain when making a Normal, Advance, Fall Back or Charge move.","Each time a model in this model’s unit makes a Normal, Advance, Fall Back or Charge move, it can move horizontally through terrain features.",,,0,1,
-SPEAR_OF_CHOGORIS,Spear of Chogoris,"Unit can shoot and charge after Advancing or Falling Back. If already eligible after Advancing, add 1 to Advance and Charge rolls.","This model’s unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If that unit is already eligible to shoot and declare a charge in a turn in which it Advanced, add 1 to Advance and Charge rolls made for that unit instead.",[ADVANCE AND CHARGE] [FALL BACK AND SHOOT] [FALL BACK AND CHARGE],[Movement Rules] [Movement Rules] [Movement Rules],0,1,
+SKILLED_RIDERS,Skilled Riders,MOBILE,This unit has MOBILE.,,,0,1,1
+SPEAR_OF_CHOGORIS,Spear of Chogoris,"RANGED: ASSAULT
+ADVANCE: eligible to CHARGE
+ASSAULT DOCTRINE: +1 ADVANCE / CHARGE","• This unit’s ranged attacks have [ASSAULT].
+• When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge.
+• If the assault doctrine is active for this unit, this unit has +1 to advance and charge rolls.",,,0,1,1
 STEALTH,Stealth,Model is -1 To Hit with Ranged.,Model is -1 To Hit with Ranged.,[STEALTH],[Unit Rules],0,1,
 STERNGUARD_FOCUS,Sternguard Focus,Oath = RE-ROLL ALL WOUNDS,"Each time a model in this unit makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.",[RE-ROLL ALL WOUNDS] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
 STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed","Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes unit within 6"" of this model is destroyed, this model can use this ability (it cannot use this ability when it is itself destroyed). 
@@ -288,9 +290,6 @@ VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While th
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,0,1,
 WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,,0,1,
 WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds,"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
-WRATH_OF_THE_FIRST_KHAN,Wrath Of The First Khan,"Spearhead Detachment Rule: If SUBODEN KHAN destroyed an enemy unit in the Fight phase and is not in Engagement Range, it can make a Normal move up to 6"".","WRATH OF THE FIRST KHAN: At the end of the Fight phase, if a SUBODEN KHAN unit from your army destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, that unit can make a Normal move of up to 6"".
-
-Note: Spearhead Detachment Rule. ",,,0,1,
 HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit,"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",[+2 A],[Range - Weapon Stats],0,1,
 INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,"1 Sergeant
 4-9 Intercessors","1 Intercessor Sergeant model
@@ -546,3 +545,17 @@ IRON_FATHER_FEIRROS_UNIT_COMPOSITION,Unit Composition,"1 Iron Father Feirros mod
 Equipped: 1 Bolt Pistol; 1 Gorgon’s Wrath; 1 Harrowhand; 1 Medusan Manipuli","1 Iron Father Feirros model.
 
 This model is equipped with: 1 Bolt Pistol; 1 Gorgon’s Wrath; 1 Harrowhand; 1 Medusan Manipuli.",,,9,3,0
+KORSARRO_KHAN_TROPHY_TAKER,Trophy Taker,vs CHARACTER: RE-ROLL HIT 1S / WOUND 1S,"This unit’s attacks that target a CHARACTER unit can:
+• Re-roll hit rolls of 1.
+• Re-roll wound rolls of 1.",,,0,1,1
+KORSARRO_KHAN_FOR_THE_KHAN,For the Khan!,"RANGED: ASSAULT
+MELEE: LANCE","• This unit’s ranged attacks have [ASSAULT].
+• This unit’s melee attacks have [LANCE].",,,0,1,1
+KORSARRO_KHAN_UNIT_COMPOSITION,Unit Composition,"1 Kor’sarro Khan model
+Equipped: 1 Anzuq; 1 Bolt Pistol; 1 Moonfang","1 Kor’sarro Khan model.
+
+This model is equipped with: 1 Anzuq; 1 Bolt Pistol; 1 Moonfang.",,,9,3,0
+SUBODEN_KHAN_UNIT_COMPOSITION,Unit Composition,"1 Suboden Khan model
+Equipped: 1 Heavy Bolt Pistol; 1 Onslaught Gatling Cannon; 1 Power Sword; 1 Stormtooth","1 Suboden Khan model.
+
+This model is equipped with: 1 Heavy Bolt Pistol; 1 Onslaught Gatling Cannon; 1 Power Sword; 1 Stormtooth.",,,9,3,0
