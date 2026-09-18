@@ -47,11 +47,6 @@ space_marines_spearpoint_task_force_stratagem_armour_of_contempt_1cp,space_marin
 TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
-space_marines_blade_of_ultramar_stratagem_armour_of_contempt_1cp,space_marines_blade_of_ultramar,Armour Of Contempt,1,Incoming AP is worsen by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
-
-TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_armour_of_contempt_1cp,space_marines_firestorm_assault_force,Armour Of Contempt,1,-1 AP for vs one unit,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -96,14 +91,6 @@ LETHAL HITS OR SUSTAINED HITS 1","WHEN: Your Fight phase.
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to fight this phase.
 
 EFFECT: Select either the [SUSTAINED HITS 1] or [LETHAL HITS] abilities. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability",[LETHAL HITS] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Melee - Weapon Rules],0,ADEPTUS ASTARTES,"DREADNOUGHT, TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
-space_marines_blade_of_ultramar_stratagem_courage_and_honour_1cp,space_marines_blade_of_ultramar,Courage And Honour!,1,"CHARGE +1 TO WOUND
-with Assault doctrine +1 AP","WHEN: Fight phase.
-
-TARGET: One Adeptus Astartes unit from your army.
-
-EFFECT: Until the end of the phase, - weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.
-
-Lance: When CHARGING, Add +1 To Wound.",[+1 TO WOUND],[Melee - Combat Modifiers],,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_crucible_of_battle_1cp,space_marines_firestorm_assault_force,Crucible Of Battle,1,+1 TO WOUND,"WHEN: Your Shooting phase or the Fight phase.
 
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.
@@ -152,11 +139,6 @@ INTERROGATION_CONCLAVE_STRATAGEM_EXACTING_PUNISHMENT,INTERROGATION_CONCLAVE,EXAC
 TARGET: That CHAPLAIN unit.
 
 EFFECT: Your unit's attacks have [PRECISION].",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"ADEPTUS ASTARTES, CHAPLAIN",,
-space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,space_marines_blade_of_ultramar,Exemplary Vigilance,1,IGNORES COVER and +1 AP in Dev doctrine.,"WHEN: Your Shooting phase.
-
-TARGET: One Adeptus Astartes unit from your army.
-
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",[IGNORES COVER] [+1 AP],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,,
 space_marines_emperors_shield_stratagem_fury_of_the_first_1cp,space_marines_emperors_shield,FURY OF THE FIRST,1,"RANGE or MELEE
 TERMINATORS & VETS
  +1 TO HIT 
@@ -262,13 +244,6 @@ TARGET: One ADEPTUS ASTARTES unit from your army.
 EFFECT: Select one enemy unit within Engagement Range of your unit. That enemy unit must take a Battle-shock test. When doing so, if your unit has the DEATHWING or RAVENWING keyword, subtract 1 from the result.
 
 RESTRICTIONS: You can only use this Stratagem once per battle round.",,,,ADEPTUS ASTARTES,,
-space_marines_blade_of_ultramar_stratagem_practical_tactics_1cp,space_marines_blade_of_ultramar,Practical Tactics,1,"Move D6"" or 6"" if Tactical doctrine.","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
-
-TARGET: One Adeptus Astartes INFANTRY or Adeptus Astartes MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move.
-
-EFFECT: Your unit can make a Normal move of up to D6"", or a Normal move of up to 6"" instead if it is under the effects of the Tactical Doctrine.
-
-RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units.",,,,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_rapid_embarkation_1cp,space_marines_firestorm_assault_force,Rapid Embarkation,1,Embark Vehicle,"WHEN: End of the Fight phase.
 
 TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6"" of that TRANSPORT.
@@ -340,12 +315,6 @@ space_marines_vanguard_spearhead_stratagem_surgical_strikes_2cp,space_marines_va
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"ADEPTUS ASTARTES, INFANTRY",,
-space_marines_blade_of_ultramar_stratagem_tactical_foresight_1cp,space_marines_blade_of_ultramar,Tactical Foresight,1,"If Strengths is higher or equal
--1 To Wound.","WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
-
-TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],,ADEPTUS ASTARTES,,
 dark_angels_wrath_of_the_rock_stratagem_tactical_mastery_1cp,dark_angels_wrath_of_the_rock,TACTICAL MASTERY,1,"ADVANCE + SHOOT + CHARGE
 If RAVENWING, also if Fell Back","WHEN: Your Movement phase.
 
@@ -359,11 +328,6 @@ INTERROGATION_CONCLAVE_STRATAGEM_TERRIFYING_ZEAL,INTERROGATION_CONCLAVE,TERRIFYI
 TARGET: That CHAPLAIN unit.
 
 EFFECT: Select one enemy unit, excluding MONSTER and VEHICLE units, engaged with your unit. That enemy unit makes a leadership roll. If that leadership roll fails, that enemy unit's attacks have -1 to hit rolls until the end of the turn.",,,,"ADEPTUS ASTARTES, CHAPLAIN",,
-space_marines_blade_of_ultramar_stratagem_ultramarian_adaptivity_1cp,space_marines_blade_of_ultramar,Ultramarian Adaptivity,1,Pick a different doctrine for the unit.,"WHEN: Your Command phase.
-
-TARGET: One Adeptus Astartes unit from your army.
-
-EFFECT: Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle.",,,,ADEPTUS ASTARTES,,
 dark_angels_inner_circle_task_force_stratagem_unmatched_fortitude_1cp,dark_angels_inner_circle_task_force,UNMATCHED FORTITUDE,1,"Deathwing INFANTRY (Ranged):
 -1 To be wounded if Higher Strength","WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
 
