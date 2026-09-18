@@ -536,10 +536,21 @@ TARGET: One friendly unengaged ADEPTUS ASTARTES TERMINATOR unit.
 EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_stratagem_relentless_assault_1cp,space_marines_tacticus_attack_force,RELENTLESS ASSAULT,1,"TACTICUS SHOOTING / FIGHT
 vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
-vs MONSTER / VEHICLE: LETHAL HITS","TACTICUS SHOOTING / FIGHT
-vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
-vs MONSTER / VEHICLE: LETHAL HITS",,,0,,,
+vs MONSTER / VEHICLE: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly TACTICUS unit is selected to attack.
+
+TARGET: That TACTICUS unit.
+
+EFFECT: Your unit’s attacks have:
+• [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
+• Or: [LETHAL HITS: MONSTER/VEHICLE].",,,0,,,
 space_marines_tacticus_attack_force_stratagem_transhuman_swiftness_1cp,space_marines_tacticus_attack_force,TRANSHUMAN SWIFTNESS,1,"TACTICUS on OBJECTIVE
-After enemy fights: FIGHTS FIRST & fight next","TACTICUS on OBJECTIVE
-After enemy fights: FIGHTS FIRST & fight next",,,0,,,
-space_marines_tacticus_attack_force_stratagem_tactical_focus_1cp,space_marines_tacticus_attack_force,TACTICAL FOCUS,1,"TACTICUS CONSOLIDATE: D3+3\""","TACTICUS CONSOLIDATE: D3+3\""",,,0,,,
+After enemy fights: FIGHTS FIRST & fight next","WHEN: Fight phase, when an enemy unit has fought.
+
+TARGET: One friendly TACTICUS unit that is within range of an objective and is eligible to fight.
+
+EFFECT: Your unit has Fights First and must be the next unit you select to fight.",,,0,,,
+space_marines_tacticus_attack_force_stratagem_tactical_focus_1cp,space_marines_tacticus_attack_force,TACTICAL FOCUS,1,"TACTICUS CONSOLIDATE: D3+3\""","WHEN: Fight phase, when a friendly TACTICUS unit is selected to make a consolidation move.
+
+TARGET: That TACTICUS unit.
+
+EFFECT: When making that consolidation move, your unit can move up to D3+3"".",,,0,,,
