@@ -134,3 +134,11 @@ MELEE: A 6 | WS 2+ | S 7 | AP -3 | D 3",,,0,,,
 space_marines_assault_brethren_enhancement_furious_assault_upgrade,space_marines_assault_brethren,FURIOUS ASSAULT UPGRADE,,FALSE,"INFANTRY only
 MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE","INFANTRY only
 MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE",[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,,
+space_marines_tactical_brethren_enhancement_laurels_of_vigilance,space_marines_tactical_brethren,LAURELS OF VIGILANCE,,FALSE,"ADEPTUS ASTARTES only
+Once per battle round: BATTLELINE within 12""
+OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES only
+Once per battle round: BATTLELINE within 12""
+OVERWATCH / HEROIC INTERVENTION: -1CP",,,0,,,
+space_marines_tactical_brethren_enhancement_tactical_insight,space_marines_tactical_brethren,TACTICAL INSIGHT,,FALSE,"CAPTAIN only
+TACTICAL DOCTRINE is active in addition to any other doctrine.","CAPTAIN only
+TACTICAL DOCTRINE is active in addition to any other doctrine.",,,0,,,
