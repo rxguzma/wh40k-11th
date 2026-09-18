@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"iron_hands_hammer_of_avernii","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_spiritus_ferrum","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_medusan_roar","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_iron_laurel","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"iron_hands_hammer_of_avernii_enhancement_steel_font","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"iron_hands_hammer_of_avernii_stratagem_ruthless_butchery_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"iron_hands_hammer_of_avernii_stratagem_dominator_beacon_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"iron_hands_hammer_of_avernii_stratagem_cogitated_ferocity_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"iron_hands_hammer_of_avernii_stratagem_augmetic_fortitude_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"iron_hands_hammer_of_avernii_stratagem_dropship_extraction_1cp","mode":"delete"},{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"dark_angels_inner_circle_task_force","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"dark_angels_inner_circle_task_force_enhancement_champion_of_the_deathwing","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"dark_angels_inner_circle_task_force_enhancement_deathwing_assault","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"dark_angels_inner_circle_task_force_enhancement_eye_of_the_unseen","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"dark_angels_inner_circle_task_force_enhancement_singular_will","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_armour_of_contempt_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_duty_unto_death_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_martial_mastery_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_unmatched_fortitude_1cp","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"dark_angels_inner_circle_task_force_stratagem_wrath_of_the_lion_1cp","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Compatibility.csv","id_column":"Loadout_Option_ID","row_id":"INTERCESSORS__SERGEANT_MELEE__KNIVES_AND_FISTS","mode":"remove_column","column":"Compatibility_ID"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -98,6 +98,21 @@ jobs:
                       row.insert(insert_at, '')
                   changed.add(path)
                   print(f'added column {path} {col}')
+                  continue
+
+              if mode == 'remove_column':
+                  col = str(op.get('column') or '').strip()
+                  if not col:
+                      sys.exit(f'op {i}: remove_column needs column')
+                  if col not in header:
+                      sys.exit(f'op {i}: column not in header: {col}')
+                  remove_at = header.index(col)
+                  header.pop(remove_at)
+                  for row in rows[1:]:
+                      if len(row) > remove_at:
+                          row.pop(remove_at)
+                  changed.add(path)
+                  print(f'removed column {path} {col}')
                   continue
 
               if mode == 'dedupe_by_key':
