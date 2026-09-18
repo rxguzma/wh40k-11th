@@ -106,7 +106,6 @@ HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pai
 HIGH_KING_OF_FENRIS,High King of Fenris,ONCE. Bring one unit from Reserves one turn earlier.,"Once per battle round, in your Movement phase, you can select one friendly SPACE WOLVES unit in Strategic Reserves. For the purpose of setting up that unit on the battlefield, treat the current battle round as one higher than it actually is.",,,0,1,
 HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
 0 CP for Heroinc Intervention","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",[+1 CHARGE] [HEROIC INTERVENTION 0CP],[Movement Rules] [Unit Rules],0,1,
-ICON_OF_OBSTINACY,Icon of Obstinacy,Unit gets -1 To Wound,"Each time an attack targets this model’s unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
 IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover,"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack.",[IGNORES COVER],[Range - Weapon Rules],0,1,
 INCENDIARY_TERROR,Incendiary Terror,Enemy takes Battle-shock,"In your Shooting phase, after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test, subtracting 1 from that test.",,,0,1,
 INDOMITOR_DOCTRINES,Indomitor Doctrines,"Target Closest Target at Range then Charge and get +2 Strenght in Melee.
@@ -124,8 +123,6 @@ INNER_CIRCLE,Inner Circle,-1 Damage to Unit,"Each time an attack is allocated to
 INSPIRING_COMMANDER,INSPIRING COMMANDER,Jump Packs = OC 2,"INSPIRING COMMANDER
 If you include this model in your army, until the end of the battle, non-CHARACTER models in ASSAULT INTERCESSORS WITH JUMP PACKS units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked.",,,0,1,
 INSPIRING_COMMANDER_FEIRROS,Inspiring Commander,Heavy Intercessors OC 3,"If Iron Father Feirros is included in your army, non-CHARACTER Heavy Intercessor Squad models have OC 3 while not Battle-shocked.",,,0,1,
-INSPIRING_COMMANDER_LYSANDER,Inspiring Commander,TERMINATORS are OC 2,"INSPIRING COMMANDER
-If you include this model in your army, until the end of the battle, non-CHARACTER models in TERMINATOR ASSAULT SQUAD and TERMINATOR SQUAD units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked.",,,0,1,
 INSPIRING_COMMANDER_VULKAN,Inspiring Commander,Infernus are OC 2,"If you include this model in your army, until the end of the battle, non-CHARACTER models in INFERNUS SQUAD units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked.",,,0,1,
 IRON_FATHER,Iron Father,Lone Operative near friendly Vehicles,"While Iron Father Feirros is within 3"" of a friendly Adeptus Astartes Vehicle, he has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,1,
 KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
@@ -189,7 +186,6 @@ PRIORITY_OBJECTIVE_IDENTIFIED,Priority Objective Identified,"Select an Objective
 PSYCHIC,PSYCHIC,Wounds caused are Psychic Attacks,"Weapons and abilities tagged Psychic are used by PSYKERS. If a Psychic weapon or ability causes wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,,0,1,
 PSYCHIC_HOOD,Psychic Hood,Feel No Pain 4+ against psychic attacks and abilities,This unit has Feel No Pain 4+ against psychic attacks and abilities.,[FNP 4+],[Unit Rules],0,1,
 PURGATION_RUN,Purgation Run,"After shooting: move up to D6""; cannot charge","In your Shooting phase, after this unit has shot, it can make a Normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,,0,1,
-RAMPART,Rampart,"Once, 2++","Once per battle, at the start of any phase, this model can use this ability. If it does, until the end of the phase, this model has a 2+ invulnerable save.",,,0,1,
 RAVENWING_COMMAND_SQUAD_WARGEAR,Ravenwing Command Squad - Wargear,"Champion, Apothecary & Ancient x3 Plasma Talons. 
 Enhancements, if any, added to Champion.","UNIT COMPOSITION
 1 Ravenwing Champion, 1 Ravenwing Apothecary, 1 Ravenwing Ancient. 
@@ -293,10 +289,6 @@ VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While th
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,0,1,
 WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,,0,1,
 WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds,"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
-WRATH_OF_DORN,Wrath of Dorn,RE-ROLL ALL WOUNDS,"EMPEROR""S SHIELD DETACHMENT ONLY
-
-Wrath of Dorn
-Each time a model in a DARNATH LYSANDER unit from your army makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.",[RE-ROLL ALL WOUNDS] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
 WRATH_OF_THE_FIRST_KHAN,Wrath Of The First Khan,"Spearhead Detachment Rule: If SUBODEN KHAN destroyed an enemy unit in the Fight phase and is not in Engagement Range, it can make a Normal move up to 6"".","WRATH OF THE FIRST KHAN: At the end of the Fight phase, if a SUBODEN KHAN unit from your army destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, that unit can make a Normal move of up to 6"".
 
 Note: Spearhead Detachment Rule. ",,,0,1,
@@ -331,8 +323,6 @@ LEADER_ADRAX_AGATONE,Leader: Adrax Agatone,"Can Lead: Most INFANTRY like
 Intercessors, Bladeguard Vets
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, COMPANY HEROES, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,9,3,
 LEADER_CAANOK_VAR,Leader: Caanok Var,"Can Lead: TERMINATORS
-Terminators, Assault Terminators","LEADER: TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,9,3,
-LEADER_DARNATH_LYSANDER,Leader: Darnath Lysander,"Can Lead: TERMINATORS
 Terminators, Assault Terminators","LEADER: TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,9,3,
 LEADER_IRON_FATHER_FEIRROS,Leader: Iron Father Feirros,"Can Lead: GRAVIS
 Aggressors, Eradicators
@@ -523,3 +513,13 @@ KAIUS_KONORIUS_UNIT_COMPOSITION,Unit Composition,"1 Kaius Konorius model
 Equipped: Heavy Bolt Pistol; Severance and Rebuke","1 Kaius Konorius model.
 
 This model is equipped with: 1 Heavy Bolt Pistol; 1 Severance and Rebuke.",,,9,3,0
+RAMPART,"Rampart (Once per battle, per army)","START OF ANY PHASE: once per battle, this model has 2++ until end of phase.","At the start of any phase, you can use this ability. If you do, this model has 2+ Invul until the end of the phase.",,,0,1,
+ICON_OF_OBSTINACY,Icon of Obstinacy,Attacks that target this unit have -1 to Hit rolls.,Attacks that target this unit have -1 to hit rolls.,[ENEMY -1 TO HIT],[Info Only],1,1,
+DARNATH_LYSANDER_UNIT_COMPOSITION,Unit Composition,"1 Darnath Lysander model
+Equipped: 1 Fist of Dorn","1 Darnath Lysander model
+This model is equipped with: 1 Fist of Dorn.",,,9,3,0
+TOR_GARADON_SIEGE_CAPTAIN,Siege Captain,Vs FORTIFICATION / MONSTER / VEHICLE: +2 S / AP / D.,"This model’s attacks that target a FORTIFICATION/MONSTER/VEHICLE unit have +2 S, AP and D.",,,0,1,
+TOR_GARADON_SIGNUM_ARRAY,Signum Array,"SHOOTING: visible enemy within 18"" cannot have the Benefit of Cover.","In your Shooting phase, you can select one visible enemy unit within 18"" of this unit. That enemy unit cannot have the benefit of cover.",,,1,1,
+TOR_GARADON_UNIT_COMPOSITION,Unit Composition,"1 Tor Garadon model
+Equipped: 1 Artificer Grav-gun; 1 Hand of Defiance","1 Tor Garadon model
+This model is equipped with: 1 Artificer Grav-gun; 1 Hand of Defiance.",,,9,3,0
