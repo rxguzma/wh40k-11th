@@ -72,12 +72,6 @@ space_marines_forgefathers_seekers_stratagem_blazing_earth_1cp,space_marines_for
 TARGET: One ADEPTUS ASTARTES unit from your army equipped with one or more Torrent weapons.
 
 EFFECT: Select one enemy unit (excluding MONSTERS and VEHICLES and units with the FLY keyword) within 12"" of and visible to your unit. Until the end of the phase, each time that enemy unit declares a charge, subtract 2 from the Charge roll (this is not cumulative with any other negative modifiers to that Charge roll).",,,,ADEPTUS ASTARTES,,
-space_marines_stormlance_task_force_stratagem_blitzing_fusillade_1cp,space_marines_stormlance_task_force,BLITZING FUSILLADE,1,"SHOOTING ANY UNIT 
-ASSAULT or SUSTAINED HITS 1.","WHEN: Your Shooting phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.
-
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well.",[ASSAULT] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_burning_vengeance_1cp,space_marines_firestorm_assault_force,Burning Vengeance,1,Disembark and Shoot,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.
 
 TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -163,12 +157,6 @@ space_marines_blade_of_ultramar_stratagem_exemplary_vigilance_1cp,space_marines_
 TARGET: One Adeptus Astartes unit from your army.
 
 EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",[IGNORES COVER] [+1 AP],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,,
-space_marines_stormlance_task_force_stratagem_full_throttle_2cp,space_marines_stormlance_task_force,FULL THROTTLE,2,"MOVEMENT: Auto Advance
-9"" Mounted, 6"" for Vehicles (No Walkers)","WHEN: Your Movement phase.
-
-TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.
-
-EFFECT: Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in your unit, or 9"" instead if your unit is MOUNTED.",[ADVANCE 6],[Movement Rules],,ADEPTUS ASTARTES,"MOUNTED, VEHICLE",WALKER
 space_marines_emperors_shield_stratagem_fury_of_the_first_1cp,space_marines_emperors_shield,FURY OF THE FIRST,1,"RANGE or MELEE
 TERMINATORS & VETS
  +1 TO HIT 
@@ -306,12 +294,6 @@ DARK_AGE_ARSENAL_STRATAGEM_REVELATION_OF_GUILT,DARK_AGE_ARSENAL,REVELATION OF GU
 TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Your unit's plasma ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],,ADEPTUS ASTARTES,,
-space_marines_stormlance_task_force_stratagem_ride_hard_ride_fast_1cp,space_marines_stormlance_task_force,RIDE HARD - RIDE FAST,1,"RANGE + MOUNTED or FLY 
- -1 To Hit & -1 To Wound.","WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",[ENEMY -1 TO HIT] [INCOMING RANGE -1 TO WOUND],[Info Only] [Info Only],,ADEPTUS ASTARTES,"MOUNTED, LAND SPEEDER, LAND SPEEDER VENGEANCE, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 iron_hands_hammer_of_avernii_stratagem_ruthless_butchery_1cp,iron_hands_hammer_of_avernii,RUTHLESS BUTCHERY,1,"MELEE and RANGE
 DREADS and VETS
 +1 TO HIT
@@ -325,14 +307,6 @@ DARK_AGE_ARSENAL_STRATAGEM_SEARING_BURSTS,DARK_AGE_ARSENAL,SEARING BURSTS,1,"HEL
 TARGET: That HELLBLASTER SQUAD unit.
 
 EFFECT: Select one enemy unit hit by your unit's plasma ranged attacks. That enemy unit is seared until the start of your next turn. While a unit is seared, that unit has -2"" M.",,,,"ADEPTUS ASTARTES, HELLBLASTER SQUAD",,
-space_marines_stormlance_task_force_stratagem_shock_assault_1cp,space_marines_stormlance_task_force,SHOCK ASSAULT,1,"CHARGE + MOUNTED
-Gets Lance = +1 TO WOUND","WHEN: Your Charge phase.
-
-TARGET: One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.
-
-EFFECT: Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.
-
-LANCE: Charge = +1 To Wound.",[+1 TO WOUND],[Melee - Combat Modifiers],,"ADEPTUS ASTARTES, MOUNTED",,
 DARKFLIGHT_PURSUIT_STRATAGEM_SKYBORNE_SURVEILLANCE,DARKFLIGHT_PURSUIT,SKYBORNE SURVEILLANCE,1,"SHOOTING: After a RAVENWING FLY unit has shot, visible enemy units within 6"" have +3"" detection range.","WHEN: Your Shooting phase, when a friendly RAVENWING FLY unit has shot.
 
 TARGET: That RAVENWING FLY unit.
@@ -406,14 +380,6 @@ DARKFLIGHT_PURSUIT_STRATAGEM_WE_ARE_VENGEANCE,DARKFLIGHT_PURSUIT,WE ARE VENGEANC
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Your unit can make a normal move of up to D3+3"".",,,,"ADEPTUS ASTARTES, RAVENWING, FLY",,
-space_marines_stormlance_task_force_stratagem_wind_swift_evasion_1cp,space_marines_stormlance_task_force,WIND-SWIFT EVASION,1,"INFANTRY or MOUNTED
-Reactive move up to 6"".","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of that enemy unit.
-
-EFFECT: Your unit can make a Normal move of up to 6"".
-
-RESTRICTIONS: You cannot select a unit that is within Engagement Range of one or more enemy units.",,,,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
 DARKFLIGHT_PURSUIT_STRATAGEM_WINGS_OF_SHADOW,DARKFLIGHT_PURSUIT,WINGS OF SHADOW,1,"ENEMY SHOOTING: When targeted, one RAVENWING FLY unit has Stealth.","WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly RAVENWING FLY unit.
 
 TARGET: That RAVENWING FLY unit.
