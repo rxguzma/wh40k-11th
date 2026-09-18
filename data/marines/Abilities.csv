@@ -495,3 +495,31 @@ Dainal Kornelius is equipped with: 1 Astropathic Blast; 1 Force Stave.
 Gaius Silva is equipped with: 1 Archeotech Laspistol; 1 Power Weapon.
 Lucia Vestha is equipped with: 1 Archeotech Laspistol; 1 Ultramarian Combat Weapons.
 Veteran Sergeant Metaurus is equipped with: 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon.",,,9,3,0
+VICTRIX_HONOUR_GUARD_GLORY_OF_ULTRAMAR,Glory of Ultramar,"OPP SHOOTING: Model destroyed → SURGE D6""","In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,,0,1,1
+VICTRIX_HONOUR_GUARD_HONOUR_GUARD_OF_MACRAGGE,Honour Guard of Macragge,Enemy attacks: -1 TO WOUND,Attacks that target this unit have -1 to wound rolls.,,,0,1,1
+VICTRIX_HONOUR_GUARD_BANNER_OF_MACRAGGE,Banner of Macragge,"CONTROL objective → SECURED
+1/BATTLE when selected to FIGHT: melee +1 A / +1 S","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.
+
+(Once per battle, per army) When this unit is selected to fight, you can use this ability. If you do, this unit’s melee attacks have +1 A and S.",[+1 A] [+1 S],[Melee - Weapon Stats] [Melee - Weapon Stats],0,1,0
+VICTRIX_HONOUR_GUARD_UNIT_COMPOSITION,Unit Composition,"0-1 Chapter Ancient
+0-1 Chapter Champion
+1-6 Victrix Honour Guard","0-1 Chapter Ancient model
+0-1 Chapter Champion model
+1-6 Victrix Honour Guard models
+
+The Chapter Ancient is equipped with: Banner of Macragge; 1 Master-crafted Bolt Carbine; 1 Master-crafted Power Weapon.
+
+The Chapter Champion is equipped with: 1 Blades of Honour.
+
+Every Victrix Honour Guard is equipped with: 1 Master-crafted Bolt Carbine; 1 Master-crafted Power Weapon.
+
+Keywords — All Models: INFANTRY; IMPERIUM; TACTICUS. Chapter Ancient: ANCIENT; EPIC HERO. Chapter Champion: CHAMPION; EPIC HERO. Faction Keywords: ADEPTUS ASTARTES; ULTRAMARINES.",,,9,3,0
+KAIUS_KONORIUS_SUPPORT,Support,Support,,,,0,2,1
+KAIUS_KONORIUS_VETERAN_BODYGUARD,Veteran Bodyguard,ATTACHED: Other CHARACTER models gain FNP 4+,"While this model is attached to a unit, other CHARACTER models in this unit have Feel No Pain 4+.",,,0,1,1
+KAIUS_KONORIUS_CALGARS_CHAMPION,Calgar’s Champion,Vs CHARACTER: RE-ROLL HIT 1S / WOUND 1S,"This model’s attacks that target a CHARACTER unit can:
+• Re-roll hit rolls of 1.
+• Re-roll wound rolls of 1.",[RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],0,1,0
+KAIUS_KONORIUS_UNIT_COMPOSITION,Unit Composition,"1 Kaius Konorius model
+Equipped: Heavy Bolt Pistol; Severance and Rebuke","1 Kaius Konorius model.
+
+This model is equipped with: 1 Heavy Bolt Pistol; 1 Severance and Rebuke.",,,9,3,0
