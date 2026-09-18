@@ -114,7 +114,6 @@ MONGOL_BOW,Mongol bow,"24""",2,2,5,-1,2
 MULTI_MELTA_ATV,Multi-melta (ATV),"18""",2,3,9,-4,D6
 MULTI_MELTA_ERADICATORS,Multi-melta,"18""",2,4,9,-4,D6
 MULTI_MELTA_VEHICLE,Multi-melta,"18""",2,3,9,-4,D6
-MULTI_MELTA_X1,Multi-melta,"18""",2,4,9,-4,D6
 NEURAL_SHREDDER,Neural shredder,"12""",D6,-,5,-2,1
 OCCULUS_BOLT_CARBINE,Occulus bolt carbine,"24""",2,3,4,0,1
 OMNISSIAN_POWER_AXE,Omnissian power axe,-,4,3,6,-2,2
@@ -136,7 +135,6 @@ PLASMA_TALON_STANDARD,Plasma talon – standard,"18""",2,3,7,-2,1
 PLASMA_TALON_SUPERCHARGE,Plasma talon – supercharge,"18""",2,3,8,-3,2
 POWER_FIST_ANCIENT,Power fist,-,4,2,8,-2,2
 POWER_FIST_CAPTAIN,Power fist,-,5,2,8,-2,2
-POWER_FIST_LIEUTENANT,Power fist,-,4,2,8,-2,2
 POWER_FIST_STERNGUARD_SGT,Power fist (Sgt),-,4,3,8,-2,2
 POWER_FIST_TERMINATORS,Power fist,-,3,3,8,-2,2
 POWER_FIST_TROOPS,Power fist (Sgt),-,3,3,8,-2,2
@@ -207,11 +205,8 @@ THUNDER_HAMMER_JUMP_CAPTAIN,Thunder hammer,-,5,3+,8,-2,2
 TWIN_LAS_TALON,Twin las-talon,"36""",2,3+,10,-3,D6+1
 MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT,Master-crafted power weapon,-,5,2+,5,-2,2
 MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT,Master-crafted special issue bolt pistol,"12""",1,2+,4,-1,2
-CAPTAIN_JUMP_PLASMA_PISTOL_STANDARD,Plasma pistol – standard,"12""",1,2,7,-2,1
-CAPTAIN_JUMP_PLASMA_PISTOL_SUPERCHARGE,Plasma pistol – supercharge,"12""",1,2,8,-3,2
 CAPTAIN_JUMP_HAND_FLAMER,Hand flamer,"12""",D6,N/A,3,0,1
 CAPTAIN_JUMP_ASTARTES_CHAINSWORD,Astartes chainsword,-,7,2,4,-1,1
-CAPTAIN_JUMP_POWER_FIST,Power fist,-,5,2,8,-2,2
 CAPTAIN_JUMP_RELIC_WEAPON,Relic weapon,-,6,2,5,-2,2
 CAPTAIN_JUMP_THUNDER_HAMMER,Thunder hammer,-,5,3,8,-2,2
 CAPTAIN_BOLT_PISTOL,Bolt pistol,"12""",1,2,4,0,1
@@ -223,7 +218,6 @@ CAPTAIN_PLASMA_PISTOL_SUPERCHARGE,Plasma Pistol - Supercharge,"12""",1,2+,8,-3,2
 CAPTAIN_CLOSE_COMBAT_WEAPON,Close combat weapon,-,6,2,4,0,1
 CAPTAIN_MASTER_CRAFTED_POWER_WEAPON,Master-crafted Power Weapon,-,6,2+,6,-2,2
 CAPTAIN_POWER_FIST,Power Fist,-,5,2+,8,-2,2
-GRAVIS_CAPTAIN_POWER_FIST,Power fist,-,5,2,8,-2,2
 GRAVIS_CAPTAIN_RELIC_CHAINSWORD,Relic chainsword,-,3,2,4,-1,2
 GRAVIS_CAPTAIN_RELIC_BLADE,Relic blade,-,2,2,5,-2,2
 GRAVIS_CAPTAIN_RELIC_FIST,Relic fist,-,1,2,8,-2,2
@@ -233,12 +227,9 @@ CAPTAIN_TERM_RELIC_FIST,Relic fist,-,5,2,8,-2,2
 PHOBOS_CAPTAIN_INSTIGATOR_BOLT_CARBINE,Instigator bolt carbine,"24""",1,2,4,-2,2
 PHOBOS_CAPTAIN_COMBAT_KNIFE,Combat knife,-,6,2,4,-1,1
 LIEUTENANT_MASTER_CRAFTED_BOLTER,Master-crafted bolter,"24""",2,2,4,-1,2
-LIEUTENANT_PLASMA_PISTOL_STANDARD,Plasma pistol – standard,"12""",1,2,7,-2,1
-LIEUTENANT_PLASMA_PISTOL_SUPERCHARGE,Plasma pistol – supercharge,"12""",1,2,8,-3,2
 LIEUTENANT_NEO_VOLKITE_PISTOL,Neo-volkite pistol,"12""",1,2,5,0,2
 LIEUTENANT_CLOSE_COMBAT_WEAPON,Close combat weapon,-,5,2,4,0,1
 LIEUTENANT_MASTER_CRAFTED_POWER_WEAPON,Master-crafted power weapon,-,5,2,5,-2,2
-LIEUTENANT_POWER_FIST,Power fist,-,4,2,8,-2,2
 LIEUTENANT_PHOBOS_SCOPED_BOLT_CARBINE,Master-crafted scoped bolt carbine,"24""",2,2,4,0,2
 LIEUTENANT_PHOBOS_PAIRED_COMBAT_BLADES,Paired combat blades,-,5,2,4,-1,1
 CHAPLAIN_JUMP_BOLTGUN,Boltgun,"24""",2,3,4,0,1
@@ -247,7 +238,6 @@ CHAPLAIN_JUMP_INFERNO_PISTOL,Inferno pistol,"6""",1,3,8,-4,D3
 CHAPLAIN_JUMP_PLASMA_PISTOL_STANDARD,Plasma pistol – standard,"12""",1,3,7,-2,1
 CHAPLAIN_JUMP_PLASMA_PISTOL_SUPERCHARGE,Plasma pistol – supercharge,"12""",1,3,8,-3,2
 CHAPLAIN_JUMP_STORM_BOLTER,Storm bolter,"24""",2,3,4,0,1
-CHAPLAIN_JUMP_POWER_FIST,Power fist,-,4,2,8,-2,2
 APOTHECARY_ABSOLVOR_BOLT_PISTOL,Absolvor bolt pistol,"18""",1,3,5,-1,2
 APOTHECARY_REDUCTOR_PISTOL,Reductor pistol,"3""",1,3,4,-4,2
 TWIN_LIGHTNING_CLAWS_TERMINATORS,Twin lightning claws,-,6,3,5,-2,1
