@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ALL","mode":"replace_text","column":"Tags","from":"[+1 CHARGE]","to":""},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_CHARGE","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ALL","mode":"replace_text","column":"Tags","from":"[+2 ADVANCE]","to":""},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_2_ADVANCE","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
