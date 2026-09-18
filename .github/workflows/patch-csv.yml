@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"VICTRIX_HONOUR_GUARD","mode":"insert","sets":{"Unit Name":"Victrix Honour Guard","M\"":"6\"","T":"5","SV":"2+","W":"3","LD":"6+","OC":"2","Keywords":"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES","Hyperlink":""}},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"KAIUS_KONORIUS","mode":"insert","sets":{"Unit Name":"Kaius Konorius","M\"":"6\"","T":"5","SV":"2+/4++","W":"5","LD":"6+","OC":"1","Keywords":"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES","Hyperlink":""}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"VICTRIX_HONOUR_GUARD","mode":"update","sets":{"Unit Name":"Victrix Honour Guard","M\"":"6\"","T":"5","SV":"2+","W":"3","LD":"6+","OC":"2","Keywords":"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES","Hyperlink":""}},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"KAIUS_KONORIUS","mode":"insert","sets":{"Unit Name":"Kaius Konorius","M\"":"6\"","T":"5","SV":"2+/4++","W":"5","LD":"6+","OC":"1","Keywords":"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES","Hyperlink":""}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
