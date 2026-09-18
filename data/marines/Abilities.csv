@@ -78,7 +78,9 @@ EXHORTATION_OF_RAGE,Exhortation of Rage,"Fight: engaged enemy suffers D3 mortal 
 FEARSOME_ASSAULT,Fearsome Assault,"In Engagement, Enemy must take LD test -1","At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test, subtracting 1 from that test.",,,0,1,
 FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE,"Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll.",[+1 TO HIT],[Range - Combat Modifiers],0,1,
 FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First.,"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",[FIGHTS FIRST],[Unit Rules],0,1,
-FINEST_HOUR,Finest Hour,Once per battle: Add +3 Attacks and DEVASTATING WOUNDS in melee,"Finest Hour (Once per battle): In the Fight phase, when this unit is selected to fight, this model’s melee weapons have +3 Attacks and [DEVASTATING WOUNDS] until the end of the phase.",[+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Melee - Weapon Rules],0,1,
+FINEST_HOUR,"Finest Hour (Once per battle, per unit)",FIGHT: melee +3 A / DEVASTATING WOUNDS,"In the Fight phase, when this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have:
+• +3 A.
+• [DEVASTATING WOUNDS].",[+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Melee - Weapon Rules],0,1,0
 FOR_THE_CHAPTER,For the Chapter!,"Each time a model in this unit is destroyed, roll one D6: on a 3+, it can shoot again before it is removed. For these new attacks, no Hazardous tests are needed.","Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",,,0,1,
 FORGEFATHER,Forgefather,"SHOOTING: visible enemy within 24""
 Friendly MELTA / TORRENT vs target: +2 S","In your Shooting phase, select one visible enemy unit within 24"" of this model. Friendly ADEPTUS ASTARTES units’ [MELTA] / [TORRENT] attacks that target that enemy unit have +2 S.",,,0,1,1
@@ -559,3 +561,9 @@ SUBODEN_KHAN_UNIT_COMPOSITION,Unit Composition,"1 Suboden Khan model
 Equipped: 1 Heavy Bolt Pistol; 1 Onslaught Gatling Cannon; 1 Power Sword; 1 Stormtooth","1 Suboden Khan model.
 
 This model is equipped with: 1 Heavy Bolt Pistol; 1 Onslaught Gatling Cannon; 1 Power Sword; 1 Stormtooth.",,,9,3,0
+CAPTAIN_STRATEGIC_ACUMEN,Strategic Acumen,COMMAND: Select 1 COMBAT DOCTRINE until next COMMAND,"In your Command phase, you can use this ability. If you do, select one combat doctrine to be active for this unit until the start of your next Command phase.",,,0,1,1
+CAPTAIN_RELIC_SHIELD,Relic Shield,+1 W,This model has +1 W.,[+1 W],[Unit Stats],0,1,1
+CAPTAIN_UNIT_COMPOSITION,Unit Composition,"1 Captain model
+Equipped: 1 Heavy Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Power Weapon","1 Captain model.
+
+This model is equipped with: 1 Heavy Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Power Weapon.",,,9,3,0
