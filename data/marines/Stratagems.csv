@@ -42,11 +42,6 @@ SUBVERSION_ASSETS_STRATAGEM_ADAPTIVE_OPERATIONS,SUBVERSION_ASSETS,ADAPTIVE OPERA
 TARGET: That PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: That action does not prevent your unit from being eligible to shoot.",,,,ADEPTUS ASTARTES,"PHOBOS, SCOUT SQUAD",
-space_marines_spearpoint_task_force_stratagem_armour_of_contempt_1cp,space_marines_spearpoint_task_force,Armour Of Contempt,1,Enemy Shooting/Fight. One ADEPTUS ASTARTES unit worsens incoming AP by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_armour_of_contempt_1cp,space_marines_firestorm_assault_force,Armour Of Contempt,1,-1 AP for vs one unit,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -115,11 +110,6 @@ VOWED OBJ = 3+.","WHEN: Fight phase, just after an enemy unit has selected its t
 TARGET: One DEATHWING unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 if your unit is within range of your Vowed objective marker. On a 4+, do not remove the destroyed model from play; it can fight after the attacking unit has finished making its attacks, and is then removed from play.",[FIGHT ON DEATH 4+] [FIGHT ON DEATH 3+],[Unit Rules] [Unit Rules],0,"ADEPTUS ASTARTES, DEATHWING",,
-space_marines_spearpoint_task_force_stratagem_evasive_manoeuvres_1cp,space_marines_spearpoint_task_force,Evasive Manoeuvres,1,Enemy Shooting. MOUNTED or FLY VEHICLE gets -1 to be hit and wounded.,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",[ENEMY -1 TO HIT] [INCOMING -1 TO WOUND],[Info Only] [Info Only],,ADEPTUS ASTARTES,"MOUNTED, LAND SPEEDER, LAND SPEEDER VENGEANCE, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 INTERROGATION_CONCLAVE_STRATAGEM_EXACTING_PUNISHMENT,INTERROGATION_CONCLAVE,EXACTING PUNISHMENT,1,CHAPLAIN: Shooting or Fight have PRECISION.,"WHEN: Your Shooting phase or the Fight phase, when a friendly CHAPLAIN unit is selected to attack.
 
 TARGET: That CHAPLAIN unit.
@@ -133,11 +123,6 @@ TARGET: Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other A
 EFFECT: Remove those units from the battlefield and place them into Strategic Reserves.
 
 RESTRICTIONS: Each unit selected for this Stratagem must be more than 3"" away from all enemy models.",[STRATEGIC RESERVES],[Movement Rules],,"ADEPTUS ASTARTES, INFANTRY",,
-space_marines_spearpoint_task_force_stratagem_hunters_instincts_1cp,space_marines_spearpoint_task_force,Hunter’s Instincts,1,"Enemy Movement. INFANTRY or MOUNTED within 9"" can make a Normal move up to 6"".","WHEN: Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.
-
-TARGET: One ADEPTUS ASTARTES INFANTRY unit or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of that enemy unit. You cannot target a unit that is within Engagement Range of one or more enemy units.
-
-EFFECT: Your unit can make a Normal move of up to 6"".",,,,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
 dark_angels_lions_blade_task_force_stratagem_illuminating_fire_1cp,dark_angels_lions_blade_task_force,ILLUMINATING FIRE,1,"Shooting. Ravenwing within 12"" of target. 
 All Deathwing +1 TO WOUND.","WHEN: Your Shooting phase, just after a RAVENWING unit from your army has selected its targets.
 
@@ -193,11 +178,6 @@ VOWED OBJ = ALL To Wound","WHEN: Fight phase.
 TARGET: One DEATHWING INFANTRY unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If your unit is within range of your Vowed objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers],,"ADEPTUS ASTARTES, DEATHWING, INFANTRY",,
-space_marines_spearpoint_task_force_stratagem_mobile_lethality_1cp,space_marines_spearpoint_task_force,Mobile Lethality,1,Movement. Unit can shoot after Advancing or Falling Back.,"WHEN: Your Movement phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army.
-
-EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced or Fell Back.",[ASSAULT] [FALL BACK AND SHOOT],[Range - Weapon Rules] [Movement Rules],,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_onslaught_of_fire_1cp,space_marines_firestorm_assault_force,Onslaught Of Fire,1,"Disembark, +1 TO HIT","WHEN: Your Shooting phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.
@@ -243,11 +223,6 @@ DARKFLIGHT_PURSUIT_STRATAGEM_SKYBORNE_SURVEILLANCE,DARKFLIGHT_PURSUIT,SKYBORNE S
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Visible enemy units within 6"" of your unit have +3"" detection range.",,,,"ADEPTUS ASTARTES, RAVENWING, FLY",,
-space_marines_spearpoint_task_force_stratagem_spear_thrust_and_sabre_swing_1cp,space_marines_spearpoint_task_force,Spear Thrust And Sabre Swing,1,Fight. Unit gains LANCE or LETHAL HITS. MOUNTED gets both.,"WHEN: Fight phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.
-
-EFFECT: Select either the [LANCE] or [LETHAL HITS] ability. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability. If it is a MOUNTED unit, until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] and [LETHAL HITS] abilities instead.",[+1 TO WOUND] [LETHAL HITS],[Melee - Combat Modifiers] [Melee - Weapon Rules],0,ADEPTUS ASTARTES,,
 dark_angels_lions_blade_task_force_stratagem_strength_in_unity_1cp,dark_angels_lions_blade_task_force,STRENGTH IN UNITY,1,Figth. -1 To Hit if Ravenwing involved. -1 To Wound if Deathwing.,"WHEN: Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -305,11 +280,6 @@ DARKFLIGHT_PURSUIT_STRATAGEM_WINGS_OF_SHADOW,DARKFLIGHT_PURSUIT,WINGS OF SHADOW,
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Your unit has Stealth.",[STEALTH],[Unit Rules],,"ADEPTUS ASTARTES, RAVENWING, FLY",,
-space_marines_spearpoint_task_force_stratagem_withdraw_and_regroup_1cp,space_marines_spearpoint_task_force,Withdraw And Regroup,1,End of enemy Fight. MOUNTED or FLY VEHICLE not in Engagement goes into Strategic Reserves.,"WHEN: End of your opponent’s Fight phase.
-
-TARGET: One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that is not within Engagement Range of one or more enemy units.
-
-EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],,ADEPTUS ASTARTES,"MOUNTED, LAND SPEEDER, LAND SPEEDER VENGEANCE, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 dark_angels_inner_circle_task_force_stratagem_wrath_of_the_lion_1cp,dark_angels_inner_circle_task_force,WRATH OF THE LION,1,"Deathwing INFANTRY (Charges): Mortals per model on a 4+ Max 3 Mortals.
 
 VOWED OBJ = 3+ Max 3 Mortal Wounds","WHEN: Your Charge phase.
