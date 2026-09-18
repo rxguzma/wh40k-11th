@@ -118,7 +118,6 @@ SCOUT_6,Scout 6”,Scout 6”,Movement Rules,Unit,The affected unit has Scout 6�
 CRITS_5_PLUS_MELEE,CRITS 5+,Crits 5+,Melee - Weapon Rules,Weapon,Critical hits on unmodified 5+ for melee attacks.,TRUE,WEAPON_RULE,MELEE,CRITS,SET,5,922
 CRITS_5_PLUS_RANGE,CRITS 5+,Crits 5+,Range - Weapon Rules,Weapon,Critical hits on unmodified 5+ for ranged attacks.,TRUE,WEAPON_RULE,RANGE,CRITS,SET,5,923
 PLUS_1_ADVANCE,+1 ADVANCE,+1 Advance,Movement Rules,Unit,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
-PLUS_1_CHARGE,+1 CHARGE,+1 Charge,Movement Rules,Unit,Add 1 to the affected unit Charge roll while this rule is active.,TRUE,,,,,,925
 PLUS_2_A_RANGE,+2 A,+2 Attacks,Range - Weapon Stats,Ranged Weapons,Adds 2 Attacks to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,A,ADD,2,926
 PRECISION_MELEE,PRECISION,Precision,Melee - Weapon Rules,Melee Weapons,The affected melee weapon has Precision while this rule is active.,TRUE,WEAPON_RULE,MELEE,PRECISION,SET,1,927
 PRECISION_RANGE,PRECISION,Precision,Range - Weapon Rules,Ranged Weapons,The affected ranged weapon has Precision while this rule is active.,TRUE,WEAPON_RULE,RANGE,PRECISION,SET,1,928

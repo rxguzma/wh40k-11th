@@ -151,18 +151,18 @@ Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can u
 - This unit can make an ingress move in your next Movement phase (including in your first turn).
 
 Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",[+6 M”],[Unit Stats],0,1,
-THUNDERING_STAMPEDE,Thundering Stampede,"AURA: Friendly BEAST SNAGGA within 6""","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",[+1 CHARGE],[Movement Rules],0,1,0
+THUNDERING_STAMPEDE,Thundering Stampede,"AURA: Friendly BEAST SNAGGA within 6""","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",,[Movement Rules],0,1,0
 TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,9,3,
 TRANSPORT_GUNWAGON,Transport (Gunwagon),"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,9,3,
 TRANSPORT_KILL_RIG,Transport (Kill Rig),Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.,,,9,3,
 TRANSPORT_SQUIGGOTH,Transport (Squiggoth),"Transport 10 Orks, Cannot Mega Armour or Ghaz","This model has a transport capacity of 10 ORKS INFANTRY models. If this model is equipped with a kannon, it has a transport capacity of 6 ORKS INFANTRY models. It cannot transport MEGA ARMOUR, JUMP PACK or Ghazghkull Thraka models.",,,9,3,
 TRANSPORT_STOMPA,Transport (Stompa),"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,9,3,
 TRANSPORT_TRUKK,Transport (Trukk),Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA / JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.,,,9,3,
-TROPHY_HUNTERS,Trophy Hunters,ANYTIME,This unit has +1 to charge rolls,[+1 CHARGE],[Movement Rules],0,1,1
+TROPHY_HUNTERS,Trophy Hunters,ANYTIME,This unit has +1 to charge rolls,,[Movement Rules],0,1,1
 UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Burna Boyz.
 
 Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.",,,9,3,
-WAAAGH_BANNER,Waaagh! Banner,ANYTIME,This unit has +1 to charge rolls.,[+1 CHARGE],[Movement Rules],0,1,0
+WAAAGH_BANNER,Waaagh! Banner,ANYTIME,This unit has +1 to charge rolls.,,[Movement Rules],0,1,0
 WAAAGH_EFFIGY_AURA,Waaagh! Effigy (Aura),"Friendly ORKS within 12"": Add +1 to Battle-shock tests","While a friendly ORKS unit is within 12"" of this model, each time you take a Battle-shock test for that unit, add 1 to that test.",,,0,1,
 WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF WARLORD: WARBIKERS,"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],[Unit Rules],0,1,0
 WARGEAR_OPTIONS_BOYZ,Wargear Options - Boyz,Boss Nob can replace kustom shoota with kombi-shoota and kombi-rokkit,Wargear Options: The Boss Nob can have its 1 kustom shoota replaced with 1 kombi-shoota and 1 kombi-rokkit.,,,0,1,
