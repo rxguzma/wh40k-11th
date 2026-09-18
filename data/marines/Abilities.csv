@@ -443,3 +443,6 @@ ROBOUTE_GUILLIMAN_UNIT_COMPOSITION,Unit Composition,"1 Roboute Guilliman model
 Equipped: 1 Emperor’s Sword; 1 Hand of Dominion","1 Roboute Guilliman model.
 
 This model is equipped with: 1 Emperor’s Sword; 1 Hand of Dominion.",,,9,3,0
+MARNEUS_CALGAR_CODEX_ADEPT,Codex Adept,"Assault, Devastator and Tactical Doctrines active for this unit","The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,,0,1,
+MARNEUS_CALGAR_MASTER_TACTICIAN,Master Tactician,"Movement: visible friendly ADEPTUS ASTARTES within 9"" gains 1 Combat Doctrine until next Command phase","In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 9"" of this model and select one combat doctrine. That combat doctrine is active for that unit until the start of your next Command phase.",,,1,1,
+MARNEUS_CALGAR_THUNDERHAWK_INSERTION,Thunderhawk Insertion,Declare Battle Formations: 1 friendly GRAVIS/PHOBOS/TACTICUS unit gains Deep Strike,"In the Declare Battle Formations step, you can select one friendly GRAVIS/PHOBOS/TACTICUS unit. That unit has Deep Strike.",,,2,1,
