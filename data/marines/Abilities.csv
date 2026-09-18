@@ -476,3 +476,6 @@ CATO_SICARIUS_CAPTAIN_OF_THE_HONOUR_GUARD,Captain of the Honour Guard,"If MARNEU
 CATO_SICARIUS_UNIT_COMPOSITION,Unit Composition,"1 Cato Sicarius model
 Equipped: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade","1 Cato Sicarius model
 This model is equipped with: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade.",,,9,3,0
+WARDENS_OF_ULTRAMAR_SUPPORT,Support,Support,Support.,,,0,2,1
+WARDENS_OF_ULTRAMAR_RAISE_THE_BANNER,Raise the Banner,"END OF MOVEMENT: If controlling an objective, that objective is SECURED.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,0,1,1
+WARDENS_OF_ULTRAMAR_STRATEGIUM_COMMAND,Strategium Command,AFTER DEPLOYMENT: Redeploy up to 3 friendly ADEPTUS ASTARTES units; may place them in STRATEGIC RESERVES regardless of limit.,"When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,,0,1,1
