@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"_","mode":"replace_text","column":"Ability_ID","from":"FEEL_NO_PAIN_","to":"FNP_"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS","mode":"update","sets":{"Ability_ID":"ROBOUTE_GUILLIMAN_FNP_5","Ability Name":"FNP 5+","Short_Description":"FNP 5+","Long_Description":"FNP 5+.","Tags":"[FNP 5+]","Tag Categories":"[Unit Rules]","Order":"0","Visibility_ID":"2","Default_Active":"1"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Ability_ID","row_id":"ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS","mode":"update","sets":{"Ability_ID":"ROBOUTE_GUILLIMAN_FNP_5","Unit_ID":"ROBOUTE_GUILLIMAN","Ability_Type":"ABILITY"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
