@@ -1,34 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-dark_angels_lions_blade_task_force,Dark Angels,Lions Blade Task Force,dark_angels_lions_blade_task_force_detachment_rule_detachment_rule,LION'S BLADE,2,Purge the Foe,,"Ravenwing: Desperate Escape -1 when falling back.
-Deathwing: +2 to Charge if Ravenwing in Engagement.","Each time an enemy unit (excluding MONSTERS and VEHICLES) within Engagement Range of one or more RAVENWING units from your army Falls Back, all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those tests.
-
-Each time a DEATHWING unit from your army declares a charge, if one or more targets of that charge are within Engagement Range of one or more RAVENWING units from your army, add 2 to the Charge roll.",,,,,"RAVENWING, DEATHWING",
-DARKFLIGHT_PURSUIT,Dark Angels,Darkflight Pursuit,DARKFLIGHT_PURSUIT_DETACHMENT_RULE_BLACK_WINGED_VIGILANCE,BLACK-WINGED VIGILANCE,1,Recon,,RAVENWING FLY units' ranged attacks have IGNORES COVER.,"Friendly RAVENWING FLY units' ranged attacks have [IGNORES COVER].
-
-RESTRICTIONS: Your army can include DARK ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",[IGNORES COVER],[Range - Weapon Rules],,"RAVENWING, FLY",,
-space_marines_firestorm_assault_force,Marines,Firestorm Assault Force,space_marines_firestorm_assault_force_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,2,Priority Assets,,"Range: Get ASSAULT and +1 S within 12""","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.",[ASSAULT] [+1 S],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,,
-INTERROGATION_CONCLAVE,Dark Angels,Interrogation Conclave,INTERROGATION_CONCLAVE_DETACHMENT_RULE_DREAD_CATECHISM,DREAD CATECHISM,1,Recon,,"CHAPLAIN: Destroy a unit = Force Battle-shock. Also, -1 LD within 6"".","In the Fight phase, when a friendly CHAPLAIN unit destroys an enemy unit, enemy units within 6"" of that CHAPLAIN unit make a battle-shock roll.
-
-Friendly CHAPLAIN units have the following ability: Sower of Dread (Aura): While an enemy unit is within 6"" of this unit, that enemy unit has -1 Ld.",,,,CHAPLAIN,,
-LIBRARIUS_CONCLAVE,Marines,Librarius Conclave,LIBRARIUS_CONCLAVE_DETACHMENT_RULE_PSYCHIC_DISCIPLINES,PSYCHIC DISCIPLINES,1,Recon,,"Start of battle round:
-- Biomancy: +2"" M.
-- Divination: RE-ROLL 1S TO HIT and RE-ROLL 1S TO WOUND
-- Pyromancy: Ranged within 12"" have +1 AP
-- Telekinesis: Enemy Range -1 S.
-- Telepathy: Ignore mods to BS, WS and hits.","At the start of the battle round, select one of the following Psychic Disciplines abilities. Friendly ADEPTUS ASTARTES PSYKER units have that ability until the end of the battle round:
-
-Biomancy Discipline: This unit has +2"" M.
-
-Divination Discipline: This unit's attacks can re-roll hit rolls of 1 and re-roll wound rolls of 1.
-
-Pyromancy Discipline: This unit's ranged attacks that target an enemy unit within 12"" of this unit have +1 AP.
-
-Telekinesis Discipline: Ranged attacks that target this unit have -1 S.
-
-Telepathy Discipline: This unit's attacks can ignore modifiers to BS, WS and hit rolls.",,,,"ADEPTUS ASTARTES, PSYKER",,
-SUBVERSION_ASSETS,Marines,Subversion Assets,SUBVERSION_ASSETS_DETACHMENT_RULE_NOWHERE_TO_HIDE,NOWHERE TO HIDE,1,Disruption,,"PHOBOS and SCOUT detect a visible enemy within 12"". 
-While detected, enemy has +3"" detection range.","Friendly PHOBOS/SCOUT SQUAD units have the following ability. Transhuman Perception: In your Shooting phase, this unit can select one visible enemy unit within 12"". That enemy unit is detected. While a unit is detected, that unit has +3"" detection range.",,,,,"PHOBOS, SCOUT SQUAD",
-space_marines_vanguard_spearhead,Marines,Vanguard Spearhead,space_marines_vanguard_spearhead_detachment_rule_detachment_rule,SHADOW MASTERS,2,Recon,,Cover & -1 To be Hit,"Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack.",[BENEFIT OF COVER] [ENEMY -1 TO HIT],[Unit Rules] [Info Only],,ADEPTUS ASTARTES,,
 space_marines_orbital_assault_force,Marines,Orbital Assault Force,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,2,Take and Hold,,"x3 unit gain Deep Strike
 
 Also, Set up this turn: RE-ROLL 1S TO WOUND
