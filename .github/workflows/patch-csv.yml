@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"space_marines_tactical_brethren","column":"DP_Cost","value":"1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"space_marines_devastator_brethren","column":"DP_Cost","value":"1"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
