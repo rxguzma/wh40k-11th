@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"_","mode":"replace_text","column":"Ability_ID","from":"ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS","to":"FNP_5"},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"_","mode":"replace_text","column":"Ability_ID","from":"FEEL_NO_PAIN_","to":"FNP_"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS","mode":"delete"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"_","mode":"replace_text","column":"Long_Description","from":"Feel No Pain","to":"FNP"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"_","mode":"replace_text","column":"Ability_ID","from":"FEEL_NO_PAIN_","to":"FNP_"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
