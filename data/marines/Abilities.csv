@@ -445,3 +445,17 @@ MARNEUS_CALGAR_MASTER_TACTICIAN,Master Tactician,"Movement: visible friendly ADE
 MARNEUS_CALGAR_THUNDERHAWK_INSERTION,Thunderhawk Insertion,Declare Battle Formations: 1 friendly GRAVIS/PHOBOS/TACTICUS unit gains Deep Strike,"In the Declare Battle Formations step, you can select one friendly GRAVIS/PHOBOS/TACTICUS unit. That unit has Deep Strike.",,,2,1,
 MARNEUS_CALGAR_UNIT_COMPOSITION,Unit Composition,1 Marneus Calgar model,"1 Marneus Calgar model
 This model is equipped with: 1 Gauntlets of Ultramar.",,,9,3,
+CAPTAIN_TITUS_PRESS_THE_ATTACK,Press the Attack,"MELEE: SUSTAINED HITS 1: non-MONSTER/VEHICLE
+ASSAULT DOCTRINE: SUSTAINED HITS 1","This unit’s melee attacks have:
+• [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
+• Or: If the assault doctrine is active for this unit, [SUSTAINED HITS 1].",,,0,1,1
+CAPTAIN_TITUS_RIGHTEOUS_FURY,"Righteous Fury (Once per battle, per army)","FIGHT: melee +1 S
+After fighting: heal D3 / 2D3 if enemy model destroyed this phase","In the Fight phase, you can use this ability. If you do, this unit’s melee attacks have +1 S, and when this unit has fought:
+• This unit heals D3 wounds.
+• Or: If this unit destroyed an enemy model this phase, this unit heals 2D3 wounds.",,,0,1,1
+CAPTAIN_TITUS_HONOUR_OF_ULTRAMAR,Honour of Ultramar,FIGHT: destroyed before selected to fight → 2+ fight before removal,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
+• On a 2+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",,,0,1,1
+CAPTAIN_TITUS_UNIT_COMPOSITION,Unit Composition,"1 Captain Titus model
+Equipped: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword","1 Captain Titus model.
+
+This model is equipped with: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword.",,,9,3,0
