@@ -371,7 +371,7 @@ CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command ph
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,"Once per battle.
 Crude Surgery is D3+3","Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
-HARDY_BILIOUS,Hardy Bioniks,Incoming attack Strength > Toughness: -1 to Wound.,"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
+HARDY_BILIOUS,Hardy Bioniks,Attack Strength higher Toughness: -1 to Wound.,"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY

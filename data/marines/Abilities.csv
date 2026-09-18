@@ -112,7 +112,7 @@ Note: x7 bolt pistols",,,0,1,
 INFILTRATOR_COMMS_ARRAY,Infiltrator Comms Array,"Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.","Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",[GAIN 1 CP],[Unit Rules],0,1,
 INFILTRATORS,Infiltrators,"During Deployment, setup anywhere 9"" away.","During deployment, if every model in a unit has this ability, then when you set it up, it can be set up anywhere on the battlefield that is more than 9"" horizontally away from the enemy deployment zone and all enemy models.",[INFILTRATORS],[Unit Rules],0,1,
 INNER_CIRCLE,Inner Circle,-1 Damage to Unit,"Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],0,1,
-IRON_FATHER,Iron Father,"Within 3"" friendly ADEPTUS ASTARTES VEHICLE → LONE OPERATIVE","While this model is within 3"" of a friendly ADEPTUS ASTARTES VEHICLE unit, this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,1,0
+IRON_FATHER,Iron Father,"Within 3"" of friendly ADEPTUS ASTARTES VEHICLE = LONE OPERATIVE.","While this model is within 3"" of a friendly ADEPTUS ASTARTES VEHICLE unit, this unit has Lone Operative.",[LONE OPERATIVE],[Unit Rules],0,1,0
 KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
 +1 TO HIT if below Strength
 +1 TO WOUND if HALF Strength","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",[+1 TO HIT] [+1 TO HIT] [+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
@@ -135,8 +135,7 @@ DEVASTATING WOUNDS: Critical Hits (ie 6s) = Mortal.",[DEVASTATING WOUNDS],[Range
 MASTER_OF_SHADOWS,Master of Shadows,"COMMAND: friendly ADEPTUS ASTARTES INFANTRY
 RE-ROLL CHARGE until next COMMAND","In your Command phase, you can select one friendly ADEPTUS ASTARTES INFANTRY unit. You can re-roll charge rolls for that unit until the start of your next Command phase.",[RE-ROLL CHARGE],[Movement Rules],0,1,1
 MASTER_OF_THE_FLEET,Master of the Fleet,"Deep Strike for one unit: PHOBOS, GRAVIS or TACTICUS ADEPTUS ASTARTES INFANTRY","During the Declare Battle Formations step, if your army includes this model, select one PHOBOS, GRAVIS or TACTICUS ADEPTUS ASTARTES INFANTRY unit from your army. That unit gains the Deep Strike ability.",[DEEP STRIKE],[Unit Rules],0,1,
-MASTER_OF_THE_FORGE,Master of the Forge,"MOVEMENT start/end: friendly VEHICLE within 3""
-Heal 3; ignore BS / Hit / Wound modifiers until next MOVEMENT","In your Movement phase, at the start or end of this unit’s move, you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3"" of this model:
+MASTER_OF_THE_FORGE,Master of the Forge,"Start / end of Movement: friendly VEHICLE within 3"" heals 3 and ignores BS / Hit / Wound modifiers until next Movement.","In your Movement phase, at the start or end of this unit’s move, you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3"" of this model:
 • That VEHICLE model heals 3 wounds.
 • That VEHICLE model’s attacks can ignore modifiers to the following until the start of your next Movement phase:
 • BS.
@@ -190,7 +189,7 @@ REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage,"Each time an attack is allo
 RELIC_BANNER,Relic Banner,Add +1 Objective Control,This unit has +1 Objective Control.,[+1 OC],[Unit Stats],0,1,
 RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,[+1 W],[Unit Stats],0,1,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,,0,1,
-RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls.,,,0,1,1
+RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,Attack Strength higher Toughness: -1 to Wound.,,,0,1,1
 ROTATING_DEATH,Rotating Death,Vs. INFANTRY. Gatling Cannon SUSTAINED HITS 2,"This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting INFANTRY units.
 
 SUSTAINED HITS 2: Each Critical Hit (ie 6s) scores 2 additional Hits on the Target.",[SUSTAINED HITS 2],[Range - Weapon Rules],0,1,
