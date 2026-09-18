@@ -42,11 +42,6 @@ SUBVERSION_ASSETS_STRATAGEM_ADAPTIVE_OPERATIONS,SUBVERSION_ASSETS,ADAPTIVE OPERA
 TARGET: That PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: That action does not prevent your unit from being eligible to shoot.",,,,ADEPTUS ASTARTES,"PHOBOS, SCOUT SQUAD",
-FULGURIS_TASK_FORCE_STRATAGEM_ANTI_GRAV_SURGE,FULGURIS_TASK_FORCE,ANTI-GRAV SURGE,1,SPEEDER to Reserves end of Enemy Fight.,"WHEN: End of your opponent's Fight phase.
-
-TARGET: One friendly unengaged SPEEDER unit.
-
-EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],,ADEPTUS ASTARTES,"LAND SPEEDER, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 space_marines_spearpoint_task_force_stratagem_armour_of_contempt_1cp,space_marines_spearpoint_task_force,Armour Of Contempt,1,Enemy Shooting/Fight. One ADEPTUS ASTARTES unit worsens incoming AP by 1.,"WHEN: Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -120,11 +115,6 @@ space_marines_firestorm_assault_force_stratagem_crucible_of_battle_1cp,space_mar
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6"", add 1 to the Wound roll.",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],,"ADEPTUS ASTARTES, INFANTRY",,
-FULGURIS_TASK_FORCE_STRATAGEM_DATA_LINK_AUGURY,FULGURIS_TASK_FORCE,DATA-LINK AUGURY,1,"SPEEDER within 24"". Enemy has +6"" detection until SPEEDER has shot.","WHEN: Your Shooting phase, when a friendly SPEEDER unit is selected to shoot.
-
-TARGET: That SPEEDER unit.
-
-EFFECT: Select one enemy unit within 24"" of your unit. That enemy unit has +6"" detection range until your unit has shot.",,,,ADEPTUS ASTARTES,"LAND SPEEDER, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 space_marines_emperors_shield_stratagem_disciplined_extermination_1cp,space_marines_emperors_shield,DISCIPLINED EXTERMINATION,1,"RANGE
 TERMINATORS & VETS
 IGNORES COVER and +1 AP","WHEN: Your Shooting phase.
@@ -321,11 +311,6 @@ space_marines_shadowmark_talon_stratagem_raptorial_vigilance_1cp,space_marines_s
 TARGET: One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army that is within 9"" of the enemy unit that just ended that move. You cannot target a unit that is within Engagement Range of one or more enemy units.
 
 EFFECT: Your unit can make a Normal move of up to D6"", or up to 6"" instead if it is a PHOBOS or SCOUT SQUAD unit.",,,,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
-FULGURIS_TASK_FORCE_STRATAGEM_REACTIVE_EVASION,FULGURIS_TASK_FORCE,REACTIVE EVASION,1,"SPEEDER reactive moves D3+3"" when enemy moves within 8"".","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged SPEEDER unit.
-
-TARGET: That SPEEDER unit.
-
-EFFECT: Your unit can make a normal move of up to D3+3"".",,,,ADEPTUS ASTARTES,"LAND SPEEDER, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 dark_angels_inner_circle_task_force_stratagem_relic_teleportarium_1cp,dark_angels_inner_circle_task_force,RELIC TELEPORTARIUM,1,"Deathwing with Deepstrike:  6"" Deep Strike","WHEN: Your Movement phase.
 
 TARGET: One DEATHWING unit from your army that is arriving using the Deep Strike ability this phase.

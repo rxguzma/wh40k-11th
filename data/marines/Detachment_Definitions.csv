@@ -1,8 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-FULGURIS_TASK_FORCE,Marines,Fulguris Task Force,FULGURIS_TASK_FORCE_DETACHMENT_RULE_SKYSTRIKE,SKYSTRIKE,1,Recon,,"LAND SPEEDER and STORM SPEEDER units gain SPEEDER. 
-First Movement phase: SPEEDER units can make an ingress move.","Friendly LAND SPEEDER/STORM SPEEDER HAILSTRIKE/STORM SPEEDER HAMMERSTRIKE/STORM SPEEDER THUNDERSTRIKE units have SPEEDER.
-
-In your first Movement phase, friendly SPEEDER units can make an ingress move.",[INGRESS],[Movement Rules],,ADEPTUS ASTARTES,"LAND SPEEDER, STORM SPEEDER HAILSTRIKE, STORM SPEEDER HAMMERSTRIKE, STORM SPEEDER THUNDERSTRIKE",
 space_marines_shadowmark_talon,Raven Guard,Shadowmark Talon,space_marines_shadowmark_talon_detachment_rule_detachment_rule,SHADOW MASTERS,2,Disruption,,"Cover & -1 To be Hit
 Aethon: ONCE Free Into the Darkness.","Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12"", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack.
 
