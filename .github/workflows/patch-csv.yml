@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"__ADD_GUNWAGON_WRECKIN_BALL__","mode":"insert","sets":{"Unit_ID":"GUNWAGON","Weapon_ID":"WRECKIN_BALL"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability Name","row_id":"ANYTIME — RANGE","column":"Short_Description","value":"SHOOTING: Re-roll 1s To Hit"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
