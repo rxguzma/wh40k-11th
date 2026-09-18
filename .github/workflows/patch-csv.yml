@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"FULGURIS_TASK_FORCE","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_Name","row_id":"Bellicose Weapon Spirits","mode":"delete"},{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_Name","row_id":"Raptorial Cogitator Core","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_Name","row_id":"DATA-LINK AUGURY","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_Name","row_id":"REACTIVE EVASION","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_Name","row_id":"ANTI-GRAV SURGE","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"FULGURIS_TASK_FORCE","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"FULGURIS_TASK_FORCE_STRATAGEM_ANTI_GRAV_SURGE","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"FULGURIS_TASK_FORCE_STRATAGEM_DATA_LINK_AUGURY","mode":"delete"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"FULGURIS_TASK_FORCE_STRATAGEM_REACTIVE_EVASION","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
