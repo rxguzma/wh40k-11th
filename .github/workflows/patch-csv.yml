@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"STORMBOYZ__NOB_MELEE_STORMBOYZ__STORMBOYZ_KUSTOM_CHOPPA","column":"Allocation_Mode","value":"UNIT"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"STORMBOYZ__NOB_MELEE_STORMBOYZ__STORMBOYZ_POWER_KLAW","column":"Allocation_Mode","value":"UNIT"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","column":"Allocation_Mode","value":"UNIT"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X2","column":"Allocation_Mode","value":"UNIT"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Sort_Order","row_id":"32","column":"Weapon_ID","value":"BIG_CHOPPA_SNAGGA"},{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BIG_CHOPPA_SNAGGA","column":"Weapon Name","value":"Big Choppa"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BIG_CHOPPA_SNAGGA:ability_1","column":"Target","value":"MONSTER/VEHICLE"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BIG_CHOPPA_SNAGGA:ability_2","mode":"delete"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BIG_CHOPPA_SNAGGA:ability_3","column":"Sort_Order","value":"2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
