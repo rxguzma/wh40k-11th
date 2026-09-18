@@ -96,26 +96,12 @@ space_marines_firestorm_assault_force_stratagem_crucible_of_battle_1cp,space_mar
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6"", add 1 to the Wound roll.",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],,"ADEPTUS ASTARTES, INFANTRY",,
-space_marines_emperors_shield_stratagem_disciplined_extermination_1cp,space_marines_emperors_shield,DISCIPLINED EXTERMINATION,1,"RANGE
-TERMINATORS & VETS
-IGNORES COVER and +1 AP","WHEN: Your Shooting phase.
-
-TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot this phase.
-
-EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability and improve the Armour Penetration characteristic of such weapons by 1.",[IGNORES COVER] [+1 AP],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
 iron_hands_hammer_of_avernii_stratagem_dominator_beacon_1cp,iron_hands_hammer_of_avernii,DOMINATOR BEACON,1,"MOVEMENT DREADS and VETS
 Sticky Objective","WHEN: Your Movement phase.
 
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within range of an objective marker you control.
 
 EFFECT: That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the end of a phase.",[STICKY OBJECTIVES],[Unit Rules],,ADEPTUS ASTARTES,"DREADNOUGHT, TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
-space_marines_emperors_shield_stratagem_dropship_extraction_1cp,space_marines_emperors_shield,DROPSHIP EXTRACTION,1,"MELEE
-TERMINATORS only
-Go back to RESERVES","WHEN: End of your opponent’s Fight phase.
-
-TARGET: One ADEPTUS ASTARTES TERMINATOR unit from your army. You cannot target a unit that is within Engagement Range of one or more enemy units.
-
-EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 iron_hands_hammer_of_avernii_stratagem_dropship_extraction_1cp,iron_hands_hammer_of_avernii,DROPSHIP EXTRACTION,1,"ENEMY FIGHT: TERMINATOR
 GO BACK TO RESERVES","WHEN: End of your opponent’s Fight phase.
 
@@ -139,14 +125,6 @@ INTERROGATION_CONCLAVE_STRATAGEM_EXACTING_PUNISHMENT,INTERROGATION_CONCLAVE,EXAC
 TARGET: That CHAPLAIN unit.
 
 EFFECT: Your unit's attacks have [PRECISION].",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"ADEPTUS ASTARTES, CHAPLAIN",,
-space_marines_emperors_shield_stratagem_fury_of_the_first_1cp,space_marines_emperors_shield,FURY OF THE FIRST,1,"RANGE or MELEE
-TERMINATORS & VETS
- +1 TO HIT 
-IF wounded +1 TO WOUND","WHEN: Your Shooting phase or the Fight phase.
-
-TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot or fight this phase.
-
-EFFECT: Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is below its Starting Strength, add 1 to the Wound roll as well.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
 space_marines_vanguard_spearhead_stratagem_guerrilla_tactics_1cp,space_marines_vanguard_spearhead,Guerrilla Tactics,1,"End of Enemy Fight. Remove from play.
 Phobos and Scouts: Remove x2.","WHEN: End of your opponent’s Fight phase.
 
@@ -220,18 +198,6 @@ space_marines_spearpoint_task_force_stratagem_mobile_lethality_1cp,space_marines
 TARGET: One ADEPTUS ASTARTES unit from your army.
 
 EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced or Fell Back.",[ASSAULT] [FALL BACK AND SHOOT],[Range - Weapon Rules] [Movement Rules],,ADEPTUS ASTARTES,,
-DARK_AGE_ARSENAL_STRATAGEM_NO_SACRIFICE_TOO_GREAT,DARK_AGE_ARSENAL,NO SACRIFICE TOO GREAT,1,HAZARDOUS plasma attacks have +1 S.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
-
-TARGET: That ADEPTUS ASTARTES unit.
-
-EFFECT: Your unit's [HAZARDOUS] plasma ranged attacks have +1 S.",[+1 S],[Range - Weapon Stats],,ADEPTUS ASTARTES,,
-space_marines_emperors_shield_stratagem_obdurate_vengeance_1cp,space_marines_emperors_shield,OBDURATE VENGEANCE,1,"MELEE
-TERMINATORS & VETS
- +3 Fight on Death","WHEN: Fight phase, just after an enemy unit has selected its targets.
-
-TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
-
-EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 3+, do not remove it from play. The destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.",[FIGHT ON DEATH],[Unit Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
 space_marines_firestorm_assault_force_stratagem_onslaught_of_fire_1cp,space_marines_firestorm_assault_force,Onslaught Of Fire,1,"Disembark, +1 TO HIT","WHEN: Your Shooting phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.
@@ -264,11 +230,6 @@ SHOOTING = +2 Strength","WHEN: Your Shooting phase.
 TARGET: One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit.",[+2 S],[Range - Weapon Stats],,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
-DARK_AGE_ARSENAL_STRATAGEM_REVELATION_OF_GUILT,DARK_AGE_ARSENAL,REVELATION OF GUILT,1,Unit's plasma attacks +1 To Hit.,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
-
-TARGET: That ADEPTUS ASTARTES unit.
-
-EFFECT: Your unit's plasma ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],,ADEPTUS ASTARTES,,
 iron_hands_hammer_of_avernii_stratagem_ruthless_butchery_1cp,iron_hands_hammer_of_avernii,RUTHLESS BUTCHERY,1,"MELEE and RANGE
 DREADS and VETS
 +1 TO HIT
@@ -277,11 +238,6 @@ IF wounded +1 TO WOUND","WHEN: Your Shooting phase or the Fight phase.
 TARGET: One Adeptus Astartes Dreadnought, Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to shoot or fight this phase.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is below Starting Strength, add 1 to the Wound roll as well.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],,ADEPTUS ASTARTES,"DREADNOUGHT, TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
-DARK_AGE_ARSENAL_STRATAGEM_SEARING_BURSTS,DARK_AGE_ARSENAL,SEARING BURSTS,1,"HELLBLASTER shot, enemy hit by plasma is seared and has -2"" M until next turn.","WHEN: Your Shooting phase, when a friendly HELLBLASTER SQUAD unit has shot.
-
-TARGET: That HELLBLASTER SQUAD unit.
-
-EFFECT: Select one enemy unit hit by your unit's plasma ranged attacks. That enemy unit is seared until the start of your next turn. While a unit is seared, that unit has -2"" M.",,,,"ADEPTUS ASTARTES, HELLBLASTER SQUAD",,
 DARKFLIGHT_PURSUIT_STRATAGEM_SKYBORNE_SURVEILLANCE,DARKFLIGHT_PURSUIT,SKYBORNE SURVEILLANCE,1,"SHOOTING: After a RAVENWING FLY unit has shot, visible enemy units within 6"" have +3"" detection range.","WHEN: Your Shooting phase, when a friendly RAVENWING FLY unit has shot.
 
 TARGET: That RAVENWING FLY unit.
@@ -361,12 +317,6 @@ VOWED OBJ = 3+ Max 3 Mortal Wounds","WHEN: Your Charge phase.
 TARGET: One DEATHWING INFANTRY unit from your army that just ended a Charge move.
 
 EFFECT: Select one enemy unit within Engagement Range of your unit and roll one D6 for each model in your unit, adding 1 to the result if that enemy unit is within range of your Vowed objective marker: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 3 mortal wounds).",,,,"ADEPTUS ASTARTES, DEATHWING, INFANTRY",,
-space_marines_emperors_shield_stratagem_wrathful_conquerors_1cp,space_marines_emperors_shield,WRATHFUL CONQUERORS,1,"TERMINATORS & VETS
-Sticky objectives","WHEN: Your Movement phase.
-
-TARGET: One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within range of an objective marker you control.
-
-EFFECT: That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any phase.",[STICKY OBJECTIVES],[Unit Rules],,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD",
 space_marines_forgefathers_seekers_stratagem_wrathful_inferno_1cp,space_marines_forgefathers_seekers,Wrathful Inferno,1,Infantry Shoots after Falls Back.,"WHEN: Your Movement phase, just after an ADEPTUS ASTARTES INFANTRY unit from your army Falls Back.
 
 TARGET: That unit.
