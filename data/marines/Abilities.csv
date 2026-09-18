@@ -428,3 +428,6 @@ The target of that attack is within range of an objective.",,,0,1,
 TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
 Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,0,1,
+ROBOUTE_GUILLIMAN_SUPREME_COMMANDER,Supreme Commander,Must be your WARLORD.,"If this model is in your army, it must be your WARLORD.",,,0,1,1
+ROBOUTE_GUILLIMAN_CODEX_ADEPT,Codex Adept,ASSAULT / DEVASTATOR / TACTICAL doctrines active for this unit,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,,0,1,1
+ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS,Feel No Pain 5+,FNP 5+,Feel No Pain 5+.,[FNP 5+],[Unit Rules],0,2,1
