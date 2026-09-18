@@ -113,10 +113,10 @@ Once per battle: MELEE +1 A","ANCIENT model only. This model has:
 • +1 OC and Ld.
 • Feel No Pain 5+.
 • The following ability:
-Ancient Exhortation (Once per battle, per army): When this unit is selected to fight, you can use this ability. If you do, this unit’s melee attacks have +1 A until the end of the phase.",,,0,,,
+Ancient Exhortation (Once per battle, per army): When this unit is selected to fight, you can use this ability. If you do, this unit's melee attacks have +1 A until the end of the phase.",,,0,,,
 space_marines_gladius_task_force_enhancement_laurels_of_triumph,space_marines_gladius_task_force,LAURELS OF TRIUMPH,,FALSE,"ADEPTUS ASTARTES only
 MELEE: +1 S and +1 AP
-In ASSAULT: +2 S and +2 AP","ADEPTUS ASTARTES model only. This model’s melee attacks have:
+In ASSAULT: +2 S and +2 AP","ADEPTUS ASTARTES model only. This model's melee attacks have:
 • +1 S and AP.
 • Or: If the assault doctrine is active for this unit, +2 S and AP.",,,0,,,
 space_marines_gladius_task_force_enhancement_adept_of_the_codex,space_marines_gladius_task_force,ADEPT OF THE CODEX,,FALSE,"CAPTAIN only
@@ -126,9 +126,16 @@ space_marines_gladius_task_force_enhancement_artificer_armour,space_marines_glad
 • 2+ Sv.
 • Feel No Pain 5+.",,,0,,,
 space_marines_assault_brethren_enhancement_imperiums_sword,space_marines_assault_brethren,IMPERIUM’S SWORD,,FALSE,MELEE: A 6 | WS 2+ | S 7 | AP -3 | D 3,"ADEPTUS ASTARTES model only. This model has the following weapon:
-Imperium’s Sword — Melee | A 6 | WS 2+ | S 7 | AP -3 | D 3",,,0,,,
+
+Imperium's Sword
+Range: Melee
+A: 6
+WS: 2+
+S: 7
+AP: -3
+D: 3",,,0,,,
 space_marines_assault_brethren_enhancement_furious_assault_upgrade,space_marines_assault_brethren,FURIOUS ASSAULT UPGRADE,,FALSE,"INFANTRY only
-MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE",ADEPTUS ASTARTES INFANTRY unit only. This unit’s melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,,
+MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,,
 space_marines_tactical_brethren_enhancement_laurels_of_vigilance,space_marines_tactical_brethren,LAURELS OF VIGILANCE,,FALSE,"ADEPTUS ASTARTES only
 Once per battle round: BATTLELINE within 12""
 OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES model only.
@@ -136,13 +143,13 @@ OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES model only.
 space_marines_tactical_brethren_enhancement_tactical_insight,space_marines_tactical_brethren,TACTICAL INSIGHT,,FALSE,"CAPTAIN only
 TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,,0,,,
 space_marines_devastator_brethren_enhancement_master_forged_firearms,space_marines_devastator_brethren,MASTER-FORGED FIREARMS,,FALSE,"INFANTRY / MOUNTED only
-Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model’s ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],[Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats],0,,,
+Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model's ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],[Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats],0,,,
 space_marines_devastator_brethren_enhancement_honour_of_vigilance,space_marines_devastator_brethren,HONOUR OF VIGILANCE,,FALSE,"RANGED: LETHAL HITS
 In DEVASTATOR: Re-roll ADVANCE","ADEPTUS ASTARTES model only.
-• This unit’s ranged attacks have [LETHAL HITS].
+• This unit's ranged attacks have [LETHAL HITS].
 • If the devastator doctrine is active for this unit, this unit can re-roll advance rolls.",[LETHAL HITS],[Range - Weapon Rules],0,,,
 space_marines_terminator_stormforce_enhancement_champion_of_the_first_company,space_marines_terminator_stormforce,CHAMPION OF THE FIRST COMPANY,,FALSE,"TERMINATOR only
-MELEE: LETHAL HITS",ADEPTUS ASTARTES TERMINATOR model only. This unit’s melee attacks have [LETHAL HITS].,[LETHAL HITS],[Melee - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+MELEE: LETHAL HITS",ADEPTUS ASTARTES TERMINATOR model only. This unit's melee attacks have [LETHAL HITS].,[LETHAL HITS],[Melee - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_enhancement_corporeum_reliquary,space_marines_terminator_stormforce,CORPOREUM RELIQUARY,,FALSE,"TERMINATOR only
 First MOVEMENT: INGRESS MOVE","ADEPTUS ASTARTES TERMINATOR model only. In your first Movement phase, this unit can make an ingress move.",,,0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_enhancement_martial_paragon,space_marines_tacticus_attack_force,MARTIAL PARAGON,,FALSE,"TACTICUS only
