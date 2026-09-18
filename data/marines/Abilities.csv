@@ -94,7 +94,7 @@ HAMMER_OF_WRATH,Hammer of Wrath,Charge = Mortal Wounds per model on 4+.,"Each ti
 HAMMERSTRIKE,Hammerstrike,Remove Cover IGNORES COVER,"Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",[IGNORES COVER],[Range - Weapon Rules],0,1,
 HAYWIRE_MINE,Haywire Mine,"ONE. Mortal Wounds within 3""","Once per battle, at the start of any phase, you can select one enemy unit within 3"" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a VEHICLE unit.",,,0,1,
 HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds","After the bearer’s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds.",[HAZARDOUS],[Unit Rules],0,1,
-HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pain 6+ ability.,Models in the bearer’s unit have the Feel No Pain 6+ ability.,[FNP 6+],[Unit Rules],0,1,
+HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the Feel No Pain 6+ ability.,Models in the bearer’s unit have the FNP 6+ ability.,[FNP 6+],[Unit Rules],0,1,
 HIGH_KING_OF_FENRIS,High King of Fenris,ONCE. Bring one unit from Reserves one turn earlier.,"Once per battle round, in your Movement phase, you can select one friendly SPACE WOLVES unit in Strategic Reserves. For the purpose of setting up that unit on the battlefield, treat the current battle round as one higher than it actually is.",,,0,1,
 HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
 0 CP for Heroinc Intervention","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",[+1 CHARGE] [HEROIC INTERVENTION 0CP],[Movement Rules] [Unit Rules],0,1,
@@ -173,10 +173,10 @@ PRIMARCH_OF_THE_FIRST_LEGION,Primarch of the First Legion,"Primarch of the First
 
 - Martial Exemplar (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model , each time a model in that unit makes a MELEE attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
 
-- No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds.",,,0,1,
+- No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model, models in that unit have the FNP 4+ ability against mortal wounds.",,,0,1,
 PRIORITY_OBJECTIVE_IDENTIFIED,Priority Objective Identified,"Select an Objective, while on the battlefield, RE-ROLL 1S TO WOUND.","At the start of the first battle round, if your army includes one or more models with this ability, you can select one objective marker on the battlefield. Until the end of the battle, while one or more models with this ability are on the battlefield, each time a friendly ADEPTUS ASTARTES model makes an attack that targets an enemy unit that is within range of that objective marker, re-roll a Wound roll of 1.",[RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
 PSYCHIC,PSYCHIC,Wounds caused are Psychic Attacks,"Weapons and abilities tagged Psychic are used by PSYKERS. If a Psychic weapon or ability causes wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,,0,1,
-PSYCHIC_HOOD,Psychic Hood,Feel No Pain 4+ against psychic attacks and abilities,This unit has Feel No Pain 4+ against psychic attacks and abilities.,[FNP 4+],[Unit Rules],0,1,
+PSYCHIC_HOOD,Psychic Hood,Feel No Pain 4+ against psychic attacks and abilities,This unit has FNP 4+ against psychic attacks and abilities.,[FNP 4+],[Unit Rules],0,1,
 PURGATION_RUN,Purgation Run,"After shooting: move up to D6""; cannot charge","In your Shooting phase, after this unit has shot, it can make a Normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,,0,1,
 RAVENWING_COMMAND_SQUAD_WARGEAR,Ravenwing Command Squad - Wargear,"Champion, Apothecary & Ancient x3 Plasma Talons. 
 Enhancements, if any, added to Champion.","UNIT COMPOSITION
@@ -185,7 +185,7 @@ Enhancements, if any, added to Champion.","UNIT COMPOSITION
 The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-crafted power weapon.
 
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,,0,1,
-RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds,"While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
+RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds,"While this model is leading a unit, models in that unit have the FNP 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage,"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],0,1,
 RELIC_BANNER,Relic Banner,Add +1 Objective Control,This unit has +1 Objective Control.,[+1 OC],[Unit Stats],0,1,
 RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile",This model has +1 Wound. This is included in its profile.,[+1 W],[Unit Stats],0,1,
@@ -208,7 +208,7 @@ SEEKER_OF_THE_UNFOUND,Seeker of the Unfound,"First setup: select 1 objective
 Within range: OC 10 / LD 5+ / FNP 4+","The first time this model is set up on the battlefield, select one objective on the battlefield. While this model is within range of that objective, this model has:
 • 10 OC.
 • 5+ Ld.
-• Feel No Pain 4+.",[FNP 4+],[Unit Rules],0,1,0
+• FNP 4+.",[FNP 4+],[Unit Rules],0,1,0
 SELF_REPAIR,Self Repair,Heal +1 wound in Command Phase,"At the end of your Command phase, this model regains 1 lost wound.",,,0,1,
 SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE","This unit has:
 • Stealth.
@@ -270,7 +270,7 @@ TERMINATUS_ASSAULT,Terminatus Assault,Enemy must take Battle-shock test. ,"At th
 TERROR_TROOPS_AURA,Terror Troops (Aura),"Within 3"", Enemy -1 OC","While an enemy unit (excluding MONSTERS and VEHICLES) is within 3"" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit",,,0,1,
 THE_EMPERORS_SHIELD,The Emperor’s Shield,Attacks Higher than Toughness = -1 To Wound,"Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
 THE_IMPERIUMS_SWORD,The Imperium’s Sword,Re-roll Charges,You can re-roll Charge rolls made for this model’s unit.,[RE-ROLL CHARGE],[Movement Rules],0,1,
-THE_LION_HELM,The Lion Helm,"Unit has 4++. Once per battle, 4+++ vs. Mortal Wounds.","Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, at any time, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the Feel No Pain 4+ ability against mortal wounds.",[INVULNERABLE SAVE 4+] [FNP 4+],[Unit Rules] [Unit Rules],0,1,
+THE_LION_HELM,The Lion Helm,"Unit has 4++. Once per battle, 4+++ vs. Mortal Wounds.","Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, at any time, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the FNP 4+ ability against mortal wounds.",[INVULNERABLE SAVE 4+] [FNP 4+],[Unit Rules] [Unit Rules],0,1,
 THUNDEROUS_IMPACT,Thunderous Impact,Charge = +1 S and +1 Damage,"Each time a model in this unit makes a melee attack, if this unit made a Charge move this turn, improve the Strength and Damage characteristics of that attack by 1.",[+1 S] [+1 D],[Melee - Weapon Stats] [Melee - Weapon Stats],0,1,
 THUNDERSTRIKE,Thunderstrike,Units get +1 TO WOUND vs MONSTERS and VEHICLES,"Each time this model has shot, select one enemy MONSTER or VEHICLE unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, add 1 to the Wound roll.",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,
 TOTAL_OBLITERATION,Total Obliteration,"Against MONSTERS or VEHICLES, RE-ROLL ALL HITS, RE-ROLL ALL WOUNDS and re-roll ALL To Damage rolls.","Each time a ranged attack made by a model in this unit targets a Monster or Vehicle model, you can re-roll the Hit roll, you can re-roll the Wound roll and you can re-roll the Damage roll.",[RE-ROLL ALL HITS] [RE-ROLL ALL WOUNDS] [RE-ROLL ALL HITS] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],0,1,
@@ -280,7 +280,7 @@ TRANSPORT_LAND_RAIDER_REDEEMER,Transport (Land Raider Redeemer),"14 infantry
 7 Gravis, 7 Terminators","This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models.",,,9,3,
 TRANSPORT_REPULSOR_EXECUTIONER,Transport (Repulsor Executioner),7 INFANTRY,"This model has a transport capacity of 7 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models.",,,9,3,
 TRANSPORT_REPULSOR,Transport (Repulsor),14 INFANTRY,"This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models.",,,9,3,
-UNBREAKABLE_RESOLVE,Unbreakable Resolve,Feel No Pain 4+ near an objective or battlefield centre,"While this model is within range of an objective or within 6"" of the centre of the battlefield, it has Feel No Pain 4+.",[FNP 4+],[Unit Rules],0,1,
+UNBREAKABLE_RESOLVE,Unbreakable Resolve,Feel No Pain 4+ near an objective or battlefield centre,"While this model is within range of an objective or within 6"" of the centre of the battlefield, it has FNP 4+.",[FNP 4+],[Unit Rules],0,1,
 UNORTHODOX_STRATEGIST,Unorthodox Strategist,"Enemy within 12"" CP cost +1","Unorthodox Strategist (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem).",,,0,1,
 UNTO_THE_ANVIL,Unto the Anvil,"MELEE: RE-ROLL WOUND 1S
 ASSAULT DOCTRINE: RE-ROLL ALL WOUNDS","This unit’s melee attacks can:
@@ -291,7 +291,7 @@ VANGUARD_ASSAULT,Vanguard Assault,Charge: melee weapons gain LETHAL HITS,"In a t
 VEIL_OF_TIME_PSYCHIC,Veil of Time (Psychic),Unit has SUSTAINED HITS 1.,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[SUSTAINED HITS 1] [SUSTAINED HITS 1],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,0,1,
 WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,,0,1,
-WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds,"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
+WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds,"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the FNP 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],0,1,
 HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit,"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",[+2 A],[Range - Weapon Stats],0,1,
 INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,"1 Sergeant
 4-9 Intercessors","1 Intercessor Sergeant model
@@ -413,7 +413,6 @@ Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not preven
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,0,1,
 ROBOUTE_GUILLIMAN_SUPREME_COMMANDER,Supreme Commander,Must be your WARLORD.,"If this model is in your army, it must be your WARLORD.",,,0,1,1
 ROBOUTE_GUILLIMAN_CODEX_ADEPT,Codex Adept,ASSAULT / DEVASTATOR / TACTICAL doctrines active for this unit,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,,0,1,1
-ROBOUTE_GUILLIMAN_FEEL_NO_PAIN_5_PLUS,Feel No Pain 5+,FNP 5+,Feel No Pain 5+.,[FNP 5+],[Unit Rules],0,2,1
 ROBOUTE_GUILLIMAN_PRIMARCH_OF_THE_XIII,Primarch of the XIII (Aura),"6"" friendly ADEPTUS ASTARTES
 Attacks: RE-ROLL 1S TO HIT / WOUND","While a friendly ADEPTUS ASTARTES unit is within 6"" of this unit, that unit’s attacks can:
 • Re-roll hit rolls of 1.
@@ -452,7 +451,7 @@ CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE,Prescience (psychic level 2),MOVEMENT: Psych
 CHIEF_LIBRARIAN_TIGURIUS_TELEPATHIC_ASSAULT,Telepathic Assault (psychic level 1),"SHOOTING: Psychic roll; on a 1 Battle-shocked; visible enemy within 24"" suffers 2D3 mortal wounds.","In your Shooting phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 • On a 1, this unit is battle-shocked.
 • Select one visible enemy unit within 24"" of this unit. That enemy unit suffers 2D3 mortal wounds.",,,2,1,
-CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),FNP 4+ against psychic attacks and mortal wounds.,This unit has Feel No Pain 4+ against psychic attacks and mortal wounds.,[FNP 4+],[Unit Rules],3,1,
+CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),FNP 4+ against psychic attacks and mortal wounds.,This unit has FNP 4+ against psychic attacks and mortal wounds.,[FNP 4+],[Unit Rules],3,1,
 CHIEF_LIBRARIAN_TIGURIUS_UNIT_COMPOSITION,Unit Composition,"1 Chief Librarian Tigurius model
 Equipped: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath","1 Chief Librarian Tigurius model
 This model is equipped with: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath.",,,9,3,0
@@ -505,7 +504,7 @@ Every Victrix Honour Guard is equipped with: 1 Master-crafted Bolt Carbine; 1 Ma
 
 Keywords — All Models: INFANTRY; IMPERIUM; TACTICUS. Chapter Ancient: ANCIENT; EPIC HERO. Chapter Champion: CHAMPION; EPIC HERO. Faction Keywords: ADEPTUS ASTARTES; ULTRAMARINES.",,,9,3,0
 KAIUS_KONORIUS_SUPPORT,Support,Support,,,,0,2,1
-KAIUS_KONORIUS_VETERAN_BODYGUARD,Veteran Bodyguard,ATTACHED: Other CHARACTER models gain FNP 4+,"While this model is attached to a unit, other CHARACTER models in this unit have Feel No Pain 4+.",,,0,1,1
+KAIUS_KONORIUS_VETERAN_BODYGUARD,Veteran Bodyguard,ATTACHED: Other CHARACTER models gain FNP 4+,"While this model is attached to a unit, other CHARACTER models in this unit have FNP 4+.",,,0,1,1
 KAIUS_KONORIUS_CALGARS_CHAMPION,Calgar’s Champion,Vs CHARACTER: RE-ROLL HIT 1S / WOUND 1S,"This model’s attacks that target a CHARACTER unit can:
 • Re-roll hit rolls of 1.
 • Re-roll wound rolls of 1.",[RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],0,1,0
