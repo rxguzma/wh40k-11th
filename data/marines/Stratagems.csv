@@ -125,3 +125,72 @@ space_marines_tacticus_attack_force_stratagem_tactical_focus_1cp,space_marines_t
 TARGET: That TACTICUS unit.
 
 EFFECT: When making that consolidation move, your unit can move up to D3+3"".",,,0,,,
+space_marines_tacticus_firestorm_force_stratagem_for_the_emperor_1cp,space_marines_tacticus_firestorm_force,FOR THE EMPEROR!,1,"COMMAND: TACTICUS on OBJECTIVE
++1 OC until end of turn","WHEN: Command phase.
+
+TARGET: One friendly TACTICUS unit that is within range of an objective.
+
+EFFECT: Your unit has +1 OC until the end of the turn.",,,0,,,
+space_marines_tacticus_firestorm_force_stratagem_relentless_assault_1cp,space_marines_tacticus_firestorm_force,RELENTLESS ASSAULT,1,"TACTICUS SHOOTING / FIGHT
+vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
+vs MONSTER / VEHICLE: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly TACTICUS unit is selected to attack.
+
+TARGET: That TACTICUS unit.
+
+EFFECT: Your unit’s attacks have:
+• [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
+• Or: [LETHAL HITS: MONSTER/VEHICLE].",,,0,,,
+space_marines_tacticus_firestorm_force_stratagem_point_blank_brutality_1cp,space_marines_tacticus_firestorm_force,POINT-BLANK BRUTALITY,1,"Engaged TACTICUS SHOOTING
+Non-BLAST RANGED: CLOSE-QUARTERS & IGNORE COVER","WHEN: Your Shooting phase, when a friendly engaged TACTICUS unit is selected to shoot.
+
+TARGET: That TACTICUS unit.
+
+EFFECT: Your unit’s ranged attacks (excluding [BLAST] attacks) have:
+• [CLOSE-QUARTERS].
+• [IGNORES COVER].",,,0,,,
+space_marines_phobos_shadow_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shadow_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
+Attacks: +1 S & LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+
+TARGET: That PHOBOS unit.
+
+EFFECT: Your unit’s attacks have:
+• +1 S.
+• [LETHAL HITS].",[LETHAL HITS],,0,,,
+space_marines_phobos_shadow_force_stratagem_mortis_snares_1cp,space_marines_phobos_shadow_force,MORTIS SNARES,1,"End MOVEMENT: PHOBOS / SCOUT on OBJECTIVE
+Snare objective
+Enemy ends move in range: 2+ = D6 MW","WHEN: End of your Movement phase.
+
+TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
+
+EFFECT: If your unit is controlling an objective, that objective is snared. While an objective is snared, when an enemy unit ends a move within range of that objective, roll one D6:
+• On a 2+, that enemy unit suffers D6 mortal wounds.
+• That objective is no longer snared.",,,0,,,
+space_marines_phobos_shadow_force_stratagem_tactical_withdrawal_1cp,space_marines_phobos_shadow_force,TACTICAL WITHDRAWAL,1,"End enemy FIGHT
+Unengaged PHOBOS / SCOUT: STRATEGIC RESERVES","WHEN: End of your opponent’s Fight phase.
+
+TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
+
+EFFECT: Place your unit in strategic reserves.",,,0,,,
+space_marines_phobos_shock_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shock_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
+Attacks: +1 S & LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+
+TARGET: That PHOBOS unit.
+
+EFFECT: Your unit’s attacks have:
+• +1 S.
+• [LETHAL HITS].",[LETHAL HITS],,0,,,
+space_marines_phobos_shock_force_stratagem_transhuman_reactions_1cp,space_marines_phobos_shock_force,TRANSHUMAN REACTIONS,1,"Enemy ends move within 8""
+Unengaged PHOBOS: Move D6""
+In TACTICAL: Move 6""","WHEN: Your opponent’s Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged PHOBOS unit.
+
+TARGET: That PHOBOS unit.
+
+EFFECT: Your unit can make a normal move of:
+• Up to D6"".
+• Or: If the tactical doctrine is active for your unit, up to 6"".",,,0,,,
+space_marines_phobos_shock_force_stratagem_umbral_evasion_1cp,space_marines_phobos_shock_force,UMBRAL EVASION,1,"Enemy SHOOTING
+PHOBOS: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an enemy unit targets a friendly PHOBOS unit.
+
+TARGET: That PHOBOS unit.
+
+EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,

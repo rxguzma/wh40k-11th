@@ -50,3 +50,23 @@ Attacks: Re-roll one Hit & one Wound","TACTICUS model only. This unit’s attack
 • Re-roll one wound roll.",,,0,,,
 space_marines_tacticus_attack_force_enhancement_spearpoint_war_leader,space_marines_tacticus_attack_force,SPEARPOINT WAR LEADER,,FALSE,"TACTICUS only
 SCOUTS 6\""","TACTICUS model only. This unit has Scouts 6"".",,,0,,,
+space_marines_tacticus_firestorm_force_enhancement_cyber_familiar,space_marines_tacticus_firestorm_force,CYBER-FAMILIAR,,FALSE,"TACTICUS only
+After deployment: Redeploy up to 3 ASTARTES INFANTRY
+Can place in STRATEGIC RESERVES","TACTICUS model only. When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,,0,,,
+space_marines_tacticus_firestorm_force_enhancement_tempered_in_battle_aura,space_marines_tacticus_firestorm_force,TEMPERED IN BATTLE (AURA),,FALSE,"TACTICUS only
+ASTARTES within 6"": Re-roll LEADERSHIP","TACTICUS model only. Friendly ADEPTUS ASTARTES units within 6"" of this model can re-roll leadership rolls.",,,0,,,
+space_marines_phobos_shadow_force_enhancement_venator_omni_auspex,space_marines_phobos_shadow_force,VENATOR OMNI-AUSPEX,,FALSE,"PHOBOS only
+vs HIDDEN: Re-roll WOUND 1s
+In ASSAULT: Re-roll WOUND 1-2","PHOBOS model only. This unit’s attacks that target a hidden unit can:
+• Re-roll wound rolls of 1.
+• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,,0,,,
+space_marines_phobos_shadow_force_enhancement_execute_and_redeploy,space_marines_phobos_shadow_force,EXECUTE AND REDEPLOY,,FALSE,"PHOBOS only
+After SHOOTING & unengaged: Move 6""
+Cannot CHARGE","PHOBOS model only. In your Shooting phase, after this unit has shot, if this unit is unengaged, this unit can make a normal move up to 6"". If it does, this unit is not eligible to declare a charge until the end of the turn.",,,0,,,
+space_marines_phobos_shock_force_enhancement_seal_of_shrouding,space_marines_phobos_shock_force,SEAL OF SHROUDING,,FALSE,"PHOBOS only
+Cannot be targeted by SNAP SHOOTING",PHOBOS model only. Enemy units cannot target this unit with snap shooting attacks.,,,0,,,
+space_marines_phobos_shock_force_enhancement_venator_omni_auspex,space_marines_phobos_shock_force,VENATOR OMNI-AUSPEX,,FALSE,"PHOBOS only
+vs HIDDEN: Re-roll WOUND 1s
+In ASSAULT: Re-roll WOUND 1-2","PHOBOS model only. This unit’s attacks that target a hidden unit can:
+• Re-roll wound rolls of 1.
+• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,,0,,,
