@@ -1,17 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-space_marines_orbital_assault_force,Marines,Orbital Assault Force,space_marines_orbital_assault_force_detachment_rule_rapid_drop_deployment,RAPID-DROP DEPLOYMENT,2,Take and Hold,,"x3 unit gain Deep Strike
-
-Also, Set up this turn: RE-ROLL 1S TO WOUND
-If DROP POD disembark: RE-ROLL 1S TO HIT
-
-Exclude: Titanic","At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding TITANIC units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.
-
-Incursion: 2
-Strike Force: 3
-Onslaught: 4
-
-Each time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a DROP POD this turn, re-roll a Hit roll of 1 as well.",[DEEP STRIKE],[Unit Rules],,ADEPTUS ASTARTES,,
-space_marines_ironstorm_spearhead,Marines,Ironstorm Spearhead,space_marines_ironstorm_spearhead_detachment_rule_armoured_wrath,ARMOURED WRATH,2,Take and Hold,,"Once per phase per ADEPTUS ASTARTES unit: re-roll one Hit, Wound, or Damage roll.","Once per phase for each ADEPTUS ASTARTES unit in your army, you can re-roll one Hit roll, one Wound roll or one Damage roll made for a model in that unit.",,,,ADEPTUS ASTARTES,,
 space_marines_gladius_task_force,Marines,GLADIUS TASK FORCE,space_marines_gladius_task_force_detachment_rule_codex_discipline,CODEX DISCIPLINE,3,,,Use combat doctrine one additional time.,You can select one combat doctrine one additional time per battle.,,,0,,,
 space_marines_assault_brethren,Marines,ASSAULT BRETHREN,space_marines_assault_brethren_detachment_rule_assault_mastery,ASSAULT MASTERY,1,,,Use ASSAULT DOCTRINE an extra time,You can select the assault doctrine one additional time per battle.,,,0,,,
 space_marines_tactical_brethren,Marines,TACTICAL BRETHREN,space_marines_tactical_brethren_detachment_rule_tactical_mastery,TACTICAL MASTERY,1,,,Use TACTICAL DOCTRINE an extra time,You can select the tactical doctrine one additional time per battle.,,,0,,,
