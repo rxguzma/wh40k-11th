@@ -308,7 +308,11 @@ WRATH_OF_THE_FIRST_KHAN,Wrath Of The First Khan,"Spearhead Detachment Rule: If S
 
 Note: Spearhead Detachment Rule. ",,,0,1,
 HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit,"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",[+2 A],[Range - Weapon Stats],0,1,
-INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,1 Sergeant and 9 Intercessors; includes chainsword and grenade launcher,Unit Composition: 1 Intercessor Sergeant and 9 Intercessors.   Every model is equipped with: 1 bolt pistol; 1 bolt rifle; 1 close-combat weapon.   The Intercessor Sergeant is equipped with: 1 chainsword.   1 Intercessor is equipped with: 1 grenade launcher.,,,9,3,
+INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,"1 Sergeant
+4-9 Intercessors","1 Intercessor Sergeant model
+4-9 Intercessor models
+Every model is equipped with
+1 Bolt Pistol; 1 Bolt Rifle; 1 Knives and Fists.",,,9,3,
 VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS_LOADOUT,Unit Composition: Vanguard Veteran Squad with Jump Packs,5 models; 4 heavy bolt pistols and 1 plasma pistol,Unit Composition: 1 Vanguard Veteran Sergeant and 4 Vanguard Veterans. The Vanguard Veteran Sergeant and 3 Vanguard Veterans are each equipped with: 1 heavy bolt pistol; 1 master-crafted power weapon. 1 Vanguard Veteran is equipped with: 1 plasma pistol; 1 master-crafted power weapon.,,,9,3,
 LAND_SPEEDER_WARGEAR_OPTIONS,Wargear Options: Land Speeder,May replace onslaught gatling cannon with heavy flamer,Wargear Options: This model can have its 1 onslaught gatling cannon replaced with 1 heavy flamer.,,,0,1,
 LEADER_ASMODAI,Leader: Asmodai,"Can Lead: Most INFANTRY like
@@ -418,3 +422,9 @@ APOTHECARY_BIOLOGIS_SUPPORT,Support,"Can Support: Aggressors, Eradicators, Heavy
 ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Storm Shield,Storm Shield +1 W each,Each model equipped with a Storm Shield has +1 Wound.,[+1 W],[Unit Stats],8,4,
 REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Incinerator +10 Pts per model,Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.,[+10 Pts],[Points],8,4,
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W,Add 1 to the Wounds characteristic of the bearer.,[+1 W],[Unit Stats],8,4,
+BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING +1 To Hit if this unit or its target is within range of an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
+This unit is within range of an objective.
+The target of that attack is within range of an objective.",,,0,1,
+TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
+Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
+When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,0,1,
