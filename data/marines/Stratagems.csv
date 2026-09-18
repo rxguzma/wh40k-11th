@@ -47,11 +47,6 @@ space_marines_firestorm_assault_force_stratagem_armour_of_contempt_1cp,space_mar
 TARGET: One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
 EFFECT: Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
-space_marines_forgefathers_seekers_stratagem_blazing_earth_1cp,space_marines_forgefathers_seekers,Blazing Earth,1,"Torrent Weapons, Enemy -2"" to Charge.","WHEN: Start of your opponent’s Charge phase.
-
-TARGET: One ADEPTUS ASTARTES unit from your army equipped with one or more Torrent weapons.
-
-EFFECT: Select one enemy unit (excluding MONSTERS and VEHICLES and units with the FLY keyword) within 12"" of and visible to your unit. Until the end of the phase, each time that enemy unit declares a charge, subtract 2 from the Charge roll (this is not cumulative with any other negative modifiers to that Charge roll).",,,,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_burning_vengeance_1cp,space_marines_firestorm_assault_force,Burning Vengeance,1,Disembark and Shoot,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.
 
 TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -101,11 +96,6 @@ TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to s
 EFFECT: Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability. 
 
 DEVASTATING WOUNDS: Critical Wounds (ie 6s) = No Saves allowed.",[DEVASTATING WOUNDS],[Range - Weapon Rules],,ADEPTUS ASTARTES,,
-dark_angels_wrath_of_the_rock_stratagem_inescapable_justice_2cp,dark_angels_wrath_of_the_rock,INESCAPABLE JUSTICE,2,2nd Oath Target,"WHEN: Any phase, just after your Oath of Moment target is destroyed.
-
-TARGET: One Adeptus Astartes Character unit that is on the battlefield.
-
-EFFECT: Select one enemy unit within 12"" and visible to your unit. That enemy unit becomes your Oath of Moment target.",,,,"ADEPTUS ASTARTES, CHARACTER",,
 dark_angels_lions_blade_task_force_stratagem_inescapable_wrath_2cp,dark_angels_lions_blade_task_force,INESCAPABLE WRATH,2,"End of Enemy Charge: Charge within 6"". 
 Deathwing Infantry and Walkers.","WHEN: End of your opponent’s Charge phase.
 
@@ -119,22 +109,6 @@ dark_angels_lions_blade_task_force_stratagem_knights_of_iron_1cp,dark_angels_lio
 TARGET: One RAVENWING unit from your army.
 
 EFFECT: Until the end of the phase, each time a model in your unit makes a Normal, Advance or Charge move, it can move horizontally through terrain features.",,,,"ADEPTUS ASTARTES, RAVENWING",,
-dark_angels_wrath_of_the_rock_stratagem_leonine_aggression_1cp,dark_angels_wrath_of_the_rock,LEONINE AGGRESSION,1,"REACTIVE CHARGE within 3""
-DEATHWING within 6""","WHEN: End of your opponent’s Charge phase.
-
-TARGET: One Adeptus Astartes unit from your army within 3"" of one or more enemy units, or one Deathwing unit from your army within 6"" of one or more enemy units.
-
-EFFECT: Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.
-
-RESTRICTIONS: Note that even if this charge is successful, your unit does not receive any Charge bonus this turn.",,,,ADEPTUS ASTARTES,,
-dark_angels_wrath_of_the_rock_stratagem_lions_will_1cp,dark_angels_wrath_of_the_rock,LION’S WILL,1,"In ENGAGEMENT = +1 OC
-Also if you are NOT Deathwing, Ravenwing or Vehicle,  +1 TO HIT .","WHEN: Command phase.
-
-TARGET: One Adeptus Astartes unit from your army that is within Engagement Range of one or more enemy units.
-
-EFFECT: Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. 
-
-In addition, until the end of the turn, if your unit does not have the DEATHWING, RAVENWING or VEHICLE keyword, each time a model in your unit makes an attack, add 1 to the Hit roll.",[+1 OC] [+1 TO HIT] [+1 TO HIT],[Unit Stats] [Melee - Combat Modifiers] [Range - Combat Modifiers],,ADEPTUS ASTARTES,,
 space_marines_firestorm_assault_force_stratagem_onslaught_of_fire_1cp,space_marines_firestorm_assault_force,Onslaught Of Fire,1,"Disembark, +1 TO HIT","WHEN: Your Shooting phase.
 
 TARGET: One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.
@@ -154,12 +128,6 @@ TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models em
 EFFECT: Your INFANTRY unit can embark within that TRANSPORT.
 
 RESTRICTIONS: You cannot target an INFANTRY unit that is within Engagement Range of one or more enemy units, that cannot normally embark within that TRANSPORT, or that disembarked from a TRANSPORT this turn.",,,,ADEPTUS ASTARTES,"INFANTRY, TRANSPORT",
-dark_angels_wrath_of_the_rock_stratagem_relics_of_the_dark_age_1cp,dark_angels_wrath_of_the_rock,RELICS OF THE DARK AGE,1,"INFANTRY and MOUNTED
-SHOOTING = +2 Strength","WHEN: Your Shooting phase.
-
-TARGET: One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that has not been selected to shoot this phase.
-
-EFFECT: Until the end of the phase, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit.",[+2 S],[Range - Weapon Stats],,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
 DARKFLIGHT_PURSUIT_STRATAGEM_SKYBORNE_SURVEILLANCE,DARKFLIGHT_PURSUIT,SKYBORNE SURVEILLANCE,1,"SHOOTING: After a RAVENWING FLY unit has shot, visible enemy units within 6"" have +3"" detection range.","WHEN: Your Shooting phase, when a friendly RAVENWING FLY unit has shot.
 
 TARGET: That RAVENWING FLY unit.
@@ -188,14 +156,6 @@ space_marines_vanguard_spearhead_stratagem_surgical_strikes_2cp,space_marines_va
 TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.
 
 EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"ADEPTUS ASTARTES, INFANTRY",,
-dark_angels_wrath_of_the_rock_stratagem_tactical_mastery_1cp,dark_angels_wrath_of_the_rock,TACTICAL MASTERY,1,"ADVANCE + SHOOT + CHARGE
-If RAVENWING, also if Fell Back","WHEN: Your Movement phase.
-
-TARGET: One Adeptus Astartes unit from your army.
-
-EFFECT: Your unit is eligible to shoot and declare a charge in a turn in which it Advanced. 
-
-If your unit has the RAVENWING keyword, it is also eligible to shoot and declare a charge in a turn in which it Fell Back.",[ADVANCE AND CHARGE] [ASSAULT] [FALL BACK AND SHOOT] [FALL BACK AND CHARGE],[Movement Rules] [Range - Weapon Rules] [Movement Rules] [Movement Rules],,ADEPTUS ASTARTES,,
 INTERROGATION_CONCLAVE_STRATAGEM_TERRIFYING_ZEAL,INTERROGATION_CONCLAVE,TERRIFYING ZEAL,1,"CHAPLAIN: Charge non-MONSTER and non-VEHICLE. Take LD test.  On a failure, -1 To Hit until the end of the turn.","WHEN: Your Charge phase, when a friendly CHAPLAIN unit ends a charge move.
 
 TARGET: That CHAPLAIN unit.
@@ -216,15 +176,6 @@ DARKFLIGHT_PURSUIT_STRATAGEM_WINGS_OF_SHADOW,DARKFLIGHT_PURSUIT,WINGS OF SHADOW,
 TARGET: That RAVENWING FLY unit.
 
 EFFECT: Your unit has Stealth.",[STEALTH],[Unit Rules],,"ADEPTUS ASTARTES, RAVENWING, FLY",,
-space_marines_forgefathers_seekers_stratagem_wrathful_inferno_1cp,space_marines_forgefathers_seekers,Wrathful Inferno,1,Infantry Shoots after Falls Back.,"WHEN: Your Movement phase, just after an ADEPTUS ASTARTES INFANTRY unit from your army Falls Back.
-
-TARGET: That unit.
-
-EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Fell Back.",[FALL BACK AND SHOOT],[Movement Rules],,"ADEPTUS ASTARTES, INFANTRY",,
-space_marines_forgefathers_seekers_stratagem_armour_of_contempt_1cp,space_marines_forgefathers_seekers,Armour of Contempt,1,Opponent Shooting/Fight: targeted ADEPTUS ASTARTES unit worsens incoming AP by 1.,"WHEN: Opponent Shooting phase or Fight phase, just after an enemy unit selects its targets.  TARGET: One ADEPTUS ASTARTES unit from your army selected as a target of that enemy unit.  EFFECT: Until that enemy unit finishes its attacks, worsen the Armour Penetration characteristic of attacks that target your unit by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
-space_marines_forgefathers_seekers_stratagem_crucible_of_battle_1cp,space_marines_forgefathers_seekers,Crucible of Battle,1,Shooting/Fight: INFANTRY +1 TO WOUND closest eligible target within 6 inches.,"WHEN: Your Shooting phase or the Fight phase.  TARGET: One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.  EFFECT: Until the end of the phase, attacks made by models in your unit against the closest eligible target within 6 inches get +1 to the Wound roll.",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],,ADEPTUS ASTARTES,,
-space_marines_forgefathers_seekers_stratagem_immolation_protocols_2cp,space_marines_forgefathers_seekers,Immolation Protocols,2,Shooting: Torrent weapons gain DEVASTATING WOUNDS.,"WHEN: Your Shooting phase.  TARGET: One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.  EFFECT: Until the end of the phase, Torrent weapons equipped by models in your unit gain [DEVASTATING WOUNDS].",[DEVASTATING WOUNDS],[Range - Weapon Rules],,ADEPTUS ASTARTES,,
-space_marines_forgefathers_seekers_stratagem_burning_vengeance_1cp,space_marines_forgefathers_seekers,Burning Vengeance,1,Enemy Shooting: targeted TRANSPORT lets one embarked unit disembark and shoot only the attacker.,"WHEN: Opponent Shooting phase, just after an enemy unit has shot.  TARGET: One ADEPTUS ASTARTES TRANSPORT unit from your army that was targeted by one or more of those attacks.  EFFECT: One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, then shoot as if it were your Shooting phase. It must target only that enemy unit and can do so only if that enemy unit is an eligible target.",,,,ADEPTUS ASTARTES,,
 space_marines_ironstorm_spearhead_stratagem_unbowed_conviction_1cp,space_marines_ironstorm_spearhead,Unbowed Conviction,1,"Command: below Starting Strength; ignore characteristic, roll, and test modifiers except saving throws until end of turn.","WHEN: Command phase. TARGET: One ADEPTUS ASTARTES unit below Starting Strength. EFFECT: Until end of turn, that unit can ignore modifiers to its characteristics and to rolls or tests made for it, except modifiers to saving throws.",,,,ADEPTUS ASTARTES,,
 space_marines_ironstorm_spearhead_stratagem_armour_of_contempt_1cp,space_marines_ironstorm_spearhead,Armour of Contempt,1,Opponent Shooting/Fight: targeted ADEPTUS ASTARTES unit worsens incoming AP by 1.,"WHEN: Opponent Shooting phase or Fight phase, after an enemy unit selects targets. TARGET: One ADEPTUS ASTARTES unit selected as a target. EFFECT: Until that attacking unit finishes its attacks, worsen the AP of attacks targeting your unit by 1.",[INCOMING -1 AP],[Info Only],,ADEPTUS ASTARTES,,
 space_marines_ironstorm_spearhead_stratagem_mercy_is_weakness_2cp,space_marines_ironstorm_spearhead,Mercy is Weakness,2,Shooting/Fight: vs below Starting Strength gain SUSTAINED HITS 1; VEHICLE Critical Hits on unmodified 5+.,"WHEN: Your Shooting phase or Fight phase. TARGET: One ADEPTUS ASTARTES unit that has not shot or fought this phase. EFFECT: Against targets below Starting Strength, attacks gain [SUSTAINED HITS 1]; VEHICLE attacks also score Critical Hits on successful unmodified Hit rolls of 5+.",[SUSTAINED HITS 1] [SUSTAINED HITS 1] [CRITS 5+] [CRITS 5+],[Melee - Weapon Rules] [Range - Weapon Rules] [Melee - Weapon Rules] [Range - Weapon Rules],,ADEPTUS ASTARTES,,

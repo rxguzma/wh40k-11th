@@ -1,11 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-dark_angels_wrath_of_the_rock,Dark Angels,Wrath of the Rock,dark_angels_wrath_of_the_rock_detachment_rule_detachment_rule,DUTIFUL TENACITY,3,Priority Assets,,INFANTRY and MOUNTED -1 To Wound if Strength higher than Toughness.,"Each time an attack targets an Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
-space_marines_forgefathers_seekers,Salamanders,Forgefather's Seekers,space_marines_forgefathers_seekers_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,2,Priority Assets,,"RANGE: ASSAULT and +1 S within 12""
-Infernus can Advance + Action OR Shoot and Action","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.
-
-If your army includes VULKAN HE’STAN, during your turn, each INFERNUS SQUAD unit from your army is eligible to do one of the following:
-Start to perform an Action in a turn in which it Advanced.
-Shoot in a turn in which it started to perform an Action.",[ASSAULT] [+1 S],[Range - Weapon Rules] [Range - Weapon Stats],,ADEPTUS ASTARTES,,
 dark_angels_lions_blade_task_force,Dark Angels,Lions Blade Task Force,dark_angels_lions_blade_task_force_detachment_rule_detachment_rule,LION'S BLADE,2,Purge the Foe,,"Ravenwing: Desperate Escape -1 when falling back.
 Deathwing: +2 to Charge if Ravenwing in Engagement.","Each time an enemy unit (excluding MONSTERS and VEHICLES) within Engagement Range of one or more RAVENWING units from your army Falls Back, all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those tests.
 
