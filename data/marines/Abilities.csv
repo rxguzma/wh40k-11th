@@ -459,3 +459,20 @@ CAPTAIN_TITUS_UNIT_COMPOSITION,Unit Composition,"1 Captain Titus model
 Equipped: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword","1 Captain Titus model.
 
 This model is equipped with: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword.",,,9,3,0
+CHIEF_LIBRARIAN_TIGURIUS_CHIEF_LIBRARIAN,Chief Librarian (psyker level 3),Psychic level 3; has the Psychic abilities listed for this unit.,This model has the psychic abilities listed in the Psychic Abilities section (see left).,,,0,1,
+CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE,Prescience (psychic level 2),MOVEMENT: Psychic roll; on a 1 Battle-shocked; +1 SV until start of next turn.,"In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+• On a 1, this unit is battle-shocked.
+• This unit has +1 Sv until the start of your next turn.",,,1,1,
+CHIEF_LIBRARIAN_TIGURIUS_TELEPATHIC_ASSAULT,Telepathic Assault (psychic level 1),"SHOOTING: Psychic roll; on a 1 Battle-shocked; visible enemy within 24"" suffers 2D3 mortal wounds.","In your Shooting phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+• On a 1, this unit is battle-shocked.
+• Select one visible enemy unit within 24"" of this unit. That enemy unit suffers 2D3 mortal wounds.",,,2,1,
+CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),FNP 4+ against psychic attacks and mortal wounds.,This unit has Feel No Pain 4+ against psychic attacks and mortal wounds.,[FNP 4+],[Unit Rules],3,1,
+CHIEF_LIBRARIAN_TIGURIUS_UNIT_COMPOSITION,Unit Composition,"1 Chief Librarian Tigurius model
+Equipped: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath","1 Chief Librarian Tigurius model
+This model is equipped with: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath.",,,9,3,0
+CATO_SICARIUS_KNIGHT_CHAMPION_OF_MACRAGGE,"Knight Champion of Macragge (Once per phase, per army)","OPPONENT MOVEMENT: enemy ends a move within 8""; if unengaged, move up to 6"".","In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to 6"".",,,0,1,
+CATO_SICARIUS_HONOUR_OR_DEATH,Honour or Death,Heroic Intervention targeting this unit costs -1CP.,"When you target this unit with the Heroic Intervention Stratagem, that use is -1CP.",,,1,1,
+CATO_SICARIUS_CAPTAIN_OF_THE_HONOUR_GUARD,Captain of the Honour Guard,"If MARNEUS CALGAR is in the army, replace Leader with Support; both can still attach to the same unit.","If your army includes a MARNEUS CALGAR unit, replace this unit’s Leader ability with the Support ability (this unit can still be attached to the same units).",,,9,1,
+CATO_SICARIUS_UNIT_COMPOSITION,Unit Composition,"1 Cato Sicarius model
+Equipped: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade","1 Cato Sicarius model
+This model is equipped with: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade.",,,9,3,0
