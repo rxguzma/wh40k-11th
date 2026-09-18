@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INFO_ENEMY_MINUS_1_BATTLESHOCK","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Points.csv","id_column":"Unit_ID","row_id":"BIG_MEK_WITH_SHOKK_ATTACK_GUN","mode":"dedupe_by_key","key_column":"Unit_ID"},{"file":"data/orks/Unit_Points.csv","id_column":"Unit_ID","row_id":"BIG_MEK_WITH_SHOKK_ATTACK_GUN","sets":{"Cost":"95"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
