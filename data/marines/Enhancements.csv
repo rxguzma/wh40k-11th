@@ -148,3 +148,9 @@ Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D",[+1 A][+1 S][+1 AP][+1 D],[Range -
 space_marines_devastator_brethren_enhancement_honour_of_vigilance,space_marines_devastator_brethren,HONOUR OF VIGILANCE,,FALSE,"RANGED: LETHAL HITS
 In DEVASTATOR: Re-roll ADVANCE","RANGED: LETHAL HITS
 In DEVASTATOR: Re-roll ADVANCE",[LETHAL HITS],[Range - Weapon Rules],0,,,
+space_marines_terminator_stormforce_enhancement_champion_of_the_first_company,space_marines_terminator_stormforce,CHAMPION OF THE FIRST COMPANY,,FALSE,"TERMINATOR only
+MELEE: LETHAL HITS","TERMINATOR only
+MELEE: LETHAL HITS",[LETHAL HITS],[Melee - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+space_marines_terminator_stormforce_enhancement_corporeum_reliquary,space_marines_terminator_stormforce,CORPOREUM RELIQUARY,,FALSE,"TERMINATOR only
+First MOVEMENT: INGRESS MOVE","TERMINATOR only
+First MOVEMENT: INGRESS MOVE",,,0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",

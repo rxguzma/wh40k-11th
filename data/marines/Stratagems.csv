@@ -543,3 +543,12 @@ In DEVASTATOR: IGNORE COVER & +1 AP",[IGNORES COVER],[Range - Weapon Rules],,,,
 space_marines_devastator_brethren_stratagem_hail_of_vengeance_2cp,space_marines_devastator_brethren,HAIL OF VENGEANCE,2,"Enemy SHOOTING destroys a model
 Shoot back at that enemy unit","Enemy SHOOTING destroys a model
 Shoot back at that enemy unit",,,,,,
+space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp,space_marines_terminator_stormforce,TACTICAL DREADNOUGHT FORTITUDE,2,"Enemy SHOOTING / FIGHT
+TERMINATOR: Attacks -1 D","Enemy SHOOTING / FIGHT
+TERMINATOR: Attacks -1 D",[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+space_marines_terminator_stormforce_stratagem_merciless_veterans_1cp,space_marines_terminator_stormforce,MERCILESS VETERANS,1,"TERMINATOR SHOOTING
+RANGED: LETHAL HITS & SUSTAINED HITS 1","TERMINATOR SHOOTING
+RANGED: LETHAL HITS & SUSTAINED HITS 1",[LETHAL HITS] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+space_marines_terminator_stormforce_stratagem_gunship_extraction_1cp,space_marines_terminator_stormforce,GUNSHIP EXTRACTION,1,"End of enemy FIGHT
+Unengaged TERMINATOR: STRATEGIC RESERVES","End of enemy FIGHT
+Unengaged TERMINATOR: STRATEGIC RESERVES",[STRATEGIC RESERVES],[Movement Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
