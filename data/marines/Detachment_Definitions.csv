@@ -1,17 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-iron_hands_hammer_of_avernii,Iron Hands,Hammer Of Avernii,iron_hands_hammer_of_avernii_detachment_rule_detachment_rule,CALCULATED ANNIHILATION,2,Purge the Foe,,"Oath Target: RE-ROLL 1S TO WOUND
-Caanok: 2nd Oath Target (Visible)","Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1.
-
-Once per battle round, after your Oath of Moment target is destroyed, if a Caanok Var model from your army is on the battlefield, select one enemy unit visible to that model. That enemy unit becomes your Oath of Moment target until you select a new one.",[RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],,ADEPTUS ASTARTES,,
-dark_angels_inner_circle_task_force,Dark Angels,Inner Circle Task Force,dark_angels_inner_circle_task_force_detachment_rule_detachment_rule,VOWED TARGET,2,Priority Assets,,"Vowed Target (Objective): Defensive (Control) or Aggressive (No Control)  
-
-Deathwing INFANTRY: +1 To Wound (Range or Shoot)","At the start of your Movement phase, select one of the following:
-
-Defensive Footing: Select one objective marker you control. Until the start of your next Movement phase, that objective marker is your Vowed objective marker.
-
-Aggressive Push: Select one or more objective markers you do not control. Until the start of your next Movement phase, each of those objective markers is one of your Vowed objective markers. If a rule refers to a unit or model being within range of your Vowed objective marker, that rule takes effect if that unit or model is within range of one or more of your Vowed objective markers.
-
-Each time a DEATHWING INFANTRY unit from your army makes an attack that targets a unit within range of one or more of your Vowed objective markers, add 1 to the Wound roll.",[+1 TO WOUND] [+1 TO WOUND],[Melee - Combat Modifiers] [Range - Combat Modifiers],,"DEATHWING, INFANTRY",,
 dark_angels_wrath_of_the_rock,Dark Angels,Wrath of the Rock,dark_angels_wrath_of_the_rock_detachment_rule_detachment_rule,DUTIFUL TENACITY,3,Priority Assets,,INFANTRY and MOUNTED -1 To Wound if Strength higher than Toughness.,"Each time an attack targets an Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],,ADEPTUS ASTARTES,"INFANTRY, MOUNTED",
 space_marines_forgefathers_seekers,Salamanders,Forgefather's Seekers,space_marines_forgefathers_seekers_detachment_rule_detachment_rule,CLOSE-RANGE ERADICATION,2,Priority Assets,,"RANGE: ASSAULT and +1 S within 12""
 Infernus can Advance + Action OR Shoot and Action","Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12"", add 1 to the Strength characteristic of that attack.
