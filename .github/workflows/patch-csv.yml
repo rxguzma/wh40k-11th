@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability Name","row_id":"Rokkit Barrage","sets":{"Tags":"","Tag Categories":""}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INFO_ENEMY_MINUS_1_BATTLESHOCK","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
