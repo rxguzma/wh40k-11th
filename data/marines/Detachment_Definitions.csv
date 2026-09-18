@@ -1,9 +1,4 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-space_marines_spearpoint_task_force,White Scars,Spearpoint Task Force,space_marines_spearpoint_task_force_detachment_rule_storm_swift_onslaught,LIGHTNING ASSAULT,2,Disruption,,"Units can charge after Advancing or Falling Back. SUBODEN KHAN can move up to 6"" after destroying an enemy unit in the Fight phase.","ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back.
-
-At the end of the Fight phase, if a SUBODEN KHAN unit from your army destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, that unit can make a Normal move of up to 6"".
-
-RESTRICTIONS: Your army can include WHITE SCARS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",[ADVANCE AND CHARGE] [FALL BACK AND CHARGE],[Movement Rules] [Movement Rules],,ADEPTUS ASTARTES,,
 space_marines_stormlance_task_force,Marines,Stormlance Task Force,space_marines_stormlance_task_force_detachment_rule_detachment_rule,LIGHTNING ASSAULT,3,Disruption,,Advance or Fallback and Charge.,ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back.,[ADVANCE AND CHARGE] [FALL BACK AND CHARGE],[Movement Rules] [Movement Rules],,ADEPTUS ASTARTES,,
 space_marines_blade_of_ultramar,Ultramarines,Blade Of Ultramar,space_marines_blade_of_ultramar_detachment_rule_detachment_rule,MASTERED DOCTRINES,3,Priority Assets,,"Marneus can select a doctrine a 2nd time
 
