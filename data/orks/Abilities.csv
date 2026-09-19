@@ -238,7 +238,7 @@ This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.
 WARGEAR OPTIONS: This model's Kustom Choppa can be replaced with 1 Power Klaw. This model's Kustom Shoota can be replaced with one of the following: 1 Kombi-rokkit; 1 Kombi-skorcha.",,,9,3,
 KEEP_HUNTIN,Keep Huntin',"Once per Battle Round:  BEAST SNAGGAS 6"" are un-shock and RILED UP.","Keep Huntin' (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit:
 - Is no longer battle-shocked.
-- Is RILED UP until the start of your next turn.",,,0,1,
+- Is RILED UP until the start of your next turn.",[KEEP HUNTIN'],[Info Only],10,1,
 DODGE_DIS,Dodge Dis!,UNIT +1 To Hit MELEE and SHOOTING,This unit's attacks have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,1
 BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,0
 BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER)","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],0,2,0
