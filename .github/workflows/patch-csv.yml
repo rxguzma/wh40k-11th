@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOYZ","mode":"replace_text","column":"Description","from":"BOYZ melee [SUSTAINED HITS 1]. Charge, INFANTRY gains [LETHAL HITS: non-MONSTER / VEHICLE].","to":"BOYZ MELEE: SUSTAINED HITS 1.\\nCHARGE - INFANTRY gain \\nLETHAL HITS: non-MONSTER / VEHICLE"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOYZ","mode":"replace_text","column":"Description","from":"BOYZ melee [SUSTAINED HITS 1]. Charge, INFANTRY gains [LETHAL HITS\u003A non-MONSTER / VEHICLE].","to":"BOYZ MELEE\u003A SUSTAINED HITS 1.\\nCHARGE - INFANTRY gain \\nLETHAL HITS\u003A non-MONSTER / VEHICLE"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
