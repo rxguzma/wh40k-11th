@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBILE_FORTRESS","column":"Order","value":"10"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_boss_boomer","sets":{"Tags":"","Tag Categories":""}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"COPY_WARBOSS_ABILITY","mode":"delete"},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_blitz_brigade_stratagem_impending_krunch_1cp","sets":{"Tags":"","Tag Categories":""}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
