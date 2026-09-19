@@ -255,7 +255,7 @@ MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP nu
 MOBBED,Mobbed,"After charge: engaged MONSTER / VEHICLE take Battle-shock (-1, or -2 if 13+ models)","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
 - Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Info Only] [Info Only],0,1,
-MOBILE_FORTRESS,Mobile Fortress,ANYTIME — incoming RANGE,Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],0,1,1
+MOBILE_FORTRESS,Mobile Fortress,ANYTIME — incoming RANGE,Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],0,2,1
 NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units,This unit’s attacks that target a hidden unit have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,0
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,1,
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE,"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
