@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_boss_boomer","sets":{"Tags":"","Tag Categories":""}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"COPY_WARBOSS_ABILITY","mode":"delete"},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_blitz_brigade_stratagem_impending_krunch_1cp","sets":{"Tags":"","Tag Categories":""}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_rollin_deff_stratagem_impending_crunch_1cp","column":"Short_Description","value":"WAGON CHARGE\\nEVERY enemy Battle-shock at -1."},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_blitz_brigade_stratagem_readied_brawlers_1cp","column":"Short_Description","value":"WAGON MOVE\\nEmbarked units can assault disembark."},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_boss_boomer","column":"Short_Description","value":"WAGON with WARBOSS\\nGains Intimidating / Keep Huntin\u0027"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
