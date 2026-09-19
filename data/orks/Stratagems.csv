@@ -227,7 +227,8 @@ Embarked units can assault disembark.","WHEN: Your Movement phase, when a friend
 TARGET: That WAGON unit.
 
 EFFECT: Units embarked within your unit can make an assault disembark move.",,,,WAGON,,
-orks_blitz_brigade_stratagem_impending_krunch_1cp,orks_blitz_brigade,IMPENDING KRUNCH,1,"Charge: after WAGON ends a charge, each engaged enemy Battle-shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
+orks_blitz_brigade_stratagem_impending_krunch_1cp,orks_blitz_brigade,IMPENDING KRUNCH,1,"WAGON CHARGE
+EVERY enemy Battle-shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
