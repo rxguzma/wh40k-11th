@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BREAKIN_HEADS_BIGBOSS","column":"Short_Description","value":"MELEE\u003A UNIT +1 TO HIT"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability Name","row_id":"Mobile Fortress","column":"Visibility_ID","value":"2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
