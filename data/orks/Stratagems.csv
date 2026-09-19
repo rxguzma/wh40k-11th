@@ -229,7 +229,7 @@ orks_blitz_brigade_stratagem_impending_krunch_1cp,orks_blitz_brigade,IMPENDING K
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0,WAGON,,
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,WAGON,,
 orks_kult_of_speed_stratagem_delicious_eating_squigs_1cp,orks_kult_of_speed,DELICIOUS EATING SQUIGS,1,"Movement: RUKKATRUKK SQUIGBUGGIES heals 3 wounds on any number of friendly ORKS INFANTRY within 3"".","WHEN: Your Movement phase.
 
 TARGET: One friendly RUKKATRUKK SQUIGBUGGIES unit.

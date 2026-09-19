@@ -94,7 +94,6 @@ INGRESS_MOVE,INGRESS MOVE,Ingress Move,Movement Rules,Unit,The source rule allow
 ASSAULT,ASSAULT,Assault,Range - Weapon Rules,Ranged Weapon,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,WEAPON_RULE,RANGE,ASSAULT,SET,1,821
 ADVANCE_AND_CHARGE,ADVANCE AND CHARGE,Advance and Charge,Movement Rules,Unit,The affected unit can declare a charge in a turn in which it Advanced while this rule is active.,TRUE,,,,,,822
 RETURN_ON_2_PLUS,RETURN ON 2+,Return on 2+,Unit Rules,Unit,The affected model or unit can return on a 2+ when the source rule is triggered.,TRUE,,,,,,823
-COPY_WARBOSS_ABILITY,COPY WARBOSS ABILITY,Copy Warboss Ability,Unit Rules,Unit,The affected unit gains the referenced Warboss ability while the source rule applies.,TRUE,,,,,,824
 CHARACTER,CHARACTER,Character,Unit Rules,Unit,The affected unit has the CHARACTER keyword while this rule is active.,TRUE,,,,,,825
 RE_ROLL_BATTLE_SHOCK,RE-ROLL BATTLE-SHOCK,Re-roll Battle-shock,Unit Rules,Unit,The affected unit can re-roll the Battle-shock test specified by the source rule.,TRUE,,,,,,826
 RE_ROLL_ATTACK_DICE,RE-ROLL ATTACK DICE,Re-roll Attack Dice,Unit Rules,Unit,The affected unit can re-roll the attack dice specified by the source rule.,TRUE,,,,,,827
