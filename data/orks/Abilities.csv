@@ -237,7 +237,8 @@ DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry"
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,0,1,
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,0,1,
 DEEP_STRIKE,Deep Strike,ANYTIME,CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],0,2,1
-DOWNTRODDEN,Downtrodden,Each 2 Gretchin take 1 transport space (rounding up).,"For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,0,1,
+DOWNTRODDEN,Downtrodden,"Transport: 
+2 Gretchin = 1 space","For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,0,1,
 FEEL_NO_PAIN_5,FNP 5+,ANYTIME,CORE: FNP 5+,[FNP 5+],[Unit Rules],0,2,1
 FINDER_KEEPERZ,Finder Keeperz,RANGE: unit or target on an Objective,"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
