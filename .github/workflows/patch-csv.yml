@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_green_tide_enhancement_ferocious_show_off","column":"Tags","value":""},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_green_tide_enhancement_ferocious_show_off","column":"Tag Categories","value":""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOYZ","mode":"replace_text","column":"Description","from":"BOYZ melee [SUSTAINED HITS 1]. Charge, INFANTRY gains [LETHAL HITS: non-MONSTER / VEHICLE].","to":"BOYZ MELEE: SUSTAINED HITS 1.\\nCHARGE - INFANTRY gain \\nLETHAL HITS: non-MONSTER / VEHICLE"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
