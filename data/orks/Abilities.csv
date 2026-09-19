@@ -138,7 +138,8 @@ SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, N
 SUPPORT_WARBIKERS,Support: Warbikers,Can attach to Warbikers,Support: This model can be attached to Warbikers units.,,,9,3,
 TANK_HUNTERS,Tank Hunters,RANGE vs MONSTER / VEHICLE,"Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll and add 1 to the Wound roll.",[+1 TO HIT] [+1 TO WOUND],[Range - Combat Modifiers] [Range - Combat Modifiers],0,1,0
 TANKBUSTAS_LETHALITY,Tankbustas Lethality,With Pulsa Rokkit: T9 vehicle = 6.25 damage T10 vehicle = 5 damage Wounding on 2s or 3s Damage after 4+ Saves,,,,0,1,
-THIEVIN_SCAVENGERS,Thievin’ Scavengers,"If controlling an objective at end of Movement, it is secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,0,1,
+THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
+Control Objective = Secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,0,1,
 THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
 - Turbo Engine: Adv or Fallback and Charge
 - Shokk Attack: Back to Reserves
