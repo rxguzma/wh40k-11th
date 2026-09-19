@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_rollin_deff_stratagem_impending_crunch_1cp","sets":{"Tags":"","Tag Categories":""}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INTIMIDATING_MOTIVATION","mode":"insert","sets":{"Tag_ID":"INTIMIDATING_MOTIVATION"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"INTIMIDATING_MOTIVATION_WARBOSS","sets":{"Tags":"INTIMIDATING MOTIVATION","Order":"10"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
