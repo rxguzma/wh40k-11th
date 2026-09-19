@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_dread_mob_enhancement_dreadherder","sets":{"Tags":"[RE-ROLL 1S TO HIT]","Tag Categories":"[Range - Combat Modifiers]"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_green_tide_enhancement_ferocious_show_off","column":"Tags","value":""},{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_green_tide_enhancement_ferocious_show_off","column":"Tag Categories","value":""}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
