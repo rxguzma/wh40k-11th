@@ -78,7 +78,7 @@ EVERY enemy Battle-shock at -1.","WHEN: Your Charge phase, when a friendly WAGON
 
 TARGET: That WAGON unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",[ENEMY -1 BATTLE-SHOCK],[Info Only],0,WAGON,,
+EFFECT: Each enemy unit engaged with your unit makes a battle‑shock roll, with –1 to that battle‑shock roll.",,,0,WAGON,,
 orks_freebooter_krew_stratagem_krump_and_run_1cp,orks_freebooter_krew,Krump and Run,1,"ENEMY MOVEMENT: After an enemy falls back, ORKS that was engaged can make a normal move of up to 6″.","WHEN: Your opponent’s Movement phase, just after an enemy unit falls back.
 
 TARGET: One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units.
