@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"GRETCHIN","mode":"replace_text","column":"Short_Description","from":"If controlling an objective at end of Movement, it is secured.","to":"End of MOVE\\nControl Objective = Secured."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"GRETCHIN","mode":"replace_text","column":"Short_Description","from":"Each 2 Gretchin take 1 transport space (rounding up).","to":"Transport: \\n2 Gretchin = 1 space"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
