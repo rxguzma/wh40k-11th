@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBILE_FORTRESS","column":"Visibility_ID","value":"1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBILE_FORTRESS","column":"Order","value":"10"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
