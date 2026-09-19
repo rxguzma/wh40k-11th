@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INFO_KEEP_HUNTIN","mode":"insert","sets":{"Display_Tag":"KEEP HUNTIN\u0027","Title":"Keep Huntin\u0027","Category":"Info Only","Affects":"Display only","Description":"Keep Huntin\u0027 applies as described by the source rule. Informational only; no runtime effect.","Editable":"TRUE","Sort_Order":"921"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"KEEP_HUNTIN","sets":{"Tags":"[KEEP HUNTIN\u0027]","Tag Categories":"[Info Only]","Order":"10"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"RILED_UP_BIG_MEK_DAKKARIG","column":"Short_Description","value":"RILED UP\u003A RANGE [SUSTAINED HITS 1]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
