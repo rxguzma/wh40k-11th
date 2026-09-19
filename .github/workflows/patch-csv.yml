@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_blitz_brigade_stratagem_impending_krunch_1cp","column":"Short_Description","value":"WAGON CHARGE\\nEVERY enemy Battle-shock at -1."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_rollin_deff_stratagem_impending_crunch_1cp","sets":{"Tags":"","Tag Categories":""}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
