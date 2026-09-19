@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INTIMIDATING_MOTIVATION","mode":"insert","sets":{"Tag_ID":"INTIMIDATING_MOTIVATION"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"INTIMIDATING_MOTIVATION_WARBOSS","sets":{"Tags":"INTIMIDATING MOTIVATION","Order":"10"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"INFO_INTIMIDATING_MOTIVATION","mode":"insert","sets":{"Display_Tag":"INTIMIDATING MOTIVATION","Title":"Intimidating Motivation","Category":"Info Only","Affects":"Display only","Description":"Intimidating Motivation applies as described by the source rule. Informational only; no runtime effect.","Editable":"TRUE","Sort_Order":"920"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"INTIMIDATING_MOTIVATION","sets":{"Tags":"[INTIMIDATING MOTIVATION]","Tag Categories":"[Info Only]","Order":"10"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
