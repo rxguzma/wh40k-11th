@@ -20,7 +20,7 @@ If Waaagh! is active, they also gain SUSTAINED HITS 1","WAGON unit only. While a
 orks_green_tide_enhancement_ferocious_show_off,orks_green_tide,FEROCIOUS SHOW-OFF,15,FALSE,"ORKS INFANTRY model.
 Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
-- Or, if this unit has 11+ models, +2 A.",[+1 A] [+2 A],[Melee - Weapon Stats] [Melee - Weapon Stats],0,"ORKS, INFANTRY",,
+- Or, if this unit has 11+ models, +2 A.",,,0,"ORKS, INFANTRY",,
 orks_green_tide_enhancement_ardboyz,orks_green_tide,'ARDBOYZ (UP),25,TRUE,"BOYZ unit
 4+ Save",BOYZ unit only. This unit has 4+ Sv.,[SAVE 4+],[Unit Stats],1,BOYZ,,
 orks_bully_boyz_enhancement_wimp_kickaz,orks_bully_boyz,WIMP-KICKAZ (UP),15,TRUE,NOBZ unit only. Engaged enemy that Falls Back must use desperate escape; -1 hazard rolls if this unit is RILED UP.,"NOBZ unit only. When an enemy unit engaged with this unit is selected to make a fall-back move:
