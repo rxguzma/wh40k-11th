@@ -73,7 +73,8 @@ orks_freebooter_krew_stratagem_grab_and_bash_1cp,orks_freebooter_krew,Grab and B
 TARGET: One ORKS unit from your army (excluding Gretchin units) that is within range of the loot objective.
 
 EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,,,ORKS,,GRETCHIN
-orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunch,1,"CHARGE: After WAGON ends Charge, each engaged enemy make battle‑shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
+orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunch,1,"WAGON CHARGE
+EVERY enemy Battle-shock at -1.","WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
@@ -220,7 +221,8 @@ INFANTRY thst is wholly within 6"" of TRANSPORT can embark.","WHEN: End of the F
 TARGET: One friendly unengaged ORKS INFANTRY unit that was eligible to fight this phase and is wholly within 6"" of a friendly TRANSPORT unit that INFANTRY unit is able to embark within.
 
 EFFECT: Your INFANTRY unit embarks within that TRANSPORT unit.",,,,"ORKS, INFANTRY",,
-orks_blitz_brigade_stratagem_readied_brawlers_1cp,orks_blitz_brigade,READIED BRAWLERS,1,"Movement: after a WAGON ends a Normal move, embarked units can assault disembark.","WHEN: Your Movement phase, when a friendly WAGON unit ends a normal move.
+orks_blitz_brigade_stratagem_readied_brawlers_1cp,orks_blitz_brigade,READIED BRAWLERS,1,"WAGON MOVE
+Embarked units can assault disembark.","WHEN: Your Movement phase, when a friendly WAGON unit ends a normal move.
 
 TARGET: That WAGON unit.
 

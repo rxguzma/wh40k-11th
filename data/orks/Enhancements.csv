@@ -54,8 +54,8 @@ orks_blitz_brigade_enhancement_targetin_gizmos,orks_blitz_brigade,TARGETIN' GIZM
 If RILED UP: [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is embarked within this unit:
 - This unit's ranged attacks have [IGNORES COVER].
 - If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,WAGON,,
-orks_blitz_brigade_enhancement_boss_boomer,orks_blitz_brigade,BOSS BOOMER (UP),10,TRUE,"WAGON with embarked by WARBOSS:
-It gains that WARBOSS's Intimidating Motivation / Keep Huntin' ability.","WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation / Keep Huntin' ability.",,,0,WAGON,,
+orks_blitz_brigade_enhancement_boss_boomer,orks_blitz_brigade,BOSS BOOMER (UP),10,TRUE,"WAGON with WARBOSS
+Gains Intimidating / Keep Huntin'","WAGON unit only. While a WARBOSS model is embarked within this unit, this unit has that WARBOSS model's Intimidating Motivation / Keep Huntin' ability.",,,0,WAGON,,
 orks_kult_of_speed_enhancement_smoky_gubbinz,orks_kult_of_speed,SMOKY GUBBINZ (UP),10,TRUE,"SPEED FREEKS (not AIRCRAFT): if an attack loses full visibility because of a model in this unit, the target has cover vs that attack.","SPEED FREEKS unit only (excluding AIRCRAFT units). When an attack targets a unit that is not fully visible to the attacking model because of a model in this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],0,SPEED FREEKS,,AIRCRAFT
 orks_kult_of_speed_enhancement_competitive_streak,orks_kult_of_speed,COMPETITIVE STREAK,15,FALSE,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,DEFFKILLA WARTRIKE model only. This unit can re-roll charge rolls.,[RE-ROLL CHARGE],[Movement Rules],1,DEFFKILLA WARTRIKE,,
 orks_flyboyz_enhancement_flyboss,orks_flyboyz,FLYBOSS (UP),20,TRUE,"ORKS AIRCRAFT: unit is CHARACTER. After an ingress move, friendly ORKS AIRCRAFT / DEFFKOPTAS within 6"" are RILED UP until start of your next turn.","ORKS AIRCRAFT unit only.
