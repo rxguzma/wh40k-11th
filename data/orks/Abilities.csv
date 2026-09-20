@@ -159,7 +159,8 @@ HIGH_SPEED_CARNAGE,High-speed Carnage,CHARGE this turn — MELEE [+1 S] [+1 D],"
 IDOL_OF_BELLIGERENCE,Idol of Belligerence,Disembarking units are RILED UP,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is RILED UP until the start of your next turn.",,,0,1,
 INFILTRATORS,Infiltrators,ANYTIME [INFILTRATORS],CORE: Infiltrators,[INFILTRATORS],[Unit Rules],0,2,1
 MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP number of units equal to current round,"Makari, Hoist Dat Banner! (Once per battle, per army): In your Movement phase, you can select a number of friendly ORKS units equal to or less than the current battle round number. Those units are RILED UP until the start of your next turn. Place one Makari token next to the unit, removing it after this ability is used.",,,0,1,
-MOBBED,Mobbed,"After charge: engaged MONSTER / VEHICLE take Battle-shock [ENEMY -1 BATTLE-SHOCK], or [ENEMY -2 BATTLE-SHOCK] if 13+ models.","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
+MOBBED,Mobbed,"CHARGE: Engaged MONSTER / VEHICLE take [-1 BATTLESHOCK]
+If 13+ models [-2 BATTLE-SHOCK]","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
 - Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Info Only] [Info Only],0,1,
 MOBILE_FORTRESS,Mobile Fortress,ANYTIME — [INCOMING RANGE -1 D],Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],10,1,1
