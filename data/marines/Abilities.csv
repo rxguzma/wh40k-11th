@@ -12,9 +12,7 @@ BLACKWING_MANTLE,Blackwing Mantle,"1/PHASE/ARMY: HEROIC INTERVENTION on this uni
 -1 CP; does not consume phase use","(Once per phase, per army) You can target this unit with the Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:
 • That use is -1 CP.
 • That use does not prevent any uses of that stratagem on other units this phase.",,,2,1
-BLADEGUARD,Bladeguard,"Once per turn: +1 TO HIT in melee, or -1 to hit when targeted. [+1 TO HIT] [ENEMY -1 TO HIT]","Bladeguard (Once per turn, per unit): In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following:
-- This unit’s melee attacks have +1 to Hit rolls.
-- Attacks that target this unit have -1 to Hit rolls.",[+1 TO HIT] [ENEMY -1 TO HIT],[Melee - Combat Modifiers] [Info Only],2,
+BLADEGUARD,Bladeguard,Once per turn — FIGHT — select one — MELEE [+1 TO HIT] or attacks targeting UNIT [ENEMY -1 TO HIT].,"Bladeguard (Once per turn, per unit) — In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following — this unit’s melee attacks have +1 to hit rolls; or attacks that target this unit have -1 to hit rolls.",[MELEE] [WEAPONS] [ACTIVE] [+1 TO HIT] [ENEMY -1 TO HIT],,2,
 BLESSING_OF_THE_OMNISSIAH,Blessing of the Omnissiah,"In Command phase, select Vehicle within 3"". Regain D3 wounds and, +1 TO HIT. [+1 TO HIT] [+1 TO HIT]","In your Command phase, you can select one friendly Adeptus Astartes Vehicle model within 3"" of this model. 
 
 That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that Vehicle model makes an attack, add 1 to the Hit roll. 
@@ -80,12 +78,12 @@ HAMMER_OF_WRATH,Hammer of Wrath,CHARGE end — engaged enemy — each engaged mo
 HAMMERSTRIKE,Hammerstrike,Remove Cover IGNORES COVER [IGNORES COVER],"Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",[IGNORES COVER],[Range - Weapon Rules],2,
 HAYWIRE_MINE,Haywire Mine,"ONE. Mortal Wounds within 3""","Once per battle, at the start of any phase, you can select one enemy unit within 3"" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a VEHICLE unit.",,,2,
 HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds [HAZARDOUS]","After the bearer’s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds.",[HAZARDOUS],[Unit Rules],2,
-HELIX_GAUNTLET,Helix Gauntlet,Models in the bearer’s unit have the FNP 6+ ability. [FNP 6+],Models in the bearer’s unit have the FNP 6+ ability.,[FNP 6+],[Unit Rules],2,
+HELIX_GAUNTLET,Helix Gauntlet,COMMAND — heal UNIT D3 wounds.,"In your Command phase, this unit heals D3 wounds.",,,2,
 HIGH_KING_OF_FENRIS,High King of Fenris,ONCE. Bring one unit from Reserves one turn earlier.,"Once per battle round, in your Movement phase, you can select one friendly SPACE WOLVES unit in Strategic Reserves. For the purpose of setting up that unit on the battlefield, treat the current battle round as one higher than it actually is.",,,2,
 HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
 0 CP for Heroinc Intervention [+1 CHARGE] [HEROIC INTERVENTION 0CP]","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",[+1 CHARGE] [HEROIC INTERVENTION 0CP],[Movement Rules] [Unit Rules],2,
 IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover [IGNORES COVER],"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack.",[IGNORES COVER],[Range - Weapon Rules],2,
-INCENDIARY_TERROR,Incendiary Terror,Enemy takes Battle-shock,"In your Shooting phase, after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test, subtracting 1 from that test.",,,2,
+DRIVEN_FROM_COVER,Driven from Cover,SHOOTING — after UNIT shoots — select enemy hit; friendly ADEPTUS ASTARTES RANGE attacks vs it ignore cover.,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have [IGNORES COVER].",[SHOOT] [ACTIVE],,2,
 INDOMITOR_DOCTRINES,Indomitor Doctrines,"Target Closest Target at Range then Charge and get +2 Strenght in Melee.
 (Can split fire to closest target) [+2 S]","Each time a model in this unit makes a ranged attack that targets the closest eligible target, or makes a melee attack in a turn in which it made a Charge move, improve the Strength characteristic of that attack by 2.",[+2 S],[Melee - Weapon Stats],2,
 INDOMITOR_KILL_TEAM_BREAKDOWN,Indomitor Kill Team breakdown,"x4 Heavy Intercessors: x2 heavy bolters, x2 bolters
@@ -134,7 +132,7 @@ METEORIC_DESCENT,Meteoric Descent,"Deep Strike within 6"" horizontally. Cannot C
 MULTI_SPECTRUM_ARRAY,Multi-spectrum Array,+1 TO HIT for Army [+1 TO HIT] [+1 TO HIT],"In Shooting, after this unit has shot, select one enemy that was hit. Until the end of the phase, friendly adds +1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
 NARTHECIUM_APOTHECARY,Narthecium (Apothecary),Bring back model,"Narthecium (Ravenwing Command - Apothecary): While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",,,2,
 OBJECTIVE_SECURED,Objective Secured,Sticky Objectives [STICKY OBJECTIVES],"At the end of your Command phase, if this unit controls an objective, that objective is secured by your army.",[STICKY OBJECTIVES],[Unit Rules],2,
-OMNI_SCRAMBLERS,Omni-scramblers,"Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12"" of this unit.","Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12"" of this unit.",,,2,
+OMNI_SCRAMBLERS,Omni-scramblers,"SHOOTING — select visible enemy within 18"" — detected; while detected, UNIT has +3"" detection range.","In your Shooting phase, you can select one visible enemy unit within 18"" of this unit. That unit is detected. While a unit is detected, this unit has +3"" detection range.",[SHOOT],,2,
 ONE SHOT,ONE SHOT,Can only be shot once,This weapon can only be shot once per battle.,,,2,
 OUTFLANK,Outflank,"If this model is not leading a unit, it can be placed into Strategic Reserves. [STRATEGIC RESERVES]","During the Declare Battle Formations step, if this model is not leading a unit, it can be placed into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],2,
 OUTRIDER_ESCORT,Outrider Escort,"Shoot back within 6""","Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES MOUNTED unit within 6"" of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,,2,
@@ -198,7 +196,7 @@ ASSAULT DOCTRINE: +1 ADVANCE / CHARGE","• This unit’s ranged attacks have [A
 • When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge.
 • If the assault doctrine is active for this unit, this unit has +1 to advance and charge rolls.",,,2,1
 STEALTH,Stealth,Model is -1 To Hit with Ranged. [STEALTH],Model is -1 To Hit with Ranged.,[STEALTH],[Unit Rules],2,
-STERNGUARD_FOCUS,Sternguard Focus,Oath = RE-ROLL ALL WOUNDS [RE-ROLL ALL WOUNDS] [RE-ROLL ALL WOUNDS],"Each time a model in this unit makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.",[RE-ROLL ALL WOUNDS] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
+VETERAN_MARKSMEN,Veteran Marksmen,RANGE — re-roll Hit rolls of 1. [RE-ROLL 1S TO HIT],This unit’s ranged attacks can re-roll hit rolls of 1.,[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],,2,
 STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed","Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes unit within 6"" of this model is destroyed, this model can use this ability (it cannot use this ability when it is itself destroyed). 
 
 If it does, after the attacking unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,,2,
@@ -229,7 +227,7 @@ x2 Plasma pistols and chainswords
 x2 Heavy bolt pistols and chainswords
 
 x5 Assault bolters with Close combat weapon",,,2,
-TARGETER_OPTICS,Targeter Optics,Stationary = IGNORES COVER [IGNORES COVER],"Each time this unit Remains Stationary, until the start of your next Movement phase, ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",[IGNORES COVER],[Range - Weapon Rules],2,
+TARGETER_OPTICS,Targeter Optics,SHOOTING — visible enemy — RANGE [IGNORES COVER].,This unit’s ranged attacks that target a visible enemy unit have [IGNORES COVER].,[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],,2,
 TECHMARINE,Techmarine,"Lone Operative if within 3"" of Vehicle.
 
 Lone Operative: Cannot be targetted outside of 12"". [LONE OPERATIVE]","While this model is within 3"" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
