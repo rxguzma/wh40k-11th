@@ -132,3 +132,4 @@ MECHANIC_PLUS_2_S,+2 S,+2 Strength,Weapon Stats,Weapons,Adds 2 Strength when rou
 MECHANIC_PLUS_1_AP,+1 AP,+1 AP,Weapon Stats,Weapons,Improves AP by 1 when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,AP,IMPROVE,1,404
 MECHANIC_PLUS_1_D,+1 D,+1 Damage,Weapon Stats,Weapons,Adds 1 Damage when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,D,ADD,1,405
 MECHANIC_PLUS_2_A,+2 A,+2 Attacks,Weapon Stats,Weapons,Adds 2 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,2,22
+MECHANIC_REROLL_ALL_DAMAGE,RE-ROLL DAMAGE,Re-roll Damage,Combat Modifiers,Attacks,Re-rolls Damage rolls when routed by the owning Ability controls.,TRUE,REROLL,,DAMAGE,ALL,1,209
