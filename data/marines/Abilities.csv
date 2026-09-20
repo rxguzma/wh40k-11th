@@ -302,9 +302,6 @@ SUPPORT_APOTHECARY_BIOLOGIS,Support: Apothecary Biologis,"Can Support: GRAVIS
 Aggressors, Eradicators
 Heavy Intercessors","SUPPORT: AGGRESSOR SQUAD, ERADICATOR SQUAD, HEAVY INTERCESSOR SQUAD, INDOMITOR KILL TEAM",,,3,
 SUPPORT_BLADEGUARD_ANCIENT,Support: Bladeguard Ancient,Can Support: Bladeguard Vets,SUPPORT: BLADEGUARD VETERAN SQUAD,,,3,
-LEADER_CAPTAIN_IN_PHOBOS_ARMOUR,Leader: Captain in Phobos Armour,"Can Lead: PHOBOS
-Infiltrators, Incursors, Reivers
-Eliminators, Scouts","LEADER: ELIMINATOR SQUAD, INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD, SCOUT SQUAD, SPECTRUS KILL TEAM",,,3,
 LEADER_CAPTAIN_IN_TERMINATOR_ARMOUR,Leader: Captain in Terminator Armour,"Can Lead: TERMINATORS
 Terminators, Assault Terminators
 Deathwing Knights","LEADER: DEATHWATCH TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
@@ -322,7 +319,6 @@ MASTERFUL_TACTICIAN,Masterful Tactician,"If on the battlefield at the start of y
 ANGELS_WRATH,Angel’s Wrath,"After a Charge while leading, +1 S to the unit’s melee weapons this turn. [+1 S]","While this model is leading a unit, each time that unit ends a Charge move, until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",[UNIT] [ACTIVE] [MELEE] [WEAPONS] [+1 S],[Weapon Stats],2,0
 SPECIAL_ISSUE_OPTICS_AND_AMMUNITION,Special-issue Optics and Ammunition,"SHOOTING — select one — RANGE [IGNORES COVER] or enemy within 24"" gets +6"" detection range until UNIT has shot.","In your Shooting phase, when this unit is selected to shoot, you can select one of the following — this unit’s ranged attacks have [IGNORES COVER]; or select one enemy unit within 24"" of this unit. That enemy unit has +6"" detection range until this unit has shot.",[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],,2,
 SHROUDING,Shrouding,ENEMY targets UNIT — psychic roll; on 1 battle-shocked; otherwise attacks -1 To Hit this phase.,"Psychic level 1 — When an enemy unit targets this unit, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. On a 1, this unit is battle-shocked. Otherwise, attacks that target this unit have -1 to hit rolls until the end of the phase.",[ACTIVE] [-1 TO HIT],,2,
-MASTER_OF_DECEIT,Master of Deceit,After deployment: redeploy up to 3 ADEPTUS ASTARTES INFANTRY units; may enter Strategic Reserves. [REDEPLOY 3],"After both players have deployed, select up to three friendly ADEPTUS ASTARTES INFANTRY units and redeploy them. Any selected unit may instead be placed into Strategic Reserves, regardless of the number already there.",[REDEPLOY 3],[Movement Rules],2,
 APOTHECARY_NARTHECIUM,Narthecium,COMMAND — UNIT heals D3+1 wounds.,"In your Command phase, this unit heals D3+1 wounds.",,,2,
 DEPLOYMENT_COMPLETE,Deployment Complete,After setup and disembarkation — units cannot embark within UNIT.,"When this unit is set up and all units embarked within it have disembarked, units cannot embark within this unit.",,,2,
 SURGICAL_PRECISION,Vivispectral Analysis Targeting,UNIT attacks have [LETHAL HITS:non-VEHICLE].,This unit’s attacks have [LETHAL HITS:non-VEHICLE].,[SHOOT] [MELEE] [WEAPONS],,2,
@@ -525,3 +521,6 @@ FORWARD_ASSAULT_WARSUIT,Forward Assault Warsuit,"BATTLE start — mark enemy; at
 SHATTERED_DEFENCES,Shattered Defences,"SHOOTING — after UNIT shoots, select MONSTER/VEHICLE hit; friendly ADEPTUS ASTARTES RANGE attacks vs it have +1 AP.","In your Shooting phase, when this unit has shot, select one enemy MONSTER or VEHICLE unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have +1 AP.",[SHOOT] [ACTIVE],,2,
 REAPING_TALLY,Reaping Tally,Ranged vs non-MONSTER/VEHICLE — +1 AP.,"Each time this unit makes a ranged attack that targets a unit (excluding MONSTER/VEHICLE units), improve the Armour Penetration characteristic of that attack by 1.",,,2,0
 PRIORITY_TARGET_ACQUISITION,Priority Target Acquisition,"Ranged target within 12"" — +1 Strength.","Each time this unit makes a ranged attack that targets a unit within 12"" of this unit, add 1 to the Strength characteristic of that attack.",,,2,0
+TACTICAL_FLUIDITY_CAPTAIN_PHOBOS,"Tactical Fluidity (Once per battle round, per unit)","SHOOTING — after shooting while unengaged, Normal Move D6"".
+FIGHT (enemy) — if engaged, Fall Back 6"".","In your Shooting phase, when this unit has shot, if this unit is unengaged, this unit can make a Normal move of up to D6"".
+Or — At the end of your opponent’s Fight phase, if this unit is engaged, this unit can make a Fall Back move of up to 6"".",[SHOOT] [MELEE],,2,1
