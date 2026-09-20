@@ -16,14 +16,14 @@ orks_green_tide,Orks,Green Tide,orks_green_tide_detachment_rule_mob_handed_bruta
 
 If a friendly ORKS INFANTRY unit made a charge move this turn, that unit's melee attacks have [LETHAL HITS: non-MONSTER / VEHICLE].",[SUSTAINED HITS 1] [LETHAL HITS],[Melee - Weapon Rules] [Melee - Weapon Rules],0,"ORKS, INFANTRY",,
 orks_bully_boyz,Orks,Bully Boyz,orks_bully_boyz_detachment_rule_displays_of_savagery,DISPLAYS OF SAVAGERY,1,Purge the Foe,,"MEGANOBZ / NOBZ
-MELEE: SUSTAINED HITS 1 [SUSTAINED HITS 1]",Friendly MEGANOBZ / NOBZ units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
+MELEE\u003A [SUSTAINED HITS 1]",Friendly MEGANOBZ / NOBZ units' melee attacks have [SUSTAINED HITS 1].,[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,"MEGANOBZ, MEGA ARMOUR, NOBZ",
 orks_taktikal_brigade,Orks,Taktikal Brigade,orks_taktikal_brigade_detachment_rule_suspiciously_well_organised,SUSPICIOUSLY WELL ORGANISED,1,Take and Hold,,STORMBOYZ have BATTLELINE. BOYZ / KOMMANDOS / STORMBOYZ can Fall Back and still charge. [FALL BACK AND CHARGE],"Friendly STORMBOYZ units have BATTLELINE.
 
 When a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make a fall-back move, that fall-back move does not prevent that unit from being eligible to declare a charge.",[FALL BACK AND CHARGE],[Movement Rules],0,,"BOYZ, KOMMANDOS, STORMBOYZ",
 orks_wreckas,Orks,Wreckas,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',1,Priority Assets,,BREAKA BOYZ / FLASH GITZ / TANKBUSTAS [Re-roll 1s To Hit] if they or their target are in range of an objective. [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT],"In your Shooting phase, when a friendly BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
 - That unit is within range of an objective.
 - The target of that attack is within range of an objective.",[RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,,"BREAKA BOYZ, FLASH GITZ, TANKBUSTAS",
-orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,1,Purge the Foe,,BEAST SNAGGAs attacks that target MONSTER / VEHICLE unit have +1 AP. [+1 AP] [+1 AP],Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.,[+1 AP] [+1 AP],[Melee - Weapon Stats] [Range - Weapon Stats],0,BEAST SNAGGA,,
+orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,1,Purge the Foe,,BEAST SNAGGAs attacks vs MONSTER / VEHICLE\u003A [+1 AP],Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.,[+1 AP] [+1 AP],[Melee - Weapon Stats] [Range - Weapon Stats],0,BEAST SNAGGA,,
 orks_madcap_meks,Orks,Madcap Meks,orks_madcap_meks_detachment_rule_unpredictable_genius,UNPREDICTABLE GENIUS,1,Disruption,,"When BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET puts all ranged attacks into one enemy, roll D6 table. [+1 TO HIT] [+1 TO HIT] [ENEMY -1 T]","In your Shooting phase, when all of a friendly BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET unit's ranged attacks target a single enemy unit, roll one D6:
 
 UNPREDICTABLE GENIUS
@@ -57,7 +57,7 @@ orks_kult_of_speed,Orks,Kult of Speed,orks_kult_of_speed_detachment_rule_adrenal
 When a friendly SPEED FREEKS unit is selected to make an advance/fall-back move:
 That unit's ranged attacks have [ASSAULT] until the end of the turn.
 That move does not prevent that unit from being eligible to declare a charge.",[ASSAULT] [ADVANCE AND CHARGE] [FALL BACK AND CHARGE],[Range - Weapon Rules] [Movement Rules] [Movement Rules],0,SPEED FREEKS,,
-orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Reconnaissance,,ORKS AIRCRAFT ignore Strategic Reserves points cap. Riled up ORKS AIRCRAFT / DEFFKOPTAS ranged +1 to hit. [+1 TO HIT],"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
+orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Reconnaissance,,ORKS AIRCRAFT ignore Strategic Reserves points cap. RILED UP ORKS AIRCRAFT / DEFFKOPTAS ranged [+1 TO HIT],"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
 
 While a friendly ORKS AIRCRAFT / DEFFKOPTAS unit is RILED UP, this unit's ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,ORKS,"AIRCRAFT, DEFFKOPTAS",
 orks_brute_bosses,Orks,Brute Bosses,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,1,Purge the Foe,,"WARBOSS
