@@ -4,12 +4,9 @@ PLUS_1_T,+1 T,+1 Toughness,Unit Stats,Unit,Adds 1 Toughness to the Unit.,TRUE,ST
 PLUS_1_OC,+1 OC,+1 Objective Control,Unit Stats,Unit,Adds 1 Objective Control to the Unit.,TRUE,STAT,UNIT,OC,ADD,1,3
 PLUS_1_M,+1 M”,+1 Movement,Unit Stats,Unit,Adds 1” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,1,4
 PLUS_2_M,+2 M”,+2 Movement,Unit Stats,Unit,Adds 2” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,2,5
-PLUS_3_A_MELEE,+3 A,+3 Attack,Melee - Weapon Stats,Melee Weapons,Adds 3 Attacks to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,3,7
-PLUS_5_PTS,+5 Pts,+5 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,5,11
-PLUS_10_PTS,+10 Pts,+10 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,10,12
-PLUS_20_PTS,+20 Pts,+20 Pts,Points,Unit,Changes the cost for each model in the unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,20,13
-PLUS_4_A_MELEE,+4 A,+4 Attacks,Melee - Weapon Stats,Melee Weapons,Adds 4 Attacks to each Melee Weapon on the Unit.,TRUE,WEAPON_STAT,MELEE,A,ADD,4,14
-PLUS_6_A_RANGE,+6 A,+6 Attacks,Range - Weapon Stats,Ranged Weapons,Adds 6 Attacks to each Ranged Weapon on the Unit.,TRUE,WEAPON_STAT,RANGE,A,ADD,6,17
+PLUS_3_A_MELEE,+3 A,+3 Attack,Weapon Stats,Weapons,Adds 3 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,3,7
+PLUS_4_A_MELEE,+4 A,+4 Attacks,Weapon Stats,Weapons,Adds 4 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,4,14
+PLUS_6_A_RANGE,+6 A,+6 Attacks,Weapon Stats,Weapons,Adds 6 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,6,17
 PLUS_6_M,+6 M”,+6 Movement,Unit Stats,Unit,Adds 6” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,6,21
 PLUS_4_M,+4 M”,+4 Movement,Unit Stats,Unit,Adds 4” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,4,22
 INFO_INCOMING_MINUS_1_WOUND,INCOMING -1 TO WOUND,Incoming -1 To Wound,Info Only,Display only,Incoming attacks can suffer -1 to wound as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,900
@@ -36,9 +33,6 @@ RAPID_FIRE_1_RANGE,RAPID FIRE 1,Rapid Fire 1,Range - Weapon Rules,Ranged Weapons
 MELTA_1_RANGE,MELTA 1,Melta 1,Range - Weapon Rules,Ranged Weapons,Applies Melta 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,MELTA,SET,1,611
 MINUS_1_SV,-1 SV,-1 Save,Unit Stats,Unit,Improves the Unit Save characteristic by 1.,TRUE,STAT,UNIT,SV,IMPROVE,1,705
 MINUS_1_LD,-1 LD,-1 Leadership,Unit Stats,Unit,Improves the Unit Leadership characteristic by 1.,TRUE,STAT,UNIT,LD,IMPROVE,1,706
-PLUS_15_PTS,+15 Pts,+15 Pts,Points,Unit,Adds 15 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,15,723
-PLUS_25_PTS,+25 Pts,+25 Pts,Points,Unit,Adds 25 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,25,725
-PLUS_30_PTS,+30 Pts,+30 Pts,Points,Unit,Adds 30 points for each model in the Unit.,TRUE,POINTS_PER_MODEL,UNIT,PTS,ADD,30,726
 OVERWATCH_RANGE,OVERWATCH,Overwatch,Range - Weapon Rules,Ranged Attacks,Applies Overwatch to Ranged attacks.,TRUE,WEAPON_RULE,RANGE,OVERWATCH,SET,1,614
 PLUS_1_WS_MELEE,+1 WS,+1 WS,Melee - Weapon Stats,Melee Weapons,Improves Weapon Skill by 1 for Melee weapons.,TRUE,WEAPON_STAT,MELEE,WS,IMPROVE,1,108
 SAVE_4_PLUS,SAVE 4+,Save 4+,Unit Stats,Unit,Sets the unit Save characteristic to 4+.,TRUE,UNIT_STAT,UNIT,SAVE,SET,4,7
@@ -64,7 +58,6 @@ LONE_OPERATIVE_3,"LONE OP 3""","Lone Operative 3""",Unit Rules,Unit,"The affecte
 FIGHTS_FIRST,FIGHTS FIRST,Fights First,Unit Rules,Unit,The affected unit has Fights First while this rule is active.,TRUE,,,,,,834
 RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Re-roll Advance,Movement Rules,Unit,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
 GAIN_1_CP,GAIN 1 CP,Gain 1 CP,Unit Rules,Player,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
-FIVE_PLUS_PLUS_INVUL,5++ Invul,5++ Invul,Unit Rules,Unit,The affected unit has a 5++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,837
 FIGHT_ON_DEATH,FIGHT ON DEATH,Fight on Death,Unit Rules,Unit,The affected unit can fight on death while this rule is active.,TRUE,,,,,,915
 FIGHT_ON_DEATH_3_PLUS,FIGHT ON DEATH 3+,Fight on Death 3+,Unit Rules,Unit,The affected unit can fight on death on a 3+ while this rule is active.,TRUE,,,,,,916
 FIGHT_ON_DEATH_4_PLUS,FIGHT ON DEATH 4+,Fight on Death 4+,Unit Rules,Unit,The affected unit can fight on death on a 4+ while this rule is active.,TRUE,,,,,,917

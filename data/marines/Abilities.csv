@@ -60,7 +60,7 @@ FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE 
 FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First. [FIGHTS FIRST],"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",[FIGHTS FIRST],[Unit Rules],2,
 FINEST_HOUR,"Finest Hour (Once per battle, per unit)",FIGHT: melee +3 A / DEVASTATING WOUNDS [+3 A] [DEVASTATING WOUNDS],"In the Fight phase, when this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have:
 • +3 A.
-• [DEVASTATING WOUNDS].",[ACTIVE] [MELEE] [WEAPONS] [+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Weapon Rules],2,0
+• [DEVASTATING WOUNDS].",[ACTIVE] [MELEE] [WEAPONS] [+3 A] [DEVASTATING WOUNDS],[Weapon Stats] [Weapon Rules],2,0
 FORGEFATHER,Forgefather,"SHOOTING: visible enemy within 24""
 Friendly MELTA / TORRENT vs target: +2 S","In your Shooting phase, select one visible enemy unit within 24"" of this model. Friendly ADEPTUS ASTARTES units’ [MELTA] / [TORRENT] attacks that target that enemy unit have +2 S.",,,2,1
 FURY_OF_THE_FIRST,Fury of the First,"Attacks vs unit within 9"" — [+1 AP].","This unit’s attacks that target a unit within 9"" of this unit have +1 AP.",[SHOOT] [MELEE] [WEAPONS] [ACTIVE] [+1 AP],,2,
@@ -335,7 +335,6 @@ APOTHECARY_NARTHECIUM,Narthecium,COMMAND — UNIT heals D3+1 wounds.,"In your Co
 DEPLOYMENT_COMPLETE,Deployment Complete,After setup and disembarkation — units cannot embark within UNIT.,"When this unit is set up and all units embarked within it have disembarked, units cannot embark within this unit.",,,2,
 SURGICAL_PRECISION,Vivispectral Analysis Targeting,UNIT attacks have [LETHAL HITS:non-VEHICLE].,This unit’s attacks have [LETHAL HITS:non-VEHICLE].,[SHOOT] [MELEE] [WEAPONS],,2,
 ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Storm Shield,Storm Shield +1 W each [+1 W],Each model equipped with a Storm Shield has +1 Wound.,[STATS] [+1 W],[Unit Stats],3,
-REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Incinerator +10 Pts per model [+10 Pts],Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.,[+10 Pts],[Points],3,
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W [+1 W],Add 1 to the Wounds characteristic of the bearer.,[STATS] [+1 W],[Unit Stats],3,
 BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING +1 To Hit if this unit or its target is within range of an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
 This unit is within range of an objective.

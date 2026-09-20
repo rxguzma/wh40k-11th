@@ -28,11 +28,11 @@ LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: 
 MIGHT_IS_RIGHT,Might is Right,"CHARGE this turn.
 MELEE: [+3 A] and [+2 S]","If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
-- +2 S",[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S],[Melee - Weapon Stats] [Weapon Stats],2,0
+- +2 S",[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S],[Weapon Stats] [Weapon Stats],2,0
 MORE_DAKKA,More Dakka,"[UNIT] RANGE [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - [IGNORES COVER]
-- If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Weapon Rules],2,
+- If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [WEAPONS] [IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Weapon Rules],2,
 ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],1,
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA\u003A ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
@@ -48,8 +48,8 @@ SHOKK_BOOSTA,Shokk-boosta,[UNIT] ADVANCE: [ADVANCE 6]; move through models; Haza
 - This unit can move through all types of model.
 - When this unit ends that advance move, make a hazard roll for each model in this unit.",[ADVANCE 6] [UNIT],[Movement Rules],2,0
 SOMETHIN_TO_PROVE,Somethin' to Prove,[UNIT] MELEE [+1 TO HIT],This unit's melee attacks have +1 to hit rolls.,[UNIT] [ACTIVE] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
-SUPER_RUNTS,Super Runts,[UNIT] [RILED UP] and [5++ Invul]. Scavenged Shivs [+1 A] [+1 WS] [+1 S],"- This unit is RILED UP.
-- This unit's Scavenged Shivs weapons have +1 A, WS and S.",[RILED UP] [5++ Invul] [+1 A] [+1 WS] [+1 S] [UNIT],[Unit Rules] [Unit Rules] [Weapon Stats] [Melee - Weapon Stats] [Weapon Stats],2,1
+SUPER_RUNTS,Super Runts,[UNIT] [RILED UP] and [INVULNERABLE SAVE 5+]. Scavenged Shivs [+1 A] [+1 WS] [+1 S],"- This unit is RILED UP.
+- This unit's Scavenged Shivs weapons have +1 A, WS and S.",[UNIT] [MELEE] [WEAPONS] [RILED UP] [INVULNERABLE SAVE 5+] [+1 A] [+1 WS] [+1 S],[Unit Rules] [Unit Rules] [Weapon Stats] [Melee - Weapon Stats] [Weapon Stats],2,1
 SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,,3,
 SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,,3,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
@@ -173,7 +173,7 @@ SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excludin
 STEALTH,Stealth,ANYTIME [STEALTH],CORE: Stealth,[STEALTH],[Unit Rules],1,1
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,2,
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,2,
-WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME [RILED UP] [5++ Invul],This unit is RILED UP.,[RILED UP] [5++ Invul],[Unit Rules] [Unit Rules],2,1
+WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME [RILED UP] [INVULNERABLE SAVE 5+],This unit is RILED UP.,[RILED UP] [INVULNERABLE SAVE 5+],[Unit Rules] [Unit Rules],2,1
 WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and PSYCHIC
 Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
@@ -268,7 +268,7 @@ This model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
 WARGEAR OPTIONS: This model can be equipped with one of the following: 1 Telleport Blasta; 1 Kustom Force Field. This model's Kustom Shoota can be replaced with one of the following: 1 Killsaw; 1 Kombi-weapon; 1 Kustom Mega-blasta.",,,3,
 SUPPORT_SHOKKA,Support Shokka,"Within 3"" of friendly ORKS INFANTRY (excluding other SAG) [LONE OP 3""]","While this model is within 3"" of a friendly ORKS INFANTRY unit (excluding BIG MEK WITH SHOKK ATTACK GUN units), this model has Lone Operative.","[LONE OP 3""]",[Unit Rules],3,0
 EVEN_MORE_DAKKA,Even More Dakka,RILED UP: RANGE [SUSTAINED HITS 1],"If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[ACTIVE] [SHOOT] [WEAPONS] [SUSTAINED HITS 1],[Weapon Rules],2,0
-BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER / VEHICLE [+6 A],"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER / VEHICLE units), that weapon has +6 A.",[+6 A],[Range - Weapon Stats],2,0
+BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER / VEHICLE [+6 A],"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER / VEHICLE units), that weapon has +6 A.",[SHOOT] [WEAPONS] [ACTIVE] [+6 A],[Weapon Stats],2,0
 KUSTOM_DAKKA,Kustom Dakka,ANYTIME — RANGE [IGNORES COVER],This unit's ranged attacks have [IGNORES COVER].,[SHOOT] [WEAPONS] [IGNORES COVER],[Range - Weapon Rules],2,1
 CLEVER_KNOW_WOTZ,Clever Know-wotz,Buff a Vehicle within 3”: heal D3 and [+1 TO HIT] until next Movement.,"In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS VEHICLE model (excluding AIRCRAFT / TITANIC models) within 3"" of this model: - That VEHICLE model heals D3 wounds. - That VEHICLE model's attacks have +1 to hit rolls until the start of your next Movement phase.",[+1 TO HIT] [+1 TO HIT],[Combat Modifiers] [Combat Modifiers],2,
 GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un-shock and RILED UP.","Get Back in da Race (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly SPEED FREEKS unit within 6"" of this unit. That unit (and any units embarked within that unit):
@@ -359,7 +359,6 @@ LED_BY_KOMMANDOS,LED BY (KOMMANDOS),Can be led by: BOSS SNIKROT,,,,3,
 LED_BY_WARBIKERS,LED BY (WARBIKERS),Can be led by: DEFFKILLA WARTRIKE,,,,3,
 LED_BY_GRETCHIN,LED BY (GRETCHIN),"Can be led by: ZODGROD WORTSNAGGA, RUNTHERD",,,,3,
 LED_BY_SQUIGHOG_BOYZ,LED BY (SQUIGHOG BOYZ),Can be led by: PAINBOSS,,,,3,
-GUNWAGON_ZZAP_GUN_POINTS,Gunwagon Zzap Gun,Gunwagon Zzap Gun +10 Pts [+10 Pts],A Gunwagon equipped with a Zzap Gun costs +10 points.,[+10 Pts],[Points],3,
 BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,,3,
 SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,,3,
 BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,,3,

@@ -1,25 +1,25 @@
 {
-  "dataset_sha256": "0eb74f486ca3e9bd0e1e4cb3e751cfd8d3c796b16afc35e4878a0c4e69e31f6c",
+  "dataset_sha256": "c66e81b99941fe015419337e5ca472052ffeff69eed8b356c08cdc2c5f792b16",
   "files": {
     "Abilities.csv": {
-      "bytes": 47530,
-      "sha256": "fdc657f07ca26bf0a0d8c6526d13e6c38272fba38e457a94c1dbf978114a4dca"
+      "bytes": 47458,
+      "sha256": "666501b33de8f68ca566a8430abd63c9604f4f8f94617ff30a85a8b0271f9a13"
     },
     "Army_Rules.csv": {
-      "bytes": 1184,
-      "sha256": "2743384deb000c36f7a155ff28b18d847650b399f9b0a63ffceb3ea44af7e3f7"
+      "bytes": 1195,
+      "sha256": "dcc1be5f18aaaaa09df465686dd6069f32b145c17f9d38c8a5fe7e411d1bb701"
     },
     "Detachment_Definitions.csv": {
       "bytes": 10563,
       "sha256": "2d388560016c84471ca7100000c1e15c925666c3130812222769be65e6f8abd3"
     },
     "Enhancements.csv": {
-      "bytes": 18123,
-      "sha256": "b79b8d1eb91450a4e8ebc8505b33c89d41e58742e5b7aed714c9885c129537e2"
+      "bytes": 18189,
+      "sha256": "e349ab994e336fdbd8074a51f26163dfeb84fc714148de41d25b3be8e5fd5b77"
     },
     "Loadout_Abilities.csv": {
-      "bytes": 96,
-      "sha256": "485ef858be6976bb63afddfb5846170ea5650a5db448aa32757e0a7d1a3e5f14"
+      "bytes": 40,
+      "sha256": "a2b49ba4075c373b804c32d6da806247e26b05fd7c47e3d4c52de4524c525fa8"
     },
     "Loadout_Compatibility.csv": {
       "bytes": 4506,
