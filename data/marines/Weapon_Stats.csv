@@ -57,7 +57,7 @@ FEALTY_STRIKE,Fealty – strike,-,8,2,12,-4,4
 FEALTY_SWEEP,Fealty – sweep,-,16,2,6,-3,2
 FLAMESTORM_CANNON_X2,Flamestorm cannon x2,"12""",2D6+6,N/A,6,-2,2
 FLAMESTORM_GAUNTLETS,Flamestorm gauntlets,"12""",D6+1,N/A,4,0,1
-FORCE_WEAPON,Force weapon,-,4,3,6,-1,D3
+FORCE_WEAPON,Force Weapon,-,4,3+,6,-2,2
 FORGE_BOLTER,Forge Bolter,"24""",3,2,5,-1,2
 FRAG_CANNON_X1,Frag cannon x1,"18""",D3,4,7,-1,2
 FRAG_CANNON_X2,Frag cannon x2,"18""",D3,4,7,-1,2
@@ -148,8 +148,8 @@ REPULSOR_DEFENSIVE_ARRAY,Repulsor defensive array,"24""",18,3,4,0,1
 REPULSOR_EXECUTIONER_DEFENSIVE_ARRAY,Repulsor Executioner defensive array,"24""",10,3,4,0,1
 SCOUT_SNIPER_RIFLE,Scout sniper rifle,"36""",1,3,4,-2,2
 SERVO_ARM,Servo-arm,-,1,3,8,-2,3
-SMITE_FOCUSED_WITCHFIRE,Smite - focused witchfire,"24""",D6,3,6,-2,D3
-SMITE_WITCHFIRE,Smite - witchfire,"24""",D6,3,5,-1,D3
+SMITE_FOCUSED_WITCHFIRE,Smite - Focused Witchfire,"24""",D3+3,3+,6,-2,2
+SMITE_WITCHFIRE,Smite - Witchfire,"24""",D6,3+,6,-1,2
 SPEAR_OF_VULKAN,Spear of Vulkan,-,6,2+,7,-2,2
 SPECIAL_ISSUE_BOLT_PISTOL_REIVERS,Special issue bolt pistol,"12""",1,3,4,-1,1
 STERNGUARD_BOLT_PISTOL,Sternguard bolt pistol,"12""",1,3,4,0,1
