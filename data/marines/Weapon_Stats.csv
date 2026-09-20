@@ -6,7 +6,7 @@ ARMORED_TRACKS_LAND_RAIDER,Armored Tracks (Land Raider),-,6,4,8,0,1
 ARMOURED_FEET,Armoured feet,-,5,3,7,0,1
 ARMOURED_HULL,Armoured Hull,-,3,4+,6,0,1
 ACCELERATOR_AUTOCANNON,Accelerator autocannon,"48""",3,4,8,-1,2
-ARMOURED_HULL_REPULSOR,Armoured hull,-,6,4,8,0,1
+ARMOURED_HULL_REPULSOR,Armoured Hull,-,6,4+,8,0,1
 ARMOURED_TRACKS,Armoured tracks,-,3,4,6,0,1
 ASSAULT_BOLTERS,Assault bolters,"18""",3,3,5,-1,2
 ASTARTES_CHAINSWORD_INTERCESSORS,Astartes chainsword,-,4,3,4,-1,1
@@ -78,9 +78,9 @@ HEAVY_BOLTER_SCOUTS,Heavy Bolter,"36""",3,4+,5,-1,2
 HEAVY_BOLTERS_X2_PREDATOR,Heavy Bolters x2 (Predator),"36""",6,3,5,-1,2
 HEAVY_FLAMER_LAND_SPEEDER,Heavy flamer,"12""",D6,N/A,5,-1,1
 HEAVY_LASER_DESTROYER,Heavy laser destroyer,"72""",2,3,16,-4,D6+4
-HEAVY_ONSLAUGHT_GATLING_CANNON,Heavy Onslaught Gatling Cannon,"24""",12,3,6,0,1
+HEAVY_ONSLAUGHT_GATLING_CANNON,Heavy Onslaught Gatling Cannon,"24""",12,3+,6,-1,1
 HUNTER_KILLER_MISSILE,Hunter-killer Missile,"48""",1,2+,14,-3,D3+3
-HUNTER_SLAYER_MISSILE,Hunter-slayer missile,"48""",1,2,14,-3,D6
+HUNTER_SLAYER_MISSILE,Hunter-slayer Missile,"48""",1,2+,14,-3,D3+3
 ICARUS_ROCKET_POD,Icarus rocket pod,"24""",D3,3,8,-1,2
 INVICTOR_FIST,Invictor Fist,-,5,3,14,-2,3
 INCENDIUM_CANNON,Incendium cannon,"12""",D6+3,-,6,-1,1
@@ -91,7 +91,7 @@ KAELS_SMITE_WITCHFIRE,Kael's Smite - witchfire,"24""",D6,3,6,-1,D3+1
 KRAKSTORM_GRENADE_LAUNCHER_X2,Krakstorm grenade launcher x2,"18""",2,3,9,-1,D3
 LANCER_LASER_DESTROYER,Lancer laser destroyer,"72""",2,3,14,-4,D6+3
 LAS_FUSIL,Las Fusil,"36""",1,3+,10,-3,D3+3
-LAS_TALON,Las-talon,"36""",2,3,10,-3,D6+1
+LAS_TALON,Las-talon,"36""",2,3+,10,-3,D3+3
 LASCANNONS_X2_PREDATOR,Lascannons,"48""",2,3,12,-3,D6+1
 LIONS_WRATH,Lion’s Wrath,"24""",2,2,8,-3,2
 MACE_OF_ABSOLUTION,Mace of absolution,-,4,2,6,-2,2
@@ -143,7 +143,7 @@ PYREBLASTER,Pyreblaster,"12""",3,N/A,5,-1,1
 REDEMPTOR_FIST,Redemptor fist,-,5,3,12,-2,3
 RELIC_FIST,Relic fist,-,5,2,8,-2,2
 RELIC_WEAPON_KNIGHTS,Relic Weapon (Knights),-,6,2,7,-2,2
-REPULSOR_DEFENSIVE_ARRAY,Repulsor defensive array,"24""",18,3,4,0,1
+REPULSOR_DEFENSIVE_ARRAY,Defensive Array,"24""",18,3+,5,-1,1
 REPULSOR_EXECUTIONER_DEFENSIVE_ARRAY,Repulsor Executioner defensive array,"24""",10,3,4,0,1
 SCOUT_SNIPER_RIFLE,Sniper Rifle,"36""",1,3+,5,-2,2
 SERVO_ARM,Servo-arm,-,1,3,8,-2,3
@@ -175,13 +175,13 @@ THUNDER_HAMMER_TROOPS,Thunder hammer (Sgt),-,3,4,8,-2,2
 THUNDERSTRIKE_LAS_TALON,Thunderstrike las-talon,"36""",2,2,9,-3,D6+1
 TWIN_ASSAULT_CANNON,Twin assault cannon,"24""",6,3,6,0,1
 TWIN_BOLT_RIFLE,Twin Bolt Rifle,"24""",2,3+,5,-1,1
-TWIN_HEAVY_BOLTER,Twin heavy bolter,"36""",3,3,5,-1,2
+TWIN_HEAVY_BOLTER,Twin Heavy Bolter,"36""",3,3+,5,-1,2
 TWIN_HEAVY_ONSLAUGHT_GATLING_CANNON,Twin heavy onslaught gatling cannon,"24""",12,3,6,0,1
 TWIN_ICARUS_IRONHAIL_HEAVY_STUBBER,Twin Icarus ironhail heavy stubber,"36""",3,3,4,0,1
 TWIN_ICARUS_ROCKET_POD,Twin Icarus rocket pod,"24""",D3,3,8,-1,2
 TWIN_IRONHAIL_AUTOCANNON,Twin ironhail autocannon,"48""",3,3,9,-1,3
 TWIN_IRONHAIL_HEAVY_STUBBER,Twin ironhail heavy stubber,"36""",3,3,4,0,1
-TWIN_LASCANNON,Twin lascannon,"48""",1,3,12,-3,D6+1
+TWIN_LASCANNON,Twin Lascannon,"48""",1,3+,12,-3,D3+3
 TWIN_LIGHTNING_CLAWS,Twin lightning claws,-,6,3,5,-2,1
 TWIN_MULTI_MELTA,Twin multi-melta,"18""",2,3,9,-4,D6
 TWIN_POWER_FISTS,Twin power fists,-,3,3,8,-2,2
