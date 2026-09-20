@@ -40,7 +40,6 @@ CLOSE_COMBAT_WEAPON_SPEEDERS,Close combat weapon,-,4,3,4,0,1
 COMBAT_KNIFE_REIVERS,Monomolecular Combat Knife,-,4,3+,5,-1,1
 COMBAT_KNIFE_SCOUTS,Combat Knife,-,3,3+,4,-1,1
 COMBI_WEAPON,Combi-weapon,"24""",1,4,4,0,1
-COMBI_WEAPON_LEADERS,Combi-weapon,"24""",1,3,4,0,1
 CROZIUS_ARCANUM,Crozius Arcanum,-,5,2+,6,-1,2
 CYCLONE_MISSLINE_FRAG,Cyclone Missile Launcher - Frag,"36""",8,3+,4,-1,1
 CYCLONE_MISSLINE_KRAK,Cyclone Missile Launcher - Krak,"36""",2,3+,10,-2,D3+3
@@ -137,7 +136,7 @@ POWER_WEAPON_TERMINATOR_SERGEANT,Power Weapon,-,5,3+,5,-2,1
 PREDATOR_AUTOCANNON,Predator autocannon,"48""",4,3,9,-1,3
 PYREBLASTER,Pyreblaster,"12""",3,N/A,5,-1,1
 REDEMPTOR_FIST,Redemptor Fist,-,5,3+,12,-3,D3+3
-RELIC_FIST,Relic fist,-,5,2,8,-2,2
+RELIC_FIST,Relic Fist,-,5,2+,8,-2,2
 RELIC_WEAPON_KNIGHTS,Relic Weapon (Knights),-,6,2,7,-2,2
 REPULSOR_DEFENSIVE_ARRAY,Defensive Array,"24""",18,3+,5,-1,1
 REPULSOR_EXECUTIONER_DEFENSIVE_ARRAY,Repulsor Executioner defensive array,"24""",10,3,4,0,1
@@ -210,7 +209,7 @@ CAPTAIN_POWER_FIST,Power Fist,-,5,2+,8,-2,2
 GRAVIS_CAPTAIN_RELIC_CHAINSWORD,Relic Chainsword,-,3,2+,5,-1,2
 GRAVIS_CAPTAIN_RELIC_BLADE,Relic Blade,-,2,2+,6,-2,2
 GRAVIS_CAPTAIN_RELIC_FIST,Relic Power Fist,-,1,2+,8,-2,2
-CAPTAIN_TERM_STORM_BOLTER,Storm bolter,"24""",2,2,4,0,1
+CAPTAIN_TERM_STORM_BOLTER,Storm Bolter,"24""",2,2+,5,-1,1
 PHOBOS_CAPTAIN_INSTIGATOR_BOLT_CARBINE,Instigator Bolt Carbine,"24""",2,2+,5,-2,2
 PHOBOS_CAPTAIN_COMBAT_KNIFE,Combat Knife,-,6,2+,5,-1,1
 LIEUTENANT_MASTER_CRAFTED_BOLTER,Master-crafted Bolter,"24""",2,2+,5,-1,2
@@ -333,3 +332,6 @@ THUNDERSTRIKE_ICARUS_ROCKET_POD,Thunderstrike Icarus Rocket Pod,"24""",6,3+,6,-1
 GLADIATOR_DEFENSIVE_ARRAY_RF6,Defensive Array,"24""",6,3+,5,-1,1
 GLADIATOR_DEFENSIVE_ARRAY_RF12,Defensive Array,"24""",12,3+,5,-1,1
 GRAVIS_CAPTAIN_BOLTSTORM_GAUNTLET_MELEE,Boltstorm Gauntlet,-,5,2+,8,-2,2
+CAPTAIN_TERM_COMBI_INFERNUS,Combi-weapon - Infernus,"12""",3,N/A,4,0,1
+CAPTAIN_TERM_COMBI_PURGATUS,Combi-weapon - Purgatus,"24""",2,2+,7,-2,2
+CAPTAIN_TERM_COMBI_DAMNATUS,Combi-weapon - Damnatus,"12""",1,2+,9,-3,D3+2
