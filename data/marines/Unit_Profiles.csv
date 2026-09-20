@@ -45,7 +45,7 @@ INVICTOR_TACTICAL_WARSUIT,Invictor Tactical Warsuit,"8""",8,3+,12,6,4,"VEHICLE, 
 IRON_FATHER_FEIRROS,Iron Father Feirros,"5""",6,2+,6,6+,1,"INFANTRY, CHARACTER, EPIC HERO, GRAVIS, IMPERIUM, ADEPTUS ASTARTES, IRON HANDS",
 JUDICIAR,Judiciar,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Judiciar
 KAYVAAN_SHRIKE,Kayvaan Shrike,"12""",4,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, PHOBOS, SMOKE, ADEPTUS ASTARTES, RAVEN GUARD",
-LAND_RAIDER_REDEEMER,Land Raider Redeemer,"12""",12,2+,16,6,5,"VEHICLE, SMOKE, GRENADES, TRANSPORT, IMPERIUM, LAND RAIDER REDEEMER, DEATHWING, FRAME, LAND RAIDER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Land-Raider-Redeemer
+LAND_RAIDER_REDEEMER,Land Raider Redeemer,"12""",12,2+,16,6+,5,"VEHICLE, EXPLOSIVES, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Land-Raider-Redeemer
 LAND_SPEEDER,Land Speeder,"14""",8,3+,9,6,3,"VEHICLE, FLY, IMPERIUM, LAND SPEEDER, RAVENWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Land-Speeder
 LAND_SPEEDER_VENGEANCE,Land Speeder Vengeance,"14""",8,3+/5++,10,6,3,"VEHICLE, FLY, IMPERIUM, RAVENWING, LAND SPEEDER VENGEANCE, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Land-Speeder-Vengeance
 LIBRARIAN,Librarian,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PSYKER, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Librarian
@@ -97,3 +97,5 @@ CHAPLAIN_ON_BIKE,Chaplain on Bike,"12""",6,3+/4++,5,5+,2,"MOUNTED, CHAPLAIN, CHA
 BLADEGUARD_ANCIENT,Bladeguard Ancient,"6""",5,3+/4++,4,6+,3,"INFANTRY, ANCIENT, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Bladeguard-Ancient
 ANCIENT_IN_TERMINATOR_ARMOUR,Ancient in Terminator Armour,"5""",6,2+/4++,5,6+,2,"INFANTRY, ANCIENT, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient-In-Terminator-Armour
 FIRESTRIKE_SERVO_TURRETS,Firestrike Servo-Turrets,"5""",6,2+,6,6+,2,"VEHICLE, ARTILLERY, IMPERIUM",
+LAND_RAIDER,Land Raider,"10""",12,2+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",
+LAND_RAIDER_CRUSADER,Land Raider Crusader,"12""",12,2+,16,6+,5,"VEHICLE, EXPLOSIVES, FRAME, IMPERIUM, SMOKE, TRANSPORT",
