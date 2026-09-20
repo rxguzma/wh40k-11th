@@ -79,7 +79,7 @@ HEAVY_BOLTERS_X2_PREDATOR,Heavy Bolters x2 (Predator),"36""",6,3,5,-1,2
 HEAVY_FLAMER_LAND_SPEEDER,Heavy flamer,"12""",D6,N/A,5,-1,1
 HEAVY_LASER_DESTROYER,Heavy laser destroyer,"72""",2,3,16,-4,D6+4
 HEAVY_ONSLAUGHT_GATLING_CANNON,Heavy Onslaught Gatling Cannon,"24""",12,3,6,0,1
-HUNTER_KILLER_MISSILE,Hunter-killer missile,"48""",1,2,14,-3,D6
+HUNTER_KILLER_MISSILE,Hunter-killer Missile,"48""",1,2+,14,-3,D3+3
 HUNTER_SLAYER_MISSILE,Hunter-slayer missile,"48""",1,2,14,-3,D6
 ICARUS_ROCKET_POD,Icarus rocket pod,"24""",D3,3,8,-1,2
 INVICTOR_FIST,Invictor Fist,-,5,3,14,-2,3
@@ -137,7 +137,7 @@ POWER_FIST_STERNGUARD_SGT,Power Fist,-,4,3+,8,-2,2
 POWER_FIST_TERMINATORS,Power fist,-,3,3,8,-2,2
 POWER_FIST_TROOPS,Power Fist,-,3,3+,8,-2,2
 POWER_WEAPON_KNIGHTS,Power weapon,-,5,2,6,-2,2
-POWER_WEAPON_TERMINATOR_SERGEANT,Power weapon (Terminator Sgt),-,4,3,5,-2,1
+POWER_WEAPON_TERMINATOR_SERGEANT,Power Weapon,-,5,3+,5,-2,1
 PREDATOR_AUTOCANNON,Predator autocannon,"48""",4,3,9,-1,3
 PYREBLASTER,Pyreblaster,"12""",3,N/A,5,-1,1
 REDEMPTOR_FIST,Redemptor fist,-,5,3,12,-2,3
@@ -170,7 +170,7 @@ THE_SWORD_OF_SILENCE,The Sword of Silence,-,6,2,6,-2,2
 THE_VERDICT_OF_HALCYON_ANCIENT_EXECUTIONER_RELIC_BLADE,The Verdict of Halcyon - Ancient Executioner relic blade,-,5,2,9,-3,3
 THUNDER_HAMMER,Thunder hammer,-,3,3,8,-2,2
 THUNDER_HAMMER_ANCIENT,Thunder hammer,-,4,3,8,-2,2
-THUNDER_HAMMER_TERMINATORS,Thunder hammer,-,3,3,8,2,2
+THUNDER_HAMMER_TERMINATORS,Thunder Hammer,-,3,3+,8,-2,3
 THUNDER_HAMMER_TROOPS,Thunder hammer (Sgt),-,3,4,8,-2,2
 THUNDERSTRIKE_LAS_TALON,Thunderstrike las-talon,"36""",2,2,9,-3,D6+1
 TWIN_ASSAULT_CANNON,Twin assault cannon,"24""",6,3,6,0,1
@@ -310,3 +310,5 @@ ERADICATOR_MELTA_RIFLE_HUNTER,Melta Rifle - Hunter,"18""",1,2+,12,-3,D3+2
 ERADICATOR_MULTI_MELTA_HUNTER,Multi-melta - Hunter,"18""",2,2+,12,-3,D3+2
 AUTO_BOLTSTORM_GAUNTLETS,Auto Boltstorm Gauntlets,"18""",3,3+,4,-1,1
 FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS,Flamestorm Gauntlets - Close Quarters,"12""",3,N/A,4,-1,1
+TERMINATOR_CHAINFIST_STANDARD,Chainfist - Standard,-,2,4+,8,-2,2
+TERMINATOR_CHAINFIST_HUNTER,Chainfist - Hunter,-,3,3+,12,-2,3
