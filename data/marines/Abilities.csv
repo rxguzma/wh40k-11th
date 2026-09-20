@@ -361,7 +361,7 @@ REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Inciner
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W [+1 W],Add 1 to the Wounds characteristic of the bearer.,[+1 W],[Unit Stats],3,
 BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING +1 To Hit if this unit or its target is within range of an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
 This unit is within range of an objective.
-The target of that attack is within range of an objective.",,,2,
+The target of that attack is within range of an objective.",[SHOOT] [WEAPONS] [ACTIVE],,2,
 TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
 Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,2,
