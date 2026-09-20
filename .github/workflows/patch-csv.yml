@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBBED","column":"Short_Description","value":"CHARGE\u003A Engaged MONSTER / VEHICLE take [-1 BATTLESHOCK]\nIf 13+ models [-2 BATTLE-SHOCK]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file"\u003A"data/orks/Abilities.csv","id_column"\u003A"Ability_ID","row_id"\u003A"DA_GRAND_WARLORDS_LADZ","column"\u003A"Visibility_ID","value"\u003A"2"},{"file"\u003A"data/orks/Abilities.csv","id_column"\u003A"Ability_ID","row_id"\u003A"SPEEDNOB_SUPPORT","column"\u003A"Visibility_ID","value"\u003A"2"},{"file"\u003A"data/orks/Abilities.csv","id_column"\u003A"Ability_ID","row_id"\u003A"BEAST_SNAGGA_FOLLOWING","column"\u003A"Visibility_ID","value"\u003A"2"},{"file"\u003A"data/orks/Abilities.csv","id_column"\u003A"Ability_ID","row_id"\u003A"BOSS_OF_DA_HUNT","column"\u003A"Visibility_ID","value"\u003A"2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
