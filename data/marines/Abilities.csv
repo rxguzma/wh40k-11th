@@ -153,7 +153,7 @@ Enhancements, if any, added to Champion.","UNIT COMPOSITION
 The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-crafted power weapon.
 
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,,2,
-REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage [INCOMING -1 D],"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],2,
+REFUSE_TO_YIELD,Refuse to Yield,Attacks allocated to this model — -1 Damage [INCOMING -1 D],"Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],2,1
 RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],This unit has +1 Objective Control.,[STATS] [+1 OC],[Unit Stats],2,
 RELIC_SHIELD,Relic Shield,+1 W [+1 W],This model has +1W.,[STATS] [+1 W],[Unit Stats],2,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,,2,
@@ -302,9 +302,6 @@ SUPPORT_APOTHECARY_BIOLOGIS,Support: Apothecary Biologis,"Can Support: GRAVIS
 Aggressors, Eradicators
 Heavy Intercessors","SUPPORT: AGGRESSOR SQUAD, ERADICATOR SQUAD, HEAVY INTERCESSOR SQUAD, INDOMITOR KILL TEAM",,,3,
 SUPPORT_BLADEGUARD_ANCIENT,Support: Bladeguard Ancient,Can Support: Bladeguard Vets,SUPPORT: BLADEGUARD VETERAN SQUAD,,,3,
-LEADER_CAPTAIN_IN_GRAVIS_ARMOUR,Leader: Captain in Gravis Armour,"Can Lead: GRAVIS
-Aggressors, Eradicators
-Heavy Intercessors","LEADER: AGGRESSOR SQUAD, ERADICATOR SQUAD, HEAVY INTERCESSOR SQUAD, INDOMITOR KILL TEAM",,,3,
 LEADER_CAPTAIN_IN_PHOBOS_ARMOUR,Leader: Captain in Phobos Armour,"Can Lead: PHOBOS
 Infiltrators, Incursors, Reivers
 Eliminators, Scouts","LEADER: ELIMINATOR SQUAD, INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD, SCOUT SQUAD, SPECTRUS KILL TEAM",,,3,
