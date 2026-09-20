@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BRUTAL_IMPACT","sets":{"Tags":"[CHARGE\u003A +1 D]","Order":"10"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE","column":"Visibility_ID","value":"3"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBBED","column":"Short_Description","value":"CHARGE\u003A Engaged MONSTER / VEHICLE take [-1 BATTLESHOCK]\nIf 13+ models [-2 BATTLE-SHOCK]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
