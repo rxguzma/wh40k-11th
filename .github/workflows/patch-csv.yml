@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"BLESSING_OF_THE_OMNISSIAH","mode":"update","sets":{"Tags":"[SHOOT] [MELEE] [WEAPONS] [+1 TO HIT]","Tag Categories":"[Combat Modifiers]","Short_Description":"In Command phase, select Vehicle within 3\". Regain D3 wounds and, +1 TO HIT. [+1 TO HIT]"}},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"CLEVER_KNOW_WOTZ","mode":"update","sets":{"Tags":"[SHOOT] [MELEE] [WEAPONS] [+1 TO HIT]","Tag Categories":"[Combat Modifiers]"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"THUNDERSTRIKE","mode":"update","sets":{"Tags":"[SHOOT] [WEAPONS] [+1 TO WOUND]","Tag Categories":"[Combat Modifiers]","Short_Description":"Units get +1 TO WOUND vs MONSTERS and VEHICLES [+1 TO WOUND]"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
