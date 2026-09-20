@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Name","row_id":"Speshul Shells","column":"Short_Description","value":"SHOOTING INFANTRY \\nRANGE vs target within 9″ [+1 AP]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_more_dakka_stratagem_speshul_shells_1cp","column":"Short_Description","value":"SHOOTING INFANTRY \\nRANGE vs target within 9″ [+1 AP]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
