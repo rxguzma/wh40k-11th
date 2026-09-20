@@ -47,7 +47,7 @@ SHOKK_BOOSTA,Shokk-boosta,"[ADVANCE 6], move through models, then hazard per mod
 - This unit can change that advance roll to a 6.
 - This unit can move through all types of model.
 - When this unit ends that advance move, make a hazard roll for each model in this unit.",[ADVANCE 6],[Movement Rules],2,0
-SOMETHIN_TO_PROVE,Somethin' to Prove,ANYTIME — MELEE [+1 TO HIT],This unit's melee attacks have +1 to hit rolls.,[+1 TO HIT],[Melee - Combat Modifiers],2,1
+SOMETHIN_TO_PROVE,Somethin' to Prove,[UNIT] MELEE [+1 TO HIT],This unit's melee attacks have +1 to hit rolls.,[UNIT] [+1 TO HIT],[Unit Rules] [Melee - Combat Modifiers],2,1
 SUPER_RUNTS,Super Runts,"This unit is [RILED UP] and has [5++ Invul]. Scavenged Shivs [+1 A], [+1 WS] and [+1 S].","- This unit is RILED UP.
 - This unit's Scavenged Shivs weapons have +1 A, WS and S.",[RILED UP] [5++ Invul] [+1 A] [+1 WS] [+1 S],[Unit Rules] [Unit Rules] [Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Stats],2,1
 SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,,3,
