@@ -178,8 +178,8 @@ WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and PSYCHIC
 Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[LETHAL HITS],[Melee - Weapon Rules],2,
-TIDE_OF_MUSCLE,Tide of Muscle,CHARGE this turn — MELEE [LETHAL HITS],"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],2,0
-NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,UNIT can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[ACTION while ENGAGED],[Unit Rules],1,
+TIDE_OF_MUSCLE,Tide of Muscle,CHARGE this turn — MELEE [LETHAL HITS],"In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[LETHAL HITS] [UNIT],[Melee - Weapon Rules],2,0
+NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,UNIT can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[ACTION while ENGAGED] [UNIT],[Unit Rules],1,
 ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Incoming attacks: [INCOMING -1 AP],Attacks that target this unit have -1 AP,[INCOMING -1 AP],[Info Only],1,1
 BIG_AN_SHOOTY,Big an’ Shooty,ANYTIME — RANGE [RE-ROLL 1S TO HIT],This unit’s ranged attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Range - Combat Modifiers],2,1
 BIG_AN_STOMPY,Big an’ Stompy,ANYTIME — MELEE [RE-ROLL 1S TO HIT],This unit’s melee attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Melee - Combat Modifiers],2,1

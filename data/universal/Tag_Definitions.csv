@@ -148,3 +148,4 @@ STRATEGIC_RESERVES,STRATEGIC RESERVES,Strategic Reserves,Movement Rules,Unit,The
 INFO_INTIMIDATING_MOTIVATION,INTIMIDATING MOTIVATION,Intimidating Motivation,Info Only,Display only,Intimidating Motivation applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,920
 INFO_KEEP_HUNTIN,KEEP HUNTIN',Keep Huntin',Info Only,Display only,Keep Huntin' applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,921
 ACTION_WHILE_ENGAGED,ACTION while ENGAGED,Action While Engaged,Unit Rules,Unit,Unit can start an action while engaged.,TRUE,,,,,,
+UNIT,UNIT,Unit Section,Unit Rules,Unit,Propagates this Ability to every other Unit in the same saved section.,FALSE,,,,,,
