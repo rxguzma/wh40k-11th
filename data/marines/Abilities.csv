@@ -563,3 +563,4 @@ CAPTAIN_UNIT_COMPOSITION,Unit Composition,"1 Captain model
 Equipped: 1 Heavy Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Power Weapon","1 Captain model.
 
 This model is equipped with: 1 Heavy Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Power Weapon.",,,3,0
+CAPTAIN_ON_BIKE_INTO_THE_FRAY,Into the Fray,Charge: melee attacks gain [CLEAVE 1].,"If this unit made a Charge move this turn, its melee attacks have [CLEAVE 1].",[CLEAVE 1],[Melee - Weapon Rules],2,1
