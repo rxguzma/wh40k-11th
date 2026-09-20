@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CEREBREX_LOGIC_ENGINE","column":"Short_Description","value":"BATTLE FORMATIONS\\u003A \\nINFANTRY  [SCOUTS 6\"]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CEREBREX_LOGIC_ENGINE","column":"Tags","value":"Scout 6”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"COLD_AND_CALCULATING","column":"Short_Description","value":"MELEE or SHOOTING, choose\\u003A\\n[LETHAL HITS vs MONSTER / VEHICLE] or [SUSTAINED HITS 1 non MONSTER / VEHICLE] \\nTACTICAL\\u003A Both effects"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
