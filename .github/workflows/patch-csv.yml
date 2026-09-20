@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INNER_CIRCLE_COMPANIONS","mode":"delete_where","where":{"Unit_ID":"INNER_CIRCLE_COMPANIONS","Point_Option_ID":"point_1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INNER_CIRCLE_COMPANIONS","mode":"delete_where","where":{"Unit_ID":"INNER_CIRCLE_COMPANIONS","Point_Option_ID":"point_2"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INNER_CIRCLE_COMPANIONS","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"x3","Cost":"0","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INNER_CIRCLE_COMPANIONS","mode":"insert","allow_duplicate_id":true,"sets":{"Point_Option_ID":"point_2","Label":"x6","Cost":"0","Sort_Order":"2"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INVADER_ATV","column":"Cost","value":"0"},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"LAND_SPEEDER_VENGEANCE","column":"Cost","value":"0"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"MEDUSAS_WRATH","mode":"update","sets":{"Short_Description":"Each phase, unit [re-roll 1 Hit, Wound or Damage roll].","Tags":"ACTIVE, SHOOT, MELEE, WEAPONS","Tag Categories":"","Default_Active":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
