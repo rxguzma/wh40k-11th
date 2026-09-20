@@ -302,6 +302,7 @@ TAGGED_ARMY_FILES = (
     "Detachment_Definitions.csv",
     "Army_Rules.csv",
 )
+CONTROL_TAGS = {"UNIT", "ACTIVE", "SHOOT", "MELEE", "STATS", "WEAPONS"}
 EFFECT_FIELDS = ("Effect_Type", "Target", "Stat", "Operation", "Value")
 
 
@@ -350,12 +351,23 @@ def validate_tag_contract(loaded):
             for line_no, row in loaded[(army, file_name)]:
                 tags = TAG_BRACKET.findall(row.get("Tags") or "")
                 categories = TAG_BRACKET.findall(row.get("Tag Categories") or "")
-                if tags and len(tags) != len(categories):
+                visible_tags = [
+                    tag for tag in tags
+                    if normalize_tag_key(tag) not in CONTROL_TAGS
+                ]
+                if visible_tags and len(visible_tags) != len(categories):
                     fail(
                         f"{army} {file_name} line {line_no}: "
-                        f"Tags ({len(tags)}) and Tag Categories ({len(categories)}) must match 1:1"
+                        f"visible mechanic Tags ({len(visible_tags)}) and "
+                        f"Tag Categories ({len(categories)}) must match 1:1; "
+                        "control Tags do not consume Tag Categories"
                     )
-                for tag, category in zip(tags, categories):
+                if not visible_tags and categories:
+                    fail(
+                        f"{army} {file_name} line {line_no}: "
+                        "Tag Categories are present but there are no visible mechanic Tags"
+                    )
+                for tag, category in zip(visible_tags, categories):
                     key = (normalize_tag_key(tag), normalize_category_key(category))
                     if key not in library:
                         fail(
