@@ -1,16 +1,6 @@
 Ability_ID,Ability Name,Short_Description,Long_Description,Tags,Tag Categories,Visibility_ID,Default_Active
 ACROBATIC_ESCAPE,Acrobatic Escape,"If engaged, Fall Back D6"" at end of Fight. Can go to Reserves, then Ingress. [INGRESS]","At the end of the Fight phase, if this unit is engaged, this unit can make a Fall Back move of up to D6"". At the end of your opponent’s turn, if this unit is more than 3"" from all enemy units, you can use this ability. If you do: place this unit in Strategic Reserves. This unit must make an Ingress move in your next Movement phase (including in your first turn).",[INGRESS],[Movement Rules],2,
 AQUILON_OPTICS,Aquilon Optics,"In Shooting, re-roll one To Hit, one To Wound and one Damage.","Each time this model is selected to shoot, you can re-roll one Hit roll, you can re-roll one Wound roll and you can re-roll one Damage roll when resolving its attacks.",,,2,
-ASSAULT_INTERCESSORS_WITH_JUMP_PACKS_WARGEAR,Assault Intercessors with Jump Packs (Wargear),"x2 Plasma Pistols
-x3 Heavy bolt pistol
-x4 Astartes chainsword
-x1 Power Fist","For every 5 models in this unit, 1 Assault Intercessor with Jump Pack’s heavy bolt pistol can be replaced with 1 plasma pistol.
-The Assault Intercessor Sergeant with Jump Pack’s Astartes chainsword can be replaced with one of the following:
-1 power weapon
-1 power fist
-The Assault Intercessor Sergeant with Jump Pack’s heavy bolt pistol can be replaced with one of the following:
-1 hand flamer
-1 plasma pistol",,,2,
 ASSAULT_RAMP,Assault Ramp,"Landraider Moves, Unit Disembarks and can Charge.","Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.",,,2,
 ASSAULT_VEHICLE,Assault Vehicle,Disembark after Advance,"Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move, and cannot declare a charge that turn.",,,2,
 ASTARTES_BANNER,Astartes Banner,+1 OC [+1 OC],"While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",[+1 OC],[Unit Stats],2,
@@ -78,7 +68,6 @@ FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First. [FIGHTS F
 FINEST_HOUR,"Finest Hour (Once per battle, per unit)",FIGHT: melee +3 A / DEVASTATING WOUNDS [+3 A] [DEVASTATING WOUNDS],"In the Fight phase, when this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have:
 • +3 A.
 • [DEVASTATING WOUNDS].",[+3 A] [DEVASTATING WOUNDS],[Melee - Weapon Stats] [Melee - Weapon Rules],2,0
-FOR_THE_CHAPTER,For the Chapter!,"Each time a model in this unit is destroyed, roll one D6: on a 3+, it can shoot again before it is removed. For these new attacks, no Hazardous tests are needed.","Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",,,2,
 FORGEFATHER,Forgefather,"SHOOTING: visible enemy within 24""
 Friendly MELTA / TORRENT vs target: +2 S","In your Shooting phase, select one visible enemy unit within 24"" of this model. Friendly ADEPTUS ASTARTES units’ [MELTA] / [TORRENT] attacks that target that enemy unit have +2 S.",,,2,1
 FURY_OF_THE_FIRST,Fury of the First,+1 TO HIT vs Oath of Moment target [+1 TO HIT] [+1 TO HIT],"Each time a model in this unit makes an attack that targets your Oath of Moment target, add 1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
@@ -87,7 +76,7 @@ GRAPNEL_LAUNCHER,Grapnel Launcher,Ignore vertical distances while moving,"Each t
 GUERRILLA_TACTICS,Guerrilla Tactics,Go to Strategic Reserves [STRATEGIC RESERVES],"At the end of your opponent’s turn, if this unit is more than 6"" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],[Movement Rules],2,
 GUILE_OF_THE_WOLF_AURA,Guile of the Wolf (Aura),"Enemy within 12"" +1 CP cost.","Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12"" of this model, increase the cost of that Stratagem by 1CP.",,,2,
 HAILSTRIKE,Hailstrike,"+1 AP, excluding MONSTERS and VEHICLES [+1 AP]","Each time this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES) hit by one or more of those attacks. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase.",[+1 AP],[Range - Weapon Stats],2,
-HAMMER_OF_WRATH,Hammer of Wrath,Charge = Mortal Wounds per model on 4+.,"Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound.",,,2,
+HAMMER_OF_WRATH,Hammer of Wrath,CHARGE end — engaged enemy — each engaged model rolls D6; 4+ = 1 mortal wound.,"When this unit ends a charge move, you can select one enemy unit engaged with this unit. For each model in this unit engaged with that enemy unit, roll one D6. On a 4+, that enemy unit suffers 1 mortal wound.",,,2,
 HAMMERSTRIKE,Hammerstrike,Remove Cover IGNORES COVER [IGNORES COVER],"Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",[IGNORES COVER],[Range - Weapon Rules],2,
 HAYWIRE_MINE,Haywire Mine,"ONE. Mortal Wounds within 3""","Once per battle, at the start of any phase, you can select one enemy unit within 3"" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a VEHICLE unit.",,,2,
 HAZARDOUS,HAZARDOUS,"After use, failed Hazardous test causes 3 mortal wounds [HAZARDOUS]","After the bearer’s unit resolves its attacks, take one Hazardous test for each Hazardous weapon used. For each failed test, one model equipped with a Hazardous weapon suffers 3 mortal wounds.",[HAZARDOUS],[Unit Rules],2,
@@ -202,7 +191,6 @@ SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE","This unit h
 • Stealth.
 • 3"" detection range.",,,2,1
 SHIELD_DOME,Shield Dome,5++ [INVULNERABLE SAVE 5+],The bearer has a 5+ invulnerable save.,[INVULNERABLE SAVE 5+],[Unit Rules],2,
-SHOCK_ASSAULT,Shock Assault,RE-ROLL 1S TO WOUND or RE-ROLL ALL WOUNDS if on an objective. [RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],"Each time a model in this unit targets an enemy unit with a - attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers],2,
 SKILLED_RIDERS,Skilled Riders,MOBILE,This unit has MOBILE.,,,2,1
 SPEAR_OF_CHOGORIS,Spear of Chogoris,"RANGED: ASSAULT
 ADVANCE: eligible to CHARGE
@@ -270,7 +258,7 @@ UNTO_THE_ANVIL,Unto the Anvil,"MELEE: RE-ROLL WOUND 1S
 ASSAULT DOCTRINE: RE-ROLL ALL WOUNDS","This unit’s melee attacks can:
 • Re-roll wound rolls of 1.
 • Or, if the assault doctrine is active for this unit, re-roll wound rolls.",,,2,1
-UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,"While on controlled objective, +1 save vs Damage 1 attacks","While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.",,,2,
+UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,While controlling an objective — [+1 SAVE].,"While this unit is controlling an objective, this unit has +1 to save rolls.",,,2,
 VANGUARD_ASSAULT,Vanguard Assault,Charge: melee weapons gain LETHAL HITS [LETHAL HITS],"In a turn in which this unit made a Charge move, this unit’s melee weapons have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],2,
 VEIL_OF_TIME_PSYCHIC,Veil of Time,ADVANCE psychic roll — on 1 battle-shocked; otherwise change Advance roll to 6.,"Psychic level 1 — When this unit is selected to make an Advance move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. On a 1, this unit is battle-shocked. Otherwise, this unit can change that Advance roll to a 6.",,,2,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,2,
@@ -539,3 +527,5 @@ DEEDS_OF_LEGEND,Deeds of Legend,Within range of objective — MELEE +1 A.,"While
 NEVER_SHALL_THE_STANDARD_FALL,Never Shall the Standard Fall!,Within range of objective — attacks with S greater than UNIT T have -1 To Wound.,"While this unit is within range of an objective, attacks that target this unit with a Strength greater than this unit’s Toughness have -1 to wound rolls.",[ACTIVE] [-1 TO WOUND],,2,
 TECHMARINE_AURA,Techmarine,"Within 3"" friendly ADEPTUS ASTARTES VEHICLE → LONE OPERATIVE.","While this model is within 3"" of a friendly ADEPTUS ASTARTES VEHICLE unit, this unit has Lone Operative.",[ACTIVE] [LONE OPERATIVE],,2,
 BLESSINGS_OF_THE_OMNISSIAH_NEW,Blessings of the Omnissiah,"MOVEMENT start/end — VEHICLE within 3"" Heal D3; ignore Hit/Wound modifiers until next MOVEMENT.","In your Movement phase, at the start or end of this model’s move, you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3"" of this model. That VEHICLE model heals D3 wounds. That VEHICLE model’s attacks can ignore modifiers to hit rolls and wound rolls until the start of your next Movement phase.",,,2,
+TARGETED_INTERCESSION,Targeted Intercession,CHARGE this turn — MELEE [+1 S] [+1 AP],"If this unit made a charge move this turn, this unit’s melee attacks have +1 S and AP.",[MELEE] [WEAPONS] [ACTIVE] [+1 S] [+1 AP],,2,
+RITES_OF_THERMAL_APPEASEMENT,Rites of Thermal Appeasement,Plasma Incinerator and Plasma Pistol — +1 to hazard rolls.,This unit has +1 to hazard rolls made for its Plasma Incinerator and Plasma Pistol weapons.,[SHOOT] [WEAPONS],,2,
