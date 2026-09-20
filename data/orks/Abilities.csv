@@ -28,7 +28,7 @@ LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: 
 MIGHT_IS_RIGHT,Might is Right,"CHARGE this turn.
 MELEE: [+3 A] and [+2 S]","If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
-- +2 S",[+3 A] [+2 S],[Melee - Weapon Stats] [Melee - Weapon Stats],2,0
+- +2 S",[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S],[Melee - Weapon Stats] [Melee - Weapon Stats],2,0
 MORE_DAKKA,More Dakka,"[UNIT] RANGE [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - [IGNORES COVER]
@@ -179,8 +179,8 @@ Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected
 - On a 1, this unit is battle-shocked
 - This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[LETHAL HITS],[Melee - Weapon Rules],2,
 TIDE_OF_MUSCLE,Tide of Muscle,"[UNIT] CHARGE this turn
-MELEE [LETHAL HITS]","In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[UNIT] [MELEE] [LETHAL HITS],[Melee - Weapon Rules],2,0
-NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,[UNIT] can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[ACTION while ENGAGED] [UNIT],[Unit Rules],1,
+MELEE [LETHAL HITS]","In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[UNIT] [MELEE] [WEAPONS] [ACTIVE] [LETHAL HITS],[Melee - Weapon Rules],2,0
+NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,[UNIT] can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[UNIT] [ACTION while ENGAGED],[Unit Rules],1,
 ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Incoming attacks: [INCOMING -1 AP],Attacks that target this unit have -1 AP,[INCOMING -1 AP],[Info Only],1,1
 BIG_AN_SHOOTY,Big an’ Shooty,ANYTIME — RANGE [RE-ROLL 1S TO HIT],This unit’s ranged attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Range - Combat Modifiers],2,1
 BIG_AN_STOMPY,Big an’ Stompy,ANYTIME — MELEE [RE-ROLL 1S TO HIT],This unit’s melee attacks can re-roll hit rolls of 1.,[RE-ROLL 1S TO HIT],[Melee - Combat Modifiers],2,1
@@ -234,7 +234,7 @@ DA_JUMP,Da Jump,[UNIT] Psychic: on 2+ → Strategic Reserves and [DEEP STRIKE],"
 - This unit has Deep Strike.",[DEEP STRIKE] [UNIT],[Unit Rules],2,
 DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, [INGRESS] from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move.",[INGRESS],[Movement Rules],2,
 BOSS_AMMO_RUNT,Boss' Ammo Runt,"Once per battle. 
-RANGE [+1 TO HIT]","Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[+1 TO HIT],[Range - Combat Modifiers],2,0
+RANGE [+1 TO HIT]","Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT],[Range - Combat Modifiers],2,0
 COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa + Kustom Shoota.,"UNIT COMPOSITION: 1 Warboss model.
 
 This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.
