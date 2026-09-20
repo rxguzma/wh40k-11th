@@ -270,13 +270,13 @@ CLEVER_KNOW_WOTZ,Clever Know-wotz,"Buff a Vehicle within 3"": heal D3 and +1 to 
 GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un-shock and RILED UP.","Get Back in da Race (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly SPEED FREEKS unit within 6"" of this unit. That unit (and any units embarked within that unit):
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",,,0,1,
-FUEL_MIXA_GROB,Fuel-mixa Grob,ADVANCE,This unit has +1 to advance rolls.,[+1 M”],[Unit Stats],0,1,0
+FUEL_MIXA_GROB,Fuel-mixa Grob,ADVANCE [+1 M”],This unit has +1 to advance rolls.,[+1 M”],[Unit Stats],0,1,0
 CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,0,1,
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,"Once per battle.
 Crude Surgery is D3+3","Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
 PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,0,1,
-HARDY_BILIOUS,Hardy Bioniks,Attack Strength higher Toughness: -1 to Wound.,"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
-RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M.","While this model is attached to a MOUNTED unit, this model:
+HARDY_BILIOUS,Hardy Bioniks,Attack Strength higher Toughness: -1 to Wound. [INCOMING -1 TO WOUND],"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],0,1,
+RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and +4"" M. [+4 M”]","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY
 - Has +4"" M",[+4 M”],[Unit Stats],0,1,
@@ -290,13 +290,13 @@ BOOM_BOMB,Boom Bomb,"End of opponent Fight phase: visible enemy within 24"" (not
 - On a 1-3, that enemy unit suffers D3 mortal wounds.
 - On a 4-5, that enemy unit suffers D3 mortal wounds.
 - On a 6, that enemy unit suffers D6 mortal wounds.",,,0,1,
-STRAFING_RUN,Strafing Run,RANGE vs non-FLY,"In your Shooting phase, this unit's ranged attacks that target a unit (excluding FLY units) have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
-BURNA_BOMB,Burna Bomb,End of opponent Fight phase: D3 MW on 2+ and IGNORES COVER until your next turn.,"At the end of your opponent's Fight phase, select one visible enemy unit (excluding Lone Operative and MONSTER / VEHICLE units) within 18"" of this unit and roll one D6. On a 2+:
+STRAFING_RUN,Strafing Run,RANGE vs non-FLY [+1 TO HIT],"In your Shooting phase, this unit's ranged attacks that target a unit (excluding FLY units) have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
+BURNA_BOMB,Burna Bomb,End of opponent Fight phase: D3 MW on 2+ and IGNORES COVER until your next turn. [IGNORES COVER],"At the end of your opponent's Fight phase, select one visible enemy unit (excluding Lone Operative and MONSTER / VEHICLE units) within 18"" of this unit and roll one D6. On a 2+:
 - That enemy unit suffers D3 mortal wounds.
 - That enemy unit cannot be hidden until the end of your next turn.
 - Ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.",[IGNORES COVER],[Range - Weapon Rules],0,1,
-GO_FER_DA_WEAK_SPOT,Go fer da Weak Spot,RANGE vs MONSTER / VEHICLE,"In your Shooting phase, this unit's ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers],0,1,0
-WAZBOM_FORCE_FIELD,Wazbom Force Field,ANYTIME: does not have SMOKE,"Models in this unit:
+GO_FER_DA_WEAK_SPOT,Go fer da Weak Spot,RANGE vs MONSTER / VEHICLE [+1 TO WOUND],"In your Shooting phase, this unit's ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls.",[+1 TO WOUND],[Range - Combat Modifiers],0,1,0
+WAZBOM_FORCE_FIELD,Wazbom Force Field,ANYTIME: does not have SMOKE [INVULNERABLE SAVE 5+],"Models in this unit:
 - Have 5+ InSv.
 - Do not have SMOKE.",[INVULNERABLE SAVE 5+],[Unit Rules],0,1,1
 DRIVE_BY_SKORCHIN,Drive-by Skorchin',"Visible non-MONSTER / VEHICLE within 6"" cannot be Overwatched this turn.","In your Movement phase, you can select one visible enemy unit (excluding MONSTER / VEHICLE units) within 6"" of this unit:
@@ -306,14 +306,14 @@ COMPOSITION_WARBUGGIES,Unit Composition (Warbuggies),"1-2 Warbuggy. Extra Dakka,
 Every model is equipped with: 1 Extra Dakka; 1 Mek Speshul; 1 Spiked Ram.
 
 WARGEAR OPTIONS: Any number of models can each have their Mek Speshul replaced with 1 Rivet Kannon.",,,9,3,
-SQUIG_BARRAGE,Squig Barrage,"After shooting, non-MONSTER / VEHICLE hit by Squig Launchas is covered in Squigs (-1 to hit).","In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER / VEHICLE units) hit by this unit's Squig Launchas weapons. That enemy unit is covered in Squigs until the start of your next turn:
+SQUIG_BARRAGE,Squig Barrage,"After shooting, non-MONSTER / VEHICLE hit by Squig Launchas is covered in Squigs (-1 to hit). [ENEMY -1 TO HIT]","In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER / VEHICLE units) hit by this unit's Squig Launchas weapons. That enemy unit is covered in Squigs until the start of your next turn:
 - While a unit is covered in Squigs, that unit's attacks have -1 to hit rolls.",[ENEMY -1 TO HIT],[Info Only],0,1,
 RAUCOUS_OCCUPANTS,Raucous Occupants,"On home objective, add embarked OC to this model’s OC.","While this model is within range of your home objective, add the OC of models embarked within this model to this model's OC.",,,0,1,
-FORTIFICATION,Fortification,Standard fortification targeting / fall-back / auto-pass hazard rules.,"While an enemy unit is engaged with only FORTIFICATION units:
+FORTIFICATION,Fortification,Standard fortification targeting / fall-back / auto-pass hazard rules. [OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],"While an enemy unit is engaged with only FORTIFICATION units:
 - That enemy unit can be selected as a target of ranged attacks.
 - When shooting that enemy unit, those ranged attacks have -1 to hit rolls (excluding [CLOSE-QUARTERS] attacks).
 - When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.",[OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],[Info Only] [Info Only],0,1,
-RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit,"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],0,1,0
+RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit [TARGET GETS COVER],"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],0,1,0
 TRANSPORT_BOSSBUNKA,Transport (Big’ed Bossbunka),11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,,9,3,
 COMPOSITION_BOSSBUNKA,Unit Composition (Big’ed Bossbunka),1 Big’ed Bossbunka. Big Shoota + Gaze of Gork.,"UNIT COMPOSITION: 1 Big'ed Bossbunka model.
 
@@ -331,7 +331,7 @@ This model is equipped with: 1 Armoured Impact; 1 Dual Big Shoota; 1 Dual Supa-s
 
 WARGEAR OPTIONS: This model can be equipped with 1 Skorcha Missile Rack.",,,9,3,
 DAMAGED_4,Damaged 4,CORE: Damaged 4,CORE: Damaged 4,,,0,1,
-MADCAP_ARTILLERY,Madcap Artillery,"After shooting same-type Mek Gunz, apply wobbled / zapped / smashed / grounded.","In your Shooting phase, when this unit has shot, if all ranged weapons equipped by each Mek Gunz model in this unit are the same, select one enemy unit hit by those attacks. That enemy unit has the ability below that matches that weapon's name until the start of your next turn.
+MADCAP_ARTILLERY,Madcap Artillery,"After shooting same-type Mek Gunz, apply wobbled / zapped / smashed / grounded. [TARGET GETS COVER] [ENEMY -1 LD] [ENEMY -2 M”] [ENEMY GROUNDED]","In your Shooting phase, when this unit has shot, if all ranged weapons equipped by each Mek Gunz model in this unit are the same, select one enemy unit hit by those attacks. That enemy unit has the ability below that matches that weapon's name until the start of your next turn.
 - Bubblechukka: This unit is wobbled. While a unit is wobbled, if it is attacking, its targets have the benefit of cover against those attacks.
 - Kustom Mega-kannon: This unit is zapped. While a unit is zapped, that unit has -1 Ld.
 - Smasha Gun: This unit is smashed. While a unit is smashed, that unit has -2"" M.
@@ -355,7 +355,7 @@ LED_BY_KOMMANDOS,LED BY (KOMMANDOS),Can be led by: BOSS SNIKROT,,,,9,3,
 LED_BY_WARBIKERS,LED BY (WARBIKERS),Can be led by: DEFFKILLA WARTRIKE,,,,9,3,
 LED_BY_GRETCHIN,LED BY (GRETCHIN),"Can be led by: ZODGROD WORTSNAGGA, RUNTHERD",,,,9,3,
 LED_BY_SQUIGHOG_BOYZ,LED BY (SQUIGHOG BOYZ),Can be led by: PAINBOSS,,,,9,3,
-GUNWAGON_ZZAP_GUN_POINTS,Gunwagon Zzap Gun,Gunwagon Zzap Gun +10 Pts,A Gunwagon equipped with a Zzap Gun costs +10 points.,[+10 Pts],[Points],8,4,
+GUNWAGON_ZZAP_GUN_POINTS,Gunwagon Zzap Gun,Gunwagon Zzap Gun +10 Pts [+10 Pts],A Gunwagon equipped with a Zzap Gun costs +10 points.,[+10 Pts],[Points],8,4,
 BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,,1,1,
 SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,,1,1,
 BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,,1,1,
