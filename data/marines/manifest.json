@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "bf97708225aede38553cbf18bf92f92c138fd36c83be0bb0dc216413908b8c3b",
+  "dataset_sha256": "d3d08ba6e8d32735ad2f8d394d2252d5f907cea8aff79052e40bf9b0a580e118",
   "files": {
     "Abilities.csv": {
       "bytes": 79332,
@@ -26,16 +26,16 @@
       "sha256": "71f5f00e76c7c5262f48239f20ad853a54d88251af6d0ab7c89873efbb716770"
     },
     "Loadout_Options.csv": {
-      "bytes": 32423,
-      "sha256": "dc37a859a697fe68b253ef0662b7f8ac8bbbf8f46169430e2654ac94251b8382"
+      "bytes": 32652,
+      "sha256": "d39a3079cb0f99da9c119424b436c009071b16efc808feb3b6b5537d5f570650"
     },
     "Loadout_Points.csv": {
       "bytes": 251,
       "sha256": "f2c6742a8f9848026a2a3d095c7956cc8bf44be6bf2e976fa9163441d2ea0c07"
     },
     "Loadout_Weapons.csv": {
-      "bytes": 34305,
-      "sha256": "8e4bfe3da0c1e7961cf1f3cdbd93a3895fdd2ad43ff47aa768e21f4ef6ac7c1c"
+      "bytes": 34451,
+      "sha256": "53fdb9faeb85ba038e25a5e85af95b6f6c52adf4142d0f3645535b05e6c28bc8"
     },
     "Stratagems.csv": {
       "bytes": 18963,
@@ -50,20 +50,20 @@
       "sha256": "3bb5508327121b25ae3408483c9b5431a456556e10d4b466dae0fbaf504f4fbd"
     },
     "Unit_Profiles.csv": {
-      "bytes": 17326,
-      "sha256": "719ced4ddcdc0176f7dc7f9f9c58c1b3123bc5779653f2e87f76f98955055ce2"
+      "bytes": 17317,
+      "sha256": "367236a9820699bbeba0efd9777a6b1f13bcca26e00866e861f433798c3688c6"
     },
     "Unit_Weapons.csv": {
-      "bytes": 34175,
-      "sha256": "91fbee456357bfa6cdbc348ce9bdc97fbbd4df2df7e15abc517a4b038a26f9ce"
+      "bytes": 34130,
+      "sha256": "8132d4b5cc664ec0d8c0b72baa1cb097f5cbd3a62f596fa5d205d9bf09cc4d23"
     },
     "Weapon_Abilities.csv": {
       "bytes": 33796,
       "sha256": "319862c0b8cc281e8ded3d06d8f1cd2b2ac3a321fa72abc81e00aabfba89f325"
     },
     "Weapon_Stats.csv": {
-      "bytes": 21508,
-      "sha256": "d42e2330904a599d88ebf239eaceaba0adbff03e053910996990aec0ecf1fb58"
+      "bytes": 21509,
+      "sha256": "7017dfed7c37baf067715b67bd7361759ceba8d8206afab0280da088fb5abdfd"
     }
   },
   "schema_sha256": "63ee77f618255b12212a0c6f158879a645c81cee43bc0339bd5cc8969910780c",
