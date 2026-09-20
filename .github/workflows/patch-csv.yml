@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"TIDE_OF_MUSCLE","column":"Tags","value":"[UNIT] [MELEE] [WEAPONS] [ACTIVE] [LETHAL HITS]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOSS_AMMO_RUNT","column":"Tags","value":"[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MIGHT_IS_RIGHT","column":"Tags","value":"[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_TOO_BUSY_TO_FIGHT","column":"Tags","value":"[UNIT] [ACTION while ENGAGED]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"*","mode":"delete_where","where":{"Unit_ID":"INTERCESSOR_SQUAD"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"INTERCESSOR_SQUAD","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"0","Sort_Order":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
