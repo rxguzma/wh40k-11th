@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"MEDUSAS_WRATH","mode":"update","sets":{"Short_Description":"Each phase, unit [re-roll 1 Hit, Wound or Damage roll].","Tags":"ACTIVE, SHOOT, MELEE, WEAPONS","Tag Categories":"","Default_Active":"1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"space_marines_medusas_wrath","mode":"insert","sets":{"Army_Name":"Marines","Detachment_Name":"MEDUSA’S WRATH","Rule_ID":"space_marines_medusas_wrath_detachment_rule_armoured_wrath","Rule_Name":"ARMOURED WRATH","DP_Cost":"2","Detachment_Disposition":"Purge the Foe","Short_Description":"Each phase, unit [re-roll 1 Hit, Wound or Damage roll].","Tags":"ACTIVE, SHOOT, MELEE, WEAPONS","Tag Categories":"","Default_Active":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
