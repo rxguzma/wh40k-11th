@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"BOLTER_DISCIPLINE_INTERCESSORS","mode":"update","sets":{"Short_Description":"SHOOTING [UNIT] [+1 To Hit] if unit or target is within an objective","Tags":"UNIT, ACTIVE, SHOOT, WEAPONS, +1 TO HIT","Tag Categories":"[Combat Modifiers]","Visibility_ID":"2","Default_Active":"0"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_SWORD_SHIELD","mode":"delete"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
