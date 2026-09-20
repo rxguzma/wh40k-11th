@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Rule_ID","row_id":"DA_BOSS","column":"Short_Description","value":"WARLORD [GAIN 1 CP]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"orks_army_rule_da_boss","column":"Short_Description","value":"WARLORD [GAIN 1 CP]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
