@@ -87,7 +87,7 @@ Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked w
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
 - On a 3+, that enemy unit suffers D3 mortal wounds.
 Place two Bomb Squig tokens next to the unit, removing one each time this ability is used.",,,2,
-BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],"If this unit made a charge move this turn, this unit’s attacks have +1D",[CHARGE: +1 D],[Melee - Weapon Stats] [Range - Weapon Stats],1,0
+BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],"If this unit made a charge move this turn, this unit’s attacks have +1D",[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 D],[Melee - Weapon Stats],1,0
 BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units.,"In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.
 - Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS].",[LETHAL HITS] [LETHAL HITS],[Melee - Weapon Rules] [Range - Weapon Rules],2,
 COMPOSITION_BATTLEWAGON,Unit Composition (Battlewagon),1 Battlewagon. Crushin’ Bulk.,"UNIT COMPOSITION: 1 Battlewagon model.
@@ -214,7 +214,7 @@ Orks 6"" un-shock and [INTIMIDATING MOTIVATION].","Intimidating Motivation (Once
 MOBILE_ARSENAL,Mobile Arsenal,SHOOTING: [RE-ROLL 1S TO HIT],"In your shooting phase, this units ranged attacks can re-roll hit rolls of 1",[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],[Range - Combat Modifiers],2,1
 NAZDREGS_KNOW_WOTZ,Nazdreg’s Know-wotz,"[DEEP STRIKE]
 Ranged: [IGNORES COVER]","- This unit has Deep Strike.
-- This unit’s ranged attacks have [IGNORES COVER].",[DEEP STRIKE] [IGNORES COVER],[Unit Rules] [Range - Weapon Rules],2,
+- This unit’s ranged attacks have [IGNORES COVER].",[SHOOT] [WEAPONS] [DEEP STRIKE] [IGNORES COVER],[Unit Rules] [Range - Weapon Rules],2,
 PILIN_OUT,Pilin’ Out,"Enemy ends move 8""
 Embarked can Rapid disembark","In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this model, units embarked within this model can make a disembark move using the rapid disembark mode.",,,2,
 SPITEFUL_POWER_TRIP,Spiteful Power Trip,vs units with no T7+ models: [+1 TO HIT],This unit’s attacks that target a unit that has no models with a T of 7+ have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],[Melee - Combat Modifiers],2,0
@@ -251,7 +251,7 @@ COMPOSITION_BEASTBOSS_SQUIGOSAUR,Unit Composition (Beastboss on Squigosaur),"1 B
 This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
 
 WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,,3,
-LONE_OPERATIVE,LONE OP,CORE: [LONE OPERATIVE],CORE: Lone Operative,[LONE OPERATIVE],[Unit Rules],1,
+LONE_OPERATIVE,LONE OP,CORE: [LONE OPERATIVE],CORE: Lone Operative,[LONE OP],[Unit Rules],1,
 UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,,2,
 KNUCKLE_IMPETUS,Knuckle Impetus,"On charge, D6 per engaged model: 4+ MW.","When this unit ends a charge move, you can select one enemy unit engaged with this unit. If you do, roll one D6 for each model in this unit engaged with that enemy unit:
 - For each 4+, that enemy unit suffers 1 mortal wound.",,,2,

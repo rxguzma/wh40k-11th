@@ -154,3 +154,6 @@ MELEE,MELEE,Melee Display,Ability Control,Ability,Displays this Ability in the M
 STATS,STATS,Unit Stats Control,Ability Control,Unit,Allows this Ability's structured Unit-stat effects to apply in VIEW.,FALSE,,,,,,
 WEAPONS,WEAPONS,Weapon Mechanics Control,Ability Control,Weapons,Allows this Ability's structured Weapon-stat and Weapon-rule effects to apply in VIEW.,FALSE,,,,,,
 ACTIVE,ACTIVE,Active Mechanics Control,Ability Control,Ability,Requires this Ability to be Active in VIEW before its permitted structured mechanics apply.,FALSE,,,,,,
+LANCE_GENERIC,LANCE,Lance,Melee - Weapon Rules,Weapon,Applies the Lance weapon rule when routed by Ability control tags.,TRUE,WEAPON_RULE,,LANCE,SET,1,955
+PLUS_6_R_GENERIC,+6 R”,+6 Range,Range - Weapon Stats,Weapon,Adds 6 inches to weapon Range when routed by Ability control tags.,TRUE,WEAPON_STAT,,R,ADD,6,956
+INFO_ENEMY_MINUS_1_BATTLESHOCK,ENEMY -1 BATTLE-SHOCK,Enemy -1 Battle-shock,Info Only,Display only,An affected enemy suffers -1 to its Battle-shock roll as described by the source rule.,TRUE,,,,,,957
