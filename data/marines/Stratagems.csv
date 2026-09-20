@@ -11,10 +11,10 @@ space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_glad
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6:
 On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,0,,,
-space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: IGNORES COVER,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: IGNORES COVER [IGNORES COVER],"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules],0,,,
-space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: LANCE,"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
+space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: LANCE [LANCE],"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: Your unit’s melee attacks have [LANCE].",[LANCE],[Melee - Weapon Rules],0,,,
 space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT within 8”
@@ -29,7 +29,7 @@ TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,0,,,
 space_marines_assault_brethren_stratagem_gene_wrought_might_1cp,space_marines_assault_brethren,GENE-WROUGHT MIGHT,1,"FIGHT: MELEE have LANCE
-In ASSAULT: LANCE & +1 AP","WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
+In ASSAULT: LANCE & +1 AP [LANCE]","WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
@@ -72,7 +72,7 @@ TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,,,,
 space_marines_devastator_brethren_stratagem_storm_of_fire_1cp,space_marines_devastator_brethren,STORM OF FIRE,1,"SHOOTING: RANGED IGNORE COVER
-In DEVASTATOR: IGNORE COVER & +1 AP","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+In DEVASTATOR: IGNORE COVER & +1 AP [IGNORES COVER]","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
@@ -86,13 +86,13 @@ TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,,,,,
 space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp,space_marines_terminator_stormforce,TACTICAL DREADNOUGHT FORTITUDE,2,"Enemy SHOOTING / FIGHT
-TERMINATOR: Attacks -1 D","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES TERMINATOR unit.
+TERMINATOR: Attacks -1 D [INCOMING -1 D]","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES TERMINATOR unit.
 
 TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
 EFFECT: Attacks that target your unit have -1 D until that enemy unit has attacked.",[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_merciless_veterans_1cp,space_marines_terminator_stormforce,MERCILESS VETERANS,1,"TERMINATOR SHOOTING
-RANGED: LETHAL HITS & SUSTAINED HITS 1","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES TERMINATOR unit is selected to shoot.
+RANGED: LETHAL HITS & SUSTAINED HITS 1 [LETHAL HITS] [SUSTAINED HITS 1]","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES TERMINATOR unit is selected to shoot.
 
 TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
@@ -100,7 +100,7 @@ EFFECT: Your unit's ranged attacks have:
 • [LETHAL HITS].
 • [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_gunship_extraction_1cp,space_marines_terminator_stormforce,GUNSHIP EXTRACTION,1,"End of enemy FIGHT
-Unengaged TERMINATOR: STRATEGIC RESERVES","WHEN: End of your opponent's Fight phase.
+Unengaged TERMINATOR: STRATEGIC RESERVES [STRATEGIC RESERVES]","WHEN: End of your opponent's Fight phase.
 
 TARGET: One friendly unengaged ADEPTUS ASTARTES TERMINATOR unit.
 
@@ -149,7 +149,7 @@ EFFECT: Your unit’s ranged attacks (excluding [BLAST] attacks) have:
 • [CLOSE-QUARTERS].
 • [IGNORES COVER].",,,0,,,
 space_marines_phobos_shadow_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shadow_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
-Attacks: +1 S & LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+Attacks: +1 S & LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
 TARGET: That PHOBOS unit.
 
@@ -172,7 +172,7 @@ TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: Place your unit in strategic reserves.",,,0,,,
 space_marines_phobos_shock_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shock_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
-Attacks: +1 S & LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+Attacks: +1 S & LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
 TARGET: That PHOBOS unit.
 
@@ -195,7 +195,7 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
 space_marines_gravis_linebreaker_force_stratagem_annihilating_force_1cp,space_marines_gravis_linebreaker_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
-Attacks: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
+Attacks: LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
 
 TARGET: That GRAVIS unit.
 
