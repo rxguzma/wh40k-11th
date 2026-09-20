@@ -25,9 +25,9 @@ COMPANY_HEROES,Company Heroes,"6""",5,3+,4,6+,2,"INFANTRY, EXPLOSIVES, IMPERIUM,
 DEATHWING_KNIGHTS,Deathwing Knights,"5""",5,2+/4++,4,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING KNIGHTS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Knights
 DEATHWING_TERMINATORS,Deathwing Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING TERMINATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Terminator-Squad
 DESOLATION_SQUAD,Desolation Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Desolation-Squad
-ELIMINATOR_SQUAD,Eliminators,"6""",4,3+,2,6,1,"INFANTRY, GRENADES, IMPERIUM, PHOBOS, ELIMINATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad
-ERADICATOR_SQUAD_HEAVY_BOLTERS,Eradicators (Bolters),"5""",6,3+,3,6+,1,"INFANTRY, IMPERIUM, GRAVIS, ERADICATOR SQUAD, ERADICATOR SQUAD WITH HEAVY BOLTERS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad-with-Heavy-Bolters
-ERADICATOR_SQUAD_MELTA,Eradicators (Meltas),"5""",6,3+,3,6+,1,"INFANTRY, GRENADES, IMPERIUM, GRAVIS, ERADICATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad
+ELIMINATOR_SQUAD,Eliminator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad
+ERADICATOR_SQUAD_HEAVY_BOLTERS,Eradicator Squad with Heavy Bolters,"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad-with-Heavy-Bolters
+ERADICATOR_SQUAD_MELTA,Eradicator Squad with Melta Rifles,"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad
 GLADIATOR_LANCER,Gladiator Lancer,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIUM, GLADIATOR LANCER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Lancer
 GLADIATOR_REAPER,Gladiator Reaper,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIUM, GLADIATOR REAPER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Reaper
 GLADIATOR_VALIANT,Gladiator Valiant,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIUM, GLADIATOR VALIANT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Valiant
@@ -35,7 +35,7 @@ HEAVY_INTERCESSORS,Heavy Intercessors,"5""",6,3+,3,6+,2,"INFANTRY, BATTLELINE, E
 HELLBLASTER_SQUAD,Hellblasters,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Hellblaster-Squad
 IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, IMPULSOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor
 INCEPTORS_PLASMA,Inceptors,"10""",6,3+,3,6,1,"INFANTRY, JUMP PACK, FLY, IMPERIUM, GRAVIS, INCEPTOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad
-INCURSORS,Incursors,"6""",4,3+,2,6,1,"INFANTRY, GRENADES, SMOKE, IMPERIUM, PHOBOS, INCURSOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad
+INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad
 INFERNUS_SQUAD,Infernus Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infernus-Squad
 INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad
 INNER_CIRCLE_COMPANIONS,Inner Circle Companions,"6""",4,3+,3,6,2,"INFANTRY, IMPERIUM, DEATHWING, TACTICUS, INNER CIRCLE COMPANIONS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inner-Circle-Companions
@@ -55,15 +55,15 @@ LIEUTENANT,Lieutenant,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERI
 LIEUTENANT_WITH_COMBI_WEAPON,Lieutenant with Combi-weapon,"8""",4,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lieutenant-with-Combi-weapon
 LIEUTENANT_IN_PHOBOS_ARMOUR,Lieutenant in Phobos Armour,"8""",4,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lieutenant-In-Phobos-Armour
 LION_ELJONSON,Lion El’Jonson,"8""",9,2+/3++,10,5,4,"MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL’JONSON, MOBILE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lion-El-jonson
-OUTRIDER_SQUAD,Outriders,"12""",5,3+,4,6,2,"MOUNTED, GRENADES, IMPERIUM, OUTRIDER SQUAD, RAVENWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Outrider-Squad
+OUTRIDER_SQUAD,Outrider Squad,"12""",6,3+,4,6+,2,"MOUNTED, EXPLOSIVES, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Outrider-Squad
 PREDATOR_DESTRUCTOR,Predator Destructor,"10""",10,3+,11,6,3,"VEHICLE, SMOKE, IMPERIUM, PREDATOR DESTRUCTOR, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Predator-Destructor
 RAVENWING_COMMAND_SQUAD,Ravenwing Command,"12""",5,3+/5++,4,6+,2,"MOUNTED, GRENADES, IMPERIUM, RAVENWING, RAVENWING COMMAND SQUAD, CHARACTER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ravenwing-Command-Squad
 REDEMPTOR_PLASMA,Redemptor,"8""",10,2+,12,6,4,"VEHICLE, WALKER, IMPERIUM, DREADNOUGHT, REDEMPTOR DREADNOUGHT, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought
-REIVERS,Reivers,"6""",4,3+,2,6,1,"INFANTRY, GRENADES, SMOKE, IMPERIUM, PHOBOS, REIVER SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Reiver-Squad
+REIVERS,Reiver Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Reiver-Squad
 REPULSOR,Repulsor,"10""",12,3+,16,6,5,"VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR, DEATHWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor
 REPULSOR_EXECUTIONER,Repulsor Executioner,"10""",12,3+,16,6,5,"VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR EXECUTIONER, DEATHWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor-Executioner
 RHINO,Rhino,"12""",9,3+,10,6,2,"VEHICLE, SMOKE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, RHINO, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino
-SCOUTS,Scouts,"6""",4,4+,2,6,1,"INFANTRY, GRENADES, SMOKE, IMPERIUM, SCOUT SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad
+SCOUTS,Scout Squad,"6""",4,4+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad
 STERNGUARD_VETS,Sternguard Veteran Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Sternguard-Veteran-Squad
 STORM_SPEEDER_HAILSTRIKE,Storm Speeder Hailstrike,"14""",9,3+,11,6,3,"VEHICLE, FLY, IMPERIUM, STORM SPEEDER HAILSTRIKE, FRAME, RAVENWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Storm-Speeder-Hailstrike
 STORM_SPEEDER_HAMMERSTRIKE,Storm Speeder Hammerstrike,"14""",9,3+,11,6,3,"VEHICLE, FLY, IMPERIUM, STORM SPEEDER HAMMERSTRIKE, FRAME, RAVENWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Storm-Speeder-Hammerstrike
@@ -74,7 +74,7 @@ TECHMARINE,Techmarine,"6""",5,2+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERI
 TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, TERMINATORS, TERMINATOR ASSAULT SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad
 TERMINATOR_SQUAD,Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, TERMINATOR, TERMINATOR SQUAD, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Squad
 URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, CAPTAIN, URIEL VENTRIS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Uriel-Ventris
-VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS,Vanguard Vets with Jump Packs,"12""",4,3+/4++,2,6,1,"INFANTRY, GRENADES, JUMP PACK, FLY, IMPERIUM, VANGUARD VETERAN SQUAD, VANGUARD VETERAN SQUAD WITH JUMP PACKS, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs
+VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS,Vanguard Veteran Squad with Jump Packs,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs
 VICTRIX_HONOUR_GUARD,Victrix Honour Guard,"6""",5,2+,3,6+,2,"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES",
 VULKAN_HESTAN,Vulkan He’stan,"6""",5,2+/4++,5,6+,1,"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",
 drop_pod,Drop Pod,-,7,3+,8,6+,0,"VEHICLE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, FRAME, DROP POD",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Drop-Pod
