@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_SWORD_SHIELD","mode":"delete"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"CAPTAIN_SWORD_SHIELD","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_SWORD_SHIELD"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_SWORD_SHIELD","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_SWORD_SHIELD"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_WITH_JUMP_PACK_HAMMER_SHIELD"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
