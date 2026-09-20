@@ -1,7 +1,7 @@
 Unit_ID,Unit Name,"M""",T,SV,W,LD,OC,Keywords,Hyperlink
 ADRAX_AGATONE,Adrax Agatone,"6""",5,2+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",
 AETHON_SHAAN,Aethon Shaan,"14""",5,3+/4++,5,6+,1,"INFANTRY, CHAPTER MASTER, CHARACTER, EPIC HERO, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, SMOKE, TACTICUS, ADEPTUS ASTARTES, RAVEN GUARD",
-AGGRESSORS,Aggressors,"5""",6,3+,3,6,1,"INFANTRY, IMPERIUM, GRAVIS, AGGRESSOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Aggressor-Squad
+AGGRESSORS,Aggressor Squad,"5""",6,3+,3,6+,1,"INFANTRY, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Aggressor-Squad
 ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient
 ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessor-Squad
 ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Assault Intercessors with Jump Packs,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs
@@ -34,7 +34,7 @@ GLADIATOR_VALIANT,Gladiator Valiant,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIU
 HEAVY_INTERCESSORS,Heavy Intercessors,"5""",6,3+,3,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Heavy-Intercessor-Squad
 HELLBLASTER_SQUAD,Hellblasters,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Hellblaster-Squad
 IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, IMPULSOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor
-INCEPTORS_PLASMA,Inceptors,"10""",6,3+,3,6,1,"INFANTRY, JUMP PACK, FLY, IMPERIUM, GRAVIS, INCEPTOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad
+INCEPTORS_PLASMA,Inceptor Squad,"10""",6,3+,3,6+,1,"INFANTRY, FLY, GRAVIS, IMPERIUM, JUMP PACK",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad
 INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad
 INFERNUS_SQUAD,Infernus Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infernus-Squad
 INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad
@@ -62,7 +62,7 @@ REDEMPTOR_PLASMA,Redemptor,"8""",10,2+,12,6,4,"VEHICLE, WALKER, IMPERIUM, DREADN
 REIVERS,Reiver Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Reiver-Squad
 REPULSOR,Repulsor,"10""",12,3+,16,6,5,"VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR, DEATHWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor
 REPULSOR_EXECUTIONER,Repulsor Executioner,"10""",12,3+,16,6,5,"VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR EXECUTIONER, DEATHWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor-Executioner
-RHINO,Rhino,"12""",9,3+,10,6,2,"VEHICLE, SMOKE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, RHINO, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino
+RHINO,Rhino,"12""",9,3+,10,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino
 SCOUTS,Scout Squad,"6""",4,4+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad
 STERNGUARD_VETS,Sternguard Veteran Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Sternguard-Veteran-Squad
 STORM_SPEEDER_HAILSTRIKE,Storm Speeder Hailstrike,"14""",9,3+,11,6,3,"VEHICLE, FLY, IMPERIUM, STORM SPEEDER HAILSTRIKE, FRAME, RAVENWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Storm-Speeder-Hailstrike
@@ -71,8 +71,8 @@ STORM_SPEEDER_THUNDERSTRIKE,Storm Speeder Thunderstrike,"14""",9,3+,11,6,3,"VEHI
 SUBODEN_KHAN,Suboden Khan,"12""",6,3+/4++,8,6+,2,"MOUNTED, CAPTAIN, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, ADEPTUS ASTARTES, WHITE SCARS",
 SUPPRESSOR_SQUAD,Suppressors,"12""",4,3+,2,6,1,"INFANTRY, GRENADES, SMOKE, JUMP PACK, FLY, IMPERIUM, SUPPRESSOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Suppressor-Squad
 TECHMARINE,Techmarine,"6""",5,2+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Techmarine
-TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, TERMINATORS, TERMINATOR ASSAULT SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad
-TERMINATOR_SQUAD,Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, TERMINATOR, TERMINATOR SQUAD, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Squad
+TERMINATOR_ASSAULT_SQUAD,Terminator Assault Squad,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad
+TERMINATOR_SQUAD,Terminator Squad,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Squad
 URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, CAPTAIN, URIEL VENTRIS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Uriel-Ventris
 VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS,Vanguard Veteran Squad with Jump Packs,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs
 VICTRIX_HONOUR_GUARD,Victrix Honour Guard,"6""",5,2+,3,6+,2,"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES",
