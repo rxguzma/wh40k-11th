@@ -388,7 +388,7 @@ def generate_manifests():
             dataset_material.append(f"{file_name}:{digest}\n")
         dataset_hash = sha256_bytes("".join(dataset_material).encode("utf-8"))
         payload = {
-            "schema_version": 1,
+            "schema_version": 2,
             "schema_sha256": schema_hash,
             "dataset_sha256": dataset_hash,
             "files": file_records,
