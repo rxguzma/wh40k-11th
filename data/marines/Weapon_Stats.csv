@@ -87,7 +87,7 @@ IRONHAIL_HEAVY_STUBBER,Ironhail heavy stubber,"36""",3,3,4,0,1
 KAELS_SMITE_FOCUSED_WITCHFIRE,Kael's Smite - focused witchfire,"24""",D6,3,7,-2,D3+1
 KAELS_SMITE_WITCHFIRE,Kael's Smite - witchfire,"24""",D6,3,6,-1,D3+1
 KRAKSTORM_GRENADE_LAUNCHER_X2,Krakstorm Grenade Launchers,"18""",2,3+,9,-1,2
-LANCER_LASER_DESTROYER,Lancer laser destroyer,"72""",2,3,14,-4,D6+3
+LANCER_LASER_DESTROYER,Laser Destroyer,"72""",2,3+,14,-3,D6+3
 LAS_FUSIL,Las Fusil,"36""",1,3+,10,-3,D3+3
 LAS_TALON,Las-talon,"36""",2,3+,10,-3,D3+3
 LASCANNONS_X2_PREDATOR,Lascannons,"48""",2,3,12,-3,D6+1
@@ -174,7 +174,7 @@ THUNDERSTRIKE_LAS_TALON,Thunderstrike Las-talon,"36""",2,3+,10,-3,D3+3
 TWIN_ASSAULT_CANNON,Twin Assault Cannon,"24""",6,3+,6,-2,1
 TWIN_BOLT_RIFLE,Twin Bolt Rifle,"24""",2,3+,5,-1,1
 TWIN_HEAVY_BOLTER,Twin Heavy Bolter,"36""",3,3+,5,-1,2
-TWIN_HEAVY_ONSLAUGHT_GATLING_CANNON,Twin heavy onslaught gatling cannon,"24""",12,3,6,0,1
+TWIN_HEAVY_ONSLAUGHT_GATLING_CANNON,Twin Heavy Onslaught Gatling Cannon,"24""",12,3+,6,-1,1
 TWIN_ICARUS_IRONHAIL_HEAVY_STUBBER,Twin Icarus ironhail heavy stubber,"36""",3,3,4,0,1
 TWIN_ICARUS_ROCKET_POD,Twin Icarus rocket pod,"24""",D3,3,8,-1,2
 TWIN_IRONHAIL_AUTOCANNON,Twin Ironhail Autocannon,"48""",4,3+,9,-1,3
@@ -193,7 +193,7 @@ CLOSE_COMBAT_WEAPON_ANCIENT,Close-combat weapon (Ancient),-,5,2,4,0,1
 CHAINSWORD_INTERCESSORS,Chainsword (Intercessors),-,5,3,4,-1,1
 MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted Power Weapon,-,3,3+,5,-2,2
 THUNDER_HAMMER_JUMP_CAPTAIN,Thunder hammer,-,5,3+,8,-2,2
-TWIN_LAS_TALON,Twin las-talon,"36""",2,3+,10,-3,D6+1
+TWIN_LAS_TALON,Twin Las-talon,"36""",2,3+,10,-3,D3+3
 MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT,Master-crafted power weapon,-,5,2+,5,-2,2
 MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT,Special-issue Bolt Pistol,"12""",1,2+,5,-2,2
 CAPTAIN_JUMP_HAND_FLAMER,Hand Flamer,"9""",3,N/A,4,0,1
@@ -339,3 +339,5 @@ GLADIATOR11_DEFENSIVE_ARRAY_RF12,Defensive Array,"24""",12,3+,5,-1,1
 GLADIATOR11_TWIN_HEAVY_ONSLAUGHT,Twin Heavy Onslaught Gatling Cannon,"24""",12,3+,6,-1,1
 GLADIATOR11_MULTI_MELTA,Multi-melta,"18""",2,3+,10,-3,D3+2
 GLADIATOR11_TWIN_LAS_TALON,Twin Las-talon,"36""",2,3+,10,-3,D3+3
+GLADIATOR_DEFENSIVE_ARRAY_RF6,Defensive Array,"24""",6,3+,5,-1,1
+GLADIATOR_DEFENSIVE_ARRAY_RF12,Defensive Array,"24""",12,3+,5,-1,1
