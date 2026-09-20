@@ -6,10 +6,10 @@ ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TA
 ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessor-Squad
 ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Assault Intercessors with Jump Packs,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs
 AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael
-BALLISTUS,Ballistus,"8""",10,2+,12,6,4,"VEHICLE, WALKER, IMPERIUM, DREADNOUGHT, BALLISTUS DREADNOUGHT, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ballistus-Dreadnought
+BALLISTUS,Ballistus Dreadnought,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ballistus-Dreadnought
 BELIAL,Belial,"5""",5,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, DEATHWING, TERMINATOR, CAPTAIN, BELIAL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Belial
 BLADEGUARD_VETS,Bladeguard Veteran Squad,"6""",5,3+/4++,3,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Bladeguard-Veteran-Squad
-BRUTALIS,Brutalis,"8""",10,2+,12,6,4,"VEHICLE, WALKER, IMPERIUM, DREADNOUGHT, BRUTALIS DREADNOUGHT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL
+BRUTALIS,Brutalis Dreadnought,"10""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL
 CAANOK_VAR,Caanok Var,"5""",6,2+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, IMPERIUM, TERMINATOR, ADEPTUS ASTARTES, IRON HANDS",
 CALLIDUS_ASSASSIN,Callidus Assassin,"7""",4,6+/4++,4,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, OFFICIO ASSASSINORUM, CALLIDUS ASSASSIN",https://wahapedia.ru/wh40k11ed/factions/imperial-agents/Callidus-Assassin
 CAPTAIN_FIST_PLASMA,Captain,"6""",5,3+/4++,5,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES",
@@ -41,7 +41,7 @@ INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM
 INNER_CIRCLE_COMPANIONS,Inner Circle Companions,"6""",4,3+,3,6,2,"INFANTRY, IMPERIUM, DEATHWING, TACTICUS, INNER CIRCLE COMPANIONS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inner-Circle-Companions
 INTERCESSORS,Intercessors,"6""",5,3+,2,6,2,"INFANTRY, BATTLELINE, GRENADES, IMPERIUM, TACTICUS, INTERCESSOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Intercessor-Squad
 INVADER_ATV,Invader ATV,"12""",5,3+,8,6,2,"MOUNTED, GRENADES, IMPERIUM, INVADER ATV, RAVENWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Invader-ATV
-INVICTOR_TACTICAL_WARSUIT,Invictor Tactical Warsuit,"8""",8,3+,12,6,4,"VEHICLE, WALKER, IMPERIUM, PHOBOS, INVICTOR TACTICAL WARSUIT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Invictor-Tactical-Warsuit
+INVICTOR_TACTICAL_WARSUIT,Invictor Tactical Warsuit,"10""",9,3+,12,6+,4,"VEHICLE, IMPERIUM, PHOBOS, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Invictor-Tactical-Warsuit
 IRON_FATHER_FEIRROS,Iron Father Feirros,"5""",6,2+,6,6+,1,"INFANTRY, CHARACTER, EPIC HERO, GRAVIS, IMPERIUM, ADEPTUS ASTARTES, IRON HANDS",
 JUDICIAR,Judiciar,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Judiciar
 KAYVAAN_SHRIKE,Kayvaan Shrike,"12""",4,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, PHOBOS, SMOKE, ADEPTUS ASTARTES, RAVEN GUARD",
@@ -58,7 +58,7 @@ LION_ELJONSON,Lion El’Jonson,"8""",9,2+/3++,10,5,4,"MONSTER, CHARACTER, EPIC H
 OUTRIDER_SQUAD,Outrider Squad,"12""",6,3+,4,6+,2,"MOUNTED, EXPLOSIVES, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Outrider-Squad
 PREDATOR_DESTRUCTOR,Predator Destructor,"10""",10,3+,11,6,3,"VEHICLE, SMOKE, IMPERIUM, PREDATOR DESTRUCTOR, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Predator-Destructor
 RAVENWING_COMMAND_SQUAD,Ravenwing Command,"12""",5,3+/5++,4,6+,2,"MOUNTED, GRENADES, IMPERIUM, RAVENWING, RAVENWING COMMAND SQUAD, CHARACTER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ravenwing-Command-Squad
-REDEMPTOR_PLASMA,Redemptor,"8""",10,2+,12,6,4,"VEHICLE, WALKER, IMPERIUM, DREADNOUGHT, REDEMPTOR DREADNOUGHT, DEATHWING",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought
+REDEMPTOR_PLASMA,Redemptor Dreadnought,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought
 REIVERS,Reiver Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Reiver-Squad
 REPULSOR,Repulsor,"10""",12,3+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor
 REPULSOR_EXECUTIONER,Repulsor Executioner,"10""",12,3+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor-Executioner
