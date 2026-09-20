@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"orks_army_rule_waaagh","column":"Short_Description","value":"Always [Re-roll Advances]\n\nRILED UP\u003A [5++], Ranged [ASSAULT], [Advance & Charge]. Lasts thru end of turn."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DEFF_FROM_ABOVE","column":"Short_Description","value":"After INGRESS\u003A [+1 TO HIT]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
