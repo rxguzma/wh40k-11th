@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SOMETHIN_TO_PROVE","column":"Short_Description","value":"[UNIT] MELEE [+1 TO HIT]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SOMETHIN_TO_PROVE","sets":{"Short_Description":"[UNIT] MELEE [+1 TO HIT]","Tags":"[UNIT] [MELEE] [WEAPONS] [+1 TO HIT]","Tag Categories":"[Melee - Combat Modifiers]"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
