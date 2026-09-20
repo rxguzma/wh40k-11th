@@ -1,12 +1,12 @@
 Detachment_ID,Army_Name,Detachment_Name,Rule_ID,Rule_Name,DP_Cost,Detachment_Disposition,Detachment_Disposition_2,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 tyranids_ambush_predators,Tyranids,Ambush Predators,tyranids_ambush_predators_detachment_rule_mindhunger,MINDHUNGER,1,Disruption,,"DEATHLEAPER / LICTOR / NEUROLICTOR have Deep Strike. 
 
-LICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units.","Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
+LICTOR / NEUROLICTOR re-roll hit rolls of 1 vs CHARACTER units. [DEEP STRIKE] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT]","Friendly DEATHLEAPER/LICTOR/NEUROLICTOR units have Deep Strike.
 
 Friendly LICTOR/NEUROLICTOR units’ attacks that target a CHARACTER unit can re-roll hit rolls of 1.",[DEEP STRIKE] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT],[Unit Rules] [Melee - Combat Modifiers] [Range - Combat Modifiers],,,"DEATHLEAPER, LICTOR, NEUROLICTOR",
 tyranids_subterranean_assault,Tyranids,Subterranean Assault,tyranids_subterranean_assault_detachment_rule_detachment_rule,SURPRISE ASSAULT,3,Disruption,,"SURPRISE ASSAULT:
 - Re-rolls 1 To Hit
-- BURROWERS allow 6"" Charge","Each time a Tyranids model from your army makes an attack, re-roll a Hit roll of 1.
+- BURROWERS allow 6"" Charge [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT]","Each time a Tyranids model from your army makes an attack, re-roll a Hit roll of 1.
 
 Each time a Burrower unit from your army is set up on the battlefield from Reserves, place a circular 40mm Tunnel Marker anywhere on the battlefield within 1"" of that unit and more than 3"" horizontally away from all enemy units.
 
@@ -17,7 +17,7 @@ tyranids_vanguard_onslaught,Tyranids,Vanguard Onslaught,tyranids_vanguard_onslau
 - Advance and Charge.
 ALL UNITS: Fall back and Charge
 
-Deathleaper can be Warlord","TYRANIDS units with this ability are eligible to charge in a turn in which they Fell Back.
+Deathleaper can be Warlord [ADVANCE AND CHARGE] [FALL BACK AND CHARGE]","TYRANIDS units with this ability are eligible to charge in a turn in which they Fell Back.
 
 VANGUARD INVADER units with this ability are eligible to charge in a turn in which they Advanced.
 
