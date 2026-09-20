@@ -56,7 +56,6 @@ One Company Veteran is equipped with: bolt pistol; master-crafted heavy bolter; 
 
 One Company Veteran is equipped with: bolt pistol; master-crafted bolt rifle; close combat weapon.",,,2,
 DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,"If within 3"" of INFANTRY then = Lone Operative (Cannot be targetted outside of 12""). [LONE OPERATIVE]","While this model is within 3"" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.",[LONE OPERATIVE],[Unit Rules],2,
-DEADLY_TERROR,Deadly Terror,"While Leading: Terror Troops range +3""","While this model is leading a unit, increase the range of that unit’s Terror Troops ability by 3"".",,,2,
 DEATH_TO_THE_ALIEN,Death to the Alien,RE-ROLL 1S TO HIT or RE-ROLL ALL HITS if not IMPERIUM or CHAOS [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],"Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack does not have the IMPERIUM or CHAOS keywords, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Melee - Combat Modifiers] [Melee - Combat Modifiers] [Range - Combat Modifiers] [Range - Combat Modifiers],2,
 DEATHWATCH_TERMINATORS_BREAKDOWN,Deathwatch Terminators breakdown,"x1 Sergeant with Thunder Hammer and Shield, x3 Cyclone missile, x1 Thunder Hammer and Shield","x1 Sergeant with Thunder Hammer and Shield, x3 Cyclone missile, x1 Thunder Hammer and Shield",,,2,
 DEATHWING,Deathwing,"Ignore BS/WS modifiers.
@@ -228,8 +227,6 @@ If it does, after the attacking unit has finished making its attacks, this model
 STORM_SHIELD,Storm Shield,4+ Invul (included) [INVULNERABLE SAVE 4+],4+ Invul (included),[INVULNERABLE SAVE 4+],[Unit Rules],2,
 STORM_SHIELD_DEATHWATCH,Storm Shield (Deathwatch),4+ Invul [INVULNERABLE SAVE 4+],The bearer has a Wounds characteristic of 4.,[INVULNERABLE SAVE 4+],[Unit Rules],2,
 STORM_SHIELD_TERMINATORS,Storm Shield (Terminators),+1 Wound (included) [+1 W],+1 Wound (included),[+1 W],[Unit Stats],3,
-STRATEGIC_DISPERSAL,Strategic Dispersal,"Shot and Move 6""
-Cannot Charge","In your Shooting phase, after this model’s unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6"". If it does, until the end of the turn, that unit is not eligible to declare a charge.",,,2,
 STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot. [FALL BACK AND SHOOT],Fallback and Shoot,[FALL BACK AND SHOOT],[Movement Rules],2,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
 Max 6 per attacking unit. Melee only.","Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,,2,
@@ -254,7 +251,6 @@ x2 Plasma pistols and chainswords
 x2 Heavy bolt pistols and chainswords
 
 x5 Assault bolters with Close combat weapon",,,2,
-TARGET_PRIORITY,Target Priority,This model’s unit can shoot and declare a charge in a turn in which it Fell Back. [FALL BACK AND SHOOT] [FALL BACK AND CHARGE],This model’s unit is eligible to shoot and declare a charge in a turn in which it Fell Back.,[FALL BACK AND SHOOT] [FALL BACK AND CHARGE],[Movement Rules] [Movement Rules],2,
 TARGETER_OPTICS,Targeter Optics,Stationary = IGNORES COVER [IGNORES COVER],"Each time this unit Remains Stationary, until the start of your next Movement phase, ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",[IGNORES COVER],[Range - Weapon Rules],2,
 TECHMARINE,Techmarine,"Lone Operative if within 3"" of Vehicle.
 
@@ -373,14 +369,6 @@ Eliminators, Scouts","LEADER: ELIMINATOR SQUAD, INCURSOR SQUAD, INFILTRATOR SQUA
 LEADER_LIBRARIAN_IN_TERMINATOR_ARMOUR,Leader: Librarian in Terminator Armour,"Can Lead: TERMINATORS
 Terminators, Assault Terminators
 Deathwing Knights","LEADER: DEATHWATCH TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
-SUPPORT_LIEUTENANT,Support: Lieutenant,"Can Support: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","SUPPORT: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, COMPANY HEROES, HELLBLASTER SQUAD, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD, VANGUARD VETERAN SQUAD, ASSAULT SQUAD, CRUSADER SQUAD, SWORD BRETHREN SQUAD, INNER CIRCLE COMPANIONS, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, COMMAND SQUAD, SKYCLAWS, WOLF GUARD",,,3,
-LEADER_LIEUTENANT_IN_PHOBOS_ARMOUR,Leader: Lieutenant in Phobos Armour,"Can Lead: PHOBOS
-Incursors, Infiltrators, Reivers","LEADER: INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD",,,3,
-SUPPORT_LIEUTENANT_IN_PHOBOS_ARMOUR,Support: Lieutenant in Phobos Armour,"Can Support: PHOBOS
-Incursors, Infiltrators, Reivers
-Hounds of Morkai","SUPPORT: INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD, SPECTRUS KILL TEAM, HOUNDS OF MORKAI",,,3,
 SUPPORT_LIEUTENANT_IN_REIVER_ARMOUR,Support: Lieutenant in Reiver Armour,"Can Support: PHOBOS
 Reivers, Hounds of Morkai","SUPPORT: REIVER SQUAD, HOUNDS OF MORKAI",,,3,
 LEADER_TECHMARINE,Leader: Techmarine,"Can Lead: INFANTRY like
