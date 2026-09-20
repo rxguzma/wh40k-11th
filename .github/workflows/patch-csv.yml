@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"CAPTAIN_ON_BIKE","mode":"insert","sets":{"Ability_ID":"CAPTAIN_STRATEGIC_ACUMEN","Ability_Type":"ABILITY"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Ability_ID","row_id":"CAPTAIN_ON_BIKE_INTO_THE_FRAY","mode":"insert","sets":{"Unit_ID":"CAPTAIN_ON_BIKE","Ability_Type":"ABILITY"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Ability_ID","row_id":"LEADER_CAPTAIN_ON_BIKE","mode":"insert","sets":{"Unit_ID":"CAPTAIN_ON_BIKE","Ability_Type":"CORE_ABILITY"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Ability_ID","row_id":"CAPTAIN_ON_BIKE_UNIT_COMPOSITION","mode":"insert","sets":{"Unit_ID":"CAPTAIN_ON_BIKE","Ability_Type":"ABILITY"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"TIDE_OF_MUSCLE","column":"Short_Description","value":"[UNIT] CHARGE this turn\u003A MELEE [LETHAL HITS]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_TOO_BUSY_TO_FIGHT","column":"Short_Description","value":"[UNIT] can start [ACTION while ENGAGED]."}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
