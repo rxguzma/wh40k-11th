@@ -142,7 +142,7 @@ COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,
 
 The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,,3,
 DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining: [-1 TO HIT],CORE: Damaged 1-6,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,0
-DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],1,
+DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,
 DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,2,
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,2,
 DEEP_STRIKE,Deep Strike,ANYTIME [DEEP STRIKE],CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],1,1
@@ -169,7 +169,7 @@ ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-sh
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE [+1 A] [+1 S] [HAZARDOUS],"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]",[+1 A] [+1 S] [HAZARDOUS],[Melee - Weapon Stats] [Melee - Weapon Stats] [Melee - Weapon Rules],2,0
-SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK) [LONE OP 3""]","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],1,
+SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK) [LONE OP 3""]","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,
 STEALTH,Stealth,ANYTIME [STEALTH],CORE: Stealth,[STEALTH],[Unit Rules],1,1
 SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,2,
 TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,2,
@@ -242,8 +242,8 @@ KEEP_HUNTIN,Keep Huntin',"Once per Battle Round: BEAST SNAGGAS 6"" are un-shock 
 - Is no longer battle-shocked.
 - Is RILED UP until the start of your next turn.",[KEEP HUNTIN'],[Info Only],1,
 DODGE_DIS,Dodge Dis!,UNIT MELEE and SHOOTING: [+1 TO HIT],This unit's attacks have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,1
-BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],1,0
-BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],1,0
+BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,0
+BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,0
 COMPOSITION_BEASTBOSS_SQUIGOSAUR,Unit Composition (Beastboss on Squigosaur),"1 Beastboss on Squigosaur. Beastchoppa, Slugga, Jaws. Optional Thump Gun.","UNIT COMPOSITION: 1 Beastboss on Squigosaur model.
 
 This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.

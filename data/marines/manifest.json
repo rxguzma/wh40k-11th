@@ -1,5 +1,5 @@
 {
-  "dataset_sha256": "40d722f2a4f4ac5ae7add6c0726e97fa2bd81693af377c92e1c19b9ad725bce4",
+  "dataset_sha256": "2045b60172acd3ea9471fbe2083cb3fc787bf1b34ffb1edf83d8dede3a3f5ade",
   "files": {
     "Abilities.csv": {
       "bytes": 80472,
@@ -66,6 +66,6 @@
       "sha256": "fb4a4eb7149b69a0b87d2df4f8b46a1b5ab700e85f41d6fb8af4ec51af4d5926"
     }
   },
-  "schema_sha256": "646bf53151f9d2df71483dc0a01d1a11e822631cb168f9a1095b6030b766c3da",
-  "schema_version": 2
+  "schema_sha256": "63ee77f618255b12212a0c6f158879a645c81cee43bc0339bd5cc8969910780c",
+  "schema_version": 1
 }
