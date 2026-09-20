@@ -94,7 +94,8 @@ orks_freebooter_krew_stratagem_rolling_loot_heap_1cp,orks_freebooter_krew,Rollin
 TARGET: One Flash Gitz unit from your army that has not been selected to shoot this phase.
 
 EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI‑VEHICLE 4+] ability.",[ANTI-VEHICLE 4+],[Range - Weapon Rules],,FLASH GITZ,,
-orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,SHOOTING\u003A ORKS INFANTRY ranged vs target within 9″ [+1 AP],"WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
+orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,"SHOOTING INFANTRY 
+RANGE vs target within 9″ [+1 AP]","WHEN: Your Shooting phase, when a friendly ORKS INFANTRY unit is selected to shoot.
 
 TARGET: That ORKS INFANTRY unit.
 
