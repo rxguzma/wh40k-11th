@@ -17,8 +17,8 @@ orks_freebooter_krew_enhancement_razgits_magik_map,orks_freebooter_krew,Razgit�
 orks_rollin_deff_enhancement_targetin_gizmos,orks_rollin_deff,Targetin’ Gizmos,15,FALSE,"WAGON. With BIG MEK embarked, ranged attacks IGNORE COVER 
 
 If Waaagh! is active, they also gain SUSTAINED HITS 1 [IGNORES COVER] [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,WAGON,,
-orks_green_tide_enhancement_ferocious_show_off,orks_green_tide,FEROCIOUS SHOW-OFF,15,FALSE,"ORKS INFANTRY model.
-Melee +1 A, or +2 A if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
+orks_green_tide_enhancement_ferocious_show_off,orks_green_tide,FEROCIOUS SHOW-OFF,15,FALSE,"INFANTRY model. 
+Melee [+1 A] or [+2 A] if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
 - Or, if this unit has 11+ models, +2 A.",,,0,"ORKS, INFANTRY",,
 orks_green_tide_enhancement_ardboyz,orks_green_tide,'ARDBOYZ (UP),25,TRUE,"BOYZ unit

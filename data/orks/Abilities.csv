@@ -231,7 +231,7 @@ DA_JUMP,Da Jump,Psychic: on 2+ place in Strategic Reserves and gain [DEEP STRIKE
 - Place this unit in strategic reserves.
 - This unit has Deep Strike.",[DEEP STRIKE],[Unit Rules],0,1,
 DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, [INGRESS] from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move.",[INGRESS],[Movement Rules],0,1,
-BOSS_AMMO_RUNT,Boss' Ammo Runt,Once per battle — RANGE [+1 TO HIT],"Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
+BOSS_AMMO_RUNT,Boss' Ammo Runt,Once per battle. RANGE [+1 TO HIT],"Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
 COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa + Kustom Shoota.,"UNIT COMPOSITION: 1 Warboss model.
 
 This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.

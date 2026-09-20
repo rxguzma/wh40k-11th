@@ -99,17 +99,18 @@ orks_more_dakka_stratagem_speshul_shells_1cp,orks_more_dakka,Speshul Shells,1,SH
 TARGET: That ORKS INFANTRY unit.
 
 EFFECT: Your unit’s ranged attacks that target a unit within 9″ have +1 AP.",[+1 AP],[Range - Weapon Stats],,"ORKS, INFANTRY",,
-orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAGE,1,Fight: charging BOYZ melee +1 A. [+1 A],"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
+orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAGE,1,CHARGE: BOYZ melee [+1 A],"WHEN: Fight phase, when a friendly BOYZ unit that made a charge move this turn is selected to fight.
 
 TARGET: That BOYZ unit.
 
 EFFECT: Unit's melee attacks have +1 A.",[+1 A],[Melee - Weapon Stats],,BOYZ,,
-orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"Command Battle-shock step: ORKS INFANTRY 13+ models auto-pass Battle-shock for a visible ORKS unit within 12"".","WHEN: Start of the Battle-shock step of your Command phase.
+orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"COMMAND: INFANTRY 13+ models auto-pass Battleshock for any another visible ORKS within 12"".","WHEN: Start of the Battle-shock step of your Command phase.
 
 TARGET: One friendly ORKS INFANTRY unit of 13+ models.
 
 EFFECT: Select one visible friendly ORKS unit within 12"" of your unit. That unit's battle-shock rolls are automatically successful.",,,,"ORKS, INFANTRY",,
-orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,Movement: BEAST SNAGGA BOYZ / BOYZ +2 to Advance rolls.,"WHEN: Your Movement phase, when a friendly BEAST SNAGGA BOYZ / BOYZ unit is selected to move.
+orks_green_tide_stratagem_ere_we_go_1cp,orks_green_tide,'ERE WE GO,1,"MOVE: BEAST SNAGGA / BOYZ 
++2 to Advance rolls.","WHEN: Your Movement phase, when a friendly BEAST SNAGGA BOYZ / BOYZ unit is selected to move.
 
 TARGET: That BEAST SNAGGA BOYZ / BOYZ unit.
 
