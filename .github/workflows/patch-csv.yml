@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DA_GRAND_WARLORDS_LADZ","column":"Visibility_ID","value":"2"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SPEEDNOB_SUPPORT","column":"Visibility_ID","value":"2"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEAST_SNAGGA_FOLLOWING","column":"Visibility_ID","value":"2"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BOSS_OF_DA_HUNT","column":"Visibility_ID","value":"2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_TOO_BUSY_TO_FIGHT","sets":{"Tags":"[ACTION while ENGAGED]","Tag Categories":"[Unit Rules]","Visibility_ID":"1","Short_Description":"UNIT can start [ACTION while ENGAGED]."}},{"file":"data/orks/Tag_Definitions.csv","id_column":"Tag","row_id":"ACTION while ENGAGED","mode":"insert","sets":{"Tag":"ACTION while ENGAGED","Category":"Unit Rules"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
