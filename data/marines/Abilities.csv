@@ -56,7 +56,6 @@ EVADE_AND_SURVIVE,Evade and Survive,"OPPONENT MOVEMENT — Enemy ends a move wit
 EXECUTIONER,Executioner,RANGE attacks vs unit not below half-strength — [+1 TO HIT].,This unit’s ranged attacks that target a unit not below half-strength have +1 to hit rolls.,[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT],,2,
 EXHORTATION_OF_RAGE,Exhortation of Rage,At/below half-strength — MELEE re-roll Wound rolls.,"While this unit is at or below half-strength, this unit’s melee attacks can re-roll wound rolls.",[MELEE] [WEAPONS] [ACTIVE],,2,
 FEARSOME_ASSAULT,Fearsome Assault,FIGHT start — engaged enemy units take Battle-shock test at -1.,"At the start of the Fight phase, each enemy unit engaged with a unit with this ability makes a battle-shock roll, with -1 to that battle-shock roll.",,,2,
-FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE [+1 TO HIT],"Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll.",[+1 TO HIT],[Combat Modifiers],2,
 FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First. [FIGHTS FIRST],"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",[FIGHTS FIRST],[Unit Rules],2,
 FINEST_HOUR,"Finest Hour (Once per battle, per unit)",FIGHT: melee +3 A / DEVASTATING WOUNDS [+3 A] [DEVASTATING WOUNDS],"In the Fight phase, when this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have:
 • +3 A.
@@ -159,9 +158,6 @@ RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],This unit has +1 Obje
 RELIC_SHIELD,Relic Shield,+1 W [+1 W],This model has +1W.,[STATS] [+1 W],[Unit Stats],2,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,,2,
 RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,Attack Strength higher Toughness: -1 to Wound.,,,2,1
-ROTATING_DEATH,Rotating Death,Vs. INFANTRY. Gatling Cannon SUSTAINED HITS 2 [SUSTAINED HITS 2],"This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting INFANTRY units.
-
-SUSTAINED HITS 2: Each Critical Hit (ie 6s) scores 2 additional Hits on the Target.",[SUSTAINED HITS 2],[Weapon Rules],2,
 SCOUT_WARGEAR,Scout Wargear,"Range: x2 Astartes shotguns, x5 Bolt pistols, x1 Heavy bolter, x1 Scout sniper rifle.
 x1 Astartes chainsword, x2 Close combat weapon, x2 Combat knife","Range: 
 x2 Astartes shotguns 
@@ -531,8 +527,5 @@ TRANSPORT_LAND_RAIDER,Transport - Land Raider,Transport 14 ADEPTUS ASTARTES INFA
 TRANSPORT_LAND_RAIDER_CRUSADER,Transport - Land Raider Crusader,Transport 16 ADEPTUS ASTARTES INFANTRY; no JUMP PACK; GRAVIS/TERMINATOR count as 2.,This model has a transport capacity of 16 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK models. Each GRAVIS or TERMINATOR model takes up the space of 2 models.,,,3,
 FORWARD_ASSAULT_WARSUIT,Forward Assault Warsuit,"BATTLE start — mark enemy; attacks vs mark [RE-ROLL 1S TO WOUND]; when mark destroyed, select new enemy.","At the start of the first battle round, you can select one enemy unit to be this unit’s mark. This unit’s attacks that target this unit’s mark can re-roll wound rolls of 1. Each time this unit’s mark is destroyed, select one enemy unit to be this unit’s mark.",[SHOOT] [MELEE] [WEAPONS] [ACTIVE] [RE-ROLL 1S TO WOUND],,2,
 SHATTERED_DEFENCES,Shattered Defences,"SHOOTING — after UNIT shoots, select MONSTER/VEHICLE hit; friendly ADEPTUS ASTARTES RANGE attacks vs it have +1 AP.","In your Shooting phase, when this unit has shot, select one enemy MONSTER or VEHICLE unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have +1 AP.",[SHOOT] [ACTIVE],,2,
-GLADIATOR11_AQUILON_OPTICS,Aquilon Optics,"Ranged vs MONSTER/VEHICLE — re-roll Hit, Wound and Damage rolls.","Each time this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll, you can re-roll the Wound roll and you can re-roll the Damage roll.",,,2,0
-GLADIATOR11_REAPING_TALLY,Reaping Tally,Ranged vs non-MONSTER/VEHICLE — +1 AP.,"Each time this unit makes a ranged attack that targets a unit (excluding MONSTER/VEHICLE units), improve the Armour Penetration characteristic of that attack by 1.",,,2,0
-GLADIATOR11_PRIORITY_TARGET_ACQUISITION,Priority Target Acquisition,"Ranged target within 12"" — +1 Strength.","Each time this unit makes a ranged attack that targets a unit within 12"" of this unit, add 1 to the Strength characteristic of that attack.",,,2,0
 REAPING_TALLY,Reaping Tally,Ranged vs non-MONSTER/VEHICLE — +1 AP.,"Each time this unit makes a ranged attack that targets a unit (excluding MONSTER/VEHICLE units), improve the Armour Penetration characteristic of that attack by 1.",,,2,0
 PRIORITY_TARGET_ACQUISITION,Priority Target Acquisition,"Ranged target within 12"" — +1 Strength.","Each time this unit makes a ranged attack that targets a unit within 12"" of this unit, add 1 to the Strength characteristic of that attack.",,,2,0
