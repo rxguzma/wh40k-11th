@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"VANGUARD_VETERAN_WEAPON","mode":"delete"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"*","mode":"delete_where","where":{"Weapon_ID":"HEAVY_BOLT_PISTOL_VANGUARD_VETERANS"}},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"HEAVY_BOLT_PISTOL_VANGUARD_VETERANS","mode":"delete"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"*","mode":"delete_where","where":{"Weapon_ID":"PLASMA_PISTOL_STANDARD_VANGUARD_VETERANS"}},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"PLASMA_PISTOL_STANDARD_VANGUARD_VETERANS","mode":"delete"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"*","mode":"delete_where","where":{"Weapon_ID":"PLASMA_PISTOL_SUPERCHARGE_VANGUARD_VETERANS"}},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"PLASMA_PISTOL_SUPERCHARGE_VANGUARD_VETERANS","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"SOMETHIN_TO_PROVE","column":"Default_Active","value":"0"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
