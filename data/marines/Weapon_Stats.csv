@@ -31,7 +31,7 @@ BRUTALIS_TALONS_STRIKE,Brutalis talons – strike,-,6,3,12,-2,3
 BRUTALIS_TALONS_SWEEP,Brutalis talons – sweep,-,10,3,7,-2,1
 CALIBANITE_GREATSWORD_STRIKE,Calibanite greatsword - strike,-,4,3,6,-2,2
 CALIBANITE_GREATSWORD_SWEEP,Calibanite greatsword - sweep,-,5,3,6,-2,1
-CASTELLAN_LAUNCHER,Castellan launcher,"36""",D3,3,4,0,1
+CASTELLAN_LAUNCHER,Castellan Launcher,"24""",2,3+,5,-1,1
 CENTURION_FISTS,Centurion fists,-,3,4,5,-1,2
 CENTURION_MISSILE_LAUNCHER,Centurion missile launcher,"36""",D3,3,9,-2,D3
 CENTURION_TWIN_LASCANNON,Centurion Twin lascannon,"48""",1,3,12,-3,D6+1
@@ -99,10 +99,10 @@ MACE_OF_ABSOLUTION,Mace of absolution,-,4,2,6,-2,2
 MACRO_PLASMA_INCINERATOR_STANDARD,Macro plasma incinerator – standard,"36""",D6+1,3,8,-3,2
 MACRO_PLASMA_INCINERATOR_SUPERCHARGE,Macro plasma incinerator – supercharge,"36""",D6+1,3,9,-4,3
 MALLEUS_NOCTUM,Malleus Noctum,-,5,2+,10,-2,3
-MARKSMAN_BOLT_CARBINE,Marksman bolt carbine,"24""",2,3,4,0,1
+MARKSMAN_BOLT_CARBINE,Marksman Bolt Carbine,"24""",2,3+,5,-1,1
 MASTER_CRAFTED_BOLTGUN,Master-crafted boltgun,"24""",2,2,4,-1,2
 MASTER_CRAFTED_HEAVY_BOLT_RIFLE,Master-crafted heavy bolt rifle,"30""",2,2,5,-1,3
-MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD,Master-crafted power weapon (BLADEGUARD),-,4,3,5,-2,2
+MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD,Master-crafted Power Sword,-,4,3+,5,-2,2
 MASTER_CRAFTED_POWER_WEAPON_CHAMPION,Master-crafted power weapon,-,6,2,5,-2,2
 MASTER_CRAFTED_STORM_BOLTER_BELIAL,Master-crafted storm bolter,"24""",2,2,4,0,2
 MEDUSAN_MANIPULI,Medusan Manipuli,-,2,3+,10,-2,3
@@ -134,13 +134,13 @@ PLASMA_TALON_STANDARD,Plasma talon – standard,"18""",2,3,7,-2,1
 PLASMA_TALON_SUPERCHARGE,Plasma talon – supercharge,"18""",2,3,8,-3,2
 POWER_FIST_ANCIENT,Power fist,-,4,2,8,-2,2
 POWER_FIST_CAPTAIN,Power Fist,-,5,2+,8,-2,2
-POWER_FIST_STERNGUARD_SGT,Power fist (Sgt),-,4,3,8,-2,2
+POWER_FIST_STERNGUARD_SGT,Power Fist,-,4,3+,8,-2,2
 POWER_FIST_TERMINATORS,Power fist,-,3,3,8,-2,2
 POWER_FIST_TROOPS,Power Fist,-,3,3+,8,-2,2
 POWER_WEAPON_KNIGHTS,Power weapon,-,5,2,6,-2,2
 POWER_WEAPON_TERMINATOR_SERGEANT,Power weapon (Terminator Sgt),-,4,3,5,-2,1
 PREDATOR_AUTOCANNON,Predator autocannon,"48""",4,3,9,-1,3
-PYREBLASTER,Pyreblaster,"12""",D6,N/A,5,-1,1
+PYREBLASTER,Pyreblaster,"12""",3,N/A,5,-1,1
 REDEMPTOR_FIST,Redemptor fist,-,5,3,12,-2,3
 RELIC_FIST,Relic fist,-,5,2,8,-2,2
 RELIC_WEAPON_KNIGHTS,Relic Weapon (Knights),-,6,2,7,-2,2
@@ -153,16 +153,16 @@ SMITE_WITCHFIRE,Smite - Witchfire,"24""",D6,3+,6,-1,2
 SPEAR_OF_VULKAN,Spear of Vulkan,-,6,2+,7,-2,2
 SPECIAL_ISSUE_BOLT_PISTOL_REIVERS,Special issue bolt pistol,"12""",1,3,4,-1,1
 STERNGUARD_BOLT_PISTOL,Sternguard bolt pistol,"12""",1,3,4,0,1
-STERNGUARD_BOLT_RIFLE,Sternguard bolt rifle,"24""",2,3,4,-1,1
-STERNGUARD_HEAVY_BOLTER,Sternguard heavy bolter,"36""",3,4,5,-1,2
+STERNGUARD_BOLT_RIFLE,Artificer Firearm - Infernus,"24""",2,3+,5,-1,1
+STERNGUARD_HEAVY_BOLTER,Heavy Bolter,"36""",3,3+,5,-1,2
 STORM_BOLTER_LEADERS,Storm Bolter,"24""",2,2+,5,-1,1
 STORM_BOLTER_TERMINATORS,Storm Bolter,"24""",2,3+,5,-1,1
 STORM_BOLTER_X2,Storm bolter,"24""",4,3,4,0,1
 STORMFURY_MISSILE_LAUNCHER,Stormfury missile launcher,"48""",1,3,12,-3,D6+1
 STORMFURY_MISSILES,Stormfury missiles,"48""",1,2,12,-3,D6+1
 SUNDERING_STRIKE,Sundering Strike,-,6,2,5,-2,2
-SUPERFRAG_ROCKET_LAUNCHER,Superfrag rocket launcher,"48""",D6+1,4,5,0,1
-SUPERKRAK_ROCKET_LAUNCHER,Superkrak rocket launcher,"48""",1,4,10,-2,D6+1
+SUPERFRAG_ROCKET_LAUNCHER,Superfrag Rocket Launcher,"48""",4,3+,5,-1,1
+SUPERKRAK_ROCKET_LAUNCHER,Superkrak Rocket Launcher,"48""",1,3+,10,-2,D3+3
 SWORD_OF_IDAEUS,Sword of Idaeus,-,6,2,6,-2,2
 TEMPEST_BOLTER_X2,Tempest bolter x2,"24""",8,3,4,-1,1
 THE_RAVENS_TALONS,Raven’s Talons,-,7,2+,5,-2,2
@@ -189,7 +189,7 @@ TWIN_POWER_FISTS,Twin power fists,-,3,3,8,-2,2
 TWIN_STORM_BOLTER,Twin storm bolter,"24""",2,3,4,0,1
 TYRNAK_AND_FENRIR,Tyrnak and Fenrir,-,6,2,5,-1,1
 VANGUARD_VETERAN_WEAPON,Vanguard Veteran weapon,-,4,3,5,-1,1
-VENGOR_LAUNCHER,Vengor launcher,"48""",D6,2,7,-1,2
+VENGOR_LAUNCHER,Vengor Launcher,"48""",4,3+,7,-1,2
 VICTRIX_POWER_SWORD,Victrix power sword,-,5,2,5,-2,2
 HEAVY_BOLT_PISTOL_CAPTAIN_WITH_RELIC_SHIELD,Heavy bolt pistol (Captain with Relic Shield),"18""",1,2,4,-1,1
 BOLT_PISTOL,Bolt pistol,"12""",1,3,4,0,1
@@ -299,3 +299,8 @@ COMPANY_HEROES_COMBAT_KNIFE,Combat Knife,-,5,3+,5,-1,1
 COMPANY_HEROES_MASTER_CRAFTED_POWER_WEAPON,Master-crafted Power Weapon,-,6,2+,6,-2,2
 ASSAULT_INTERCESSORS_CHAINSWORD,Chainsword,-,4,3+,5,-1,1
 CERAMITE_FISTS_TROOPS,Ceramite Fists,-,3,3+,5,0,1
+BLADEGUARD_NEO_VOLKITE_PISTOL,Neo-volkite Pistol,"12""",1,3+,5,0,2
+STERNGUARD_ARTIFICER_FIREARM_PURGATUS,Artificer Firearm - Purgatus,"24""",1,3+,7,-2,2
+STERNGUARD_ARTIFICER_FIREARM_DAMNATUS,Artificer Firearm - Damnatus,"12""",1,3+,9,-3,D3+2
+STERNGUARD_PYRECANNON,Pyrecannon,"12""",4,N/A,6,-1,1
+STERNGUARD_CHAINSWORD,Chainsword,-,6,3+,5,-1,1
