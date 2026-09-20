@@ -117,12 +117,10 @@ LANCE,LANCE,Add +1 TO WOUND if the bearer charged this turn. [+1 TO WOUND],"Each
 LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Bladeguard Veteran Squad; Company Heroes; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
-LEADER_CHAPLAIN_WITH_JUMP_PACK,Leader: Chaplain with Jump Pack,"Can Lead: JUMP PACK
-Jump Intercessors, Vanguard Vets",Leader: This model can be attached to the following units: Assault Intercessors with Jump Packs; Vanguard Veteran Squad with Jump Packs.,,,3,
 LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
-LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],This unit’s melee attacks have [LANCE].,[LANCE],[Melee - Weapon Rules],2,
+LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],This unit’s melee attacks have [LANCE].,,,2,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away. [LONE OPERATIVE]","Cannot be shot at if 12"" away.",[LONE OPERATIVE],[Unit Rules],2,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,2,
 LORD_OF_THE_PYROCLASTS,Lord of the Pyroclasts,Enemy ENGAGED with this unit: -1 OC,"While an enemy unit is engaged with this unit, that enemy unit has -1 OC.",,,2,1
@@ -180,7 +178,6 @@ Enhancements, if any, added to Champion.","UNIT COMPOSITION
 The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-crafted power weapon.
 
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,,2,
-RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds [FNP 4+],"While this model is leading a unit, models in that unit have the FNP 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],2,
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage [INCOMING -1 D],"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],2,
 RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],This unit has +1 Objective Control.,[+1 OC],[Unit Stats],2,
 RELIC_SHIELD,Relic Shield,+1 W [+1 W],This model has +1W.,[+1 W],[Unit Stats],2,
@@ -352,11 +349,6 @@ Sanguinary Guard","LEADER: ASSAULT INTERCESSORS WITH JUMP PACKS, SANGUINARY GUAR
 LEADER_CHAPLAIN,Leader: Chaplain,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, CRUSADER SQUAD, DEATH COMPANY MARINES, DEATH COMPANY MARINES WITH BOLT RIFLES, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
-LEADER_CHAPLAIN_IN_TERMINATOR_ARMOUR,Leader: Chaplain in Terminator Armour,"Can Lead: TERMINATORS
-Terminators, Assault Terminators
-Deathwing Knights","LEADER: TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, DEATHWATCH TERMINATOR SQUAD",,,3,
-LEADER_CHAPLAIN_ON_BIKE,Leader: Chaplain On Bike,"Can Lead: MOUNTED
-Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,,3,
 LEADER_JUDICIAR,Leader: Judiciar,"Can Lead: Most INFANTRY like
 Intercessors, Bladeguard Vets
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD, VANGUARD VETERAN SQUAD, ASSAULT SQUAD, CRUSADER SQUAD, SWORD BRETHREN SQUAD, INNER CIRCLE COMPANIONS, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, SKYCLAWS, WOLF GUARD",,,3,
