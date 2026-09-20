@@ -258,7 +258,7 @@ UNTO_THE_ANVIL,Unto the Anvil,"MELEE: RE-ROLL WOUND 1S
 ASSAULT DOCTRINE: RE-ROLL ALL WOUNDS","This unit’s melee attacks can:
 • Re-roll wound rolls of 1.
 • Or, if the assault doctrine is active for this unit, re-roll wound rolls.",,,2,1
-UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,While controlling an objective — [+1 SAVE].,"While this unit is controlling an objective, this unit has +1 to save rolls.",,,2,
+UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,While controlling an objective — [+1 SAVE].,"While this unit is controlling an objective, this unit has +1 to save rolls.",[STATS] [ACTIVE],[Ability Control] [Ability Control],2,
 VANGUARD_ASSAULT,Vanguard Assault,Charge: melee weapons gain LETHAL HITS [LETHAL HITS],"In a turn in which this unit made a Charge move, this unit’s melee weapons have [LETHAL HITS].",[LETHAL HITS],[Melee - Weapon Rules],2,
 VEIL_OF_TIME_PSYCHIC,Veil of Time,ADVANCE psychic roll — on 1 battle-shocked; otherwise change Advance roll to 6.,"Psychic level 1 — When this unit is selected to make an Advance move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. On a 1, this unit is battle-shocked. Otherwise, this unit can change that Advance roll to a 6.",,,2,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,2,
