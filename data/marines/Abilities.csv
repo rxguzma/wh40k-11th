@@ -35,9 +35,7 @@ BRUTALIS_CHARGE,Brutalis Charge,"Charge and roll D6:
 2-3 = D3 mortal wounds
 4-5 = 3 mortal wounds
 6 = D3+3 mortal wounds","Each time this model ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",,,2,
-CATECHISM_OF_FIRE,Catechism of Fire,"When Shooting within 12"", Unit gets DEVASTATING WOUNDS (No Save). [DEVASTATING WOUNDS]","Each time this model’s unit is selected to shoot, you can select one enemy unit within 12"" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model’s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.
-
-DEVASTATING WOUNDS: Critical Wounds = Mortal.",[DEVASTATING WOUNDS],[Range - Weapon Rules],2,
+CATECHISM_OF_FIRE,Catechism of Fire,SHOOTING — select visible enemy; RANGE attacks vs it [DEVASTATING WOUNDS].,"In your Shooting phase, when this unit is selected to shoot, you can select one visible enemy unit. This unit’s ranged attacks that target that unit have [DEVASTATING WOUNDS].",,,2,
 CEREBREX_LOGIC_ENGINE,Cerebrex Logic Engine,"BATTLE FORMATIONS: INFANTRY — SCOUTS 6""","In the Declare Battle Formations step, you can select one friendly ADEPTUS ASTARTES INFANTRY unit. That unit has Scouts 6"".",,,2,1
 CLOSE_QUARTERS_FIREPOWER,Close-quarters Firepower,"Ranged attack by MODEL vs. closest eligible target, +1 AP. [+1 AP]","Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",[+1 AP],[Range - Weapon Stats],2,
 COLD_AND_CALCULATING,Cold and Calculating,"ATTACK: choose LETHAL HITS vs MONSTER/VEHICLE OR SUSTAINED HITS 1 vs others
@@ -73,7 +71,7 @@ EMERGENCY_COMBAT_EMBARKATION,Emergency Combat Embarkation,"In target of a CHARGE
 ENMITY_FOR_THE_UNWORTHY,Enmity for the Unworthy,"IF being LEAD, +1 TO HIT vs CHARACTERS [+1 TO HIT] [+1 TO HIT]","Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
 EVADE_AND_SURVIVE,Evade and Survive,"OPPONENT MOVEMENT — Enemy ends a move within 8"" while unengaged → Normal Move D3+3"".","Once per phase, per unit — In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a Normal Move of up to D3+3"".",,,2,
 EXECUTIONER,Executioner,If Target below half strength +1 TO HIT. [+1 TO HIT] [+1 TO HIT],"Each time this model makes an attack that targets a unit that is Below Half-strength, add 1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
-EXHORTATION_OF_RAGE,Exhortation of Rage,"Fight: engaged enemy suffers D3 mortal wounds on 4-5, or 3 mortal wounds on 6.","Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.",,,2,
+EXHORTATION_OF_RAGE,Exhortation of Rage,At/below half-strength — MELEE re-roll Wound rolls.,"While this unit is at or below half-strength, this unit’s melee attacks can re-roll wound rolls.",,,2,
 FEARSOME_ASSAULT,Fearsome Assault,"In Engagement, Enemy must take LD test -1","At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test, subtracting 1 from that test.",,,2,
 FEROCIOUS_ASSAULT,Ferocious Assault,+1 TO HIT with Las Talon vs MONSTER/VEHICLE [+1 TO HIT],"Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll.",[+1 TO HIT],[Range - Combat Modifiers],2,
 FIGHTS_FIRST,Fights First,Enabled only if all models have Fight First. [FIGHTS FIRST],"Units with this ability that are eligible to fight, do so in the Fight First step, provided that all models in the unit has that ability.",[FIGHTS FIRST],[Unit Rules],2,
@@ -124,7 +122,7 @@ Jump Intercessors, Vanguard Vets",Leader: This model can be attached to the foll
 LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
-LITANY_OF_HATE,Litany of Hate,Add +1 to Wound for this unit’s melee weapons [+1 TO WOUND],This unit’s melee weapons have +1 to Wound rolls.,[+1 TO WOUND],[Melee - Combat Modifiers],2,
+LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],This unit’s melee attacks have [LANCE].,[LANCE],[Melee - Weapon Rules],2,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away. [LONE OPERATIVE]","Cannot be shot at if 12"" away.",[LONE OPERATIVE],[Unit Rules],2,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,2,
 LORD_OF_THE_PYROCLASTS,Lord of the Pyroclasts,Enemy ENGAGED with this unit: -1 OC,"While an enemy unit is engaged with this unit, that enemy unit has -1 OC.",,,2,1
@@ -185,7 +183,7 @@ Every other model is equipped with: bolt pistol; plasma talon; Black Knight comb
 RECITATION_OF_FAITH,Recitation of Faith,4+ FNP vs Mortal Wounds [FNP 4+],"While this model is leading a unit, models in that unit have the FNP 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],2,
 REFUSE_TO_YIELD,Refuse to Yield,Receives 1/2 Damage [INCOMING -1 D],"Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],2,
 RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],This unit has +1 Objective Control.,[+1 OC],[Unit Stats],2,
-RELIC_SHIELD,Relic Shield,"Add +1 Wound, included in profile [+1 W]",This model has +1 Wound. This is included in its profile.,[+1 W],[Unit Stats],2,
+RELIC_SHIELD,Relic Shield,+1 W [+1 W],This model has +1W.,[+1 W],[Unit Stats],2,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,,2,
 RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,Attack Strength higher Toughness: -1 to Wound.,,,2,1
 ROTATING_DEATH,Rotating Death,Vs. INFANTRY. Gatling Cannon SUSTAINED HITS 2 [SUSTAINED HITS 2],"This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting INFANTRY units.
@@ -556,3 +554,5 @@ Equipped: 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon; 1 Twin Bolt Rifle"
 
 This model is equipped with: 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon; 1 Twin Bolt Rifle.",,,3,0
 DEMI_COMPANY_COMMANDER,Demi-company Commander,CAPTAIN uses Strategic Acumen — selected combat doctrine active for this unit until next COMMAND.,"Once per turn, per unit — When a friendly CAPTAIN unit uses its Strategic Acumen ability, you can use this ability. If you do, the selected combat doctrine is active for this unit until the start of your next Command phase.",,,2,
+SPIRITUAL_LEADER,Spiritual Leader,"Once per battle round — any phase start, friendly battle-shocked ADEPTUS ASTARTES within 6"" is no longer battle-shocked.","Once per battle round, per unit — At the start of any phase, you can select one friendly battle-shocked ADEPTUS ASTARTES unit within 6"" of this model. That unit is no longer battle-shocked.",,,2,
+ZEALOUS_FORTITUDE,Zealous Fortitude,FNP 4+ against mortal wounds.,This unit has Feel No Pain 4+ against mortal wounds.,,,2,

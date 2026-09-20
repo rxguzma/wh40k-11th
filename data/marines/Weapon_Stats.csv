@@ -1,5 +1,5 @@
 Weapon_ID,Weapon Name,"R""",A,WS,St,AP,D
-ABSOLVOR_BOLT_PISTOL,Absolvor bolt pistol,"18""",1,3,5,-1,2
+ABSOLVOR_BOLT_PISTOL,Absolvor Bolt Pistol,"18""",1,3+,5,-2,2
 ARMA_LUMINIS_BOLT,Arma Luminis – bolt,"12""",4,2,4,-1,2
 ARMA_LUMINIS_PLASMA,Arma Luminis – plasma,"12""",2,2,8,-3,2
 ARMORED_TRACKS_LAND_RAIDER,Armored Tracks (Land Raider),-,6,4,8,0,1
@@ -44,7 +44,7 @@ COMBAT_KNIFE_REIVERS,Combat knife,-,4,3,4,-1,1
 COMBAT_KNIFE_SCOUTS,Combat knife,-,3,3,4,-1,1
 COMBI_WEAPON,Combi-weapon,"24""",1,4,4,0,1
 COMBI_WEAPON_LEADERS,Combi-weapon,"24""",1,3,4,0,1
-CROZIUS_ARCANUM,Crozius arcanum,-,5,2,6,-1,2
+CROZIUS_ARCANUM,Crozius Arcanum,-,5,2+,6,-1,2
 CYCLONE_MISSLINE_FRAG,Cyclone missline - frag,"36""",2D6,3,4,0,1
 CYCLONE_MISSLINE_KRAK,Cyclone missline - krak,"36""",2,3,9,-2,D6
 ASSAULT_CANNON_DEATHWING_TERMINATORS,Assault cannon,"24""",6,3,6,0,1
@@ -156,7 +156,7 @@ STERNGUARD_BOLT_PISTOL,Sternguard bolt pistol,"12""",1,3,4,0,1
 STERNGUARD_BOLT_RIFLE,Sternguard bolt rifle,"24""",2,3,4,-1,1
 STERNGUARD_HEAVY_BOLTER,Sternguard heavy bolter,"36""",3,4,5,-1,2
 STORM_BOLTER_LEADERS,Storm Bolter,"24""",2,2+,5,-1,1
-STORM_BOLTER_TERMINATORS,Storm bolter,"24""",2,3,4,0,1
+STORM_BOLTER_TERMINATORS,Storm Bolter,"24""",2,3+,5,-1,1
 STORM_BOLTER_X2,Storm bolter,"24""",4,3,4,0,1
 STORMFURY_MISSILE_LAUNCHER,Stormfury missile launcher,"48""",1,3,12,-3,D6+1
 STORMFURY_MISSILES,Stormfury missiles,"48""",1,2,12,-3,D6+1
@@ -175,7 +175,7 @@ THUNDER_HAMMER_TERMINATORS,Thunder hammer,-,3,3,8,2,2
 THUNDER_HAMMER_TROOPS,Thunder hammer (Sgt),-,3,4,8,-2,2
 THUNDERSTRIKE_LAS_TALON,Thunderstrike las-talon,"36""",2,2,9,-3,D6+1
 TWIN_ASSAULT_CANNON,Twin assault cannon,"24""",6,3,6,0,1
-TWIN_BOLT_RIFLE,Twin bolt rifle,"24""",2,3,4,-1,1
+TWIN_BOLT_RIFLE,Twin Bolt Rifle,"24""",2,3+,5,-1,1
 TWIN_HEAVY_BOLTER,Twin heavy bolter,"36""",3,3,5,-1,2
 TWIN_HEAVY_ONSLAUGHT_GATLING_CANNON,Twin heavy onslaught gatling cannon,"24""",12,3,6,0,1
 TWIN_ICARUS_IRONHAIL_HEAVY_STUBBER,Twin Icarus ironhail heavy stubber,"36""",3,3,4,0,1
