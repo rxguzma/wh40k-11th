@@ -58,13 +58,13 @@ FEALTY_SWEEP,Fealty – sweep,-,16,2,6,-3,2
 FLAMESTORM_CANNON_X2,Flamestorm cannon x2,"12""",2D6+6,N/A,6,-2,2
 FLAMESTORM_GAUNTLETS,Flamestorm gauntlets,"12""",D6+1,N/A,4,0,1
 FORCE_WEAPON,Force Weapon,-,4,3+,6,-2,2
-FORGE_BOLTER,Forge Bolter,"24""",3,2,5,-1,2
+FORGE_BOLTER,Forge Bolter,"24""",3,2+,5,-1,2
 FRAG_CANNON_X1,Frag cannon x1,"18""",D3,4,7,-1,2
 FRAG_CANNON_X2,Frag cannon x2,"18""",D3,4,7,-1,2
 FRAGSTORM_GRENADE_LAUNCHER,Fragstorm grenade launcher,"18""",D6,3,4,0,1
 GAUNTLET_OF_THE_FORGE,Gauntlet of the Forge,"12""",D6+3,-,6,-1,1
 GORGONS_WRATH,Gorgon’s Wrath,"36""",3,2+,6,-1,2
-GRAV_PISTOL,Grav-pistol,"12""",1,2,4,-1,2
+GRAV_PISTOL,Grav-pistol,"12""",2,2+,2,-1,3
 GREAT_WEAPON_OF_THE_UNFORGIVEN,Great weapon of the Unforgiven,-,5,2,6,-2,2
 HAMMERSTRIKE_MISSILE_LAUNCHER,Hammerstrike missile launcher,"36""",2,3,9,-3,D6
 HARROWHAND,Harrowhand,-,6,3+,7,-2,2
@@ -115,7 +115,7 @@ MULTI_MELTA_ERADICATORS,Multi-melta,"18""",2,4,9,-4,D6
 MULTI_MELTA_VEHICLE,Multi-melta,"18""",2,3,9,-4,D6
 NEURAL_SHREDDER,Neural shredder,"12""",D6,-,5,-2,1
 OCCULUS_BOLT_CARBINE,Occulus bolt carbine,"24""",2,3,4,0,1
-OMNISSIAN_POWER_AXE,Omnissian power axe,-,4,3,6,-2,2
+OMNISSIAN_POWER_AXE,Omnissian Power Axe and Servo-arm,-,5,3+,6,-2,2
 ONSLAUGHT_GATLING_CANNON,Onslaught gatling cannon,"24""",8,3,5,0,1
 PAIRED_COMBAT_BLADES,Paired combat blades,-,3,3,4,-1,1
 PAIRED_COMBAT_BLADES_LIEUTENANT,Paired Combat Blades,-,6,2+,5,-1,1
@@ -289,3 +289,6 @@ SUBODEN_KHAN_STORMTOOTH,Stormtooth,-,6,2+,7,-3,2
 CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE,Twin Bolt Rifle,"24""",2,2+,5,-1,1
 LIEUTENANT_COMBI_WEAPON_BOLTER,Combi-weapon - Bolter,"24""",2,2+,5,-1,2
 LIEUTENANT_COMBI_WEAPON_FLAMER,Combi-weapon - Flamer,"12""",3,N/A,5,-1,1
+ANCIENT_POWER_WEAPON,Power Weapon,-,5,3+,5,-2,1
+RELICS_OF_BATTLE,Relics of Battle,-,4,3+,5,-2,2
+ANCIENT_TERMINATOR_MASTER_CRAFTED_POWER_WEAPON,Master-crafted Power Weapon,-,5,3+,5,-2,2
