@@ -253,3 +253,23 @@ MOUNTED / SPEEDER: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an e
 TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
 
 EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
+space_marines_ironclad_champions_stratagem_adamantine_terror_1cp,space_marines_ironclad_champions,ADAMANTINE TERROR,1,"Start FIGHT
+DREADNOUGHT: Engaged enemy units take BATTLE-SHOCK at -1","WHEN: Start of the Fight phase.
+
+TARGET: One friendly DREADNOUGHT unit.
+
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_ironclad_champions_stratagem_mercy_is_weakness_1cp,space_marines_ironclad_champions,MERCY IS WEAKNESS,1,"DREADNOUGHT SHOOTING / FIGHT
+Attacks: LETHAL HITS or SUSTAINED HITS 1","WHEN: Your Shooting phase or the Fight phase, when a friendly DREADNOUGHT unit is selected to attack.
+
+TARGET: That DREADNOUGHT unit.
+
+EFFECT: Your unit’s attacks have:
+• [LETHAL HITS].
+• Or: [SUSTAINED HITS 1].",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_ironclad_champions_stratagem_unstoppable_advance_1cp,space_marines_ironclad_champions,UNSTOPPABLE ADVANCE,1,"MOVEMENT / CHARGE
+DREADNOUGHT: MOBILE","WHEN: Your Movement/Charge phase, when a friendly DREADNOUGHT unit is selected to move or declares a charge.
+
+TARGET: That DREADNOUGHT unit.
+
+EFFECT: Your unit has MOBILE.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,

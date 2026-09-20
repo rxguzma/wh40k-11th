@@ -84,3 +84,7 @@ space_marines_stormlance_task_force_enhancement_auspex_triangulation_shrines_upg
 SHOOTING: Enemy within 12"" is SPOTTED
 SPOTTED: +3"" Detection Range","ADEPTUS ASTARTES SPEEDER unit only. At the start of your Shooting phase, select one visible enemy unit within 12"" of this unit. That enemy unit is spotted:
 • While a unit is spotted, that unit has +3"" detection range.",,,0,,,
+space_marines_ironclad_champions_enhancement_artificer_sarcophagus_upgrade,space_marines_ironclad_champions,ARTIFICER SARCOPHAGUS UPGRADE,,FALSE,"DREADNOUGHT only
+Attacks against unit: -1 D [INCOMING -1 D]",DREADNOUGHT unit only. Attacks that target this unit have -1 D.,[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_ironclad_champions_enhancement_venerable_champion_aura_upgrade,space_marines_ironclad_champions,VENERABLE CHAMPION (AURA) UPGRADE,,FALSE,"DREADNOUGHT only
+ASTARTES INFANTRY / MOUNTED within 6"": Re-roll Hit rolls of 1","DREADNOUGHT unit only. While a friendly ADEPTUS ASTARTES INFANTRY/MOUNTED unit is within 6"" of this unit, that unit’s attacks can re-roll hit rolls of 1.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
