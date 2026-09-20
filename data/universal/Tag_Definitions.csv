@@ -149,3 +149,8 @@ INFO_INTIMIDATING_MOTIVATION,INTIMIDATING MOTIVATION,Intimidating Motivation,Inf
 INFO_KEEP_HUNTIN,KEEP HUNTIN',Keep Huntin',Info Only,Display only,Keep Huntin' applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,921
 ACTION_WHILE_ENGAGED,ACTION while ENGAGED,Action While Engaged,Unit Rules,Unit,Unit can start an action while engaged.,TRUE,,,,,,
 UNIT,UNIT,Unit Section,Unit Rules,Unit,Propagates this Ability to every other Unit in the same saved section.,FALSE,,,,,,
+SHOOT,SHOOT,Shoot Display,Ability Control,Ability,Displays this Ability in the SHOOT section in VIEW.,FALSE,,,,,,
+MELEE,MELEE,Melee Display,Ability Control,Ability,Displays this Ability in the MELEE section in VIEW.,FALSE,,,,,,
+STATS,STATS,Unit Stats Control,Ability Control,Unit,Allows this Ability's structured Unit-stat effects to apply in VIEW.,FALSE,,,,,,
+WEAPONS,WEAPONS,Weapon Mechanics Control,Ability Control,Weapons,Allows this Ability's structured Weapon-stat and Weapon-rule effects to apply in VIEW.,FALSE,,,,,,
+ACTIVE,ACTIVE,Active Mechanics Control,Ability Control,Ability,Requires this Ability to be Active in VIEW before its permitted structured mechanics apply.,FALSE,,,,,,
