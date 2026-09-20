@@ -119,7 +119,7 @@ OCCULUS_BOLT_CARBINE,Occulus bolt carbine,"24""",2,3,4,0,1
 OMNISSIAN_POWER_AXE,Omnissian power axe,-,4,3,6,-2,2
 ONSLAUGHT_GATLING_CANNON,Onslaught gatling cannon,"24""",8,3,5,0,1
 PAIRED_COMBAT_BLADES,Paired combat blades,-,3,3,4,-1,1
-PAIRED_COMBAT_BLADES_LIEUTENANT,Paired combat blades,-,5,2,4,-1,1
+PAIRED_COMBAT_BLADES_LIEUTENANT,Paired Combat Blades,-,6,2+,5,-1,1
 PHASE_SWORD_AND_POISON_BLADES,Phase sword and poison blades,-,5,2,5,-4,2
 PLASMA_EXTERMINATORS_STANDARD,Plasma exterminators – standard,"18""",2,3,7,-2,2
 PLASMA_EXTERMINATORS_SUPERCHARGE,Plasma exterminators – supercharge,"18""",2,3,8,-3,3
@@ -203,7 +203,7 @@ MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted power weapon (Vangu
 THUNDER_HAMMER_JUMP_CAPTAIN,Thunder hammer,-,5,3+,8,-2,2
 TWIN_LAS_TALON,Twin las-talon,"36""",2,3+,10,-3,D6+1
 MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT,Master-crafted power weapon,-,5,2+,5,-2,2
-MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT,Master-crafted special issue bolt pistol,"12""",1,2+,4,-1,2
+MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT,Special-issue Bolt Pistol,"12""",1,2+,5,-2,2
 CAPTAIN_JUMP_HAND_FLAMER,Hand Flamer,"9""",3,N/A,4,0,1
 CAPTAIN_JUMP_ASTARTES_CHAINSWORD,Chainsword,-,8,2+,5,-1,1
 CAPTAIN_JUMP_RELIC_WEAPON,Relic Weapon,-,6,2+,6,-2,2
@@ -223,12 +223,12 @@ GRAVIS_CAPTAIN_RELIC_FIST,Relic fist,-,1,2,8,-2,2
 CAPTAIN_TERM_STORM_BOLTER,Storm bolter,"24""",2,2,4,0,1
 PHOBOS_CAPTAIN_INSTIGATOR_BOLT_CARBINE,Instigator bolt carbine,"24""",1,2,4,-2,2
 PHOBOS_CAPTAIN_COMBAT_KNIFE,Combat knife,-,6,2,4,-1,1
-LIEUTENANT_MASTER_CRAFTED_BOLTER,Master-crafted bolter,"24""",2,2,4,-1,2
+LIEUTENANT_MASTER_CRAFTED_BOLTER,Master-crafted Bolter,"24""",2,2+,5,-1,2
 LIEUTENANT_NEO_VOLKITE_PISTOL,Neo-volkite pistol,"12""",1,2,5,0,2
-LIEUTENANT_CLOSE_COMBAT_WEAPON,Close combat weapon,-,5,2,4,0,1
-LIEUTENANT_MASTER_CRAFTED_POWER_WEAPON,Master-crafted power weapon,-,5,2,5,-2,2
+LIEUTENANT_CLOSE_COMBAT_WEAPON,Ceramite Fists,-,5,2+,5,0,1
+LIEUTENANT_MASTER_CRAFTED_POWER_WEAPON,Master-crafted Power Weapon,-,5,2+,6,-2,2
 LIEUTENANT_PHOBOS_SCOPED_BOLT_CARBINE,Master-crafted scoped bolt carbine,"24""",2,2,4,0,2
-LIEUTENANT_PHOBOS_PAIRED_COMBAT_BLADES,Paired combat blades,-,5,2,4,-1,1
+LIEUTENANT_PHOBOS_PAIRED_COMBAT_BLADES,Monomolecular Combat Blades,-,6,2+,5,-1,1
 CHAPLAIN_JUMP_BOLTGUN,Boltgun,"24""",2,3,4,0,1
 CHAPLAIN_JUMP_GRAV_PISTOL,Grav-pistol,"12""",1,3,4,-1,2
 CHAPLAIN_JUMP_INFERNO_PISTOL,Inferno pistol,"6""",1,3,8,-4,D3
@@ -290,3 +290,5 @@ SUBODEN_KHAN_ONSLAUGHT_GATLING_CANNON,Onslaught Gatling Cannon,"24""",8,2+,5,-1,
 SUBODEN_KHAN_POWER_SWORD,Power Sword,-,3,2+,5,-2,1
 SUBODEN_KHAN_STORMTOOTH,Stormtooth,-,6,2+,7,-3,2
 CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE,Twin Bolt Rifle,"24""",2,2+,5,-1,1
+LIEUTENANT_COMBI_WEAPON_BOLTER,Combi-weapon - Bolter,"24""",2,2+,5,-1,2
+LIEUTENANT_COMBI_WEAPON_FLAMER,Combi-weapon - Flamer,"12""",3,N/A,5,-1,1
