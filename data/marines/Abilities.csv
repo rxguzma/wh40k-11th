@@ -338,7 +338,7 @@ ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Storm Shield,Storm Shield +1 W each [+
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W [+1 W],Add 1 to the Wounds characteristic of the bearer.,[STATS] [+1 W],[Unit Stats],3,
 BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING [UNIT] [+1 To Hit] if unit or target is within an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
 This unit is within range of an objective.
-The target of that attack is within range of an objective.","ACTIVE, SHOOT, WEAPONS, +1 TO HIT",[Combat Modifiers],1,0
+The target of that attack is within range of an objective.","UNIT, ACTIVE, SHOOT, WEAPONS, +1 TO HIT",[Combat Modifiers],2,0
 TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
 Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,2,
