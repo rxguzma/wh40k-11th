@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MOBILE_FORTRESS","column":"Short_Description","value":"ANYTIME — [INCOMING RANGE -1 D]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DREAD_ARD","column":"Short_Description","value":"ANYTIME — [INCOMING -1 D]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DA_BIGGER_DEY_IZ","column":"Short_Description","value":"vs MONSTER / VEHICLE — MELEE [RE-ROLL ALL WOUNDS]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"DEFF_FROM_ABOVE","column":"Short_Description","value":"After INGRESS: RANGE [+1 TO HIT]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"PROPHET_OF_DA_GREAT_WAAAGH","column":"Short_Description","value":"AURA: ORKS within 6\" — MELEE [+1 TO HIT] [+1 TO WOUND]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"PULSA_ROKKIT","column":"Short_Description","value":"Once per battle: vs MONSTER / VEHICLE within 24\" — RANGE [+1 AP] [LETHAL HITS]"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"THROTTLEROCKKIT_SHOKKA_ENGINE","column":"Short_Description","value":"Command:\\n- Turbo Engine: Advance / Fall Back and Charge\\n- Shokk Attack: Back to Reserves\\n- Pulse Jet: Advance [+6 M”]; move through models and Terrain"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
