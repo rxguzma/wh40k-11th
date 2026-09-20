@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CAPTAIN_ON_BIKE_INTO_THE_FRAY","mode":"insert","sets":{"Ability Name":"Into the Fray","Short_Description":"Charge\u003a melee attacks gain [CLEAVE 1].","Long_Description":"If this unit made a Charge move this turn, its melee attacks have [CLEAVE 1].","Tags":"[CLEAVE 1]","Tag Categories":"[Melee - Weapon Rules]","Visibility_ID":"2","Default_Active":"1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"LEADER_CAPTAIN_ON_BIKE","mode":"insert","sets":{"Ability Name":"Leader","Short_Description":"Leader","Long_Description":"This unit has the Leader core ability.","Visibility_ID":"3","Default_Active":"0"}},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CAPTAIN_ON_BIKE_UNIT_COMPOSITION","mode":"insert","sets":{"Ability Name":"Unit Composition","Short_Description":"1 Captain on Bike model\\nEquipped\u003a 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon; 1 Twin Bolt Rifle","Long_Description":"1 Captain on Bike model.\\n\\nThis model is equipped with\u003a 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon; 1 Twin Bolt Rifle.","Visibility_ID":"3","Default_Active":"0"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
