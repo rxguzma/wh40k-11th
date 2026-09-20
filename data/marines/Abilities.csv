@@ -117,9 +117,6 @@ LANCE,LANCE,Add +1 TO WOUND if the bearer charged this turn. [+1 TO WOUND],"Each
 LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Bladeguard Veteran Squad; Company Heroes; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
-LEADER_LIBRARIAN,Leader: Librarian,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
 LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],This unit’s melee attacks have [LANCE].,,,2,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away. [LONE OPERATIVE]","Cannot be shot at if 12"" away.",[LONE OPERATIVE],[Unit Rules],2,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,2,
@@ -144,7 +141,6 @@ MATHAMMER_DEATHWING_KNIGHTS,Mathammer (Deathwing Knights),"With a Chaplain, afte
 
 Great weapon of the Unforgiven is better vs Invuls as it bypasses the Saves.",,,2,
 MENTAL_FORTRESS,Mental Fortress,This unit has a 4+ invulnerable save [INVULNERABLE SAVE 4+],This unit has a 4+ invulnerable save.,[INVULNERABLE SAVE 4+],[Unit Rules],2,
-MENTAL_FORTRESS_PSYCHIC,Mental Fortress (Psychic),"If LEADING, unit 4++ [INVULNERABLE SAVE 4+]","While this model is leading a unit, models in that unit have a 4+ invulnerable save.",[INVULNERABLE SAVE 4+],[Unit Rules],2,
 METEORIC_DESCENT,Meteoric Descent,"Deep Strike within 6"" horizontally. Cannot Charge. [DEEP STRIKE]","When this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6"" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",[DEEP STRIKE],[Unit Rules],2,
 MULTI_SPECTRUM_ARRAY,Multi-spectrum Array,+1 TO HIT for Army [+1 TO HIT] [+1 TO HIT],"In Shooting, after this unit has shot, select one enemy that was hit. Until the end of the phase, friendly adds +1 to the Hit roll.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],2,
 NARTHECIUM_APOTHECARY,Narthecium (Apothecary),Bring back model,"Narthecium (Ravenwing Command - Apothecary): While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",,,2,
@@ -353,12 +349,6 @@ LEADER_JUDICIAR,Leader: Judiciar,"Can Lead: Most INFANTRY like
 Intercessors, Bladeguard Vets
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD, VANGUARD VETERAN SQUAD, ASSAULT SQUAD, CRUSADER SQUAD, SWORD BRETHREN SQUAD, INNER CIRCLE COMPANIONS, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, SKYCLAWS, WOLF GUARD",,,3,
 MELEE_INVULNERABLE_SAVE_4,Invulnerable Save (Melee),MELEE: 4++ [INVULNERABLE SAVE 4+],This model has a 4+ invulnerable save against melee attacks.,[INVULNERABLE SAVE 4+],[Unit Rules],2,
-LEADER_LIBRARIAN_IN_PHOBOS_ARMOUR,Leader: Librarian in Phobos Armour,"Can Lead: PHOBOS
-Infiltrators, Incursors, Reivers
-Eliminators, Scouts","LEADER: ELIMINATOR SQUAD, INCURSOR SQUAD, INFILTRATOR SQUAD, REIVER SQUAD, SCOUT SQUAD, SPECTRUS KILL TEAM",,,3,
-LEADER_LIBRARIAN_IN_TERMINATOR_ARMOUR,Leader: Librarian in Terminator Armour,"Can Lead: TERMINATORS
-Terminators, Assault Terminators
-Deathwing Knights","LEADER: DEATHWATCH TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
 LEADER_TECHMARINE,Leader: Techmarine,"Can Lead: INFANTRY like
 Intercessors, Devastators
 Assault Intercessors, Tactical","LEADER: ASSAULT INTERCESSOR SQUAD, CRUSADER SQUAD, DECIMUS KILL TEAM, DESOLATION SQUAD, DEVASTATOR SQUAD, FORTIS KILL TEAM, INTERCESSOR SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
