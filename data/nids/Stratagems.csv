@@ -3,7 +3,7 @@ tyranids_ambush_predators_stratagem_counterpredation_1cp,tyranids_ambush_predato
 
 TARGET: That unit.
 
-EFFECT: Your unit’s attacks that target a hidden unit have +1 Strength and AP.",[+1 S] [+1 AP],[Melee - Weapon Stats] [Melee - Weapon Stats],,,"DEATHLEAPER, LICTOR, NEUROLICTOR, VON RYAN’S LEAPERS",
+EFFECT: Your unit’s attacks that target a hidden unit have +1 Strength and AP.",[+1 S] [+1 AP],[Weapon Stats] [Weapon Stats],,,"DEATHLEAPER, LICTOR, NEUROLICTOR, VON RYAN’S LEAPERS",
 tyranids_ambush_predators_stratagem_hypersensory_adaptations_1cp,tyranids_ambush_predators,Hypersensory Adaptations,1,"SHOOTING: Select a visible enemy within 12""; it has +6"" detection range until your unit has shot.","WHEN: Start of your Shooting phase.
 
 TARGET: One friendly DEATHLEAPER/LICTOR/NEUROLICTOR/VON RYAN’S LEAPERS unit.
@@ -19,7 +19,7 @@ Critical Hits on 5+ [CRITS 5+]","WHEN: Fight phase.
 
 TARGET: Up to two Tyranids units from your army that are within Synapse Range of your army and are eligible to fight, or one other Tyranids unit from your army that is eligible to fight.
 
-EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",[CRITS 5+],[Melee - Weapon Rules],0,TYRANIDS,,
+EFFECT: Until the end of the phase, each time a model in one of those selected units makes an attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",[CRITS 5+],[Weapon Rules],0,TYRANIDS,,
 tyranids_invasion_fleet_stratagem_death_frenzy,tyranids_invasion_fleet,Death Frenzy,1,Fight on Death on 4+ [FIGHT ON DEATH 4+],"WHEN: Fight phase, just after an enemy unit has selected its targets.
 
 TARGET: One Tyranids unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
@@ -66,7 +66,7 @@ SUSTAINED 1 and IGNORES COVER [SUSTAINED HITS 1] [IGNORES COVER]","WHEN: End of 
 
 TARGET: One Tyranids unit from your army that was set up as Reinforcements this turn.
 
-EFFECT: Until the end of your next Fight phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.",[SUSTAINED HITS 1] [IGNORES COVER],[Range - Weapon Rules] [Range - Weapon Rules],,TYRANIDS,,
+EFFECT: Until the end of your next Fight phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.",[SUSTAINED HITS 1] [IGNORES COVER],[Weapon Rules] [Range - Weapon Rules],,TYRANIDS,,
 tyranids_subterranean_assault_stratagem_tunnel_network,tyranids_subterranean_assault,Tunnel Network,1,"Move from one Tunnel to another.
 ALWAYS AFTER RAPID INGRESS [INGRESS]","WHEN: End of your Movement phase.
 
@@ -96,7 +96,7 @@ tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,tyranids_talons_of_t
 
 TARGET: That NORN ASSIMILATOR/NORN EMISSARY unit.
 
-EFFECT: Your unit’s melee attacks have +2 S.",[+2 S],[Melee - Weapon Stats],,,"NORN ASSIMILATOR, NORN EMISSARY",
+EFFECT: Your unit’s melee attacks have +2 S.",[+2 S],[Weapon Stats],,,"NORN ASSIMILATOR, NORN EMISSARY",
 tyranids_talons_of_the_norn_queen_stratagem_tanglestrike_rounds_1cp,tyranids_talons_of_the_norn_queen,Tanglestrike Rounds,1,"SHOOTING: After a NORN ASSIMILATOR has shot, select an enemy hit by those attacks; that enemy is tethered until your next Command phase and has –2″ M.","WHEN: Your Shooting phase, when a friendly NORN ASSIMILATOR unit has shot.
 
 TARGET: That NORN ASSIMILATOR unit.
@@ -108,12 +108,12 @@ If battle-shocked +1 To Wound [+1 TO HIT] [+1 TO HIT]","WHEN: Your Shooting phas
 
 TARGET: That VANGUARD INVADER unit.
 
-EFFECT: Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.",[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],,VANGUARD INVADER,,
+EFFECT: Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.",[+1 TO HIT] [+1 TO HIT],[Combat Modifiers] [Combat Modifiers],,VANGUARD INVADER,,
 tyranids_vanguard_onslaught_stratagem_assassin_beasts,tyranids_vanguard_onslaught,Assassin Beasts,1,Unit gets PRECISION [PRECISION] [PRECISION],"WHEN: Fight phase.
 
 TARGET: One VANGUARD INVADER INFANTRY unit from your army that has not been selected to fight this phase.
 
-EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Melee - Weapon Rules] [Range - Weapon Rules],0,"VANGUARD INVADER, INFANTRY",,
+EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",[PRECISION] [PRECISION],[Weapon Rules] [Weapon Rules],0,"VANGUARD INVADER, INFANTRY",,
 tyranids_vanguard_onslaught_stratagem_seeded_broods,tyranids_vanguard_onslaught,Seeded Broods,1,Arrive early from Reserves,"WHEN: Your Movement phase.
 
 TARGET: One TYRANIDS unit from your army that is in Reserves, or up to two VANGUARD INVADER units from your army that are in Reserves.
