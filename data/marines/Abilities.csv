@@ -203,7 +203,6 @@ SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE","This unit h
 • 3"" detection range.",,,2,1
 SHIELD_DOME,Shield Dome,5++ [INVULNERABLE SAVE 5+],The bearer has a 5+ invulnerable save.,[INVULNERABLE SAVE 5+],[Unit Rules],2,
 SHOCK_ASSAULT,Shock Assault,RE-ROLL 1S TO WOUND or RE-ROLL ALL WOUNDS if on an objective. [RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],"Each time a model in this unit targets an enemy unit with a - attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers] [Melee - Combat Modifiers],2,
-SILENT_FURY,Silent Fury,+1 Attacks for every character killed,"Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",,,2,
 SKILLED_RIDERS,Skilled Riders,MOBILE,This unit has MOBILE.,,,2,1
 SPEAR_OF_CHOGORIS,Spear of Chogoris,"RANGED: ASSAULT
 ADVANCE: eligible to CHARGE
@@ -345,9 +344,6 @@ Sanguinary Guard","LEADER: ASSAULT INTERCESSORS WITH JUMP PACKS, SANGUINARY GUAR
 LEADER_CHAPLAIN,Leader: Chaplain,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, CRUSADER SQUAD, DEATH COMPANY MARINES, DEATH COMPANY MARINES WITH BOLT RIFLES, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
-LEADER_JUDICIAR,Leader: Judiciar,"Can Lead: Most INFANTRY like
-Intercessors, Bladeguard Vets
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD, VANGUARD VETERAN SQUAD, ASSAULT SQUAD, CRUSADER SQUAD, SWORD BRETHREN SQUAD, INNER CIRCLE COMPANIONS, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, SKYCLAWS, WOLF GUARD",,,3,
 MELEE_INVULNERABLE_SAVE_4,Psychic Ward,PSYCHIC attacks — 4+ InvS.,This model has a 4+ invulnerable save against psychic attacks.,,,2,
 LEADER_TECHMARINE,Leader: Techmarine,"Can Lead: INFANTRY like
 Intercessors, Devastators
@@ -358,14 +354,8 @@ REPOSITION_UNDER_COVERING_FIRE,Reposition Under Covering Fire,"After shooting, i
 SHROUDING,Shrouding,ENEMY targets UNIT — psychic roll; on 1 battle-shocked; otherwise attacks -1 To Hit this phase.,"Psychic level 1 — When an enemy unit targets this unit, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. On a 1, this unit is battle-shocked. Otherwise, attacks that target this unit have -1 to hit rolls until the end of the phase.",,,2,
 MASTER_OF_DECEIT,Master of Deceit,After deployment: redeploy up to 3 ADEPTUS ASTARTES INFANTRY units; may enter Strategic Reserves. [REDEPLOY 3],"After both players have deployed, select up to three friendly ADEPTUS ASTARTES INFANTRY units and redeploy them. Any selected unit may instead be placed into Strategic Reserves, regardless of the number already there.",[REDEPLOY 3],[Movement Rules],2,
 APOTHECARY_NARTHECIUM,Narthecium,COMMAND — UNIT heals D3+1 wounds.,"In your Command phase, this unit heals D3+1 wounds.",,,2,
-APOTHECARY_GENE_SEED_RECOVERY,Gene-seed Recovery,"Bodyguard destroyed: roll D6; on 2+, gain 1CP. [GAIN 1 CP]","When this model’s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP.",[GAIN 1 CP],[Unit Rules],2,
-APOTHECARY_SUPPORT,Support,"Can Support: Most INFANTRY like
-Intercessors, Hellblasters, Infernus,
-Sternguard Vets, Vanguard Vets","This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad; Vanguard Veteran Squad; Assault Squad; Crusader Squad; Sword Brethren Squad; Inner Circle Companions; Deathwatch Veterans; Decimus Kill Team; Fortis Kill Team; Long Fangs; Skyclaws; Wolf Guard. You can attach this model to one of these units even if one CAPTAIN, CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths.",,,3,
 DEPLOYMENT_COMPLETE,Deployment Complete,After setup and disembarkation: no units can embark for the rest of the battle.,"Once this unit has been set up on the battlefield and all embarked units have disembarked, units cannot embark within this TRANSPORT for the rest of the battle.",,,2,
 SURGICAL_PRECISION,Vivispectral Analysis Targeting,UNIT attacks have [LETHAL HITS:non-VEHICLE].,This unit’s attacks have [LETHAL HITS:non-VEHICLE].,,,2,
-VIVISPECTRUM,Vivispectrum,Destroy enemy in melee: this model becomes OC 9,"If this model’s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",,,2,
-APOTHECARY_BIOLOGIS_SUPPORT,Support,"Can Support: Aggressors, Eradicators, Heavy Intercessors, Indomitor Kill Team",This model can be attached to the following units: Aggressor Squad; Eradicator Squad; Heavy Intercessor Squad; Indomitor Kill Team.,,,3,
 ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Storm Shield,Storm Shield +1 W each [+1 W],Each model equipped with a Storm Shield has +1 Wound.,[+1 W],[Unit Stats],3,
 REDEMPTOR_MACRO_PLASMA_POINTS,Macro Plasma Incinerator,Each Macro Plasma Incinerator +10 Pts per model [+10 Pts],Each model in this unit equipped with a Macro Plasma Incinerator costs +10 points.,[+10 Pts],[Points],3,
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W [+1 W],Add 1 to the Wounds characteristic of the bearer.,[+1 W],[Unit Stats],3,
