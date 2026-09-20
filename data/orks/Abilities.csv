@@ -7,9 +7,9 @@ CLOSE-QUARTERS,CLOSE-QUARTERS,Can shoot while engaged; must target engaged enemy
 COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Lootas.
 
 Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon.",,,0,1,
-DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,MELEE vs MONSTER / VEHICLE [RE-ROLL ALL WOUNDS],This unit's melee attacks that target a MONSTER / VEHICLE unit can re-roll wound rolls.,[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],0,1,0
+DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,vs MONSTER / VEHICLE — MELEE [RE-ROLL ALL WOUNDS],This unit's melee attacks that target a MONSTER / VEHICLE unit can re-roll wound rolls.,[RE-ROLL ALL WOUNDS],[Melee - Combat Modifiers],0,1,0
 DATS_OUR_LOOT,Dat’s Our Loot!,[RE-ROLL 1S TO HIT]. If on Objective: [RE-ROLL ALL HITS],"Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is within range of an objective marker, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Range - Combat Modifiers] [Range - Combat Modifiers],0,1,
-DEFF_FROM_ABOVE,Deff from Above,After Ingress — RANGE [+1 TO HIT],"In your Shooting phase, if this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
+DEFF_FROM_ABOVE,Deff from Above,After INGRESS\u003A RANGE [+1 TO HIT],"In your Shooting phase, if this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[+1 TO HIT],[Range - Combat Modifiers],0,1,0
 DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no saves [DEVASTATING WOUNDS] [DEVASTATING WOUNDS],"Each time an attack with this weapon scores a Critical Wound, no saving throw can be made and the target suffers mortal wounds equal to the weapon’s Damage characteristic.",[DEVASTATING WOUNDS] [DEVASTATING WOUNDS],[Melee - Weapon Rules] [Range - Weapon Rules],0,1,
 DOKS_TOOLZ,Dok’s Toolz,ANYTIME [FNP 5+],Models in his unit have the FNP 5+ ability.,[FNP 5+],[Unit Rules],0,2,1
 FIXIT_DA_GROT,Fixit da Grot,Command: regain D3 lost wounds,"At the start of your Command phase, this model regains up to D3 lost wounds.",,,0,1,
@@ -35,11 +35,11 @@ If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - If this unit is RILED UP, [SUSTAINED HITS 1]",[IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Range - Weapon Rules],0,1,
 ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],0,2,
-PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: Friendly ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
+PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA\u003A ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
 - +1 to wound rolls",[+1 TO HIT] [+1 TO WOUND],[Melee - Combat Modifiers] [Melee - Combat Modifiers],0,1,0
 PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,,0,1,
-PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
+PULSA_ROKKIT,Pulsa Rokkit,"Once per battle\u003A vs MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
 - +1 AP
 - [LETHAL HITS].",[+1 AP] [LETHAL HITS],[Range - Weapon Stats] [Range - Weapon Rules],0,1,0
 PYROMANIAKS,Pyromaniaks,"[RE-ROLL 1S TO WOUND] if within 6"". If on Objective: [RE-ROLL ALL WOUNDS]","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Range - Combat Modifiers] [Range - Combat Modifiers],0,1,
@@ -54,10 +54,10 @@ SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This mod
 SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,,9,3,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
 Control Objective = Secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,0,1,
-THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
-- Turbo Engine: Adv or Fallback and Charge
-- Shokk Attack: Back to Reserves
-- Pulse Jet: Auto 6"" Adv + Move thru models and Terrain [+6 M”]","In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
+THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command\u003A
+- Turbo Engine\u003A Advance / Fall Back and Charge
+- Shokk Attack\u003A Back to Reserves
+- Pulse Jet\u003A Advance [+6 M”]; move through models and Terrain","In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
 
 Turbo Engine: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back.
 
