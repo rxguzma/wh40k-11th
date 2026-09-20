@@ -273,3 +273,9 @@ DREADNOUGHT: MOBILE","WHEN: Your Movement/Charge phase, when a friendly DREADNOU
 TARGET: That DREADNOUGHT unit.
 
 EFFECT: Your unit has MOBILE.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_medusas_wrath_stratagem_ancient_fury,space_marines_medusas_wrath,ANCIENT FURY,1,COMMAND DREADNOUGHT until next COMMAND — [+1 M] [+1 T] [+1 LD] [+1 OC] [+1 To Hit].,,"ACTIVE, STATS, SHOOT, MELEE, WEAPONS, +1 M, +1 T, +1 LD, +1 OC, +1 TO HIT",,0,DREADNOUGHT,,
+space_marines_medusas_wrath_stratagem_spirits_of_iron,space_marines_medusas_wrath,SPIRITS OF IRON,1,Unit gets FNP 5+ vs MORTAL WOUNDS for phase.,,ACTIVE,,0,,,
+space_marines_medusas_wrath_stratagem_mercy_is_weakness,space_marines_medusas_wrath,MERCY IS WEAKNESS,1,SHOOTING/FIGHT — attacks gain [SUSTAINED HITS 1]; VEHICLE also +1 to Wound.,,"ACTIVE, SHOOT, MELEE, WEAPONS, SUSTAINED HITS 1",,0,,,
+space_marines_medusas_wrath_stratagem_unbowed_conviction,space_marines_medusas_wrath,UNBOWED CONVICTION,1,COMMAND below Starting Strength — ignore BS/WS/Hit/Wound modifiers for round.,,ACTIVE,,0,,,
+space_marines_medusas_wrath_stratagem_power_of_the_machine_spirit,space_marines_medusas_wrath,POWER OF THE MACHINE SPIRIT,1,After enemy SHOOTS VEHICLE — SNAP SHOOT back; at/below HALF-STRENGTH shoot normally.,,"ACTIVE, SHOOT",,0,VEHICLE,,
+space_marines_medusas_wrath_stratagem_vengeful_animus,space_marines_medusas_wrath,VENGEFUL ANIMUS,1,Automatically trigger DEADLY DEMISE.,,ACTIVE,,0,,,

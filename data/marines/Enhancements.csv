@@ -88,3 +88,7 @@ space_marines_ironclad_champions_enhancement_artificer_sarcophagus_upgrade,space
 Attacks against unit: -1 D [INCOMING -1 D]",DREADNOUGHT unit only. Attacks that target this unit have -1 D.,[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,DREADNOUGHT,
 space_marines_ironclad_champions_enhancement_venerable_champion_aura_upgrade,space_marines_ironclad_champions,VENERABLE CHAMPION (AURA) UPGRADE,,FALSE,"DREADNOUGHT only
 ASTARTES INFANTRY / MOUNTED within 6"": Re-roll Hit rolls of 1","DREADNOUGHT unit only. While a friendly ADEPTUS ASTARTES INFANTRY/MOUNTED unit is within 6"" of this unit, that unit’s attacks can re-roll hit rolls of 1.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_medusas_wrath_enhancement_adept_of_the_omnissiah,space_marines_medusas_wrath,ADEPT OF THE OMNISSIAH,25,0,"Enemy attacks — VEHICLE within 6"" gets [FNP 5+] until those attacks end.",,"ACTIVE, FNP 5+",,0,TECHMARINE,,
+space_marines_medusas_wrath_enhancement_master_of_the_machine_war,space_marines_medusas_wrath,MASTER OF THE MACHINE WAR,25,0,"COMMAND — VEHICLE within 6"" gains DEVASTATOR or TACTICAL DOCTRINE until next COMMAND.",,ACTIVE,,0,,,
+space_marines_medusas_wrath_enhancement_target_augury_web,space_marines_medusas_wrath,TARGET AUGURY WEB,30,0,"COMMAND — VEHICLE within 3"" attacks gain [LETHAL HITS] until next COMMAND.",,"ACTIVE, SHOOT, MELEE, WEAPONS, LETHAL HITS",,0,TECHMARINE,,
+space_marines_medusas_wrath_enhancement_the_flesh_is_weak,space_marines_medusas_wrath,THE FLESH IS WEAK,15,0,[+1 T] [FNP 5+].,,"STATS, +1 T, FNP 5+",,1,,,
