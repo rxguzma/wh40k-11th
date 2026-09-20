@@ -336,9 +336,9 @@ DEPLOYMENT_COMPLETE,Deployment Complete,After setup and disembarkation — units
 SURGICAL_PRECISION,Vivispectral Analysis Targeting,UNIT attacks have [LETHAL HITS:non-VEHICLE].,This unit’s attacks have [LETHAL HITS:non-VEHICLE].,[SHOOT] [MELEE] [WEAPONS],,2,
 ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS,Storm Shield,Storm Shield +1 W each [+1 W],Each model equipped with a Storm Shield has +1 Wound.,[STATS] [+1 W],[Unit Stats],3,
 ANCIENT_TERMINATOR_STORM_SHIELD,Storm Shield,Storm Shield +1 W [+1 W],Add 1 to the Wounds characteristic of the bearer.,[STATS] [+1 W],[Unit Stats],3,
-BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING +1 To Hit if this unit or its target is within range of an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
+BOLTER_DISCIPLINE_INTERCESSORS,Bolter Discipline,SHOOTING [UNIT] [+1 To Hit] if unit or target is within an objective,"In your Shooting phase, if any of the following apply, ranged attacks made by this unit have +1 to hit rolls.
 This unit is within range of an objective.
-The target of that attack is within range of an objective.",[SHOOT] [WEAPONS] [ACTIVE],,2,
+The target of that attack is within range of an objective.","ACTIVE, SHOOT, WEAPONS, +1 TO HIT",[Combat Modifiers],1,0
 TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
 Actions do not prevent SHOOTING","Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",,,2,
