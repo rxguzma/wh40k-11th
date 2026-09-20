@@ -525,5 +525,5 @@ TECHMARINE_AURA,Techmarine,"Within 3"" friendly ADEPTUS ASTARTES VEHICLE → LON
 BLESSINGS_OF_THE_OMNISSIAH_NEW,Blessings of the Omnissiah,"MOVEMENT start/end — VEHICLE within 3"" Heal D3; ignore Hit/Wound modifiers until next MOVEMENT.","In your Movement phase, at the start or end of this model’s move, you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3"" of this model. That VEHICLE model heals D3 wounds. That VEHICLE model’s attacks can ignore modifiers to hit rolls and wound rolls until the start of your next Movement phase.",,,2,
 TARGETED_INTERCESSION,Targeted Intercession,CHARGE this turn — MELEE [+1 S] [+1 AP],"If this unit made a charge move this turn, this unit’s melee attacks have +1 S and AP.",[MELEE] [WEAPONS] [ACTIVE] [+1 S] [+1 AP],,2,
 RITES_OF_THERMAL_APPEASEMENT,Rites of Thermal Appeasement,Plasma Incinerator and Plasma Pistol — +1 to hazard rolls.,This unit has +1 to hazard rolls made for its Plasma Incinerator and Plasma Pistol weapons.,[SHOOT] [WEAPONS],,2,
-COMBAT_SHIELD_VANGUARD,Combat Shield,Bearer has 5+ InvS. [INVULNERABLE SAVE 5+],This model has 5+ InvS.,[STATS] [INVULNERABLE SAVE 5+],,2,
+COMBAT_SHIELD_VANGUARD,Combat Shield,Bearer has 5+ InvS. [INVULNERABLE SAVE 5+],This model has 5+ InvS.,,,2,
 GRAV_CHUTES,Grav-chutes,UNIT has Deep Strike. [DEEP STRIKE],This unit has Deep Strike.,[DEEP STRIKE],,2,
