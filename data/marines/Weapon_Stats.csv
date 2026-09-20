@@ -10,10 +10,10 @@ ARMOURED_HULL_REPULSOR,Armoured hull,-,6,4,8,0,1
 ARMOURED_TRACKS,Armoured tracks,-,3,4,6,0,1
 ASSAULT_BOLTERS,Assault bolters,"18""",3,3,5,-1,2
 ASTARTES_CHAINSWORD_INTERCESSORS,Astartes chainsword,-,4,3,4,-1,1
-ASTARTES_CHAINSWORD_SCOUTS_SGT,Astartes chainsword (Sgt),-,4,3,4,-1,1
+ASTARTES_CHAINSWORD_SCOUTS_SGT,Chainsword,-,4,3+,4,-1,1
 ASTARTES_GRENADE_LAUNCHER_FRAG,Astartes grenade launcher – frag,"24""",D3,3,4,0,1
 ASTARTES_GRENADE_LAUNCHER_KRAK,Astartes grenade launcher – krak,"24""",1,3,9,-2,D3
-ASTARTES_SHOTGUN_SCOUTS,Astartes shotgun,"18""",2,3,4,0,1
+ASTARTES_SHOTGUN_SCOUTS,Shotgun,"18""",2,3+,4,-1,1
 AXE_MORKAI_STRIKE,Axe Morkai – strike,-,6,2,8,-2,3
 AXE_MORKAI_SWEEP,Axe Morkai – sweep,-,10,2,6,-2,1
 AXIOM_STRIKE,Axiom,-,5,2+,8,-3,2
@@ -25,7 +25,7 @@ BLACKOUT,Blackout,"18""",1,2+,5,-1,2
 BOLT_PISTOL_INTERCESSORS,Bolt Pistol,"12""",1,3,4,0,1
 BOLT_PISTOL_LEADERS,Bolt Pistol,"12""",1,2+,5,-1,1
 BOLT_RIFLE_INTERCESSORS,Bolt Rifle,"24""",2,3,4,-1,1
-BOLT_SNIPER_RIFLE,Bolt sniper rifle,"36""",1,3,5,-2,3
+BOLT_SNIPER_RIFLE,Bolt Sniper Rifle,"36""",1,3+,6,-2,3
 BOLTSTORM_GAUNTLET,Boltstorm gauntlet,"12""",3,2,4,-1,1
 BRUTALIS_TALONS_STRIKE,Brutalis talons – strike,-,6,3,12,-2,3
 BRUTALIS_TALONS_SWEEP,Brutalis talons – sweep,-,10,3,7,-2,1
@@ -40,8 +40,8 @@ CLAWS_OF_SEVERAX,Claws of Severax,-,7,2+,5,-2,2
 CLOSE_COMBAT_WEAPON_ATV,Close combat weapon,-,5,3,4,0,1
 CLOSE_COMBAT_WEAPON_INTERCESSORS,Close combat weapon,-,3,3,4,0,1
 CLOSE_COMBAT_WEAPON_SPEEDERS,Close combat weapon,-,4,3,4,0,1
-COMBAT_KNIFE_REIVERS,Combat knife,-,4,3,4,-1,1
-COMBAT_KNIFE_SCOUTS,Combat knife,-,3,3,4,-1,1
+COMBAT_KNIFE_REIVERS,Monomolecular Combat Knife,-,4,3+,5,-1,1
+COMBAT_KNIFE_SCOUTS,Combat Knife,-,3,3+,4,-1,1
 COMBI_WEAPON,Combi-weapon,"24""",1,4,4,0,1
 COMBI_WEAPON_LEADERS,Combi-weapon,"24""",1,3,4,0,1
 CROZIUS_ARCANUM,Crozius Arcanum,-,5,2+,6,-1,2
@@ -72,10 +72,10 @@ HEAVY_BOLT_PISTOL,Heavy Bolt Pistol,"18""",1,3+,5,-1,1
 HEAVY_BOLT_PISTOL_CAPTAIN,Heavy Bolt Pistol,"18""",1,2+,5,-1,1
 HEAVY_BOLT_PISTOL_X2,Heavy bolt pistol x2,"18""",1,3,4,-1,1
 HEAVY_BOLT_RIFLE,Heavy Bolt Rifle,"30""",2,3+,5,-1,2
-HEAVY_BOLTER_ERADICATORS,Heavy bolter,"36""",3,3,5,-1,2
+HEAVY_BOLTER_ERADICATORS,Heavy Bolter,"36""",3,3+,6,-1,2
 HEAVY_BOLTER_HEAVY_INTERCESSORS,Heavy Bolter,"36""",3,3+,5,-1,2
 HEAVY_BOLTER_INVICTOR,Heavy bolter,"36""",3,3,5,-1,2
-HEAVY_BOLTER_SCOUTS,Heavy bolter,"36""",3,4,5,-1,2
+HEAVY_BOLTER_SCOUTS,Heavy Bolter,"36""",3,4+,5,-1,2
 HEAVY_BOLTERS_X2_PREDATOR,Heavy Bolters x2 (Predator),"36""",6,3,5,-1,2
 HEAVY_FLAMER_LAND_SPEEDER,Heavy flamer,"12""",D6,N/A,5,-1,1
 HEAVY_LASER_DESTROYER,Heavy laser destroyer,"72""",2,3,16,-4,D6+4
@@ -91,7 +91,7 @@ KAELS_SMITE_FOCUSED_WITCHFIRE,Kael's Smite - focused witchfire,"24""",D6,3,7,-2,
 KAELS_SMITE_WITCHFIRE,Kael's Smite - witchfire,"24""",D6,3,6,-1,D3+1
 KRAKSTORM_GRENADE_LAUNCHER_X2,Krakstorm grenade launcher x2,"18""",2,3,9,-1,D3
 LANCER_LASER_DESTROYER,Lancer laser destroyer,"72""",2,3,14,-4,D6+3
-LAS_FUSIL,Las fusil,"36""",1,3,9,-3,D6
+LAS_FUSIL,Las Fusil,"36""",1,3+,10,-3,D3+3
 LAS_TALON,Las-talon,"36""",2,3,10,-3,D6+1
 LASCANNONS_X2_PREDATOR,Lascannons,"48""",2,3,12,-3,D6+1
 LIONS_WRATH,Lion’s Wrath,"24""",2,2,8,-3,2
@@ -107,17 +107,17 @@ MASTER_CRAFTED_POWER_WEAPON_CHAMPION,Master-crafted power weapon,-,6,2,5,-2,2
 MASTER_CRAFTED_STORM_BOLTER_BELIAL,Master-crafted storm bolter,"24""",2,2,4,0,2
 MEDUSAN_MANIPULI,Medusan Manipuli,-,2,3+,10,-2,3
 MELTA_DESTROYER,Melta destroyer,"18""",3,3,9,-4,D6
-MELTA_RIFLE,Melta rifle,"18""",1,3,9,-4,D6
+MELTA_RIFLE,Melta Rifle,"18""",1,3+,10,-3,D3+2
 MELTA_RIFLE_X2,Melta rifle x2,"18""",1,3,9,-4,D6
 MONGOL_BOW,Mongol bow,"24""",2,2,5,-1,2
 MULTI_MELTA_ATV,Multi-melta (ATV),"18""",2,3,9,-4,D6
-MULTI_MELTA_ERADICATORS,Multi-melta,"18""",2,4,9,-4,D6
+MULTI_MELTA_ERADICATORS,Multi-melta,"18""",2,3+,10,-3,D3+2
 MULTI_MELTA_VEHICLE,Multi-melta,"18""",2,3,9,-4,D6
 NEURAL_SHREDDER,Neural shredder,"12""",D6,-,5,-2,1
-OCCULUS_BOLT_CARBINE,Occulus bolt carbine,"24""",2,3,4,0,1
+OCCULUS_BOLT_CARBINE,Occulus Bolt Carbine,"24""",2,3+,5,-1,1
 OMNISSIAN_POWER_AXE,Omnissian Power Axe and Servo-arm,-,5,3+,6,-2,2
 ONSLAUGHT_GATLING_CANNON,Onslaught gatling cannon,"24""",8,3,5,0,1
-PAIRED_COMBAT_BLADES,Paired combat blades,-,3,3,4,-1,1
+PAIRED_COMBAT_BLADES,Paired Combat Blades,-,3,3+,5,-1,1
 PAIRED_COMBAT_BLADES_LIEUTENANT,Paired Combat Blades,-,6,2+,5,-1,1
 PHASE_SWORD_AND_POISON_BLADES,Phase sword and poison blades,-,5,2,5,-4,2
 PLASMA_EXTERMINATORS_STANDARD,Plasma exterminators – standard,"18""",2,3,7,-2,2
@@ -146,12 +146,12 @@ RELIC_FIST,Relic fist,-,5,2,8,-2,2
 RELIC_WEAPON_KNIGHTS,Relic Weapon (Knights),-,6,2,7,-2,2
 REPULSOR_DEFENSIVE_ARRAY,Repulsor defensive array,"24""",18,3,4,0,1
 REPULSOR_EXECUTIONER_DEFENSIVE_ARRAY,Repulsor Executioner defensive array,"24""",10,3,4,0,1
-SCOUT_SNIPER_RIFLE,Scout sniper rifle,"36""",1,3,4,-2,2
+SCOUT_SNIPER_RIFLE,Sniper Rifle,"36""",1,3+,5,-2,2
 SERVO_ARM,Servo-arm,-,1,3,8,-2,3
 SMITE_FOCUSED_WITCHFIRE,Smite - Focused Witchfire,"24""",D3+3,3+,6,-2,2
 SMITE_WITCHFIRE,Smite - Witchfire,"24""",D6,3+,6,-1,2
 SPEAR_OF_VULKAN,Spear of Vulkan,-,6,2+,7,-2,2
-SPECIAL_ISSUE_BOLT_PISTOL_REIVERS,Special issue bolt pistol,"12""",1,3,4,-1,1
+SPECIAL_ISSUE_BOLT_PISTOL_REIVERS,Special-issue Bolt Pistol,"12""",1,3+,5,-2,1
 STERNGUARD_BOLT_PISTOL,Sternguard bolt pistol,"12""",1,3,4,0,1
 STERNGUARD_BOLT_RIFLE,Artificer Firearm - Infernus,"24""",2,3+,5,-1,1
 STERNGUARD_HEAVY_BOLTER,Heavy Bolter,"36""",3,3+,5,-1,2
@@ -198,7 +198,7 @@ CHAINSWORD_INTERCESSORS,Chainsword (Intercessors),-,5,3,4,-1,1
 HEAVY_BOLT_PISTOL_VANGUARD_VETERANS,Heavy bolt pistol (Vanguard Veterans),"18""",1,3,4,-1,1
 PLASMA_PISTOL_STANDARD_VANGUARD_VETERANS,Plasma pistol - standard (Vanguard Veterans),"12""",D3,3,7,-2,1
 PLASMA_PISTOL_SUPERCHARGE_VANGUARD_VETERANS,Plasma pistol - supercharge (Vanguard Veterans),"12""",1,3,8,-3,2
-MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted power weapon (Vanguard Veterans),-,3,3,5,-2,2
+MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS,Master-crafted Power Weapon,-,3,3+,5,-2,2
 THUNDER_HAMMER_JUMP_CAPTAIN,Thunder hammer,-,5,3+,8,-2,2
 TWIN_LAS_TALON,Twin las-talon,"36""",2,3+,10,-3,D6+1
 MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT,Master-crafted power weapon,-,5,2+,5,-2,2
@@ -304,3 +304,12 @@ STERNGUARD_ARTIFICER_FIREARM_PURGATUS,Artificer Firearm - Purgatus,"24""",1,3+,7
 STERNGUARD_ARTIFICER_FIREARM_DAMNATUS,Artificer Firearm - Damnatus,"12""",1,3+,9,-3,D3+2
 STERNGUARD_PYRECANNON,Pyrecannon,"12""",4,N/A,6,-1,1
 STERNGUARD_CHAINSWORD,Chainsword,-,6,3+,5,-1,1
+VANGUARD_RELIC_BLADE,Relic Blade,-,3,3+,6,-2,2
+REIVER_BOLT_CARBINE,Bolt Carbine,"18""",3,3+,5,-1,1
+SCOUT_BOLTGUN,Boltgun,"24""",1,3+,5,-1,1
+SCOUT_MISSILE_LAUNCHER_FRAG,Missile Launcher - Frag,"48""",4,4+,4,-1,1
+SCOUT_MISSILE_LAUNCHER_KRAK,Missile Launcher - Krak,"48""",1,4+,10,-2,D3+3
+ELIMINATOR_INSTIGATOR_BOLT_CARBINE,Instigator Bolt Carbine,"24""",2,2+,5,-2,2
+OUTRIDER_POWER_WEAPON,Power Weapon,-,3,3+,5,-2,1
+ERADICATOR_MELTA_RIFLE_HUNTER,Melta Rifle - Hunter,"18""",1,2+,12,-3,D3+2
+ERADICATOR_MULTI_MELTA_HUNTER,Multi-melta - Hunter,"18""",2,2+,12,-3,D3+2
