@@ -33,7 +33,7 @@ GLADIATOR_REAPER,Gladiator Reaper,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIUM,
 GLADIATOR_VALIANT,Gladiator Valiant,"10""",10,3+,12,6,3,"VEHICLE, SMOKE, IMPERIUM, GLADIATOR VALIANT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Valiant
 HEAVY_INTERCESSORS,Heavy Intercessors,"5""",6,3+,3,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Heavy-Intercessor-Squad
 HELLBLASTER_SQUAD,Hellblasters,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Hellblaster-Squad
-IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, IMPULSOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor
+IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor
 INCEPTORS_PLASMA,Inceptor Squad,"10""",6,3+,3,6+,1,"INFANTRY, FLY, GRAVIS, IMPERIUM, JUMP PACK",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad
 INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad
 INFERNUS_SQUAD,Infernus Squad,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infernus-Squad
@@ -77,7 +77,7 @@ URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO
 VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS,Vanguard Veteran Squad with Jump Packs,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs
 VICTRIX_HONOUR_GUARD,Victrix Honour Guard,"6""",5,2+,3,6+,2,"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES",
 VULKAN_HESTAN,Vulkan He’stan,"6""",5,2+/4++,5,6+,1,"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",
-drop_pod,Drop Pod,-,7,3+,8,6+,0,"VEHICLE, TRANSPORT, DEDICATED TRANSPORT, IMPERIUM, FRAME, DROP POD",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Drop-Pod
+drop_pod,Drop Pod,-,7,3+,8,6+,-,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Drop-Pod
 apothecary,Apothecary,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, IMPERIUM, TACTICUS",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Apothecary
 apothecary_biologis,Apothecary Biologis,"5""",6,3+,5,6+,1,"INFANTRY, APOTHECARY, CHARACTER, GRAVIS, IMPERIUM",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Apothecary-Biologis
 ROBOUTE_GUILLIMAN,Roboute Guilliman,"8""",10,2+/4++,16,5+,4,"MONSTER, CHARACTER, EPIC HERO, IMPERIUM, MOBILE, PRIMARCH, ADEPTUS ASTARTES, ULTRAMARINES",
@@ -96,3 +96,4 @@ CHAPLAIN_IN_TERMINATOR_ARMOUR,Chaplain in Terminator Armour,"5""",6,2+/4++,5,5+,
 CHAPLAIN_ON_BIKE,Chaplain on Bike,"12""",6,3+/4++,5,5+,2,"MOUNTED, CHAPLAIN, CHARACTER, EXPLOSIVES, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-On-Bike
 BLADEGUARD_ANCIENT,Bladeguard Ancient,"6""",5,3+/4++,4,6+,3,"INFANTRY, ANCIENT, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Bladeguard-Ancient
 ANCIENT_IN_TERMINATOR_ARMOUR,Ancient in Terminator Armour,"5""",6,2+/4++,5,6+,2,"INFANTRY, ANCIENT, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient-In-Terminator-Armour
+FIRESTRIKE_SERVO_TURRETS,Firestrike Servo-Turrets,"5""",6,2+,6,6+,2,"VEHICLE, ARTILLERY, IMPERIUM",
