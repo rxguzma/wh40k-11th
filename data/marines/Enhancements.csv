@@ -27,7 +27,7 @@ S: 7
 AP: -3
 D: 3",,,0,,,
 space_marines_assault_brethren_enhancement_furious_assault_upgrade,space_marines_assault_brethren,FURIOUS ASSAULT UPGRADE,,FALSE,"INFANTRY only
-MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE [SUSTAINED HITS 1]",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],[Melee - Weapon Rules],0,,,
+MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE [SUSTAINED HITS 1]",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],[Weapon Rules],0,,,
 space_marines_tactical_brethren_enhancement_laurels_of_vigilance,space_marines_tactical_brethren,LAURELS OF VIGILANCE,,FALSE,"ADEPTUS ASTARTES only
 Once per battle round: BATTLELINE within 12""
 OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES model only.
@@ -35,13 +35,13 @@ OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES model only.
 space_marines_tactical_brethren_enhancement_tactical_insight,space_marines_tactical_brethren,TACTICAL INSIGHT,,FALSE,"CAPTAIN only
 TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,,0,,,
 space_marines_devastator_brethren_enhancement_master_forged_firearms,space_marines_devastator_brethren,MASTER-FORGED FIREARMS,,FALSE,"INFANTRY / MOUNTED only
-Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D [+1 A] [+1 S] [+1 AP] [+1 D]","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model's ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],[Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats][Range - Weapon Stats],0,,,
+Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D [+1 A] [+1 S] [+1 AP] [+1 D]","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model's ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],[Weapon Stats] [Weapon Stats] [Weapon Stats] [Weapon Stats],0,,,
 space_marines_devastator_brethren_enhancement_honour_of_vigilance,space_marines_devastator_brethren,HONOUR OF VIGILANCE,,FALSE,"RANGED: LETHAL HITS
 In DEVASTATOR: Re-roll ADVANCE [LETHAL HITS]","ADEPTUS ASTARTES model only.
 • This unit's ranged attacks have [LETHAL HITS].
-• If the devastator doctrine is active for this unit, this unit can re-roll advance rolls.",[LETHAL HITS],[Range - Weapon Rules],0,,,
+• If the devastator doctrine is active for this unit, this unit can re-roll advance rolls.",[LETHAL HITS],[Weapon Rules],0,,,
 space_marines_terminator_stormforce_enhancement_champion_of_the_first_company,space_marines_terminator_stormforce,CHAMPION OF THE FIRST COMPANY,,FALSE,"TERMINATOR only
-MELEE: LETHAL HITS [LETHAL HITS]",ADEPTUS ASTARTES TERMINATOR model only. This unit's melee attacks have [LETHAL HITS].,[LETHAL HITS],[Melee - Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+MELEE: LETHAL HITS [LETHAL HITS]",ADEPTUS ASTARTES TERMINATOR model only. This unit's melee attacks have [LETHAL HITS].,[LETHAL HITS],[Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_enhancement_corporeum_reliquary,space_marines_terminator_stormforce,CORPOREUM RELIQUARY,,FALSE,"TERMINATOR only
 First MOVEMENT: INGRESS MOVE","ADEPTUS ASTARTES TERMINATOR model only. In your first Movement phase, this unit can make an ingress move.",,,0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_enhancement_martial_paragon,space_marines_tacticus_attack_force,MARTIAL PARAGON,,FALSE,"TACTICUS only
