@@ -39,8 +39,6 @@ One Company Veteran is equipped with: bolt pistol; master-crafted heavy bolter; 
 
 One Company Veteran is equipped with: bolt pistol; master-crafted bolt rifle; close combat weapon.",,,2,
 DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,"If within 3"" of INFANTRY then = Lone Operative (Cannot be targetted outside of 12""). [LONE OP]","While this model is within 3"" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.",[LONE OP],[Unit Rules],2,
-DEATH_TO_THE_ALIEN,Death to the Alien,RE-ROLL 1S TO HIT or RE-ROLL ALL HITS if not IMPERIUM or CHAOS [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],"Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack does not have the IMPERIUM or CHAOS keywords, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS] [RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Combat Modifiers] [Combat Modifiers] [Combat Modifiers] [Combat Modifiers],2,
-DEATHWATCH_TERMINATORS_BREAKDOWN,Deathwatch Terminators breakdown,"x1 Sergeant with Thunder Hammer and Shield, x3 Cyclone missile, x1 Thunder Hammer and Shield","x1 Sergeant with Thunder Hammer and Shield, x3 Cyclone missile, x1 Thunder Hammer and Shield",,,2,
 DEATHWING,Deathwing,"Ignore BS/WS modifiers.
 Oath Target: +1 TO HIT [+1 TO HIT] [+1 TO HIT]","Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristics and/or to the Hit roll. 
 
@@ -78,15 +76,6 @@ HONOUR_OR_DEATH_CHAMPION,Honour or Death (Champion),"+1"" Adv & +1"" Charge
 0 CP for Heroinc Intervention [+1 CHARGE] [HEROIC INTERVENTION 0CP]","Honour or Death (Ravenwing Command - Champion): While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.", [HEROIC INTERVENTION 0CP],[Movement Rules] [Unit Rules],2,
 IGNORES COVER,IGNORES COVER,Target cannot use Benefit of Cover [IGNORES COVER],"Each time an attack is made with this weapon, the target cannot have the Benefit of Cover against that attack.",[IGNORES COVER],[Range - Weapon Rules],2,
 DRIVEN_FROM_COVER,Driven from Cover,SHOOTING — after UNIT shoots — select enemy hit; friendly ADEPTUS ASTARTES RANGE attacks vs it ignore cover.,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. Friendly ADEPTUS ASTARTES units’ ranged attacks that target that enemy unit have [IGNORES COVER].",[SHOOT] [ACTIVE],,2,
-INDOMITOR_DOCTRINES,Indomitor Doctrines,"Target Closest Target at Range then Charge and get +2 Strenght in Melee.
-(Can split fire to closest target) [+2 S]","Each time a model in this unit makes a ranged attack that targets the closest eligible target, or makes a melee attack in a turn in which it made a Charge move, improve the Strength characteristic of that attack by 2.",[ACTIVE] [MELEE] [WEAPONS] [+2 S],[Weapon Stats],2,0
-INDOMITOR_KILL_TEAM_BREAKDOWN,Indomitor Kill Team breakdown,"x4 Heavy Intercessors: x2 heavy bolters, x2 bolters
-x3 Heavy Intercessor with power fists and flamers
-x3 Heavy Intercessor with melta rifle: x2 melta rifles
-Note: x7 bolt pistols","x4 Heavy Intercessors: x2 heavy bolters, x2 bolters
-x3 Heavy Intercessor with power fists and flamers
-x3 Heavy Intercessor with melta rifle: x2 melta rifles
-Note: x7 bolt pistols",,,2,
 INFILTRATOR_COMMS_ARRAY,Infiltrator Comms Array,"Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP. [GAIN 1 CP]","Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",[GAIN 1 CP],[Unit Rules],2,
 INFILTRATORS,Infiltrators,"During Deployment, setup anywhere 9"" away. [INFILTRATORS]","During deployment, if every model in a unit has this ability, then when you set it up, it can be set up anywhere on the battlefield that is more than 9"" horizontally away from the enemy deployment zone and all enemy models.",[INFILTRATORS],[Unit Rules],2,
 INNER_CIRCLE,Inner Circle,-1 Damage to Unit [INCOMING -1 D],"Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",[INCOMING -1 D],[Info Only],2,
@@ -95,9 +84,6 @@ KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
 +1 TO HIT if below Strength
 +1 TO WOUND if HALF Strength [+1 TO HIT] [+1 TO HIT] [+1 TO WOUND] [+1 TO WOUND]","While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",[+1 TO HIT] [+1 TO HIT] [+1 TO WOUND] [+1 TO WOUND],[Combat Modifiers] [Combat Modifiers] [Combat Modifiers] [Combat Modifiers],2,
 LANCE,LANCE,Add +1 TO WOUND if the bearer charged this turn. [+1 TO WOUND],"Each time an attack is made with this weapon, if the bearer made a Charge move this turn, add 1 to that attack’s Wound roll.",[+1 TO WOUND],[Combat Modifiers],2,
-LEADER_CAPTAIN_WITH_RELIC_SHIELD,Leader: Captain with Relic Shield,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets",Leader: This model can be attached to the following units: Assault Intercessor Squad; Bladeguard Veteran Squad; Company Heroes; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
 LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],This unit’s melee attacks have [LANCE].,[MELEE] [WEAPONS] [LANCE],,2,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away. [LONE OP]","Cannot be shot at if 12"" away.",[LONE OP],[Unit Rules],2,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.","Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,,2,
@@ -190,32 +176,15 @@ STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed","Once per tu
 
 If it does, after the attacking unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,,2,
 STORM_SHIELD,Storm Shield,4+ Invul (included) [INVULNERABLE SAVE 4+],4+ Invul (included),[STATS] [INVULNERABLE SAVE 4+],[Unit Rules],2,
-STORM_SHIELD_DEATHWATCH,Storm Shield (Deathwatch),4+ Invul [INVULNERABLE SAVE 4+],The bearer has a Wounds characteristic of 4.,[INVULNERABLE SAVE 4+],[Unit Rules],2,
 STORM_SHIELD_TERMINATORS,Storm Shield (Terminators),+1 Wound (included) [+1 W],+1 Wound (included),[STATS] [+1 W],[Unit Stats],3,
 STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot. [FALL BACK AND SHOOT],Fallback and Shoot,[FALL BACK AND SHOOT],[Movement Rules],2,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
 Max 6 per attacking unit. Melee only.","Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,,2,
-SUPPORT_ANCIENT,Support: Ancient,"Can Support: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets",Support: This model can be attached to the following units: Assault Intercessor Squad; Desolation Squad; Devastator Squad; Hellblaster Squad; Infernus Squad; Intercessor Squad; Sternguard Veteran Squad; Tactical Squad.,,,3,
 SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn. [ENEMY -1 TO HIT],"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
 
 Until your next turn starts, while this unit remains on the battlefield, that enemy unit is suppressed. Suppressed units subtract 1 from Hit rolls when attacking.",[ENEMY -1 TO HIT],[Info Only],2,
 SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1 [SUSTAINED HITS 1] [SUSTAINED HITS 1],"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[UNIT] [SHOOT] [MELEE] [WEAPONS] [SUSTAINED HITS 1],[Weapon Rules],2,
 TACTICAL_PRECISION,Tactical Precision,UNIT attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,This unit’s attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,[SHOOT] [MELEE] [WEAPONS],,2,
-TALONSTRIKE_DOCTRINES,Talonstrike Doctrines,"Deepstrike and get:
-+1 AP and LANCE [DEEP STRIKE] [+1 AP]","Each time this unit is set up on the battlefield, until the end of the turn:
-- Improve the Armour Penetration characteristic of weapons equipped by models in this unit by 1.
-- Melee weapons equipped by models in this unit have the [LANCE] ability.",[DEEP STRIKE] [+1 AP],[Unit Rules] [Weapon Stats],2,
-TALONSTRIKE_KILL_TEAM_BREAKDOWN,Talonstrike Kill Team breakdown,"x1 Sergeant with Plasma pistol and power fist
-x2 Plasma pistols and chainswords
-x2 Heavy bolt pistols and chainswords
-
-x5 Assault bolters with Close combat weapon","x1 Sergeant with Plasma pistol and power fist
-x2 Plasma pistols and chainswords
-x2 Heavy bolt pistols and chainswords
-
-x5 Assault bolters with Close combat weapon",,,2,
 TARGETER_OPTICS,Targeter Optics,SHOOTING — visible enemy — RANGE [IGNORES COVER].,This unit’s ranged attacks that target a visible enemy unit have [IGNORES COVER].,[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],,2,
 TECHMARINE,Techmarine,"Lone Operative if within 3"" of Vehicle.
 
@@ -247,7 +216,6 @@ UNYIELDING_IN_THE_FACE_OF_THE_FOE,Unyielding in the Face of the Foe,While contro
 VANGUARD_ASSAULT,Vanguard Assault,CHARGE this turn — MELEE [+1 A].,"If this unit made a charge move this turn, this unit’s melee attacks have +1 A.",[MELEE] [WEAPONS] [ACTIVE] [+1 A],,2,
 VEIL_OF_TIME_PSYCHIC,Veil of Time,ADVANCE psychic roll — on 1 battle-shocked; otherwise change Advance roll to 6.,"Psychic level 1 — When this unit is selected to make an Advance move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. On a 1, this unit is battle-shocked. Otherwise, this unit can change that Advance roll to a 6.",,,2,
 VENGEANCE_OF_THE_OMNISSIAH,Vengeance of the Omnissiah,"If Vehicle destroyed within 12"", until the end of the battle, Omnissian power axe Attacks = 7.","If a friendly Adeptus Astartes Vehicle model is destroyed within 12"" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.",,,2,
-WATCH_MASTER,Watch Master,"Once per battle round, -1 CP cost.","Once per Round, -1 CP costs",,,2,
 WATCHER_IN_THE_DARK,Watcher in the Dark,Once: 4+ FNP vs. Mortal Wounds [FNP 4+],"Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the FNP 4+ ability against mortal wounds.",[FNP 4+],[Unit Rules],2,
 HAIL_OF_BOLTS,Hail of Bolts,Add +2 Attacks to bolt rifles against one selected visible enemy unit [+2 A],"In your Shooting phase, when this unit is selected to shoot, select one enemy unit visible to it. While making attacks, this unit’s bolt rifles that target that selected unit have +2 Attacks.",[+2 A],[Weapon Stats],2,
 INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,"1 Sergeant
@@ -256,61 +224,18 @@ INTERCESSOR_SQUAD_LOADOUT,Unit Composition: Intercessor Squad,"1 Sergeant
 Every model is equipped with
 1 Bolt Pistol; 1 Bolt Rifle; 1 Knives and Fists.",,,3,
 VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS_LOADOUT,Unit Composition: Vanguard Veteran Squad with Jump Packs,5 models; 4 heavy bolt pistols and 1 plasma pistol,Unit Composition: 1 Vanguard Veteran Sergeant and 4 Vanguard Veterans. The Vanguard Veteran Sergeant and 3 Vanguard Veterans are each equipped with: 1 heavy bolt pistol; 1 master-crafted power weapon. 1 Vanguard Veteran is equipped with: 1 plasma pistol; 1 master-crafted power weapon.,,,3,
-LEADER_ASMODAI,Leader: Asmodai,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
 LEADER_AZRAEL,Leader: Azrael,"Can Lead: Most INFANTRY like
 Intercessors, Hellblasters
 Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
 LEADER_BELIAL,Leader: Belial,"Can Lead: TERMINATORS
 Terminators, Assault Terminators
 Deathwing Knights","LEADER: DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
-LEADER_EZEKIEL,Leader: Ezekiel,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
-LEADER_LAZARUS,Leader: Lazarus,"Can Lead: Most INFANTRY like
-Intercessors, Bladeguard Vets
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
 LEADER_RAVENWING_COMMAND_SQUAD,Leader: Ravenwing Command Squad,"Can Lead: MOUNTED
 Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,,3,
-LEADER_SAMMAEL,Leader: Sammael,"Can Lead: MOUNTED
-Outriders, Black Knights","LEADER: OUTRIDER SQUAD, RAVENWING BLACK KNIGHTS",,,3,
-LEADER_ADRAX_AGATONE,Leader: Adrax Agatone,"Can Lead: Most INFANTRY like
-Intercessors, Bladeguard Vets
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, COMPANY HEROES, INFERNUS SQUAD, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
-LEADER_CAANOK_VAR,Leader: Caanok Var,"Can Lead: TERMINATORS
-Terminators, Assault Terminators","LEADER: TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
-LEADER_IRON_FATHER_FEIRROS,Leader: Iron Father Feirros,"Can Lead: GRAVIS
-Aggressors, Eradicators
-Heavy Intercessors","LEADER: AGGRESSOR SQUAD, ERADICATOR SQUAD, HEAVY INTERCESSOR SQUAD",,,3,
-LEADER_KAYVAAN_SHRIKE,Leader: Kayvaan Shrike,"Can Lead: JUMP PACK
-Jump Intercessors, Vanguard Vets","LEADER: ASSAULT INTERCESSORS WITH JUMP PACKS, VANGUARD VETERAN SQUAD WITH JUMP PACKS",,,3,
-LEADER_URIEL_VENTRIS,Leader: Uriel Ventris,"Can Lead: Most INFANTRY like
-Intercessors, Bladeguard Vets
-Sternguard Vets, Company Heroes","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, COMPANY HEROES, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, TACTICAL SQUAD",,,3,
-LEADER_VULKAN_HESTAN,Leader: Vulkan He’stan,"Can Lead: INFANTRY like
-Assault Intercessors, Infernus
-Company Heroes, Tactical","LEADER: ASSAULT INTERCESSOR SQUAD, COMPANY HEROES, INFERNUS SQUAD, TACTICAL SQUAD",,,3,
-SUPPORT_ANCIENT_IN_TERMINATOR_ARMOUR,Support: Ancient in Terminator Armour,"Can Support: TERMINATORS
-Terminators, Assault Terminators
-Deathwing Knights","SUPPORT: DEATHWATCH TERMINATOR SQUAD, DEATHWING KNIGHTS, DEATHWING TERMINATOR SQUAD, TERMINATOR ASSAULT SQUAD, TERMINATOR SQUAD",,,3,
-SUPPORT_APOTHECARY,Support: Apothecary,"Can Support: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","SUPPORT: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, CRUSADER SQUAD, DEATHWATCH VETERANS, DECIMUS KILL TEAM, DESOLATION SQUAD, DEVASTATOR SQUAD, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
-SUPPORT_APOTHECARY_BIOLOGIS,Support: Apothecary Biologis,"Can Support: GRAVIS
-Aggressors, Eradicators
-Heavy Intercessors","SUPPORT: AGGRESSOR SQUAD, ERADICATOR SQUAD, HEAVY INTERCESSOR SQUAD, INDOMITOR KILL TEAM",,,3,
-SUPPORT_BLADEGUARD_ANCIENT,Support: Bladeguard Ancient,Can Support: Bladeguard Vets,SUPPORT: BLADEGUARD VETERAN SQUAD,,,3,
 LEADER_CAPTAIN_WITH_JUMP_PACK,Leader: Captain with Jump Pack,"Can Lead: JUMP PACK
 Jump Intercessors, Vanguard Vets
 Sanguinary Guard","LEADER: ASSAULT INTERCESSORS WITH JUMP PACKS, SANGUINARY GUARD, TALONSTRIKE KILL TEAM, VANGUARD VETERAN SQUAD WITH JUMP PACKS",,,3,
-LEADER_CHAPLAIN,Leader: Chaplain,"Can Lead: Most INFANTRY like
-Intercessors, Hellblasters
-Infernus, Sternguard Vets","LEADER: ASSAULT INTERCESSOR SQUAD, BLADEGUARD VETERAN SQUAD, CRUSADER SQUAD, DEATH COMPANY MARINES, DEATH COMPANY MARINES WITH BOLT RIFLES, DEATHWATCH VETERANS, DECIMUS KILL TEAM, FORTIS KILL TEAM, HELLBLASTER SQUAD, INFERNUS SQUAD, INNER CIRCLE COMPANIONS, INTERCESSOR SQUAD, STERNGUARD VETERAN SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
 MELEE_INVULNERABLE_SAVE_4,Psychic Ward,PSYCHIC attacks — 4+ InvS.,This model has a 4+ invulnerable save against psychic attacks.,,,2,
-LEADER_TECHMARINE,Leader: Techmarine,"Can Lead: INFANTRY like
-Intercessors, Devastators
-Assault Intercessors, Tactical","LEADER: ASSAULT INTERCESSOR SQUAD, CRUSADER SQUAD, DECIMUS KILL TEAM, DESOLATION SQUAD, DEVASTATOR SQUAD, FORTIS KILL TEAM, INTERCESSOR SQUAD, SWORD BRETHREN SQUAD, TACTICAL SQUAD",,,3,
 MASTERFUL_TACTICIAN,Masterful Tactician,"If on the battlefield at the start of your Command phase, gain 1CP. [GAIN 1 CP]","At the start of your Command phase, if this model is on the battlefield, you gain 1CP.",[GAIN 1 CP],[Unit Rules],2,
 ANGELS_WRATH,Angel’s Wrath,"After a Charge while leading, +1 S to the unit’s melee weapons this turn. [+1 S]","While this model is leading a unit, each time that unit ends a Charge move, until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",[UNIT] [ACTIVE] [MELEE] [WEAPONS] [+1 S],[Weapon Stats],2,0
 SPECIAL_ISSUE_OPTICS_AND_AMMUNITION,Special-issue Optics and Ammunition,"SHOOTING — select one — RANGE [IGNORES COVER] or enemy within 24"" gets +6"" detection range until UNIT has shot.","In your Shooting phase, when this unit is selected to shoot, you can select one of the following — this unit’s ranged attacks have [IGNORES COVER]; or select one enemy unit within 24"" of this unit. That enemy unit has +6"" detection range until this unit has shot.",[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],,2,
