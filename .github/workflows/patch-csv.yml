@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_TOO_BUSY_TO_FIGHT","sets":{"Tags":"[ACTION while ENGAGED]","Tag Categories":"[Unit Rules]","Visibility_ID":"1","Short_Description":"UNIT can start [ACTION while ENGAGED]."}},{"file":"data/orks/Tag_Definitions.csv","id_column":"Tag","row_id":"ACTION while ENGAGED","mode":"insert","sets":{"Tag":"ACTION while ENGAGED","Category":"Unit Rules"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_TOO_BUSY_TO_FIGHT","sets":{"Tags":"[ACTION while ENGAGED]","Tag Categories":"[Unit Rules]","Visibility_ID":"1","Short_Description":"UNIT can start [ACTION while ENGAGED]."}},{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"ACTION_WHILE_ENGAGED","mode":"insert","sets":{"Display_Tag":"ACTION while ENGAGED","Title":"Action While Engaged","Category":"Unit Rules","Affects":"Unit","Description":"Unit can start an action while engaged.","Editable":"TRUE"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
