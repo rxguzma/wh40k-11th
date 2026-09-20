@@ -162,7 +162,7 @@ MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP nu
 MOBBED,Mobbed,"After charge: engaged MONSTER / VEHICLE take Battle-shock [ENEMY -1 BATTLE-SHOCK], or [ENEMY -2 BATTLE-SHOCK] if 13+ models.","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
 - Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Info Only] [Info Only],0,1,
-MOBILE_FORTRESS,Mobile Fortress,ANYTIME — incoming RANGE [INCOMING RANGE -1 D],Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],10,1,1
+MOBILE_FORTRESS,Mobile Fortress,ANYTIME — [INCOMING RANGE -1 D],Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],10,1,1
 NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units: [+1 TO HIT],This unit’s attacks that target a hidden unit have +1 to hit rolls.,[+1 TO HIT] [+1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,0
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,1,
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE [+1 A] [+1 S] [HAZARDOUS],"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
@@ -200,7 +200,7 @@ WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced wi
 DAMAGED_7,Damaged 7,While 1–7 wounds remaining: [-1 TO HIT],CORE: Damaged 7,[-1 TO HIT] [-1 TO HIT],[Melee - Combat Modifiers] [Range - Combat Modifiers],0,1,0
 DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1,,,0,1,
 DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3,,,0,1,
-DREAD_ARD,Dread ’Ard,ANYTIME — incoming attacks [INCOMING -1 D],Attacks targeting this model have -1 damage,[INCOMING -1 D],[Info Only],0,1,1
+DREAD_ARD,Dread ’Ard,ANYTIME — [INCOMING -1 D],Attacks targeting this model have -1 damage,[INCOMING -1 D],[Info Only],0,1,1
 FIRING_DECK_12,Firing Deck 12,CORE: Firing Deck 12,CORE: Firing Deck 12,,,0,1,
 FULLY_LOADED_BUTCHERY,Fully Loaded Butchery,Butcha Boyz gets +2A per embarked model (max +22A),This unit’s Butcha Boyz weapon has +2 A for each model embarked within this unit (to a maximum of +22 A),,,0,1,
 GUT_HATCH,Gut Hatch,"When this unit ends a normal move, embarked units can assault disembark.","In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move (pg 12).",,,0,1,
