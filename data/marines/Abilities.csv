@@ -45,7 +45,7 @@ TACTICAL: both","In your Shooting phase or the Fight phase, when this unit is se
 • Or, if the tactical doctrine is active for this unit, [LETHAL HITS: MONSTER/VEHICLE] and [SUSTAINED HITS 1: non-MONSTER/VEHICLE].",,,2,1
 COMBAT_DISEMBARKATION,Combat Disembarkation,Disembark and Charge,"Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn.",,,2,
 COMBAT_SUPPORT,Combat Support,"Shoot back if Phobos shot within 6""","Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6"" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,,2,
-COMMAND_SQUAD,Command Squad,Led = -1 To Wound [INCOMING -1 TO WOUND],"While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],2,
+COMMAND_SQUAD,Command Squad,Attacks targeting UNIT [-1 TO WOUND].,Attacks that target this unit have -1 to wound rolls.,[-1 TO WOUND],,2,
 COMPOSITION_CH,Composition (CH),"1 Ancient, 1 Company Champion, 2 Company Veterans","The Ancient is equipped with: bolt pistol; bolt rifle; close combat weapon.
 
 The Company Champion is equipped with: bolt pistol; master-crafted power weapon.
