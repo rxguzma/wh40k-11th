@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","mode":"delete_where","where":{"Unit_ID":"TERMINATOR_ASSAULT_SQUAD","Point_Option_ID":"point_1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","mode":"delete_where","where":{"Unit_ID":"TERMINATOR_ASSAULT_SQUAD","Point_Option_ID":"point_2"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","mode":"insert","allow_duplicate_id":true,"sets":{"Point_Option_ID":"point_1","Label":"x5","Cost":"155","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","mode":"insert","allow_duplicate_id":true,"sets":{"Point_Option_ID":"point_2","Label":"x10","Cost":"310","Sort_Order":"2"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TERMINATOR_ASSAULT_SQUAD__ASSAULT_TERMINATOR_LOADOUT__ASSAULT_TERMINATORS_HAMMER","column":"Points_Per_Model","value":"5"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
