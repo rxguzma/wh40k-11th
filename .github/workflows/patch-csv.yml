@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TOR_GARADON","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"90","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"DARNATH_LYSANDER","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"160","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"KORSARRO_KHAN","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"80","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"SUBODEN_KHAN","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"105","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"KAIS","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"100","Sort_Order":"1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"KAIS","mode":"delete_where","where":{"Unit_ID":"KAIS"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
