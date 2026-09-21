@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"AGGRESSORS","column":"Cost","value":"90"},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Cost","value":"80"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BRUTAL_IMPACT","column":"Tags","value":"Charge + 1 D"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
