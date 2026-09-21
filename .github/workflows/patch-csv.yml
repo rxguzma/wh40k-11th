@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_SQUAD","mode":"delete_where","where":{"Unit_ID":"TERMINATOR_SQUAD","Point_Option_ID":"point_1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_SQUAD","mode":"delete_where","where":{"Unit_ID":"TERMINATOR_SQUAD","Point_Option_ID":"point_2"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"TERMINATOR_SQUAD","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"x5","Cost":"190","Sort_Order":"1"}},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TERMINATORS__HEAVY_WEAPON__CYCLONE","column":"Points_Per_Model","value":"10"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"REDEMPTOR_PLASMA","column":"Cost","value":"170"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
