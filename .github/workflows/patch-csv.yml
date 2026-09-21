@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"ROBOUTE_GUILLIMAN","column":"Cost","value":"415"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"ROBOUTE_GUILLIMAN","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"415","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"MARNEUS_CALGAR","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"180","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"115","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"CATO_SICARIUS","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"115","Sort_Order":"1"}},{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"CAPTAIN_TITUS","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"115","Sort_Order":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
