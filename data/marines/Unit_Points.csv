@@ -47,8 +47,6 @@ apothecary_biologis,point_1,,60,1
 COMPANY_HEROES,point_1,,125,1
 DESOLATION_SQUAD,point_1,x5,140,1
 ELIMINATOR_SQUAD,point_1,x3,85,1
-AGGRESSORS,point_1,x3,0,1
-AGGRESSORS,point_2,x6,0,2
 RHINO,point_1,,70,1
 IMPULSOR_Orbital,point_1,,0,1
 drop_pod,point_1,,60,1
@@ -121,3 +119,5 @@ INVADER_ATV,point_1,x1,65,1
 INVADER_ATV,point_2,x2,130,2
 OUTRIDER_SQUAD,point_1,x3,80,1
 OUTRIDER_SQUAD,point_2,x6,160,2
+AGGRESSORS,point_1,x3,90,1
+AGGRESSORS,point_2,x6,180,2
