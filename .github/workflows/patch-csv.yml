@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"REDEMPTOR_PLASMA","column":"Cost","value":"170"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR_PLASMA__REDEMPTOR_MAIN_GUN__REDEMPTOR_HEAVY_ONSLAUGHT","column":"Default","value":"TRUE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR_PLASMA__REDEMPTOR_MAIN_GUN__REDEMPTOR_MACRO_PLASMA","column":"Default","value":"FALSE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__AUX_GUN__STORM_BOLTERS","column":"Default","value":"TRUE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__AUX_GUN__FRAGSTORM","column":"Default","value":"FALSE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__SECONDARY__ONSLAUGHT","column":"Default","value":"TRUE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__SECONDARY__HEAVY_FLAMER","column":"Default","value":"FALSE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__ICARUS__EQUIPPED","column":"Default","value":"TRUE"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"REDEMPTOR__ICARUS__NONE","column":"Default","value":"FALSE"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
