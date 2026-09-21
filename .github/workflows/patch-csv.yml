@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Unit_ID","row_id":"KAIS","mode":"delete_where","where":{"Unit_ID":"KAIS"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Points.csv","id_column":"Point_Option_ID","row_id":"point_1","column":"Cost","value":"155"},{"file":"data/marines/Unit_Points.csv","id_column":"Point_Option_ID","row_id":"point_2","column":"Cost","value":"310"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
