@@ -35,11 +35,11 @@ If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [WEAPONS] [IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Weapon Rules],2,
 ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],1,
-PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA\u003A ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
+PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
 - +1 to wound rolls",[+1 TO HIT] [+1 TO WOUND],[Combat Modifiers] [Combat Modifiers],2,0
 PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,,2,
-PULSA_ROKKIT,Pulsa Rokkit,"Once per battle\u003A vs MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
+PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: vs MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
 - +1 AP
 - [LETHAL HITS].",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP] [LETHAL HITS],[Weapon Stats] [Weapon Rules],2,0
 PYROMANIAKS,Pyromaniaks,"[RE-ROLL 1S TO WOUND] if within 6"". If on Objective: [RE-ROLL ALL WOUNDS]","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Combat Modifiers] [Combat Modifiers],2,
@@ -54,10 +54,10 @@ SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This mod
 SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,,3,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
 Control Objective = Secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,2,
-THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command\u003A
-- Turbo Engine\u003A Advance / Fall Back and Charge
-- Shokk Attack\u003A Back to Reserves
-- Pulse Jet\u003A Advance [+6 M”]; move through models and Terrain","In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
+THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
+- Turbo Engine: Advance / Fall Back and Charge
+- Shokk Attack: Back to Reserves
+- Pulse Jet: Advance [+6 M”]; move through models and Terrain","In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
 
 Turbo Engine: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back.
 
