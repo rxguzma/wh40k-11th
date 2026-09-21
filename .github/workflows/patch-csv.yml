@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TERMINATOR_ASSAULT_SQUAD__ASSAULT_TERMINATOR_LOADOUT__ASSAULT_TERMINATORS_HAMMER","column":"Points_Per_Model","value":"5"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TERMINATOR_ASSAULT_SQUAD__ASSAULT_TERMINATOR_LOADOUT__ASSAULT_TERMINATORS_CLAWS","sets":{"Display_Section":"","Display_Order":""}},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TERMINATOR_ASSAULT_SQUAD__ASSAULT_TERMINATOR_LOADOUT__ASSAULT_TERMINATORS_HAMMER","sets":{"Display_Section":"","Display_Order":""}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
