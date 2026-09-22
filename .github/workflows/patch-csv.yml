@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"GLOBAL_DEFAULT_ACTIVE_OFF","mode":"replace_text","column":"Default_Active","from":"1","to":"0"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/tyranids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"GLOBAL_DEFAULT_ACTIVE_OFF","mode":"replace_text","column":"Default_Active","from":"1","to":"0"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
