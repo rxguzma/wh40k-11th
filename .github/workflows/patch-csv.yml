@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"NAZDREGS_KNOW_WOTZ","column":"Tags","value":"UNIT, SHOOT, WEAPONS, DEEP STRIKE, IGNORES COVER"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"PULSA_ROKKIT","column":"Description","value":"Once per battle vs MONSTER / VEHICLE 24\" \\nRANGE [+1 AP] and [LETHAL HITS]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
