@@ -20,6 +20,7 @@ RETIRED_COLUMNS_BY_FILE = {
     ("army", "Army_Rules.csv"): {"Tag Categories"},
     ("army", "Loadout_Weapons.csv"): {"Mapping_ID"},
     ("army", "Loadout_Compatibility.csv"): {"Compatibility_ID"},
+    ("army", "Weapon_Abilities.csv"): {"Separator_Before"},
 }
 
 
