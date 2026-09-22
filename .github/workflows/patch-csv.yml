@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"DAMAGED_1_6","mode":"insert","sets":{"Ability Name":"Damaged 1-6","Short_Description":"-1 to Hit while at 1-6 wounds remaining","Long_Description":"Damaged 1-6\u003A While this model has 1-6 wounds remaining, subtract 1 from the Hit roll each time this model makes an attack.","Visibility_ID":"2"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"FIRING_DECK_7","mode":"insert","sets":{"Ability Name":"Firing Deck 7","Short_Description":"Firing Deck 7","Long_Description":"Firing Deck\u003A This ability always takes the form Firing Deck X. In your Shooting phase, each time this TRANSPORT is selected to shoot, if one or more units are embarked within it, select up to X embarked models, excluding models whose units have already been selected to shoot this phase. For each selected model, select one of its ranged weapons, excluding [ONE SHOT] weapons. Until this TRANSPORT has resolved all of its attacks, it has all selected weapons in addition to its other weapons. Until the end of the turn, units embarked within this TRANSPORT are not eligible to shoot.","Visibility_ID":"2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
