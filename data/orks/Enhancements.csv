@@ -3,7 +3,7 @@ orks_war_horde_enhancement_headwoppas_killchoppa,orks_war_horde,HEADWOPPA'S KILL
 orks_war_horde_enhancement_da_boss_is_watchin,orks_war_horde,DA BOSS IS WATCHIN',25,FALSE,"ORKS model only. Once per battle, per army: in your Movement phase, this unit is RILED UP until the start of your next turn. [RILED UP] [INVULNERABLE SAVE 5+]","ORKS model only. (Once per battle, per army) In your Movement phase, you can use this ability. If you do, this unit is RILED UP until the start of your next turn.",[RILED UP] [INVULNERABLE SAVE 5+],0,ORKS,,
 orks_war_horde_enhancement_kunnin_but_brutal,orks_war_horde,KUNNIN' BUT BRUTAL,20,FALSE,ORKS model only. [FALL BACK AND SHOOT] [FALL BACK AND CHARGE],"ORKS model only. When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot / declare a charge.",[FALL BACK AND SHOOT] [FALL BACK AND CHARGE],0,ORKS,,
 orks_war_horde_enhancement_follow_me_ladz,orks_war_horde,FOLLOW ME LADZ,20,FALSE,ORKS model only. This unit has [+2 M”].,"ORKS model only. This unit has +2"" M.",[+2 M”],1,ORKS,,
-orks_freebooter_krew_enhancement_bionik_workshop,orks_freebooter_krew,Bionik Workshop,15,FALSE,"BIG MEK or PAINBOY. At Battle’s start, roll D3\u003A
+orks_freebooter_krew_enhancement_bionik_workshop,orks_freebooter_krew,Bionik Workshop,15,FALSE,"BIG MEK or PAINBOY. At Battle’s start, roll D3:
 1) Bionik Legs [+2 M”]
 2) Bionik Arms MELEE [+1 S]
 3) Bionik Bonce MELEE [+1 WS]","BIG MEK or Painboy model only. At the start of the battle, roll one D3 and compare the result to the list below. Until the end of the battle, models in the bearer’s unit have that bioniks ability: 1. Bionik Legs – add 2″ to the Move characteristic of this model; 2. Bionik Arms – add 1 to the Strength characteristic of melee weapons equipped by this model; 3. Bionik Bonce – improve the Weapon Skill characteristic of melee weapons equipped by this model by 1.",[+2 M”] [+1 S] [+1 WS],0,,"BIG MEK, PAINBOY",
@@ -16,7 +16,7 @@ orks_freebooter_krew_enhancement_git_spotter_squig,orks_freebooter_krew,Git‑Sp
 orks_freebooter_krew_enhancement_razgits_magik_map,orks_freebooter_krew,Razgit’s Magik Map,25,FALSE,"ORKS. After deployment, [REDEPLOY 3] ORKS INFANTRY; they may go to Reserves regardless of limits.","ORKS model only. After both players have deployed their armies, select up to three ORKS INFANTRY units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.",[REDEPLOY 3],0,ORKS,,
 orks_rollin_deff_enhancement_targetin_gizmos,orks_rollin_deff,Targetin’ Gizmos,15,FALSE,"WAGON. With BIG MEK embarked, RANGED attacks [IGNORES COVER]
 
-If RILED UP\u003A [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],0,WAGON,,
+If RILED UP: [SUSTAINED HITS 1]","WAGON unit only. While a BIG MEK model is embarked within this unit, this unit’s ranged attacks have [IGNORES COVER]. If the Waaagh! is active for this unit, this unit’s ranged attacks also have [SUSTAINED HITS 1].",[IGNORES COVER] [SUSTAINED HITS 1],0,WAGON,,
 orks_green_tide_enhancement_ferocious_show_off,orks_green_tide,FEROCIOUS SHOW-OFF,15,FALSE,"INFANTRY model. 
 Melee [+1 A] or [+2 A] if 11+ models.","ORKS INFANTRY model only. This model's melee attacks have:
 - +1 A
@@ -27,7 +27,7 @@ orks_bully_boyz_enhancement_wimp_kickaz,orks_bully_boyz,WIMP-KICKAZ (UP),15,TRUE
 - That enemy unit must select the desperate escape mode.
 - If this unit is RILED UP, that enemy unit has -1 to the hazard rolls made for that desperate escape.",[FORCE DESPERATE ESCAPE] [ENEMY -1 HAZARD],0,NOBZ,,
 orks_bully_boyz_enhancement_tellyporta_boss,orks_bully_boyz,TELLYPORTA BOSS,20,FALSE,MEGA ARMOUR model only. Unit has [DEEP STRIKE],MEGA ARMOUR model only. This unit (excluding VEHICLE units) has Deep Strike.,[DEEP STRIKE],1,MEGA ARMOUR,,
-orks_taktikal_brigade_enhancement_kill_kommanda,orks_taktikal_brigade,KILL KOMMANDA,20,FALSE,BIG MEK / WARBOSS INFANTRY model only. While part of an attached unit\u003A [INFILTRATORS] [STEALTH],"BIG MEK / WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:
+orks_taktikal_brigade_enhancement_kill_kommanda,orks_taktikal_brigade,KILL KOMMANDA,20,FALSE,BIG MEK / WARBOSS INFANTRY model only. While part of an attached unit: [INFILTRATORS] [STEALTH],"BIG MEK / WARBOSS INFANTRY model only. While this model is part of an attached unit, this model has:
 - Infiltrators
 - Stealth",[INFILTRATORS] [STEALTH],0,INFANTRY,"BIG MEK, WARBOSS",
 orks_taktikal_brigade_enhancement_throat_slittas,orks_taktikal_brigade,THROAT-SLITTAS (UP),15,TRUE,KOMMANDOS / STORMBOYZ unit only. Melee has [LETHAL HITS: non-MONSTER / VEHICLE]. [LETHAL HITS],KOMMANDOS / STORMBOYZ unit only. This unit's melee attacks have [LETHAL HITS: non-MONSTER / VEHICLE].,[LETHAL HITS],0,,"KOMMANDOS, STORMBOYZ",
@@ -94,7 +94,7 @@ orks_wurrband_enhancement_warphead,orks_wurrband,WARPHEAD,25,FALSE,"ORKS PSYKER 
 - Can re-roll psychic rolls.",,,"ORKS, PSYKER",,
 orks_runt_swarm_enhancement_extra_sneaky,orks_runt_swarm,EXTRA SNEAKY (UP),10,TRUE,"GRETCHIN only.
 Detection: -3”","GRETCHIN only.
-Detection\u003A -3”",,,GRETCHIN,,
+Detection: -3”",,,GRETCHIN,,
 orks_runt_swarm_enhancement_minefield_detail,orks_runt_swarm,MINEFIELD DETAIL (UP),10,TRUE,"GRETCHIN unit only. While not embarked, this unit has Scouts 6"".","GRETCHIN unit only. While this unit is not embarked, this unit has Scouts 6"".",,,GRETCHIN,,
 orks_shoota_boyz_enhancement_supa_glowy_fing,orks_shoota_boyz,SUPA-GLOWY FING,25,FALSE,"INFANTRY model (excluding MEKBOY):
 Ranged gain [ANTI-INFANTRY 4+], [DEVASTATING WOUNDS], and [SUPA-HAZARDOUS].","ORKS INFANTRY model only (excluding MEKBOY models). This model's ranged attacks have:
