@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"GUNWAGON","mode":"delete_where","where":{"Unit_ID":"GUNWAGON","Weapon_ID":"WRECKIN_BALL","Row_Type":"","Layout_Row_ID":""}},{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"GUNWAGON","mode":"insert","allow_duplicate_id":true,"sets":{"Weapon_ID":"WRECKIN_BALL"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"DESOLATION_SQUAD","mode":"fill_blank_where","match_column":"Option_Name","match_value":"Vengor Launcher","column":"Points_Per_Model","value":"5"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
