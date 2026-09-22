@@ -1,33 +1,33 @@
-Stratagem_ID,Detachment_ID,Stratagem_Name,CP_Cost,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
+Stratagem_ID,Detachment_ID,Stratagem_Name,CP_Cost,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 space_marines_gladius_task_force_stratagem_armour_of_contempt_1cp,space_marines_gladius_task_force,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
 When targeted: Attacks against this unit have -1 AP until that enemy unit has attacked.","WHEN: Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 TARGET: That ADEPTUS ASTARTES unit.
-EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,0,,,
+EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,0,,,
 space_marines_gladius_task_force_stratagem_adaptive_strategy_1cp,space_marines_gladius_task_force,ADAPTIVE STRATEGY,1,"COMMAND phase
 Select different doctrine","WHEN: Your Command phase.
 TARGET: One friendly ADEPTUS ASTARTES unit.
-EFFECT: Select one combat doctrine. That combat doctrine is active for your unit until the start of your next Command phase.",,,0,,,
+EFFECT: Select one combat doctrine. That combat doctrine is active for your unit until the start of your next Command phase.",,0,,,
 space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_gladius_task_force,A WORTHY DEATH,1,Fight on Death 4+,"WHEN: Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6:
-On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,0,,,
+On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,0,,,
 space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: IGNORES COVER [IGNORES COVER],"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 TARGET: That ADEPTUS ASTARTES unit.
-EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],[Range - Weapon Rules],0,,,
+EFFECT: Your unit’s ranged attacks have [IGNORES COVER].",[IGNORES COVER],0,,,
 space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: LANCE [LANCE],"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 TARGET: That ADEPTUS ASTARTES unit.
-EFFECT: Your unit’s melee attacks have [LANCE].",[LANCE],[Melee - Weapon Rules],0,,,
+EFFECT: Your unit’s melee attacks have [LANCE].",[LANCE],0,,,
 space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT within 8”
 INFANTRY / MOUNTED
 Reactive Move D6”","WHEN: Your opponent’s Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged ADEPTUS ASTARTES INFANTRY/MOUNTED unit.
 TARGET: That ADEPTUS ASTARTES INFANTRY/MOUNTED unit.
-EFFECT: Your unit can make a normal move of up to D6"".",,,0,,,
+EFFECT: Your unit can make a normal move of up to D6"".",,0,,,
 space_marines_assault_brethren_stratagem_armour_of_contempt_1cp,space_marines_assault_brethren,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
 Attacks: -1 AP","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
-EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,0,,,
+EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,0,,,
 space_marines_assault_brethren_stratagem_gene_wrought_might_1cp,space_marines_assault_brethren,GENE-WROUGHT MIGHT,1,"FIGHT: MELEE have LANCE
 In ASSAULT: LANCE & +1 AP [LANCE]","WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 
@@ -35,27 +35,27 @@ TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Your unit's melee attacks have:
 • [LANCE].
-• Or: If the assault doctrine is active for your unit, [LANCE] and +1 AP.",[LANCE],[Melee - Weapon Rules],0,,,
+• Or: If the assault doctrine is active for your unit, [LANCE] and +1 AP.",[LANCE],0,,,
 space_marines_assault_brethren_stratagem_duty_in_death_1cp,space_marines_assault_brethren,DUTY IN DEATH,1,"Fight on Death 4+
 In ASSAULT: Fight on Death 3+","WHEN: Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6, with +1 to that roll if the assault doctrine is active for your unit:
-• On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,,0,,,
+• On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",,0,,,
 space_marines_tactical_brethren_stratagem_armour_of_contempt_1cp,space_marines_tactical_brethren,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
 Attacks: -1 AP","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
-EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,0,,,
+EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,0,,,
 space_marines_tactical_brethren_stratagem_domination_fire_1cp,space_marines_tactical_brethren,DOMINATION FIRE,1,"SHOOTING: Enemy hit is SUPPRESSED
 SUPPRESSED: -1 to Hit until your next turn","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit has shot.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Select one enemy unit hit by those attacks. That enemy unit is suppressed until the start of your next turn:
-• While a unit is suppressed, that unit's attacks have -1 to hit rolls.",,,0,,,
+• While a unit is suppressed, that unit's attacks have -1 to hit rolls.",,0,,,
 space_marines_tactical_brethren_stratagem_masterful_tactics_1cp,space_marines_tactical_brethren,MASTERFUL TACTICS,1,"INFANTRY / MOUNTED only
 Enemy ends move within 8"": Move D6""
 In TACTICAL: Move 6""","WHEN: Your opponent's Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged ADEPTUS ASTARTES INFANTRY/MOUNTED unit.
@@ -64,13 +64,13 @@ TARGET: That ADEPTUS ASTARTES INFANTRY/MOUNTED unit.
 
 EFFECT: Your unit can make a normal move of:
 • Up to D6"".
-• Or: If the tactical doctrine is active for your unit, up to 6"".",,,0,,,
+• Or: If the tactical doctrine is active for your unit, up to 6"".",,0,,,
 space_marines_devastator_brethren_stratagem_armour_of_contempt_1cp,space_marines_devastator_brethren,ARMOUR OF CONTEMPT,1,"Enemy SHOOTING / FIGHT
 Attacks: -1 AP","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES unit.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
-EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,,,,
+EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",,,,,
 space_marines_devastator_brethren_stratagem_storm_of_fire_1cp,space_marines_devastator_brethren,STORM OF FIRE,1,"SHOOTING: RANGED IGNORE COVER
 In DEVASTATOR: IGNORE COVER & +1 AP [IGNORES COVER]","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 
@@ -78,19 +78,19 @@ TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Your unit's ranged attacks have:
 • [IGNORES COVER].
-• Or: If the devastator doctrine is active for your unit, [IGNORES COVER] and +1 AP.",[IGNORES COVER],[Range - Weapon Rules],,,,
+• Or: If the devastator doctrine is active for your unit, [IGNORES COVER] and +1 AP.",[IGNORES COVER],,,,
 space_marines_devastator_brethren_stratagem_hail_of_vengeance_2cp,space_marines_devastator_brethren,HAIL OF VENGEANCE,2,"Enemy SHOOTING destroys a model
 Shoot back at that enemy unit","WHEN: Your opponent's Shooting phase, when an enemy unit has shot, if those attacks destroyed a model in a friendly ADEPTUS ASTARTES unit.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
-EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,,,,,
+EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",,,,,
 space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp,space_marines_terminator_stormforce,TACTICAL DREADNOUGHT FORTITUDE,2,"Enemy SHOOTING / FIGHT
 TERMINATOR: Attacks -1 D [INCOMING -1 D]","WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES TERMINATOR unit.
 
 TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
-EFFECT: Attacks that target your unit have -1 D until that enemy unit has attacked.",[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+EFFECT: Attacks that target your unit have -1 D until that enemy unit has attacked.",[INCOMING -1 D],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_merciless_veterans_1cp,space_marines_terminator_stormforce,MERCILESS VETERANS,1,"TERMINATOR SHOOTING
 RANGED: LETHAL HITS & SUSTAINED HITS 1 [LETHAL HITS] [SUSTAINED HITS 1]","WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES TERMINATOR unit is selected to shoot.
 
@@ -98,13 +98,13 @@ TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
 EFFECT: Your unit's ranged attacks have:
 • [LETHAL HITS].
-• [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1],[Weapon Rules] [Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+• [SUSTAINED HITS 1].",[LETHAL HITS] [SUSTAINED HITS 1],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_gunship_extraction_1cp,space_marines_terminator_stormforce,GUNSHIP EXTRACTION,1,"End of enemy FIGHT
 Unengaged TERMINATOR: STRATEGIC RESERVES [STRATEGIC RESERVES]","WHEN: End of your opponent's Fight phase.
 
 TARGET: One friendly unengaged ADEPTUS ASTARTES TERMINATOR unit.
 
-EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_stratagem_relentless_assault_1cp,space_marines_tacticus_attack_force,RELENTLESS ASSAULT,1,"TACTICUS SHOOTING / FIGHT
 vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
 vs MONSTER / VEHICLE: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly TACTICUS unit is selected to attack.
@@ -113,24 +113,24 @@ TARGET: That TACTICUS unit.
 
 EFFECT: Your unit’s attacks have:
 • [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
-• Or: [LETHAL HITS: MONSTER/VEHICLE].",,,0,,,
+• Or: [LETHAL HITS: MONSTER/VEHICLE].",,0,,,
 space_marines_tacticus_attack_force_stratagem_transhuman_swiftness_1cp,space_marines_tacticus_attack_force,TRANSHUMAN SWIFTNESS,1,"TACTICUS on OBJECTIVE
 After enemy fights: FIGHTS FIRST & fight next","WHEN: Fight phase, when an enemy unit has fought.
 
 TARGET: One friendly TACTICUS unit that is within range of an objective and is eligible to fight.
 
-EFFECT: Your unit has Fights First and must be the next unit you select to fight.",,,0,,,
+EFFECT: Your unit has Fights First and must be the next unit you select to fight.",,0,,,
 space_marines_tacticus_attack_force_stratagem_tactical_focus_1cp,space_marines_tacticus_attack_force,TACTICAL FOCUS,1,"TACTICUS CONSOLIDATE: D3+3\""","WHEN: Fight phase, when a friendly TACTICUS unit is selected to make a consolidation move.
 
 TARGET: That TACTICUS unit.
 
-EFFECT: When making that consolidation move, your unit can move up to D3+3"".",,,0,,,
+EFFECT: When making that consolidation move, your unit can move up to D3+3"".",,0,,,
 space_marines_tacticus_firestorm_force_stratagem_for_the_emperor_1cp,space_marines_tacticus_firestorm_force,FOR THE EMPEROR!,1,"COMMAND: TACTICUS on OBJECTIVE
 +1 OC until end of turn","WHEN: Command phase.
 
 TARGET: One friendly TACTICUS unit that is within range of an objective.
 
-EFFECT: Your unit has +1 OC until the end of the turn.",,,0,,,
+EFFECT: Your unit has +1 OC until the end of the turn.",,0,,,
 space_marines_tacticus_firestorm_force_stratagem_relentless_assault_1cp,space_marines_tacticus_firestorm_force,RELENTLESS ASSAULT,1,"TACTICUS SHOOTING / FIGHT
 vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
 vs MONSTER / VEHICLE: LETHAL HITS","WHEN: Your Shooting phase or the Fight phase, when a friendly TACTICUS unit is selected to attack.
@@ -139,7 +139,7 @@ TARGET: That TACTICUS unit.
 
 EFFECT: Your unit’s attacks have:
 • [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
-• Or: [LETHAL HITS: MONSTER/VEHICLE].",,,0,,,
+• Or: [LETHAL HITS: MONSTER/VEHICLE].",,0,,,
 space_marines_tacticus_firestorm_force_stratagem_point_blank_brutality_1cp,space_marines_tacticus_firestorm_force,POINT-BLANK BRUTALITY,1,"Engaged TACTICUS SHOOTING
 Non-BLAST RANGED: CLOSE-QUARTERS & IGNORE COVER","WHEN: Your Shooting phase, when a friendly engaged TACTICUS unit is selected to shoot.
 
@@ -147,7 +147,7 @@ TARGET: That TACTICUS unit.
 
 EFFECT: Your unit’s ranged attacks (excluding [BLAST] attacks) have:
 • [CLOSE-QUARTERS].
-• [IGNORES COVER].",,,0,,,
+• [IGNORES COVER].",,0,,,
 space_marines_phobos_shadow_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shadow_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
 Attacks: +1 S & LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
@@ -155,7 +155,7 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Your unit’s attacks have:
 • +1 S.
-• [LETHAL HITS].",[LETHAL HITS],,0,,,
+• [LETHAL HITS].",[LETHAL HITS],0,,,
 space_marines_phobos_shadow_force_stratagem_mortis_snares_1cp,space_marines_phobos_shadow_force,MORTIS SNARES,1,"End MOVEMENT: PHOBOS / SCOUT on OBJECTIVE
 Snare objective
 Enemy ends move in range: 2+ = D6 MW","WHEN: End of your Movement phase.
@@ -164,13 +164,13 @@ TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: If your unit is controlling an objective, that objective is snared. While an objective is snared, when an enemy unit ends a move within range of that objective, roll one D6:
 • On a 2+, that enemy unit suffers D6 mortal wounds.
-• That objective is no longer snared.",,,0,,,
+• That objective is no longer snared.",,0,,,
 space_marines_phobos_shadow_force_stratagem_tactical_withdrawal_1cp,space_marines_phobos_shadow_force,TACTICAL WITHDRAWAL,1,"End enemy FIGHT
 Unengaged PHOBOS / SCOUT: STRATEGIC RESERVES","WHEN: End of your opponent’s Fight phase.
 
 TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
-EFFECT: Place your unit in strategic reserves.",,,0,,,
+EFFECT: Place your unit in strategic reserves.",,0,,,
 space_marines_phobos_shock_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shock_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
 Attacks: +1 S & LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
@@ -178,7 +178,7 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Your unit’s attacks have:
 • +1 S.
-• [LETHAL HITS].",[LETHAL HITS],,0,,,
+• [LETHAL HITS].",[LETHAL HITS],0,,,
 space_marines_phobos_shock_force_stratagem_transhuman_reactions_1cp,space_marines_phobos_shock_force,TRANSHUMAN REACTIONS,1,"Enemy ends move within 8""
 Unengaged PHOBOS: Move D6""
 In TACTICAL: Move 6""","WHEN: Your opponent’s Movement phase, when an enemy unit ends a move within 8"" of a friendly unengaged PHOBOS unit.
@@ -187,19 +187,19 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Your unit can make a normal move of:
 • Up to D6"".
-• Or: If the tactical doctrine is active for your unit, up to 6"".",,,0,,,
+• Or: If the tactical doctrine is active for your unit, up to 6"".",,0,,,
 space_marines_phobos_shock_force_stratagem_umbral_evasion_1cp,space_marines_phobos_shock_force,UMBRAL EVASION,1,"Enemy SHOOTING
 PHOBOS: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an enemy unit targets a friendly PHOBOS unit.
 
 TARGET: That PHOBOS unit.
 
-EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
+EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,0,,,
 space_marines_gravis_linebreaker_force_stratagem_annihilating_force_1cp,space_marines_gravis_linebreaker_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
 Attacks: LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
 
 TARGET: That GRAVIS unit.
 
-EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],,0,,,
+EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],0,,,
 space_marines_gravis_linebreaker_force_stratagem_purgation_push_1cp,space_marines_gravis_linebreaker_force,PURGATION PUSH,1,"After SHOOTING & unengaged: Move 5"" onto OBJECTIVE
 Cannot CHARGE / EMBARK","WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
 
@@ -207,32 +207,32 @@ TARGET: That GRAVIS unit.
 
 EFFECT:
 • If your unit is unengaged, your unit can make a normal move of up to 5"", and must end that move within range of an objective.
-• Your unit is not eligible to declare a charge or embark within a TRANSPORT until the end of the turn.",,,0,,,
+• Your unit is not eligible to declare a charge or embark within a TRANSPORT until the end of the turn.",,0,,,
 space_marines_gravis_linebreaker_force_stratagem_armoured_impact_1cp,space_marines_gravis_linebreaker_force,ARMOURED IMPACT,1,"After CHARGE: D6 per engaged model
 Each 3+: 1 MW","WHEN: Your Charge phase, when a friendly GRAVIS unit ends a charge move.
 
 TARGET: That GRAVIS unit.
 
 EFFECT: When your unit ends a charge move, you can select one enemy unit engaged with your unit. If you do, roll one D6 for each model in your unit engaged with that enemy unit:
-• For each 3+, that enemy unit suffers 1 mortal wound.",,,0,,,
+• For each 3+, that enemy unit suffers 1 mortal wound.",,0,,,
 space_marines_gravis_siege_force_stratagem_annihilating_force_1cp,space_marines_gravis_siege_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
 Attacks: LETHAL HITS [LETHAL HITS]","WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
 
 TARGET: That GRAVIS unit.
 
-EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],,0,,,
+EFFECT: Your unit’s attacks have [LETHAL HITS].",[LETHAL HITS],0,,,
 space_marines_gravis_siege_force_stratagem_stand_unyielding_1cp,space_marines_gravis_siege_force,STAND UNYIELDING,1,"End MOVEMENT
 Secure controlled OBJECTIVE","WHEN: End of your Movement phase.
 
 TARGET: One friendly GRAVIS unit.
 
-EFFECT: Select one objective your unit is controlling. That objective is secured.",,,0,,,
+EFFECT: Select one objective your unit is controlling. That objective is secured.",,0,,,
 space_marines_gravis_siege_force_stratagem_suppression_volleys_1cp,space_marines_gravis_siege_force,SUPPRESSION VOLLEYS,1,"After SHOOTING: Enemy hit takes BATTLE-SHOCK
 -1 to BATTLE-SHOCK roll","WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
 
 TARGET: That GRAVIS unit.
 
-EFFECT: Select one enemy unit hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,,,
+EFFECT: Select one enemy unit hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.",,0,,,
 space_marines_stormlance_task_force_stratagem_wind_swift_evasion_1cp,space_marines_stormlance_task_force,WIND-SWIFT EVASION,1,"End FIGHT
 MOUNTED: NORMAL MOVE if unengaged
 FALL BACK if engaged","WHEN: End of the Fight phase.
@@ -241,24 +241,24 @@ TARGET: One friendly ADEPTUS ASTARTES MOUNTED unit that was eligible to fight th
 
 EFFECT:
 • If your unit is unengaged, your unit can make a normal move.
-• Or: If your unit is engaged, your unit can make a fall-back move.",,,0,,,
+• Or: If your unit is engaged, your unit can make a fall-back move.",,0,,,
 space_marines_stormlance_task_force_stratagem_sudden_onslaught_1cp,space_marines_stormlance_task_force,SUDDEN ONSLAUGHT,1,"MOUNTED / SPEEDER ADVANCE: 6""","WHEN: Your Movement phase, when a friendly ADEPTUS ASTARTES MOUNTED/SPEEDER unit is selected to make an advance move.
 
 TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
 
-EFFECT: Your unit can change its advance rolls to a 6.",,,0,,,
+EFFECT: Your unit can change its advance rolls to a 6.",,0,,,
 space_marines_stormlance_task_force_stratagem_hurtling_targets_1cp,space_marines_stormlance_task_force,HURTLING TARGETS,1,"Enemy SHOOTING
 MOUNTED / SPEEDER: -1 to Hit","WHEN: Your opponent’s Shooting phase, when an enemy unit targets a friendly ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
 
 TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
 
-EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,,0,,,
+EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",,0,,,
 space_marines_ironclad_champions_stratagem_adamantine_terror_1cp,space_marines_ironclad_champions,ADAMANTINE TERROR,1,"Start FIGHT
 DREADNOUGHT: Engaged enemy units take BATTLE-SHOCK at -1","WHEN: Start of the Fight phase.
 
 TARGET: One friendly DREADNOUGHT unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,0,ADEPTUS ASTARTES,DREADNOUGHT,
 space_marines_ironclad_champions_stratagem_mercy_is_weakness_1cp,space_marines_ironclad_champions,MERCY IS WEAKNESS,1,"DREADNOUGHT SHOOTING / FIGHT
 Attacks: LETHAL HITS or SUSTAINED HITS 1","WHEN: Your Shooting phase or the Fight phase, when a friendly DREADNOUGHT unit is selected to attack.
 
@@ -266,16 +266,16 @@ TARGET: That DREADNOUGHT unit.
 
 EFFECT: Your unit’s attacks have:
 • [LETHAL HITS].
-• Or: [SUSTAINED HITS 1].",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
+• Or: [SUSTAINED HITS 1].",,0,ADEPTUS ASTARTES,DREADNOUGHT,
 space_marines_ironclad_champions_stratagem_unstoppable_advance_1cp,space_marines_ironclad_champions,UNSTOPPABLE ADVANCE,1,"MOVEMENT / CHARGE
 DREADNOUGHT: MOBILE","WHEN: Your Movement/Charge phase, when a friendly DREADNOUGHT unit is selected to move or declares a charge.
 
 TARGET: That DREADNOUGHT unit.
 
-EFFECT: Your unit has MOBILE.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
-space_marines_medusas_wrath_stratagem_ancient_fury,space_marines_medusas_wrath,ANCIENT FURY,1,COMMAND DREADNOUGHT until next COMMAND — [+1 M] [+1 T] [+1 LD] [+1 OC] [+1 To Hit].,,"ACTIVE, STATS, SHOOT, MELEE, WEAPONS, +1 M, +1 T, +1 LD, +1 OC, +1 TO HIT",,0,DREADNOUGHT,,
-space_marines_medusas_wrath_stratagem_spirits_of_iron,space_marines_medusas_wrath,SPIRITS OF IRON,1,Unit gets FNP 5+ vs MORTAL WOUNDS for phase.,,ACTIVE,,0,,,
-space_marines_medusas_wrath_stratagem_mercy_is_weakness,space_marines_medusas_wrath,MERCY IS WEAKNESS,1,SHOOTING/FIGHT — attacks gain [SUSTAINED HITS 1]; VEHICLE also +1 to Wound.,,"ACTIVE, SHOOT, MELEE, WEAPONS, SUSTAINED HITS 1",,0,,,
-space_marines_medusas_wrath_stratagem_unbowed_conviction,space_marines_medusas_wrath,UNBOWED CONVICTION,1,COMMAND below Starting Strength — ignore BS/WS/Hit/Wound modifiers for round.,,ACTIVE,,0,,,
-space_marines_medusas_wrath_stratagem_power_of_the_machine_spirit,space_marines_medusas_wrath,POWER OF THE MACHINE SPIRIT,1,After enemy SHOOTS VEHICLE — SNAP SHOOT back; at/below HALF-STRENGTH shoot normally.,,"ACTIVE, SHOOT",,0,VEHICLE,,
-space_marines_medusas_wrath_stratagem_vengeful_animus,space_marines_medusas_wrath,VENGEFUL ANIMUS,1,Automatically trigger DEADLY DEMISE.,,ACTIVE,,0,,,
+EFFECT: Your unit has MOBILE.",,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_medusas_wrath_stratagem_ancient_fury,space_marines_medusas_wrath,ANCIENT FURY,1,COMMAND DREADNOUGHT until next COMMAND — [+1 M] [+1 T] [+1 LD] [+1 OC] [+1 To Hit].,,"ACTIVE, STATS, SHOOT, MELEE, WEAPONS, +1 M, +1 T, +1 LD, +1 OC, +1 TO HIT",0,DREADNOUGHT,,
+space_marines_medusas_wrath_stratagem_spirits_of_iron,space_marines_medusas_wrath,SPIRITS OF IRON,1,Unit gets FNP 5+ vs MORTAL WOUNDS for phase.,,ACTIVE,0,,,
+space_marines_medusas_wrath_stratagem_mercy_is_weakness,space_marines_medusas_wrath,MERCY IS WEAKNESS,1,SHOOTING/FIGHT — attacks gain [SUSTAINED HITS 1]; VEHICLE also +1 to Wound.,,"ACTIVE, SHOOT, MELEE, WEAPONS, SUSTAINED HITS 1",0,,,
+space_marines_medusas_wrath_stratagem_unbowed_conviction,space_marines_medusas_wrath,UNBOWED CONVICTION,1,COMMAND below Starting Strength — ignore BS/WS/Hit/Wound modifiers for round.,,ACTIVE,0,,,
+space_marines_medusas_wrath_stratagem_power_of_the_machine_spirit,space_marines_medusas_wrath,POWER OF THE MACHINE SPIRIT,1,After enemy SHOOTS VEHICLE — SNAP SHOOT back; at/below HALF-STRENGTH shoot normally.,,"ACTIVE, SHOOT",0,VEHICLE,,
+space_marines_medusas_wrath_stratagem_vengeful_animus,space_marines_medusas_wrath,VENGEFUL ANIMUS,1,Automatically trigger DEADLY DEMISE.,,ACTIVE,0,,,

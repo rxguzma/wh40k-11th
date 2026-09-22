@@ -1,59 +1,59 @@
-Ability_ID,Ability Name,Short_Description,Long_Description,Tags,Tag Categories,Visibility_ID,Default_Active
-BOMB_SQUIG,Bomb Squig,"Once per battle: after Normal move, D3 mortals to visible enemy within 12"" on 3+","Bomb Squig (Once per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6. On a 3+, that enemy unit suffers D3 mortal wounds. Place one Bomb Squig token next to the unit, removing it after this ability is used.",,,2,
-CLEAVE 1,CLEAVE 1,Add +1 melee attack per 5 target models [CLEAVE 1],"When determining this melee weapon’s number of attacks, add 1 for every five models in the target unit, rounding down.",[CLEAVE 1],[Melee - Weapon Rules],2,
-CLEAVE 2,CLEAVE 2,Add +2 attack dice per 5 target models if targeting one unit [CLEAVE 2],"Each time you gather attack dice for this weapon, if you only selected one target for all of this weapon’s attacks, add 2 additional attack dice for every five models that were in the target unit in the Select Targets step, rounding down.",[CLEAVE 2],[Melee - Weapon Rules],2,
-KOMBI,KOMBI,Choose one profile [KOMBI],"Before selecting targets for this weapon, select one of its eligible profiles to make an attack with.",[KOMBI],[Range - Weapon Rules],2,
-CLOSE-QUARTERS,CLOSE-QUARTERS,Can shoot while engaged; must target engaged enemy [CLOSE-QUARTERS],"This weapon can be shot while the bearer’s unit is within Engagement Range, but must target one of those enemy units.",[CLOSE-QUARTERS],[Range - Weapon Rules],2,
+Ability_ID,Ability Name,Short_Description,Long_Description,Tags,Visibility_ID,Default_Active
+BOMB_SQUIG,Bomb Squig,"Once per battle: after Normal move, D3 mortals to visible enemy within 12"" on 3+","Bomb Squig (Once per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6. On a 3+, that enemy unit suffers D3 mortal wounds. Place one Bomb Squig token next to the unit, removing it after this ability is used.",,2,
+CLEAVE 1,CLEAVE 1,Add +1 melee attack per 5 target models [CLEAVE 1],"When determining this melee weapon’s number of attacks, add 1 for every five models in the target unit, rounding down.",[CLEAVE 1],2,
+CLEAVE 2,CLEAVE 2,Add +2 attack dice per 5 target models if targeting one unit [CLEAVE 2],"Each time you gather attack dice for this weapon, if you only selected one target for all of this weapon’s attacks, add 2 additional attack dice for every five models that were in the target unit in the Select Targets step, rounding down.",[CLEAVE 2],2,
+KOMBI,KOMBI,Choose one profile [KOMBI],"Before selecting targets for this weapon, select one of its eligible profiles to make an attack with.",[KOMBI],2,
+CLOSE-QUARTERS,CLOSE-QUARTERS,Can shoot while engaged; must target engaged enemy [CLOSE-QUARTERS],"This weapon can be shot while the bearer’s unit is within Engagement Range, but must target one of those enemy units.",[CLOSE-QUARTERS],2,
 COMPOSITION_LOOTAS,Composition (Lootas),1 Spanners + 4 Lootas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Lootas.
 
-Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon.",,,2,
-DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,vs MONSTER / VEHICLE — MELEE [RE-ROLL ALL WOUNDS],This unit's melee attacks that target a MONSTER / VEHICLE unit can re-roll wound rolls.,[ACTIVE] [MELEE] [WEAPONS] [RE-ROLL ALL WOUNDS],[Combat Modifiers],2,0
-DATS_OUR_LOOT,Dat’s Our Loot!,[RE-ROLL 1S TO HIT]. If on Objective: [RE-ROLL ALL HITS],"Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is within range of an objective marker, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],[Combat Modifiers] [Combat Modifiers],2,
-DEFF_FROM_ABOVE,Deff from Above,After INGRESS: [+1 TO HIT],"In your Shooting phase, if this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
-DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no saves [DEVASTATING WOUNDS] [DEVASTATING WOUNDS],"Each time an attack with this weapon scores a Critical Wound, no saving throw can be made and the target suffers mortal wounds equal to the weapon’s Damage characteristic.",[DEVASTATING WOUNDS] [DEVASTATING WOUNDS],[Weapon Rules] [Weapon Rules],2,
-DOKS_TOOLZ,Dok’s Toolz,[UNIT] ANYTIME [FNP 5+],Models in his unit have the FNP 5+ ability.,[FNP 5+] [UNIT],[Unit Rules],1,1
-FIXIT_DA_GROT,Fixit da Grot,Command: regain D3 lost wounds,"At the start of your Command phase, this model regains up to D3 lost wounds.",,,2,
-KRUMPIN_TIME,Krumpin Time,MELEE RILED UP: [+1 TO HIT],"In the Fight phase, if this unit is RILED UP, this unit has +1 to hit rolls.",[ACTIVE] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
-KUNNIN_INFILTRATOR,Kunnin' Infiltrator,Hidden and unengaged at end of opponent Fight phase = go [STRATEGIC RESERVES],"At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],2,
-KUSTOM_FORCE_FIELD,Kustom Force Field,[UNIT] RANGE attacks: [INVULNERABLE SAVE 4+],This unit has 4+ InSv against ranged attacks.,[UNIT] [SHOOT] [INVULNERABLE SAVE 4+],[Unit Rules],2,1
-LEADER_BEASTBOSS,Leader: Beastboss,Can Lead: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ,,,3,
-LEADER_BIG_MEK,Leader: Big Mek,"Can Lead: BOYZ, BREAKA BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS",,,3,
-LEADER_BIG_MEK_IN_MEGA_ARMOUR,Leader: Big Mek in Mega Armour,"Can Lead: MEGANOBZ, MEK GUNZ",LEADER: MEGANOBZ,,,3,
-LEADER_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Leader: Big Mek with Shokk Attack Gun,"Can Lead: BOYZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS",,,3,
-LEADER_BOSS_SNIKROT,Leader: Boss Snikrot,Can Lead: KOMMANDOS,LEADER: KOMMANDOS,,,3,
-LEADER_DEFFKILLA_WARTRIKE,Leader: Deffkilla Wartrike,Can Lead: WARBIKERS,LEADER: WARBIKERS,,,3,
-LEADER_WARBOSS,Leader: Warboss,"Can Lead: BOYZ, BREAKA BOYZ, NOBZ","LEADER: BOYZ, BREAKA BOYZ, NOBZ",,,3,
-LEADER_WARBOSS_IN_MEGA_ARMOUR,Leader: Warboss in Mega Armour,Can Lead: MEGANOBZ,LEADER: MEGANOBZ,,,3,
-LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: GRETCHIN,,,3,
+Every Spanner is equipped with: big shoota; close combat weapon. Every Loota is equipped with: deffgun; close combat weapon.",,2,
+DA_BIGGER_DEY_IZ,Da Bigger Dey Iz...,vs MONSTER / VEHICLE — MELEE [RE-ROLL ALL WOUNDS],This unit's melee attacks that target a MONSTER / VEHICLE unit can re-roll wound rolls.,[ACTIVE] [MELEE] [WEAPONS] [RE-ROLL ALL WOUNDS],2,0
+DATS_OUR_LOOT,Dat’s Our Loot!,[RE-ROLL 1S TO HIT]. If on Objective: [RE-ROLL ALL HITS],"Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is within range of an objective marker, you can re-roll the Hit roll instead.",[RE-ROLL 1S TO HIT] [RE-ROLL ALL HITS],2,
+DEFF_FROM_ABOVE,Deff from Above,After INGRESS: [+1 TO HIT],"In your Shooting phase, if this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
+DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no saves [DEVASTATING WOUNDS] [DEVASTATING WOUNDS],"Each time an attack with this weapon scores a Critical Wound, no saving throw can be made and the target suffers mortal wounds equal to the weapon’s Damage characteristic.",[DEVASTATING WOUNDS] [DEVASTATING WOUNDS],2,
+DOKS_TOOLZ,Dok’s Toolz,[UNIT] ANYTIME [FNP 5+],Models in his unit have the FNP 5+ ability.,[FNP 5+] [UNIT],1,1
+FIXIT_DA_GROT,Fixit da Grot,Command: regain D3 lost wounds,"At the start of your Command phase, this model regains up to D3 lost wounds.",,2,
+KRUMPIN_TIME,Krumpin Time,MELEE RILED UP: [+1 TO HIT],"In the Fight phase, if this unit is RILED UP, this unit has +1 to hit rolls.",[ACTIVE] [MELEE] [WEAPONS] [+1 TO HIT],2,0
+KUNNIN_INFILTRATOR,Kunnin' Infiltrator,Hidden and unengaged at end of opponent Fight phase = go [STRATEGIC RESERVES],"At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,
+KUSTOM_FORCE_FIELD,Kustom Force Field,[UNIT] RANGE attacks: [INVULNERABLE SAVE 4+],This unit has 4+ InSv against ranged attacks.,[UNIT] [SHOOT] [INVULNERABLE SAVE 4+],2,1
+LEADER_BEASTBOSS,Leader: Beastboss,Can Lead: BEAST SNAGGA BOYZ,LEADER: BEAST SNAGGA BOYZ,,3,
+LEADER_BIG_MEK,Leader: Big Mek,"Can Lead: BOYZ, BREAKA BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS",,3,
+LEADER_BIG_MEK_IN_MEGA_ARMOUR,Leader: Big Mek in Mega Armour,"Can Lead: MEGANOBZ, MEK GUNZ",LEADER: MEGANOBZ,,3,
+LEADER_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Leader: Big Mek with Shokk Attack Gun,"Can Lead: BOYZ, MEK GUNZ, NOBZ, TANKBUSTAS","LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS",,3,
+LEADER_BOSS_SNIKROT,Leader: Boss Snikrot,Can Lead: KOMMANDOS,LEADER: KOMMANDOS,,3,
+LEADER_DEFFKILLA_WARTRIKE,Leader: Deffkilla Wartrike,Can Lead: WARBIKERS,LEADER: WARBIKERS,,3,
+LEADER_WARBOSS,Leader: Warboss,"Can Lead: BOYZ, BREAKA BOYZ, NOBZ","LEADER: BOYZ, BREAKA BOYZ, NOBZ",,3,
+LEADER_WARBOSS_IN_MEGA_ARMOUR,Leader: Warboss in Mega Armour,Can Lead: MEGANOBZ,LEADER: MEGANOBZ,,3,
+LEADER_ZODGROD_WORTSNAGGA,Leader: Zodgrod Wortsnagga,Can Lead: GRETCHIN,LEADER: GRETCHIN,,3,
 MIGHT_IS_RIGHT,Might is Right,"CHARGE this turn.
 MELEE: [+3 A] and [+2 S]","If this model made a charge move this turn, this model's melee attacks have:
 - +3 A
-- +2 S",[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S],[Weapon Stats] [Weapon Stats],2,0
+- +2 S",[MELEE] [WEAPONS] [ACTIVE] [+3 A] [+2 S],2,0
 MORE_DAKKA,More Dakka,"[UNIT] RANGE [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - [IGNORES COVER]
-- If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [WEAPONS] [IGNORES COVER] [SUSTAINED HITS 1],[Range - Weapon Rules] [Weapon Rules],2,
+- If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [WEAPONS] [IGNORES COVER] [SUSTAINED HITS 1],2,
 ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
-- On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],[Unit Rules],1,
+- On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],1,
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
-- +1 to wound rolls",[+1 TO HIT] [+1 TO WOUND],[Combat Modifiers] [Combat Modifiers],2,0
-PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,,2,
+- +1 to wound rolls",[+1 TO HIT] [+1 TO WOUND],2,0
+PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,2,
 PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: vs MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
 - +1 AP
-- [LETHAL HITS].",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP] [LETHAL HITS],[Weapon Stats] [Weapon Rules],2,0
-PYROMANIAKS,Pyromaniaks,"[RE-ROLL 1S TO WOUND] if within 6"". If on Objective: [RE-ROLL ALL WOUNDS]","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],[Combat Modifiers] [Combat Modifiers],2,
+- [LETHAL HITS].",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP] [LETHAL HITS],2,0
+PYROMANIAKS,Pyromaniaks,"[RE-ROLL 1S TO WOUND] if within 6"". If on Objective: [RE-ROLL ALL WOUNDS]","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],2,
 SHOKK_BOOSTA,Shokk-boosta,[UNIT] ADVANCE: [ADVANCE 6]; move through models; Hazard per model,"In your Movement phase, when this unit is selected to make an advance move, you can use this ability. If you do:
 - This unit can change that advance roll to a 6.
 - This unit can move through all types of model.
-- When this unit ends that advance move, make a hazard roll for each model in this unit.",[ADVANCE 6] [UNIT],[Movement Rules],2,0
-SOMETHIN_TO_PROVE,Somethin' to Prove,[UNIT] MELEE [+1 TO HIT],This unit's melee attacks have +1 to hit rolls.,[UNIT] [ACTIVE] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
+- When this unit ends that advance move, make a hazard roll for each model in this unit.",[ADVANCE 6] [UNIT],2,0
+SOMETHIN_TO_PROVE,Somethin' to Prove,[UNIT] MELEE [+1 TO HIT],This unit's melee attacks have +1 to hit rolls.,[UNIT] [ACTIVE] [MELEE] [WEAPONS] [+1 TO HIT],2,0
 SUPER_RUNTS,Super Runts,[UNIT] [RILED UP] and [INVULNERABLE SAVE 5+]. Scavenged Shivs [+1 A] [+1 WS] [+1 S],"- This unit is RILED UP.
-- This unit's Scavenged Shivs weapons have +1 A, WS and S.",[UNIT] [MELEE] [WEAPONS] [RILED UP] [INVULNERABLE SAVE 5+] [+1 A] [+1 WS] [+1 S],[Unit Rules] [Unit Rules] [Weapon Stats] [Melee - Weapon Stats] [Weapon Stats],2,1
-SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,,3,
-SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,,3,
+- This unit's Scavenged Shivs weapons have +1 A, WS and S.",[UNIT] [MELEE] [WEAPONS] [RILED UP] [INVULNERABLE SAVE 5+] [+1 A] [+1 WS] [+1 S],2,1
+SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,3,
+SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,3,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
-Control Objective = Secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,,2,
+Control Objective = Secured.","At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,2,
 THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
 - Turbo Engine: Advance / Fall Back and Charge
 - Shokk Attack: Back to Reserves
@@ -65,300 +65,300 @@ Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can u
 - Place this unit in strategic reserves.
 - This unit can make an ingress move in your next Movement phase (including in your first turn).
 
-Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",[+6 M”],[Unit Stats],2,
-THUNDERING_STAMPEDE,Thundering Stampede,"AURA: Friendly BEAST SNAGGA within 6""","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",,[Movement Rules],2,0
-TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,3,
-TRANSPORT_GUNWAGON,Transport (Gunwagon),"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,3,
-TRANSPORT_KILL_RIG,Transport (Kill Rig),Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.,,,3,
-TRANSPORT_STOMPA,Transport (Stompa),"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,,3,
-TRANSPORT_TRUKK,Transport (Trukk),Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA / JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.,,,3,
-TROPHY_HUNTERS,Trophy Hunters,ANYTIME,This unit has +1 to charge rolls,,[Movement Rules],2,1
+Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",[+6 M”],2,
+THUNDERING_STAMPEDE,Thundering Stampede,"AURA: Friendly BEAST SNAGGA within 6""","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",,2,0
+TRANSPORT_BATTLEWAGON,Transport (Battlewagon),"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,
+TRANSPORT_GUNWAGON,Transport (Gunwagon),"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,
+TRANSPORT_KILL_RIG,Transport (Kill Rig),Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.,,3,
+TRANSPORT_STOMPA,Transport (Stompa),"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,
+TRANSPORT_TRUKK,Transport (Trukk),Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA / JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.,,3,
+TROPHY_HUNTERS,Trophy Hunters,ANYTIME,This unit has +1 to charge rolls,,2,1
 UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Burna Boyz.
 
-Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.",,,3,
-WAAAGH_BANNER,Waaagh! Banner,[UNIT] ANYTIME: +1 Charge,This unit has +1 to charge rolls.,[UNIT],[Movement Rules],2,0
-WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF WARLORD: WARBIKERS are [BATTLELINE],"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],[Unit Rules],2,0
-AERIAL_MANOEUVRE,Aerial Manoeuvre,End opponent turn: if unengaged [STRATEGIC RESERVES],"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],[Movement Rules],2,0
-AMMO_RUNTS,Ammo Runts,Once per battle — RANGE [+1 TO HIT],"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
+Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.",,3,
+WAAAGH_BANNER,Waaagh! Banner,[UNIT] ANYTIME: +1 Charge,This unit has +1 to charge rolls.,[UNIT],2,0
+WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF WARLORD: WARBIKERS are [BATTLELINE],"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],2,0
+AERIAL_MANOEUVRE,Aerial Manoeuvre,End opponent turn: if unengaged [STRATEGIC RESERVES],"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,0
+AMMO_RUNTS,Ammo Runts,Once per battle — RANGE [+1 TO HIT],"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
 BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking: vs MONSTER / VEHICLE [+1 TO WOUND]
 Test on D6, battle-shock on a 1","In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
-- That disembarking unit’s attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls until the end of the turn",[+1 TO WOUND] [+1 TO WOUND],[Combat Modifiers] [Combat Modifiers],2,
+- That disembarking unit’s attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls until the end of the turn",[+1 TO WOUND] [+1 TO WOUND],2,
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""","Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
 - On a 3+, that enemy unit suffers D3 mortal wounds.
-Place two Bomb Squig tokens next to the unit, removing one each time this ability is used.",,,2,
-BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],"If this unit made a charge move this turn, this unit’s attacks have +1D",+1 D,Weapon Stats,1,0
+Place two Bomb Squig tokens next to the unit, removing one each time this ability is used.",,2,
+BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],"If this unit made a charge move this turn, this unit’s attacks have +1D",+1 D,1,0
 BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units.,"In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.
-- Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS].",[LETHAL HITS] [LETHAL HITS],[Weapon Rules] [Weapon Rules],2,
+- Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS].",[LETHAL HITS] [LETHAL HITS],2,
 COMPOSITION_BATTLEWAGON,Unit Composition (Battlewagon),1 Battlewagon. Crushin’ Bulk.,"UNIT COMPOSITION: 1 Battlewagon model.
 
 This model is equipped with: 1 Crushin' Bulk.
 
-WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with up to 4 Big Shootas. This model can be equipped with 1 Grabbin' Klaw.",,,3,
+WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with up to 4 Big Shootas. This model can be equipped with 1 Grabbin' Klaw.",,3,
 COMPOSITION_BEAST_SNAGGA_BOYZ,Unit Composition (Beast Snagga Boyz),"1-2 Nobs (W 3, 6++) + 9-18 Boys (W 1). Optional Thump Gun per 10.","UNIT COMPOSITION: 1-2 Nob models, 9-18 Beast Snagga Boy models.
 
 Beast Snagga Boy: W 1. Nob: W 3, invulnerable save 6+.
 
 Every Nob is equipped with: 1 Power Snappa; 1 Slugga. Every Beast Snagga Boy is equipped with: 1 Choppa; 1 Slugga.
 
-WARGEAR OPTIONS: For every 10 models in this unit, 1 Beast Snagga Boy model can be equipped with 1 Thump Gun.",,,3,
+WARGEAR OPTIONS: For every 10 models in this unit, 1 Beast Snagga Boy model can be equipped with 1 Thump Gun.",,3,
 COMPOSITION_BOYZ,Unit Composition (Boyz),1-2 Nobs (W 3) + 9-18 Boys (W 1).,"UNIT COMPOSITION: 1-2 Nob models, 9-18 Boy models.
 
 Boy: W 1. Nob: W 3.
 
 Every Nob is equipped with: 1 Kustom Choppa; 1 Kombi-skorcha.
 
-Every Boy is equipped with: 1 Choppa; 1 Shoota; 1 Slugga.",,,3,
+Every Boy is equipped with: 1 Choppa; 1 Shoota; 1 Slugga.",,3,
 COMPOSITION_BREAKA_BOYZ,Unit Composition (Breaka Boyz),1 Nob + 5 Breaka Boyz.,"UNIT COMPOSITION: 1 Nob model, 5 Breaka Boy models.
 
-The Nob is equipped with: 1 Choppa; 1 Rokkit Pistol; 1 Smash Hammer. Every Breaka Boy is equipped with: 1 Smash Hammer.",,,3,
+The Nob is equipped with: 1 Choppa; 1 Rokkit Pistol; 1 Smash Hammer. Every Breaka Boy is equipped with: 1 Smash Hammer.",,3,
 COMPOSITION_DEFFKOPTAS,Unit Composition (Deffkoptas),"3-6 Deffkoptas. Choppa, Rokkit Launcha, Slugga, Spinnin’ Blades and 1 Kustom Mega-blasta.","3-6 Deffkopta models.
 
 Every model is equipped with: 1 Choppa; 1 Rokkit Launcha; 1 Slugga; 1 Spinnin' Blades.
 
-WARGEAR OPTIONS: For every 3 models in this unit, 1 model can have their Rokkit Launcha replaced with 1 Kustom Mega-blasta.",,,3,
+WARGEAR OPTIONS: For every 3 models in this unit, 1 model can have their Rokkit Launcha replaced with 1 Kustom Mega-blasta.",,3,
 COMPOSITION_KOMMANDOS,Unit Composition (Kommandos),1 Nob + 9 Kommandos. Default Choppa + Slugga.,"UNIT COMPOSITION: 1 Nob model, 9 Kommando models.
 
-Every model is equipped with: 1 Choppa; 1 Slugga.",,,3,
+Every model is equipped with: 1 Choppa; 1 Slugga.",,3,
 COMPOSITION_NOBZ,Unit Composition (Nobz),5-10 Nobz. Default Kustom Krumpa + Kustom Shoota.,"UNIT COMPOSITION: 5-10 Nob models.
 
 Every model is equipped with: 1 Kustom Krumpa; 1 Kustom Shoota.
 
-WARGEAR OPTIONS: For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Skorcha and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Kustom Big Shoota and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Choppa. For every 5 models in this unit, 1 model can have their Kustom Shoota replaced with 1 Paired Krumpas. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-rokkit.",,,3,
+WARGEAR OPTIONS: For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Skorcha and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Kustom Big Shoota and 1 Kustom Choppa. For every 5 models in this unit, 1 model can have their Kustom Krumpa and Kustom Shoota replaced with 1 Big Choppa. For every 5 models in this unit, 1 model can have their Kustom Shoota replaced with 1 Paired Krumpas. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-rokkit.",,3,
 COMPOSITION_SQUIGHOG_BOYZ,Unit Composition (Squighog Boyz),1-2 Nob on Smasha Squig + 3-6 Squighog Boyz.,"UNIT COMPOSITION: 1-2 Nob on Smasha Squig models, 3-6 Squighog Boy models.
 
-Every Nob on Smasha Squig is equipped with: 1 Big Choppa; 1 Slugga; 1 Squig's Jaws. Every Squighog Boy is equipped with: 1 Saddlegit's Shiv; 1 Squig's Jaws; 1 Stikka.",,,3,
+Every Nob on Smasha Squig is equipped with: 1 Big Choppa; 1 Slugga; 1 Squig's Jaws. Every Squighog Boy is equipped with: 1 Saddlegit's Shiv; 1 Squig's Jaws; 1 Stikka.",,3,
 COMPOSITION_STORMBOYZ,Unit Composition (Stormboyz),1 Nob + 4-9 Stormboyz.,"UNIT COMPOSITION: 1 Nob model, 4-9 Stormboy models.
 
 The Nob is equipped with: 1 Kustom Choppa; 1 Slugga. Every Stormboy is equipped with: 1 Choppa; 1 Slugga.
 
-WARGEAR OPTIONS: The Nob can have their Kustom Choppa replaced with 1 Power Klaw.",,,3,
+WARGEAR OPTIONS: The Nob can have their Kustom Choppa replaced with 1 Power Klaw.",,3,
 COMPOSITION_TANKBUSTAS,Unit Composition (Tankbustas),1 Nob + 5 Tankbustas. Busta Rokkit Launcha / Gitstikka / Rokkit Pistol.,"UNIT COMPOSITION: 1 Nob model, 5 Tankbusta models.
 
 The Nob is equipped with: 1 Choppa; 2 Rokkit Pistol. Every Tankbusta is equipped with: 1 Busta Rokkit Launcha; 1 Gitstikka.
 
-WARGEAR OPTIONS: The Nob can have their Rokkit Pistol replaced with 1 Smash Hammer. 1 Tankbusta model can be equipped with one of the following: 1 Busta Rokkit Launcha; 1 Pulsa Rokkit.",,,3,
+WARGEAR OPTIONS: The Nob can have their Rokkit Pistol replaced with 1 Smash Hammer. 1 Tankbusta model can be equipped with one of the following: 1 Busta Rokkit Launcha; 1 Pulsa Rokkit.",,3,
 COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,"UNIT COMPOSITION: 1 Biker Nob model, 2-5 Warbiker models.
 
-The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,,3,
-DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining: [-1 TO HIT],CORE: Damaged 1-6,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],[Combat Modifiers],2,0
-DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,
-DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,,2,
-DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,,2,
-DEEP_STRIKE,Deep Strike,ANYTIME [DEEP STRIKE],CORE: Deep Strike,[DEEP STRIKE],[Unit Rules],1,1
+The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,3,
+DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining: [-1 TO HIT],CORE: Damaged 1-6,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],2,0
+DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]","While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",2,
+DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",CORE: Deadly Demise 2D6,,2,
+DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",CORE: Deadly Demise D6,,2,
+DEEP_STRIKE,Deep Strike,ANYTIME [DEEP STRIKE],CORE: Deep Strike,[DEEP STRIKE],1,1
 DOWNTRODDEN,Downtrodden,"Transport: 
-2 Gretchin = 1 space","For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,,2,
+2 Gretchin = 1 space","For the purposes of transport capacity, each 2 Gretchin models (rounding up) take up the space of 1 model.",,2,
 FINDER_KEEPERZ,Finder Keeperz,RANGE: unit or target on an Objective [+1 AP],"In your Shooting phase, if any of the following apply, this unit’s ranged attacks have +1 AP.
 - This unit is within range of an objective
-- The target of that attack is within range of an objective",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP],[Weapon Stats],2,0
-FIRING_DECK_11,Firing Deck 11,CORE: Firing Deck 11,CORE: Firing Deck 11,,,2,
+- The target of that attack is within range of an objective",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP],2,0
+FIRING_DECK_11,Firing Deck 11,CORE: Firing Deck 11,CORE: Firing Deck 11,,2,
 FOUND_EM,Found ’Em!,"Movement: select enemy 12"" → +3"" detection range until end of turn","In your Movement phase, you can select one enemy unit within 12"" of this unit. That unit has +3"" detection range until the end of the turn.
-Place one Accusatory Grot token next to that enemy unit to remind you.",,,2,
-GET_OUT_DA_WAY,Get Out da Way!,CHARGE: excludes MONSTER / VEHICLE models [MOVE THROUGH MODELS],"While making a charge move, this unit can move through models (excluding MONSTER / VEHICLE models).",[MOVE THROUGH MODELS],[Movement Rules],2,0
-HIGH_SPEED_CARNAGE,High-speed Carnage,CHARGE this turn — MELEE [+1 S] [+1 D],"If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D.",[ACTIVE] [MELEE] [WEAPONS] [+1 S] [+1 D],[Weapon Stats] [Weapon Stats],2,0
-IDOL_OF_BELLIGERENCE,Idol of Belligerence,Disembarking units are RILED UP,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is RILED UP until the start of your next turn.",,,2,
-INFILTRATORS,Infiltrators,ANYTIME [INFILTRATORS],CORE: Infiltrators,[INFILTRATORS],[Unit Rules],1,1
-MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP number of units equal to current round,"Makari, Hoist Dat Banner! (Once per battle, per army): In your Movement phase, you can select a number of friendly ORKS units equal to or less than the current battle round number. Those units are RILED UP until the start of your next turn. Place one Makari token next to the unit, removing it after this ability is used.",,,2,
+Place one Accusatory Grot token next to that enemy unit to remind you.",,2,
+GET_OUT_DA_WAY,Get Out da Way!,CHARGE: excludes MONSTER / VEHICLE models [MOVE THROUGH MODELS],"While making a charge move, this unit can move through models (excluding MONSTER / VEHICLE models).",[MOVE THROUGH MODELS],2,0
+HIGH_SPEED_CARNAGE,High-speed Carnage,CHARGE this turn — MELEE [+1 S] [+1 D],"If this unit made a charge move this turn, this unit’s melee attacks have +1S and +1D.",[ACTIVE] [MELEE] [WEAPONS] [+1 S] [+1 D],2,0
+IDOL_OF_BELLIGERENCE,Idol of Belligerence,Disembarking units are RILED UP,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, that unit is RILED UP until the start of your next turn.",,2,
+INFILTRATORS,Infiltrators,ANYTIME [INFILTRATORS],CORE: Infiltrators,[INFILTRATORS],1,1
+MAKARI_HOIST_DAT_BANNER,"Makari, Hoist Dat Banner!",Once per battle: RILED UP number of units equal to current round,"Makari, Hoist Dat Banner! (Once per battle, per army): In your Movement phase, you can select a number of friendly ORKS units equal to or less than the current battle round number. Those units are RILED UP until the start of your next turn. Place one Makari token next to the unit, removing it after this ability is used.",,2,
 MOBBED,Mobbed,"CHARGE: Engaged MONSTER / VEHICLE take [-1 BATTLESHOCK]
 If 13+ models [-2 BATTLE-SHOCK]","When this unit ends a charge move, each enemy MONSTER / VEHICLE unit engaged with this unit makes a battle-shock roll:
 - With -1 to that battle-shock roll
-- Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],[Info Only] [Info Only],2,
-MOBILE_FORTRESS,Mobile Fortress,ANYTIME — [INCOMING RANGE -1 D],Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],[Info Only],1,1
-NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units: [+1 TO HIT],This unit’s attacks that target a hidden unit have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
-ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",,,2,
+- Or with -2 to that battle-shock roll if this unit has 13+ models.",[ENEMY -1 BATTLE-SHOCK] [ENEMY -2 BATTLE-SHOCK],2,
+MOBILE_FORTRESS,Mobile Fortress,ANYTIME — [INCOMING RANGE -1 D],Ranged attacks targeting this model have -1 D,[INCOMING RANGE -1 D],1,1
+NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units: [+1 TO HIT],This unit’s attacks that target a hidden unit have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,0
+ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",,2,
 ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE [+1 A] [+1 S] [HAZARDOUS],"When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
-- [HAZARDOUS]",[ACTIVE] [MELEE] [WEAPONS] [+1 A] [+1 S] [HAZARDOUS],[Weapon Stats] [Weapon Stats] [Weapon Rules],2,0
-SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK) [LONE OP 3""]","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,
-STEALTH,Stealth,ANYTIME [STEALTH],CORE: Stealth,[STEALTH],[Unit Rules],1,1
-SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,,2,
-TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,,2,
-WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME [RILED UP] [INVULNERABLE SAVE 5+],This unit is RILED UP.,[RILED UP] [INVULNERABLE SAVE 5+],[Unit Rules] [Unit Rules],2,1
+- [HAZARDOUS]",[ACTIVE] [MELEE] [WEAPONS] [+1 A] [+1 S] [HAZARDOUS],2,0
+SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK) [LONE OP 3""]","While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",2,
+STEALTH,Stealth,ANYTIME [STEALTH],CORE: Stealth,[STEALTH],1,1
+SUPER_HEAVY_WALKER,Super-heavy Walker,CORE: Super-heavy Walker,CORE: Super-heavy Walker,,2,
+TACTICAL_KNOW_WOTZ,Tactical Know-wotz,Can split into two units of 5 at start; assign Bomb Squig and Found ’Em! separately,"In the Declare Battle Formations step, you can split this unit into two units, each with a starting strength of 5. If you do, select which one of those units will have the Bomb Squig ability and which one of those units will have the Found ’Em! ability.",,2,
+WAAAGH_EFFIGY,Waaagh! Effigy,ANYTIME [RILED UP] [INVULNERABLE SAVE 5+],This unit is RILED UP.,[RILED UP] [INVULNERABLE SAVE 5+],2,1
 WARPATH,Warpath (Psychic Lvl 1),"Melee attacks gain [LETHAL HITS] and PSYCHIC
 Test on D6, battle-shock on a 1","In the Fight phase, when this unit is selected to fight, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
-- This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[ACTIVE] [MELEE] [WEAPONS] [LETHAL HITS],[Weapon Rules],2,0
+- This unit’s melee attacks have [LETHAL HITS] and [PSYCHIC].",[ACTIVE] [MELEE] [WEAPONS] [LETHAL HITS],2,0
 TIDE_OF_MUSCLE,Tide of Muscle,"[UNIT] CHARGE this turn
-MELEE [LETHAL HITS]","In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[UNIT] [MELEE] [WEAPONS] [ACTIVE] [LETHAL HITS],[Weapon Rules],2,0
-NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,[UNIT] can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[UNIT] [ACTION while ENGAGED],[Unit Rules],1,
-ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Incoming attacks: [INCOMING -1 AP],Attacks that target this unit have -1 AP,[INCOMING -1 AP],[Info Only],1,1
-BIG_AN_SHOOTY,Big an’ Shooty,ANYTIME — RANGE [RE-ROLL 1S TO HIT],This unit’s ranged attacks can re-roll hit rolls of 1.,[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],[Combat Modifiers],2,1
-BIG_AN_STOMPY,Big an’ Stompy,ANYTIME — MELEE [RE-ROLL 1S TO HIT],This unit’s melee attacks can re-roll hit rolls of 1.,[MELEE] [WEAPONS] [RE-ROLL 1S TO HIT],[Combat Modifiers],2,1
+MELEE [LETHAL HITS]","In the Fight phase, if this unit made a charge move this turn, this unit’s melee attacks have [LETHAL HITS].",[UNIT] [MELEE] [WEAPONS] [ACTIVE] [LETHAL HITS],2,0
+NEVER_TOO_BUSY_TO_FIGHT,Never Too Busy to Fight,[UNIT] can start [ACTION while ENGAGED].,Being engaged does not prevent this unit from being eligible to start an action.,[UNIT] [ACTION while ENGAGED],1,
+ARROGANT_INVULNERABILITY,Arrogant Invulnerability,Incoming attacks: [INCOMING -1 AP],Attacks that target this unit have -1 AP,[INCOMING -1 AP],1,1
+BIG_AN_SHOOTY,Big an’ Shooty,ANYTIME — RANGE [RE-ROLL 1S TO HIT],This unit’s ranged attacks can re-roll hit rolls of 1.,[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],2,1
+BIG_AN_STOMPY,Big an’ Stompy,ANYTIME — MELEE [RE-ROLL 1S TO HIT],This unit’s melee attacks can re-roll hit rolls of 1.,[MELEE] [WEAPONS] [RE-ROLL 1S TO HIT],2,1
 COMPOSITION_DEFF_DREAD,Unit Composition (Deff Dread),"1 Deff Dread. Big Shoota, Dread Klaws, Skorcha.","UNIT COMPOSITION: 1 Deff Dread model.
 
 This model is equipped with: 1 Big Shoota; 1 Dread Klaws; 1 Skorcha.
 
-WARGEAR OPTIONS: This model's Big Shoota can be replaced with one of the following: 1 Extra Klaw; 1 Kustom Mega-blasta; 1 Rokkit Launcha. This model's Skorcha can be replaced with one of the following: 1 Extra Klaw; 1 Big Shoota; 1 Kustom Mega-blasta; 1 Rokkit Launcha.",,,3,
+WARGEAR OPTIONS: This model's Big Shoota can be replaced with one of the following: 1 Extra Klaw; 1 Kustom Mega-blasta; 1 Rokkit Launcha. This model's Skorcha can be replaced with one of the following: 1 Extra Klaw; 1 Big Shoota; 1 Kustom Mega-blasta; 1 Rokkit Launcha.",,3,
 COMPOSITION_GUNWAGON,Unit Composition (Gunwagon),1 Gunwagon. Crushin’ Bulk + Kannon.,"UNIT COMPOSITION: 1 Gunwagon model.
 
 This model is equipped with: 1 Crushin' Bulk; 1 Kannon.
 
-WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with 1 Grabbin' Klaw. This model can be equipped with 1 Lobba. This model can be equipped with up to 4 Big Shootas. This model's Kannon can be replaced with one of the following: 1 Killkannon; 1 Zzap Gun.",,,3,
+WARGEAR OPTIONS: This model can be equipped with 1 Wreckin' Ball. This model can be equipped with 1 Grabbin' Klaw. This model can be equipped with 1 Lobba. This model can be equipped with up to 4 Big Shootas. This model's Kannon can be replaced with one of the following: 1 Killkannon; 1 Zzap Gun.",,3,
 COMPOSITION_MEGANOBZ,Unit Composition (Meganobz),2-6 Meganobz. Default Kustom Shoota + Power Klaw.,"UNIT COMPOSITION: 2-6 Meganob models.
 
 Every model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
 
-WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced with 1 Killsaw. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-weapon. Any number of models can each have their Power Klaw and Kustom Shoota replaced with Twin Killsaws.",,,3,
-DAMAGED_7,Damaged 7,While 1–7 wounds remaining: [-1 TO HIT],CORE: Damaged 7,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],[Combat Modifiers],2,0
-DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1,,,2,
-DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3,,,2,
-DREAD_ARD,Dread ’Ard,ANYTIME — [INCOMING -1 D],Attacks targeting this model have -1 damage,[INCOMING -1 D],[Info Only],2,1
-FIRING_DECK_12,Firing Deck 12,CORE: Firing Deck 12,CORE: Firing Deck 12,,,2,
-FULLY_LOADED_BUTCHERY,Fully Loaded Butchery,Butcha Boyz gets +2A per embarked model (max +22A),This unit’s Butcha Boyz weapon has +2 A for each model embarked within this unit (to a maximum of +22 A),,,2,
-GUT_HATCH,Gut Hatch,"When this unit ends a normal move, embarked units can assault disembark.","In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move (pg 12).",,,2,
+WARGEAR OPTIONS: Any number of models can each have their Power Klaw replaced with 1 Killsaw. Any number of models can each have their Kustom Shoota replaced with 1 Kombi-weapon. Any number of models can each have their Power Klaw and Kustom Shoota replaced with Twin Killsaws.",,3,
+DAMAGED_7,Damaged 7,While 1–7 wounds remaining: [-1 TO HIT],CORE: Damaged 7,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],2,0
+DEADLY_DEMISE_1,Deadly Demise 1,CORE: Deadly Demise 1,CORE: Deadly Demise 1,,2,
+DEADLY_DEMISE_D3,Deadly Demise D3,CORE: Deadly Demise D3,CORE: Deadly Demise D3,,2,
+DREAD_ARD,Dread ’Ard,ANYTIME — [INCOMING -1 D],Attacks targeting this model have -1 damage,[INCOMING -1 D],2,1
+FIRING_DECK_12,Firing Deck 12,CORE: Firing Deck 12,CORE: Firing Deck 12,,2,
+FULLY_LOADED_BUTCHERY,Fully Loaded Butchery,Butcha Boyz gets +2A per embarked model (max +22A),This unit’s Butcha Boyz weapon has +2 A for each model embarked within this unit (to a maximum of +22 A),,2,
+GUT_HATCH,Gut Hatch,"When this unit ends a normal move, embarked units can assault disembark.","In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move (pg 12).",,2,
 INTIMIDATING_MOTIVATION,Intimidating Motivation,"Once per Battle Round
 Start or End of Movement
 Orks 6"" un-shock and [INTIMIDATING MOTIVATION].","Intimidating Motivation (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS unit within 6"" of this unit. That unit:
 - Is no longer battle-shocked.
-- Is RILED UP until the start of your next turn.",[INTIMIDATING MOTIVATION],[Info Only],1,
-MOBILE_ARSENAL,Mobile Arsenal,SHOOTING: [RE-ROLL 1S TO HIT],"In your shooting phase, this units ranged attacks can re-roll hit rolls of 1",[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],[Combat Modifiers],2,1
+- Is RILED UP until the start of your next turn.",[INTIMIDATING MOTIVATION],1,
+MOBILE_ARSENAL,Mobile Arsenal,SHOOTING: [RE-ROLL 1S TO HIT],"In your shooting phase, this units ranged attacks can re-roll hit rolls of 1",[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],2,1
 NAZDREGS_KNOW_WOTZ,Nazdreg’s Know-wotz,"[DEEP STRIKE]
 Ranged: [IGNORES COVER]","- This unit has Deep Strike.
-- This unit’s ranged attacks have [IGNORES COVER].",[SHOOT] [WEAPONS] [DEEP STRIKE] [IGNORES COVER],[Unit Rules] [Range - Weapon Rules],2,
+- This unit’s ranged attacks have [IGNORES COVER].",[SHOOT] [WEAPONS] [DEEP STRIKE] [IGNORES COVER],2,
 PILIN_OUT,Pilin’ Out,"Enemy ends move 8""
-Embarked can Rapid disembark","In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this model, units embarked within this model can make a disembark move using the rapid disembark mode.",,,2,
-SPITEFUL_POWER_TRIP,Spiteful Power Trip,vs units with no T7+ models: [+1 TO HIT],This unit’s attacks that target a unit that has no models with a T of 7+ have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
+Embarked can Rapid disembark","In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this model, units embarked within this model can make a disembark move using the rapid disembark mode.",,2,
+SPITEFUL_POWER_TRIP,Spiteful Power Trip,vs units with no T7+ models: [+1 TO HIT],This unit’s attacks that target a unit that has no models with a T of 7+ have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,0
 SUPREME_KUNNIN,Supreme Kunnin’,"REACTIVE MOVE
 Once per phase:
 Enemy ends move within 8"" and this unit is unengaged:
 - Move D6"" 
 - RILED UP: Move 5""","Supreme Kunnin’ (Once per phase, per army): In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can:
 - Make a normal move of up to D6"".
-- Or: If this unit is RILED UP, make a normal move of up to 5"".",,,2,
-TRAMPLASAQUIG_CHARGE,Tramplasaquig Charge,Crushing Impact stratagem costs -1 CP when targeting this unit,"When you target this unit with the Crushing Impact stratagem, that use is -1 CP.",,,2,
-TRANSPORT_GORK_MORK,Transport (Gorkanaut/Morkanaut),Transport capacity 12 Orks Infantry (Mega Armour/Jump Pack = 2; no Ghaz),Transport: This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,,3,
-TRANSPORT_HUNTA_RIG,Transport (Hunta Rig),Transport capacity 22 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 22 BEAST SNAGGAS INFANTRY models.,,,3,
+- Or: If this unit is RILED UP, make a normal move of up to 5"".",,2,
+TRAMPLASAQUIG_CHARGE,Tramplasaquig Charge,Crushing Impact stratagem costs -1 CP when targeting this unit,"When you target this unit with the Crushing Impact stratagem, that use is -1 CP.",,2,
+TRANSPORT_GORK_MORK,Transport (Gorkanaut/Morkanaut),Transport capacity 12 Orks Infantry (Mega Armour/Jump Pack = 2; no Ghaz),Transport: This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,
+TRANSPORT_HUNTA_RIG,Transport (Hunta Rig),Transport capacity 22 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 22 BEAST SNAGGAS INFANTRY models.,,3,
 DA_JUMP,Da Jump,[UNIT] Psychic: on 2+ → Strategic Reserves and [DEEP STRIKE],"Da Jump (psychic level 1, once per army, per battle round): In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked.
 - Place this unit in strategic reserves.
-- This unit has Deep Strike.",[DEEP STRIKE] [UNIT],[Unit Rules],2,
-DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, [INGRESS] from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move.",[INGRESS],[Movement Rules],2,
+- This unit has Deep Strike.",[DEEP STRIKE] [UNIT],2,
+DEFF_FROM_THE_SHADOWS,Deff from the Shadows,"From battle round 1 onwards, [INGRESS] from SR at end of opponent Movement.","Deff from the Shadows (First battle round onwards): At the end of your opponent's Movement phase, if this unit is in strategic reserves, this unit can make an Ingress move.",[INGRESS],2,
 BOSS_AMMO_RUNT,Boss' Ammo Runt,"Once per battle. 
-RANGE [+1 TO HIT]","Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT],[Combat Modifiers],2,0
+RANGE [+1 TO HIT]","Boss' Ammo Runt (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this model's ranged attacks have +1 to hit rolls. Place a Boss' Ammo Runt token next to the unit, removing it when this ability is used.",[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT],2,0
 COMPOSITION_WARBOSS,Unit Composition (Warboss),1 Warboss. Default Kustom Choppa + Kustom Shoota.,"UNIT COMPOSITION: 1 Warboss model.
 
 This model is equipped with: 1 Kustom Choppa; 1 Kustom Shoota.
 
-WARGEAR OPTIONS: This model's Kustom Choppa can be replaced with 1 Power Klaw. This model's Kustom Shoota can be replaced with one of the following: 1 Kombi-rokkit; 1 Kombi-skorcha.",,,3,
+WARGEAR OPTIONS: This model's Kustom Choppa can be replaced with 1 Power Klaw. This model's Kustom Shoota can be replaced with one of the following: 1 Kombi-rokkit; 1 Kombi-skorcha.",,3,
 KEEP_HUNTIN,Keep Huntin',"Once per Battle Round: BEAST SNAGGAS 6"" are un-shock and [KEEP HUNTIN'].","Keep Huntin' (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit:
 - Is no longer battle-shocked.
-- Is RILED UP until the start of your next turn.",[KEEP HUNTIN'],[Info Only],1,
-DODGE_DIS,Dodge Dis!,[UNIT] MELEE and SHOOTING: [+1 TO HIT],This unit's attacks have +1 to hit rolls.,[UNIT] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,1
-BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,0
-BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",[Unit Rules],2,0
+- Is RILED UP until the start of your next turn.",[KEEP HUNTIN'],1,
+DODGE_DIS,Dodge Dis!,[UNIT] MELEE and SHOOTING: [+1 TO HIT],This unit's attacks have +1 to hit rolls.,[UNIT] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,1
+BEAST_SNAGGA_FOLLOWING,Beast Snagga Following,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",2,0
+BOSS_OF_DA_HUNT,Boss of da Hunt,"Within 3"" of friendly BEAST SNAGGA (excluding MONSTER CHARACTER) [LONE OP 3""]","While this unit is within 3"" of a friendly BEAST SNAGGA unit (excluding MONSTER CHARACTER units), this unit has Lone Operative.","[LONE OP 3""]",2,0
 COMPOSITION_BEASTBOSS_SQUIGOSAUR,Unit Composition (Beastboss on Squigosaur),"1 Beastboss on Squigosaur. Beastchoppa, Slugga, Jaws. Optional Thump Gun.","UNIT COMPOSITION: 1 Beastboss on Squigosaur model.
 
 This model is equipped with: 1 Beastchoppa; 1 Slugga; 1 Squigosaur's Jaws.
 
-WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,,3,
-LONE_OPERATIVE,LONE OP,CORE: [LONE OPERATIVE],CORE: Lone Operative,[LONE OP],[Unit Rules],1,
-UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,,2,
+WARGEAR OPTIONS: This model can be equipped with 1 Thump Gun.",,3,
+LONE_OPERATIVE,LONE OP,CORE: [LONE OPERATIVE],CORE: Lone Operative,[LONE OP],1,
+UNSTABLE_ENERGIES,Unstable Energies,ARMY RULE: Unstable Energies,ARMY RULE: Unstable Energies,,2,
 KNUCKLE_IMPETUS,Knuckle Impetus,"On charge, D6 per engaged model: 4+ MW.","When this unit ends a charge move, you can select one enemy unit engaged with this unit. If you do, roll one D6 for each model in this unit engaged with that enemy unit:
-- For each 4+, that enemy unit suffers 1 mortal wound.",,,2,
+- For each 4+, that enemy unit suffers 1 mortal wound.",,2,
 COMPOSITION_BIG_MEK,Unit Composition (Big Mek),1 Big Mek. Kustom Mega-blasta + Power Klaw.,"UNIT COMPOSITION: 1 Big Mek model.
 
 This model is equipped with: 1 Kustom Mega-blasta; 1 Power Klaw.
 
-WARGEAR OPTIONS: This model's Power Klaw can be replaced with 1 Drilla. This model's Kustom Mega-blasta can be replaced with 1 Traktor Blasta.",,,3,
-FIX_DAT_ARMOUR,Fix Dat Armour Up,"Once per battle, heal 3 wounds.","Fix Dat Armour Up (Once per battle, per unit): In your Command phase, this unit heals 3 wounds. Place a Grot Oiler token next to the unit, removing it when this ability is used.",,,2,
+WARGEAR OPTIONS: This model's Power Klaw can be replaced with 1 Drilla. This model's Kustom Mega-blasta can be replaced with 1 Traktor Blasta.",,3,
+FIX_DAT_ARMOUR,Fix Dat Armour Up,"Once per battle, heal 3 wounds.","Fix Dat Armour Up (Once per battle, per unit): In your Command phase, this unit heals 3 wounds. Place a Grot Oiler token next to the unit, removing it when this ability is used.",,2,
 COMPOSITION_BIG_MEK_MA,Unit Composition (Big Mek in Mega Armour),1 Big Mek in Mega Armour. Kustom Shoota + Power Klaw.,"UNIT COMPOSITION: 1 Big Mek in Mega Armour model.
 
 This model is equipped with: 1 Kustom Shoota; 1 Power Klaw.
 
-WARGEAR OPTIONS: This model can be equipped with one of the following: 1 Telleport Blasta; 1 Kustom Force Field. This model's Kustom Shoota can be replaced with one of the following: 1 Killsaw; 1 Kombi-weapon; 1 Kustom Mega-blasta.",,,3,
-SUPPORT_SHOKKA,Support Shokka,"Within 3"" of friendly ORKS INFANTRY (excluding other SAG) [LONE OP 3""]","While this model is within 3"" of a friendly ORKS INFANTRY unit (excluding BIG MEK WITH SHOKK ATTACK GUN units), this model has Lone Operative.","[LONE OP 3""]",[Unit Rules],3,0
-EVEN_MORE_DAKKA,Even More Dakka,RILED UP: RANGE [SUSTAINED HITS 1],"If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[ACTIVE] [SHOOT] [WEAPONS] [SUSTAINED HITS 1],[Weapon Rules],2,0
-BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER / VEHICLE [+6 A],"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER / VEHICLE units), that weapon has +6 A.",[SHOOT] [WEAPONS] [ACTIVE] [+6 A],[Weapon Stats],2,0
-KUSTOM_DAKKA,Kustom Dakka,ANYTIME — RANGE [IGNORES COVER],This unit's ranged attacks have [IGNORES COVER].,[SHOOT] [WEAPONS] [IGNORES COVER],[Range - Weapon Rules],2,1
-CLEVER_KNOW_WOTZ,Clever Know-wotz,Buff a Vehicle within 3”: heal D3 and [+1 TO HIT] until next Movement.,"In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS VEHICLE model (excluding AIRCRAFT / TITANIC models) within 3"" of this model: - That VEHICLE model heals D3 wounds. - That VEHICLE model's attacks have +1 to hit rolls until the start of your next Movement phase.",[SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,
+WARGEAR OPTIONS: This model can be equipped with one of the following: 1 Telleport Blasta; 1 Kustom Force Field. This model's Kustom Shoota can be replaced with one of the following: 1 Killsaw; 1 Kombi-weapon; 1 Kustom Mega-blasta.",,3,
+SUPPORT_SHOKKA,Support Shokka,"Within 3"" of friendly ORKS INFANTRY (excluding other SAG) [LONE OP 3""]","While this model is within 3"" of a friendly ORKS INFANTRY unit (excluding BIG MEK WITH SHOKK ATTACK GUN units), this model has Lone Operative.","[LONE OP 3""]",3,0
+EVEN_MORE_DAKKA,Even More Dakka,RILED UP: RANGE [SUSTAINED HITS 1],"If this unit is RILED UP, this unit's ranged attacks have [SUSTAINED HITS 1].",[ACTIVE] [SHOOT] [WEAPONS] [SUSTAINED HITS 1],2,0
+BLITZ_DEM_GITS,Blitz Dem Gits!,Blitzkannon vs non-MONSTER / VEHICLE [+6 A],"In your Shooting phase, if this unit's Blitzkannon weapon targets a unit (excluding MONSTER / VEHICLE units), that weapon has +6 A.",[SHOOT] [WEAPONS] [ACTIVE] [+6 A],2,0
+KUSTOM_DAKKA,Kustom Dakka,ANYTIME — RANGE [IGNORES COVER],This unit's ranged attacks have [IGNORES COVER].,[SHOOT] [WEAPONS] [IGNORES COVER],2,1
+CLEVER_KNOW_WOTZ,Clever Know-wotz,Buff a Vehicle within 3”: heal D3 and [+1 TO HIT] until next Movement.,"In your Movement phase, at the start or end of this unit's move, you can select one friendly ORKS VEHICLE model (excluding AIRCRAFT / TITANIC models) within 3"" of this model: - That VEHICLE model heals D3 wounds. - That VEHICLE model's attacks have +1 to hit rolls until the start of your next Movement phase.",[SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,
 GET_BACK_IN_DA_RACE,Get Back in da Race,"Once per BR: Speed Freeks within 6"" un-shock and RILED UP.","Get Back in da Race (Once per battle round, per army): In your Movement phase, at the start or end of this unit's move, you can select one friendly SPEED FREEKS unit within 6"" of this unit. That unit (and any units embarked within that unit):
 - Is no longer battle-shocked.
-- Is RILED UP until the start of your next turn.",,,2,
-FUEL_MIXA_GROB,Fuel-mixa Grob,[UNIT] ADVANCE [+1 M”],This unit has +1 to advance rolls.,[UNIT] [ACTIVE] [STATS] [+1 M”],[Unit Stats],2,0
-CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,,2,
+- Is RILED UP until the start of your next turn.",,2,
+FUEL_MIXA_GROB,Fuel-mixa Grob,[UNIT] ADVANCE [+1 M”],This unit has +1 to advance rolls.,[UNIT] [ACTIVE] [STATS] [+1 M”],2,0
+CRUDE_SURGERY,Crude Surgery,In Command phase: Heals 3 wounds,"In your Command phase, this unit heals 3 wounds.",,2,
 CANT_CUT_DAT_BIT,Can't Cut Dat Bit,"Once per battle.
-Crude Surgery is D3+3","Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,2,
-PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,,2,
-HARDY_BILIOUS,Hardy Bioniks,Attack Strength higher Toughness: [INCOMING -1 TO WOUND],"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],[Info Only],2,
+Crude Surgery is D3+3","Can't Cut Dat Bit (Once per battle, per unit): When this model uses its Crude Surgery ability you can add D3 to the number of wounds healed.  Place a Grot Orderly token next to the unit, removing it when this ability is used.",,2,
+PUSH_DAT_BIT_BACK,Push Dat Bit Back,"Once per battle: Beast Snagga within 6"" heals 3.","Push Dat Bit Back (Once per battle, per unit): In your Command phase, select one friendly BEAST SNAGGA unit within 6"" of this unit. That unit heals 3 wounds. Place a Grot Orderly token next to the unit, removing it when this ability is used.",,2,
+HARDY_BILIOUS,Hardy Bioniks,Attack Strength higher Toughness: [INCOMING -1 TO WOUND],"Each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],2,
 RIDIN_WIV_DA_HERD,Ridin' wiv da Herd,"If attached to a Mounted unit, loses Infantry, gains Mounted and [+4 M”]","While this model is attached to a MOUNTED unit, this model:
 - Does not have INFANTRY
 - Has MOUNTED and not INFANTRY
-- Has +4"" M",[+4 M”],[Unit Stats],2,
-THEYLL_LEARN_YA,That’ll Learn Ya,"Once per battle round: if Battle-shocked with 4+ Gretchin, destroy D3 Gretchin to recover.","That’ll Learn Ya (Once per battle round, per unit): When this unit becomes Battle-shocked, if this unit contains 4 or more Gretchin models, you can roll one D3. If you do, that many Gretchin models in this unit are destroyed and this unit is no longer Battle-shocked.",,,2,
+- Has +4"" M",[+4 M”],2,
+THEYLL_LEARN_YA,That’ll Learn Ya,"Once per battle round: if Battle-shocked with 4+ Gretchin, destroy D3 Gretchin to recover.","That’ll Learn Ya (Once per battle round, per unit): When this unit becomes Battle-shocked, if this unit contains 4 or more Gretchin models, you can roll one D3. If you do, that many Gretchin models in this unit are destroyed and this unit is no longer Battle-shocked.",,2,
 COMPOSITION_MEK_GUNZ,Unit Composition (Mek Gunz),1-3 Mek Gunz. Scavenged Shivs + Smasha Gun.,"UNIT COMPOSITION: 1-3 Mek Gunz models.
 
 Every model is equipped with: 1 Scavenged Shivs; 1 Smasha Gun.
 
-WARGEAR OPTIONS: Any number of models can each have their Smasha Gun replaced with one of the following: 1 Bubblechukka; 1 Kustom Mega-kannon; 1 Traktor Kannon.",,,3,
+WARGEAR OPTIONS: Any number of models can each have their Smasha Gun replaced with one of the following: 1 Bubblechukka; 1 Kustom Mega-kannon; 1 Traktor Kannon.",,3,
 BOOM_BOMB,Boom Bomb,"End of opponent Fight phase: visible enemy within 24"" (not LO), D6: 1-3 D3 MW, 4-5 D3 MW, 6 D6 MW.","At the end of your opponent's Fight phase, select one visible enemy unit (excluding Lone Operative units) within 24"" of this unit and roll one D6 for that unit:
 - On a 1-3, that enemy unit suffers D3 mortal wounds.
 - On a 4-5, that enemy unit suffers D3 mortal wounds.
-- On a 6, that enemy unit suffers D6 mortal wounds.",,,2,
-STRAFING_RUN,Strafing Run,RANGE vs non-FLY [+1 TO HIT],"In your Shooting phase, this unit's ranged attacks that target a unit (excluding FLY units) have +1 to hit rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],[Combat Modifiers],2,0
+- On a 6, that enemy unit suffers D6 mortal wounds.",,2,
+STRAFING_RUN,Strafing Run,RANGE vs non-FLY [+1 TO HIT],"In your Shooting phase, this unit's ranged attacks that target a unit (excluding FLY units) have +1 to hit rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
 BURNA_BOMB,Burna Bomb,End of opponent Fight phase: D3 MW on 2+ and [IGNORES COVER] until your next turn.,"At the end of your opponent's Fight phase, select one visible enemy unit (excluding Lone Operative and MONSTER / VEHICLE units) within 18"" of this unit and roll one D6. On a 2+:
 - That enemy unit suffers D3 mortal wounds.
 - That enemy unit cannot be hidden until the end of your next turn.
-- Ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.",[IGNORES COVER],[Range - Weapon Rules],2,
-GO_FER_DA_WEAK_SPOT,Go fer da Weak Spot,RANGE vs MONSTER / VEHICLE [+1 TO WOUND],"In your Shooting phase, this unit's ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO WOUND],[Combat Modifiers],2,0
+- Ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.",[IGNORES COVER],2,
+GO_FER_DA_WEAK_SPOT,Go fer da Weak Spot,RANGE vs MONSTER / VEHICLE [+1 TO WOUND],"In your Shooting phase, this unit's ranged attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO WOUND],2,0
 WAZBOM_FORCE_FIELD,Wazbom Force Field,ANYTIME: does not have SMOKE [INVULNERABLE SAVE 5+],"Models in this unit:
 - Have 5+ InSv.
-- Do not have SMOKE.",[INVULNERABLE SAVE 5+],[Unit Rules],2,1
+- Do not have SMOKE.",[INVULNERABLE SAVE 5+],2,1
 DRIVE_BY_SKORCHIN,Drive-by Skorchin',"Visible non-MONSTER / VEHICLE within 6"" cannot be Overwatched this turn.","In your Movement phase, you can select one visible enemy unit (excluding MONSTER / VEHICLE units) within 6"" of this unit:
-- That enemy unit cannot be targeted with the Fire Overwatch stratagem until the end of the turn.",,,2,
+- That enemy unit cannot be targeted with the Fire Overwatch stratagem until the end of the turn.",,2,
 COMPOSITION_WARBUGGIES,Unit Composition (Warbuggies),"1-2 Warbuggy. Extra Dakka, Mek Speshul, Spiked Ram.","UNIT COMPOSITION: 1-2 Warbuggy models.
 
 Every model is equipped with: 1 Extra Dakka; 1 Mek Speshul; 1 Spiked Ram.
 
-WARGEAR OPTIONS: Any number of models can each have their Mek Speshul replaced with 1 Rivet Kannon.",,,3,
+WARGEAR OPTIONS: Any number of models can each have their Mek Speshul replaced with 1 Rivet Kannon.",,3,
 SQUIG_BARRAGE,Squig Barrage,"After shooting, non-MONSTER / VEHICLE hit by Squig Launchas is covered in Squigs: [ENEMY -1 TO HIT].","In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER / VEHICLE units) hit by this unit's Squig Launchas weapons. That enemy unit is covered in Squigs until the start of your next turn:
-- While a unit is covered in Squigs, that unit's attacks have -1 to hit rolls.",[ENEMY -1 TO HIT],[Info Only],2,
-RAUCOUS_OCCUPANTS,Raucous Occupants,"On home objective, add embarked OC to this model’s OC.","While this model is within range of your home objective, add the OC of models embarked within this model to this model's OC.",,,2,
+- While a unit is covered in Squigs, that unit's attacks have -1 to hit rolls.",[ENEMY -1 TO HIT],2,
+RAUCOUS_OCCUPANTS,Raucous Occupants,"On home objective, add embarked OC to this model’s OC.","While this model is within range of your home objective, add the OC of models embarked within this model to this model's OC.",,2,
 FORTIFICATION,Fortification,Standard fortification targeting / fall-back rules. RANGE [OUTGOING RANGE -1 TO HIT]. Enemy [ENEMY AUTO-PASS HAZARD].,"While an enemy unit is engaged with only FORTIFICATION units:
 - That enemy unit can be selected as a target of ranged attacks.
 - When shooting that enemy unit, those ranged attacks have -1 to hit rolls (excluding [CLOSE-QUARTERS] attacks).
-- When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.",[OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],[Info Only] [Info Only],2,
-RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit [TARGET GETS COVER],"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],[Info Only],2,0
-TRANSPORT_BOSSBUNKA,Transport (Big’ed Bossbunka),11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,,3,
+- When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.",[OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD],2,
+RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit [TARGET GETS COVER],"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.",[TARGET GETS COVER],2,0
+TRANSPORT_BOSSBUNKA,Transport (Big’ed Bossbunka),11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,
 COMPOSITION_BOSSBUNKA,Unit Composition (Big’ed Bossbunka),1 Big’ed Bossbunka. Big Shoota + Gaze of Gork.,"UNIT COMPOSITION: 1 Big'ed Bossbunka model.
 
 This model is equipped with: 1 Big Shoota; 1 Gaze of Gork.
 
-WARGEAR OPTIONS: This model can be equipped with up to 3 Big Shootas.",,,3,
+WARGEAR OPTIONS: This model can be equipped with up to 3 Big Shootas.",,3,
 COMPOSITION_DAKKAJET,Unit Composition (Dakkajet),1 Dakkajet. Armoured Impact + 2 Dual Supa-shootas.,"UNIT COMPOSITION: 1 Dakkajet model.
 
 This model is equipped with: 1 Armoured Impact; 2 Dual Supa-shootas.
 
-WARGEAR OPTIONS: This model can be equipped with 1 Dual Supa-shoota.",,,3,
+WARGEAR OPTIONS: This model can be equipped with 1 Dual Supa-shoota.",,3,
 COMPOSITION_BURNA_BOMMER,Unit Composition (Burna-Bommer),"1 Burna-Bommer. Armoured Impact, Dual Big Shoota, Dual Supa-shoota.","UNIT COMPOSITION: 1 Burna-Bommer model.
 
 This model is equipped with: 1 Armoured Impact; 1 Dual Big Shoota; 1 Dual Supa-shoota.
 
-WARGEAR OPTIONS: This model can be equipped with 1 Skorcha Missile Rack.",,,3,
-DAMAGED_4,Damaged 4,CORE: Damaged 4,CORE: Damaged 4,,,2,
+WARGEAR OPTIONS: This model can be equipped with 1 Skorcha Missile Rack.",,3,
+DAMAGED_4,Damaged 4,CORE: Damaged 4,CORE: Damaged 4,,2,
 MADCAP_ARTILLERY,Madcap Artillery,"After shooting same-type Mek Gunz: wobbled [TARGET GETS COVER], zapped [ENEMY -1 LD], smashed [ENEMY -2 M”], grounded [ENEMY GROUNDED].","In your Shooting phase, when this unit has shot, if all ranged weapons equipped by each Mek Gunz model in this unit are the same, select one enemy unit hit by those attacks. That enemy unit has the ability below that matches that weapon's name until the start of your next turn.
 - Bubblechukka: This unit is wobbled. While a unit is wobbled, if it is attacking, its targets have the benefit of cover against those attacks.
 - Kustom Mega-kannon: This unit is zapped. While a unit is zapped, that unit has -1 Ld.
 - Smasha Gun: This unit is smashed. While a unit is smashed, that unit has -2"" M.
 - Traktor Kannon: This unit is grounded. While a unit is grounded it cannot take to the skies.
-Place five Grot Crew tokens next to each Mek Gunz model, removing one each time this Mek Gunz model loses a wound (a Mek Gunz model itself is considered to represent its final wound).",[TARGET GETS COVER] [ENEMY -1 LD] [ENEMY -2 M”] [ENEMY GROUNDED],[Info Only] [Info Only] [Info Only] [Info Only],2,
-LEADER_NAZDREG,LEADER,Can Lead: MEGANOBZ,,,,3,
-SUPPORT_BIGBOSS,SUPPORT,"Can Support: BOYZ, BREAKA BOYZ, NOBZ",,,,3,
-SUPPORT_MEK,SUPPORT,"Can Support: BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS",,,,3,
-SUPPORT_PAINBOSS,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, SQUIGHOG BOYZ",,,,3,
-SUPPORT_RUNTHERD,SUPPORT,Can Support: GRETCHIN,,,,3,
-SUPPORT_WEIRDBOY,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, BOYZ",,,,3,
-LED_BY_BEAST_SNAGGA_BOYZ,LED BY (BEAST SNAGGA BOYZ),"Can be led by: BEASTBOSS, PAINBOSS, WEIRDBOY",,,,3,
-LED_BY_BOYZ,LED BY (BOYZ),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, WARBOSS, BANNERNOB, BIGBOSS, MEK, PAINBOY, WEIRDBOY",,,,3,
-LED_BY_BREAKA_BOYZ,LED BY (BREAKA BOYZ),"Can be led by: BIG MEK, WARBOSS, BIGBOSS, PAINBOY",,,,3,
-LED_BY_FLASH_GITZ,LED BY (FLASH GITZ),"Can be led by: BIG MEK, MEK, PAINBOY",,,,3,
-LED_BY_MEK_GUNZ,LED BY (MEK GUNZ),"Can be led by: BIG MEK, BIG MEK IN MEGA ARMOUR, BIG MEK WITH SHOKK ATTACK GUN, MEK",,,,3,
-LED_BY_NOBZ,LED BY (NOBZ),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, WARBOSS, BANNERNOB, BIGBOSS, MEK, PAINBOY",,,,3,
-LED_BY_TANKBUSTAS,LED BY (TANKBUSTAS),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, MEK, PAINBOY",,,,3,
-LED_BY_MEGANOBZ,LED BY (MEGANOBZ),"Can be led by: BIG MEK IN MEGA ARMOUR, NAZDREG, WARBOSS IN MEGA ARMOUR",,,,3,
-LED_BY_KOMMANDOS,LED BY (KOMMANDOS),Can be led by: BOSS SNIKROT,,,,3,
-LED_BY_WARBIKERS,LED BY (WARBIKERS),Can be led by: DEFFKILLA WARTRIKE,,,,3,
-LED_BY_GRETCHIN,LED BY (GRETCHIN),"Can be led by: ZODGROD WORTSNAGGA, RUNTHERD",,,,3,
-LED_BY_SQUIGHOG_BOYZ,LED BY (SQUIGHOG BOYZ),Can be led by: PAINBOSS,,,,3,
-BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,,3,
-SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,,3,
-BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,,3,
+Place five Grot Crew tokens next to each Mek Gunz model, removing one each time this Mek Gunz model loses a wound (a Mek Gunz model itself is considered to represent its final wound).",[TARGET GETS COVER] [ENEMY -1 LD] [ENEMY -2 M”] [ENEMY GROUNDED],2,
+LEADER_NAZDREG,LEADER,Can Lead: MEGANOBZ,,,3,
+SUPPORT_BIGBOSS,SUPPORT,"Can Support: BOYZ, BREAKA BOYZ, NOBZ",,,3,
+SUPPORT_MEK,SUPPORT,"Can Support: BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS",,,3,
+SUPPORT_PAINBOSS,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, SQUIGHOG BOYZ",,,3,
+SUPPORT_RUNTHERD,SUPPORT,Can Support: GRETCHIN,,,3,
+SUPPORT_WEIRDBOY,SUPPORT,"Can Support: BEAST SNAGGA BOYZ, BOYZ",,,3,
+LED_BY_BEAST_SNAGGA_BOYZ,LED BY (BEAST SNAGGA BOYZ),"Can be led by: BEASTBOSS, PAINBOSS, WEIRDBOY",,,3,
+LED_BY_BOYZ,LED BY (BOYZ),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, WARBOSS, BANNERNOB, BIGBOSS, MEK, PAINBOY, WEIRDBOY",,,3,
+LED_BY_BREAKA_BOYZ,LED BY (BREAKA BOYZ),"Can be led by: BIG MEK, WARBOSS, BIGBOSS, PAINBOY",,,3,
+LED_BY_FLASH_GITZ,LED BY (FLASH GITZ),"Can be led by: BIG MEK, MEK, PAINBOY",,,3,
+LED_BY_MEK_GUNZ,LED BY (MEK GUNZ),"Can be led by: BIG MEK, BIG MEK IN MEGA ARMOUR, BIG MEK WITH SHOKK ATTACK GUN, MEK",,,3,
+LED_BY_NOBZ,LED BY (NOBZ),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, WARBOSS, BANNERNOB, BIGBOSS, MEK, PAINBOY",,,3,
+LED_BY_TANKBUSTAS,LED BY (TANKBUSTAS),"Can be led by: BIG MEK, BIG MEK WITH SHOKK ATTACK GUN, MEK, PAINBOY",,,3,
+LED_BY_MEGANOBZ,LED BY (MEGANOBZ),"Can be led by: BIG MEK IN MEGA ARMOUR, NAZDREG, WARBOSS IN MEGA ARMOUR",,,3,
+LED_BY_KOMMANDOS,LED BY (KOMMANDOS),Can be led by: BOSS SNIKROT,,,3,
+LED_BY_WARBIKERS,LED BY (WARBIKERS),Can be led by: DEFFKILLA WARTRIKE,,,3,
+LED_BY_GRETCHIN,LED BY (GRETCHIN),"Can be led by: ZODGROD WORTSNAGGA, RUNTHERD",,,3,
+LED_BY_SQUIGHOG_BOYZ,LED BY (SQUIGHOG BOYZ),Can be led by: PAINBOSS,,,3,
+BOYZ_NOB_WOUNDS,Nobz,Nobz are 3 Wounds.,,,3,
+SQUIGHOG_BOYZ_SMASHA_NOB_PROFILE,Nobz on Smasha Squig,Nobz on Smasha Squig has 4 Wounds.,,,3,
+BEAST_SNAGGA_BOYZ_NOB_PROFILE,Beast Snagga Nobz,Beast Snagga Nobz have 3 Wounds.,,,3,

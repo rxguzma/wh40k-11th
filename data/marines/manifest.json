@@ -1,21 +1,21 @@
 {
-  "dataset_sha256": "fde8f901948035b916efaf41221672db5b048fbc0b61d3fde3e149a7660a837c",
+  "dataset_sha256": "730f981c1e8bd3b2c025d3d754360baf57fbef160a77fc09d23183e80d8ce52d",
   "files": {
     "Abilities.csv": {
-      "bytes": 69466,
-      "sha256": "6db9d0de8627aa1b0f749fcbf9b29dc2d4d011de1b5e3a5af9d5ee6357d5cb59"
+      "bytes": 68139,
+      "sha256": "20d3f38d93c2b375fb497eb97f988f48cb5221ff6b86e03e988b871e07679374"
     },
     "Army_Rules.csv": {
-      "bytes": 2472,
-      "sha256": "a7e9caa6d6917357f7ffffbc0708071cdd3fee9ce3220accdc5c4d033adef34e"
+      "bytes": 2451,
+      "sha256": "d810a1d8cba7296b81bd0c7f7e9cedb4ad01cb0ca310e4aa611590588608270c"
     },
     "Detachment_Definitions.csv": {
-      "bytes": 4518,
-      "sha256": "26f6ba9087b83b0c092cfb648cffe15e4f0c0b9b9f27d3195c9c03204f7de550"
+      "bytes": 4489,
+      "sha256": "3216bb7a20c8ca5dd9d19adab0b564e1305f4a5190d37158703bad234858ee82"
     },
     "Enhancements.csv": {
-      "bytes": 10777,
-      "sha256": "8ac4c9596e1711d823636d32fdc90c0409eecc69f7f4e3228a02c949d7cb3e5d"
+      "bytes": 10618,
+      "sha256": "e7564c11218ceee607001deaa3e360702f02957a942a9a7bfbd397eb8e3eddac"
     },
     "Loadout_Abilities.csv": {
       "bytes": 902,
@@ -34,8 +34,8 @@
       "sha256": "cfab74033e05aae2dff59fec8faa57042ea1cf86ac5a61eceedaf5b00c5f9b38"
     },
     "Stratagems.csv": {
-      "bytes": 20227,
-      "sha256": "28adfa0b35dcf604ebb10814afc370ae4705c99f275cc07b371a70eee40634bc"
+      "bytes": 20020,
+      "sha256": "a87474019c9045053c23278bc66f1b2206fdd4f6679eac18d422ec532a462e97"
     },
     "Unit_Abilities.csv": {
       "bytes": 16311,
@@ -54,8 +54,8 @@
       "sha256": "34bb9b63787c748d77c4aa12c3af8a5a7d8e04d3f9c809adc2672d0fee298c99"
     },
     "Weapon_Abilities.csv": {
-      "bytes": 29922,
-      "sha256": "6a19e6b2d92b572069186a148ac1e4947fa6b41de0be68db032b807390fdcef8"
+      "bytes": 29007,
+      "sha256": "06314da9bcc84eee2e4dd29ef777daffe6d431b09d87a797f250c86f88844ee5"
     },
     "Weapon_Stats.csv": {
       "bytes": 18523,

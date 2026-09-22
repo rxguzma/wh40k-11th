@@ -1,4 +1,4 @@
-Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
+Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 dark_angels_army_rule_the_unforgiven,Dark Angels,The Unforgiven,The Unforgiven: become Dark Angels.,"The Unforgiven
 If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that units Chapter. For example, Asmodai has both the ADEPTUS ASTARTES and DARK ANGELS Faction keywords, and is therefore from the Dark Angels Chapter.
 You cannot include units from more than one Chapter in your army.
@@ -12,13 +12,13 @@ The following ADEPTUS ASTARTES units gain the DEATHWING keyword if they are draw
 TERMINATOR units
 BLADEGUARD ANCIENT, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD and VANGUARD VETERAN SQUAD WITH JUMP PACKS units
 LAND RAIDER, LAND RAIDER CRUSADER, LAND RAIDER REDEEMER, REPULSOR and REPULSOR EXECUTIONER units
-DREADNOUGHT units",,,,ADEPTUS ASTARTES,,
+DREADNOUGHT units",,,ADEPTUS ASTARTES,,
 space_marines_army_rule_combat_doctrines,Marines,COMBAT DOCTRINES,"At the start of your Command phase, you can select one combat doctrine listed below.","At the start of your Command phase, you can select one combat doctrine listed below. If you do, that combat doctrine is active for friendly ADEPTUS ASTARTES units with this ability until the start of your next Command phase.
 
 Unless otherwise stated:
 • You can only select each combat doctrine once per battle.
-• Only one combat doctrine can be active for each unit. If a rule makes a combat doctrine active for a unit, any combat doctrine previously active for that unit is no longer active for that unit.",,,0,ADEPTUS ASTARTES,,
-space_marines_army_rule_assault_doctrine,Marines,ASSAULT DOCTRINE,ADVANCE & CHARGE,ADVANCE & CHARGE,,,0,ADEPTUS ASTARTES,,
-space_marines_army_rule_devastator_doctrine,Marines,DEVASTATOR DOCTRINE,RANGED have ASSAULT,RANGED have ASSAULT,,,0,ADEPTUS ASTARTES,,
-space_marines_army_rule_tactical_doctrine,Marines,TACTICAL DOCTRINE,"FALL BACK, SHOOT & CHARGE","FALL BACK, SHOOT & CHARGE",,,0,ADEPTUS ASTARTES,,
-space_marines_army_rule_transhuman_strategist,Marines,TRANSHUMAN STRATEGIST,WARLORD gains +1 CP,"At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP.",,,0,ADEPTUS ASTARTES,,
+• Only one combat doctrine can be active for each unit. If a rule makes a combat doctrine active for a unit, any combat doctrine previously active for that unit is no longer active for that unit.",,0,ADEPTUS ASTARTES,,
+space_marines_army_rule_assault_doctrine,Marines,ASSAULT DOCTRINE,ADVANCE & CHARGE,ADVANCE & CHARGE,,0,ADEPTUS ASTARTES,,
+space_marines_army_rule_devastator_doctrine,Marines,DEVASTATOR DOCTRINE,RANGED have ASSAULT,RANGED have ASSAULT,,0,ADEPTUS ASTARTES,,
+space_marines_army_rule_tactical_doctrine,Marines,TACTICAL DOCTRINE,"FALL BACK, SHOOT & CHARGE","FALL BACK, SHOOT & CHARGE",,0,ADEPTUS ASTARTES,,
+space_marines_army_rule_transhuman_strategist,Marines,TRANSHUMAN STRATEGIST,WARLORD gains +1 CP,"At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP.",,0,ADEPTUS ASTARTES,,

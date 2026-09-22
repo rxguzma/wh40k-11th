@@ -1,22 +1,22 @@
-Enhancement_ID,Detachment_ID,Enhancement_Name,Points,Repeatable,Short_Description,Long_Description,Tags,Tag Categories,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
+Enhancement_ID,Detachment_ID,Enhancement_Name,Points,Repeatable,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 space_marines_gladius_task_force_enhancement_standard_of_the_emperor_ascendant,space_marines_gladius_task_force,STANDARD OF THE EMPEROR ASCENDANT,,FALSE,"ANCIENT only
 +1 OC and +1 Ld & FNP 5+
 Once per battle: MELEE +1 A","ANCIENT model only. This model has:
 • +1 OC and Ld.
 • FNP 5+.
 • The following ability:
-Ancient Exhortation (Once per battle, per army): When this unit is selected to fight, you can use this ability. If you do, this unit's melee attacks have +1 A until the end of the phase.",,,0,,,
+Ancient Exhortation (Once per battle, per army): When this unit is selected to fight, you can use this ability. If you do, this unit's melee attacks have +1 A until the end of the phase.",,0,,,
 space_marines_gladius_task_force_enhancement_laurels_of_triumph,space_marines_gladius_task_force,LAURELS OF TRIUMPH,,FALSE,"ADEPTUS ASTARTES only
 MELEE: +1 S and +1 AP
 In ASSAULT: +2 S and +2 AP","ADEPTUS ASTARTES model only. This model's melee attacks have:
 • +1 S and AP.
-• Or: If the assault doctrine is active for this unit, +2 S and AP.",,,0,,,
+• Or: If the assault doctrine is active for this unit, +2 S and AP.",,0,,,
 space_marines_gladius_task_force_enhancement_adept_of_the_codex,space_marines_gladius_task_force,ADEPT OF THE CODEX,,FALSE,"CAPTAIN only
-TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,,0,,,
+TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,0,,,
 space_marines_gladius_task_force_enhancement_artificer_armour,space_marines_gladius_task_force,ARTIFICER ARMOUR,,FALSE,"ADEPTUS ASTARTES only
 2+ Sv & FNP 5+","ADEPTUS ASTARTES model only. This model has:
 • 2+ Sv.
-• FNP 5+.",,,0,,,
+• FNP 5+.",,0,,,
 space_marines_assault_brethren_enhancement_imperiums_sword,space_marines_assault_brethren,IMPERIUM’S SWORD,,FALSE,MELEE: A 6 | WS 2+ | S 7 | AP -3 | D 3,"ADEPTUS ASTARTES model only. This model has the following weapon:
 
 Imperium's Sword
@@ -25,70 +25,70 @@ A: 6
 WS: 2+
 S: 7
 AP: -3
-D: 3",,,0,,,
+D: 3",,0,,,
 space_marines_assault_brethren_enhancement_furious_assault_upgrade,space_marines_assault_brethren,FURIOUS ASSAULT UPGRADE,,FALSE,"INFANTRY only
-MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE [SUSTAINED HITS 1]",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],[Weapon Rules],0,,,
+MELEE: SUSTAINED HITS 1 vs non-MONSTER / VEHICLE [SUSTAINED HITS 1]",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],0,,,
 space_marines_tactical_brethren_enhancement_laurels_of_vigilance,space_marines_tactical_brethren,LAURELS OF VIGILANCE,,FALSE,"ADEPTUS ASTARTES only
 Once per battle round: BATTLELINE within 12""
 OVERWATCH / HEROIC INTERVENTION: -1CP","ADEPTUS ASTARTES model only.
-(Once per battle round, per army) When you use the Fire Overwatch/Heroic Intervention stratagem, if you target a friendly ADEPTUS ASTARTES BATTLELINE unit within 12"" of this model with that stratagem, that use is -1 CP.",,,0,,,
+(Once per battle round, per army) When you use the Fire Overwatch/Heroic Intervention stratagem, if you target a friendly ADEPTUS ASTARTES BATTLELINE unit within 12"" of this model with that stratagem, that use is -1 CP.",,0,,,
 space_marines_tactical_brethren_enhancement_tactical_insight,space_marines_tactical_brethren,TACTICAL INSIGHT,,FALSE,"CAPTAIN only
-TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,,0,,,
+TACTICAL DOCTRINE is active in addition to any other doctrine.",CAPTAIN model only. The tactical doctrine is active for this unit in addition to any other combat doctrine.,,0,,,
 space_marines_devastator_brethren_enhancement_master_forged_firearms,space_marines_devastator_brethren,MASTER-FORGED FIREARMS,,FALSE,"INFANTRY / MOUNTED only
-Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D [+1 A] [+1 S] [+1 AP] [+1 D]","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model's ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],[Weapon Stats] [Weapon Stats] [Weapon Stats] [Weapon Stats],0,,,
+Non-PSYCHIC RANGED: +1 A, +1 S, +1 AP & +1 D [+1 A] [+1 S] [+1 AP] [+1 D]","ADEPTUS ASTARTES INFANTRY/MOUNTED model only. This model's ranged attacks (excluding [PSYCHIC] attacks) have +1 A, S, AP and D.",[+1 A][+1 S][+1 AP][+1 D],0,,,
 space_marines_devastator_brethren_enhancement_honour_of_vigilance,space_marines_devastator_brethren,HONOUR OF VIGILANCE,,FALSE,"RANGED: LETHAL HITS
 In DEVASTATOR: Re-roll ADVANCE [LETHAL HITS]","ADEPTUS ASTARTES model only.
 • This unit's ranged attacks have [LETHAL HITS].
-• If the devastator doctrine is active for this unit, this unit can re-roll advance rolls.",[LETHAL HITS],[Weapon Rules],0,,,
+• If the devastator doctrine is active for this unit, this unit can re-roll advance rolls.",[LETHAL HITS],0,,,
 space_marines_terminator_stormforce_enhancement_champion_of_the_first_company,space_marines_terminator_stormforce,CHAMPION OF THE FIRST COMPANY,,FALSE,"TERMINATOR only
-MELEE: LETHAL HITS [LETHAL HITS]",ADEPTUS ASTARTES TERMINATOR model only. This unit's melee attacks have [LETHAL HITS].,[LETHAL HITS],[Weapon Rules],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+MELEE: LETHAL HITS [LETHAL HITS]",ADEPTUS ASTARTES TERMINATOR model only. This unit's melee attacks have [LETHAL HITS].,[LETHAL HITS],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_enhancement_corporeum_reliquary,space_marines_terminator_stormforce,CORPOREUM RELIQUARY,,FALSE,"TERMINATOR only
-First MOVEMENT: INGRESS MOVE","ADEPTUS ASTARTES TERMINATOR model only. In your first Movement phase, this unit can make an ingress move.",,,0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+First MOVEMENT: INGRESS MOVE","ADEPTUS ASTARTES TERMINATOR model only. In your first Movement phase, this unit can make an ingress move.",,0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_enhancement_martial_paragon,space_marines_tacticus_attack_force,MARTIAL PARAGON,,FALSE,"TACTICUS only
 Attacks: Re-roll one Hit & one Wound","TACTICUS model only. This unit’s attacks can:
 • Re-roll one hit roll.
-• Re-roll one wound roll.",,,0,,,
+• Re-roll one wound roll.",,0,,,
 space_marines_tacticus_attack_force_enhancement_spearpoint_war_leader,space_marines_tacticus_attack_force,SPEARPOINT WAR LEADER,,FALSE,"TACTICUS only
-SCOUTS 6\""","TACTICUS model only. This unit has Scouts 6"".",,,0,,,
+SCOUTS 6\""","TACTICUS model only. This unit has Scouts 6"".",,0,,,
 space_marines_tacticus_firestorm_force_enhancement_cyber_familiar,space_marines_tacticus_firestorm_force,CYBER-FAMILIAR,,FALSE,"TACTICUS only
 After deployment: Redeploy up to 3 ASTARTES INFANTRY
-Can place in STRATEGIC RESERVES","TACTICUS model only. When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,,0,,,
+Can place in STRATEGIC RESERVES","TACTICUS model only. When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,0,,,
 space_marines_tacticus_firestorm_force_enhancement_tempered_in_battle_aura,space_marines_tacticus_firestorm_force,TEMPERED IN BATTLE (AURA),,FALSE,"TACTICUS only
-ASTARTES within 6"": Re-roll LEADERSHIP","TACTICUS model only. Friendly ADEPTUS ASTARTES units within 6"" of this model can re-roll leadership rolls.",,,0,,,
+ASTARTES within 6"": Re-roll LEADERSHIP","TACTICUS model only. Friendly ADEPTUS ASTARTES units within 6"" of this model can re-roll leadership rolls.",,0,,,
 space_marines_phobos_shadow_force_enhancement_venator_omni_auspex,space_marines_phobos_shadow_force,VENATOR OMNI-AUSPEX,,FALSE,"PHOBOS only
 vs HIDDEN: Re-roll WOUND 1s
 In ASSAULT: Re-roll WOUND 1-2","PHOBOS model only. This unit’s attacks that target a hidden unit can:
 • Re-roll wound rolls of 1.
-• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,,0,,,
+• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,0,,,
 space_marines_phobos_shadow_force_enhancement_execute_and_redeploy,space_marines_phobos_shadow_force,EXECUTE AND REDEPLOY,,FALSE,"PHOBOS only
 After SHOOTING & unengaged: Move 6""
-Cannot CHARGE","PHOBOS model only. In your Shooting phase, after this unit has shot, if this unit is unengaged, this unit can make a normal move up to 6"". If it does, this unit is not eligible to declare a charge until the end of the turn.",,,0,,,
+Cannot CHARGE","PHOBOS model only. In your Shooting phase, after this unit has shot, if this unit is unengaged, this unit can make a normal move up to 6"". If it does, this unit is not eligible to declare a charge until the end of the turn.",,0,,,
 space_marines_phobos_shock_force_enhancement_seal_of_shrouding,space_marines_phobos_shock_force,SEAL OF SHROUDING,,FALSE,"PHOBOS only
-Cannot be targeted by SNAP SHOOTING",PHOBOS model only. Enemy units cannot target this unit with snap shooting attacks.,,,0,,,
+Cannot be targeted by SNAP SHOOTING",PHOBOS model only. Enemy units cannot target this unit with snap shooting attacks.,,0,,,
 space_marines_phobos_shock_force_enhancement_venator_omni_auspex,space_marines_phobos_shock_force,VENATOR OMNI-AUSPEX,,FALSE,"PHOBOS only
 vs HIDDEN: Re-roll WOUND 1s
 In ASSAULT: Re-roll WOUND 1-2","PHOBOS model only. This unit’s attacks that target a hidden unit can:
 • Re-roll wound rolls of 1.
-• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,,0,,,
+• Or: If the assault doctrine is active for this unit, re-roll wound rolls of 1 and 2.",,0,,,
 space_marines_gravis_linebreaker_force_enhancement_indefatigable_fortitude,space_marines_gravis_linebreaker_force,INDEFATIGABLE FORTITUDE,,FALSE,"GRAVIS only
-vs S > T: -1 to Wound",GRAVIS model only. Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls.,,,0,,,
+vs S > T: -1 to Wound",GRAVIS model only. Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls.,,0,,,
 space_marines_gravis_linebreaker_force_enhancement_relentless_advance,space_marines_gravis_linebreaker_force,RELENTLESS ADVANCE,,FALSE,"GRAVIS only
-SCOUTS 5""","GRAVIS model only. This unit has Scouts 5"".",,,0,,,
+SCOUTS 5""","GRAVIS model only. This unit has Scouts 5"".",,0,,,
 space_marines_gravis_siege_force_enhancement_immovable_conquerors_upgrade,space_marines_gravis_siege_force,IMMOVABLE CONQUERORS UPGRADE,,FALSE,"GRAVIS only
-+1 OC",GRAVIS unit only. This unit has +1 OC.,,,0,,,
++1 OC",GRAVIS unit only. This unit has +1 OC.,,0,,,
 space_marines_gravis_siege_force_enhancement_narthecius_gauntlet,space_marines_gravis_siege_force,NARTHECIUS GAUNTLET,,FALSE,"APOTHECARY BIOLOGIS only
-COMMAND: Heal D3+1 wounds","APOTHECARY BIOLOGIS model only. In your Command phase, this unit heals D3+1 wounds.",,,0,,,
+COMMAND: Heal D3+1 wounds","APOTHECARY BIOLOGIS model only. In your Command phase, this unit heals D3+1 wounds.",,0,,,
 space_marines_stormlance_task_force_enhancement_supercharged_engines_upgrade,space_marines_stormlance_task_force,SUPERCHARGED ENGINES UPGRADE,,FALSE,"MOUNTED only
-Re-roll ADVANCE",ADEPTUS ASTARTES MOUNTED unit only. This unit can re-roll advance rolls.,,,0,,,
+Re-roll ADVANCE",ADEPTUS ASTARTES MOUNTED unit only. This unit can re-roll advance rolls.,,0,,,
 space_marines_stormlance_task_force_enhancement_auspex_triangulation_shrines_upgrade,space_marines_stormlance_task_force,AUSPEX TRIANGULATION SHRINES UPGRADE,,FALSE,"SPEEDER only
 SHOOTING: Enemy within 12"" is SPOTTED
 SPOTTED: +3"" Detection Range","ADEPTUS ASTARTES SPEEDER unit only. At the start of your Shooting phase, select one visible enemy unit within 12"" of this unit. That enemy unit is spotted:
-• While a unit is spotted, that unit has +3"" detection range.",,,0,,,
+• While a unit is spotted, that unit has +3"" detection range.",,0,,,
 space_marines_ironclad_champions_enhancement_artificer_sarcophagus_upgrade,space_marines_ironclad_champions,ARTIFICER SARCOPHAGUS UPGRADE,,FALSE,"DREADNOUGHT only
-Attacks against unit: -1 D [INCOMING -1 D]",DREADNOUGHT unit only. Attacks that target this unit have -1 D.,[INCOMING -1 D],[Info Only],0,ADEPTUS ASTARTES,DREADNOUGHT,
+Attacks against unit: -1 D [INCOMING -1 D]",DREADNOUGHT unit only. Attacks that target this unit have -1 D.,[INCOMING -1 D],0,ADEPTUS ASTARTES,DREADNOUGHT,
 space_marines_ironclad_champions_enhancement_venerable_champion_aura_upgrade,space_marines_ironclad_champions,VENERABLE CHAMPION (AURA) UPGRADE,,FALSE,"DREADNOUGHT only
-ASTARTES INFANTRY / MOUNTED within 6"": Re-roll Hit rolls of 1","DREADNOUGHT unit only. While a friendly ADEPTUS ASTARTES INFANTRY/MOUNTED unit is within 6"" of this unit, that unit’s attacks can re-roll hit rolls of 1.",,,0,ADEPTUS ASTARTES,DREADNOUGHT,
-space_marines_medusas_wrath_enhancement_adept_of_the_omnissiah,space_marines_medusas_wrath,ADEPT OF THE OMNISSIAH,25,0,"Enemy attacks — VEHICLE within 6"" gets [FNP 5+] until those attacks end.",,"ACTIVE, FNP 5+",,0,TECHMARINE,,
-space_marines_medusas_wrath_enhancement_master_of_the_machine_war,space_marines_medusas_wrath,MASTER OF THE MACHINE WAR,25,0,"COMMAND — VEHICLE within 6"" gains DEVASTATOR or TACTICAL DOCTRINE until next COMMAND.",,ACTIVE,,0,,,
-space_marines_medusas_wrath_enhancement_target_augury_web,space_marines_medusas_wrath,TARGET AUGURY WEB,30,0,"COMMAND — VEHICLE within 3"" attacks gain [LETHAL HITS] until next COMMAND.",,"ACTIVE, SHOOT, MELEE, WEAPONS, LETHAL HITS",,0,TECHMARINE,,
-space_marines_medusas_wrath_enhancement_the_flesh_is_weak,space_marines_medusas_wrath,THE FLESH IS WEAK,15,0,[+1 T] [FNP 5+].,,"STATS, +1 T, FNP 5+",,1,,,
+ASTARTES INFANTRY / MOUNTED within 6"": Re-roll Hit rolls of 1","DREADNOUGHT unit only. While a friendly ADEPTUS ASTARTES INFANTRY/MOUNTED unit is within 6"" of this unit, that unit’s attacks can re-roll hit rolls of 1.",,0,ADEPTUS ASTARTES,DREADNOUGHT,
+space_marines_medusas_wrath_enhancement_adept_of_the_omnissiah,space_marines_medusas_wrath,ADEPT OF THE OMNISSIAH,25,0,"Enemy attacks — VEHICLE within 6"" gets [FNP 5+] until those attacks end.",,"ACTIVE, FNP 5+",0,TECHMARINE,,
+space_marines_medusas_wrath_enhancement_master_of_the_machine_war,space_marines_medusas_wrath,MASTER OF THE MACHINE WAR,25,0,"COMMAND — VEHICLE within 6"" gains DEVASTATOR or TACTICAL DOCTRINE until next COMMAND.",,ACTIVE,0,,,
+space_marines_medusas_wrath_enhancement_target_augury_web,space_marines_medusas_wrath,TARGET AUGURY WEB,30,0,"COMMAND — VEHICLE within 3"" attacks gain [LETHAL HITS] until next COMMAND.",,"ACTIVE, SHOOT, MELEE, WEAPONS, LETHAL HITS",0,TECHMARINE,,
+space_marines_medusas_wrath_enhancement_the_flesh_is_weak,space_marines_medusas_wrath,THE FLESH IS WEAK,15,0,[+1 T] [FNP 5+].,,"STATS, +1 T, FNP 5+",1,,,
