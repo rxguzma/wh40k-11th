@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"BLESSINGS_OF_THE_OMNISSIAH_NEW","mode":"update","sets":{"Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"TECHMARINE","mode":"delete_where","where":{"Unit_ID":"TECHMARINE","Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH_NEW","Ability_Type":"ABILITY"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"TECHMARINE","mode":"insert","allow_duplicate_id":true,"sets":{"Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH","Ability_Type":"ABILITY"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_FIST_PLASMA","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_FIST_PLASMA"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_WITH_JUMP_PACK","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_WITH_JUMP_PACK"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"LIEUTENANT","mode":"delete_where","where":{"Unit_ID":"LIEUTENANT"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_IN_GRAVIS_ARMOUR","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_IN_GRAVIS_ARMOUR"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"CAPTAIN_IN_TERMINATOR_ARMOUR","mode":"delete_where","where":{"Unit_ID":"CAPTAIN_IN_TERMINATOR_ARMOUR"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
