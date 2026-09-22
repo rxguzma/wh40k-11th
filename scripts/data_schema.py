@@ -202,7 +202,6 @@ def validate():
         loadout_options = loaded[(army, "Loadout_Options.csv")]
         loadout_weapons = loaded[(army, "Loadout_Weapons.csv")]
         loadout_abilities = loaded[(army, "Loadout_Abilities.csv")]
-        loadout_points = loaded[(army, "Loadout_Points.csv")]
         loadout_compatibility = loaded[(army, "Loadout_Compatibility.csv")]
 
         require_unique(unit_profiles, ["Unit_ID"], f"{army} authoritative Unit_ID")
@@ -233,12 +232,41 @@ def validate():
                 fail(f"{army} Unit_Abilities line {line_no}: missing Ability_ID {ability_id!r}")
 
         for line_no, row in unit_weapons:
-            unit_id = (row["Unit_ID"] or "").strip()
-            weapon_id = (row["Weapon_ID"] or "").strip()
+            unit_id = (row.get("Unit_ID") or "").strip()
+            weapon_id = (row.get("Weapon_ID") or "").strip()
+            row_type = (row.get("Row_Type") or "WEAPON").strip().upper()
+            row_label = (row.get("Row_Label") or "").strip()
+            sort_order = (row.get("Sort_Order") or "").strip()
+            quantity = (row.get("Quantity") or "").strip()
             if unit_id not in unit_ids:
                 fail(f"{army} Unit_Weapons line {line_no}: missing Unit_ID {unit_id!r}")
-            if weapon_id not in weapon_ids:
-                fail(f"{army} Unit_Weapons line {line_no}: missing Weapon_ID {weapon_id!r}")
+            if row_type not in {"WEAPON", "LABEL", "BLANK"}:
+                fail(f"{army} Unit_Weapons line {line_no}: invalid Row_Type {row_type!r}")
+            if row_type == "WEAPON":
+                if not weapon_id or weapon_id not in weapon_ids:
+                    fail(f"{army} Unit_Weapons line {line_no}: missing Weapon_ID {weapon_id!r}")
+                if row_label:
+                    fail(f"{army} Unit_Weapons line {line_no}: WEAPON row must have blank Row_Label")
+            elif row_type == "LABEL":
+                if weapon_id or not row_label:
+                    fail(f"{army} Unit_Weapons line {line_no}: LABEL row requires blank Weapon_ID and nonblank Row_Label")
+                if quantity:
+                    fail(f"{army} Unit_Weapons line {line_no}: LABEL row requires blank Quantity")
+            else:
+                if weapon_id or row_label or quantity:
+                    fail(f"{army} Unit_Weapons line {line_no}: BLANK row requires blank Weapon_ID, Row_Label, and Quantity")
+            if sort_order:
+                try:
+                    int(sort_order)
+                except ValueError:
+                    fail(f"{army} Unit_Weapons line {line_no}: invalid Sort_Order {sort_order!r}")
+            if quantity:
+                try:
+                    parsed_quantity = int(quantity)
+                except ValueError:
+                    fail(f"{army} Unit_Weapons line {line_no}: invalid Quantity {quantity!r}")
+                if parsed_quantity < 0:
+                    fail(f"{army} Unit_Weapons line {line_no}: Quantity must be >= 0")
 
         for line_no, row in unit_points:
             unit_id = (row["Unit_ID"] or "").strip()
@@ -258,7 +286,6 @@ def validate():
         for file_name, rows, extra_checks in (
             ("Loadout_Weapons.csv", loadout_weapons, ("Weapon_ID", weapon_ids)),
             ("Loadout_Abilities.csv", loadout_abilities, ("Ability_ID", all_ability_ids)),
-            ("Loadout_Points.csv", loadout_points, None),
             ("Loadout_Compatibility.csv", loadout_compatibility, None),
         ):
             for line_no, row in rows:
@@ -270,6 +297,33 @@ def validate():
                     value = (row.get(column) or "").strip()
                     if value not in allowed:
                         fail(f"{army} {file_name} line {line_no}: missing {column} {value!r}")
+
+        option_unit_by_id = {
+            (row["Loadout_Option_ID"] or "").strip(): (row["Unit_ID"] or "").strip()
+            for _, row in loadout_options
+        }
+        selected_pairs = {
+            (
+                option_unit_by_id.get((row.get("Loadout_Option_ID") or "").strip(), ""),
+                (row.get("Weapon_ID") or "").strip(),
+            )
+            for _, row in loadout_weapons
+            if (row.get("Weapon_Role") or "").strip().upper() == "SELECTED"
+        }
+        for line_no, row in unit_weapons:
+            unit_id = (row.get("Unit_ID") or "").strip()
+            weapon_id = (row.get("Weapon_ID") or "").strip()
+            if not unit_id or not weapon_id:
+                continue
+            has_layout_metadata = any(
+                (row.get(column) or "").strip()
+                for column in ("Layout_Row_ID", "Row_Type", "Row_Label", "Sort_Order", "Quantity")
+            )
+            if not has_layout_metadata and (unit_id, weapon_id) in selected_pairs:
+                fail(
+                    f"{army} Unit_Weapons line {line_no}: duplicate selectable weapon ownership "
+                    f"{unit_id!r}/{weapon_id!r}; keep selectable ownership in Loadout_Weapons.csv"
+                )
 
         for line_no, row in enhancements:
             enhancement_id = (row["Enhancement_ID"] or "").strip()
