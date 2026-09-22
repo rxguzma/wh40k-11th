@@ -13,7 +13,6 @@ WEAPON_ABILITIES_HEADER = [
     "Target",
     "Value",
     "Condition",
-    "Separator_Before",
     "Sort_Order",
 ]
 
@@ -63,16 +62,7 @@ def render(row):
 
 
 def render_group(rows, army, weapon_id):
-    output = ""
-    for index, (_, row) in enumerate(sorted(rows, key=lambda pair: pair[0])):
-        separator = row.get("Separator_Before") or ""
-        if index == 0:
-            if separator:
-                fail(f"{army}: first ability for {weapon_id!r} has nonblank Separator_Before")
-        elif not separator.startswith(","):
-            fail(f"{army}: non-first ability for {weapon_id!r} must use a comma separator")
-        output += separator + render(row)
-    return output
+    return ", ".join(render(row) for _, row in sorted(rows, key=lambda pair: pair[0]))
 
 
 def validate_army(army):
