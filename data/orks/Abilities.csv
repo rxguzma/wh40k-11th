@@ -39,7 +39,8 @@ PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: ORKS within
 - +1 to hit rolls
 - +1 to wound rolls",[+1 TO HIT] [+1 TO WOUND],2,0
 PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,2,
-PULSA_ROKKIT,Pulsa Rokkit,"Once per battle: vs MONSTER / VEHICLE within 24"" — RANGE [+1 AP] [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
+PULSA_ROKKIT,Pulsa Rokkit,"Once per battle vs MONSTER / VEHICLE 24"" 
+RANGE [+1 AP] and [LETHAL HITS]","Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
 - +1 AP
 - [LETHAL HITS].",[ACTIVE] [SHOOT] [WEAPONS] [+1 AP] [LETHAL HITS],2,0
 PYROMANIAKS,Pyromaniaks,"[RE-ROLL 1S TO WOUND] if within 6"". If on Objective: [RE-ROLL ALL WOUNDS]","Each time a model in this unit makes a ranged attack with a burna that targets an enemy unit within 6"", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.",[RE-ROLL 1S TO WOUND] [RE-ROLL ALL WOUNDS],2,
