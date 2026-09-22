@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Universal_Abilities.csv","id_column":"Ability_ID","row_id":"FIRING_DECK_7","mode":"insert","sets":{"Ability Name":"Firing Deck 7","Short_Description":"Firing Deck 7","Long_Description":"Firing Deck\u003A This ability always takes the form Firing Deck X. In your Shooting phase, each time this TRANSPORT is selected to shoot, if one or more units are embarked within it, select up to X embarked models, excluding models whose units have already been selected to shoot this phase. For each selected model, select one of its ranged weapons, excluding [ONE SHOT] weapons. Until this TRANSPORT has resolved all of its attacks, it has all selected weapons in addition to its other weapons. Until the end of the turn, units embarked within this TRANSPORT are not eligible to shoot.","Visibility_ID":"2"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"BLESSINGS_OF_THE_OMNISSIAH_NEW","mode":"update","sets":{"Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"TECHMARINE","mode":"delete_where","where":{"Unit_ID":"TECHMARINE","Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH_NEW","Ability_Type":"ABILITY"}},{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"TECHMARINE","mode":"insert","allow_duplicate_id":true,"sets":{"Ability_ID":"BLESSINGS_OF_THE_OMNISSIAH","Ability_Type":"ABILITY"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
