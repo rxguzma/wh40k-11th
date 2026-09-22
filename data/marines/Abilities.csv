@@ -172,7 +172,7 @@ STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed","Once per tu
 
 If it does, after the attacking unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,2,
 STORM_SHIELD,Storm Shield,4+ Invul (included) [INVULNERABLE SAVE 4+],4+ Invul (included),[STATS] [INVULNERABLE SAVE 4+],2,
-STORM_SHIELD_TERMINATORS,Storm Shield,+1 Wound (included) [+1 W],Storm Shield\u003A The bearer has a Wounds characteristic of 4.,,3,1
+STORM_SHIELD_TERMINATORS,Storm Shield,+1 Wound (included) [+1 W],Storm Shield\u003A The bearer has a Wounds characteristic of 4.,"STATS, +1 W",3,1
 STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot. [FALL BACK AND SHOOT],Fallback and Shoot,[FALL BACK AND SHOOT],2,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
 Max 6 per attacking unit. Melee only.","Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,2,
