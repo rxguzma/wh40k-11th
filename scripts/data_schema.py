@@ -388,12 +388,21 @@ def validate_tag_contract(loaded):
         category = (row.get("Category") or "").strip()
         if not display or not category:
             fail(f"Tag_Definitions line {line_no}: Display_Tag and Category are required")
-        filled = [(row.get(field) or "").strip() for field in EFFECT_FIELDS]
-        filled_count = sum(1 for value in filled if value)
-        if filled_count not in (0, 5):
+        effect_type = (row.get("Effect_Type") or "").strip()
+        target = (row.get("Target") or "").strip()
+        stat = (row.get("Stat") or "").strip()
+        operation = (row.get("Operation") or "").strip()
+        value = (row.get("Value") or "").strip()
+        core_effect = [effect_type, stat, operation, value]
+        if any(core_effect) and not all(core_effect):
             fail(
                 f"Tag_Definitions line {line_no} {display!r}: "
-                "Effect_Type/Target/Stat/Operation/Value must all be filled or all blank"
+                "Effect_Type/Stat/Operation/Value must all be filled when an executable effect is defined; Target may be blank when scope is supplied by the owning Ability controls."
+            )
+        if target and not any(core_effect):
+            fail(
+                f"Tag_Definitions line {line_no} {display!r}: "
+                "Target cannot be populated without an executable effect."
             )
         key = (normalize_tag_key(display), normalize_category_key(category))
         if key in library:
