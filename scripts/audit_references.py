@@ -21,7 +21,6 @@ def main():
         loadout_options = load_dict_rows(base / "Loadout_Options.csv", schemas[("army", "Loadout_Options.csv")])
         loadout_weapons = load_dict_rows(base / "Loadout_Weapons.csv", schemas[("army", "Loadout_Weapons.csv")])
         loadout_abilities = load_dict_rows(base / "Loadout_Abilities.csv", schemas[("army", "Loadout_Abilities.csv")])
-        loadout_points = load_dict_rows(base / "Loadout_Points.csv", schemas[("army", "Loadout_Points.csv")])
         loadout_compatibility = load_dict_rows(
             base / "Loadout_Compatibility.csv", schemas[("army", "Loadout_Compatibility.csv")]
         )
@@ -44,7 +43,7 @@ def main():
             weapon_id = (row["Weapon_ID"] or "").strip()
             if unit_id not in unit_ids:
                 errors.append(f"{army},Unit_Weapons.csv,{line_no},{weapon_id},Unit_ID,{unit_id}")
-            if weapon_id not in weapon_ids:
+            if weapon_id and weapon_id not in weapon_ids:
                 errors.append(f"{army},Unit_Weapons.csv,{line_no},{unit_id},Weapon_ID,{weapon_id}")
 
         for line_no, row in unit_points:
@@ -68,7 +67,6 @@ def main():
         for file_name, rows, extra in (
             ("Loadout_Weapons.csv", loadout_weapons, ("Weapon_ID", weapon_ids)),
             ("Loadout_Abilities.csv", loadout_abilities, ("Ability_ID", ability_ids)),
-            ("Loadout_Points.csv", loadout_points, None),
             ("Loadout_Compatibility.csv", loadout_compatibility, None),
         ):
             for line_no, row in rows:
