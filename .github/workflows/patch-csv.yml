@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"GLOBAL_DEFAULT_ACTIVE_OFF","mode":"replace_text","column":"Default_Active","from":"1","to":"0"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"KRUMPIN_TIME","column":"Tags","value":"UNIT, ACTIVE, MELEE, WEAPONS, +1 TO HIT"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
