@@ -20,7 +20,8 @@ MELEE: [SUSTAINED HITS 1]",Friendly MEGANOBZ / NOBZ units' melee attacks have [S
 orks_taktikal_brigade,Orks,Taktikal Brigade,orks_taktikal_brigade_detachment_rule_suspiciously_well_organised,SUSPICIOUSLY WELL ORGANISED,1,Take and Hold,,STORMBOYZ have BATTLELINE. BOYZ / KOMMANDOS / STORMBOYZ can Fall Back and still charge. [FALL BACK AND CHARGE],"Friendly STORMBOYZ units have BATTLELINE.
 
 When a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make a fall-back move, that fall-back move does not prevent that unit from being eligible to declare a charge.",[FALL BACK AND CHARGE],0,,"BOYZ, KOMMANDOS, STORMBOYZ",
-orks_wreckas,Orks,Wreckas,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',1,Priority Assets,,BREAKA BOYZ / FLASH GITZ / TANKBUSTAS [Re-roll 1s To Hit] if they or their target are in range of an objective. [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT],"In your Shooting phase, when a friendly BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
+orks_wreckas,Orks,Wreckas,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKIN' AND LOOTIN',1,Priority Assets,,"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 
+[Re-roll 1s To Hit] if they or target are within an objective.","In your Shooting phase, when a friendly BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
 - That unit is within range of an objective.
 - The target of that attack is within range of an objective.",[RE-ROLL 1S TO HIT] [RE-ROLL 1S TO HIT],0,,"BREAKA BOYZ, FLASH GITZ, TANKBUSTAS",
 orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,1,Purge the Foe,,BEAST SNAGGAs attacks vs MONSTER / VEHICLE: [+1 AP],Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.,[+1 AP] [+1 AP],0,BEAST SNAGGA,,
