@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_wreckas_detachment_rule_wreckin_and_lootin","column":"Short_Description","value":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS \\nRANGE\\u003A unit or target on an Objective [Re-roll 1s To Hit]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","column":"W","value":"3*"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"STORM_SHIELD_TERMINATORS","sets":{"Ability Name":"Storm Shield","Long_Description":"Storm Shield: The bearer has a Wounds characteristic of 4.","Tags":"","Tag Categories":"","Visibility_ID":"3","Default_Active":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
