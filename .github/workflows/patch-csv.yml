@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MORE_DAKKA","column":"Tags","value":"UNIT, ACTIVE, SHOOT, WEAPONS, IGNORES COVER, SUSTAINED HITS 1"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"MORE_DAKKA","column":"Default_Active","value":"0"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"GLOBAL_UNICODE_ESCAPE_CLEANUP","mode":"replace_text","column":"Description","from":"\\u003A","to":":"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
