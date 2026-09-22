@@ -12,6 +12,15 @@ SCHEMA_PATH = ROOT / "data" / "CSV_SCHEMA.csv"
 ARMIES = ("marines", "orks", "nids")
 ALLOWED_UNIVERSAL_TYPES = {"CORE_STRATAGEM", "STRATAGEM"}
 ALLOWED_OWNERSHIP = {"AUTHORITATIVE"}
+RETIRED_COLUMNS_BY_FILE = {
+    ("army", "Abilities.csv"): {"Tag Categories"},
+    ("army", "Detachment_Definitions.csv"): {"Tag Categories"},
+    ("army", "Enhancements.csv"): {"Tag Categories"},
+    ("army", "Stratagems.csv"): {"Tag Categories"},
+    ("army", "Army_Rules.csv"): {"Tag Categories"},
+    ("army", "Loadout_Weapons.csv"): {"Mapping_ID"},
+    ("army", "Loadout_Compatibility.csv"): {"Compatibility_ID"},
+}
 
 
 def fail(message):
@@ -96,7 +105,8 @@ def normalize():
         header = rows[0]
         if len(header) != len(set(header)):
             fail(f"duplicate header in {path.relative_to(ROOT)}: {header!r}")
-        unknown = [column for column in header if column not in canonical]
+        retired_columns = RETIRED_COLUMNS_BY_FILE.get((scope, file_name), set())
+        unknown = [column for column in header if column not in canonical and column not in retired_columns]
         if unknown:
             fail(f"unknown columns in {path.relative_to(ROOT)}: {unknown!r}")
         index = {column: i for i, column in enumerate(header)}
@@ -404,38 +414,25 @@ def validate_tag_contract(loaded):
                 f"Tag_Definitions line {line_no} {display!r}: "
                 "Target cannot be populated without an executable effect."
             )
-        key = (normalize_tag_key(display), normalize_category_key(category))
+        key = normalize_tag_key(display)
         if key in library:
-            fail(f"duplicate Tag_Definitions {display!r} / {category!r} (line {line_no})")
+            fail(f"duplicate Tag_Definitions Display_Tag {display!r} (line {line_no})")
         library[key] = row
 
     for army in ARMIES:
         for file_name in TAGGED_ARMY_FILES:
             for line_no, row in loaded[(army, file_name)]:
                 tags = TAG_BRACKET.findall(row.get("Tags") or "")
-                categories = TAG_BRACKET.findall(row.get("Tag Categories") or "")
                 visible_tags = [
                     tag for tag in tags
                     if normalize_tag_key(tag) not in CONTROL_TAGS
                 ]
-                if visible_tags and len(visible_tags) != len(categories):
-                    fail(
-                        f"{army} {file_name} line {line_no}: "
-                        f"visible mechanic Tags ({len(visible_tags)}) and "
-                        f"Tag Categories ({len(categories)}) must match 1:1; "
-                        "control Tags do not consume Tag Categories"
-                    )
-                if not visible_tags and categories:
-                    fail(
-                        f"{army} {file_name} line {line_no}: "
-                        "Tag Categories are present but there are no visible mechanic Tags"
-                    )
-                for tag, category in zip(visible_tags, categories):
-                    key = (normalize_tag_key(tag), normalize_category_key(category))
+                for tag in visible_tags:
+                    key = normalize_tag_key(tag)
                     if key not in library:
                         fail(
                             f"{army} {file_name} line {line_no}: "
-                            f"[{tag}] [{category}] is not in Tag_Definitions.csv"
+                            f"[{tag}] is not in Tag_Definitions.csv"
                         )
 
 
