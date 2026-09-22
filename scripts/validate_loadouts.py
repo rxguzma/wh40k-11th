@@ -10,11 +10,11 @@ TRUE_VALUES = {"true", "1", "yes", "y"}
 CANON = {
     "Loadout_Options.csv": [
         "Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID",
-        "Option_Name", "Default", "Sort_Order",
+        "Option_Name", "Default", "Sort_Order", "Allocation_Mode", "Allocation_Count",
+        "Max_Per_Unit", "Points_Per_Model", "Display_Section", "Display_Order",
     ],
     "Loadout_Weapons.csv": ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
     "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
-    "Loadout_Points.csv": ["Loadout_Option_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"],
     "Loadout_Compatibility.csv": [
         "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
     ],
@@ -43,7 +43,7 @@ def clean(value):
 def validate_army(army):
     directory = ROOT / "data" / army
     canonical = tuple(read_dicts(directory / filename, header) for filename, header in CANON.items())
-    options, weapons, abilities, points, compatibility = canonical
+    options, weapons, abilities, compatibility = canonical
 
     by_id = {}
     semantic = set()
@@ -76,7 +76,7 @@ def validate_army(army):
             lid = clean(row["Loadout_Option_ID"])
             if lid not in by_id:
                 fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
-            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv", "Loadout_Points.csv"}:
+            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv"}:
                 natural = tuple(clean(row[c]) for c in CANON[filename])
                 if natural in seen:
                     fail(f"{army}: duplicate row in {filename}: {natural!r}")
@@ -94,6 +94,15 @@ def validate_army(army):
     for lid, row in by_id.items():
         if clean(row["Unit_ID"]) not in unit_ids:
             fail(f"{army}: loadout {lid!r} references missing Unit_ID {row['Unit_ID']!r}")
+        allocation_mode = clean(row.get("Allocation_Mode")).upper()
+        if allocation_mode and allocation_mode not in {"UNIT", "PER_MODEL"}:
+            fail(f"{army}: loadout {lid!r} has invalid Allocation_Mode {allocation_mode!r}")
+        points_per_model = clean(row.get("Points_Per_Model"))
+        if points_per_model:
+            try:
+                float(points_per_model)
+            except ValueError:
+                fail(f"{army}: loadout {lid!r} has invalid Points_Per_Model {points_per_model!r}")
 
     for row in weapons:
         lid = clean(row["Loadout_Option_ID"])
@@ -123,7 +132,7 @@ def validate_army(army):
 
     print(
         f"{army}: loadouts OK — {len(options)} Loadout_Option_IDs, {len(weapons)} weapons, "
-        f"{len(abilities)} abilities, {len(points)} points, {len(compatibility)} compatibility rows"
+        f"{len(abilities)} abilities, {len(compatibility)} compatibility rows"
     )
 
 
