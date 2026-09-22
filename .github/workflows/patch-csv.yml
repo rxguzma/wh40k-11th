@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_wreckas_detachment_rule_wreckin_and_lootin","column":"Short_Description","value":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS \\n[Re-roll 1s To Hit] if they or target are within an objective."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_wreckas_detachment_rule_wreckin_and_lootin","column":"Tags","value":"SHOOT, WEAPONS, RE-ROLL 1S TO HIT"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
