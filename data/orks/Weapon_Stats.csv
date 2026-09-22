@@ -1,128 +1,59 @@
 Weapon_ID,Weapon Name,"R""",A,WS,St,AP,D
-ATTACK_SQUIG,Attack Squig,-,2,4,4,0,1
-BEAST_SNAGGA_KLAW,Beast Snagga klaw,-,4,3,10,-2,2
-BEASTCHOPPA,Beastchoppa,-,6,2,6,-1,2
 BIG_CHOMPAS_JAWS,Big Chompa's Jaws,-,3,3+,7,-2,4
-BIG_CHOPPA_NOBZ,Big Choppa (Nobz),-,3,3,7,-1,2
--,-,-,-,-,-,-,-
-BIG_CHOPPA_WARBIKERS,Big Choppa,-,3,3,7,-1,2
-BIG_SHOOTA_TRUKK,Big Shoota (Trukk),"36""",3,5,5,0,1
-BIG_SHOOTA_X3_STOMPA,Big shoota x3 (Stompa),"36""",9,5,5,0,1
 BIG_SHOOTA_X4,Big shoota x4,"36""",12,5,5,0,1
-BIG_SHOOTA_X5,Big shoota x5,"36""",15,5+,5,0,1
-BLASTA_GRETCHIN,Blasta [CLOSE-QUARTERS],"12""",1,4,3,0,1
 BLITZKANNON,Blitzkannon,"24""",8,4+,7,-2,2
-BOOMSTIKKS,Boomstikks,"12""",6,5,5,0,1
 BREACHA_RAM,Breacha ram,-,2,4,8,-2,2
 BURNA,Burna,"12""",3,-,4,0,1
 BUTCHA_BOYZ,Butcha boyz,-,4,3,5,-1,1
-CHOPPA_BANNERNOB,Choppa,-,5,3+,4,-1,1
-CHOPPA_BOYZ,Choppa,-,3,3,4,-1,1
-CHOPPA_GITZ,Choppa,-,4,3,5,-1,1
-CHOPPA_SNAGGA,Choppa,-,3,3,5,-1,1
-CHOPPAS_WATTRAKK,Choppas,-,5,3,4,-1,1
-CLOSE_COMBAT_WEAPON_BIG_MEK,Close combat weapon (Big Mek),-,4,3,5,0,1
 CLOSE_COMBAT_WEAPON_BOYZ,Close combat weapon (Boyz),-,2,3,4,0,1
-CLOSE_COMBAT_WEAPON_GRETCHIN,Close combat weapon,-,1,5,2,0,1
-CLOSE_COMBAT_WEAPON_SNAGGA,Close combat weapon (Snagga),-,2,3,5,0,1
-CLOSE_COMBAT_WEAPON_TANKBUSTAS,Close combat weapon (Tankbustas),-,3,3,5,0,1
 CUTTIN_FLAMES,Cuttin’ flames,-,2,4,4,-2,1
 DA_GRABZAPPA,Da Grabzappa,-,5,2+,7,-2,2
-DEFF_ROLLA,Deff rolla,-,6,3,9,-1,2
 DEFFGUN,Deffgun,"48""",2,6,8,-1,2
-DEFFKANNON,Deffkannon,"72""",3D6,5,14,-3,D6
 DRILLA,Drilla,-,3,3+,12,-3,3
-EADBANGER,’Eadbanger,"24""",1,4,6,-3,1
 EAVY_LOBBA,'Eavy lobba,"48""",3,5,6,0,2
 FIXITS_WRENCH,Fixit’s wrench,-,1,4,3,0,1
-GORKS_KLAW_STRIKE,Gork’s Klaw - strike,-,6,2,14,-3,4
-GORKS_KLAW_SWEEP,Gork’s Klaw - sweep,-,12,2,8,-2,2
 GRABBA_DRAGGA_MELEE,Grabba dragga (Melee),-,6,2,10,-2,3
 GRABBA_DRAGGA_RANGE,Grabba dragga (Range),"12""",1,2,10,-2,3
 GRABBIN_KLAW,Grabbin' klaw,-,2,3,10,-2,2
 GROT_BLASTA,Grot blasta,"12""",1,4+,3,0,1
-GUTRIPPA,Gutrippa,-,6,2,7,-1,3
 KAN_KLAW,Kan Klaw,-,3,4,8,-2,3
 KANNON_FRAG,Kannon – frag,"36""",4,4,5,0,1
 KANNON_SHELL,Kannon – shell,"36""",2,4,10,-2,D6+1
 KILLA_JET_BURNA,Killa Jet – Burna,-,3,3+,5,-1,1
 KILLA_JET_CUTTA,Killa Jet – Cutta,-,1,3+,10,-3,D6+2
-KILLSAW_MEGANOBZ,Killsaw (Meganobz),-,1,4,12,-3,2
-KILLSAW_MEK,Killsaw (Mek),-,1,4,12,-3,2
-KOPTA_ROKKITS,Kopta rokkits,"24""",D3,5,9,-2,3
 KUSTOM_CHOPPA_WARBOSS,Kustom choppa (Warboss),-,6,2,7,-2,2
 KUSTOM_MEGA_BLASTA,Kustom mega-blasta,"24""",3,5,9,-2,3
 KUSTOM_MEGA_SLUGGA,Kustom Mega-slugga,"12""",3,4+,8,-2,3
-KUSTOM_SHOOTA_WARBOSS,Kustom shoota (Warboss),"18""",4,5,4,0,1
-KUSTOM_SHOOTA_WATTRAKK,Kustom shoota (Wattrakk),"18""",2,5,4,0,1
-KUSTOM_SHOOTA_NOB,Kustom shoota (Nob),"18""",4,5,4,0,1
 LOBBA,Lobba,"48""",3,4,5,0,1
-MAKARIS_STABBA,Makari’s stabba,-,1,4,3,0,1
-MEGA_CHOPPA_STRIKE,Mega-choppa - strike,-,6,3,24,-5,10
-MEGA_CHOPPA_SWEEP,Mega-choppa - sweep,-,18,3,10,-2,3
-MORKS_ROAR,Mork’s Roar,"36""",12,5,5,0,1
-MORKS_TEETH,Mork’s Teeth,-,6,2,6,-1,2
-DOKS_TOOLZ_WEAPON,Dok's toolz,-,3,4,9,-2,2
 POWER_KLAW_BIG_MEK,Power klaw (Big Mek),-,5,3+,10,-2,2
-POWER_KLAW_NOB,Power klaw (Nob),-,3,4,9,-2,2
-POWER_KLAW_PAINBOY,Power klaw (Painboy),-,3,4,9,-2,2
 POWER_KLAW_WARBOSS,Power klaw (Warboss),-,6,2,12,-2,2
-POWER_SNAPPA_NOB,Power snappa (Nob),-,3,4,7,-1,2
 PSYKO_GATLER,Psyko-gatler,"24""",12,4,6,-2,2
-ROKKIT_LAUNCHA,Rokkit launcha,"24""",D3,5,9,-2,3
-ROKKIT_LAUNCHA_DAKKARIG,Rokkit launcha (Dakkarig),"24""",6,5,10,-2,3
-ROKKIT_LAUNCHA_KANS,Rokkit launcha (Kans),"24""",D3,4,9,-2,3
-ROKKIT_LAUNCHA_WATTRAKK,Rokkit launcha (Wattrakk),"24""",D3+3,5,10,-2,3
-RUNTHERD_TOOLS_RUNTHERD,Runtherd tools (Runtherd),-,3,3,5,0,1
-SADDLEGIT_WEAPONS,Saddlegit weapons,"9""",1,4,3,0,1
-SAVAGE_HORNS_AND_HOOVES,Savage horns and hooves,-,4,4,8,-1,3
 SAW_BLADES,Saw blades,-,6,3,10,-2,2
 SHOKK_ATTACK_GUN,Shokk Attack Gun,"60""",D3+3,5+,7,-4,D6+1
-SHOOTA_BOYZ,Shoota,"18""",2,5,4,0,1
 SHOOTA_BANNERNOB,Shoota,"18""",2,5+,4,0,1
 SHOOTA_BEASTBOSS,Shoota,"18""",2,4+,4,0,1
 SKORCHA,Skorcha,"12""",3,N/A,5,0,1
 SLUGGA_BIGBOSS,Slugga,"12""",1,5+,4,0,1
-SLUGGA_BOYZ,Slugga,"12""",1,5,4,0,1
-SLUGGA_NOB,Slugga (Nob),"12""",1,5,4,0,1
 SLUGGA_SNIKROT,Slugga,"12""",1,5+,4,0,1
-SLUGGA_ZOD,Slugga (Zod),"12""",1,5,4,-1,1
-SLUGGA_ZODGROD,Slugga,"12""",1,5,4,-1,1
 SMASH_HAMMER,Smash hammer,-,2,3,6,-2,3
-SNAGGA_KLAW,Snagga klaw,-,4,3,10,-2,2
 SNAZZGUN,Snazzgun,"24""",3,4,6,-1,2
 SPEEDING_BULK_AND_FLAMING_EXHAUST,Speeding bulk and flaming exhaust,-,3,2,5,-1,1
-SPESHUL_KOMMANDO_SHOOTA,Speshul Kommando shoota,"18""",4,5,4,0,1
-SPIKED_WHEELS_TRUKK,Spiked wheels (Trukk),-,3,4,6,0,1
 SPINNIN_BLADES,Spinnin' blades,-,4,3,5,-1,1
-SQUIG_JAWS,Squig jaws,-,3,4,6,-1,2
 SQUIGOSAURS_JAWS,Squigosaur's Jaws,-,3,3+,7,-2,3
 STIKKA_KANNON,Stikka kannon,"12""",1,5,12,-2,3
-STIKKA_MELEE,Stikka (Melee),-,3,3,5,-1,2
-STIKKA_RANGE,Stikka (Range),"9""",1,5,5,-1,2
-STOMPY_FEET_DAKKARIG,Stompy feet (Dakkarig),-,4,3,6,-1,1
-SUPA_GATLER,Supa-gatler,"24""",20,5,7,-1,2
-SUPA_ROKKITS,Supa-rokkits,"100""",D6,5,12,-3,D6+2
 TANKHAMMER,Tankhammer,-,3,4,12,-2,3
 THUMP_GUN,Thump gun,"18""",3,5,6,0,2
 TRAKTOR_BLASTA,Traktor Blasta,"24""",3,4+,6,-2,D3+3
 TWIN_BIG_SHOOTA,Twin big shoota,"36""",6,5,5,0,1
 TWIN_DAKKAGUN,Twin dakkagun,"18""",6,5,5,0,1
-TWO_HANDED_BIG_CHOPPA_BIGBOSS,Two-handed big choppa,-,5,3+,7,-1,2
 URTY_SYRINGE,Urty Syringe,-,1,3+,2,0,D6
-WEIRDBOY_STAFF,Weirdboy staff,-,3,3,8,-1,D3
 WRECKIN_BALL,Wreckin' ball,-,1,3,10,0,D6
 WURRTOWER,Wurrtower,"24""",1,N/A,12,-3,6
-SHOKK_ATTACK_GUN_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Shokk attack gun,"60""",D6+1,5+,12,-4,D6
-CLOSE_COMBAT_WEAPON_BIG_MEK_WITH_SHOKK_ATTACK_GUN,Close combat weapon,-,4,3+,5,0,1
 ADAMANTINE_EADBUTT,Adamantine ’Eadbutt,-,1,2,14,-2,D3+3
 BIG_CHOPPA,Big Choppa,-,4,3,7,-1,2
 BIG_CHOPPA_SNAGGA,Big Choppa,-,4,3,7,-1,2
 BIG_SKORCHA,Big Skorcha,"18""",3,-,5,-1,1
-BUSTA_ROKKIT_LAUNCHA_HUNTER,Busta Rokkit Launcha – Hunter,"24""",3,4,12,-2,3
-BUSTA_ROKKIT_LAUNCHA_STANDARD,Busta Rokkit Launcha – Standard,"24""",2,4,10,-2,3
 CHOPPA,Choppa,-,3,3,5,-1,1
-CHOPPA_HUNTER,Choppa [HUNTER: MONSTER/VEHICLE],-,3,3,6,-2,1
 CRUSHIN_BULK,Crushin' Bulk,-,6,3,8,-2,2
 CRUSHIN_BULK_BATTLEWAGON,Crushin' Bulk,-,6,3,8,-2,2
 DEFFKANNON_SUPA_ROKKITS,Deffkannon and Supa-rokkits,"72""",12,5,14,-3,D6+2
@@ -145,17 +76,13 @@ POWER_KLAW,Power Klaw,-,3,3,10,-2,2
 POWER_SNAPPA,Power snappa,-,3,3,8,-2,2
 ROKKIT_LAUNCHA_BLASTA,Rokkit Launcha – Blasta,"24""",2,5,4,0,1
 ROKKIT_LAUNCHA_BUSTA,Rokkit Launcha – Busta,"24""",2,5,10,-2,3
-ROKKIT_LAUNCHA_BUSTA_LETHAL,Rokkit Launcha – Busta,"24""",2,5,10,-2,3
 ROKKIT_PISTOL,Rokkit Pistol,"12""",1,4,10,-2,3
-ROKKIT_PISTOL_BREAKA,Rokkit pistol,"12""",1,5,10,-2,3
 SAVAGE_HORNS_HOOVES,Savage horns and hooves,-,4,4,8,-1,3
 SLUGGA,Slugga,"12""",1,5,4,0,1
 SMASH_HAMMER_HUNTER,Smash Hammer – Hunter,-,3,3,12,-2,3
 SMASH_HAMMER_STANDARD,Smash Hammer – Standard,-,3,3,7,-2,2
 SNAZZGUN_CUTTA,Snazzgun – Cutta,"12""",1,4,9,-3,D3+2
 SNAZZGUN_KILL_SHOT,Snazzgun – Kill Shot,"36""",2,4,8,-2,2
-SQUIGHOG_JAWS,Squighog jaws and saddlegits,-,3,4,6,-1,2
-STIKKA_RANGED,Stikka (Ranged),"9""",1,5,5,-1,2
 SUPA_GATLER_AIMED,Supa-gatler – Aimed,"24""",30,5,7,-2,2
 SUPA_GATLER_POINT_BLANK,Supa-gatler – Point Blank,"12""",3D6+3,-,7,-2,2
 BIG_SHOOTA,Big Shoota,"36""",3,5,4,0,1
@@ -246,5 +173,4 @@ DUAL_WAZBOM_MEGA_KANNON,Dual Wazbom Mega-kannon,"36""",6,4+,9,-2,3
 SKORCHA_MISSILE_RACK,Skorcha Missile Rack,"24""",D6,5+,5,-1,1
 ROKKIT_PISTOL_X2_TANKBUSTAS,Rokkit pistol x2,"12""",2,5,9,-2,3
 BIG_SHOOTA_BATTLEWAGON,Big shoota,"36""",3,5,5,0,1
-DA_GOBSHOT_THUNDERBUSS,Da Gobshot Thunderbuss,"24""",6,4+,7,-2,2
 PAIRED_KRUMPA,Paired Krumpa,-,3,3,10,-2,2
