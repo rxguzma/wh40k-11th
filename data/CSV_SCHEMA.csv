@@ -154,7 +154,7 @@ universal,Tag_Definitions.csv,9,Target,NO,AUTHORITATIVE,"Structured scope such a
 universal,Tag_Definitions.csv,10,Stat,NO,AUTHORITATIVE,"Structured characteristic such as M, W, A, S, AP, D, or PTS."
 universal,Tag_Definitions.csv,11,Operation,NO,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE. Blank is valid for informational Tags with no runtime effect."
 universal,Tag_Definitions.csv,12,Value,NO,AUTHORITATIVE,Machine-readable effect value.
-universal,Tag_Definitions.csv,13,Sort_Order,YES,AUTHORITATIVE,Canonical display order within the universal Tag library.
+universal,Tag_Definitions.csv,13,Sort_Order,NO,AUTHORITATIVE,Canonical display order within the universal Tag library.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
