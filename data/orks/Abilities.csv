@@ -32,7 +32,7 @@ MELEE: [+3 A] and [+2 S]","If this model made a charge move this turn, this mode
 MORE_DAKKA,More Dakka,"[UNIT] RANGE [IGNORES COVER]
 If RILED UP: [SUSTAINED HITS 1]","This unit's ranged attacks have:
 - [IGNORES COVER]
-- If this unit is RILED UP, [SUSTAINED HITS 1]",[UNIT] [SHOOT] [WEAPONS] [IGNORES COVER] [SUSTAINED HITS 1],2,
+- If this unit is RILED UP, [SUSTAINED HITS 1]","UNIT, ACTIVE, SHOOT, WEAPONS, IGNORES COVER, SUSTAINED HITS 1",2,0
 ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",[FIGHT ON DEATH 2+],1,
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
