@@ -8,7 +8,7 @@ ABILITY_TYPES = {"ABILITY", "CORE_ABILITY"}
 
 PROFILE_HEADER = ["Unit_ID", "Unit Name", 'M"', "T", "SV", "W", "LD", "OC", "Keywords", "Hyperlink"]
 UNIT_ABILITIES_HEADER = ["Unit_ID", "Ability_ID", "Ability_Type"]
-UNIT_WEAPONS_HEADER = ["Unit_ID", "Weapon_ID"]
+UNIT_WEAPONS_HEADER = ["Unit_ID", "Layout_Row_ID", "Weapon_ID", "Row_Type", "Row_Label", "Sort_Order", "Quantity"]
 UNIT_POINTS_HEADER = ["Unit_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"]
 
 
@@ -59,7 +59,12 @@ def validate_army(army, universal_ability_ids):
     } | universal_ability_ids
 
     require_unique(unit_abilities, ["Unit_ID", "Ability_Type", "Ability_ID"], "unit ability relationship", army)
-    require_unique(unit_weapons, ["Unit_ID", "Weapon_ID"], "unit weapon relationship", army)
+    seen_unit_weapon_rows = set()
+    for line_no, row in enumerate(unit_weapons, start=2):
+        key = tuple((row.get(column) or "").strip() for column in UNIT_WEAPONS_HEADER)
+        if key in seen_unit_weapon_rows:
+            fail(f"{army}: duplicate Unit_Weapons row at line {line_no}: {key!r}")
+        seen_unit_weapon_rows.add(key)
     require_unique(unit_points, ["Unit_ID", "Point_Option_ID"], "unit point option", army)
     require_unique(unit_points, ["Unit_ID", "Sort_Order"], "unit point sort order", army)
 
@@ -77,10 +82,39 @@ def validate_army(army, universal_ability_ids):
     for line_no, row in enumerate(unit_weapons, start=2):
         unit_id = (row.get("Unit_ID") or "").strip()
         weapon_id = (row.get("Weapon_ID") or "").strip()
+        row_type = (row.get("Row_Type") or "WEAPON").strip().upper()
+        row_label = (row.get("Row_Label") or "").strip()
+        quantity = (row.get("Quantity") or "").strip()
+        sort_order = (row.get("Sort_Order") or "").strip()
         if unit_id not in unit_ids:
             fail(f"{army}: Unit_Weapons line {line_no} references missing Unit_Profile {unit_id!r}")
-        if weapon_id not in weapon_ids:
-            fail(f"{army}: Unit_Weapons line {line_no} references missing Weapon_ID {weapon_id!r}")
+        if row_type not in {"WEAPON", "LABEL", "BLANK"}:
+            fail(f"{army}: Unit_Weapons line {line_no} has invalid Row_Type {row_type!r}")
+        if row_type == "WEAPON":
+            if not weapon_id or weapon_id not in weapon_ids:
+                fail(f"{army}: Unit_Weapons line {line_no} references missing Weapon_ID {weapon_id!r}")
+            if row_label:
+                fail(f"{army}: Unit_Weapons line {line_no} WEAPON row must have blank Row_Label")
+        elif row_type == "LABEL":
+            if weapon_id or not row_label:
+                fail(f"{army}: Unit_Weapons line {line_no} LABEL row requires blank Weapon_ID and nonblank Row_Label")
+            if quantity:
+                fail(f"{army}: Unit_Weapons line {line_no} LABEL row requires blank Quantity")
+        else:
+            if weapon_id or row_label or quantity:
+                fail(f"{army}: Unit_Weapons line {line_no} BLANK row requires blank Weapon_ID, Row_Label, and Quantity")
+        if sort_order:
+            try:
+                int(sort_order)
+            except ValueError:
+                fail(f"{army}: Unit_Weapons line {line_no} has invalid Sort_Order {sort_order!r}")
+        if quantity:
+            try:
+                parsed_quantity = int(quantity)
+            except ValueError:
+                fail(f"{army}: Unit_Weapons line {line_no} has invalid Quantity {quantity!r}")
+            if parsed_quantity < 0:
+                fail(f"{army}: Unit_Weapons line {line_no} Quantity must be >= 0")
 
     for line_no, row in enumerate(unit_points, start=2):
         unit_id = (row.get("Unit_ID") or "").strip()
