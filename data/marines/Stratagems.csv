@@ -90,7 +90,7 @@ TERMINATOR: Attacks -1 D [INCOMING -1 D]",Incoming Damage -1,"WHEN: Your opponen
 
 TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
-EFFECT: Attacks that target your unit have -1 D until that enemy unit has attacked.","SHOOT, MELEE, [INCOMING -1 D]",0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+EFFECT: Attacks that target your unit have -1 D until that enemy unit has attacked.","SHOOT, MELEE, [INCOMING -1 D]",0,,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_merciless_veterans_1cp,space_marines_terminator_stormforce,MERCILESS VETERANS,1,"TERMINATOR SHOOTING
 RANGED: LETHAL HITS & SUSTAINED HITS 1 [LETHAL HITS] [SUSTAINED HITS 1]",Lethal + Sustained Hits 1,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES TERMINATOR unit is selected to shoot.
 
@@ -98,13 +98,13 @@ TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
 EFFECT: Your unit's ranged attacks have:
 • [LETHAL HITS].
-• [SUSTAINED HITS 1].","SHOOT, [LETHAL HITS] [SUSTAINED HITS 1]",0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+• [SUSTAINED HITS 1].","SHOOT, [LETHAL HITS] [SUSTAINED HITS 1]",0,,"TERMINATOR, TERMINATORS",
 space_marines_terminator_stormforce_stratagem_gunship_extraction_1cp,space_marines_terminator_stormforce,GUNSHIP EXTRACTION,1,"End of enemy FIGHT
 Unengaged TERMINATOR: STRATEGIC RESERVES [STRATEGIC RESERVES]",Return Terminators to Reserves,"WHEN: End of your opponent's Fight phase.
 
 TARGET: One friendly unengaged ADEPTUS ASTARTES TERMINATOR unit.
 
-EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],0,ADEPTUS ASTARTES,"TERMINATOR, TERMINATORS",
+EFFECT: Place your unit in strategic reserves.",[STRATEGIC RESERVES],0,,"TERMINATOR, TERMINATORS",
 space_marines_tacticus_attack_force_stratagem_relentless_assault_1cp,space_marines_tacticus_attack_force,RELENTLESS ASSAULT,1,"TACTICUS SHOOTING / FIGHT
 vs non-MONSTER / VEHICLE: SUSTAINED HITS 1
 vs MONSTER / VEHICLE: LETHAL HITS",Sustained non-M/V; Lethal M/V,"WHEN: Your Shooting phase or the Fight phase, when a friendly TACTICUS unit is selected to attack.
@@ -258,7 +258,7 @@ DREADNOUGHT: Engaged enemy units take BATTLE-SHOCK at -1",Engaged enemies Battle
 
 TARGET: One friendly DREADNOUGHT unit.
 
-EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,0,ADEPTUS ASTARTES,DREADNOUGHT,
+EFFECT: Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll.",,0,,DREADNOUGHT,
 space_marines_ironclad_champions_stratagem_mercy_is_weakness_1cp,space_marines_ironclad_champions,MERCY IS WEAKNESS,1,"DREADNOUGHT SHOOTING / FIGHT
 Attacks: LETHAL HITS or SUSTAINED HITS 1",Lethal or Sustained Hits 1,"WHEN: Your Shooting phase or the Fight phase, when a friendly DREADNOUGHT unit is selected to attack.
 
@@ -266,13 +266,13 @@ TARGET: That DREADNOUGHT unit.
 
 EFFECT: Your unit’s attacks have:
 • [LETHAL HITS].
-• Or: [SUSTAINED HITS 1].","SHOOT, MELEE",0,ADEPTUS ASTARTES,DREADNOUGHT,
+• Or: [SUSTAINED HITS 1].","SHOOT, MELEE",0,,DREADNOUGHT,
 space_marines_ironclad_champions_stratagem_unstoppable_advance_1cp,space_marines_ironclad_champions,UNSTOPPABLE ADVANCE,1,"MOVEMENT / CHARGE
 DREADNOUGHT: MOBILE",Gain Mobile when move/charge,"WHEN: Your Movement/Charge phase, when a friendly DREADNOUGHT unit is selected to move or declares a charge.
 
 TARGET: That DREADNOUGHT unit.
 
-EFFECT: Your unit has MOBILE.",,0,ADEPTUS ASTARTES,DREADNOUGHT,
+EFFECT: Your unit has MOBILE.",,0,,DREADNOUGHT,
 space_marines_medusas_wrath_stratagem_ancient_fury,space_marines_medusas_wrath,ANCIENT FURY,1,COMMAND DREADNOUGHT until next COMMAND — [+1 M] [+1 T] [+1 LD] [+1 OC] [+1 To Hit].,M/T/LD/OC/Hit +1,,"ACTIVE, STATS, SHOOT, MELEE, WEAPONS, +1 M, +1 T, +1 LD, +1 OC, +1 TO HIT",0,DREADNOUGHT,,
 space_marines_medusas_wrath_stratagem_spirits_of_iron,space_marines_medusas_wrath,SPIRITS OF IRON,1,Unit gets FNP 5+ vs MORTAL WOUNDS for phase.,FNP 5+ vs Mortal Wounds,,ACTIVE,0,,,
 space_marines_medusas_wrath_stratagem_mercy_is_weakness,space_marines_medusas_wrath,MERCY IS WEAKNESS,1,SHOOTING/FIGHT — attacks gain [SUSTAINED HITS 1]; VEHICLE also +1 to Wound.,Sustained Hits 1; Vehicle W +1,,"ACTIVE, SHOOT, MELEE, WEAPONS, SUSTAINED HITS 1",0,,,
