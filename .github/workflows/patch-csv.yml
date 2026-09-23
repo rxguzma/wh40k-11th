@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","column":"W","value":"3"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"STORM_SHIELD_TERMINATORS","sets":{"Ability Name":"Storm Shield","Long_Description":"Storm Shield\\u003A The bearer has a Wounds characteristic of 4.","Tags":"STATS, +1 W","Visibility_ID":"3","Default_Active":"1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"STORM_SHIELD_TERMINATORS","column":"Tags","value":"STATS, [+1 W]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
