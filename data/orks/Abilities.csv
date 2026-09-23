@@ -54,11 +54,11 @@ SUPER_RUNTS,Super Runts,[UNIT] [RILED UP] and [INVULNERABLE SAVE 5+]. Scavenged 
 SUPPORT_BANNERNOB,Support: Bannernob,"Can Support: BOYZ, NOBZ",,Support: This model can be attached to the following units: Boyz; Breaka Boyz; Burna Boyz; Flash Gitz; Lootas; Nobz; Tankbustas.,,3,
 SUPPORT_PAINBOY,Support: Painboy,"Can attach to Boyz, Breaka Boyz, Flash Gitz, Nobz, or Tankbustas",,Support: This model can be attached to the following units: Boyz; Breaka Boyz; Flash Gitz; Nobz; Tankbustas.,,3,
 THIEVIN_SCAVENGERS,Thievin’ Scavengers,"End of MOVE
-Control Objective = Secured.",,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,2,
+Control Objective = Secured.",Secure controlled Objective,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,2,
 THROTTLEROCKKIT_SHOKKA_ENGINE,Throttlerokkit Shokka Engine,"Command:
 - Turbo Engine: Advance / Fall Back and Charge
 - Shokk Attack: Back to Reserves
-- Pulse Jet: Advance [+6 M”]; move through models and Terrain",,"In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
+- Pulse Jet: Advance [+6 M”]; move through models and Terrain",Charge / Reserves / Advance +6,"In your Command phase, select one of the abilities in the Throttlerokkit Shokka Engine section. Until the start of your next Command phase, this model has that ability.
 
 Turbo Engine: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back.
 
@@ -77,15 +77,15 @@ TROPHY_HUNTERS,Trophy Hunters,ANYTIME,,This unit has +1 to charge rolls,,2,1
 UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Burna Boyz.
 
 Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.",,3,
-WAAAGH_BANNER,Waaagh! Banner,[UNIT] ANYTIME: +1 Charge,,This unit has +1 to charge rolls.,[UNIT],2,0
-WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF WARLORD: WARBIKERS are [BATTLELINE],,"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],2,0
-AERIAL_MANOEUVRE,Aerial Manoeuvre,End opponent turn: if unengaged [STRATEGIC RESERVES],,"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,0
-AMMO_RUNTS,Ammo Runts,Once per battle — RANGE [+1 TO HIT],,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
+WAAAGH_BANNER,Waaagh! Banner,[UNIT] ANYTIME: +1 Charge,Charge +1,This unit has +1 to charge rolls.,[UNIT],2,0
+WAAAGH_WAZDAKKA,Waaagh! Wazdakka,IF WARLORD: WARBIKERS are [BATTLELINE],Warbikers become Battleline,"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],2,0
+AERIAL_MANOEUVRE,Aerial Manoeuvre,End opponent turn: if unengaged [STRATEGIC RESERVES],Unengaged → Strategic Reserves,"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,0
+AMMO_RUNTS,Ammo Runts,Once per battle — RANGE [+1 TO HIT],Once/battle ranged Hit +1,"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
 BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),"Disembarking: vs MONSTER / VEHICLE [+1 TO WOUND]
 Test on D6, battle-shock on a 1",,"In your Movement phase, when a unit embarked within this unit is selected to make a disembark move, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked
 - That disembarking unit’s attacks that target a MONSTER / VEHICLE unit have +1 to wound rolls until the end of the turn",[+1 TO WOUND] [+1 TO WOUND],2,
-BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""",,"Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
+BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""",3+ = D3 MW within 12”,"Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
 - On a 3+, that enemy unit suffers D3 mortal wounds.
 Place two Bomb Squig tokens next to the unit, removing one each time this ability is used.",,2,
 BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],,"If this unit made a charge move this turn, this unit’s attacks have +1D",+1 D,1,0
@@ -142,9 +142,9 @@ WARGEAR OPTIONS: The Nob can have their Rokkit Pistol replaced with 1 Smash Hamm
 COMPOSITION_WARBIKERS,Unit Composition (Warbikers),1 Biker Nob + 2-5 Warbikers.,,"UNIT COMPOSITION: 1 Biker Nob model, 2-5 Warbiker models.
 
 The Biker Nob is equipped with: 1 Kustom Choppa; 1 Dual Kombi-rokkit. Every Warbiker is equipped with: 1 Choppa; 1 Dual Dakkagun.",,3,
-DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining: [-1 TO HIT],,CORE: Damaged 1-6,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],2,0
-DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]",,"While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",2,
-DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",,CORE: Deadly Demise 2D6,,2,
+DAMAGED_1_6,Damaged 1-6,While 1–6 wounds remaining: [-1 TO HIT],At 1-6W - Hit -1,CORE: Damaged 1-6,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [-1 TO HIT],2,0
+DA_GRAND_WARLORDS_LADZ,Da Grand Warlord’s Ladz,"Lone Op while 3"" of Infantry [LONE OP 3""]",Near Infantry - Lone Op,"While this unit is within 3"" of another friendly ORKS INFANTRY unit, this unit has Lone Operative.","[LONE OP 3""]",2,
+DEADLY_DEMISE_2D6,Deadly Demise 2D6,"When destroyed, on 6s inflict 2D6 mortal wounds within 6""",Destroyed - 6 = 2D6 MW,CORE: Deadly Demise 2D6,,2,
 DEADLY_DEMISE_D6,Deadly Demise D6,"When destroyed, roll D6: on 6 inflict D6 mortal wounds on units within 6""",,CORE: Deadly Demise D6,,2,
 DEEP_STRIKE,Deep Strike,ANYTIME [DEEP STRIKE],,CORE: Deep Strike,[DEEP STRIKE],1,1
 DOWNTRODDEN,Downtrodden,"Transport: 
