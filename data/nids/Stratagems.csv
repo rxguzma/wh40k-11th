@@ -9,7 +9,7 @@ tyranids_ambush_predators_stratagem_hypersensory_adaptations_1cp,tyranids_ambush
 TARGET: One friendly DEATHLEAPER/LICTOR/NEUROLICTOR/VON RYAN’S LEAPERS unit.
 
 EFFECT: Select one visible enemy unit within 12"" of your unit. That enemy unit has +6"" detection range.",SHOOT,,,"DEATHLEAPER, LICTOR, NEUROLICTOR, VON RYAN’S LEAPERS",
-tyranids_ambush_predators_stratagem_scanner_gheist_1cp,tyranids_ambush_predators,Scanner Gheist,1,END OF ENEMY FIGHT: Place one unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit into strategic reserves. [STRATEGIC RESERVES],Return Lictor unit to Reserves,"WHEN: End of your opponent’s Fight phase.
+tyranids_ambush_predators_stratagem_scanner_gheist_1cp,tyranids_ambush_predators,Scanner Gheist,1,END OF ENEMY FIGHT: Place one unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit into strategic reserves. [STRATEGIC RESERVES],Lictor unit → Reserves,"WHEN: End of your opponent’s Fight phase.
 
 TARGET: One friendly unengaged DEATHLEAPER/LICTOR/NEUROLICTOR unit.
 
@@ -76,7 +76,7 @@ EFFECT: Remove your unit from the battlefield and set it up again, wholly within
 
 RULES: See SEQUENCING. Rapid Ingress will happen before this.",[INGRESS],,,,
 tyranids_subterranean_assault_stratagem_swarming_assault,tyranids_subterranean_assault,Swarming Assault,1,"Reinforcements and MONSTERS 
-ALL units within 6"" re-roll charges [RE-ROLL CHARGE]",Units within 6” re-roll Charge,"WHEN: Your Charge phase.
+ALL units within 6"" re-roll charges [RE-ROLL CHARGE]",Units 6”: reroll Charge,"WHEN: Your Charge phase.
 
 TARGET: One Tyranids Monster unit from your army that was set up as Reinforcements this turn.
 
@@ -126,7 +126,7 @@ TARGET: Up to two VANGUARD INVADER units from your army that are within 8"" of t
 EFFECT: Those selected units can each make a Normal move of up to 6"".
 
 RESTRICTIONS: You cannot target units that are within Engagement Range of one or more enemy units.",,,,"VANGUARD INVADER, INFANTRY",
-tyranids_vanguard_onslaught_stratagem_unseen_lurkers,tyranids_vanguard_onslaught,Unseen Lurkers,1,"Lone Op 18"" or 6"" if already Lone Op [LONE OPERATIVE]",Ranged targeting limited 18”/6”,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+tyranids_vanguard_onslaught_stratagem_unseen_lurkers,tyranids_vanguard_onslaught,Unseen Lurkers,1,"Lone Op 18"" or 6"" if already Lone Op [LONE OPERATIVE]",Ranged target limit 18”/6”,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
 
 TARGET: One VANGUARD INVADER unit from your army that was selected as the target of one or more of the attacking unit’s attacks.
 
