@@ -166,7 +166,7 @@ EFFECT: If your unit is controlling an objective, that objective is snared. Whil
 • On a 2+, that enemy unit suffers D6 mortal wounds.
 • That objective is no longer snared.",,0,,,
 space_marines_phobos_shadow_force_stratagem_tactical_withdrawal_1cp,space_marines_phobos_shadow_force,TACTICAL WITHDRAWAL,1,"End enemy FIGHT
-Unengaged PHOBOS / SCOUT: STRATEGIC RESERVES",Return Phobos/Scout to Reserves,"WHEN: End of your opponent’s Fight phase.
+Unengaged PHOBOS / SCOUT: STRATEGIC RESERVES",Phobos/Scout → Reserves,"WHEN: End of your opponent’s Fight phase.
 
 TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
@@ -201,7 +201,7 @@ TARGET: That GRAVIS unit.
 
 EFFECT: Your unit’s attacks have [LETHAL HITS].","SHOOT, MELEE, [LETHAL HITS]",0,,,
 space_marines_gravis_linebreaker_force_stratagem_purgation_push_1cp,space_marines_gravis_linebreaker_force,PURGATION PUSH,1,"After SHOOTING & unengaged: Move 5"" onto OBJECTIVE
-Cannot CHARGE / EMBARK",Shoot then move 5” to Objective,"WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
+Cannot CHARGE / EMBARK",Shoot → move 5” to Obj,"WHEN: Your Shooting phase, when a friendly GRAVIS unit has shot.
 
 TARGET: That GRAVIS unit.
 
@@ -254,7 +254,7 @@ TARGET: That ADEPTUS ASTARTES MOUNTED/SPEEDER unit.
 
 EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",SHOOT,0,,,
 space_marines_ironclad_champions_stratagem_adamantine_terror_1cp,space_marines_ironclad_champions,ADAMANTINE TERROR,1,"Start FIGHT
-DREADNOUGHT: Engaged enemy units take BATTLE-SHOCK at -1",Engaged enemies Battle-shock -1,"WHEN: Start of the Fight phase.
+DREADNOUGHT: Engaged enemy units take BATTLE-SHOCK at -1",Engaged enemy B-shock -1,"WHEN: Start of the Fight phase.
 
 TARGET: One friendly DREADNOUGHT unit.
 
