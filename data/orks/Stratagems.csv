@@ -1,5 +1,5 @@
 Stratagem_ID,Detachment_ID,Stratagem_Name,CP_Cost,Short_Description,Tiny_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-orks_war_horde_stratagem_breakin_heads_1cp,orks_war_horde,BREAKIN' HEADS,1,Any phase: Attached INFANTRY takes D3 MW and is no longer Battle-shocked.,Any Phase - Clear Battle-shock,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
+orks_war_horde_stratagem_breakin_heads_1cp,orks_war_horde,BREAKIN' HEADS,1,Any phase: Attached INFANTRY takes D3 MW and is no longer Battle-shocked.,Any: clear B-shock,"WHEN: Any phase, when a friendly attached ORKS INFANTRY unit becomes battle-shocked.
 
 TARGET: That ORKS INFANTRY unit. You can target that unit with this stratagem even though it is battle-shocked.
 
@@ -74,7 +74,7 @@ TARGET: One ORKS unit from your army (excluding Gretchin units) that is within r
 
 EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle.",,,,,GRETCHIN
 orks_rollin_deff_stratagem_impending_crunch_1cp,orks_rollin_deff,Impending Crunch,1,"WAGON CHARGE
-EVERY enemy Battle-shock at -1.",Charge - Enemy Battle-shock -1,"WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
+EVERY enemy Battle-shock at -1.",Charge: enemy B-shock -1,"WHEN: Your Charge phase, when a friendly WAGON unit ends a charge move.
 
 TARGET: That WAGON unit.
 
@@ -105,7 +105,7 @@ orks_green_tide_stratagem_unbridled_carnage_1cp,orks_green_tide,UNBRIDLED CARNAG
 TARGET: That BOYZ unit.
 
 EFFECT: Unit's melee attacks have +1 A.","MELEE, [+1 A]",,BOYZ,,
-orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"COMMAND: INFANTRY 13+ models auto-pass Battleshock for any another visible ORKS within 12"".",Command - Auto-pass Battle-shock,"WHEN: Start of the Battle-shock step of your Command phase.
+orks_green_tide_stratagem_mob_mentality_1cp,orks_green_tide,MOB MENTALITY,1,"COMMAND: INFANTRY 13+ models auto-pass Battleshock for any another visible ORKS within 12"".",Command: auto-pass B-shock,"WHEN: Start of the Battle-shock step of your Command phase.
 
 TARGET: One friendly ORKS INFANTRY unit of 13+ models.
 
@@ -148,7 +148,7 @@ orks_taktikal_brigade_stratagem_dubious_restraint_1cp,orks_taktikal_brigade,DUBI
 TARGET: One friendly BOYZ / KOMMANDOS / STORMBOYZ unit.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured.",,,,"BOYZ, KOMMANDOS, STORMBOYZ",
-orks_taktikal_brigade_stratagem_mind_mostly_on_the_mission_1cp,orks_taktikal_brigade,MIND MOSTLY ON THE MISSION,1,Movement: BOYZ / KOMMANDOS / STORMBOYZ Advance/Fall Back can still start an action.,Move - Advance/Fall Back Action,"WHEN: Your Movement phase, when a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make an advance/fall-back move.
+orks_taktikal_brigade_stratagem_mind_mostly_on_the_mission_1cp,orks_taktikal_brigade,MIND MOSTLY ON THE MISSION,1,Movement: BOYZ / KOMMANDOS / STORMBOYZ Advance/Fall Back can still start an action.,Adv/Fall Back → Action,"WHEN: Your Movement phase, when a friendly BOYZ / KOMMANDOS / STORMBOYZ unit is selected to make an advance/fall-back move.
 
 TARGET: That BOYZ / KOMMANDOS / STORMBOYZ unit.
 
@@ -164,7 +164,7 @@ Firing Deck [+1 TO HIT]",Shoot - Firing Deck Hit +1,"WHEN: Your Shooting phase, 
 TARGET: That ORKS TRANSPORT unit.
 
 EFFECT: Your unit's ranged attacks with weapons selected for the Firing Deck ability have +1 to hit rolls.","SHOOT, [+1 TO HIT]",,", TRANSPORT",,
-orks_wreckas_stratagem_grab_it_1cp,orks_wreckas,GRAB IT,1,"Shoot and Move BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 6"" onto an objective.",Shoot then Move 6” to Objective,"WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit has shot.
+orks_wreckas_stratagem_grab_it_1cp,orks_wreckas,GRAB IT,1,"Shoot and Move BREAKA BOYZ / FLASH GITZ / TANKBUSTAS 6"" onto an objective.",Shoot → move 6” to Obj,"WHEN: Your Shooting phase, when a friendly unengaged BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit has shot.
 
 TARGET: That BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit.
 
@@ -284,7 +284,7 @@ EFFECT: Your unit can make a normal move of:
 - Up to D6"".
 - Or, up to 6"" instead if your unit is an attached unit.",,,GRETCHIN,,
 orks_runt_swarm_stratagem_grot_shields_1cp,orks_runt_swarm,GROT SHIELDS,1,"Opponent Shooting
-GRETCHIN within 3” absorb hits for INFANTRY unit, suffer 1 mortal per intercepted hit.",Enemy Shoot - Gretchin Take Hits,"WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
+GRETCHIN within 3” absorb hits for INFANTRY unit, suffer 1 mortal per intercepted hit.",Enemy Shoot: Gretchin absorb,"WHEN: Your opponent's Shooting phase, when an enemy unit targets a friendly ORKS INFANTRY unit (excluding GRETCHIN units).
 
 TARGET: One friendly GRETCHIN unit within 3"" of that ORKS INFANTRY unit.
 
