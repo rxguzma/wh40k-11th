@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_targetin_gizmos","column":"Tiny_Description","value":"Ignore Cover, Riled Sust. 1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_targetin_gizmos","mode":"add_column","column":"Tiny_Description","after_column":"Short_Description"},{"file":"data/orks/Enhancements.csv","id_column":"Enhancement_ID","row_id":"orks_blitz_brigade_enhancement_targetin_gizmos","column":"Tiny_Description","value":"Ignore Cover, Riled Sust. 1"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
