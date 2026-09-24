@@ -135,11 +135,11 @@ Enhancements, if any, added to Champion.",,"UNIT COMPOSITION
 The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-crafted power weapon.
 
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,2,
-REFUSE_TO_YIELD,Refuse to Yield,Attacks allocated to this model — -1 Damage [INCOMING -1 D],,"Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",[INCOMING -1 D],2,1
-RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],,This unit has +1 Objective Control.,[STATS] [+1 OC],2,
-RELIC_SHIELD,Relic Shield,+1 W [+1 W],,This model has +1W.,[STATS] [+1 W],2,
-RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,2,
-RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,,Attack Strength higher Toughness: -1 to Wound.,,2,1
+REFUSE_TO_YIELD,Refuse to Yield,Attacks allocated to this model — -1 Damage [INCOMING -1 D],Incoming Damage -1,"Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.","SHOOT, MELEE, [INCOMING -1 D]",2,1
+RELIC_BANNER,Relic Banner,Add +1 Objective Control [+1 OC],+1 OC,This unit has +1 Objective Control.,[STATS] [+1 OC],2,
+RELIC_SHIELD,Relic Shield,+1 W [+1 W],+1 W,This model has +1W.,[STATS] [+1 W],2,
+RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,Stratagem cost -1CP once/round,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,2,
+RITES_OF_TEMPERING,Rites of Tempering,Attacks S > this unit T: -1 TO WOUND,Higher S attacks - Wound -1,Attack Strength higher Toughness: -1 to Wound.,"SHOOT, MELEE",2,1
 SCOUT_WARGEAR,Scout Wargear,"Range: x2 Astartes shotguns, x5 Bolt pistols, x1 Heavy bolter, x1 Scout sniper rifle.
 x1 Astartes chainsword, x2 Close combat weapon, x2 Combat knife",,"Range: 
 x2 Astartes shotguns 
@@ -151,46 +151,46 @@ x1 Astartes chainsword (Scouts)
 x2 Close combat weapon 
 x2 Combat knife (Scouts)",,2,
 SEEKER_OF_THE_UNFOUND,Seeker of the Unfound,"First setup: select 1 objective
-Within range: OC 10 / LD 5+ / FNP 4+ [FNP 4+]",,"The first time this model is set up on the battlefield, select one objective on the battlefield. While this model is within range of that objective, this model has:
+Within range: OC 10 / LD 5+ / FNP 4+ [FNP 4+]","Chosen Obj - OC10, LD5+, FNP4+","The first time this model is set up on the battlefield, select one objective on the battlefield. While this model is within range of that objective, this model has:
 • 10 OC.
 • 5+ Ld.
-• FNP 4+.",[FNP 4+],2,0
-VEILING_SMOKE,Veiling Smoke,Once per phase — Smokescreen can target UNIT again; that use costs -1 CP and does not block other uses.,,"Once per phase, per unit — You can target this unit with the Smokescreen stratagem, regardless of any other uses of that stratagem this phase. If you do, that use is -1 CP and that use does not prevent any uses of that stratagem on other units this phase.",,2,
-SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE",,"This unit has:
+• FNP 4+.","SHOOT, MELEE, [FNP 4+]",2,0
+VEILING_SMOKE,Veiling Smoke,Once per phase — Smokescreen can target UNIT again; that use costs -1 CP and does not block other uses.,Smokescreen costs 1 CP less,"Once per phase, per unit — You can target this unit with the Smokescreen stratagem, regardless of any other uses of that stratagem this phase. If you do, that use is -1 CP and that use does not prevent any uses of that stratagem on other units this phase.",SHOOT,2,
+SHADOWMASTER,Trifold Path of Shadow,"STEALTH / 3"" DETECTION RANGE",Stealth; detection range 3”,"This unit has:
 • Stealth.
-• 3"" detection range.",,2,1
-SHIELD_DOME,Shield Dome,UNIT has 5+ InvS. [INVULNERABLE SAVE 5+],,This unit has 5+ InvS.,[STATS] [INVULNERABLE SAVE 5+],2,
-SKILLED_RIDERS,Skilled Riders,MOBILE,,This unit has MOBILE.,,2,1
+• 3"" detection range.",SHOOT,2,1
+SHIELD_DOME,Shield Dome,UNIT has 5+ InvS. [INVULNERABLE SAVE 5+],Invulnerable save 5+,This unit has 5+ InvS.,"SHOOT, MELEE, [STATS] [INVULNERABLE SAVE 5+]",2,
+SKILLED_RIDERS,Skilled Riders,MOBILE,Mobile,This unit has MOBILE.,,2,1
 SPEAR_OF_CHOGORIS,Spear of Chogoris,"RANGED: ASSAULT
 ADVANCE: eligible to CHARGE
-ASSAULT DOCTRINE: +1 ADVANCE / CHARGE",,"• This unit’s ranged attacks have [ASSAULT].
+ASSAULT DOCTRINE: +1 ADVANCE / CHARGE",Ranged Assault; Adv/Charge boost,"• This unit’s ranged attacks have [ASSAULT].
 • When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge.
-• If the assault doctrine is active for this unit, this unit has +1 to advance and charge rolls.",,2,1
-STEALTH,Stealth,Model is -1 To Hit with Ranged. [STEALTH],,Model is -1 To Hit with Ranged.,[STEALTH],2,
-VETERAN_MARKSMEN,Veteran Marksmen,RANGE — re-roll Hit rolls of 1. [RE-ROLL 1S TO HIT],,This unit’s ranged attacks can re-roll hit rolls of 1.,[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],2,
-STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed",,"Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes unit within 6"" of this model is destroyed, this model can use this ability (it cannot use this ability when it is itself destroyed). 
+• If the assault doctrine is active for this unit, this unit has +1 to advance and charge rolls.",SHOOT,2,1
+STEALTH,Stealth,Model is -1 To Hit with Ranged. [STEALTH],Incoming ranged Hit -1,Model is -1 To Hit with Ranged.,"SHOOT, [STEALTH]",2,
+VETERAN_MARKSMEN,Veteran Marksmen,RANGE — re-roll Hit rolls of 1. [RE-ROLL 1S TO HIT],Ranged re-roll Hit 1s,This unit’s ranged attacks can re-roll hit rolls of 1.,[SHOOT] [WEAPONS] [RE-ROLL 1S TO HIT],2,
+STORM_OF_VENGEANCE,Storm of Vengeance,"Shoot back if 6"" destroyed",Nearby ally dies - shoot back,"Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes unit within 6"" of this model is destroyed, this model can use this ability (it cannot use this ability when it is itself destroyed). 
 
-If it does, after the attacking unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",,2,
-STORM_SHIELD,Storm Shield,4+ Invul (included) [INVULNERABLE SAVE 4+],,4+ Invul (included),[STATS] [INVULNERABLE SAVE 4+],2,
+If it does, after the attacking unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",SHOOT,2,
+STORM_SHIELD,Storm Shield,4+ Invul (included) [INVULNERABLE SAVE 4+],Invulnerable save 4+,4+ Invul (included),"SHOOT, MELEE, [STATS] [INVULNERABLE SAVE 4+]",2,
 STORM_SHIELD_TERMINATORS,Storm Shield,+1 Wound (included) [+1 W],,Storm Shield\u003A The bearer has a Wounds characteristic of 4.,"STATS, [+1 W]",3,1
-STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot. [FALL BACK AND SHOOT],,Fallback and Shoot,[FALL BACK AND SHOOT],2,
+STRATEGIC_KNOWLEDGE,Strategic Knowledge,Fall Back and Shoot. [FALL BACK AND SHOOT],Fall Back and Shoot,Fallback and Shoot,"SHOOT, [FALL BACK AND SHOOT]",2,
 STRIKES_OF_RETRIBUTION,Strikes of Retribution,"Every 4+ Save, attacker gets Mortals. 
-Max 6 per attacking unit. Melee only.",,"Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",,2,
-SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn. [ENEMY -1 TO HIT],,"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
+Max 6 per attacking unit. Melee only.",Melee saves 4+ deal MW back,"Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.",MELEE,2,
+SUPPRESSION_FIRE,Suppression Fire,Autocannon hit = target suppressed; -1 To Hit until your next turn. [ENEMY -1 TO HIT],Autocannon hit - enemy Hit -1,"In your Shooting phase, after this unit has shot, choose one enemy unit hit by one or more accelerator autocannon attacks. 
 
-Until your next turn starts, while this unit remains on the battlefield, that enemy unit is suppressed. Suppressed units subtract 1 from Hit rolls when attacking.",[ENEMY -1 TO HIT],2,
-SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1 [SUSTAINED HITS 1] [SUSTAINED HITS 1],,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[UNIT] [SHOOT] [MELEE] [WEAPONS] [SUSTAINED HITS 1],2,
-TACTICAL_PRECISION,Tactical Precision,UNIT attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,,This unit’s attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,[SHOOT] [MELEE] [WEAPONS],2,
-TARGETER_OPTICS,Targeter Optics,SHOOTING — visible enemy — RANGE [IGNORES COVER].,,This unit’s ranged attacks that target a visible enemy unit have [IGNORES COVER].,[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],2,
+Until your next turn starts, while this unit remains on the battlefield, that enemy unit is suppressed. Suppressed units subtract 1 from Hit rolls when attacking.","SHOOT, [ENEMY -1 TO HIT]",2,
+SUPREME_GRAND_MASTER,Supreme Grand Master,Unit gains SUSTAINED HITS 1 [SUSTAINED HITS 1] [SUSTAINED HITS 1],Unit gains Sustained Hits 1,"While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",[UNIT] [SHOOT] [MELEE] [WEAPONS] [SUSTAINED HITS 1],2,
+TACTICAL_PRECISION,Tactical Precision,UNIT attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,Attacks Lethal vs non-M/V,This unit’s attacks have [LETHAL HITS:non-MONSTER/VEHICLE].,[SHOOT] [MELEE] [WEAPONS],2,
+TARGETER_OPTICS,Targeter Optics,SHOOTING — visible enemy — RANGE [IGNORES COVER].,Visible target - Ignore Cover,This unit’s ranged attacks that target a visible enemy unit have [IGNORES COVER].,[SHOOT] [WEAPONS] [ACTIVE] [IGNORES COVER],2,
 TECHMARINE,Techmarine,"Lone Operative if within 3"" of Vehicle.
 
-Lone Operative: Cannot be targetted outside of 12"". [LONE OP]",,"While this model is within 3"" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
+Lone Operative: Cannot be targetted outside of 12"". [LONE OP]",Near Vehicle - Lone Op,"While this model is within 3"" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
 
-Lone Operative: Cannot be targetted outside of 12"".",[LONE OP],2,
-Teleport_Homer,Teleport Homer,"Once per battle — Rapid Ingress via Teleport Homer costs -1 CP; arrive within 3"" of token and not within 8"" of enemy.",,"Once per battle, per unit — At the start of the battle, you can set up one Teleport Homer token for this unit on the battlefield. When you target this unit with the Rapid Ingress stratagem, you can use that Teleport Homer token. If you do, that use is -1 CP, but when resolving that stratagem, this unit must be set up within 3"" of that Teleport Homer token and not within 8"" of an enemy unit. That Teleport Homer token is then removed from the battlefield. If an enemy unit ends a move within 1"" of that Teleport Homer token, that Teleport Homer token is removed from the battlefield.",[INGRESS],2,
-TEMPORMORTIS,Tempormortis,UNIT has FIGHTS FIRST.,,This unit has Fights First.,[FIGHTS FIRST],2,
+Lone Operative: Cannot be targetted outside of 12"".","SHOOT, [LONE OP]",2,
+Teleport_Homer,Teleport Homer,"Once per battle — Rapid Ingress via Teleport Homer costs -1 CP; arrive within 3"" of token and not within 8"" of enemy.",Ingress costs 1 CP less,"Once per battle, per unit — At the start of the battle, you can set up one Teleport Homer token for this unit on the battlefield. When you target this unit with the Rapid Ingress stratagem, you can use that Teleport Homer token. If you do, that use is -1 CP, but when resolving that stratagem, this unit must be set up within 3"" of that Teleport Homer token and not within 8"" of an enemy unit. That Teleport Homer token is then removed from the battlefield. If an enemy unit ends a move within 1"" of that Teleport Homer token, that Teleport Homer token is removed from the battlefield.",[INGRESS],2,
+TEMPORMORTIS,Tempormortis,UNIT has FIGHTS FIRST.,Fight First,This unit has Fights First.,"MELEE, [FIGHTS FIRST]",2,
 TERMINATOR_STORM_SHIELD,Terminator Storm Shield,6 wounds (included),,6 wounds (included),,2,
-TERMINATUS_ASSAULT,Terminatus Assault,CHARGE this turn — Lightning Claws [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]; Thunder Hammer [SUSTAINED HITS 1 — MONSTER/VEHICLE].,,"If this unit made a charge move this turn, this unit’s Lightning Claws weapons have [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]. This unit’s Thunder Hammer weapons have [SUSTAINED HITS 1 — MONSTER/VEHICLE].",[MELEE] [WEAPONS] [ACTIVE],2,
+TERMINATUS_ASSAULT,Terminatus Assault,CHARGE this turn — Lightning Claws [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]; Thunder Hammer [SUSTAINED HITS 1 — MONSTER/VEHICLE].,Charge - melee Sustained Hits 1,"If this unit made a charge move this turn, this unit’s Lightning Claws weapons have [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]. This unit’s Thunder Hammer weapons have [SUSTAINED HITS 1 — MONSTER/VEHICLE].",[MELEE] [WEAPONS] [ACTIVE],2,
 TERROR_TROOPS_AURA,Terror Troops (Aura),"Enemy model within 3"" of UNIT — -1 OC.",,"While an enemy model is within 3"" of this unit, that enemy model has -1 OC.",,2,
 THE_EMPERORS_SHIELD,The Emperor’s Shield,Attacks Higher than Toughness = -1 To Wound [INCOMING -1 TO WOUND],,"Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.",[INCOMING -1 TO WOUND],2,
 THE_LION_HELM,The Lion Helm,"Unit has 4++. Once per battle, 4+++ vs. Mortal Wounds. [INVULNERABLE SAVE 4+] [FNP 4+]",,"Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, at any time, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the FNP 4+ ability against mortal wounds.",[INVULNERABLE SAVE 4+] [FNP 4+],2,
