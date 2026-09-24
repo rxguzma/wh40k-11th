@@ -247,58 +247,58 @@ The target of that attack is within range of an objective.","UNIT, ACTIVE, SHOOT
 TACTICAL_MAINSTAY_INTERCESSORS,Tactical Mainstay,"Can start Actions while Engaged / Battle-shocked
 Actions do not prevent SHOOTING",Engaged can act; still shoot,"Being engaged / Battle-shocked does not prevent this unit from being eligible to start an action.
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",SHOOT,2,
-ROBOUTE_GUILLIMAN_SUPREME_COMMANDER,Supreme Commander,Must be your WARLORD.,,"If this model is in your army, it must be your WARLORD.",,2,1
-ROBOUTE_GUILLIMAN_CODEX_ADEPT,Codex Adept,ASSAULT / DEVASTATOR / TACTICAL doctrines active for this unit,,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,2,1
+ROBOUTE_GUILLIMAN_SUPREME_COMMANDER,Supreme Commander,Must be your WARLORD.,Must be your Warlord,"If this model is in your army, it must be your WARLORD.",,2,1
+ROBOUTE_GUILLIMAN_CODEX_ADEPT,Codex Adept,ASSAULT / DEVASTATOR / TACTICAL doctrines active for this unit,All 3 doctrines active,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,2,1
 ROBOUTE_GUILLIMAN_PRIMARCH_OF_THE_XIII,Primarch of the XIII (Aura),"6"" friendly ADEPTUS ASTARTES
-Attacks: RE-ROLL 1S TO HIT / WOUND [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND]",,"While a friendly ADEPTUS ASTARTES unit is within 6"" of this unit, that unit’s attacks can:
+Attacks: RE-ROLL 1S TO HIT / WOUND [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND]",Aura - re-roll Hit/Wound 1s,"While a friendly ADEPTUS ASTARTES unit is within 6"" of this unit, that unit’s attacks can:
 • Re-roll hit rolls of 1.
-• Re-roll wound rolls of 1.",[RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],2,1
+• Re-roll wound rolls of 1.","SHOOT, MELEE, [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND]",2,1
 ROBOUTE_GUILLIMAN_AUTHOR_OF_THE_CODEX,Author of the Codex,"MOVEMENT: visible friendly ADEPTUS ASTARTES within 12""
-Give 1 COMBAT DOCTRINE until next COMMAND",,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 12"" of this model and select one combat doctrine. That combat doctrine is active for that unit in addition to any other combat doctrines that are active for that unit until the start of your next Command phase.",,2,1
-ROBOUTE_GUILLIMAN_LEADER_OF_ASTARTES,Leader of Astartes,"Within 3"" of INFANTRY = LONE OPERATIVE. [LONE OP]",,"While this unit is within 3"" of a friendly ADEPTUS ASTARTES INFANTRY unit, this unit has Lone Operative.",[LONE OP],2,1
+Give 1 COMBAT DOCTRINE until next COMMAND",Give ally 1 combat doctrine,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 12"" of this model and select one combat doctrine. That combat doctrine is active for that unit in addition to any other combat doctrines that are active for that unit until the start of your next Command phase.",,2,1
+ROBOUTE_GUILLIMAN_LEADER_OF_ASTARTES,Leader of Astartes,"Within 3"" of INFANTRY = LONE OPERATIVE. [LONE OP]",Near Infantry - Lone Op,"While this unit is within 3"" of a friendly ADEPTUS ASTARTES INFANTRY unit, this unit has Lone Operative.","SHOOT, [LONE OP]",2,1
 ROBOUTE_GUILLIMAN_UNIT_COMPOSITION,Unit Composition,"1 Roboute Guilliman model
 Equipped: 1 Emperor’s Sword; 1 Hand of Dominion",,"1 Roboute Guilliman model.
 
 This model is equipped with: 1 Emperor’s Sword; 1 Hand of Dominion.",,3,0
-MARNEUS_CALGAR_CODEX_ADEPT,Codex Adept,"Assault, Devastator and Tactical Doctrines active for this unit",,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,2,
-MARNEUS_CALGAR_MASTER_TACTICIAN,Master Tactician,"MOVEMENT: visible unit within 9"" — 1 COMBAT DOCTRINE until next COMMAND",,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 9"" of this model and select one combat doctrine. That combat doctrine is active for that unit until the start of your next Command phase.",,2,
-MARNEUS_CALGAR_THUNDERHAWK_INSERTION,Thunderhawk Insertion,Declare Battle Formations: 1 friendly GRAVIS/PHOBOS/TACTICUS unit gains Deep Strike,,"In the Declare Battle Formations step, you can select one friendly GRAVIS/PHOBOS/TACTICUS unit. That unit has Deep Strike.",,2,
+MARNEUS_CALGAR_CODEX_ADEPT,Codex Adept,"Assault, Devastator and Tactical Doctrines active for this unit",All 3 doctrines active,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,2,
+MARNEUS_CALGAR_MASTER_TACTICIAN,Master Tactician,"MOVEMENT: visible unit within 9"" — 1 COMBAT DOCTRINE until next COMMAND",Give ally 1 combat doctrine,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 9"" of this model and select one combat doctrine. That combat doctrine is active for that unit until the start of your next Command phase.",,2,
+MARNEUS_CALGAR_THUNDERHAWK_INSERTION,Thunderhawk Insertion,Declare Battle Formations: 1 friendly GRAVIS/PHOBOS/TACTICUS unit gains Deep Strike,Infantry gains Deep Strike,"In the Declare Battle Formations step, you can select one friendly GRAVIS/PHOBOS/TACTICUS unit. That unit has Deep Strike.",,2,
 MARNEUS_CALGAR_UNIT_COMPOSITION,Unit Composition,1 Marneus Calgar model,,"1 Marneus Calgar model
 This model is equipped with: 1 Gauntlets of Ultramar.",,3,
 CAPTAIN_TITUS_PRESS_THE_ATTACK,Press the Attack,"MELEE: SUSTAINED HITS 1: non-MONSTER/VEHICLE
-ASSAULT DOCTRINE: SUSTAINED HITS 1",,"This unit’s melee attacks have:
+ASSAULT DOCTRINE: SUSTAINED HITS 1",Melee Sustained Hits 1,"This unit’s melee attacks have:
 • [SUSTAINED HITS 1: non-MONSTER/VEHICLE].
-• Or: If the assault doctrine is active for this unit, [SUSTAINED HITS 1].",,2,1
+• Or: If the assault doctrine is active for this unit, [SUSTAINED HITS 1].",MELEE,2,1
 CAPTAIN_TITUS_RIGHTEOUS_FURY,"Righteous Fury (Once per battle, per army)","FIGHT: melee +1 S
-After fighting: heal D3 / 2D3 if enemy model destroyed this phase",,"In the Fight phase, you can use this ability. If you do, this unit’s melee attacks have +1 S, and when this unit has fought:
+After fighting: heal D3 / 2D3 if enemy model destroyed this phase",Melee S +1; then heal D3/2D3,"In the Fight phase, you can use this ability. If you do, this unit’s melee attacks have +1 S, and when this unit has fought:
 • This unit heals D3 wounds.
-• Or: If this unit destroyed an enemy model this phase, this unit heals 2D3 wounds.",,2,1
-CAPTAIN_TITUS_HONOUR_OF_ULTRAMAR,Honour of Ultramar,FIGHT: destroyed before selected to fight → 2+ fight before removal,,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
-• On a 2+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",,2,1
+• Or: If this unit destroyed an enemy model this phase, this unit heals 2D3 wounds.",MELEE,2,1
+CAPTAIN_TITUS_HONOUR_OF_ULTRAMAR,Honour of Ultramar,FIGHT: destroyed before selected to fight → 2+ fight before removal,Destroyed - 2+ fight before loss,"In the Fight phase, when this model is destroyed, if this unit has not been selected to fight this phase, roll one D6:
+• On a 2+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.",MELEE,2,1
 CAPTAIN_TITUS_UNIT_COMPOSITION,Unit Composition,"1 Captain Titus model
 Equipped: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword",,"1 Captain Titus model.
 
 This model is equipped with: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-crafted Chainsword.",,3,0
 CHIEF_LIBRARIAN_TIGURIUS_CHIEF_LIBRARIAN,Chief Librarian (psyker level 3),Psychic level 3; has the Psychic abilities listed for this unit.,,This model has the psychic abilities listed in the Psychic Abilities section (see left).,,2,
-CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE,Prescience (psychic level 2),MOVEMENT: Psychic roll; on a 1 Battle-shocked; +1 SV until start of next turn.,,"In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE,Prescience (psychic level 2),MOVEMENT: Psychic roll; on a 1 Battle-shocked; +1 SV until start of next turn.,Psychic pass - Save +1,"In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 • On a 1, this unit is battle-shocked.
-• This unit has +1 Sv until the start of your next turn.",,2,
-CHIEF_LIBRARIAN_TIGURIUS_TELEPATHIC_ASSAULT,Telepathic Assault (psychic level 1),"SHOOTING: Psychic roll; on a 1 Battle-shocked; visible enemy within 24"" suffers 2D3 mortal wounds.",,"In your Shooting phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
+• This unit has +1 Sv until the start of your next turn.","SHOOT, MELEE",2,
+CHIEF_LIBRARIAN_TIGURIUS_TELEPATHIC_ASSAULT,Telepathic Assault (psychic level 1),"SHOOTING: Psychic roll; on a 1 Battle-shocked; visible enemy within 24"" suffers 2D3 mortal wounds.",Psychic pass - 2D3 MW within 24”,"In your Shooting phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 • On a 1, this unit is battle-shocked.
 • Select one visible enemy unit within 24"" of this unit. That enemy unit suffers 2D3 mortal wounds.",,2,
-CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),FNP 4+ against psychic attacks and mortal wounds. [FNP 4+],,This unit has FNP 4+ against psychic attacks and mortal wounds.,[FNP 4+],2,
+CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),FNP 4+ against psychic attacks and mortal wounds. [FNP 4+],FNP 4+ vs Psychic/MW,This unit has FNP 4+ against psychic attacks and mortal wounds.,"SHOOT, MELEE, [FNP 4+]",2,
 CHIEF_LIBRARIAN_TIGURIUS_UNIT_COMPOSITION,Unit Composition,"1 Chief Librarian Tigurius model
 Equipped: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath",,"1 Chief Librarian Tigurius model
 This model is equipped with: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath.",,3,0
-CATO_SICARIUS_KNIGHT_CHAMPION_OF_MACRAGGE,"Knight Champion of Macragge (Once per phase, per army)","OPPONENT MOVEMENT: enemy ends a move within 8""; if unengaged, move up to 6"".",,"In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to 6"".",,2,
-CATO_SICARIUS_HONOUR_OR_DEATH,Honour or Death,Heroic Intervention targeting this unit costs -1CP.,,"When you target this unit with the Heroic Intervention Stratagem, that use is -1CP.",,2,
+CATO_SICARIUS_KNIGHT_CHAMPION_OF_MACRAGGE,"Knight Champion of Macragge (Once per phase, per army)","OPPONENT MOVEMENT: enemy ends a move within 8""; if unengaged, move up to 6"".",Reactive Move 6”,"In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, if this unit is unengaged, this unit can make a normal move of up to 6"".",,2,
+CATO_SICARIUS_HONOUR_OR_DEATH,Honour or Death,Heroic Intervention targeting this unit costs -1CP.,Heroic Intervention -1CP,"When you target this unit with the Heroic Intervention Stratagem, that use is -1CP.",,2,
 CATO_SICARIUS_CAPTAIN_OF_THE_HONOUR_GUARD,Captain of the Honour Guard,"If MARNEUS CALGAR is in the army, replace Leader with Support; both can still attach to the same unit.",,"If your army includes a MARNEUS CALGAR unit, replace this unit’s Leader ability with the Support ability (this unit can still be attached to the same units).",,3,
 CATO_SICARIUS_UNIT_COMPOSITION,Unit Composition,"1 Cato Sicarius model
 Equipped: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade",,"1 Cato Sicarius model
 This model is equipped with: 1 Artisan Plasma Pistol; 1 Talassarian Tempest Blade.",,3,0
 WARDENS_OF_ULTRAMAR_SUPPORT,Support,Support,,Support.,,1,1
-WARDENS_OF_ULTRAMAR_RAISE_THE_BANNER,Raise the Banner,"END OF MOVEMENT: If controlling an objective, that objective is SECURED.",,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,2,1
-WARDENS_OF_ULTRAMAR_STRATEGIUM_COMMAND,Strategium Command,Redeploy 3 units; may enter RESERVES.,,"When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,2,1
+WARDENS_OF_ULTRAMAR_RAISE_THE_BANNER,Raise the Banner,"END OF MOVEMENT: If controlling an objective, that objective is SECURED.",Secure controlled objective,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.",,2,1
+WARDENS_OF_ULTRAMAR_STRATEGIUM_COMMAND,Strategium Command,Redeploy 3 units; may enter RESERVES.,Redeploy 3; may enter Reserves,"When both players have deployed their armies, you can redeploy up to three friendly ADEPTUS ASTARTES units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.",,2,1
 WARDENS_OF_ULTRAMAR_MODEL_PROFILES,Model Profiles,"Gaius Silva / Aemelia Minervas / Dainal Kornelius / Lucia Vestha: M6 T3 SV4+/5++ W3 LD6+ OC1
 Veteran Sergeant Metaurus: M6 T5 SV3+/4++ W4 LD6+ OC1
 Ancient Gadriel: M6 T5 SV3+/4++ W4 LD6+ OC2",,"Gaius Silva, Aemelia Minervas, Dainal Kornelius and Lucia Vestha: M 6"", T 3, SV 4+, INSV 5+, W 3, LD 6+, OC 1.
@@ -319,10 +319,10 @@ Dainal Kornelius is equipped with: 1 Astropathic Blast; 1 Force Stave.
 Gaius Silva is equipped with: 1 Archeotech Laspistol; 1 Power Weapon.
 Lucia Vestha is equipped with: 1 Archeotech Laspistol; 1 Ultramarian Combat Weapons.
 Veteran Sergeant Metaurus is equipped with: 1 Heavy Bolt Pistol; 1 Master-crafted Power Weapon.",,3,0
-VICTRIX_HONOUR_GUARD_GLORY_OF_ULTRAMAR,Glory of Ultramar,"OPP SHOOTING: Model destroyed → SURGE D6""",,"In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,2,1
-VICTRIX_HONOUR_GUARD_HONOUR_GUARD_OF_MACRAGGE,Honour Guard of Macragge,Enemy attacks: -1 TO WOUND,,Attacks that target this unit have -1 to wound rolls.,,2,1
+VICTRIX_HONOUR_GUARD_GLORY_OF_ULTRAMAR,Glory of Ultramar,"OPP SHOOTING: Model destroyed → SURGE D6""",Shot ally dies - Surge D6”,"In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6"".",,2,1
+VICTRIX_HONOUR_GUARD_HONOUR_GUARD_OF_MACRAGGE,Honour Guard of Macragge,Enemy attacks: -1 TO WOUND,Incoming Wound -1,Attacks that target this unit have -1 to wound rolls.,"SHOOT, MELEE",2,1
 VICTRIX_HONOUR_GUARD_BANNER_OF_MACRAGGE,Banner of Macragge,"CONTROL objective → SECURED
-1/BATTLE when selected to FIGHT: melee +1 A / +1 S [+1 A] [+1 S]",,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.
+1/BATTLE when selected to FIGHT: melee +1 A / +1 S [+1 A] [+1 S]",Secure Obj; once melee A/S +1,"At the end of your Movement phase, if this unit is controlling an objective, that objective is secured.
 
 (Once per battle, per army) When this unit is selected to fight, you can use this ability. If you do, this unit’s melee attacks have +1 A and S.",[ACTIVE] [MELEE] [WEAPONS] [+1 A] [+1 S],2,0
 VICTRIX_HONOUR_GUARD_UNIT_COMPOSITION,Unit Composition,"0-1 Chapter Ancient
@@ -339,16 +339,16 @@ Every Victrix Honour Guard is equipped with: 1 Master-crafted Bolt Carbine; 1 Ma
 
 Keywords — All Models: INFANTRY; IMPERIUM; TACTICUS. Chapter Ancient: ANCIENT; EPIC HERO. Chapter Champion: CHAMPION; EPIC HERO. Faction Keywords: ADEPTUS ASTARTES; ULTRAMARINES.",,3,0
 KAIUS_KONORIUS_SUPPORT,Support,Support,,,,1,1
-KAIUS_KONORIUS_VETERAN_BODYGUARD,Veteran Bodyguard,ATTACHED: Other CHARACTER models gain FNP 4+,,"While this model is attached to a unit, other CHARACTER models in this unit have FNP 4+.",,2,1
-KAIUS_KONORIUS_CALGARS_CHAMPION,Calgar’s Champion,Vs CHARACTER: RE-ROLL HIT 1S / WOUND 1S [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],,"This model’s attacks that target a CHARACTER unit can:
+KAIUS_KONORIUS_VETERAN_BODYGUARD,Veteran Bodyguard,ATTACHED: Other CHARACTER models gain FNP 4+,Attached Characters gain FNP 4+,"While this model is attached to a unit, other CHARACTER models in this unit have FNP 4+.","SHOOT, MELEE",2,1
+KAIUS_KONORIUS_CALGARS_CHAMPION,Calgar’s Champion,Vs CHARACTER: RE-ROLL HIT 1S / WOUND 1S [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],Vs Char - re-roll Hit/Wound 1s,"This model’s attacks that target a CHARACTER unit can:
 • Re-roll hit rolls of 1.
 • Re-roll wound rolls of 1.",[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND],2,0
 KAIUS_KONORIUS_UNIT_COMPOSITION,Unit Composition,"1 Kaius Konorius model
 Equipped: Heavy Bolt Pistol; Severance and Rebuke",,"1 Kaius Konorius model.
 
 This model is equipped with: 1 Heavy Bolt Pistol; 1 Severance and Rebuke.",,3,0
-RAMPART,"Rampart (Once per battle, per army)","START OF ANY PHASE: once per battle, this model has 2++ until end of phase.",,"At the start of any phase, you can use this ability. If you do, this model has 2+ Invul until the end of the phase.",,2,
-ICON_OF_OBSTINACY,Icon of Obstinacy,Attacks that target this unit have -1 to Hit rolls. [ENEMY -1 TO HIT],,Attacks that target this unit have -1 to hit rolls.,[ENEMY -1 TO HIT],2,
+RAMPART,"Rampart (Once per battle, per army)","START OF ANY PHASE: once per battle, this model has 2++ until end of phase.",Once/battle - Invulnerable 2+,"At the start of any phase, you can use this ability. If you do, this model has 2+ Invul until the end of the phase.","SHOOT, MELEE",2,
+ICON_OF_OBSTINACY,Icon of Obstinacy,Attacks that target this unit have -1 to Hit rolls. [ENEMY -1 TO HIT],Incoming Hit -1,Attacks that target this unit have -1 to hit rolls.,"SHOOT, MELEE, [ENEMY -1 TO HIT]",2,
 DARNATH_LYSANDER_UNIT_COMPOSITION,Unit Composition,"1 Darnath Lysander model
 Equipped: 1 Fist of Dorn",,"1 Darnath Lysander model
 This model is equipped with: 1 Fist of Dorn.",,3,0
