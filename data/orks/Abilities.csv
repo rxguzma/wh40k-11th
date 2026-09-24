@@ -14,7 +14,7 @@ DEVASTATING WOUNDS,DEVASTATING WOUNDS,Critical Wounds inflict mortal wounds; no 
 DOKS_TOOLZ,Dok’s Toolz,[UNIT] ANYTIME [FNP 5+],FNP 5+,Models in his unit have the FNP 5+ ability.,[FNP 5+] [UNIT],1,1
 FIXIT_DA_GROT,Fixit da Grot,Command: regain D3 lost wounds,Heal D3 wounds,"At the start of your Command phase, this model regains up to D3 lost wounds.",,2,
 KRUMPIN_TIME,Krumpin Time,MELEE RILED UP: [+1 TO HIT],Riled Up - Hit +1,"In the Fight phase, if this unit is RILED UP, this unit has +1 to hit rolls.","UNIT, ACTIVE, MELEE, WEAPONS, +1 TO HIT",2,0
-KUNNIN_INFILTRATOR,Kunnin' Infiltrator,Hidden and unengaged at end of opponent Fight phase = go [STRATEGIC RESERVES],Hidden → Strategic Reserves,"At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,
+KUNNIN_INFILTRATOR,Kunnin' Infiltrator,Hidden and unengaged at end of opponent Fight phase = go [STRATEGIC RESERVES],Hidden → Reserves,"At the end of your opponent's Fight phase, if each model in this unit is hidden and unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,
 KUSTOM_FORCE_FIELD,Kustom Force Field,[UNIT] RANGE attacks: [INVULNERABLE SAVE 4+],Ranged invulnerable save 4+,This unit has 4+ InSv against ranged attacks.,[UNIT] [SHOOT] [INVULNERABLE SAVE 4+],2,1
 LEADER_BEASTBOSS,Leader: Beastboss,Can Lead: BEAST SNAGGA BOYZ,,LEADER: BEAST SNAGGA BOYZ,,3,
 LEADER_BIG_MEK,Leader: Big Mek,"Can Lead: BOYZ, BREAKA BOYZ, FLASH GITZ, MEK GUNZ, NOBZ, TANKBUSTAS",,"LEADER: BOYZ, BREAKA BOYZ, LOOTAS, MEK GUNZ, NOBZ, TANKBUSTAS",,3,
