@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","column":"Short_Description","value":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS\nRANGE of Objective [Re-roll 1s To Hit]"},{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","column":"Tiny_Description","value":"Objective [Re-roll 1s To Hit]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","mode":"add_column","column":"Tiny_Description","after_column":"Short_Description"},{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","column":"Short_Description","value":"BREAKA BOYZ / FLASH GITZ / TANKBUSTAS\nRANGE of Objective [Re-roll 1s To Hit]"},{"file":"data/orks/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"orks_wreckas","column":"Tiny_Description","value":"Objective [Re-roll 1s To Hit]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
