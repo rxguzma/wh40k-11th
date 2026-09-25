@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DUTY_ETERNAL","sets":{"Short_Description":"Attacks vs UNIT -1 to Wound if Strength is higher.","Tags":"","Ability Name":"REDEMPTOR"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"REDEMPTOR_PLASMA","column":"Unit Name","value":"REDEMPTOR"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
