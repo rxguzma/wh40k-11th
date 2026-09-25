@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_phobos_shadow_force_stratagem_strike_from_the_shadows_1cp","column":"Required_Keywords","value":"PHOBOS"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_assault_brethren_stratagem_armour_of_contempt_1cp","column":"Tags","value":"OTHER"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
