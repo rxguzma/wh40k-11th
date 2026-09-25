@@ -27,7 +27,7 @@ Attacks: -1 AP",Incoming AP worsens by 1,"WHEN: Your opponent's Shooting phase o
 
 TARGET: That ADEPTUS ASTARTES unit.
 
-EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.","OTHER, MELEE",0,,,
+EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.",OTHER,0,,,
 space_marines_assault_brethren_stratagem_gene_wrought_might_1cp,space_marines_assault_brethren,GENE-WROUGHT MIGHT,1,"FIGHT: MELEE have LANCE
 In ASSAULT: LANCE & +1 AP [LANCE]",Melee Lance; Assault AP +1,"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 
