@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_phobos_shadow_force_stratagem_mortis_snares_1cp","column":"Any_Keywords","value":"PHOBOS, SCOUT"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_phobos_shadow_force_stratagem_tactical_withdrawal_1cp","column":"Any_Keywords","value":"PHOBOS, SCOUT"},{"file":"data/marines/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"space_marines_phobos_shadow_force","column":"Any_Keywords","value":"PHOBOS, SCOUT"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"SCOUTS","column":"Keywords","value":"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE, SCOUT"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"TERMINATUS_ASSAULT","column":"Description","value":"CHARGE this turn\\n\\nLightning Claws [SUSTAINED HITS 1 — non-MONSTER / VEHICLE]\\n\\nThunder Hammer [SUSTAINED HITS 1 — MONSTER / VEHICLE]."}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
