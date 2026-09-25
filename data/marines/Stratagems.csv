@@ -155,7 +155,7 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Your unit’s attacks have:
 • +1 S.
-• [LETHAL HITS].","SHOOT, MELEE, [LETHAL HITS]",0,,,
+• [LETHAL HITS].","SHOOT, MELEE, [LETHAL HITS]",0,PHOBOS,,
 space_marines_phobos_shadow_force_stratagem_mortis_snares_1cp,space_marines_phobos_shadow_force,MORTIS SNARES,1,"End MOVEMENT: PHOBOS / SCOUT on OBJECTIVE
 Snare objective
 Enemy ends move in range: 2+ = D6 MW",Snare objective; 2+ = D6 MW,"WHEN: End of your Movement phase.
