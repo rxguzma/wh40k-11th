@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DEATHWING","column":"Short_Description","value":"Ignore BS/WS modifiers.\\nOath Target: [+1 TO HIT]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DECIMATOR_PROTOCOLS","column":"Short_Description","value":"Range: [RE-ROLL 1S TO HIT], if on an objective, [RE-ROLL ALL HITS]."},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ENMITY_FOR_THE_UNWORTHY","column":"Short_Description","value":"IF being LEAD, [+1 TO HIT] vs CHARACTERS"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DECIMATOR_PROTOCOLS","column":"Short_Description","value":"Range: [RE-ROLL 1S TO HIT], if on an objective, [RE-ROLL ALL HITS]."},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ENMITY_FOR_THE_UNWORTHY","column":"Short_Description","value":"IF being LEAD, [+1 TO HIT] vs CHARACTERS"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
