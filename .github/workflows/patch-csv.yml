@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_ironclad_champions_stratagem_unstoppable_advance_1cp","column":"Tiny_Description","value":"Move/Charge\\nget MOBILE"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_Name","row_id":"FULL-THROTTLE ASSAULT","column":"Tiny_Description","value":"Charge Sustain 1\\nTH +Hit / +1 D"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
