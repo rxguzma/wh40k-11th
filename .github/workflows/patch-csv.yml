@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"TERMINATUS_ASSAULT","column":"Description","value":"CHARGE this turn\\n\\nLightning Claws [SUSTAINED HITS 1 — non-MONSTER / VEHICLE]\\n\\nThunder Hammer [SUSTAINED HITS 1 — MONSTER / VEHICLE]."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"RAISE_THE_BANNER","column":"Description","value":"MOVEMENT end → objective is secured."}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
