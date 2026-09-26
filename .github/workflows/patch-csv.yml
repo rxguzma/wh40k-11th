@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_terminator_stormforce_stratagem_gunship_extraction_1cp","column":"Short_Description","value":"End of enemy FIGHT Unengaged TERMINATOR\u003A [STRATEGIC RESERVES]"},{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_terminator_stormforce_stratagem_merciless_veterans_1cp","column":"Short_Description","value":"TERMINATOR SHOOTING\u003A [LETHAL HITS] [SUSTAINED HITS 1]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_assault_brethren_stratagem_gene_wrought_might_1cp","column":"Tags","value":"MELEE, [LANCE], +1 AP"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
