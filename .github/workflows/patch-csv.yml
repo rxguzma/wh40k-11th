@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"TACTICAL_DREADNOUGHT_FORTITUDE","column":"Short_Description","value":"Enemy SHOOTING / FIGHT TERMINATOR\u003A [INCOMING -1 D]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp","column":"Short_Description","value":"Enemy SHOOTING / FIGHT TERMINATOR\u003A [INCOMING -1 D]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
