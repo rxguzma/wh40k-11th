@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"SCOUTS_8","sets":{"Tags":"Scout 8”","Visibility_ID":"2"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"SCOUT_8","mode":"insert","sets":{"Display_Tag":"Scout 8”","Title":"Scout 8”","Category":"Movement Rules","Affects":"Unit","Description":"The affected unit has Scout 8” while this rule is active.","Editable":"TRUE","Sort_Order":"922"}},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"SCOUTS_8","mode":"insert","sets":{"Ability Name":"Scouts 8\"","Short_Description":"Scout 8”","Tiny_Description":"Scout 8”","Long_Description":"This unit has Scouts 8\".","Tags":"Scout 8”","Visibility_ID":"2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
