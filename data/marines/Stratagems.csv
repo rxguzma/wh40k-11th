@@ -268,7 +268,7 @@ EFFECT: Your unit’s attacks have:
 • [LETHAL HITS].
 • Or: [SUSTAINED HITS 1].","SHOOT, MELEE",0,,DREADNOUGHT,
 space_marines_ironclad_champions_stratagem_unstoppable_advance_1cp,space_marines_ironclad_champions,UNSTOPPABLE ADVANCE,1,"MOVEMENT / CHARGE
-DREADNOUGHT: MOBILE","MOVE/CHARGE
+DREADNOUGHT: MOBILE","Move/Charge
 get MOBILE","WHEN: Your Movement/Charge phase, when a friendly DREADNOUGHT unit is selected to move or declares a charge.
 
 TARGET: That DREADNOUGHT unit.
