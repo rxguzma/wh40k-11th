@@ -1,5 +1,5 @@
 Ability_ID,Ability Name,Short_Description,Tiny_Description,Long_Description,Tags,Visibility_ID,Default_Active
-ACROBATIC_ESCAPE,Acrobatic Escape,"If engaged, Fall Back D6"" at end of Fight. Can go to Reserves, then Ingress. [INGRESS]",Fall Back D6”; then Reserves,"At the end of the Fight phase, if this unit is engaged, this unit can make a Fall Back move of up to D6"". At the end of your opponent’s turn, if this unit is more than 3"" from all enemy units, you can use this ability. If you do: place this unit in Strategic Reserves. This unit must make an Ingress move in your next Movement phase (including in your first turn).",[INGRESS],2,
+ACROBATIC_ESCAPE,Acrobatic Escape,"If engaged, Fall Back D6"" at end of Fight. Can go to Reserves, then [INGRESS].",Fall Back D6”; then Reserves,"At the end of the Fight phase, if this unit is engaged, this unit can make a Fall Back move of up to D6"". At the end of your opponent’s turn, if this unit is more than 3"" from all enemy units, you can use this ability. If you do: place this unit in Strategic Reserves. This unit must make an Ingress move in your next Movement phase (including in your first turn).",[INGRESS],2,
 AQUILON_OPTICS,Aquilon Optics,"Ranged vs MONSTER/VEHICLE — re-roll Hit, Wound and Damage rolls.",Vs M/V: reroll Hit/W/Dmg,"Each time this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll, you can re-roll the Wound roll and you can re-roll the Damage roll.",SHOOT,2,
 ASSAULT_RAMP,Assault Ramp,"MOVEMENT — after UNIT ends normal move, embarked units can make assault disembark move.",Move: assault disembark,"In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move.",,2,
 RAPID_DISEMBARKATION,Rapid Disembarkation,"MOVEMENT — after UNIT Advances, embarked units can make a shock disembark move.",Advance - shock disembark,"In your Movement phase, when this unit ends an advance move, units embarked within this unit can make a shock disembark move.",,2,
@@ -13,7 +13,7 @@ BLACKWING_MANTLE,Blackwing Mantle,"1/PHASE/ARMY: HEROIC INTERVENTION on this uni
 • That use is -1 CP.
 • That use does not prevent any uses of that stratagem on other units this phase.",,2,1
 BLADEGUARD,Bladeguard,Once per turn — FIGHT — select one — MELEE [+1 TO HIT] or attacks targeting UNIT [ENEMY -1 TO HIT].,Fight: Hit+1 or enemy Hit-1,"Bladeguard (Once per turn, per unit) — In the Fight phase, when this unit is selected to fight or when an enemy unit targets this unit, you can select one of the following — this unit’s melee attacks have +1 to hit rolls; or attacks that target this unit have -1 to hit rolls.",[MELEE] [WEAPONS] [ACTIVE] [+1 TO HIT] [ENEMY -1 TO HIT],2,
-BLESSING_OF_THE_OMNISSIAH,Blessing of the Omnissiah,"In Command phase, select Vehicle within 3"". Regain D3 wounds and, +1 TO HIT. [+1 TO HIT]",Heal D3; attacks Hit +1,"In your Command phase, you can select one friendly Adeptus Astartes Vehicle model within 3"" of this model. 
+BLESSING_OF_THE_OMNISSIAH,Blessing of the Omnissiah,"In Command phase, select Vehicle within 3"". Regain D3 wounds and [+1 TO HIT].",Heal D3; attacks Hit +1,"In your Command phase, you can select one friendly Adeptus Astartes Vehicle model within 3"" of this model. 
 
 That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that Vehicle model makes an attack, add 1 to the Hit roll. 
 
@@ -41,7 +41,7 @@ The Company Champion is equipped with: bolt pistol; master-crafted power weapon.
 One Company Veteran is equipped with: bolt pistol; master-crafted heavy bolter; close combat weapon.
 
 One Company Veteran is equipped with: bolt pistol; master-crafted bolt rifle; close combat weapon.",,2,
-DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,"If within 3"" of INFANTRY then = Lone Operative (Cannot be targetted outside of 12""). [LONE OP]",Near Infantry - Lone Op,"While this model is within 3"" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.","SHOOT, [LONE OP]",2,
+DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,"If within 3"" of INFANTRY then [LONE OP] (Cannot be targetted outside of 12"").",Near Infantry - Lone Op,"While this model is within 3"" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.","SHOOT, [LONE OP]",2,
 DEATHWING,Deathwing,"Ignore BS/WS modifiers.
 Oath Target: +1 TO HIT [+1 TO HIT] [+1 TO HIT]",Oath target - Hit +1,"Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristics and/or to the Hit roll. 
 
