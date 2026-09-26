@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{\"file\":\"data/marines/Abilities.csv\",\"id_column\":\"Ability_ID\",\"row_id\":\"BRUTALIS_CHARGE\",\"column\":\"Description\",\"value\":\"[Crushing Impact -1 CP]\\\\nCan use other Crushing Impact strats.\"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"BRUTALIS_CHARGE","column":"Description","value":"[Crushing Impact -1 CP]\\nCan use other Crushing Impact strats."}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
