@@ -11,10 +11,10 @@ space_marines_gladius_task_force_stratagem_a_worthy_death_1cp,space_marines_glad
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: When a model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6:
 On a 4+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.",MELEE,0,,,
-space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: IGNORES COVER [IGNORES COVER],Ranged ignores Cover,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+space_marines_gladius_task_force_stratagem_storm_of_devastation_1cp,space_marines_gladius_task_force,STORM OF DEVASTATION,1,RANGED: [IGNORES COVER],Ranged ignores Cover,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: Your unit’s ranged attacks have [IGNORES COVER].","SHOOT, [IGNORES COVER]",0,,,
-space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: LANCE [LANCE],Melee gains Lance,"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
+space_marines_gladius_task_force_stratagem_might_of_angels_1cp,space_marines_gladius_task_force,MIGHT OF ANGELS,1,MELEE: [LANCE],Melee gains Lance,"WHEN: Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to fight.
 TARGET: That ADEPTUS ASTARTES unit.
 EFFECT: Your unit’s melee attacks have [LANCE].","MELEE, [LANCE]",0,,,
 space_marines_gladius_task_force_stratagem_responsive_tactics_1cp,space_marines_gladius_task_force,RESPONSIVE TACTICS,1,"Enemy MOVEMENT within 8”
@@ -146,7 +146,7 @@ EFFECT: Your unit’s ranged attacks (excluding [BLAST] attacks) have:
 • [CLOSE-QUARTERS].
 • [IGNORES COVER].",SHOOT,0,,,
 space_marines_phobos_shadow_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shadow_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
-Attacks: +1 S & LETHAL HITS [LETHAL HITS]",Hidden attacks S +1 + Lethal,"WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+Attacks: +1 S & [LETHAL HITS]",Hidden attacks S +1 + Lethal,"WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
 TARGET: That PHOBOS unit.
 
@@ -169,7 +169,7 @@ TARGET: One friendly unengaged PHOBOS/SCOUT SQUAD unit.
 
 EFFECT: Place your unit in strategic reserves.",,0,,"PHOBOS, SCOUT",
 space_marines_phobos_shock_force_stratagem_strike_from_the_shadows_1cp,space_marines_phobos_shock_force,STRIKE FROM THE SHADOWS,1,"HIDDEN PHOBOS SHOOTING / FIGHT
-Attacks: +1 S & LETHAL HITS [LETHAL HITS]",Hidden attacks S +1 + Lethal,"WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
+Attacks: +1 S & [LETHAL HITS]",Hidden attacks S +1 + Lethal,"WHEN: Your Shooting phase or the Fight phase, when a friendly hidden PHOBOS unit is selected to attack.
 
 TARGET: That PHOBOS unit.
 
@@ -192,7 +192,7 @@ TARGET: That PHOBOS unit.
 
 EFFECT: Ranged attacks that target your unit have -1 to hit rolls.",SHOOT,0,,,
 space_marines_gravis_linebreaker_force_stratagem_annihilating_force_1cp,space_marines_gravis_linebreaker_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
-Attacks: LETHAL HITS [LETHAL HITS]",Attacks gain Lethal Hits,"WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
+Attacks: [LETHAL HITS]",Attacks gain Lethal Hits,"WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
 
 TARGET: That GRAVIS unit.
 
@@ -213,7 +213,7 @@ TARGET: That GRAVIS unit.
 EFFECT: When your unit ends a charge move, you can select one enemy unit engaged with your unit. If you do, roll one D6 for each model in your unit engaged with that enemy unit:
 • For each 3+, that enemy unit suffers 1 mortal wound.",,0,,,
 space_marines_gravis_siege_force_stratagem_annihilating_force_1cp,space_marines_gravis_siege_force,ANNIHILATING FORCE,1,"GRAVIS SHOOTING / FIGHT
-Attacks: LETHAL HITS [LETHAL HITS]",Attacks gain Lethal Hits,"WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
+Attacks: [LETHAL HITS]",Attacks gain Lethal Hits,"WHEN: Your Shooting phase or the Fight phase, when a friendly GRAVIS unit is selected to attack.
 
 TARGET: That GRAVIS unit.
 
