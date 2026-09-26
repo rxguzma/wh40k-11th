@@ -85,8 +85,7 @@ Shoot back at that enemy unit",Destroyed model → Shoot back,"WHEN: Your oppone
 TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Your unit shoots using normal shooting, but while doing so your unit can only target that enemy unit.",SHOOT,,,,
-space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp,space_marines_terminator_stormforce,TACTICAL DREADNOUGHT FORTITUDE,2,"Enemy SHOOTING / FIGHT
-TERMINATOR: Attacks -1 D [INCOMING -1 D]",Incoming Damage -1,"WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES TERMINATOR unit.
+space_marines_terminator_stormforce_stratagem_tactical_dreadnought_fortitude_2cp,space_marines_terminator_stormforce,TACTICAL DREADNOUGHT FORTITUDE,2,Enemy SHOOTING / FIGHT TERMINATOR: [INCOMING -1 D],Incoming Damage -1,"WHEN: Your opponent's Shooting phase or the Fight phase, when an enemy unit targets a friendly ADEPTUS ASTARTES TERMINATOR unit.
 
 TARGET: That ADEPTUS ASTARTES TERMINATOR unit.
 
