@@ -250,13 +250,13 @@ Actions do not prevent SHOOTING",Engaged can act; still shoot,"Being engaged / B
 When this unit starts an action, that action does not prevent this unit from being eligible to shoot.",SHOOT,2,
 ROBOUTE_GUILLIMAN_SUPREME_COMMANDER,Supreme Commander,Must be your WARLORD.,Must be your Warlord,"If this model is in your army, it must be your WARLORD.",,2,1
 ROBOUTE_GUILLIMAN_CODEX_ADEPT,Codex Adept,ASSAULT / DEVASTATOR / TACTICAL doctrines active for this unit,All 3 doctrines active,"The assault doctrine, devastator doctrine and tactical doctrine are active for this unit.",,2,1
-ROBOUTE_GUILLIMAN_PRIMARCH_OF_THE_XIII,Primarch of the XIII (Aura),"6"" friendly ADEPTUS ASTARTES
-Attacks: RE-ROLL 1S TO HIT / WOUND [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND]",Aura - re-roll Hit/Wound 1s,"While a friendly ADEPTUS ASTARTES unit is within 6"" of this unit, that unit’s attacks can:
+ROBOUTE_GUILLIMAN_PRIMARCH_OF_THE_XIII,Primarch of the XIII (Aura),"MELEE or SHOOT.
+[UNITS] within 6"" [RE-ROLL 1S TO HIT] and [RE-ROLL 1S TO WOUND]",Aura - re-roll Hit/Wound 1s,"While a friendly ADEPTUS ASTARTES unit is within 6"" of this unit, that unit’s attacks can:
 • Re-roll hit rolls of 1.
 • Re-roll wound rolls of 1.","SHOOT, MELEE, [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND] [RE-ROLL 1S TO HIT] [RE-ROLL 1S TO WOUND]",2,1
-ROBOUTE_GUILLIMAN_AUTHOR_OF_THE_CODEX,Author of the Codex,"MOVEMENT: visible friendly ADEPTUS ASTARTES within 12""
-Give 1 COMBAT DOCTRINE until next COMMAND",Give ally 1 combat doctrine,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 12"" of this model and select one combat doctrine. That combat doctrine is active for that unit in addition to any other combat doctrines that are active for that unit until the start of your next Command phase.",,2,1
-ROBOUTE_GUILLIMAN_LEADER_OF_ASTARTES,Leader of Astartes,"Within 3"" of INFANTRY = LONE OPERATIVE. [LONE OP]",Near Infantry - Lone Op,"While this unit is within 3"" of a friendly ADEPTUS ASTARTES INFANTRY unit, this unit has Lone Operative.","SHOOT, [LONE OP]",2,1
+ROBOUTE_GUILLIMAN_AUTHOR_OF_THE_CODEX,Author of the Codex,"MOVE. UNIT within 12"".
+Get a COMBAT DOCTRINE",Give ally 1 combat doctrine,"In your Movement phase, you can select one visible friendly ADEPTUS ASTARTES unit within 12"" of this model and select one combat doctrine. That combat doctrine is active for that unit in addition to any other combat doctrines that are active for that unit until the start of your next Command phase.",,2,1
+ROBOUTE_GUILLIMAN_LEADER_OF_ASTARTES,Leader of Astartes,"Within 3"" of INFANTRY get [LONE OP]",Near Infantry - Lone Op,"While this unit is within 3"" of a friendly ADEPTUS ASTARTES INFANTRY unit, this unit has Lone Operative.","SHOOT, [LONE OP]",2,1
 ROBOUTE_GUILLIMAN_UNIT_COMPOSITION,Unit Composition,"1 Roboute Guilliman model
 Equipped: 1 Emperor’s Sword; 1 Hand of Dominion",,"1 Roboute Guilliman model.
 
