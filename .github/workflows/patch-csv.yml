@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_SHALL_THE_STANDARD_FALL","column":"Tags","value":"UNIT, ACTIVE, -1 TO WOUND"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"NEVER_SHALL_THE_STANDARD_FALL","column":"Default_Active","value":"1"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"UNSTOPPABLE_ADVANCE","column":"Tiny_Description","value":"MOVE/CHARGE\\nget MOBILE"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
