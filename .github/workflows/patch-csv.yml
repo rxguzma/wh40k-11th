@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"RAISE_THE_BANNER","column":"Tiny_Description","value":"End MOVE - Ob Sec"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"SCOUTS_8","sets":{"Tags":"Scout 8”","Visibility_ID":"2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
