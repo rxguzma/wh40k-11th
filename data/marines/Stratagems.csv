@@ -71,8 +71,8 @@ Attacks: -1 AP",Incoming AP worsens by 1,"WHEN: Your opponent's Shooting phase o
 TARGET: That ADEPTUS ASTARTES unit.
 
 EFFECT: Attacks that target your unit have -1 AP until that enemy unit has attacked.","SHOOT, MELEE",,,,
-space_marines_devastator_brethren_stratagem_storm_of_fire_1cp,space_marines_devastator_brethren,STORM OF FIRE,1,"SHOOTING: RANGED IGNORE COVER
-In DEVASTATOR: IGNORE COVER & +1 AP [IGNORES COVER]",Ignore Cover; Dev AP+1,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
+space_marines_devastator_brethren_stratagem_storm_of_fire_1cp,space_marines_devastator_brethren,STORM OF FIRE,1,"SHOOTING: RANGED [IGNORES COVER]
+In DEVASTATOR: +1 AP",Ignore Cover; Dev AP+1,"WHEN: Your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot.
 
 TARGET: That ADEPTUS ASTARTES unit.
 
