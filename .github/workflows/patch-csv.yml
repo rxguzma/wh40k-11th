@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_assault_brethren_stratagem_gene_wrought_might_1cp","column":"Tags","value":"MELEE, [LANCE], +1 AP"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Stratagems.csv","id_column":"Stratagem_ID","row_id":"space_marines_assault_brethren_stratagem_gene_wrought_might_1cp","mode":"update","sets":{"Tags":"MELEE, [LANCE], +1 AP"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
