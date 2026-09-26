@@ -19,7 +19,8 @@ That model regains up to D3 lost wounds and, until the start of your next Comman
 
 Each model can only be selected for this ability once per turn.",[SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,
 BRAZIERS_OF_JUDGEMENT,Braziers of Judgement,"If being LEAD, -1 To be Hit [ENEMY -1 TO HIT]",While led - incoming Hit -1,"While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll.","SHOOT, MELEE, [ENEMY -1 TO HIT]",2,
-BRUTALIS_CHARGE,Brutalis Charge,Once per phase — Crushing Impact can target UNIT regardless of other uses; that use costs -1 CP and does not block other uses.,Crush Impact costs -1CP,"Once per phase, per unit — You can target this unit with the Crushing Impact stratagem, regardless of any other uses of that stratagem this phase. If you do, that use is -1 CP. That use does not prevent any uses of that stratagem on other units this phase.",,2,
+BRUTALIS_CHARGE,Brutalis Charge,Once per phase — Crushing Impact can target UNIT regardless of other uses; that use costs -1 CP and does not block other uses.,Crush Impact costs -1CP,"[Crushing Impact -1 CP]
+Can use other Crushing Impact strats.",,2,
 CATECHISM_OF_FIRE,Catechism of Fire,SHOOTING — select visible enemy; RANGE attacks vs it [DEVASTATING WOUNDS].,Ranged: Dev Wounds,"In your Shooting phase, when this unit is selected to shoot, you can select one visible enemy unit. This unit’s ranged attacks that target that unit have [DEVASTATING WOUNDS].",[SHOOT] [WEAPONS] [ACTIVE] [DEVASTATING WOUNDS],2,
 CEREBREX_LOGIC_ENGINE,Cerebrex Logic Engine,"BATTLE FORMATIONS\u003A 
 INFANTRY  [SCOUTS 6""]",Infantry gains Scouts 6”,"In the Declare Battle Formations step, you can select one friendly ADEPTUS ASTARTES INFANTRY unit. That unit has Scouts 6"".",Scout 6”,2,1
