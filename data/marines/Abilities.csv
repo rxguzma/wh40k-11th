@@ -192,8 +192,8 @@ Teleport_Homer,Teleport Homer,"Once per battle — [INGRESS] via Teleport Homer 
 TEMPORMORTIS,Tempormortis,UNIT has [FIGHTS FIRST].,Fight First,This unit has Fights First.,"MELEE, [FIGHTS FIRST]",2,
 TERMINATOR_STORM_SHIELD,Terminator Storm Shield,6 wounds (included),,6 wounds (included),,2,
 TERMINATUS_ASSAULT,Terminatus Assault,"CHARGE this turn
-Claws [SUSTAINED HITS 1 — non-MONSTER / VEHICLE]
-Hammers [SUSTAINED HITS 1 — MONSTER / VEHICLE]",Charge: melee Sustained 1,"If this unit made a charge move this turn, this unit’s Lightning Claws weapons have [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]. This unit’s Thunder Hammer weapons have [SUSTAINED HITS 1 — MONSTER/VEHICLE].",[MELEE] [WEAPONS] [ACTIVE],2,
+Claws [SUSTAIN 1 vs non-MONSTER / VEHICLE]
+Hammers [SUSTAIN 1 vs  MONSTER / VEHICLE]",Charge: melee Sustained 1,"If this unit made a charge move this turn, this unit’s Lightning Claws weapons have [SUSTAINED HITS 1 — non-MONSTER/VEHICLE]. This unit’s Thunder Hammer weapons have [SUSTAINED HITS 1 — MONSTER/VEHICLE].",[MELEE] [WEAPONS] [ACTIVE],2,
 TERROR_TROOPS_AURA,Terror Troops (Aura),"Enemy model within 3"" of UNIT — -1 OC.",Enemy within 3” - OC -1,"While an enemy model is within 3"" of this unit, that enemy model has -1 OC.",,2,
 THE_EMPERORS_SHIELD,The Emperor’s Shield,Attacks Higher than Toughness = -1 To Wound [INCOMING -1 TO WOUND],Higher S attacks - Wound -1,"Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.","SHOOT, MELEE, [INCOMING -1 TO WOUND]",2,
 THE_LION_HELM,The Lion Helm,"Unit has 4++. Once per battle, 4+++ vs. Mortal Wounds. [INVULNERABLE SAVE 4+] [FNP 4+]",4++; once/battle MW FNP 4+,"Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, at any time, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the FNP 4+ ability against mortal wounds.","SHOOT, MELEE, [INVULNERABLE SAVE 4+] [FNP 4+]",2,
