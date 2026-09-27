@@ -135,3 +135,4 @@ INFO_IGNORE_BS_MODIFIERS,IGNORE BS MODIFIERS,Ignore BS Modifiers,Info Only,Displ
 INFO_IGNORE_HIT_MODIFIERS,IGNORE HIT MODIFIERS,Ignore Hit Modifiers,Info Only,Display only,Ignore modifiers to Hit rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,965
 INFO_IGNORE_WOUND_MODIFIERS,IGNORE WOUND MODIFIERS,Ignore Wound Modifiers,Info Only,Display only,Ignore modifiers to Wound rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,966
 INFO_LETHAL_HITS_MONSTER_VEHICLE,LETHAL HITS: MONSTER/VEHICLE,Lethal Hits: Monster/Vehicle,Info Only,Display only,Ranged attacks have Lethal Hits only against MONSTER or VEHICLE targets as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,967
+FLAMESTORM_CANNONS_X2,Flamestorm Cannons x2,Flamestorm Cannons x2,Unit Rules,Unit,This unit has two Flamestorm Cannons represented by one combined weapon profile.,TRUE,,,,,,923
