@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__HUNTER_KILLER_MISSILE__HUNTER_KILLER_MISSILE","column":"Default","value":"1"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__HUNTER_KILLER_MISSILE__NONE","column":"Default","value":"0"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__MULTI_MELTA__MULTI_MELTA","column":"Default","value":"1"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__MULTI_MELTA__NONE","column":"Default","value":"0"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__STORM_BOLTER__STORM_BOLTER","column":"Default","value":"1"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"LAND_RAIDER_REDEEMER__STORM_BOLTER__NONE","column":"Default","value":"0"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"REFUSE_TO_YIELD","column":"Description","value":"Model only [INCOMING -1 D]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
