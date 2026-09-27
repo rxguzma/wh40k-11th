@@ -136,7 +136,7 @@ Enhancements, if any, added to Champion.",,"UNIT COMPOSITION
 The Ravenwing Champion is equipped with: bolt pistol; plasma talon; master-crafted power weapon.
 
 Every other model is equipped with: bolt pistol; plasma talon; Black Knight combat weapon.",,2,
-REFUSE_TO_YIELD,Refuse to Yield,Attacks allocated to this model — [INCOMING -1 D],Incoming Damage -1,"Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.","SHOOT, MELEE, [INCOMING -1 D]",2,1
+REFUSE_TO_YIELD,Refuse to Yield,Model only [INCOMING -1 D],Incoming Damage -1,"Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.","SHOOT, MELEE, [INCOMING -1 D]",2,1
 RELIC_BANNER,Relic Banner,[+1 OC],+1 OC,This unit has +1 Objective Control.,[STATS] [+1 OC],2,
 RELIC_SHIELD,Relic Shield,[+1 W],+1 W,This model has +1W.,[STATS] [+1 W],2,
 RITES_OF_BATTLE,Rites of Battle,Once per battle round: reduce a Stratagem cost by 1CP,Once/round Stratagem -1CP,"Rites of Battle (Once per battle round, per army): When a Stratagem targets this unit, you can reduce its cost by 1CP for that use.",,2,
