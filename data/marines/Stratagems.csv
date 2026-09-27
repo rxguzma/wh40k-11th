@@ -298,3 +298,23 @@ space_marines_ironstorm_spearhead_stratagem_headhunter_doctrine_1cp,space_marine
 TARGET: That ADEPTUS ASTARTES VEHICLE unit.
 
 EFFECT: Your unit’s ranged attacks have [LETHAL HITS: MONSTER/VEHICLE].","ACTIVE, SHOOT, WEAPONS, LETHAL HITS: MONSTER/VEHICLE",0,VEHICLE,,"DEDICATED TRANSPORT, FLY, WALKER"
+space_marines_gauntlet_task_force_stratagem_aggressive_disembarkation_1cp,space_marines_gauntlet_task_force,AGGRESSIVE DISEMBARKATION,1,"Any phase embarked UNIT selected to MOVE:
+Disembark within set-up distance, not wholly within",Disembark not wholly within,"WHEN: Any phase, when a friendly ADEPTUS ASTARTES unit embarked within a TRANSPORT is selected to move.
+
+TARGET: That ADEPTUS ASTARTES unit.
+
+EFFECT: While making that move, each model in your unit can be set up within the set-up distance of that TRANSPORT.
+
+This allows you to set up your unit within the set-up distance of your TRANSPORT, instead of wholly within that distance.",ACTIVE,0,,,
+space_marines_gauntlet_task_force_stratagem_duty_is_never_done_1cp,space_marines_gauntlet_task_force,DUTY IS NEVER DONE,1,"End FIGHT unengaged INFANTRY within 6"" of TRANSPORT:
+Embark",End Fight: Embark,"WHEN: End of the Fight phase.
+
+TARGET: One friendly unengaged ADEPTUS ASTARTES INFANTRY unit that was eligible to fight this phase, is wholly within 6"" of a friendly TRANSPORT unit, and is eligible to embark within that TRANSPORT unit.
+
+EFFECT: Your unit embarks within that TRANSPORT unit.",ACTIVE,0,INFANTRY,,
+space_marines_gauntlet_task_force_stratagem_storm_and_secure_1cp,space_marines_gauntlet_task_force,STORM AND SECURE,1,"End MOVEMENT TRANSPORT with BATTLELINE embarked:
+Secure controlled OBJECTIVE",Secure Objective,"WHEN: End of your Movement phase.
+
+TARGET: One friendly ADEPTUS ASTARTES TRANSPORT unit that has an ADEPTUS ASTARTES BATTLELINE unit embarked within it.
+
+EFFECT: Select one objective your unit is controlling. That objective is secured.",ACTIVE,0,TRANSPORT,,
