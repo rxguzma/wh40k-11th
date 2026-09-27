@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"FULL_THROTTLE_ASSAULT","column":"Description","value":"CHARGE. MELEE [SUSTAIN 1]\nMELEE +1 D and Hammer +1 To Hit"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"FULL_THROTTLE_ASSAULT","column":"Short_Description","value":"CHARGE. MELEE [SUSTAIN 1]\nMELEE +1 D and Hammer +1 To Hit"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
