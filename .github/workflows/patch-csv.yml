@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"AGGRESSORS__MAIN_WEAPONS__FLAMESTORM","column":"Display_Section","value":"Aggressors"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"AGGRESSORS__MAIN_WEAPONS__BOLTSTORM","column":"Display_Section","value":"Aggressors"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"OUTRIDERS__PLASMA_SLOT__HBP","column":"Display_Section","value":"Sergeant"},{"file":"data/marines/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"OUTRIDERS__PLASMA_SLOT__PLASMA","column":"Display_Section","value":"Sergeant"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"TERMINATUS_ASSAULT","column":"Short_Description","value":"CHARGE this turn\nClaws [SUSTAIN 1 vs non-MONSTER / VEHICLE]\nHammers [SUSTAIN 1 vs  MONSTER / VEHICLE]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
