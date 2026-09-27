@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"FLAMESTORM_CANNON_X2","mode":"update","sets":{"Weapon Name":"Flamestorm Cannons","A":"8"}},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"FLAMESTORM_CANNON_X2:ability_1","mode":"update","sets":{"Value":"4"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"FLAMESTORM_CANNONS_X2","mode":"insert","sets":{"Display_Tag":"Flamestorm Cannons x2","Title":"Flamestorm Cannons x2","Category":"Unit Rules","Affects":"Unit","Description":"This unit has two Flamestorm Cannons represented by one combined weapon profile.","Editable":"TRUE","Sort_Order":"923"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
