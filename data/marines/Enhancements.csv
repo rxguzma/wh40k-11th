@@ -92,3 +92,10 @@ space_marines_medusas_wrath_enhancement_adept_of_the_omnissiah,space_marines_med
 space_marines_medusas_wrath_enhancement_master_of_the_machine_war,space_marines_medusas_wrath,MASTER OF THE MACHINE WAR,25,0,"COMMAND — VEHICLE within 6"" gains DEVASTATOR or TACTICAL DOCTRINE until next COMMAND.",,ACTIVE,0,,,
 space_marines_medusas_wrath_enhancement_target_augury_web,space_marines_medusas_wrath,TARGET AUGURY WEB,30,0,"COMMAND — VEHICLE within 3"" attacks gain [LETHAL HITS] until next COMMAND.",,"ACTIVE, SHOOT, MELEE, WEAPONS, LETHAL HITS",0,TECHMARINE,,
 space_marines_medusas_wrath_enhancement_the_flesh_is_weak,space_marines_medusas_wrath,THE FLESH IS WEAK,15,0,[+1 T] [FNP 5+].,,"STATS, +1 T, FNP 5+",1,,,
+space_marines_ironstorm_spearhead_enhancement_redoubtable_machine_spirit_upgrade,space_marines_ironstorm_spearhead,REDOUBTABLE MACHINE SPIRIT UPGRADE,,FALSE,"VEHICLE, excluding DEDICATED TRANSPORT / FLY / WALKER
+[INVULNERABLE SAVE 5+]
+End COMMAND: Heal 1 wound","ADEPTUS ASTARTES VEHICLE unit only (excluding DEDICATED TRANSPORT/FLY/WALKER units). This unit:
+• Has 5+ InvSv.
+• At the end of your Command phase, heals 1 wound.","STATS, INVULNERABLE SAVE 5+, HEAL 1 WOUND",0,VEHICLE,,"DEDICATED TRANSPORT, FLY, WALKER"
+space_marines_ironstorm_spearhead_enhancement_gunnery_honours_upgrade,space_marines_ironstorm_spearhead,GUNNERY HONOURS UPGRADE,,FALSE,"VEHICLE, excluding DEDICATED TRANSPORT / FLY / WALKER
+RANGED: [HEAVY]",ADEPTUS ASTARTES VEHICLE unit only (excluding DEDICATED TRANSPORT/FLY/WALKER units). This unit’s ranged attacks have [HEAVY].,"SHOOT, WEAPONS, HEAVY",0,VEHICLE,,"DEDICATED TRANSPORT, FLY, WALKER"

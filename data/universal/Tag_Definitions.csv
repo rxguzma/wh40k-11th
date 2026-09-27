@@ -127,3 +127,11 @@ MECHANIC_PLUS_1_D,+1 D,+1 Damage,Weapon Stats,Weapons,Adds 1 Damage when routed 
 MECHANIC_PLUS_2_A,+2 A,+2 Attacks,Weapon Stats,Weapons,Adds 2 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,2,22
 MECHANIC_REROLL_ALL_DAMAGE,RE-ROLL DAMAGE,Re-roll Damage,Combat Modifiers,Attacks,Re-rolls Damage rolls when routed by the owning Ability controls.,TRUE,REROLL,,DAMAGE,ALL,1,209
 SCOUT_8,Scout 8”,Scout 8”,Movement Rules,Unit,The affected unit has Scout 8” while this rule is active.,TRUE,,,,,,922
+INFO_REROLL_ONE_HIT_ROLL,RE-ROLL ONE HIT ROLL,Re-roll One Hit Roll,Info Only,Display only,The affected unit can re-roll one Hit roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,960
+INFO_REROLL_ONE_WOUND_ROLL,RE-ROLL ONE WOUND ROLL,Re-roll One Wound Roll,Info Only,Display only,The affected unit can re-roll one Wound roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,961
+INFO_HEAL_1_WOUND,HEAL 1 WOUND,Heal 1 Wound,Info Only,Display only,The affected unit heals 1 wound at the timing specified by the source rule. Informational only; no runtime effect.,TRUE,,,,,,962
+INFO_FNP_5_PLUS_VS_MORTAL_WOUNDS,FNP 5+ VS MORTAL WOUNDS,FNP 5+ vs Mortal Wounds,Info Only,Display only,The affected unit has Feel No Pain 5+ against mortal wounds only while this rule is active. Informational only; no runtime effect.,TRUE,,,,,,963
+INFO_IGNORE_BS_MODIFIERS,IGNORE BS MODIFIERS,Ignore BS Modifiers,Info Only,Display only,Ignore modifiers to Ballistic Skill as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,964
+INFO_IGNORE_HIT_MODIFIERS,IGNORE HIT MODIFIERS,Ignore Hit Modifiers,Info Only,Display only,Ignore modifiers to Hit rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,965
+INFO_IGNORE_WOUND_MODIFIERS,IGNORE WOUND MODIFIERS,Ignore Wound Modifiers,Info Only,Display only,Ignore modifiers to Wound rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,966
+INFO_LETHAL_HITS_MONSTER_VEHICLE,LETHAL HITS: MONSTER/VEHICLE,Lethal Hits: Monster/Vehicle,Info Only,Display only,Ranged attacks have Lethal Hits only against MONSTER or VEHICLE targets as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,967
