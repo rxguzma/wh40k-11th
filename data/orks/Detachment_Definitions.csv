@@ -53,12 +53,12 @@ orks_blitz_brigade,Orks,BLITZ BRIGADE,orks_blitz_brigade_detachment_rule_unstopp
 Re-roll Charges & can Advance flat 6. [RE-ROLL CHARGE] [ADVANCE 6]",,"Friendly WAGON units can re-roll charge rolls.
 
 When a friendly WAGON unit is selected to make an advance move, that unit can change advance rolls to a 6.",[RE-ROLL CHARGE] [ADVANCE 6],0,WAGON,,
-orks_kult_of_speed,Orks,Kult of Speed,orks_kult_of_speed_detachment_rule_adrenaline_junkies,ADRENALINE JUNKIES,1,Reconnaissance,,WARBIKERS have BATTLELINE. SPEED FREEKS Advance/Fall Back: ranged [ASSAULT] this turn and can still charge. [ADVANCE AND CHARGE] [FALL BACK AND CHARGE],,"Friendly WARBIKERS units have BATTLELINE.
+orks_kult_of_speed,Orks,Kult of Speed,orks_kult_of_speed_detachment_rule_adrenaline_junkies,ADRENALINE JUNKIES,1,Recon,,WARBIKERS have BATTLELINE. SPEED FREEKS Advance/Fall Back: ranged [ASSAULT] this turn and can still charge. [ADVANCE AND CHARGE] [FALL BACK AND CHARGE],,"Friendly WARBIKERS units have BATTLELINE.
 
 When a friendly SPEED FREEKS unit is selected to make an advance/fall-back move:
 That unit's ranged attacks have [ASSAULT] until the end of the turn.
 That move does not prevent that unit from being eligible to declare a charge.",[ASSAULT] [ADVANCE AND CHARGE] [FALL BACK AND CHARGE],0,SPEED FREEKS,,
-orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Reconnaissance,,ORKS AIRCRAFT ignore Strategic Reserves points cap. RILED UP ORKS AIRCRAFT / DEFFKOPTAS ranged [+1 TO HIT],,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
+orks_flyboyz,Orks,Flyboyz,orks_flyboyz_detachment_rule_skyborne_loons,SKYBORNE LOONS,1,Recon,,ORKS AIRCRAFT ignore Strategic Reserves points cap. RILED UP ORKS AIRCRAFT / DEFFKOPTAS ranged [+1 TO HIT],,"Friendly ORKS AIRCRAFT units do not count towards the combined points value of your strategic reserves units.
 
 While a friendly ORKS AIRCRAFT / DEFFKOPTAS unit is RILED UP, this unit's ranged attacks have +1 to hit rolls.",[+1 TO HIT],0,,"AIRCRAFT, DEFFKOPTAS",
 orks_brute_bosses,Orks,Brute Bosses,orks_brute_bosses_detachment_rule_ard_as_nails,'ARD AS NAILS,1,Purge the Foe,,"WARBOSS
