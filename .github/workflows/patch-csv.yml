@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_FIST_PLASMA","column":"Keywords","value":"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"TERMINATOR_ASSAULT_SQUAD","column":"Unit Name","value":"Assault Terminators"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"BRUTALIS","column":"Unit Name","value":"Brutalis"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"CAPTAIN_IN_TERMINATOR_ARMOUR","column":"Unit Name","value":"Terminator Captain"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"DESOLATION_SQUAD","column":"Unit Name","value":"Desolators"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"INFERNUS_SQUAD","column":"Unit Name","value":"Infernus"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"STERNGUARD_VETS","column":"Unit Name","value":"Sternguard Vets"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"VANGUARD_VETERAN_SQUAD_WITH_JUMP_PACKS","column":"Unit Name","value":"Vanguard Vets"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"BLADEGUARD_VETS","column":"Unit Name","value":"Bladeguard Vets"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
