@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"HARDY_BILIOUS","column":"Tags","value":"INCOMING -1 TO WOUND"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachments.csv","id_column":"Item_ID","row_id":"orks_green_tide_detachment_rule_mob_handed_brutality","column":"Description","value":"BOYZ MELEE: [SUSTAIN 1]\\n\\nOther INFANTRY CHARGE and gain [LETHAL HITS: non-MONSTER / VEHICLE]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
