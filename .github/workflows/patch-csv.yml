@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"TANKBUSTAS","mode":"delete_where","where":{"Unit_ID":"TANKBUSTAS","Weapon_ID":"SMASH_HAMMER"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Weapons.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","mode":"delete_where","where":{"Loadout_Option_ID":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","Weapon_ID":"SMASH_HAMMER"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
