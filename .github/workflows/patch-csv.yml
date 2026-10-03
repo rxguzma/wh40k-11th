@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Name","row_id":"OTHERMOB-HANDED BRUTALITYGreen Tide","column":"Name","value":"MELEEMOB-HANDED BRUTALITYGreen Tide"},{"file":"data/orks/Abilities.csv","id_column":"Name","row_id":"OTHERUNBRIDLED CARNAGE (1CP)","column":"Name","value":"MELEEUNBRIDLED CARNAGE (1CP)"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_green_tide_detachment_rule_mob_handed_brutality","column":"Tags","value":"MELEE, [SUSTAINED HITS 1] [LETHAL HITS]"},{"file":"data/orks/Stratagems.csv","id_column":"Stratagem_ID","row_id":"orks_green_tide_stratagem_unbridled_carnage_1cp","column":"Tags","value":"MELEE, [+1 A]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
