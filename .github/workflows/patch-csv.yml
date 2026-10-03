@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"ROKKIT_CHARGE","column":"Short_Description","value":"CHARGE and [Optional]: \u000aMELEE [+1 A] [+1 S] [HAZARDOUS]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","column":"Display_Section","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X2","column":"Display_Section","value":""},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","column":"Option_Group_ID","value":"NOB_ROKKIT_PISTOL"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X2","column":"Option_Group_ID","value":"NOB_ROKKIT_PISTOL"},{"file":"data/orks/Unit_Weapons.csv","id_column":"Layout_Row_ID","row_id":"TANKBUSTAS__ROKKIT_PISTOL_NOB","column":"Quantity","value":""},{"file":"data/orks/Unit_Weapons.csv","id_column":"Layout_Row_ID","row_id":"TANKBUSTAS__CHOPPA_NOB","column":"Quantity","value":""},{"file":"data/orks/Unit_Weapons.csv","id_column":"Layout_Row_ID","row_id":"TANKBUSTAS__SMASH_HAMMER_STANDARD_NOB","column":"Quantity","value":""},{"file":"data/orks/Unit_Weapons.csv","id_column":"Layout_Row_ID","row_id":"TANKBUSTAS__SMASH_HAMMER_HUNTER_NOB","column":"Quantity","value":""}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
