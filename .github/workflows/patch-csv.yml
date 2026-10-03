@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Points.csv","id_column":"Unit_ID","row_id":"TANKBUSTAS","mode":"insert","allow_duplicate_id":true,"after_row_id":"TANKBUSTAS","sets":{"Point_Option_ID":"point_2","Label":"6x2","Cost":"320","Sort_Order":"2"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BUSTA_ROKKIT_STANDARD:ability_1","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
