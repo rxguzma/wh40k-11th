@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEASTSCENT","column":"Short_Description","value":"[Disembark] the [ALL ATTACKS]\\n vs MONSTER / VEHICLE [+1 TO WOUND]\\nTest on D6, battle-shock on a 1"},{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"BEASTSCENT","column":"Tags","value":"+1 TO WOUND"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"SQUIGHOG_BOYZ","column":"Name","value":"Squighog Boyz tag 2x4"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
