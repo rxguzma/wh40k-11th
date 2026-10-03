@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BUSTA_ROKKIT_STANDARD:ability_1","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X1","column":"Display_Section","value":"NOB"},{"file":"data/orks/Loadout_Options.csv","id_column":"Loadout_Option_ID","row_id":"TANKBUSTAS__NOB_ROKKIT_PISTOL_TANKBUSTAS__TANKBUSTAS_ROKKIT_PISTOL_X2","column":"Display_Section","value":"NOB"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
