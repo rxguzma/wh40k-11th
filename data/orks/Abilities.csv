@@ -168,7 +168,8 @@ If 13+ models [-2 BATTLE-SHOCK]",Charged M/V: B-shock -1/-2,"When this unit ends
 MOBILE_FORTRESS,Mobile Fortress,ANYTIME — [INCOMING RANGE -1 D],Incoming ranged Damage -1,Ranged attacks targeting this model have -1 D,"SHOOT, [INCOMING RANGE -1 D]",1,1
 NOWHERE_TO_HIDE,Nowhere to Hide,vs HIDDEN units: [+1 TO HIT],Vs hidden - Hit +1,This unit’s attacks that target a hidden unit have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,0
 ROKKIT_BARRAGE,Rokkit Barrage,After shooting: one hit enemy unit takes Battle-shock with -1,Hit enemy - Battle-shock -1,"In your Shooting phase, when this unit has shot, select one enemy unit hit by those attacks. That unit makes a battle-shock roll, with -1 to that battle-shock roll.",SHOOT,2,
-ROKKIT_CHARGE,Rokkit Charge,CHARGE this turn — MELEE [+1 A] [+1 S] [HAZARDOUS],"Charged - melee A +1, S +1","When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
+ROKKIT_CHARGE,Rokkit Charge,"CHARGE and [Optional]: 
+MELEE [+1 A] [+1 S] [HAZARDOUS]","Charged - melee A +1, S +1","When this unit is selected to fight, if this unit made a charge move this turn, you can use this ability. If you do, this unit’s melee attacks have:
 - +1 A and S
 - [HAZARDOUS]",[ACTIVE] [MELEE] [WEAPONS] [+1 A] [+1 S] [HAZARDOUS],2,0
 SPEEDNOB_SUPPORT,Speednob Support,"Within 3"" of friendly SPEED FREEKS (excluding WARTRAKK) [LONE OP 3""]",Near Speed Freeks - Lone Op,"While each model in this unit is within 3"" of a friendly SPEED FREEKS unit (excluding WARTRAKK models), this unit has Lone Operative.","[LONE OP 3""]",2,
