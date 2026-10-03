@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"TANKBUSTAS","mode":"delete_where","where":{"Unit_ID":"TANKBUSTAS","Weapon_ID":"SMASH_HAMMER"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Ability_ID","row_id":"THIEVIN_SCAVENGERS","column":"Tiny_Description","value":"Objective Secured"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
