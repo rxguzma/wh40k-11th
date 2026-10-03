@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Units.csv","id_column":"Unit_ID","row_id":"SQUIGHOG_BOYZ","column":"Name","value":"Squighog Boyz tag 2x4"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Points.csv","id_column":"Label","row_id":"4x2","column":"Label","value":"2x4"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
