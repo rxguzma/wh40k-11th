@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_ID","row_id":"SMASH_HAMMER_STANDARD","column":"Tags","value":""}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"SMASH_HAMMER_STANDARD:ability_1","mode":"delete_where","where":{"Weapon_ID":"SMASH_HAMMER_STANDARD","Ability_Type":"HUNTER","Condition":"MONSTER/VEHICLE"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
