@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Unit_Points.csv","id_column":"Label","row_id":"4x2","column":"Label","value":"2x4"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Abilities.csv","id_column":"Name","row_id":"OTHERMOB-HANDED BRUTALITYGreen Tide","column":"Name","value":"MELEEMOB-HANDED BRUTALITYGreen Tide"},{"file":"data/orks/Abilities.csv","id_column":"Name","row_id":"OTHERUNBRIDLED CARNAGE (1CP)","column":"Name","value":"MELEEUNBRIDLED CARNAGE (1CP)"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
