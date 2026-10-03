@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_green_tide_detachment_rule_mob_handed_brutality_boyz_sustain","column":"Short_Description","value":"BOYZ MELEE\u003a [SUSTAIN 1]"},{"file":"data/orks/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"orks_green_tide_detachment_rule_mob_handed_brutality_infantry_charge_lethal","column":"Short_Description","value":"Other INFANTRY CHARGE and gain [LETHAL HITS\u003a non-MONSTER / VEHICLE]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BUSTA_ROKKIT_STANDARD","column":"Tags","value":""}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
