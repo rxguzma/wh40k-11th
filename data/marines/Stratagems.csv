@@ -318,3 +318,9 @@ Secure controlled OBJECTIVE",Secure Objective,"WHEN: End of your Movement phase.
 TARGET: One friendly ADEPTUS ASTARTES TRANSPORT unit that has an ADEPTUS ASTARTES BATTLELINE unit embarked within it.
 
 EFFECT: Select one objective your unit is controlling. That objective is secured.",ACTIVE,0,TRANSPORT,,
+space_marines_wrath_of_the_rock_in_sacrifice_victory,space_marines_wrath_of_the_rock,"IN SACRIFICE, VICTORY",1,Secure held Objective,,,,0,,"DEATHWING, RAVENWING",
+space_marines_wrath_of_the_rock_inescapable_justice,space_marines_wrath_of_the_rock,INESCAPABLE JUSTICE,1,MELEE [PRECISION],,,"PRECISION, MELEE",0,,,
+space_marines_wrath_of_the_rock_knights_of_iron,space_marines_wrath_of_the_rock,KNIGHTS OF IRON,1,RAVENWING MOBILE,,,,0,RAVENWING,,
+space_marines_wrath_of_the_rock_lions_will,space_marines_wrath_of_the_rock,LION’S WILL,1,Objective [+1 OC],,,+1 OC,0,,,
+space_marines_wrath_of_the_rock_relics_of_the_dark_age,space_marines_wrath_of_the_rock,RELICS OF THE DARK AGE,1,RANGED [+2 S],,,"+2 S, SHOOT",0,,"INFANTRY, MOUNTED",
+space_marines_wrath_of_the_rock_tactical_mastery,space_marines_wrath_of_the_rock,TACTICAL MASTERY,1,Choose Combat Doctrine,,,,0,,"DEATHWING, RAVENWING",

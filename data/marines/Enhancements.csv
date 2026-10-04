@@ -108,3 +108,7 @@ Cannot be targeted by SNAP SHOOTING","ADEPTUS ASTARTES INFANTRY model only. If t
 space_marines_gauntlet_task_force_enhancement_damocles_class_uplink,space_marines_gauntlet_task_force,DAMOCLES-CLASS UPLINK,15,FALSE,"CAPTAIN only
 MOVEMENT while embarked:
 INFANTRY within 6"" gets chosen COMBAT DOCTRINE","CAPTAIN model only. In your Movement phase, if this unit is embarked within a TRANSPORT unit, you can select one friendly ADEPTUS ASTARTES INFANTRY unit within 6"" of that TRANSPORT and select one combat doctrine. That combat doctrine is active for that INFANTRY unit.",ACTIVE,0,CAPTAIN,,
+space_marines_wrath_of_the_rock_ancient_weapons,space_marines_wrath_of_the_rock,ANCIENT WEAPONS,20,FALSE,MELEE [+2 S] [+1 AP],,"+2 S, +1 AP, MELEE",0,,,
+space_marines_wrath_of_the_rock_deathwing_assault,space_marines_wrath_of_the_rock,DEATHWING ASSAULT,15,FALSE,Turn 1 Ingress,,,0,DEATHWING,,
+space_marines_wrath_of_the_rock_lord_of_the_ravenwing,space_marines_wrath_of_the_rock,LORD OF THE RAVENWING,15,FALSE,[RE-ROLL CHARGE],,RE-ROLL CHARGE,0,RAVENWING,,
+space_marines_wrath_of_the_rock_tempered_in_battle,space_marines_wrath_of_the_rock,TEMPERED IN BATTLE (AURA),10,FALSE,"6"" re-roll Leadership",,,0,,,
