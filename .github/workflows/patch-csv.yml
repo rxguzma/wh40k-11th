@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"INNER_CIRCLE","mode":"replace_text","column":"Tags","from":"[INCOMING -1 D]","to":"[INCOMING -1 D] [UNIT]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"INNER_CIRCLE","column":"Visibility_ID","value":"3"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"LITANY_OF_HATE","mode":"fill_blank_where","match_column":"Ability_ID","match_value":"LITANY_OF_HATE","column":"Tags","value":"[UNIT]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"LITANY_OF_HATE","column":"Visibility_ID","value":"3"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
