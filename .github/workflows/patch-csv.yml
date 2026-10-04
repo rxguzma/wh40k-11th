@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"LD","value":"5+"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"THE_WATCHERS","column":"Tags","value":"SHOOT, MELEE, [FNP 4+]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"PRIMARCH_OF_THE_FIRST_LEGION","column":"Tiny_Description","value":"Choose up to 2 abilities"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"THE_IMPERIUMS_SWORD","column":"Tags","value":"MELEE"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
