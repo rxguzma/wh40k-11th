@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"T","value":"10"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"W","value":"16"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapons.csv","id_column":"Weapon_ID","row_id":"FEALTY_STRIKE","sets":{"A":"8","WS":"2+","S":"12","AP":"-4","D":"4","Tags":"LETHAL HITS"}},{"file":"data/marines/Weapons.csv","id_column":"Weapon_ID","row_id":"FEALTY_SWEEP","sets":{"A":"12","WS":"2+","S":"6","AP":"-3","D":"2","Tags":"CLEAVE 2, SUSTAINED HITS 1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
