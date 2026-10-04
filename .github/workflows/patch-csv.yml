@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"space_marines_assault_brethren_enhancement_imperiums_sword","column":"Tags","value":"MELEE"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"THE_EMPERORS_SHIELD","column":"Tags","value":"OTHER, [INCOMING -1 TO WOUND]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DARK_ANGELS_BODYGUARD","column":"Tags","value":"OTHER, [LONE OP]"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"MASTER_STRATEGIST","column":"Tags","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"PRIMARCH_OF_THE_FIRST_LEGION","column":"Tags","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"THE_WATCHERS","column":"Tags","value":"OTHER, [FNP 4+]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
