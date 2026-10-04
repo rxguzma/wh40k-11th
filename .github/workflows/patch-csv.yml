@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"PRIMARCH_OF_THE_FIRST_LEGION","sets":{"Long_Description":"At the start of your Command phase, select up to two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.","Short_Description":"COMMAND: Select up to 2 Primarch abilities"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"PRIMARCH_OF_THE_FIRST_LEGION","sets":{"Long_Description":"At the start of your Command phase, select up to two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.","Short_Description":"COMMAND select up to 2 Primarch abilities"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
