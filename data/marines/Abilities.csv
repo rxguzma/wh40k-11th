@@ -115,19 +115,7 @@ OMNI_SCRAMBLERS,Omni-scramblers,"SHOOTING — select visible enemy within 18"" �
 OUTFLANK,Outflank,"If this model is not leading a unit, it can be placed into [STRATEGIC RESERVES].",Start in Reserves,"During the Declare Battle Formations step, if this model is not leading a unit, it can be placed into Strategic Reserves.",[STRATEGIC RESERVES],2,
 OUTRIDER_ESCORT,Outrider Escort,"Shoot back within 6""",Ally shot: shoot back,"Once per turn, in your opponent’s Shooting phase, when a friendly ADEPTUS ASTARTES MOUNTED unit within 6"" of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",SHOOT,2,
 OVERLAPPING_DESTRUCTION,Overlapping Destruction,SHOOTING — select enemy — Heavy Bolters vs it have [BLAST 1].,Heavy Bolters gain Blast 1,"In your Shooting phase, you can select one enemy unit. This unit’s Heavy Bolter weapons that target that enemy unit have [BLAST 1].",[SHOOT] [WEAPONS] [ACTIVE],2,
-PRIMARCH_OF_THE_FIRST_LEGION,Primarch of the First Legion,"Primarch of the First Legion (choose TWO): 
-
-- Mist-wreathed Shadow Realms: Go back to Reserves. 
-
-- Martial Exemplar (Aura): MELEE, 6"" Rerolls 1s To Hit and 1s To Wound. 
-
-- No Hiding From the Watchers (Aura): FNP 4+ vs Mortal Wounds",Pick 2 - Reserves/melee/FNP,"At the start of your Command phase, select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities:
-
-- Mist-wreathed Shadow Realms: In your Command phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
-
-- Martial Exemplar (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model , each time a model in that unit makes a MELEE attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
-
-- No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6"" of this model, models in that unit have the FNP 4+ ability against mortal wounds.","SHOOT, MELEE",2,
+PRIMARCH_OF_THE_FIRST_LEGION,Primarch of the First Legion,COMMAND select up to 2 Primarch abilities,Pick 2 - Reserves/melee/FNP,"At the start of your Command phase, select up to two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.","SHOOT, MELEE",2,
 PRIORITY_OBJECTIVE_IDENTIFIED,Priority Target Identified,"COMMAND — Select visible terrain; enemies within it have +3"" detection range until end of turn.",Terrain: detect range +3”,"Once per battle, per unit — In your Command phase, you can use this ability. If you do, select one visible terrain feature. That terrain feature is Identified until the end of the turn. While an enemy unit is within an identified terrain feature, that enemy unit has +3"" detection range.",,2,
 PSYCHIC_HOOD,Psychic Hood,FNP 4+ against psychic attacks.,FNP 4+ vs Psychic attacks,This unit has Feel No Pain 4+ against psychic attacks.,"SHOOT, MELEE",2,
 PURGATION_RUN,Purgation Run,"After shooting: move up to D6""; cannot charge",After shooting - move D6”,"In your Shooting phase, after this unit has shot, it can make a Normal move of up to D6"". If it does, until the end of the turn, this unit is not eligible to declare a charge.",,2,
