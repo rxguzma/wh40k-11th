@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"Movement","value":"8\""},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"T","value":"10"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"SV","value":"2+"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"W","value":"16"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"LD","value":"5+"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_EL_JONSON","column":"OC","value":"4"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"Movement","value":"8\""},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"T","value":"10"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"SV","value":"2+/3++"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"W","value":"16"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"LD","value":"5+"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"LION_ELJONSON","column":"OC","value":"4"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
