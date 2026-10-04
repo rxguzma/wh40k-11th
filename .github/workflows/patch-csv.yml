@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DARK_ANGELS_BODYGUARD","sets":{"Long_Description":"While this unit is within 3 inches of a friendly DARK ANGELS INFANTRY unit, this unit has Lone Operative.","Short_Description":"Within 3in DARK ANGELS INFANTRY: [LONE OP]"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DARK_ANGELS_BODYGUARD","sets":{"Long_Description":"While this unit is within 3 inches of a friendly DARK ANGELS INFANTRY unit, this unit has Lone Operative.","Short_Description":"Within 3in DARK ANGELS INFANTRY [LONE OP]"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
