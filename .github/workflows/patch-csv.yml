@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapons.csv","id_column":"Weapon_ID","row_id":"FEALTY_STRIKE","sets":{"A":"8","WS":"2+","S":"12","AP":"-4","D":"4","Tags":"LETHAL HITS"}},{"file":"data/marines/Weapons.csv","id_column":"Weapon_ID","row_id":"FEALTY_SWEEP","sets":{"A":"12","WS":"2+","S":"6","AP":"-3","D":"2","Tags":"CLEAVE 2, SUSTAINED HITS 1"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"FEALTY_SWEEP","column":"A","value":"12"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"FEALTY_SWEEP:ability_1","column":"Sort_Order","value":"2"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"FEALTY_SWEEP:ability_2","mode":"insert","sets":{"Weapon_ID":"FEALTY_SWEEP","Ability_Type":"CLEAVE","Value":"2","Sort_Order":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
