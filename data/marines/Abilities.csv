@@ -86,7 +86,7 @@ IRON_FATHER,Iron Father,"Within 3"" of friendly ADEPTUS ASTARTES VEHICLE = [LONE
 KEEP_THE_BANNER_HIGH,Keep the Banner High,"UNIT
 [+1 TO HIT] if below Strength
 [+1 TO WOUND] if HALF Strength",Low strength - Hit/Wound +1,"While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.","SHOOT, MELEE, [+1 TO HIT] [+1 TO WOUND]",2,
-LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],Melee gains Lance,This unit’s melee attacks have [LANCE].,[MELEE] [WEAPONS] [LANCE],2,
+LITANY_OF_HATE,Litany of Hate,MELEE [LANCE],Melee gains Lance,This unit’s melee attacks have [LANCE].,[MELEE] [WEAPONS] [LANCE] [UNIT],3,
 LONE_OPERATIVE,Lone Operative,"Cannot be shot at if 12"" away. [LONE OP]",Ranged target ≤12”,"Cannot be shot at if 12"" away.","SHOOT, [LONE OP]",2,
 REIGN_OF_CONFUSION,Reign of Confusion,"Once per turn: enemy Stratagem within 12"" costs +1CP.",Enemy 12”: Stratagem +1CP,"Once per turn, when your opponent targets a unit from their army within 12"" of this model with a Stratagem, this model can use this ability. If it does, increase the CP cost of that use of that Stratagem by 1CP.",,2,
 LORD_OF_THE_PYROCLASTS,Lord of the Pyroclasts,Enemy ENGAGED with this unit: -1 OC,Engaged enemy OC -1,"While an enemy unit is engaged with this unit, that enemy unit has -1 OC.",,2,1
