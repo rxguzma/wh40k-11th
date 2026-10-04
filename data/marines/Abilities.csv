@@ -41,7 +41,7 @@ The Company Champion is equipped with: bolt pistol; master-crafted power weapon.
 One Company Veteran is equipped with: bolt pistol; master-crafted heavy bolter; close combat weapon.
 
 One Company Veteran is equipped with: bolt pistol; master-crafted bolt rifle; close combat weapon.",,2,
-DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,"If within 3"" of INFANTRY then [LONE OP] (Cannot be targetted outside of 12"").",Near Infantry - Lone Op,"While this model is within 3"" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.","SHOOT, [LONE OP]",2,
+DARK_ANGELS_BODYGUARD,Dark Angels Bodyguard,Within 3in DARK ANGELS INFANTRY [LONE OP],Near Infantry - Lone Op,"While this unit is within 3 inches of a friendly DARK ANGELS INFANTRY unit, this unit has Lone Operative.","SHOOT, [LONE OP]",2,
 DEATHWING,Deathwing,"Ignore BS/WS modifiers.
 Oath Target: [+1 TO HIT]",Oath target - Hit +1,"Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristics and/or to the Hit roll. 
 
