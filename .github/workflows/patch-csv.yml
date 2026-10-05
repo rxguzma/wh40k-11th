@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"IMPERIUMS_SWORD","column":"Weapon Name","value":"Imperium's Sword"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"space_marines_assault_brethren_enhancement_imperiums_sword","column":"Tags","value":"[MELEE] [PERSISTENT]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
