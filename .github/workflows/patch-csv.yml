@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Abilities.csv","id_column":"Unit_ID","row_id":"DEATHWING_KNIGHTS","mode":"delete_where","where":{"Unit_ID":"DEATHWING_KNIGHTS","Ability_ID":"MATHAMMER_DEATHWING_KNIGHTS"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","mode":"delete_where","where":{"Unit_ID":"OUTRIDER_SQUAD","Weapon_ID":"ASTARTES_CHAINSWORD"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
