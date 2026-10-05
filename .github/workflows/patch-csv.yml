@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Weapons.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","mode":"insert","allow_duplicate_id":true,"sets":{"Weapon_ID":"ASTARTES_CHAINSWORD"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"FULL_THROTTLE_ASSAULT_THUNDER_HAMMER","mode":"insert","after_row_id":"FULL_THROTTLE_ASSAULT","sets":{"Ability Name":"Full-throttle Assault — Thunder Hammer","Short_Description":"CHARGE.\\nThunder Hammer [SUSTAINED HITS 1] [+1 D] [+1 TO HIT]","Tiny_Description":"Thunder Hammer","Long_Description":"CHARGE.\\nThunder Hammer [SUSTAINED HITS 1] [+1 D] [+1 TO HIT]","Tags":"MELEE, WEAPONS, ACTIVE, SUSTAINED HITS 1, +1 D, +1 TO HIT","Tag Categories":"Melee - Weapon Rules, Melee - Weapon Stats, Melee - Combat Modifiers","Default_Active":"0","Parent_Rule_ID":"FULL_THROTTLE_ASSAULT","Effect_Order":"1","Visibility_ID":"2"}},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"FULL_THROTTLE_ASSAULT_OTHER_MELEE","mode":"insert","after_row_id":"FULL_THROTTLE_ASSAULT_THUNDER_HAMMER","sets":{"Ability Name":"Full-throttle Assault — Other Melee Weapons","Short_Description":"CHARGE.\\nOther melee weapons [SUSTAINED HITS 1] [+1 D]","Tiny_Description":"Other Melee","Long_Description":"CHARGE.\\nOther melee weapons [SUSTAINED HITS 1] [+1 D]","Tags":"MELEE, WEAPONS, ACTIVE, SUSTAINED HITS 1, +1 D","Tag Categories":"Melee - Weapon Rules, Melee - Weapon Stats","Default_Active":"0","Parent_Rule_ID":"FULL_THROTTLE_ASSAULT","Effect_Order":"2","Visibility_ID":"2"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
