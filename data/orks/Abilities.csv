@@ -94,7 +94,7 @@ Test on D6, battle-shock on a 1",Vs M/V - attacks Wound +1,"In your Movement pha
 BOMB_SQUIGS_TANKBUSTAS,Bomb Squigs (Tankbustas),"Once per turn (max twice/battle): after Normal move, D3 mortals on 3+ to visible enemy within 12""",3+ = D3 MW within 12”,"Bomb Squigs (Once per turn, twice per battle, per unit): In your Movement phase, when this unit ends a normal move, you can select one visible enemy unit within 12"" of this unit and roll one D6:
 - On a 3+, that enemy unit suffers D3 mortal wounds.
 Place two Bomb Squig tokens next to the unit, removing one each time this ability is used.",,2,
-BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],Charged - attacks Damage +1,"If this unit made a charge move this turn, this unit’s attacks have +1D","[ACTIVE]
+BRUTAL_IMPACT,Brutal Impact,CHARGE this turn [+1 D],Charge = +1D,"If this unit made a charge move this turn, this unit’s attacks have +1D","[ACTIVE]
 [+1 D]",2,0
 BUST_EM,Bust ’Em,After shooting: one hit enemy becomes busted. SPEED FREEKS get [LETHAL HITS] vs busted units.,Busted target - Lethal Hits,"In your Shooting phase, when this unit shoots, you can select one enemy unit hit by those attacks. That unit is busted until the end of the turn.
 - Friendly SPEED FREEKS units that target a busted unit have [LETHAL HITS].","SHOOT, MELEE, [LETHAL HITS] [LETHAL HITS]",2,
