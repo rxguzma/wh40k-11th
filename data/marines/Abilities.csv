@@ -200,9 +200,9 @@ FULL_THROTTLE_ASSAULT,Full-throttle Assault,"CHARGE. MELEE [SUSTAIN 1]
 MELEE +1 D and Hammer +1 To Hit","Charge Sustain 1
 TH +Hit / +1 D","If this unit made a charge move this turn, this unit’s Thunder Hammer weapons have +1 to hit rolls and [SUSTAINED HITS 1]. Other melee weapons have +1 D and [SUSTAINED HITS 1].",[MELEE] [WEAPONS] [ACTIVE] [SUSTAINED HITS 1],2,,,
 FULL_THROTTLE_ASSAULT_THUNDER_HAMMER,Full-throttle Assault — Thunder Hammer,"CHARGE.
-Thunder Hammer [SUSTAIN 1] [+1 TO HIT]",Thunder Hammer,"If this unit made a charge move this turn, this unit’s Thunder Hammer weapons have +1 to hit rolls and [SUSTAINED HITS 1].",[MELEE] [WEAPONS] [ACTIVE] [SUSTAINED HITS 1] [+1 TO HIT],2,,FULL_THROTTLE_ASSAULT,1
+Thunder Hammer [SUSTAIN 1] [+1 TO HIT]",Thunder Hammer,"If this unit made a charge move this turn, this unit’s Thunder Hammer weapons have +1 to hit rolls and [SUSTAINED HITS 1]. Other melee weapons have +1 D and [SUSTAINED HITS 1].",[MELEE] [WEAPONS] [ACTIVE] [SUSTAINED HITS 1] [+1 TO HIT],2,,FULL_THROTTLE_ASSAULT,1
 FULL_THROTTLE_ASSAULT_OTHER_MELEE,Full-throttle Assault — Other Melee Weapons,"CHARGE.
-Other melee weapons [SUSTAIN 1] [+1 D]",Other Melee,"If this unit made a charge move this turn, this unit’s other melee weapons have +1 D and [SUSTAINED HITS 1].",[MELEE] [WEAPONS] [ACTIVE] [SUSTAINED HITS 1] [+1 D],2,,FULL_THROTTLE_ASSAULT,2
+Other melee weapons [SUSTAIN 1] [+1 D]",Other Melee,"If this unit made a charge move this turn, this unit’s Melee weapons (excluding Thunder Hammers) have +1 D and [SUSTAINED HITS 1].",[MELEE] [WEAPONS] [ACTIVE] [SUSTAINED HITS 1] [+1 D],2,,FULL_THROTTLE_ASSAULT,2
 THUNDERSTRIKE,Thunderstrike,Units get [+1 TO WOUND] vs MONSTERS and VEHICLES,Ranged vs M/V - Wound +1,This unit’s ranged attacks that target a MONSTER or VEHICLE unit have +1 to wound rolls.,[SHOOT] [WEAPONS] [+1 TO WOUND],2,,,
 TOTAL_OBLITERATION,Total Obliteration,RANGE  [Re-roll Damage],Ranged re-roll Damage,This unit’s ranged attacks can re-roll damage rolls.,"SHOOT, WEAPONS, RE-ROLL DAMAGE",1,0,,
 TRANSPORT_DROP_POD,Transport - Drop Pod,Transport 12 ADEPTUS ASTARTES INFANTRY; no GRAVIS/JUMP PACK/TERMINATOR.,,"This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY models. It cannot transport GRAVIS, JUMP PACK or TERMINATOR models.",,3,,,
