@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"__schema__","mode":"add_column","column":"Tiny_Description","after_column":"Short_Description"},{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"tyranids_army_rule","column":"Tiny_Description","value":"Synapse within 6”"},{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"DOMINATION_OF_THE_HIVE_MIND_AURA","sets":{"Tiny_Description":"Synapse within 9”","Tags":"ROSTER_ALL"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"NORN_ASSIMILATOR","mode":"delete_where","where":{"Unit_ID":"NORN_ASSIMILATOR"}},{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"NORN_ASSIMILATOR","mode":"insert","sets":{"Point_Option_ID":"point_1","Label":"","Cost":"250","Sort_Order":"1"}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
