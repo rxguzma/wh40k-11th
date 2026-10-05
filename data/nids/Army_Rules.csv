@@ -1,6 +1,6 @@
 Army_Rule_ID,Army_Name,Rule_Name,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
-tyranids_army_rule,Tyranids,Synapse,"6\u0022 of a SYNAPSE:
-- Melee\u003A [+1 S]
+tyranids_army_rule,Tyranids,Synapse,"Within 6” of a SYNAPSE:
+- Melee is [+1 S]
 - Battle-shock test on 3D6","While a TYRANIDS unit from your army is within 6"" of one or more friendly SYNAPSE models, that unit is within Synapse Range of that model and of your army.
 
 While a TYRANIDS unit from your army is within Synapse Range of your army:
