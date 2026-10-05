@@ -25,7 +25,7 @@ A: 6
 WS: 2+
 S: 7
 AP: -3
-D: 3",[MELEE] [PERSISTENT],0,,,
+D: 3",[MELEE] [PERSISTENT] [GRANT_IMPERIUM_SWORD],0,,,
 space_marines_assault_brethren_enhancement_furious_assault_upgrade,space_marines_assault_brethren,FURIOUS ASSAULT UPGRADE,10,FALSE,"INFANTRY only
 MELEE: [SUSTAINED HITS 1] vs non-MONSTER / VEHICLE",ADEPTUS ASTARTES INFANTRY unit only. This unit's melee attacks have [SUSTAINED HITS 1: non-MONSTER/VEHICLE].,[SUSTAINED HITS 1],0,,,
 space_marines_tactical_brethren_enhancement_laurels_of_vigilance,space_marines_tactical_brethren,LAURELS OF VIGILANCE,10,FALSE,"ADEPTUS ASTARTES only
