@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Enhancements.csv","id_column":"Enhancement_ID","row_id":"space_marines_assault_brethren_enhancement_imperiums_sword","column":"Tags","value":"[MELEE] [PERSISTENT]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"OUTRIDER_CHAINSWORD","mode":"insert","sets":{"Weapon Name":"Chainsword","R\"":"-","A":"4","WS":"3+","St":"5","AP":"-1","D":"1"}},{"file":"data/marines/Unit_Weapons.csv","id_column":"Layout_Row_ID","row_id":"OUTRIDERS__CHAIN_MAIN","column":"Weapon_ID","value":"OUTRIDER_CHAINSWORD"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
