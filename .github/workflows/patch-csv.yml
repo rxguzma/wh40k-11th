@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"SYNAPSE","column":"Short_Description","value":"6\" of a SYNAPSE:\\n- Melee: [+1 S]\\n- Battle-shock test on 3D6"},{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"SYNAPSE","column":"Tags","value":"[WEAPONS] [MELEE] [+1 S]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"SYNAPSE","column":"Short_Description","value":"6\\u0022 of a SYNAPSE:\\n- Melee\\u003A [+1 S]\\n- Battle-shock test on 3D6"},{"file":"data/nids/Army_Rules.csv","id_column":"Army_Rule_ID","row_id":"SYNAPSE","column":"Tags","value":"[WEAPONS] [MELEE] [+1 S]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
