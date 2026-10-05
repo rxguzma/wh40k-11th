@@ -100,13 +100,6 @@ MASTER_OF_THE_FORGE,Master of the Forge,"Start / end of Movement: friendly VEHIC
 • Hit rolls and wound rolls.","SHOOT, MELEE",2,1
 MASTER_OF_THE_HUNT,Master of the Hunt,Melee vs selected target: [+1 AP],Melee target - AP +1,"Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit. Until the end of the phase, each time a model in this model’s unit makes a melee attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1.",[ACTIVE] [MELEE] [WEAPONS] [+1 AP],2,0
 MASTER_CRAFTED_BOLTGUN_POWER_FIST_CAPTAIN,"Master-crafted boltgun,-,Power fist (Captain)","Rites of Battle,Finest Hour",,"6"",4,3+ / 4++,6,6,1",,2,
-MATHAMMER_DEATHWING_KNIGHTS,Mathammer (Deathwing Knights),"With a Chaplain, after Saves:
-- Any Terminator: 2 Damage.
-- MEQ: 4 Damage.",,"With a Chaplain, after Saves:
-- Any Terminator: 2 Damage.
-- MEQ: 4 Damage.
-
-Great weapon of the Unforgiven is better vs Invuls as it bypasses the Saves.",,2,
 MENTAL_FORTRESS,Mental Fortress,This unit has a 4+ invulnerable save [INVULNERABLE SAVE 4+],Invulnerable save 4+,This unit has a 4+ invulnerable save.,"SHOOT, MELEE, [INVULNERABLE SAVE 4+]",2,
 METEORIC_DESCENT,Meteoric Descent,INGRESS this turn — RANGE [+1 TO HIT].,Ingress: ranged Hit +1,"If this unit made an ingress move this turn, this unit’s ranged attacks have +1 to hit rolls.",[SHOOT] [WEAPONS] [ACTIVE] [+1 TO HIT],2,
 DIVINATOR_CLASS_AUSPEXES,Divinator-class Auspexes,"Once per phase — SHOOTING — scan visible enemy within 18""; friendly ADEPTUS ASTARTES RANGE attacks vs it re-roll Hit rolls of 1.",Scanned: ranged reroll Hit1s,"Once per phase, per unit — In your Shooting phase, when a friendly ADEPTUS ASTARTES unit is selected to shoot, you can use this ability. If you do, select one visible enemy unit within 18"" of this unit. That unit is scanned. While a unit is scanned, ranged attacks that target that unit can re-roll hit rolls of 1.",[SHOOT] [ACTIVE],2,
