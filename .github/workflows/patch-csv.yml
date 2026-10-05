@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"MATHAMMER_DEATHWING_KNIGHTS","mode":"delete"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"DARK_ANGELS_BODYGUARD","column":"Visibility_ID","value":"1"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
