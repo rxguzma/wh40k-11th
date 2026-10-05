@@ -37,7 +37,12 @@ ONE_LAST_KILL,One Last Kill,[FIGHT ON DEATH 2+].,Fight on Death 2+,"In the Fight
 - On a 2+, do not remove this model from the battlefield. When this unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield.","MELEE, [FIGHT ON DEATH 2+]",1,
 PROPHET_OF_DA_GREAT_WAAAGH,Prophet of da Great Waaagh! (Aura),"AURA: ORKS within 6"" — MELEE [+1 TO HIT] [+1 TO WOUND]","Aura: melee Hit+1, Wound+1","While a friendly ORKS unit is within 6"" of this unit, that unit’s melee attacks have:
 - +1 to hit rolls
-- +1 to wound rolls","MELEE, [+1 TO HIT] [+1 TO WOUND]",2,0
+- +1 to wound rolls","[ROSTER_ALL]
+[ACTIVE]
+[WEAPONS]
+[MELEE]
+[+1 TO HIT]
+[+1 TO WOUND]",2,0
 PSYCHIC,PSYCHIC,Wounds from this weapon count as Psychic Attacks,Wounds count Psychic attacks,"If this weapon causes a unit to suffer one or more wounds, those wounds are considered to have been inflicted by a Psychic Attack.",,2,
 PULSA_ROKKIT,Pulsa Rokkit,"Once per battle vs MONSTER / VEHICLE 24"" 
 RANGE [+1 AP] and [LETHAL HITS]",Vs M/V - AP +1 + Lethal Hits,"Pulsa Rokkit (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can select one enemy MONSTER / VEHICLE unit within 24"" of this unit. If you do, this unit’s attacks that target that unit have:
