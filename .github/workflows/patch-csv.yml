@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"SYNAPTO_PRESCIENCE","column":"Short_Description","value":"NORN ASSIMILATOR has [4+ Invul]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_talons_of_the_norn_queen_enhancement_synapto_prescience","column":"Short_Description","value":"NORN ASSIMILATOR has [4+ Invul]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
