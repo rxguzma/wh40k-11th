@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_surprise_assault","column":"Long_Description","value":"WHEN\u003A Your Shooting phase or the Fight phase, just after a VANGUARD INVADER unit from your army has selected its targets.\\nTARGET\u003A That VANGUARD INVADER unit.\\nEFFECT\u003A Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well."}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_surprise_assault","column":"Short_Description","value":"SHOOT or FIGHT\\nTarget takes Battle-shock test\\nAgainst Target\u003A [+1 TO HIT]\\nIf test failed\u003A [+1 TO WOUND]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
