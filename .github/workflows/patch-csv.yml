@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_assassin_beasts_1cp","column":"Short_Description","value":"Unit gets [PRECISION]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_assassin_beasts","column":"Short_Description","value":"Unit gets [PRECISION]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
