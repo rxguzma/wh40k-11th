@@ -87,17 +87,21 @@ Go back to Reserves [STRATEGIC RESERVES]",Return units to Reserves,"WHEN: End of
 TARGET: One Tyranids unit or up to two Burrower units from your army that are not within Engagement Range of one or more enemy units.
 
 EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves.",[STRATEGIC RESERVES],,,,
-tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,tyranids_talons_of_the_norn_queen,Catalytic Biofortification,1,"ANY PHASE: When a NORN ASSIMILATOR suffers a mortal wound, that unit has FNP 4+ against mortal wounds. [FNP 4+]",FNP 4+ vs Mortal Wounds,"WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
+tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp,tyranids_talons_of_the_norn_queen,Catalytic Biofortification,1,"ANY PHASE
+NORN ASSIMILATOR [FNP 4+] vs Mortal Wounds",FNP 4+ vs Mortal Wounds,"WHEN: Any phase, when a friendly NORN ASSIMILATOR unit suffers a mortal wound.
 
 TARGET: That NORN ASSIMILATOR unit.
 
 EFFECT: Your unit has FNP 4+ against mortal wounds.",[FNP 4+],0,NORN ASSIMILATOR,,
-tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,tyranids_talons_of_the_norn_queen,Lesser Prey,1,"FIGHT: When a NORN ASSIMILATOR or NORN EMISSARY unit is selected to fight, its melee attacks have +2 Strength. [+2 S]",Melee Strength +2,"WHEN: Fight phase, when a friendly NORN ASSIMILATOR/NORN EMISSARY unit is selected to fight.
+tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp,tyranids_talons_of_the_norn_queen,Lesser Prey,1,"FIGHT
+NORN EMISSARY / ASSIMILATOR
+MELEE: [+2 S]",Melee Strength +2,"WHEN: Fight phase, when a friendly NORN ASSIMILATOR/NORN EMISSARY unit is selected to fight.
 
 TARGET: That NORN ASSIMILATOR/NORN EMISSARY unit.
 
 EFFECT: Your unit’s melee attacks have +2 S.","MELEE, [+2 S]",,,"NORN ASSIMILATOR, NORN EMISSARY",
-tyranids_talons_of_the_norn_queen_stratagem_tanglestrike_rounds_1cp,tyranids_talons_of_the_norn_queen,Tanglestrike Rounds,1,"SHOOTING: After a NORN ASSIMILATOR has shot, select an enemy hit by those attacks; that enemy is tethered until your next Command phase and has –2″ M.",Hit enemy Move -2”,"WHEN: Your Shooting phase, when a friendly NORN ASSIMILATOR unit has shot.
+tyranids_talons_of_the_norn_queen_stratagem_tanglestrike_rounds_1cp,tyranids_talons_of_the_norn_queen,Tanglestrike Rounds,1,"SHOOT
+NORN ASSIMILATOR after shooting: 1 enemy hit gets -2 M”",Hit enemy Move -2”,"WHEN: Your Shooting phase, when a friendly NORN ASSIMILATOR unit has shot.
 
 TARGET: That NORN ASSIMILATOR unit.
 
