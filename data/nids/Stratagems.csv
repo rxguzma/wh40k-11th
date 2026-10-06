@@ -106,9 +106,10 @@ NORN ASSIMILATOR after shooting: 1 enemy hit gets -2 M”",Hit enemy Move -2”,
 TARGET: That NORN ASSIMILATOR unit.
 
 EFFECT: Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase. While a unit is tethered, that unit has –2″ M.",SHOOT,,NORN ASSIMILATOR,,
-tyranids_vanguard_onslaught_stratagem_surprise_assault,tyranids_vanguard_onslaught,Surprise Assault,1,"Shooting of Fight
-+1 To Hit & Enemy Battle-shock
-If battle-shocked +1 To Wound [+1 TO HIT] [+1 TO HIT]",Hit +1; failed BS Wound +1,"SHOOT or FIGHT
+tyranids_vanguard_onslaught_stratagem_surprise_assault,tyranids_vanguard_onslaught,Surprise Assault,1,"SHOOT or FIGHT
+Target takes Battle-shock test
+Against Target\u003A [+1 TO HIT]
+If test failed\u003A [+1 TO WOUND]",Hit +1; failed BS Wound +1,"SHOOT or FIGHT
 Target takes Battle-shock test
 Against Target\u003A [+1 TO HIT]
 If test failed\u003A [+1 TO WOUND]","SHOOT, MELEE, [+1 TO HIT] [+1 TO HIT]",,VANGUARD INVADER,,
@@ -123,7 +124,9 @@ tyranids_vanguard_onslaught_stratagem_seeded_broods,tyranids_vanguard_onslaught,
 TARGET: One TYRANIDS unit from your army that is in Reserves, or up to two VANGUARD INVADER units from your army that are in Reserves.
 
 EFFECT: Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is.",,,,,
-tyranids_vanguard_onslaught_stratagem_hypersensory_scillia,tyranids_vanguard_onslaught,Hypersensory Scillia,2,Reactive Move,Reactive Move up to 6”,"REACTIVE MOVE
+tyranids_vanguard_onslaught_stratagem_hypersensory_scillia,tyranids_vanguard_onslaught,Hypersensory Scillia,2,"REACTIVE MOVE
+Enemy ends Normal, Advance or Fall Back within 8”
+1 INFANTRY or 2 Vanguard Invaders Move up to 6”",Reactive Move up to 6”,"REACTIVE MOVE
 Enemy ends Normal, Advance or Fall Back within 8”
 1 INFANTRY or 2 Vanguard Invaders Move up to 6”",,,,"VANGUARD INVADER, INFANTRY",
 tyranids_vanguard_onslaught_stratagem_unseen_lurkers,tyranids_vanguard_onslaught,Unseen Lurkers,1,"[Lone Op 18""] or [Lone Op 6”] if already Lone Op",Ranged target limit 18”/6”,"WHEN: Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
