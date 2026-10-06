@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_hypersensory_scillia_2cp","column":"Long_Description","value":"REACTIVE MOVE\\nEnemy ends Normal, Advance or Fall Back within 8”\\n1 INFANTRY or 2 Vanguard Invaders Move up to 6”"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_surprise_assault_1cp","column":"Long_Description","value":"SHOOT or FIGHT\\nTarget takes Battle-shock test\\nAgainst Target\\u003A [+1 TO HIT]\\nIf test failed: [+1 TO WOUND]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_hypersensory_scillia_2cp","column":"Long_Description","value":"REACTIVE MOVE\\nEnemy ends Normal, Advance or Fall Back within 8”\\n1 INFANTRY or 2 Vanguard Invaders Move up to 6”"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_surprise_assault_1cp","column":"Long_Description","value":"SHOOT or FIGHT\\nTarget takes Battle-shock test\\nAgainst Target\\u003A [+1 TO HIT]\\nIf test failed\\u003A [+1 TO WOUND]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
