@@ -108,8 +108,8 @@ TARGET: That NORN ASSIMILATOR unit.
 EFFECT: Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase. While a unit is tethered, that unit has –2″ M.",SHOOT,,NORN ASSIMILATOR,,
 tyranids_vanguard_onslaught_stratagem_surprise_assault,tyranids_vanguard_onslaught,Surprise Assault,1,"SHOOT or FIGHT
 Target takes Battle-shock test
-Against Target\u003A [+1 TO HIT]
-If test failed\u003A [+1 TO WOUND]",Hit +1; failed BS Wound +1,"WHEN: Your Shooting phase or the Fight phase, just after a VANGUARD INVADER unit from your army has selected its targets.
+Against Target: [+1 TO HIT]
+If test failed: [+1 TO WOUND]",Hit +1; failed BS Wound +1,"WHEN: Your Shooting phase or the Fight phase, just after a VANGUARD INVADER unit from your army has selected its targets.
 TARGET: That VANGUARD INVADER unit.
 EFFECT: Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.","SHOOT, MELEE, [+1 TO HIT] [+1 TO HIT]",,VANGUARD INVADER,,
 tyranids_vanguard_onslaught_stratagem_assassin_beasts,tyranids_vanguard_onslaught,Assassin Beasts,1,Unit gets [PRECISION],Melee gains Precision,"WHEN: Fight phase.
