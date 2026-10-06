@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Detachment_Definitions.csv","id_column":"Rule_ID","row_id":"tyranids_talons_of_the_norn_queen_detachment_rule_higher_imperatives","column":"Short_Description","value":"COMMAND\\nNORN EMISSARY / ASSIMILATOR\\nOnce per battle, per unit\u003A\\nChange Singular Purpose"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_talons_of_the_norn_queen_stratagem_lesser_prey_1cp","column":"Short_Description","value":"FIGHT\\nNORN EMISSARY / ASSIMILATOR\\nMELEE\u003A [+2 S]"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_talons_of_the_norn_queen_stratagem_catalytic_biofortification_1cp","column":"Short_Description","value":"ANY PHASE\\nNORN ASSIMILATOR [FNP 4+] vs Mortal Wounds"},{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_talons_of_the_norn_queen_stratagem_tanglestrike_rounds_1cp","column":"Short_Description","value":"SHOOT\\nNORN ASSIMILATOR after shooting\u003A 1 enemy hit gets -2 M”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SINGULAR_PURPOSE","column":"Short_Description","value":"Pick an objective; [OC 15] and [FNP 5+]\\nPick an enemy: [Re-roll Hits] and [Re-roll Wounds]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
