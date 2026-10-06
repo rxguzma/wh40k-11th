@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_vanguard_onslaught_enhancement_stalker","column":"Short_Description","value":"Vanguard Invader. Select Enemy for [+1 TO HIT] [+1 TO WOUND]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_vanguard_onslaught_enhancement_chameleonic","column":"Short_Description","value":"VANGUARD INVADER model gets [STEALTH]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
