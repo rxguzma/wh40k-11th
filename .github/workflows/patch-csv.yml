@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SINGULAR_PURPOSE","column":"Short_Description","value":"Pick an objective; [OC 15] and [FNP 5+]\\nPick an enemy: [Re-roll Hits] and [Re-roll Wounds]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Abilities.csv","id_column":"Ability_ID","row_id":"SINGULAR_PURPOSE","column":"Short_Description","value":"Pick an objective; [OC 15] and [FNP 5+]\\nPick an enemy\u003A [Re-roll Hits] and [Re-roll Wounds]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
