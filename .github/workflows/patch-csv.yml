@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_seeded_broods","column":"Short_Description","value":"Arrive early from [Reserves]\\n1 unit or 2 Vanguard Invaders"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_unseen_lurkers","column":"Short_Description","value":"[Lone Op 18\\\"] or [Lone Op 6”] if already Lone Op"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
