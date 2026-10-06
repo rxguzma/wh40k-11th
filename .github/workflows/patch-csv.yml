@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_vanguard_onslaught_enhancement_hunting_grounds","column":"Short_Description","value":"Enemy from Reserves take Battle-shock in 2+"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Enhancements.csv","id_column":"Enhancement_ID","row_id":"tyranids_vanguard_onslaught_enhancement_neuronode","column":"Short_Description","value":"[REDEPLOY 3] Vanguard Invaders"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
