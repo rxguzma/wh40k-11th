@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Detachments.csv","id_column":"Item_ID","row_id":"tyranids_vanguard_onslaught_stratagem_hypersensory_scillia","column":"Short_Description","value":"REACTIVE MOVE\nEnemy moves within 8”\n1 INFANTRY or 2 Vanguard Invaders Move 6”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_hypersensory_scillia","column":"Short_Description","value":"REACTIVE MOVE\nEnemy moves within 8”\n1 INFANTRY or 2 Vanguard Invaders Move 6”"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
