@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Definitions.csv","id_column":"Unit_ID","row_id":"TOXICRENE","column":"Points","value":"120"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Unit_Points.csv","id_column":"Unit_ID","row_id":"TOXICRENE","column":"Cost","value":"120"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
