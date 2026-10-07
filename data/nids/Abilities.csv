@@ -49,7 +49,7 @@ POUNCING_LEAP,Pouncing Leap,Heroic Intervention any number of times this phase. 
 - That use is -1 CP.
 - That use does not prevent any uses of that Stratagem on other units this phase.",[HEROIC INTERVENTION 0CP],2,
 PSYCHIC_TERROR_PSYCHIC,Psychic Terror (Psychic),"If a Neurotyrant is on the battlefield, Shadow in the Warp, subtract -1 from the Battle-shock test of enemy.",Shadow in Warp: enemy -1,"If one or more models from your army with this ability are on the battlefield when you unleash the Shadow in the Warp, subtract 1 from the Battle-shock test each enemy unit on the battlefield must take as a result.",,2,
-PSYCHOLOGICAL_SABOTEUR_AURA,Psychological Saboteur (Aura),"If Battleshock: -1 from Hit rolls, +1 To Wound them [ENEMY -1 TO HIT] [+1 TO WOUND] [+1 TO WOUND]",Shocked: Hit-1 / Wound+1,"While an enemy unit is within 12"" of this model, if that unit is Battle-shocked:
+PSYCHOLOGICAL_SABOTEUR_AURA,Psychological Saboteur (Aura),"Battle-shocked within 12"": [ENEMY -1 TO HIT]. Tyranids [+1 TO WOUND].",Shocked: Hit-1 / Wound+1,"While an enemy unit is within 12"" of this model, if that unit is Battle-shocked:
 - Each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 - Each time a friendly TYRANIDS model makes an attack that targets that unit, add 1 to the Wound roll.","SHOOT, MELEE, [ENEMY -1 TO HIT] [+1 TO WOUND] [+1 TO WOUND]",2,
 RAVENER_PRIME,Ravener Prime,"Prime Wounds = 6
