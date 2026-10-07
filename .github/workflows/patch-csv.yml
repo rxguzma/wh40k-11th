@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE","column":"Category","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE","column":"Category","value":"OTHER"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE","column":"Tags","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE","column":"Tags","value":"OTHER, [FNP 4+]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
