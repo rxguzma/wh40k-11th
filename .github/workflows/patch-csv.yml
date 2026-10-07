@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Stratagems.csv","id_column":"Stratagem_ID","row_id":"tyranids_vanguard_onslaught_stratagem_hypersensory_scillia","column":"Short_Description","value":"REACTIVE MOVE\nEnemy moves within 8”\n1 INFANTRY or 2 Vanguard Invaders Move 6”"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_RAMP","column":"Short_Description","value":"MOVE and UNIT can assault disembark."},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"LAND_RAIDER_REDEEMER_FLAMESTORM_CANNONS_X2","column":"Visibility_ID","value":"3"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
