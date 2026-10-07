@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"ASSAULT_RAMP","column":"Short_Description","value":"MOVE and UNIT can assault disembark."},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"LAND_RAIDER_REDEEMER_FLAMESTORM_CANNONS_X2","column":"Visibility_ID","value":"3"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BALLISTUS_MISSILE_LAUNCHER_FRAG","column":"Weapon Name","value":"Ballistus Missile - Frag"},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"BALLISTUS_MISSILE_LAUNCHER_KRAK","column":"Weapon Name","value":"Ballistus Missile - Krak"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
