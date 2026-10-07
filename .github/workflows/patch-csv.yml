@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE","column":"Tags","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE","column":"Tags","value":"OTHER, [FNP 4+]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_invasion_fleet","column":"Short_Description","value":"Swarming Instincts: [SUSTAIN 1] vs INFANTRY / SWARM\nHyper-Aggression: [LETHAL HITS] vs MONSTER / VEHICLE \nHive Predators: [PRECISION] vs CHARACTERS"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
