@@ -22,9 +22,9 @@ Deathleaper can be Warlord","TYRANIDS units with this ability are eligible to ch
 VANGUARD INVADER units with this ability are eligible to charge in a turn in which they Advanced.
 
 DEATHLEAPER loses the Hunter Organism rule and can be your WARLORD.",[ADVANCE AND CHARGE] [FALL BACK AND CHARGE],,,,
-tyranids_invasion_fleet,Tyranids,Invasion Fleet,tyranids_invasion_fleet_detachment_rule_detachment_rule,HYPER-ADAPTATIONS,3,Take and Hold,,"Swarming Instincts: Sustain 1
-Hyper-Aggression: Lethal Hits
-Hive Predators: Precision [SUSTAINED HITS 1] [SUSTAINED HITS 1] [LETHAL HITS] [LETHAL HITS] [PRECISION] [PRECISION]","At the start of the first battle round, select one of the following Hyper-adaptations to be active for TYRANIDS units from your army until the end of the battle.
+tyranids_invasion_fleet,Tyranids,Invasion Fleet,tyranids_invasion_fleet_detachment_rule_detachment_rule,HYPER-ADAPTATIONS,3,Take and Hold,,"Swarming Instincts: [SUSTAIN 1] vs INFANTRY / SWARM
+Hyper-Aggression: [LETHAL HITS] vs MONSTER / VEHICLE 
+Hive Predators: [PRECISION] vs CHARACTERS","At the start of the first battle round, select one of the following Hyper-adaptations to be active for TYRANIDS units from your army until the end of the battle.
 
 Swarming Instincts: Each time a TYRANIDS model with this Hyper-adaptation makes an attack that targets an INFANTRY or SWARM unit, that attack has the [SUSTAINED HITS 1] ability.
 
