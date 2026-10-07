@@ -290,11 +290,11 @@ This model is equipped with: 1 Bolt Pistol; 1 Master-crafted Bolter; 1 Master-cr
 CHIEF_LIBRARIAN_TIGURIUS_CHIEF_LIBRARIAN,Chief Librarian (psyker level 3),Psychic level 3; has the Psychic abilities listed for this unit.,,This model has the psychic abilities listed in the Psychic Abilities section (see left).,,2,,,
 CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE,Prescience (psychic level 2),MOVEMENT: Psychic roll; on a 1 Battle-shocked; +1 SV until start of next turn.,Psychic pass - Save +1,"In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 • On a 1, this unit is battle-shocked.
-• This unit has +1 Sv until the start of your next turn.","SHOOT, MELEE",2,,,
+• This unit has +1 Sv until the start of your next turn.",OTHER,2,,,
 CHIEF_LIBRARIAN_TIGURIUS_TELEPATHIC_ASSAULT,Telepathic Assault (psychic level 1),"SHOOTING: Psychic roll; on a 1 Battle-shocked; visible enemy within 24"" suffers 2D3 mortal wounds.",Psychic: 2D3 MW within 24”,"In your Shooting phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 • On a 1, this unit is battle-shocked.
 • Select one visible enemy unit within 24"" of this unit. That enemy unit suffers 2D3 mortal wounds.",,2,,,
-CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),[FNP 4+] against psychic attacks and mortal wounds.,FNP 4+ vs Psychic/MW,This unit has FNP 4+ against psychic attacks and mortal wounds.,"SHOOT, MELEE, [FNP 4+]",2,,,
+CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE,Hood of Hellfire (Psychic),[FNP 4+] against psychic attacks and mortal wounds.,FNP 4+ vs Psychic/MW,This unit has FNP 4+ against psychic attacks and mortal wounds.,"OTHER, [FNP 4+]",2,,,
 CHIEF_LIBRARIAN_TIGURIUS_UNIT_COMPOSITION,Unit Composition,"1 Chief Librarian Tigurius model
 Equipped: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath",,"1 Chief Librarian Tigurius model
 This model is equipped with: 1 Bolt Pistol; 1 Rod of Tigurius; 1 Storm of the Emperor’s Wrath.",,3,0,,
