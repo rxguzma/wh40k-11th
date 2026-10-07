@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CYCLONE_MISSLINE_FRAG","column":"Weapon Name","value":"Cyclone Missile - Frag"},{"file":"data/marines/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"CYCLONE_MISSLINE_KRAK","column":"Weapon Name","value":"Cyclone Missile - Krak"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_PRESCIENCE","column":"Category","value":"OTHER"},{"file":"data/marines/Abilities.csv","id_column":"Ability_ID","row_id":"CHIEF_LIBRARIAN_TIGURIUS_HOOD_OF_HELLFIRE","column":"Category","value":"OTHER"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
