@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_invasion_fleet","column":"Short_Description","value":"Swarming Instincts: [SUSTAIN 1] vs INFANTRY / SWARM\nHyper-Aggression: [LETHAL HITS] vs MONSTER / VEHICLE \nHive Predators: [PRECISION] vs CHARACTERS"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Detachment_Definitions.csv","id_column":"Detachment_ID","row_id":"tyranids_invasion_fleet","column":"Short_Description","value":"Swarming Instincts\u003A [SUSTAIN 1] vs INFANTRY / SWARM\nHyper-Aggression\u003A [LETHAL HITS] vs MONSTER / VEHICLE \nHive Predators\u003A [PRECISION] vs CHARACTERS"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
