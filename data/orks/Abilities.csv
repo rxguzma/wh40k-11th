@@ -226,7 +226,8 @@ NAZDREGS_KNOW_WOTZ,Nazdreg’s Know-wotz,"[DEEP STRIKE]
 Ranged: [IGNORES COVER]",Deep Strike; ranged Ig Cover,"- This unit has Deep Strike.
 - This unit’s ranged attacks have [IGNORES COVER].","UNIT, SHOOT, WEAPONS, DEEP STRIKE, IGNORES COVER",2,
 PILIN_OUT,Pilin’ Out,"Enemy ends move 8""
-Embarked can Rapid disembark",Enemy near - rapid disembark,"In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this model, units embarked within this model can make a disembark move using the rapid disembark mode.",,2,
+Embarked can Rapid disembark
+Note: Can’t Heroic Intervene",Enemy near - rapid disembark,"In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this model, units embarked within this model can make a disembark move using the rapid disembark mode.",,2,
 SPITEFUL_POWER_TRIP,Spiteful Power Trip,vs units with no T7+ models: [+1 TO HIT],Vs T<7 - Hit +1,This unit’s attacks that target a unit that has no models with a T of 7+ have +1 to hit rolls.,[ACTIVE] [SHOOT] [MELEE] [WEAPONS] [+1 TO HIT],2,0
 SUPREME_KUNNIN,Supreme Kunnin’,"REACTIVE MOVE
 Once per phase:
