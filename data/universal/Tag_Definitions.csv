@@ -1,138 +1,138 @@
-Tag_ID,Display_Tag,Title,Category,Affects,Description,Editable,Effect_Type,Target,Stat,Operation,Value,Sort_Order
-PLUS_1_W,+1 W,+1 Wound,Unit Stats,,Adds 1 Wound to the Unit.,TRUE,STAT,UNIT,W,ADD,1,1
-PLUS_1_T,+1 T,+1 Toughness,Unit Stats,,Adds 1 Toughness to the Unit.,TRUE,STAT,UNIT,T,ADD,1,2
-PLUS_1_OC,+1 OC,+1 Objective Control,Unit Stats,,Adds 1 Objective Control to the Unit.,TRUE,STAT,UNIT,OC,ADD,1,3
-PLUS_1_M,+1 M”,+1 Movement,Unit Stats,,Adds 1” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,1,4
-PLUS_2_M,+2 M”,+2 Movement,Unit Stats,,Adds 2” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,2,5
-PLUS_3_A_MELEE,+3 A,+3 Attack,Weapon Stats,,Adds 3 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,3,7
-PLUS_4_A_MELEE,+4 A,+4 Attacks,Weapon Stats,,Adds 4 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,4,14
-PLUS_6_A_RANGE,+6 A,+6 Attacks,Weapon Stats,,Adds 6 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,6,17
-PLUS_6_M,+6 M”,+6 Movement,Unit Stats,,Adds 6” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,6,21
-PLUS_4_M,+4 M”,+4 Movement,Unit Stats,,Adds 4” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,4,22
-INFO_INCOMING_MINUS_1_WOUND,INCOMING -1 TO WOUND,Incoming -1 To Wound,Info Only,,Incoming attacks can suffer -1 to wound as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,900
-INFO_INCOMING_RANGE_MINUS_1_WOUND,INCOMING RANGE -1 TO WOUND,Incoming Ranged -1 To Wound,Info Only,,Incoming ranged attacks can suffer -1 to wound as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,901
-INFO_INCOMING_RANGE_MINUS_1_D,INCOMING RANGE -1 D,Incoming Ranged -1 Damage,Info Only,,Incoming ranged attacks have a damage reduction as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,902
-INFO_INCOMING_MINUS_1_D,INCOMING -1 D,Incoming -1 Damage,Info Only,,Incoming attacks have a damage reduction as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,903
-INFO_INCOMING_MINUS_1_AP,INCOMING -1 AP,Incoming AP Worsened,Info Only,,Incoming attacks have their AP worsened as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,904
-INFO_ENEMY_MINUS_1_TO_HIT,ENEMY -1 TO HIT,Enemy -1 To Hit,Info Only,,An affected enemy suffers -1 to hit as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,905
-INFO_OUTGOING_RANGE_MINUS_1_TO_HIT,OUTGOING RANGE -1 TO HIT,Outgoing Ranged -1 To Hit,Info Only,,Outgoing ranged attacks suffer -1 to hit in the condition described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,906
-INFO_ENEMY_AUTOPASS_HAZARD,ENEMY AUTO-PASS HAZARD,Enemy Auto-pass Hazard,Info Only,,An affected enemy automatically passes hazard rolls in the condition described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,907
-INFO_TARGET_GETS_COVER,TARGET GETS COVER,Target Gets Cover,Info Only,,The affected target receives the Benefit of Cover as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,908
-INFO_ENEMY_MINUS_2_BATTLESHOCK,ENEMY -2 BATTLE-SHOCK,Enemy -2 Battle-shock,Info Only,,An affected enemy suffers -2 to its Battle-shock roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,910
-INFO_ENEMY_MINUS_1_LD,ENEMY -1 LD,Enemy -1 Leadership,Info Only,,An affected enemy suffers -1 Leadership as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,911
-INFO_ENEMY_MINUS_2_M,ENEMY -2 M”,Enemy -2 Movement,Info Only,,An affected enemy suffers -2 Movement as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,912
-INFO_ENEMY_GROUNDED,ENEMY GROUNDED,Enemy Grounded,Info Only,,An affected enemy is grounded as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,913
-INFO_INCOMING_RANGE_HIT_1_3_FAILS,INCOMING RANGE HIT 1-3 FAILS,Incoming Ranged Hits 1-3 Fail,Info Only,,Incoming ranged attacks fail on unmodified hit rolls of 1-3 as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,914
-CLEAVE_1_MELEE,CLEAVE 1,Cleave 1,Melee - Weapon Rules,,Adds 1 Melee attack per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,1,306
-CLEAVE_2_MELEE,CLEAVE 2,Cleave 2,Melee - Weapon Rules,,Adds 2 Melee attacks per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,2,307
-TORRENT_RANGE,TORRENT,Torrent,Range - Weapon Rules,,Applies Torrent to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,TORRENT,SET,1,606
-HEAVY_RANGE,HEAVY,Heavy,Range - Weapon Rules,,Applies Heavy to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,HEAVY,SET,1,607
-IGNORES_COVER_RANGE,IGNORES COVER,Ignores Cover,Range - Weapon Rules,,Applies Ignores Cover to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,IGNORES_COVER,SET,1,608
-BLAST_RANGE,BLAST,Blast,Range - Weapon Rules,,Applies Blast to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,BLAST,SET,1,609
-RAPID_FIRE_1_RANGE,RAPID FIRE 1,Rapid Fire 1,Range - Weapon Rules,,Applies Rapid Fire 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,RAPID_FIRE,SET,1,610
-MELTA_1_RANGE,MELTA 1,Melta 1,Range - Weapon Rules,,Applies Melta 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,MELTA,SET,1,611
-MINUS_1_SV,-1 SV,-1 Save,Unit Stats,,Improves the Unit Save characteristic by 1.,TRUE,STAT,UNIT,SV,IMPROVE,1,705
-MINUS_1_LD,-1 LD,-1 Leadership,Unit Stats,,Improves the Unit Leadership characteristic by 1.,TRUE,STAT,UNIT,LD,IMPROVE,1,706
-OVERWATCH_RANGE,OVERWATCH,Overwatch,Range - Weapon Rules,,Applies Overwatch to Ranged attacks.,TRUE,WEAPON_RULE,RANGE,OVERWATCH,SET,1,614
-PLUS_1_WS_MELEE,+1 WS,+1 WS,Melee - Weapon Stats,,Improves Weapon Skill by 1 for Melee weapons.,TRUE,WEAPON_STAT,MELEE,WS,IMPROVE,1,108
-SAVE_4_PLUS,SAVE 4+,Save 4+,Unit Stats,,Sets the unit Save characteristic to 4+.,TRUE,UNIT_STAT,UNIT,SAVE,SET,4,7
-PLUS_3_RANGE,+3 R”,+3 R”,Range - Weapon Stats,,Adds 3 inches to the Range characteristic of Ranged weapons.,TRUE,WEAPON_STAT,RANGE,R,ADD,3,407
-FALL_BACK_AND_SHOOT,FALL BACK AND SHOOT,Fall Back and Shoot,Movement Rules,,Falling Back does not prevent the unit from shooting when the source rule allows it.,TRUE,,,,,,803
-ADVANCE_6,ADVANCE 6,Advance 6,Movement Rules,,"When this rule is active, treat the unit Advance roll as 6.",TRUE,,,,,,806
-ENEMY_MINUS_1_T,ENEMY -1 T,Enemy -1 Toughness,Info Only,,The affected enemy unit has -1 Toughness while the source rule applies.,TRUE,,,,,,907
-REMOVE_BATTLE_SHOCK,REMOVE BATTLE-SHOCK,Remove Battle-shock,Unit Rules,,The affected unit is no longer Battle-shocked when the source rule is used.,TRUE,,,,,,818
-REDEPLOY_3,REDEPLOY 3,Redeploy 3,Movement Rules,,The source rule allows up to three eligible units to be redeployed.,TRUE,,,,,,819
-FORCE_DESPERATE_ESCAPE,FORCE DESPERATE ESCAPE,Force Desperate Escape,Info Only,,An affected enemy unit that Falls Back must use Desperate Escape when the source rule applies.,TRUE,,,,,,908
-ENEMY_MINUS_1_HAZARD,ENEMY -1 HAZARD,Enemy -1 Hazard,Info Only,,Apply -1 to the affected enemy unit Hazard rolls when the source rule applies.,TRUE,,,,,,909
-INGRESS_MOVE,INGRESS MOVE,Ingress Move,Movement Rules,,The source rule allows the unit to make an ingress move at the specified time.,TRUE,,,,,,820
-ASSAULT,ASSAULT,Assault,Range - Weapon Rules,,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,WEAPON_RULE,RANGE,ASSAULT,SET,1,821
-ADVANCE_AND_CHARGE,ADVANCE AND CHARGE,Advance and Charge,Movement Rules,,The affected unit can declare a charge in a turn in which it Advanced while this rule is active.,TRUE,,,,,,822
-RETURN_ON_2_PLUS,RETURN ON 2+,Return on 2+,Unit Rules,,The affected model or unit can return on a 2+ when the source rule is triggered.,TRUE,,,,,,823
-CHARACTER,CHARACTER,Character,Unit Rules,,The affected unit has the CHARACTER keyword while this rule is active.,TRUE,,,,,,825
-RE_ROLL_BATTLE_SHOCK,RE-ROLL BATTLE-SHOCK,Re-roll Battle-shock,Unit Rules,,The affected unit can re-roll the Battle-shock test specified by the source rule.,TRUE,,,,,,826
-RE_ROLL_ATTACK_DICE,RE-ROLL ATTACK DICE,Re-roll Attack Dice,Unit Rules,,The affected unit can re-roll the attack dice specified by the source rule.,TRUE,,,,,,827
-MELEE_DAMAGE_3,DAMAGE 3,Damage 3,Melee - Weapon Stats,,Sets Damage to 3 for each affected melee weapon.,TRUE,WEAPON_STAT,WEAPON,D,SET,3,830
-SUPA_HAZARDOUS,SUPA-HAZARDOUS,Supa-Hazardous,Unit Rules,,The affected unit is subject to the Supa-Hazardous condition specified by the source rule.,TRUE,,,,,,832
-LONE_OPERATIVE,LONE OP,Lone Operative,Unit Rules,,The affected unit has Lone Operative while this rule is active.,TRUE,,,,,,833
-LONE_OPERATIVE_3,"LONE OP 3""","Lone Operative 3""",Unit Rules,,"The affected unit has Lone Operative under the 3"" proximity condition specified by the source rule.",TRUE,,,,,,833
-FIGHTS_FIRST,FIGHTS FIRST,Fights First,Unit Rules,,The affected unit has Fights First while this rule is active.,TRUE,,,,,,834
-RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Re-roll Advance,Movement Rules,,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
-GAIN_1_CP,GAIN 1 CP,Gain 1 CP,Unit Rules,,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
-FIGHT_ON_DEATH,FIGHT ON DEATH,Fight on Death,Unit Rules,,The affected unit can fight on death while this rule is active.,TRUE,,,,,,915
-FIGHT_ON_DEATH_3_PLUS,FIGHT ON DEATH 3+,Fight on Death 3+,Unit Rules,,The affected unit can fight on death on a 3+ while this rule is active.,TRUE,,,,,,916
-FIGHT_ON_DEATH_4_PLUS,FIGHT ON DEATH 4+,Fight on Death 4+,Unit Rules,,The affected unit can fight on death on a 4+ while this rule is active.,TRUE,,,,,,917
-FEEL_NO_PAIN_4_PLUS,FNP 4+,FNP 4+,Unit Rules,,The affected unit has FNP 4+ while this rule is active.,TRUE,,,,,,918
-FEEL_NO_PAIN_5_PLUS,FNP 5+,FNP 5+,Unit Rules,,The affected unit has FNP 5+ while this rule is active.,TRUE,,,,,,919
-FEEL_NO_PAIN_6_PLUS,FNP 6+,FNP 6+,Unit Rules,,The affected unit has FNP 6+ while this rule is active.,TRUE,,,,,,920
-SCOUT_6,Scout 6”,Scout 6”,Movement Rules,,The affected unit has Scout 6” while this rule is active.,TRUE,,,,,,921
-PLUS_1_ADVANCE,+1 ADVANCE,+1 Advance,Movement Rules,,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
-ANTI_MONSTER_3_MELEE,ANTI-MONSTER 3+,Anti-Monster 3+,Melee - Weapon Rules,,Applies Anti-Monster 3+ to Melee weapons.,TRUE,WEAPON_RULE,MELEE,ANTI_MONSTER,SET,3,929
-ANTI_VEHICLE_4_RANGE,ANTI-VEHICLE 4+,Anti-Vehicle 4+,Range - Weapon Rules,,Applies Anti-Vehicle 4+ to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,ANTI_VEHICLE,SET,4,930
-INVULNERABLE_SAVE_4_PLUS,INVULNERABLE SAVE 4+,Invulnerable Save 4+,Unit Rules,,The affected unit has a 4++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,4,933
-INVULNERABLE_SAVE_5_PLUS,INVULNERABLE SAVE 5+,Invulnerable Save 5+,Unit Rules,,The affected unit has a 5++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,934
-INVULNERABLE_SAVE_6_PLUS,INVULNERABLE SAVE 6+,Invulnerable Save 6+,Unit Rules,,The affected unit has a 6++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,6,935
-PLUS_2_CHARGE,+2 CHARGE,+2 Charge,Movement Rules,,Add 2 to Charge rolls while this rule is active.,TRUE,,,,,,936
-BATTLELINE,BATTLELINE,Battleline,Unit Rules,,The affected unit has the Battleline rule.,TRUE,,,,,,937
-BENEFIT_OF_COVER,BENEFIT OF COVER,Benefit of Cover,Unit Rules,,The affected unit has the Benefit of Cover.,TRUE,,,,,,938
-CLOSE_QUARTERS,CLOSE-QUARTERS,Close-Quarters,Range - Weapon Rules,,Close-quarters ranged rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,CLOSE_QUARTERS,SET,1,939
-DEEP_STRIKE,DEEP STRIKE,Deep Strike,Unit Rules,,The affected unit has Deep Strike.,TRUE,,,,,,940
-FALL_BACK_AND_CHARGE,FALL BACK AND CHARGE,Fall Back and Charge,Movement Rules,,The affected unit can charge after Falling Back.,TRUE,,,,,,941
-FIGHT_ON_DEATH_2_PLUS,FIGHT ON DEATH 2+,Fight on Death 2+,Unit Rules,,The affected unit fights on death on a 2+.,TRUE,,,,,,942
-HEROIC_INTERVENTION_0CP,HEROIC INTERVENTION 0CP,Heroic Intervention 0CP,Unit Rules,,Heroic Intervention costs 0 CP.,TRUE,,,,,,944
-IGNORE_MOVE_MODIFIERS,IGNORE MOVE MODIFIERS,Ignore Move Modifiers,Movement Rules,,Ignore modifiers to Move.,TRUE,,,,,,945
-INFILTRATORS,INFILTRATORS,Infiltrators,Unit Rules,,The affected unit has Infiltrators.,TRUE,,,,,,946
-INGRESS,INGRESS,Ingress,Movement Rules,,The affected unit can Ingress.,TRUE,,,,,,947
-KOMBI,KOMBI,Kombi,Range - Weapon Rules,,Kombi weapon rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,KOMBI,SET,1,948
-MOVE_THROUGH_MODELS,MOVE THROUGH MODELS,Move Through Models,Movement Rules,,The affected unit can move through models.,TRUE,,,,,,949
-RE_ROLL_CHARGE,RE-ROLL CHARGE,Re-roll Charge,Movement Rules,,The affected unit can re-roll Charge rolls.,TRUE,,,,,,950
-RILED_UP,RILED UP,Riled Up,Unit Rules,,The affected unit is Riled Up.,TRUE,,,,,,951
-STEALTH,STEALTH,Stealth,Unit Rules,,The affected unit has Stealth.,TRUE,,,,,,952
-STICKY_OBJECTIVES,STICKY OBJECTIVES,Sticky Objectives,Unit Rules,,The affected unit has Sticky Objectives.,TRUE,,,,,,953
-STRATEGIC_RESERVES,STRATEGIC RESERVES,Strategic Reserves,Movement Rules,,The affected unit can use Strategic Reserves.,TRUE,,,,,,954
-INFO_INTIMIDATING_MOTIVATION,INTIMIDATING MOTIVATION,Intimidating Motivation,Info Only,,Intimidating Motivation applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,920
-INFO_KEEP_HUNTIN,KEEP HUNTIN',Keep Huntin',Info Only,,Keep Huntin' applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,921
-ACTION_WHILE_ENGAGED,ACTION while ENGAGED,Action While Engaged,Unit Rules,,Unit can start an action while engaged.,TRUE,,,,,,
-UNIT,UNIT,Unit Section,Unit Rules,,Propagates this Ability to every other Unit in the same saved section.,FALSE,,,,,,
-SHOOT,SHOOT,Shoot Display,Ability Control,,Displays this Ability in the SHOOT section in VIEW.,FALSE,,,,,,
-MELEE,MELEE,Melee Display,Ability Control,,Displays this Ability in the MELEE section in VIEW.,FALSE,,,,,,
-STATS,STATS,Unit Stats Control,Ability Control,,Allows this Ability's structured Unit-stat effects to apply in VIEW.,FALSE,,,,,,
-WEAPONS,WEAPONS,Weapon Mechanics Control,Ability Control,,Allows this Ability's structured Weapon-stat and Weapon-rule effects to apply in VIEW.,FALSE,,,,,,
-ACTIVE,ACTIVE,Active Mechanics Control,Ability Control,,Requires this Ability to be Active in VIEW before its permitted structured mechanics apply.,FALSE,,,,,,
-LANCE_GENERIC,LANCE,Lance,Melee - Weapon Rules,,Applies the Lance weapon rule when routed by Ability control tags.,TRUE,WEAPON_RULE,,LANCE,SET,1,955
-PLUS_6_R_GENERIC,+6 R”,+6 Range,Range - Weapon Stats,,Adds 6 inches to weapon Range when routed by Ability control tags.,TRUE,WEAPON_STAT,,R,ADD,6,956
-INFO_ENEMY_MINUS_1_BATTLESHOCK,ENEMY -1 BATTLE-SHOCK,Enemy -1 Battle-shock,Info Only,,An affected enemy suffers -1 to its Battle-shock roll as described by the source rule.,TRUE,,,,,,957
-MECHANIC_PLUS_1_TO_HIT,+1 TO HIT,+1 To Hit,Combat Modifiers,,Improves Hit rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,HIT,IMPROVE,1,201
-MECHANIC_PLUS_1_TO_WOUND,+1 TO WOUND,+1 To Wound,Combat Modifiers,,Improves Wound rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,WOUND,IMPROVE,1,202
-MECHANIC_REROLL_1S_TO_HIT,RE-ROLL 1S TO HIT,Re-roll 1s To Hit,Combat Modifiers,,Re-rolls Hit rolls of 1 when routed by the owning Ability controls.,TRUE,REROLL,,HIT,ONES,1,203
-MECHANIC_REROLL_ALL_HITS,RE-ROLL ALL HITS,Re-roll All Hits,Combat Modifiers,,Re-rolls all Hit rolls when routed by the owning Ability controls.,TRUE,REROLL,,HIT,ALL,1,204
-MECHANIC_REROLL_1S_TO_WOUND,RE-ROLL 1S TO WOUND,Re-roll 1s To Wound,Combat Modifiers,,Re-rolls Wound rolls of 1 when routed by the owning Ability controls.,TRUE,REROLL,,WOUND,ONES,1,205
-MECHANIC_REROLL_ALL_WOUNDS,RE-ROLL ALL WOUNDS,Re-roll All Wounds,Combat Modifiers,,Re-rolls all Wound rolls when routed by the owning Ability controls.,TRUE,REROLL,,WOUND,ALL,1,206
-MECHANIC_MINUS_1_TO_HIT,-1 TO HIT,-1 To Hit,Combat Modifiers,,Worsens Hit rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,HIT,WORSEN,1,207
-MECHANIC_MINUS_1_TO_WOUND,-1 TO WOUND,-1 To Wound,Combat Modifiers,,Worsens Wound rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,WOUND,WORSEN,1,208
-MECHANIC_LETHAL_HITS,LETHAL HITS,Lethal Hits,Weapon Rules,,Adds Lethal Hits when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,LETHAL_HITS,SET,1,301
-MECHANIC_DEVASTATING_WOUNDS,DEVASTATING WOUNDS,Devastating Wounds,Weapon Rules,,Adds Devastating Wounds when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,DEVASTATING_WOUNDS,SET,1,302
-MECHANIC_TWIN_LINKED,TWIN-LINKED,Twin-linked,Weapon Rules,,Adds Twin-linked when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,TWIN_LINKED,SET,1,303
-MECHANIC_SUSTAINED_HITS_1,SUSTAINED HITS 1,Sustained Hits 1,Weapon Rules,,Adds Sustained Hits 1 when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,SUSTAINED_HITS,SET,1,304
-MECHANIC_SUSTAINED_HITS_2,SUSTAINED HITS 2,Sustained Hits 2,Weapon Rules,,Adds Sustained Hits 2 when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,SUSTAINED_HITS,SET,2,305
-MECHANIC_ANTI_VEHICLE_3,ANTI-VEHICLE 3+,Anti-Vehicle 3+,Weapon Rules,,Adds Anti-Vehicle 3+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,ANTI_VEHICLE,SET,3,308
-MECHANIC_ANTI_INFANTRY_4,ANTI-INFANTRY 4+,Anti-Infantry 4+,Weapon Rules,,Adds Anti-Infantry 4+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,ANTI_INFANTRY,SET,4,309
-MECHANIC_CRITS_5_PLUS,CRITS 5+,Crits 5+,Weapon Rules,,Critical hits occur on unmodified 5+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,CRITS,SET,5,310
-MECHANIC_PRECISION,PRECISION,Precision,Weapon Rules,,Adds Precision when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,PRECISION,SET,1,311
-MECHANIC_HAZARDOUS,HAZARDOUS,Hazardous,Weapon Rules,,Adds Hazardous when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,HAZARDOUS,SET,1,312
-MECHANIC_PLUS_1_A,+1 A,+1 Attack,Weapon Stats,,Adds 1 Attack when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,1,401
-MECHANIC_PLUS_1_S,+1 S,+1 Strength,Weapon Stats,,Adds 1 Strength when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,S,ADD,1,402
-MECHANIC_PLUS_2_S,+2 S,+2 Strength,Weapon Stats,,Adds 2 Strength when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,S,ADD,2,403
-MECHANIC_PLUS_1_AP,+1 AP,+1 AP,Weapon Stats,,Improves AP by 1 when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,AP,IMPROVE,1,404
-MECHANIC_PLUS_1_D,+1 D,+1 Damage,Weapon Stats,,Adds 1 Damage when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,D,ADD,1,405
-MECHANIC_PLUS_2_A,+2 A,+2 Attacks,Weapon Stats,,Adds 2 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,2,22
-MECHANIC_REROLL_ALL_DAMAGE,RE-ROLL DAMAGE,Re-roll Damage,Combat Modifiers,,Re-rolls Damage rolls when routed by the owning Ability controls.,TRUE,REROLL,,DAMAGE,ALL,1,209
-SCOUT_8,Scout 8”,Scout 8”,Movement Rules,,The affected unit has Scout 8” while this rule is active.,TRUE,,,,,,922
-INFO_REROLL_ONE_HIT_ROLL,RE-ROLL ONE HIT ROLL,Re-roll One Hit Roll,Info Only,,The affected unit can re-roll one Hit roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,960
-INFO_REROLL_ONE_WOUND_ROLL,RE-ROLL ONE WOUND ROLL,Re-roll One Wound Roll,Info Only,,The affected unit can re-roll one Wound roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,961
-INFO_HEAL_1_WOUND,HEAL 1 WOUND,Heal 1 Wound,Info Only,,The affected unit heals 1 wound at the timing specified by the source rule. Informational only; no runtime effect.,TRUE,,,,,,962
-INFO_FNP_5_PLUS_VS_MORTAL_WOUNDS,FNP 5+ VS MORTAL WOUNDS,FNP 5+ vs Mortal Wounds,Info Only,,The affected unit has Feel No Pain 5+ against mortal wounds only while this rule is active. Informational only; no runtime effect.,TRUE,,,,,,963
-INFO_IGNORE_BS_MODIFIERS,IGNORE BS MODIFIERS,Ignore BS Modifiers,Info Only,,Ignore modifiers to Ballistic Skill as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,964
-INFO_IGNORE_HIT_MODIFIERS,IGNORE HIT MODIFIERS,Ignore Hit Modifiers,Info Only,,Ignore modifiers to Hit rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,965
-INFO_IGNORE_WOUND_MODIFIERS,IGNORE WOUND MODIFIERS,Ignore Wound Modifiers,Info Only,,Ignore modifiers to Wound rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,966
-INFO_LETHAL_HITS_MONSTER_VEHICLE,LETHAL HITS: MONSTER/VEHICLE,Lethal Hits: Monster/Vehicle,Info Only,,Ranged attacks have Lethal Hits only against MONSTER or VEHICLE targets as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,967
-FLAMESTORM_CANNONS_X2,Flamestorm Cannons x2,Flamestorm Cannons x2,Unit Rules,,This unit has two Flamestorm Cannons represented by one combined weapon profile.,TRUE,,,,,,923
+Tag_ID,Display_Tag,Category,Affects,Description,Editable,Effect_Type,Target,Stat,Operation,Value,Sort_Order
+PLUS_1_W,+1 W,Unit Stats,,Adds 1 Wound to the Unit.,TRUE,STAT,UNIT,W,ADD,1,1
+PLUS_1_T,+1 T,Unit Stats,,Adds 1 Toughness to the Unit.,TRUE,STAT,UNIT,T,ADD,1,2
+PLUS_1_OC,+1 OC,Unit Stats,,Adds 1 Objective Control to the Unit.,TRUE,STAT,UNIT,OC,ADD,1,3
+PLUS_1_M,+1 M”,Unit Stats,,Adds 1” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,1,4
+PLUS_2_M,+2 M”,Unit Stats,,Adds 2” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,2,5
+PLUS_3_A_MELEE,+3 A,Weapon Stats,,Adds 3 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,3,7
+PLUS_4_A_MELEE,+4 A,Weapon Stats,,Adds 4 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,4,14
+PLUS_6_A_RANGE,+6 A,Weapon Stats,,Adds 6 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,6,17
+PLUS_6_M,+6 M”,Unit Stats,,Adds 6” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,6,21
+PLUS_4_M,+4 M”,Unit Stats,,Adds 4” Movement to the Unit.,TRUE,STAT,UNIT,M,ADD,4,22
+INFO_INCOMING_MINUS_1_WOUND,INCOMING -1 TO WOUND,Info Only,,Incoming attacks can suffer -1 to wound as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,900
+INFO_INCOMING_RANGE_MINUS_1_WOUND,INCOMING RANGE -1 TO WOUND,Info Only,,Incoming ranged attacks can suffer -1 to wound as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,901
+INFO_INCOMING_RANGE_MINUS_1_D,INCOMING RANGE -1 D,Info Only,,Incoming ranged attacks have a damage reduction as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,902
+INFO_INCOMING_MINUS_1_D,INCOMING -1 D,Info Only,,Incoming attacks have a damage reduction as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,903
+INFO_INCOMING_MINUS_1_AP,INCOMING -1 AP,Info Only,,Incoming attacks have their AP worsened as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,904
+INFO_ENEMY_MINUS_1_TO_HIT,ENEMY -1 TO HIT,Info Only,,An affected enemy suffers -1 to hit as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,905
+INFO_OUTGOING_RANGE_MINUS_1_TO_HIT,OUTGOING RANGE -1 TO HIT,Info Only,,Outgoing ranged attacks suffer -1 to hit in the condition described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,906
+INFO_ENEMY_AUTOPASS_HAZARD,ENEMY AUTO-PASS HAZARD,Info Only,,An affected enemy automatically passes hazard rolls in the condition described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,907
+INFO_TARGET_GETS_COVER,TARGET GETS COVER,Info Only,,The affected target receives the Benefit of Cover as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,908
+INFO_ENEMY_MINUS_2_BATTLESHOCK,ENEMY -2 BATTLE-SHOCK,Info Only,,An affected enemy suffers -2 to its Battle-shock roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,910
+INFO_ENEMY_MINUS_1_LD,ENEMY -1 LD,Info Only,,An affected enemy suffers -1 Leadership as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,911
+INFO_ENEMY_MINUS_2_M,ENEMY -2 M”,Info Only,,An affected enemy suffers -2 Movement as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,912
+INFO_ENEMY_GROUNDED,ENEMY GROUNDED,Info Only,,An affected enemy is grounded as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,913
+INFO_INCOMING_RANGE_HIT_1_3_FAILS,INCOMING RANGE HIT 1-3 FAILS,Info Only,,Incoming ranged attacks fail on unmodified hit rolls of 1-3 as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,914
+CLEAVE_1_MELEE,CLEAVE 1,Melee - Weapon Rules,,Adds 1 Melee attack per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,1,306
+CLEAVE_2_MELEE,CLEAVE 2,Melee - Weapon Rules,,Adds 2 Melee attacks per 5 target models.,TRUE,WEAPON_RULE,MELEE,CLEAVE,SET,2,307
+TORRENT_RANGE,TORRENT,Range - Weapon Rules,,Applies Torrent to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,TORRENT,SET,1,606
+HEAVY_RANGE,HEAVY,Range - Weapon Rules,,Applies Heavy to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,HEAVY,SET,1,607
+IGNORES_COVER_RANGE,IGNORES COVER,Range - Weapon Rules,,Applies Ignores Cover to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,IGNORES_COVER,SET,1,608
+BLAST_RANGE,BLAST,Range - Weapon Rules,,Applies Blast to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,BLAST,SET,1,609
+RAPID_FIRE_1_RANGE,RAPID FIRE 1,Range - Weapon Rules,,Applies Rapid Fire 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,RAPID_FIRE,SET,1,610
+MELTA_1_RANGE,MELTA 1,Range - Weapon Rules,,Applies Melta 1 to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,MELTA,SET,1,611
+MINUS_1_SV,-1 SV,Unit Stats,,Improves the Unit Save characteristic by 1.,TRUE,STAT,UNIT,SV,IMPROVE,1,705
+MINUS_1_LD,-1 LD,Unit Stats,,Improves the Unit Leadership characteristic by 1.,TRUE,STAT,UNIT,LD,IMPROVE,1,706
+OVERWATCH_RANGE,OVERWATCH,Range - Weapon Rules,,Applies Overwatch to Ranged attacks.,TRUE,WEAPON_RULE,RANGE,OVERWATCH,SET,1,614
+PLUS_1_WS_MELEE,+1 WS,Melee - Weapon Stats,,Improves Weapon Skill by 1 for Melee weapons.,TRUE,WEAPON_STAT,MELEE,WS,IMPROVE,1,108
+SAVE_4_PLUS,SAVE 4+,Unit Stats,,Sets the unit Save characteristic to 4+.,TRUE,UNIT_STAT,UNIT,SAVE,SET,4,7
+PLUS_3_RANGE,+3 R”,Range - Weapon Stats,,Adds 3 inches to the Range characteristic of Ranged weapons.,TRUE,WEAPON_STAT,RANGE,R,ADD,3,407
+FALL_BACK_AND_SHOOT,FALL BACK AND SHOOT,Movement Rules,,Falling Back does not prevent the unit from shooting when the source rule allows it.,TRUE,,,,,,803
+ADVANCE_6,ADVANCE 6,Movement Rules,,"When this rule is active, treat the unit Advance roll as 6.",TRUE,,,,,,806
+ENEMY_MINUS_1_T,ENEMY -1 T,Info Only,,The affected enemy unit has -1 Toughness while the source rule applies.,TRUE,,,,,,907
+REMOVE_BATTLE_SHOCK,REMOVE BATTLE-SHOCK,Unit Rules,,The affected unit is no longer Battle-shocked when the source rule is used.,TRUE,,,,,,818
+REDEPLOY_3,REDEPLOY 3,Movement Rules,,The source rule allows up to three eligible units to be redeployed.,TRUE,,,,,,819
+FORCE_DESPERATE_ESCAPE,FORCE DESPERATE ESCAPE,Info Only,,An affected enemy unit that Falls Back must use Desperate Escape when the source rule applies.,TRUE,,,,,,908
+ENEMY_MINUS_1_HAZARD,ENEMY -1 HAZARD,Info Only,,Apply -1 to the affected enemy unit Hazard rolls when the source rule applies.,TRUE,,,,,,909
+INGRESS_MOVE,INGRESS MOVE,Movement Rules,,The source rule allows the unit to make an ingress move at the specified time.,TRUE,,,,,,820
+ASSAULT,ASSAULT,Range - Weapon Rules,,The affected ranged weapon has the Assault ability while this rule is active.,TRUE,WEAPON_RULE,RANGE,ASSAULT,SET,1,821
+ADVANCE_AND_CHARGE,ADVANCE AND CHARGE,Movement Rules,,The affected unit can declare a charge in a turn in which it Advanced while this rule is active.,TRUE,,,,,,822
+RETURN_ON_2_PLUS,RETURN ON 2+,Unit Rules,,The affected model or unit can return on a 2+ when the source rule is triggered.,TRUE,,,,,,823
+CHARACTER,CHARACTER,Unit Rules,,The affected unit has the CHARACTER keyword while this rule is active.,TRUE,,,,,,825
+RE_ROLL_BATTLE_SHOCK,RE-ROLL BATTLE-SHOCK,Unit Rules,,The affected unit can re-roll the Battle-shock test specified by the source rule.,TRUE,,,,,,826
+RE_ROLL_ATTACK_DICE,RE-ROLL ATTACK DICE,Unit Rules,,The affected unit can re-roll the attack dice specified by the source rule.,TRUE,,,,,,827
+MELEE_DAMAGE_3,DAMAGE 3,Melee - Weapon Stats,,Sets Damage to 3 for each affected melee weapon.,TRUE,WEAPON_STAT,WEAPON,D,SET,3,830
+SUPA_HAZARDOUS,SUPA-HAZARDOUS,Unit Rules,,The affected unit is subject to the Supa-Hazardous condition specified by the source rule.,TRUE,,,,,,832
+LONE_OPERATIVE,LONE OP,Unit Rules,,The affected unit has Lone Operative while this rule is active.,TRUE,,,,,,833
+LONE_OPERATIVE_3,"LONE OP 3""",Unit Rules,,"The affected unit has Lone Operative under the 3"" proximity condition specified by the source rule.",TRUE,,,,,,833
+FIGHTS_FIRST,FIGHTS FIRST,Unit Rules,,The affected unit has Fights First while this rule is active.,TRUE,,,,,,834
+RE_ROLL_ADVANCE,RE-ROLL ADVANCE,Movement Rules,,The affected unit can re-roll the Advance roll specified by the source rule.,TRUE,,,,,,835
+GAIN_1_CP,GAIN 1 CP,Unit Rules,,Gain 1 Command Point when the source rule is triggered.,TRUE,,,,,,836
+FIGHT_ON_DEATH,FIGHT ON DEATH,Unit Rules,,The affected unit can fight on death while this rule is active.,TRUE,,,,,,915
+FIGHT_ON_DEATH_3_PLUS,FIGHT ON DEATH 3+,Unit Rules,,The affected unit can fight on death on a 3+ while this rule is active.,TRUE,,,,,,916
+FIGHT_ON_DEATH_4_PLUS,FIGHT ON DEATH 4+,Unit Rules,,The affected unit can fight on death on a 4+ while this rule is active.,TRUE,,,,,,917
+FEEL_NO_PAIN_4_PLUS,FNP 4+,Unit Rules,,The affected unit has FNP 4+ while this rule is active.,TRUE,,,,,,918
+FEEL_NO_PAIN_5_PLUS,FNP 5+,Unit Rules,,The affected unit has FNP 5+ while this rule is active.,TRUE,,,,,,919
+FEEL_NO_PAIN_6_PLUS,FNP 6+,Unit Rules,,The affected unit has FNP 6+ while this rule is active.,TRUE,,,,,,920
+SCOUT_6,Scout 6”,Movement Rules,,The affected unit has Scout 6” while this rule is active.,TRUE,,,,,,921
+PLUS_1_ADVANCE,+1 ADVANCE,Movement Rules,,Add 1 to the affected unit Advance roll while this rule is active.,TRUE,,,,,,924
+ANTI_MONSTER_3_MELEE,ANTI-MONSTER 3+,Melee - Weapon Rules,,Applies Anti-Monster 3+ to Melee weapons.,TRUE,WEAPON_RULE,MELEE,ANTI_MONSTER,SET,3,929
+ANTI_VEHICLE_4_RANGE,ANTI-VEHICLE 4+,Range - Weapon Rules,,Applies Anti-Vehicle 4+ to Ranged weapons.,TRUE,WEAPON_RULE,RANGE,ANTI_VEHICLE,SET,4,930
+INVULNERABLE_SAVE_4_PLUS,INVULNERABLE SAVE 4+,Unit Rules,,The affected unit has a 4++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,4,933
+INVULNERABLE_SAVE_5_PLUS,INVULNERABLE SAVE 5+,Unit Rules,,The affected unit has a 5++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,5,934
+INVULNERABLE_SAVE_6_PLUS,INVULNERABLE SAVE 6+,Unit Rules,,The affected unit has a 6++ invulnerable save while this rule is active.,TRUE,UNIT_STAT,UNIT,INVUL,SET,6,935
+PLUS_2_CHARGE,+2 CHARGE,Movement Rules,,Add 2 to Charge rolls while this rule is active.,TRUE,,,,,,936
+BATTLELINE,BATTLELINE,Unit Rules,,The affected unit has the Battleline rule.,TRUE,,,,,,937
+BENEFIT_OF_COVER,BENEFIT OF COVER,Unit Rules,,The affected unit has the Benefit of Cover.,TRUE,,,,,,938
+CLOSE_QUARTERS,CLOSE-QUARTERS,Range - Weapon Rules,,Close-quarters ranged rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,CLOSE_QUARTERS,SET,1,939
+DEEP_STRIKE,DEEP STRIKE,Unit Rules,,The affected unit has Deep Strike.,TRUE,,,,,,940
+FALL_BACK_AND_CHARGE,FALL BACK AND CHARGE,Movement Rules,,The affected unit can charge after Falling Back.,TRUE,,,,,,941
+FIGHT_ON_DEATH_2_PLUS,FIGHT ON DEATH 2+,Unit Rules,,The affected unit fights on death on a 2+.,TRUE,,,,,,942
+HEROIC_INTERVENTION_0CP,HEROIC INTERVENTION 0CP,Unit Rules,,Heroic Intervention costs 0 CP.,TRUE,,,,,,944
+IGNORE_MOVE_MODIFIERS,IGNORE MOVE MODIFIERS,Movement Rules,,Ignore modifiers to Move.,TRUE,,,,,,945
+INFILTRATORS,INFILTRATORS,Unit Rules,,The affected unit has Infiltrators.,TRUE,,,,,,946
+INGRESS,INGRESS,Movement Rules,,The affected unit can Ingress.,TRUE,,,,,,947
+KOMBI,KOMBI,Range - Weapon Rules,,Kombi weapon rule. Highlight only.,TRUE,WEAPON_RULE,RANGE,KOMBI,SET,1,948
+MOVE_THROUGH_MODELS,MOVE THROUGH MODELS,Movement Rules,,The affected unit can move through models.,TRUE,,,,,,949
+RE_ROLL_CHARGE,RE-ROLL CHARGE,Movement Rules,,The affected unit can re-roll Charge rolls.,TRUE,,,,,,950
+RILED_UP,RILED UP,Unit Rules,,The affected unit is Riled Up.,TRUE,,,,,,951
+STEALTH,STEALTH,Unit Rules,,The affected unit has Stealth.,TRUE,,,,,,952
+STICKY_OBJECTIVES,STICKY OBJECTIVES,Unit Rules,,The affected unit has Sticky Objectives.,TRUE,,,,,,953
+STRATEGIC_RESERVES,STRATEGIC RESERVES,Movement Rules,,The affected unit can use Strategic Reserves.,TRUE,,,,,,954
+INFO_INTIMIDATING_MOTIVATION,INTIMIDATING MOTIVATION,Info Only,,Intimidating Motivation applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,920
+INFO_KEEP_HUNTIN,KEEP HUNTIN',Info Only,,Keep Huntin' applies as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,921
+ACTION_WHILE_ENGAGED,ACTION while ENGAGED,Unit Rules,,Unit can start an action while engaged.,TRUE,,,,,,
+UNIT,UNIT,Unit Rules,,Propagates this Ability to every other Unit in the same saved section.,FALSE,,,,,,
+SHOOT,SHOOT,Ability Control,,Displays this Ability in the SHOOT section in VIEW.,FALSE,,,,,,
+MELEE,MELEE,Ability Control,,Displays this Ability in the MELEE section in VIEW.,FALSE,,,,,,
+STATS,STATS,Ability Control,,Allows this Ability's structured Unit-stat effects to apply in VIEW.,FALSE,,,,,,
+WEAPONS,WEAPONS,Ability Control,,Allows this Ability's structured Weapon-stat and Weapon-rule effects to apply in VIEW.,FALSE,,,,,,
+ACTIVE,ACTIVE,Ability Control,,Requires this Ability to be Active in VIEW before its permitted structured mechanics apply.,FALSE,,,,,,
+LANCE_GENERIC,LANCE,Melee - Weapon Rules,,Applies the Lance weapon rule when routed by Ability control tags.,TRUE,WEAPON_RULE,,LANCE,SET,1,955
+PLUS_6_R_GENERIC,+6 R”,Range - Weapon Stats,,Adds 6 inches to weapon Range when routed by Ability control tags.,TRUE,WEAPON_STAT,,R,ADD,6,956
+INFO_ENEMY_MINUS_1_BATTLESHOCK,ENEMY -1 BATTLE-SHOCK,Info Only,,An affected enemy suffers -1 to its Battle-shock roll as described by the source rule.,TRUE,,,,,,957
+MECHANIC_PLUS_1_TO_HIT,+1 TO HIT,Combat Modifiers,,Improves Hit rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,HIT,IMPROVE,1,201
+MECHANIC_PLUS_1_TO_WOUND,+1 TO WOUND,Combat Modifiers,,Improves Wound rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,WOUND,IMPROVE,1,202
+MECHANIC_REROLL_1S_TO_HIT,RE-ROLL 1S TO HIT,Combat Modifiers,,Re-rolls Hit rolls of 1 when routed by the owning Ability controls.,TRUE,REROLL,,HIT,ONES,1,203
+MECHANIC_REROLL_ALL_HITS,RE-ROLL ALL HITS,Combat Modifiers,,Re-rolls all Hit rolls when routed by the owning Ability controls.,TRUE,REROLL,,HIT,ALL,1,204
+MECHANIC_REROLL_1S_TO_WOUND,RE-ROLL 1S TO WOUND,Combat Modifiers,,Re-rolls Wound rolls of 1 when routed by the owning Ability controls.,TRUE,REROLL,,WOUND,ONES,1,205
+MECHANIC_REROLL_ALL_WOUNDS,RE-ROLL ALL WOUNDS,Combat Modifiers,,Re-rolls all Wound rolls when routed by the owning Ability controls.,TRUE,REROLL,,WOUND,ALL,1,206
+MECHANIC_MINUS_1_TO_HIT,-1 TO HIT,Combat Modifiers,,Worsens Hit rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,HIT,WORSEN,1,207
+MECHANIC_MINUS_1_TO_WOUND,-1 TO WOUND,Combat Modifiers,,Worsens Wound rolls by 1 when routed by the owning Ability controls.,TRUE,ROLL_MODIFIER,,WOUND,WORSEN,1,208
+MECHANIC_LETHAL_HITS,LETHAL HITS,Weapon Rules,,Adds Lethal Hits when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,LETHAL_HITS,SET,1,301
+MECHANIC_DEVASTATING_WOUNDS,DEVASTATING WOUNDS,Weapon Rules,,Adds Devastating Wounds when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,DEVASTATING_WOUNDS,SET,1,302
+MECHANIC_TWIN_LINKED,TWIN-LINKED,Weapon Rules,,Adds Twin-linked when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,TWIN_LINKED,SET,1,303
+MECHANIC_SUSTAINED_HITS_1,SUSTAINED HITS 1,Weapon Rules,,Adds Sustained Hits 1 when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,SUSTAINED_HITS,SET,1,304
+MECHANIC_SUSTAINED_HITS_2,SUSTAINED HITS 2,Weapon Rules,,Adds Sustained Hits 2 when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,SUSTAINED_HITS,SET,2,305
+MECHANIC_ANTI_VEHICLE_3,ANTI-VEHICLE 3+,Weapon Rules,,Adds Anti-Vehicle 3+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,ANTI_VEHICLE,SET,3,308
+MECHANIC_ANTI_INFANTRY_4,ANTI-INFANTRY 4+,Weapon Rules,,Adds Anti-Infantry 4+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,ANTI_INFANTRY,SET,4,309
+MECHANIC_CRITS_5_PLUS,CRITS 5+,Weapon Rules,,Critical hits occur on unmodified 5+ when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,CRITS,SET,5,310
+MECHANIC_PRECISION,PRECISION,Weapon Rules,,Adds Precision when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,PRECISION,SET,1,311
+MECHANIC_HAZARDOUS,HAZARDOUS,Weapon Rules,,Adds Hazardous when routed by the owning Ability controls.,TRUE,WEAPON_RULE,,HAZARDOUS,SET,1,312
+MECHANIC_PLUS_1_A,+1 A,Weapon Stats,,Adds 1 Attack when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,1,401
+MECHANIC_PLUS_1_S,+1 S,Weapon Stats,,Adds 1 Strength when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,S,ADD,1,402
+MECHANIC_PLUS_2_S,+2 S,Weapon Stats,,Adds 2 Strength when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,S,ADD,2,403
+MECHANIC_PLUS_1_AP,+1 AP,Weapon Stats,,Improves AP by 1 when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,AP,IMPROVE,1,404
+MECHANIC_PLUS_1_D,+1 D,Weapon Stats,,Adds 1 Damage when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,D,ADD,1,405
+MECHANIC_PLUS_2_A,+2 A,Weapon Stats,,Adds 2 Attacks when routed by the owning Ability controls.,TRUE,WEAPON_STAT,,A,ADD,2,22
+MECHANIC_REROLL_ALL_DAMAGE,RE-ROLL DAMAGE,Combat Modifiers,,Re-rolls Damage rolls when routed by the owning Ability controls.,TRUE,REROLL,,DAMAGE,ALL,1,209
+SCOUT_8,Scout 8”,Movement Rules,,The affected unit has Scout 8” while this rule is active.,TRUE,,,,,,922
+INFO_REROLL_ONE_HIT_ROLL,RE-ROLL ONE HIT ROLL,Info Only,,The affected unit can re-roll one Hit roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,960
+INFO_REROLL_ONE_WOUND_ROLL,RE-ROLL ONE WOUND ROLL,Info Only,,The affected unit can re-roll one Wound roll as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,961
+INFO_HEAL_1_WOUND,HEAL 1 WOUND,Info Only,,The affected unit heals 1 wound at the timing specified by the source rule. Informational only; no runtime effect.,TRUE,,,,,,962
+INFO_FNP_5_PLUS_VS_MORTAL_WOUNDS,FNP 5+ VS MORTAL WOUNDS,Info Only,,The affected unit has Feel No Pain 5+ against mortal wounds only while this rule is active. Informational only; no runtime effect.,TRUE,,,,,,963
+INFO_IGNORE_BS_MODIFIERS,IGNORE BS MODIFIERS,Info Only,,Ignore modifiers to Ballistic Skill as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,964
+INFO_IGNORE_HIT_MODIFIERS,IGNORE HIT MODIFIERS,Info Only,,Ignore modifiers to Hit rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,965
+INFO_IGNORE_WOUND_MODIFIERS,IGNORE WOUND MODIFIERS,Info Only,,Ignore modifiers to Wound rolls as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,966
+INFO_LETHAL_HITS_MONSTER_VEHICLE,LETHAL HITS: MONSTER/VEHICLE,Info Only,,Ranged attacks have Lethal Hits only against MONSTER or VEHICLE targets as described by the source rule. Informational only; no runtime effect.,TRUE,,,,,,967
+FLAMESTORM_CANNONS_X2,Flamestorm Cannons x2,Unit Rules,,This unit has two Flamestorm Cannons represented by one combined weapon profile.,TRUE,,,,,,923
