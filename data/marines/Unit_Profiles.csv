@@ -1,9 +1,9 @@
 Unit_ID,Unit Name,"M""",T,SV,W,LD,OC,Keywords,Hyperlink,Abilities,Other_Abilities,Point_1,Point_2,Point_3,Point_4,Point_5,Point_6,Point_7,Point_8,Weapons,Loadout_1,Loadout_2,Loadout_3,Loadout_4,Loadout_5,Loadout_6
-ADRAX_AGATONE,Adrax Agatone,"6""",5,2+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",,LEADER,"UNTO_THE_ANVIL, LORD_OF_THE_PYROCLASTS, ADRAX_AGATONE_UNIT_COMPOSITION",", 90",,,,,,,,"FIXED | DRAKKIS
+ADRAX_AGATONE,Adrax Agatone,"6""",5,2+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",,"UNTO_THE_ANVIL, LORD_OF_THE_PYROCLASTS, ADRAX_AGATONE_UNIT_COMPOSITION",LEADER,", 90",,,,,,,,"FIXED | DRAKKIS
 FIXED | MALLEUS_NOCTUM",,,,,,
-AETHON_SHAAN,Aethon Shaan,"14""",5,3+/4++,5,6+,1,"INFANTRY, CHAPTER MASTER, CHARACTER, EPIC HERO, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, SMOKE, TACTICUS, ADEPTUS ASTARTES, RAVEN GUARD",,"DEEP_STRIKE, LONE_OPERATIVE, STEALTH","MASTER_OF_SHADOWS, BLACKWING_MANTLE, AETHON_SHAAN_UNIT_COMPOSITION",", 105",,,,,,,,"FIXED | HEAVY_BOLT_PISTOL_CAPTAIN
+AETHON_SHAAN,Aethon Shaan,"14""",5,3+/4++,5,6+,1,"INFANTRY, CHAPTER MASTER, CHARACTER, EPIC HERO, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, SMOKE, TACTICUS, ADEPTUS ASTARTES, RAVEN GUARD",,"MASTER_OF_SHADOWS, BLACKWING_MANTLE, AETHON_SHAAN_UNIT_COMPOSITION","DEEP_STRIKE, LONE_OPERATIVE, STEALTH",", 105",,,,,,,,"FIXED | HEAVY_BOLT_PISTOL_CAPTAIN
 FIXED | CLAWS_OF_SEVERAX",,,,,,
-AGGRESSORS,Aggressor Squad,"5""",6,3+,3,6+,1,"INFANTRY, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Aggressor-Squad,,CLOSE_QUARTERS_FIREPOWER,"x3, 90","x6, 180",,,,,,,"LABEL | Aggressors | order=10
+AGGRESSORS,Aggressor Squad,"5""",6,3+,3,6+,1,"INFANTRY, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Aggressor-Squad,CLOSE_QUARTERS_FIREPOWER,,"x3, 90","x6, 180",,,,,,,"LABEL | Aggressors | order=10
 WEAPON | FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS | order=20
 WEAPON | FLAMESTORM_GAUNTLETS | order=30
 WEAPON | TWIN_POWER_FISTS | order=40
@@ -14,11 +14,11 @@ WEAPON | FLAMESTORM_GAUNTLETS | order=80 | qty=1
 WEAPON | TWIN_POWER_FISTS | order=90 | qty=1","GROUP | MAIN_WEAPONS | Main Weapons | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Aggressors
 OPTION | FLAMESTORM | Flamestorm Gauntlets | default=1 | max=1,2,0,0,0,0,0,0 | weapons=FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS,FLAMESTORM_GAUNTLETS | preserve=TWIN_POWER_FISTS
 OPTION | BOLTSTORM | Auto Boltstorm Gauntlets + Fragstorm Grenade Launcher | default=0 | max=1,2,0,0,0,0,0,0 | weapons=AUTO_BOLTSTORM_GAUNTLETS,FRAGSTORM_GRENADE_LAUNCHER | preserve=TWIN_POWER_FISTS",,,,,
-ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient,SUPPORT,"RAISE_THE_BANNER, HONOUR_OF_THE_COMPANY",", 40",,,,,,,,"WEAPON | INTERCESSORS_BOLT_PISTOL | order=1 | qty=1
+ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient,HONOUR_OF_THE_COMPANY,"SUPPORT, RAISE_THE_BANNER",", 40",,,,,,,,"WEAPON | INTERCESSORS_BOLT_PISTOL | order=1 | qty=1
 WEAPON | WARDENS_OF_ULTRAMAR_CERAMITE_FISTS | order=4 | qty=1","GROUP | ANCIENT_WARGEAR | Bolt Rifle Slot | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT",,,,,
-ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessor-Squad,,TARGETED_INTERCESSION,"x5, 85","x10, 170",,,,,,,"LABEL | Assault Intercessors | order=10
+ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessor-Squad,TARGETED_INTERCESSION,,"x5, 85","x10, 170",,,,,,,"LABEL | Assault Intercessors | order=10
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
@@ -30,7 +30,7 @@ OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON
 OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER",,,,
-ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Jump Intercessors,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs,DEEP_STRIKE,HAMMER_OF_WRATH,"x5, 95","x10, 190",,,,,,,"LABEL | Assault Intercessors with Jump Packs | order=10
+ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Jump Intercessors,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs,HAMMER_OF_WRATH,DEEP_STRIKE,"x5, 95","x10, 190",,,,,,,"LABEL | Assault Intercessors with Jump Packs | order=10
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
@@ -43,16 +43,16 @@ OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTE
 OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD | preserve=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON",,,
-AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael,,"SUPREME_GRAND_MASTER, THE_LION_HELM, LEADER_AZRAEL, MASTERFUL_TACTICIAN",", 150",,,,,,,,"FIXED | LIONS_WRATH
+AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael,"SUPREME_GRAND_MASTER, THE_LION_HELM","LEADER_AZRAEL, MASTERFUL_TACTICIAN",", 150",,,,,,,,"FIXED | LIONS_WRATH
 FIXED | THE_SWORD_OF_SECRETS",,,,,,
-BALLISTUS,Ballistus Dreadnought,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ballistus-Dreadnought,"DAMAGED_1_4, DEADLY_DEMISE_D3",BALLISTUS_STRIKE,", 150",,,,,,,,"WEAPON | BALLISTUS_LASCANNON | order=10 | qty=1
+BALLISTUS,Ballistus Dreadnought,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ballistus-Dreadnought,BALLISTUS_STRIKE,"DAMAGED_1_4, DEADLY_DEMISE_D3",", 150",,,,,,,,"WEAPON | BALLISTUS_LASCANNON | order=10 | qty=1
 WEAPON | BALLISTUS_MISSILE_LAUNCHER_FRAG | order=20 | qty=1
 WEAPON | BALLISTUS_MISSILE_LAUNCHER_KRAK | order=30 | qty=1
 WEAPON | STORM_BOLTERS_X2 | order=40 | qty=1
 WEAPON | ARMOURED_FEET | order=50 | qty=1",,,,,,
-BELIAL,Belial,"5""",5,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, DEATHWING, TERMINATOR, CAPTAIN, BELIAL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Belial,DEEP_STRIKE,"GRAND_MASTER_OF_THE_DEATHWING, STRIKES_OF_RETRIBUTION, LEADER_BELIAL",", 100",,,,,,,,"FIXED | MASTER_CRAFTED_STORM_BOLTER_BELIAL
+BELIAL,Belial,"5""",5,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, DEATHWING, TERMINATOR, CAPTAIN, BELIAL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Belial,"GRAND_MASTER_OF_THE_DEATHWING, STRIKES_OF_RETRIBUTION","DEEP_STRIKE, LEADER_BELIAL",", 100",,,,,,,,"FIXED | MASTER_CRAFTED_STORM_BOLTER_BELIAL
 FIXED | THE_SWORD_OF_SILENCE",,,,,,
-BLADEGUARD_VETS,Bladeguard Vets,"6""",5,3+/4++,3,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Bladeguard-Veteran-Squad,,BLADEGUARD,"x3, 90","x6, 180",,,,,,,"LABEL | Bladeguard Veterans | order=10
+BLADEGUARD_VETS,Bladeguard Vets,"6""",5,3+/4++,3,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Bladeguard-Veteran-Squad,BLADEGUARD,,"x3, 90","x6, 180",,,,,,,"LABEL | Bladeguard Veterans | order=10
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=30
 BLANK | order=40
@@ -61,36 +61,36 @@ WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=70 | qty=1","GROUP | SER
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL | preserve=HEAVY_BOLT_PISTOL
 OPTION | NEO_VOLKITE | Neo-volkite Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=BLADEGUARD_NEO_VOLKITE_PISTOL | preserve=HEAVY_BOLT_PISTOL
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=HEAVY_BOLT_PISTOL",,,,,
-BRUTALIS,Brutalis,"10""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL,"DEADLY_DEMISE_D3, DAMAGED_1_4",BRUTALIS_CHARGE,", 160",,,,,,,,WEAPON | TWIN_IRONHAIL_HEAVY_STUBBER | order=30 | qty=1,"GROUP | ARMS | Arm Weapons | mode=UNIT | instances=1,0,0,0,0,0,0,0
+BRUTALIS,Brutalis,"10""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL,BRUTALIS_CHARGE,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 160",,,,,,,,WEAPON | TWIN_IRONHAIL_HEAVY_STUBBER | order=30 | qty=1,"GROUP | ARMS | Arm Weapons | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | FISTS | Bolt Rifles + Brutalis Fists | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BRUTALIS_BOLT_RIFLES,BRUTALIS_FISTS
 OPTION | TALONS | Brutalis Talons | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BRUTALIS_TALONS","GROUP | GUN | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | HEAVY_BOLTER | Twin Heavy Bolter | default=1 | max=1,0,0,0,0,0,0,0 | weapons=TWIN_HEAVY_BOLTER
 OPTION | MULTI_MELTA | Twin Multi-melta | default=0 | max=1,0,0,0,0,0,0,0 | weapons=TWIN_MULTI_MELTA",,,,
-CAANOK_VAR,Caanok Var,"5""",6,2+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, IMPERIUM, TERMINATOR, ADEPTUS ASTARTES, IRON HANDS",,"FNP_5, DEEP_STRIKE, LEADER","COLD_AND_CALCULATING, CEREBREX_LOGIC_ENGINE, CAANOK_VAR_UNIT_COMPOSITION",", 100",,,,,,,,"FIXED | STORM_BOLTER_LEADERS
+CAANOK_VAR,Caanok Var,"5""",6,2+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, IMPERIUM, TERMINATOR, ADEPTUS ASTARTES, IRON HANDS",,"COLD_AND_CALCULATING, CEREBREX_LOGIC_ENGINE, CAANOK_VAR_UNIT_COMPOSITION","FNP_5, DEEP_STRIKE, LEADER",", 100",,,,,,,,"FIXED | STORM_BOLTER_LEADERS
 FIXED | AXIOM_STRIKE",,,,,,
-CALLIDUS_ASSASSIN,Callidus Assassin,"7""",4,6+/4++,4,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, OFFICIO ASSASSINORUM, CALLIDUS ASSASSIN",https://wahapedia.ru/wh40k11ed/factions/imperial-agents/Callidus-Assassin,"LONE_OPERATIVE, FIGHTS_FIRST, DEEP_STRIKE, INFILTRATORS","ACROBATIC_ESCAPE, REIGN_OF_CONFUSION",", 100",,,,,,,,"FIXED | NEURAL_SHREDDER
+CALLIDUS_ASSASSIN,Callidus Assassin,"7""",4,6+/4++,4,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, OFFICIO ASSASSINORUM, CALLIDUS ASSASSIN",https://wahapedia.ru/wh40k11ed/factions/imperial-agents/Callidus-Assassin,"ACROBATIC_ESCAPE, REIGN_OF_CONFUSION","LONE_OPERATIVE, FIGHTS_FIRST, DEEP_STRIKE, INFILTRATORS",", 100",,,,,,,,"FIXED | NEURAL_SHREDDER
 FIXED | PHASE_SWORD_AND_POISON_BLADES",,,,,,
-CAPTAIN_FIST_PLASMA,Captain,"6""",5,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES",,LEADER,"CAPTAIN_STRATEGIC_ACUMEN, FINEST_HOUR, CAPTAIN_UNIT_COMPOSITION",", 90",,,,,,,,,"GROUP | CAPTAIN_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
+CAPTAIN_FIST_PLASMA,Captain,"6""",5,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES",,"FINEST_HOUR, CAPTAIN_UNIT_COMPOSITION","LEADER, CAPTAIN_STRATEGIC_ACUMEN",", 90",,,,,,,,,"GROUP | CAPTAIN_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CAPTAIN_RANGED_DEFAULT | Heavy Bolt Pistol + Master-crafted Bolter | default=1 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL_CAPTAIN,CAPTAIN_MASTER_CRAFTED_BOLTER | compatible=CAPTAIN_MELEE=CAPTAIN_MELEE_POWER_WEAPON|CAPTAIN_MELEE_POWER_FIST
 OPTION | CAPTAIN_RANGED_VOLKITE | Neo-volkite Pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_NEO_VOLKITE_PISTOL | compatible=CAPTAIN_MELEE=CAPTAIN_MELEE_POWER_WEAPON|CAPTAIN_MELEE_POWER_FIST
 OPTION | CAPTAIN_RANGED_PLASMA | Plasma Pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=PLASMA_PISTOL_STANDARD_LEADER,PLASMA_PISTOL_SUPERCHARGE_LEADER | compatible=CAPTAIN_MELEE=CAPTAIN_MELEE_POWER_WEAPON|CAPTAIN_MELEE_POWER_FIST
 OPTION | CAPTAIN_RANGED_SHIELD | Heavy Bolt Pistol + Relic Shield | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL_CAPTAIN | abilities=CAPTAIN_RELIC_SHIELD | compatible=CAPTAIN_MELEE=CAPTAIN_MELEE_POWER_WEAPON","GROUP | CAPTAIN_MELEE | Melee Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CAPTAIN_MELEE_POWER_WEAPON | Master-crafted Power Weapon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_MASTER_CRAFTED_POWER_WEAPON
 OPTION | CAPTAIN_MELEE_POWER_FIST | Power Fist | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_FIST_CAPTAIN",,,,
-CAPTAIN_IN_GRAVIS_ARMOUR,Gravis Captain,"5""",6,3+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, GRAVIS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Gravis-Armour,LEADER,"REFUSE_TO_YIELD, CAPTAIN_STRATEGIC_ACUMEN",", 90",,,,,,,,,"GROUP | GRAVIS_CAPTAIN_LOADOUT | Loadout | mode=UNIT | instances=1,0,0,0,0,0,0,0
+CAPTAIN_IN_GRAVIS_ARMOUR,Gravis Captain,"5""",6,3+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, GRAVIS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Gravis-Armour,REFUSE_TO_YIELD,"LEADER, CAPTAIN_STRATEGIC_ACUMEN",", 90",,,,,,,,,"GROUP | GRAVIS_CAPTAIN_LOADOUT | Loadout | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | GRAVIS_CAPTAIN_DEFAULT | Master-crafted Heavy Bolt Rifle + Master-crafted Power Weapon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=MASTER_CRAFTED_HEAVY_BOLT_RIFLE,CAPTAIN_MASTER_CRAFTED_POWER_WEAPON
 OPTION | GRAVIS_CAPTAIN_CHAIN | Boltstorm Gauntlet + Relic Chainsword | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BOLTSTORM_GAUNTLET,GRAVIS_CAPTAIN_BOLTSTORM_GAUNTLET_MELEE,GRAVIS_CAPTAIN_RELIC_CHAINSWORD
 OPTION | GRAVIS_CAPTAIN_BLADE | Boltstorm Gauntlet + Relic Blade | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BOLTSTORM_GAUNTLET,GRAVIS_CAPTAIN_BOLTSTORM_GAUNTLET_MELEE,GRAVIS_CAPTAIN_RELIC_BLADE
 OPTION | GRAVIS_CAPTAIN_FIST | Boltstorm Gauntlet + Relic Power Fist | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BOLTSTORM_GAUNTLET,GRAVIS_CAPTAIN_BOLTSTORM_GAUNTLET_MELEE,GRAVIS_CAPTAIN_RELIC_FIST",,,,,
-CAPTAIN_IN_PHOBOS_ARMOUR,Phobos Captain,"8""",4,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Phobos-Armour,"INFILTRATORS, STEALTH, DEEP_STRIKE, SCOUTS_6, LEADER","CAPTAIN_STRATEGIC_ACUMEN, TACTICAL_FLUIDITY_CAPTAIN_PHOBOS",", 75",,,,,,,,"WEAPON | BOLT_PISTOL_LEADERS | order=1 | qty=1
+CAPTAIN_IN_PHOBOS_ARMOUR,Phobos Captain,"8""",4,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Phobos-Armour,TACTICAL_FLUIDITY_CAPTAIN_PHOBOS,"INFILTRATORS, STEALTH, DEEP_STRIKE, SCOUTS_6, LEADER, CAPTAIN_STRATEGIC_ACUMEN",", 75",,,,,,,,"WEAPON | BOLT_PISTOL_LEADERS | order=1 | qty=1
 WEAPON | PHOBOS_CAPTAIN_INSTIGATOR_BOLT_CARBINE | order=2 | qty=1
 WEAPON | PHOBOS_CAPTAIN_COMBAT_KNIFE | order=3 | qty=1",,,,,,
-CAPTAIN_IN_TERMINATOR_ARMOUR,Terminator Captain,"5""",6,2+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, IMPERIUM, TERMINATOR, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Terminator-Armour,"DEEP_STRIKE, LEADER","CAPTAIN_STRATEGIC_ACUMEN, UNSTOPPABLE_VALOUR",", 90",,,,,,,,,"GROUP | CAPTAIN_TERM_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
+CAPTAIN_IN_TERMINATOR_ARMOUR,Terminator Captain,"5""",6,2+/4++,6,6+,1,"INFANTRY, CAPTAIN, CHARACTER, IMPERIUM, TERMINATOR, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-In-Terminator-Armour,UNSTOPPABLE_VALOUR,"DEEP_STRIKE, LEADER, CAPTAIN_STRATEGIC_ACUMEN",", 90",,,,,,,,,"GROUP | CAPTAIN_TERM_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CAPTAIN_TERM_STORM | Storm Bolter | default=1 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_TERM_STORM_BOLTER
 OPTION | CAPTAIN_TERM_COMBI | Combi-weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_TERM_COMBI_INFERNUS,CAPTAIN_TERM_COMBI_PURGATUS,CAPTAIN_TERM_COMBI_DAMNATUS","GROUP | CAPTAIN_TERM_MELEE | Melee Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CAPTAIN_TERM_RELIC | Relic Weapon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_RELIC_WEAPON
 OPTION | CAPTAIN_TERM_FIST | Relic Fist | default=0 | max=1,0,0,0,0,0,0,0 | weapons=RELIC_FIST",,,,
-CAPTAIN_WITH_JUMP_PACK,Jump Captain,"12""",5,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-With-Jump-Pack,DEEP_STRIKE,"ANGELS_WRATH, RITES_OF_BATTLE, LEADER_CAPTAIN_WITH_JUMP_PACK",", 90",,,,,,,,,"GROUP | CAPTAIN_JUMP_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
+CAPTAIN_WITH_JUMP_PACK,Jump Captain,"12""",5,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS, ADEPTUS ASTARTES",https://wahapedia.ru/wh40k11ed/factions/space-marines/Captain-With-Jump-Pack,"ANGELS_WRATH, RITES_OF_BATTLE","DEEP_STRIKE, LEADER_CAPTAIN_WITH_JUMP_PACK",", 90",,,,,,,,,"GROUP | CAPTAIN_JUMP_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CAPTAIN_JUMP_HBP | Heavy Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL_CAPTAIN
 OPTION | CAPTAIN_JUMP_PLASMA | Plasma Pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=PLASMA_PISTOL_STANDARD_LEADER,PLASMA_PISTOL_SUPERCHARGE_LEADER
 OPTION | CAPTAIN_JUMP_FLAMER | Hand Flamer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_HAND_FLAMER
@@ -99,10 +99,10 @@ OPTION | CAPTAIN_JUMP_CHAIN | Astartes Chainsword | default=1 | max=1,0,0,0,0,0,
 OPTION | CAPTAIN_JUMP_FIST | Power Fist | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_FIST_CAPTAIN
 OPTION | CAPTAIN_JUMP_RELIC | Relic Weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_RELIC_WEAPON
 OPTION | CAPTAIN_JUMP_THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_THUNDER_HAMMER | compatible=CAPTAIN_JUMP_RANGED=CAPTAIN_JUMP_SHIELD",,,,
-CENTURION_DEVASTATOR_SQUAD,Centurion Devs,"4""",7,2+,4,6,2,"INFANTRY, IMPERIUM, CENTURION, CENTURION DEVASTATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Centurion-Devastator-Squad,,DECIMATOR_PROTOCOLS,"x3, 0","x6, 0",,,,,,,"FIXED | CENTURION_TWIN_LASCANNON
+CENTURION_DEVASTATOR_SQUAD,Centurion Devs,"4""",7,2+,4,6,2,"INFANTRY, IMPERIUM, CENTURION, CENTURION DEVASTATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Centurion-Devastator-Squad,DECIMATOR_PROTOCOLS,,"x3, 0","x6, 0",,,,,,,"FIXED | CENTURION_TWIN_LASCANNON
 FIXED | CENTURION_MISSILE_LAUNCHER
 FIXED | CENTURION_FISTS",,,,,,
-CHAPLAIN_WITH_JUMP_PACK,Jump Chaplain,"12""",5,3+/4++,4,5+,1,"INFANTRY, CHAPLAIN, CHARACTER, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-With-Jump-Pack,"DEEP_STRIKE, LEADER","LITANY_OF_HATE, EXHORTATION_OF_RAGE",", 75",,,,,,,,WEAPON | CROZIUS_ARCANUM | order=2 | qty=1,"GROUP | CHAPLAIN_JUMP_REPLACEMENT | Bolt Pistol Replacement | mode=UNIT | instances=1,0,0,0,0,0,0,0
+CHAPLAIN_WITH_JUMP_PACK,Jump Chaplain,"12""",5,3+/4++,4,5+,1,"INFANTRY, CHAPLAIN, CHARACTER, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-With-Jump-Pack,EXHORTATION_OF_RAGE,"DEEP_STRIKE, LEADER, LITANY_OF_HATE",", 75",,,,,,,,WEAPON | CROZIUS_ARCANUM | order=2 | qty=1,"GROUP | CHAPLAIN_JUMP_REPLACEMENT | Bolt Pistol Replacement | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | CHAPLAIN_JUMP_BOLT_PISTOL | Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=ABSOLVOR_BOLT_PISTOL | preserve=CROZIUS_ARCANUM
 OPTION | CHAPLAIN_JUMP_BOLTGUN_OPT | Boltgun | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_BOLTGUN | preserve=CROZIUS_ARCANUM
 OPTION | CHAPLAIN_JUMP_COMBI | Combi-weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=COMBI_WEAPON | preserve=CROZIUS_ARCANUM
@@ -110,17 +110,17 @@ OPTION | CHAPLAIN_JUMP_GRAV | Grav-pistol | default=0 | max=1,0,0,0,0,0,0,0 | we
 OPTION | CHAPLAIN_JUMP_FLAMER | Hand flamer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_HAND_FLAMER | preserve=CROZIUS_ARCANUM
 OPTION | CHAPLAIN_JUMP_INFERNO | Inferno pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_INFERNO_PISTOL | preserve=CROZIUS_ARCANUM
 OPTION | CHAPLAIN_JUMP_STORM | Storm bolter | default=0 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS | preserve=CROZIUS_ARCANUM",,,,,
-COMPANY_HEROES,Company Heroes,"6""",5,3+,4,6+,2,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS, ANCIENT, CHAMPION",https://wahapedia.ru/wh40k11ed/factions/space-marines/Company-Heroes,,"RAISE_THE_BANNER, COMMAND_SQUAD",", 125",,,,,,,,"WEAPON | COMPANY_HEROES_MASTER_CRAFTED_BOLT_PISTOL | order=1
+COMPANY_HEROES,Company Heroes,"6""",5,3+,4,6+,2,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS, ANCIENT, CHAMPION",https://wahapedia.ru/wh40k11ed/factions/space-marines/Company-Heroes,COMMAND_SQUAD,RAISE_THE_BANNER,", 125",,,,,,,,"WEAPON | COMPANY_HEROES_MASTER_CRAFTED_BOLT_PISTOL | order=1
 WEAPON | COMPANY_HEROES_MASTER_CRAFTED_BOLT_RIFLE | order=2
 WEAPON | COMPANY_HEROES_MASTER_CRAFTED_HEAVY_BOLTER | order=3
 WEAPON | COMPANY_HEROES_COMBAT_KNIFE | order=4
 WEAPON | COMPANY_HEROES_MASTER_CRAFTED_POWER_WEAPON | order=5",,,,,,
-DEATHWING_KNIGHTS,Deathwing Knights,"5""",5,2+/4++,4,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING KNIGHTS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Knights,DEEP_STRIKE,"INNER_CIRCLE, Teleport_Homer, WATCHER_IN_THE_DARK","5x1, 255","5x2, 510",,,,,,,,"GROUP | KNIGHT_MASTER_MELEE | Knight Master Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
+DEATHWING_KNIGHTS,Deathwing Knights,"5""",5,2+/4++,4,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING KNIGHTS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Knights,INNER_CIRCLE,"DEEP_STRIKE, Teleport_Homer, WATCHER_IN_THE_DARK","5x1, 255","5x2, 510",,,,,,,,"GROUP | KNIGHT_MASTER_MELEE | Knight Master Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | DEATHWING_GREAT_WEAPON | Great Weapon of the Unforgiven | default=1 | max=1,2,0,0,0,0,0,0 | weapons=GREAT_WEAPON_OF_THE_UNFORGIVEN
 OPTION | DEATHWING_RELIC_WEAPON | Relic Weapon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=RELIC_WEAPON_KNIGHTS","GROUP | KNIGHTS_MELEE | Deathwing Knights Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | DEATHWING_MACE_OF_ABSOLUTION | Mace of Absolution | default=1 | max=1,2,0,0,0,0,0,0 | weapons=MACE_OF_ABSOLUTION
 OPTION | DEATHWING_POWER_WEAPON | Power Weapon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=POWER_WEAPON_KNIGHTS",,,,
-DEATHWING_TERMINATORS,Deathwing Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING TERMINATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Terminator-Squad,DEEP_STRIKE,"DEATHWING, Teleport_Homer, WATCHER_IN_THE_DARK","x5, 190","x10, 380",,,,,,,"FIXED | STORM_BOLTER_TERMINATORS
+DEATHWING_TERMINATORS,Deathwing Terminators,"5""",5,2+/4++,3,6,1,"INFANTRY, IMPERIUM, DEATHWING, TERMINATOR, DEATHWING TERMINATOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Deathwing-Terminator-Squad,DEATHWING,"DEEP_STRIKE, Teleport_Homer, WATCHER_IN_THE_DARK","x5, 190","x10, 380",,,,,,,"FIXED | STORM_BOLTER_TERMINATORS
 FIXED | POWER_WEAPON_TERMINATOR_SERGEANT","GROUP | HEAVY_WEAPON_DWT | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | DWT_CYCLONE | Cyclone Missile Launcher | default=1 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK
 OPTION | DWT_ASSAULT_CANNON | Assault Cannon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_CANNON_DEATHWING_TERMINATORS
@@ -130,7 +130,7 @@ OPTION | DWT_NONE | None | default=0 | max=1,2,0,0,0,0,0,0","GROUP | MELEE_DWT |
 OPTION | DWT_POWER_FIST | Power Fist | default=1 | max=1,2,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
 OPTION | DWT_CHAINFIST | Chainfist | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CHAINFIST
 OPTION | DWT_MIXED_FISTS | Power Fist + Chainfist | default=0 | max=1,2,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS,CHAINFIST",,,,
-DESOLATION_SQUAD,Desolators,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Desolation-Squad,,TARGETER_OPTICS,"x5, 140",,,,,,,,"LABEL | Desolation Marines | order=10
+DESOLATION_SQUAD,Desolators,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Desolation-Squad,TARGETER_OPTICS,,"x5, 140",,,,,,,,"LABEL | Desolation Marines | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | CASTELLAN_LAUNCHER | order=30
 WEAPON | SUPERFRAG_ROCKET_LAUNCHER | order=40
@@ -145,7 +145,7 @@ OPTION | SUPERFRAG | Superfrag Rocket Launcher | default=1 | max=1,0,0,0,0,0,0,0
 OPTION | SUPERKRAK | Superkrak Rocket Launcher | default=0 | max=1,0,0,0,0,0,0,0 | weapons=SUPERKRAK_ROCKET_LAUNCHER","GROUP | SERGEANT_LAUNCHER | Sergeant Launcher | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant
 OPTION | STANDARD | Standard Rocket Launcher | default=1 | max=1,0,0,0,0,0,0,0
 OPTION | VENGOR | Vengor Launcher | default=0 | max=1,0,0,0,0,0,0,0 | weapons=VENGOR_LAUNCHER | preserve=SUPERFRAG_ROCKET_LAUNCHER,SUPERKRAK_ROCKET_LAUNCHER | cost=5",,,,
-ELIMINATOR_SQUAD,Eliminator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad,"INFILTRATORS, STEALTH","CHAMELEOLINE_CLOAKS, SPECIAL_ISSUE_OPTICS_AND_AMMUNITION","x3, 85",,,,,,,,"LABEL | Eliminators | order=10
+ELIMINATOR_SQUAD,Eliminator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad,"CHAMELEOLINE_CLOAKS, SPECIAL_ISSUE_OPTICS_AND_AMMUNITION","INFILTRATORS, STEALTH","x3, 85",,,,,,,,"LABEL | Eliminators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
 BLANK | order=50
@@ -157,7 +157,7 @@ OPTION | LAS | Las Fusil | default=0 | max=3,0,0,0,0,0,0,0 | weapons=LAS_FUSIL |
 OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE | preserve=BOLT_SNIPER_RIFLE
 OPTION | INSTIGATOR | Instigator Bolt Carbine | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ELIMINATOR_INSTIGATOR_BOLT_CARBINE | preserve=BOLT_SNIPER_RIFLE
 OPTION | LAS | Las Fusil | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAS_FUSIL | preserve=BOLT_SNIPER_RIFLE",,,,
-ERADICATOR_SQUAD_HEAVY_BOLTERS,Eradicators (Bolters),"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad-with-Heavy-Bolters,,OVERLAPPING_DESTRUCTION,"x3, 100","x6, 215",,,,,,,"LABEL | Eradicators | order=10
+ERADICATOR_SQUAD_HEAVY_BOLTERS,Eradicators (Bolters),"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad-with-Heavy-Bolters,OVERLAPPING_DESTRUCTION,,"x3, 100","x6, 215",,,,,,,"LABEL | Eradicators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | HEAVY_BOLTER_ERADICATORS | order=30
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -166,7 +166,7 @@ LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | HEAVY_BOLTER_ERADICATORS | order=80 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1",,,,,,
-ERADICATOR_SQUAD_MELTA,Eradicators (Meltas),"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad,,TOTAL_OBLITERATION,"x3, 100","x6, 200",,,,,,,"LABEL | Eradicators | order=10
+ERADICATOR_SQUAD_MELTA,Eradicators (Meltas),"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad,TOTAL_OBLITERATION,,"x3, 100","x6, 200",,,,,,,"LABEL | Eradicators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | MELTA_RIFLE | order=30
 WEAPON | ERADICATOR_MELTA_RIFLE_HUNTER | order=40
@@ -179,17 +179,17 @@ WEAPON | ERADICATOR_MELTA_RIFLE_HUNTER | order=100 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | MULTI_SLOT | Melta Upgrade | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Eradicators
 OPTION | MELTA | Melta Rifle | default=1 | max=1,2,0,0,0,0,0,0 | weapons=MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER
 OPTION | MULTI | Multi-melta (1 per 3 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MULTI_MELTA_ERADICATORS,ERADICATOR_MULTI_MELTA_HUNTER | preserve=MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER",,,,,
-GLADIATOR_LANCER,Gladiator Lancer,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Lancer,"DEADLY_DEMISE_D3, DAMAGED_1_4",AQUILON_OPTICS,", 160",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF6
+GLADIATOR_LANCER,Gladiator Lancer,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Lancer,AQUILON_OPTICS,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 160",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF6
 FIXED | LANCER_LASER_DESTROYER
 FIXED | ARMOURED_HULL",,,,,,
-GLADIATOR_REAPER,Gladiator Reaper,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Reaper,"DEADLY_DEMISE_D3, DAMAGED_1_4",REAPING_TALLY,", 165",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF12
+GLADIATOR_REAPER,Gladiator Reaper,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Reaper,REAPING_TALLY,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 165",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF12
 FIXED | TWIN_HEAVY_ONSLAUGHT_GATLING_CANNON
 FIXED | ARMOURED_HULL",,,,,,
-GLADIATOR_VALIANT,Gladiator Valiant,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Valiant,"DEADLY_DEMISE_D3, DAMAGED_1_4",PRIORITY_TARGET_ACQUISITION,", 165",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF6
+GLADIATOR_VALIANT,Gladiator Valiant,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Valiant,PRIORITY_TARGET_ACQUISITION,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 165",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF6
 FIXED | MULTI_MELTA_ERADICATORS
 FIXED | TWIN_LAS_TALON
 FIXED | ARMOURED_HULL",,,,,,
-HEAVY_INTERCESSORS,Heavy Intercessors,"5""",6,3+,3,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Heavy-Intercessor-Squad,,UNYIELDING_IN_THE_FACE_OF_THE_FOE,"x5, 115","x10, 230",,,,,,,"LABEL | Heavy Intercessors | order=10
+HEAVY_INTERCESSORS,Heavy Intercessors,"5""",6,3+,3,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Heavy-Intercessor-Squad,UNYIELDING_IN_THE_FACE_OF_THE_FOE,,"x5, 115","x10, 230",,,,,,,"LABEL | Heavy Intercessors | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | HEAVY_BOLT_RIFLE | order=30
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -200,7 +200,7 @@ WEAPON | HEAVY_BOLT_RIFLE | order=80 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","GROUP | HEAVY_WEAPON | Heavy Intercessors | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Heavy Intercessors
 OPTION | NONE | Heavy Bolt Rifles | default=1 | max=1,2,0,0,0,0,0,0
 OPTION | HEAVY_BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_HEAVY_INTERCESSORS",,,,,
-HELLBLASTER_SQUAD,Hellblasters,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Hellblaster-Squad,,RITES_OF_THERMAL_APPEASEMENT,"x5, 115","x10, 230",,,,,,,"LABEL | Hellblasters | order=10
+HELLBLASTER_SQUAD,Hellblasters,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Hellblaster-Squad,RITES_OF_THERMAL_APPEASEMENT,,"x5, 115","x10, 230",,,,,,,"LABEL | Hellblasters | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | PLASMA_INCINERATOR_STANDARD | order=30
 WEAPON | PLASMA_INCINERATOR_SUPERCHARGE | order=40
@@ -212,7 +212,7 @@ WEAPON | PLASMA_INCINERATOR_SUPERCHARGE | order=100 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
 OPTION | BOLT | Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_PISTOL | preserve=INTERCESSORS_BOLT_PISTOL
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,,
-IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor,"DEADLY_DEMISE_D3, FIRING_DECK_7","RAPID_DISEMBARKATION, TRANSPORT_IMPULSOR",", 70",,,,,,,,WEAPON | ARMOURED_HULL | order=20 | qty=1,"GROUP | AUX_SYSTEM | Auxiliary System | mode=UNIT | instances=1,0,0,0,0,0,0,0
+IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor,RAPID_DISEMBARKATION,"DEADLY_DEMISE_D3, FIRING_DECK_7, TRANSPORT_IMPULSOR",", 70",,,,,,,,WEAPON | ARMOURED_HULL | order=20 | qty=1,"GROUP | AUX_SYSTEM | Auxiliary System | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | NONE | None | default=0 | max=1,0,0,0,0,0,0,0
 OPTION | BELLICATUS | Bellicatus Missile Array | default=0 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_BELLICATUS_FRAG,IMPULSOR_BELLICATUS_ICARUS,IMPULSOR_BELLICATUS_KRAK
 OPTION | ORBITAL_COMMS | Orbital Comms Array | default=0 | max=1,0,0,0,0,0,0,0 | abilities=ORBITAL_COMMS_ARRAY | cost=10
@@ -222,7 +222,7 @@ OPTION | STORM_BOLTERS | Storm Bolters | default=1 | max=1,0,0,0,0,0,0,0 | weapo
 OPTION | FRAGSTORM | Fragstorm Grenade Launchers | default=0 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_FRAGSTORM_GRENADE_LAUNCHERS | preserve=ARMOURED_HULL","GROUP | HEAVY_STUBBER | Ironhail Heavy Stubber | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | NONE | No Ironhail Heavy Stubber | default=0 | max=1,0,0,0,0,0,0,0
 OPTION | EQUIPPED | Ironhail Heavy Stubber | default=1 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_IRONHAIL_HEAVY_STUBBER",,,
-INCEPTORS_PLASMA,Inceptor Squad,"10""",6,3+,3,6+,1,"INFANTRY, FLY, GRAVIS, IMPERIUM, JUMP PACK",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad,DEEP_STRIKE,"METEORIC_DESCENT, PARABOLIC_JETLEAP","x3, 130","x6, 260",,,,,,,"LABEL | Inceptors | order=10
+INCEPTORS_PLASMA,Inceptor Squad,"10""",6,3+,3,6+,1,"INFANTRY, FLY, GRAVIS, IMPERIUM, JUMP PACK",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad,"METEORIC_DESCENT, PARABOLIC_JETLEAP",DEEP_STRIKE,"x3, 130","x6, 260",,,,,,,"LABEL | Inceptors | order=10
 WEAPON | ASSAULT_BOLTERS | order=20
 WEAPON | CERAMITE_FISTS_TROOPS | order=30
 BLANK | order=40
@@ -231,7 +231,7 @@ WEAPON | ASSAULT_BOLTERS | order=60 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=70 | qty=1","GROUP | INCEPTORS_LOADOUT | Main Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | INCEPTORS_ASSAULT_BOLTERS | Assault Bolters | default=1 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_BOLTERS | preserve=CERAMITE_FISTS_TROOPS
 OPTION | INCEPTORS_PLASMA_EXTERMINATORS | Plasma Exterminators | default=0 | max=1,2,0,0,0,0,0,0 | weapons=PLASMA_EXTERMINATORS_STANDARD,PLASMA_EXTERMINATORS_SUPERCHARGE | preserve=CERAMITE_FISTS_TROOPS",,,,,
-INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad,SCOUTS_6,"HAYWIRE_MINE, DIVINATOR_CLASS_AUSPEXES","x5, 90","x10, 170",,,,,,,"LABEL | Incursors | order=10
+INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad,"HAYWIRE_MINE, DIVINATOR_CLASS_AUSPEXES",SCOUTS_6,"x5, 90","x10, 170",,,,,,,"LABEL | Incursors | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | OCCULUS_BOLT_CARBINE | order=30
 WEAPON | PAIRED_COMBAT_BLADES | order=40
@@ -240,7 +240,7 @@ LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | OCCULUS_BOLT_CARBINE | order=80 | qty=1
 WEAPON | PAIRED_COMBAT_BLADES | order=90 | qty=1",,,,,,
-INFERNUS_SQUAD,Infernus,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infernus-Squad,,DRIVEN_FROM_COVER,"x5, 95","x10, 190",,,,,,,"LABEL | Infernus Marines | order=10
+INFERNUS_SQUAD,Infernus,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infernus-Squad,DRIVEN_FROM_COVER,,"x5, 95","x10, 190",,,,,,,"LABEL | Infernus Marines | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | PYREBLASTER | order=30
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -249,7 +249,7 @@ LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | PYREBLASTER | order=80 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1",,,,,,
-INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad,INFILTRATORS,OMNI_SCRAMBLERS,"x5, 85","x10, 150",,,,,,,"LABEL | Infiltrators | order=10
+INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad,OMNI_SCRAMBLERS,INFILTRATORS,"x5, 85","x10, 150",,,,,,,"LABEL | Infiltrators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | MARKSMAN_BOLT_CARBINE | order=30
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -260,7 +260,7 @@ WEAPON | MARKSMAN_BOLT_CARBINE | order=80 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","GROUP | HELIX_GAUNTLET | Helix Gauntlet | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | NONE | No Helix Gauntlet | default=1 | max=1,1,0,0,0,0,0,0
 OPTION | EQUIPPED | Helix Gauntlet | default=0 | max=1,1,0,0,0,0,0,0 | abilities=HELIX_GAUNTLET",,,,,
-INNER_CIRCLE_COMPANIONS,Inner Circle Companions,"6""",4,3+,3,6,2,"INFANTRY, IMPERIUM, DEATHWING, TACTICUS, INNER CIRCLE COMPANIONS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inner-Circle-Companions,,"BRAZIERS_OF_JUDGEMENT, ENMITY_FOR_THE_UNWORTHY","x3, 90","x6, 180",,,,,,,"FIXED | HEAVY_BOLT_PISTOL
+INNER_CIRCLE_COMPANIONS,Inner Circle Companions,"6""",4,3+,3,6,2,"INFANTRY, IMPERIUM, DEATHWING, TACTICUS, INNER CIRCLE COMPANIONS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inner-Circle-Companions,"BRAZIERS_OF_JUDGEMENT, ENMITY_FOR_THE_UNWORTHY",,"x3, 90","x6, 180",,,,,,,"FIXED | HEAVY_BOLT_PISTOL
 FIXED | CALIBANITE_GREATSWORD_STRIKE
 FIXED | CALIBANITE_GREATSWORD_SWEEP",,,,,,
 INTERCESSORS,Intercessors,"6""",5,3+,2,6,2,"INFANTRY, BATTLELINE, GRENADES, IMPERIUM, TACTICUS, INTERCESSOR SQUAD",https://wahapedia.ru/wh40k11ed/factions/space-marines/Intercessor-Squad,,"BOLTER_DISCIPLINE_INTERCESSORS, TACTICAL_MAINSTAY_INTERCESSORS, INTERCESSOR_SQUAD_LOADOUT","x5, 85","x10, 170",,,,,,,"LABEL | Intercessors | order=10

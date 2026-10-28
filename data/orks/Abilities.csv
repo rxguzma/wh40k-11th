@@ -74,10 +74,10 @@ Shokk Attack Engine: In your Command phase, if this unit is unengaged, you can u
 Pulse Jet: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6"" to the Move characteristic of models in this unit and models in this unit can move through models and terrain features.",[+6 M”],2,,,
 THUNDERING_STAMPEDE,Thundering Stampede,"AURA: Friendly BEAST SNAGGA within 6""","Thundering Stampede (Aura): Friendly BEAST SNAGGA units within 6"" of this unit have +1 to charge rolls.",,2,0,,
 TRANSPORT_BATTLEWAGON,Transport 22,"Transport: 22 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,,,
-TRANSPORT_GUNWAGON,Transport (Gunwagon),"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,,,
-TRANSPORT_KILL_RIG,Transport (Kill Rig),Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.,,3,,,
-TRANSPORT_STOMPA,Transport (Stompa),"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,,,
-TRANSPORT_TRUKK,Transport (Trukk),Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA / JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.,,3,,,
+TRANSPORT_GUNWAGON,Transport 12,"Transport: 12 Orks Infantry (Mega Armour/Jump Pack = 2, Ghaz = 4)",Transport: This model has a transport capacity of 12 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,,,
+TRANSPORT_KILL_RIG,Transport 12,Transport capacity 12 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 12 BEAST SNAGGA INFANTRY models.,,3,,,
+TRANSPORT_STOMPA,Transport 22,"Transport capacity 22 Orks Infantry (Mega/Jump=2, Ghaz=4)",This model has a transport capacity of 22 ORKS INFANTRY models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models. Each GHAZGHKULL THRAKA model takes up the space of 4 models.,,3,,,
+TRANSPORT_TRUKK,Transport 12,Capacity 12 ORKS INFANTRY (Mega Armour = 2; no Ghaz/Jump Pack),This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA / JUMP PACK models. Each MEGA ARMOUR model takes up the space of 2 models.,,3,,,
 TROPHY_HUNTERS,Trophy Hunters,ANYTIME,This unit has +1 to charge rolls,,2,1,,
 UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),1 Spanner to 4 Burnas,"UNIT COMPOSITION: 1-2 Spanners, 4-8 Burna Boyz.
 
@@ -237,8 +237,8 @@ Enemy ends move within 8"" and this unit is unengaged:
 - Make a normal move of up to D6"".
 - Or: If this unit is RILED UP, make a normal move of up to 5"".",,2,,,
 TRAMPLASAQUIG_CHARGE,Tramplasaquig Charge,Crushing Impact stratagem costs -1 CP when targeting this unit,"When you target this unit with the Crushing Impact stratagem, that use is -1 CP.",,2,,,
-TRANSPORT_GORK_MORK,Transport (Gorkanaut/Morkanaut),Transport capacity 12 Orks Infantry (Mega Armour/Jump Pack = 2; no Ghaz),Transport: This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,,,
-TRANSPORT_HUNTA_RIG,Transport (Hunta Rig),Transport capacity 22 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 22 BEAST SNAGGAS INFANTRY models.,,3,,,
+TRANSPORT_GORK_MORK,Transport 12,Transport capacity 12 Orks Infantry (Mega Armour/Jump Pack = 2; no Ghaz),Transport: This model has a transport capacity of 12 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,,,
+TRANSPORT_HUNTA_RIG,Transport 22,Transport capacity 22 BEAST SNAGGA INFANTRY,Transport: This model has a transport capacity of 22 BEAST SNAGGAS INFANTRY models.,,3,,,
 DA_JUMP,Da Jump,[UNIT] Psychic: on 2+ → Strategic Reserves and [DEEP STRIKE],"Da Jump (psychic level 1, once per army, per battle round): In your Movement phase, if this unit is not battle-shocked, you can make a psychic roll for this unit by rolling one D6. If you do:
 - On a 1, this unit is battle-shocked.
 - Place this unit in strategic reserves.
@@ -329,7 +329,7 @@ FORTIFICATION,Fortification,Standard fortification targeting / fall-back rules. 
 - When shooting that enemy unit, those ranged attacks have -1 to hit rolls (excluding [CLOSE-QUARTERS] attacks).
 - When that enemy unit is selected to make a fall-back move, if that enemy unit is only engaged with FORTIFICATION units, and that enemy unit is not battle-shocked, hazard rolls made for that enemy unit are automatically passed.","SHOOT, [OUTGOING RANGE -1 TO HIT] [ENEMY AUTO-PASS HAZARD]",2,,,
 RAMSHACKLE_COVER,Ramshackle Cover,If target is not fully visible because of this unit [TARGET GETS COVER],"When an attack targets a unit that is not fully visible to the attacking model because of this unit, the target has the benefit of cover against that attack.","SHOOT, [TARGET GETS COVER]",2,0,,
-TRANSPORT_BOSSBUNKA,Transport (Big’ed Bossbunka),11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,,,
+TRANSPORT_BOSSBUNKA,Transport 11,11 Orks Infantry. No Ghaz. Mega/Jump = 2.,Transport: This model has a transport capacity of 11 ORKS INFANTRY models. It cannot transport GHAZGHKULL THRAKA models. Each MEGA ARMOUR / JUMP PACK model takes up the space of 2 models.,,3,,,
 COMPOSITION_BOSSBUNKA,Unit Composition (Big’ed Bossbunka),1 Big’ed Bossbunka. Big Shoota + Gaze of Gork.,"UNIT COMPOSITION: 1 Big'ed Bossbunka model.
 
 This model is equipped with: 1 Big Shoota; 1 Gaze of Gork.
