@@ -12,8 +12,8 @@ LABEL | Sergeant | order=60
 WEAPON | FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS | order=70 | qty=1
 WEAPON | FLAMESTORM_GAUNTLETS | order=80 | qty=1
 WEAPON | TWIN_POWER_FISTS | order=90 | qty=1","GROUP | MAIN_WEAPONS | Main Weapons | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Aggressors
-OPTION | FLAMESTORM | Flamestorm Gauntlets | default=1 | max=1,2,0,0,0,0,0,0 | weapons=FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS,FLAMESTORM_GAUNTLETS | preserve=TWIN_POWER_FISTS
-OPTION | BOLTSTORM | Auto Boltstorm Gauntlets + Fragstorm Grenade Launcher | default=0 | max=1,2,0,0,0,0,0,0 | weapons=AUTO_BOLTSTORM_GAUNTLETS,FRAGSTORM_GRENADE_LAUNCHER | preserve=TWIN_POWER_FISTS",,,,,
+OPTION | FLAMESTORM | Flamestorm Gauntlets | default=1 | max=1,2,0,0,0,0,0,0 | weapons=FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS,FLAMESTORM_GAUNTLETS
+OPTION | BOLTSTORM | Auto Boltstorm Gauntlets + Fragstorm Grenade Launcher | default=0 | max=1,2,0,0,0,0,0,0 | weapons=AUTO_BOLTSTORM_GAUNTLETS,FRAGSTORM_GRENADE_LAUNCHER",,,,,
 ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient,HONOUR_OF_THE_COMPANY,"SUPPORT, RAISE_THE_BANNER",", 40",,,,,,,,"WEAPON | INTERCESSORS_BOLT_PISTOL | order=1 | qty=1
 WEAPON | WARDENS_OF_ULTRAMAR_CERAMITE_FISTS | order=4 | qty=1","GROUP | ANCIENT_WARGEAR | Bolt Rifle Slot | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
@@ -23,10 +23,10 @@ WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL | preserve=HEAVY_BOLT_PISTOL
+OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD | preserve=ASSAULT_INTERCESSORS_CHAINSWORD
+OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON
 OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER",,,,
@@ -37,10 +37,10 @@ BLANK | order=40
 LABEL | Sergeant | order=50","GROUP | SQUAD_PLASMA | Assault Intercessors with Jump Packs | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Assault Intercessors with Jump Packs
 OPTION | NONE | Heavy Bolt Pistols | default=1 | max=1,2,0,0,0,0,0,0
 OPTION | PLASMA | Plasma Pistol (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL | preserve=HEAVY_BOLT_PISTOL
+OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD | preserve=ASSAULT_INTERCESSORS_CHAINSWORD
+OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON",,,
 AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael,"SUPREME_GRAND_MASTER, THE_LION_HELM","LEADER_AZRAEL, MASTERFUL_TACTICIAN",", 150",,,,,,,,"FIXED | LIONS_WRATH
@@ -58,9 +58,9 @@ WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=70 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL | preserve=HEAVY_BOLT_PISTOL
-OPTION | NEO_VOLKITE | Neo-volkite Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=BLADEGUARD_NEO_VOLKITE_PISTOL | preserve=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=HEAVY_BOLT_PISTOL",,,,,
+OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
+OPTION | NEO_VOLKITE | Neo-volkite Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=BLADEGUARD_NEO_VOLKITE_PISTOL
+OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,,
 BRUTALIS,Brutalis,"10""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL,BRUTALIS_CHARGE,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 160",,,,,,,,WEAPON | TWIN_IRONHAIL_HEAVY_STUBBER | order=30 | qty=1,"GROUP | ARMS | Arm Weapons | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | FISTS | Bolt Rifles + Brutalis Fists | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BRUTALIS_BOLT_RIFLES,BRUTALIS_FISTS
 OPTION | TALONS | Brutalis Talons | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BRUTALIS_TALONS","GROUP | GUN | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
@@ -103,13 +103,13 @@ CENTURION_DEVASTATOR_SQUAD,Centurion Devs,"4""",7,2+,4,6,2,"INFANTRY, IMPERIUM, 
 FIXED | CENTURION_MISSILE_LAUNCHER
 FIXED | CENTURION_FISTS",,,,,,
 CHAPLAIN_WITH_JUMP_PACK,Jump Chaplain,"12""",5,3+/4++,4,5+,1,"INFANTRY, CHAPLAIN, CHARACTER, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-With-Jump-Pack,EXHORTATION_OF_RAGE,"DEEP_STRIKE, LEADER, LITANY_OF_HATE",", 75",,,,,,,,WEAPON | CROZIUS_ARCANUM | order=2 | qty=1,"GROUP | CHAPLAIN_JUMP_REPLACEMENT | Bolt Pistol Replacement | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | CHAPLAIN_JUMP_BOLT_PISTOL | Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=ABSOLVOR_BOLT_PISTOL | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_BOLTGUN_OPT | Boltgun | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_BOLTGUN | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_COMBI | Combi-weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=COMBI_WEAPON | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_GRAV | Grav-pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_GRAV_PISTOL | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_FLAMER | Hand flamer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_HAND_FLAMER | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_INFERNO | Inferno pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_INFERNO_PISTOL | preserve=CROZIUS_ARCANUM
-OPTION | CHAPLAIN_JUMP_STORM | Storm bolter | default=0 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS | preserve=CROZIUS_ARCANUM",,,,,
+OPTION | CHAPLAIN_JUMP_BOLT_PISTOL | Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=ABSOLVOR_BOLT_PISTOL
+OPTION | CHAPLAIN_JUMP_BOLTGUN_OPT | Boltgun | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_BOLTGUN
+OPTION | CHAPLAIN_JUMP_COMBI | Combi-weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=COMBI_WEAPON
+OPTION | CHAPLAIN_JUMP_GRAV | Grav-pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_GRAV_PISTOL
+OPTION | CHAPLAIN_JUMP_FLAMER | Hand flamer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_HAND_FLAMER
+OPTION | CHAPLAIN_JUMP_INFERNO | Inferno pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CHAPLAIN_JUMP_INFERNO_PISTOL
+OPTION | CHAPLAIN_JUMP_STORM | Storm bolter | default=0 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS",,,,,
 COMPANY_HEROES,Company Heroes,"6""",5,3+,4,6+,2,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS, ANCIENT, CHAMPION",https://wahapedia.ru/wh40k11ed/factions/space-marines/Company-Heroes,COMMAND_SQUAD,RAISE_THE_BANNER,", 125",,,,,,,,"WEAPON | COMPANY_HEROES_MASTER_CRAFTED_BOLT_PISTOL | order=1
 WEAPON | COMPANY_HEROES_MASTER_CRAFTED_BOLT_RIFLE | order=2
 WEAPON | COMPANY_HEROES_MASTER_CRAFTED_HEAVY_BOLTER | order=3
@@ -144,7 +144,7 @@ WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | ROCKET_TYPE | Rocke
 OPTION | SUPERFRAG | Superfrag Rocket Launcher | default=1 | max=1,0,0,0,0,0,0,0 | weapons=SUPERFRAG_ROCKET_LAUNCHER
 OPTION | SUPERKRAK | Superkrak Rocket Launcher | default=0 | max=1,0,0,0,0,0,0,0 | weapons=SUPERKRAK_ROCKET_LAUNCHER","GROUP | SERGEANT_LAUNCHER | Sergeant Launcher | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant
 OPTION | STANDARD | Standard Rocket Launcher | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | VENGOR | Vengor Launcher | default=0 | max=1,0,0,0,0,0,0,0 | weapons=VENGOR_LAUNCHER | preserve=SUPERFRAG_ROCKET_LAUNCHER,SUPERKRAK_ROCKET_LAUNCHER | cost=5",,,,
+OPTION | VENGOR | Vengor Launcher | default=0 | max=1,0,0,0,0,0,0,0 | weapons=VENGOR_LAUNCHER | cost=5",,,,
 ELIMINATOR_SQUAD,Eliminator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad,"CHAMELEOLINE_CLOAKS, SPECIAL_ISSUE_OPTICS_AND_AMMUNITION","INFILTRATORS, STEALTH","x3, 85",,,,,,,,"LABEL | Eliminators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -153,10 +153,10 @@ LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","GROUP | MODELS_RIFLE | Eliminator Rifles | mode=PER_MODEL | instances=3,0,0,0,0,0,0,0 | section=Eliminators | display=30
 OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=3,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE
-OPTION | LAS | Las Fusil | default=0 | max=3,0,0,0,0,0,0,0 | weapons=LAS_FUSIL | preserve=BOLT_SNIPER_RIFLE","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
-OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE | preserve=BOLT_SNIPER_RIFLE
-OPTION | INSTIGATOR | Instigator Bolt Carbine | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ELIMINATOR_INSTIGATOR_BOLT_CARBINE | preserve=BOLT_SNIPER_RIFLE
-OPTION | LAS | Las Fusil | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAS_FUSIL | preserve=BOLT_SNIPER_RIFLE",,,,
+OPTION | LAS | Las Fusil | default=0 | max=3,0,0,0,0,0,0,0 | weapons=LAS_FUSIL","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
+OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE
+OPTION | INSTIGATOR | Instigator Bolt Carbine | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ELIMINATOR_INSTIGATOR_BOLT_CARBINE
+OPTION | LAS | Las Fusil | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAS_FUSIL",,,,
 ERADICATOR_SQUAD_HEAVY_BOLTERS,Eradicators (Bolters),"5""",6,3+,3,6+,1,"INFANTRY, EXPLOSIVES, GRAVIS, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eradicator-Squad-with-Heavy-Bolters,OVERLAPPING_DESTRUCTION,,"x3, 100","x6, 215",,,,,,,"LABEL | Eradicators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | HEAVY_BOLTER_ERADICATORS | order=30
@@ -178,7 +178,7 @@ WEAPON | MELTA_RIFLE | order=90 | qty=1
 WEAPON | ERADICATOR_MELTA_RIFLE_HUNTER | order=100 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | MULTI_SLOT | Melta Upgrade | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Eradicators
 OPTION | MELTA | Melta Rifle | default=1 | max=1,2,0,0,0,0,0,0 | weapons=MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER
-OPTION | MULTI | Multi-melta (1 per 3 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MULTI_MELTA_ERADICATORS,ERADICATOR_MULTI_MELTA_HUNTER,MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER | preserve=MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER",,,,,
+OPTION | MULTI | Multi-melta (1 per 3 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MULTI_MELTA_ERADICATORS,ERADICATOR_MULTI_MELTA_HUNTER,MELTA_RIFLE,ERADICATOR_MELTA_RIFLE_HUNTER",,,,,
 GLADIATOR_LANCER,Gladiator Lancer,"10""",10,3+,12,6+,3,"VEHICLE, FRAME, IMPERIUM, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Lancer,AQUILON_OPTICS,"DEADLY_DEMISE_D3, DAMAGED_1_4",", 160",,,,,,,,"FIXED | GLADIATOR_DEFENSIVE_ARRAY_RF6
 FIXED | LANCER_LASER_DESTROYER
 FIXED | ARMOURED_HULL",,,,,,
@@ -210,7 +210,7 @@ LABEL | Sergeant | order=70
 WEAPON | PLASMA_INCINERATOR_STANDARD | order=90 | qty=1
 WEAPON | PLASMA_INCINERATOR_SUPERCHARGE | order=100 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
-OPTION | BOLT | Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_PISTOL | preserve=INTERCESSORS_BOLT_PISTOL
+OPTION | BOLT | Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_PISTOL
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,,
 IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor,RAPID_DISEMBARKATION,"DEADLY_DEMISE_D3, FIRING_DECK_7, TRANSPORT_IMPULSOR",", 70",,,,,,,,WEAPON | ARMOURED_HULL | order=20 | qty=1,"GROUP | AUX_SYSTEM | Auxiliary System | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | NONE | None | default=0 | max=1,0,0,0,0,0,0,0
@@ -218,8 +218,8 @@ OPTION | BELLICATUS | Bellicatus Missile Array | default=0 | max=1,0,0,0,0,0,0,0
 OPTION | ORBITAL_COMMS | Orbital Comms Array | default=0 | max=1,0,0,0,0,0,0,0 | abilities=ORBITAL_COMMS_ARRAY | cost=10
 OPTION | SKYTALON | Ironhail Skytalon Array | default=0 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_IRONHAIL_SKYTALON_ARRAY
 OPTION | SHIELD_DOME | Shield Dome | default=1 | max=1,0,0,0,0,0,0,0 | abilities=SHIELD_DOME","GROUP | MAIN_LAUNCHER | Storm Bolter Replacement | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | STORM_BOLTERS | Storm Bolters | default=1 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTERS_X2 | preserve=ARMOURED_HULL
-OPTION | FRAGSTORM | Fragstorm Grenade Launchers | default=0 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_FRAGSTORM_GRENADE_LAUNCHERS | preserve=ARMOURED_HULL","GROUP | HEAVY_STUBBER | Ironhail Heavy Stubber | mode=UNIT | instances=1,0,0,0,0,0,0,0
+OPTION | STORM_BOLTERS | Storm Bolters | default=1 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTERS_X2
+OPTION | FRAGSTORM | Fragstorm Grenade Launchers | default=0 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_FRAGSTORM_GRENADE_LAUNCHERS","GROUP | HEAVY_STUBBER | Ironhail Heavy Stubber | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | NONE | No Ironhail Heavy Stubber | default=0 | max=1,0,0,0,0,0,0,0
 OPTION | EQUIPPED | Ironhail Heavy Stubber | default=1 | max=1,0,0,0,0,0,0,0 | weapons=IMPULSOR_IRONHAIL_HEAVY_STUBBER",,,
 INCEPTORS_PLASMA,Inceptor Squad,"10""",6,3+,3,6+,1,"INFANTRY, FLY, GRAVIS, IMPERIUM, JUMP PACK",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inceptor-Squad,"METEORIC_DESCENT, PARABOLIC_JETLEAP",DEEP_STRIKE,"x3, 130","x6, 260",,,,,,,"LABEL | Inceptors | order=10
@@ -229,8 +229,8 @@ BLANK | order=40
 LABEL | Sergeant | order=50
 WEAPON | ASSAULT_BOLTERS | order=60 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=70 | qty=1","GROUP | INCEPTORS_LOADOUT | Main Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | INCEPTORS_ASSAULT_BOLTERS | Assault Bolters | default=1 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_BOLTERS | preserve=CERAMITE_FISTS_TROOPS
-OPTION | INCEPTORS_PLASMA_EXTERMINATORS | Plasma Exterminators | default=0 | max=1,2,0,0,0,0,0,0 | weapons=PLASMA_EXTERMINATORS_STANDARD,PLASMA_EXTERMINATORS_SUPERCHARGE | preserve=CERAMITE_FISTS_TROOPS",,,,,
+OPTION | INCEPTORS_ASSAULT_BOLTERS | Assault Bolters | default=1 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_BOLTERS
+OPTION | INCEPTORS_PLASMA_EXTERMINATORS | Plasma Exterminators | default=0 | max=1,2,0,0,0,0,0,0 | weapons=PLASMA_EXTERMINATORS_STANDARD,PLASMA_EXTERMINATORS_SUPERCHARGE",,,,,
 INCURSORS,Incursor Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Incursor-Squad,"HAYWIRE_MINE, DIVINATOR_CLASS_AUSPEXES",SCOUTS_6,"x5, 90","x10, 170",,,,,,,"LABEL | Incursors | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | OCCULUS_BOLT_CARBINE | order=30
@@ -273,16 +273,16 @@ WEAPON | INTERCESSORS_GRENADE_LAUNCHER_KRAK | order=70
 BLANK | order=80
 LABEL | Sergeant | order=90
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=100 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=130 | count=1
-OPTION | KNIVES_AND_FISTS | Knives and Fists | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_KNIVES_AND_FISTS | preserve=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD | preserve=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS | preserve=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON | preserve=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER | preserve=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=110 | count=1
-OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION | preserve=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
-OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD | preserve=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
-OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER | preserve=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
-OPTION | PLASMA_PISTOL | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON | preserve=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION",,,,
+OPTION | KNIVES_AND_FISTS | Knives and Fists | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=110 | count=1
+OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
+OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD
+OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
+OPTION | PLASMA_PISTOL | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON",,,,
 INVADER_ATV,Invader ATV,"12""",5,3+,8,6,2,"MOUNTED, GRENADES, IMPERIUM, INVADER ATV, RAVENWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Invader-ATV,OUTRIDER_ESCORT,,"x1, 65","x2, 130",,,,,,,"FIXED | TWIN_BOLT_RIFLE
 FIXED | BOLT_PISTOL_INTERCESSORS
 FIXED | CLOSE_COMBAT_WEAPON_ATV","GROUP | MAIN_GUN_INVADER_ATV | Main Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
@@ -363,11 +363,11 @@ BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | HEAVY_BOLT_PISTOL | order=70 | qty=1
 WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant | display=90 | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,1,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD | preserve=ASSAULT_INTERCESSORS_CHAINSWORD
-OPTION | POWER | Power Weapon | default=0 | max=1,1,1,0,0,0,0,0 | weapons=OUTRIDER_POWER_WEAPON | preserve=ASSAULT_INTERCESSORS_CHAINSWORD
-OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER | preserve=ASSAULT_INTERCESSORS_CHAINSWORD","GROUP | PLASMA_SLOT | Pistol Upgrade | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant
+OPTION | CHAIN | Chainsword | default=1 | max=1,1,1,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
+OPTION | POWER | Power Weapon | default=0 | max=1,1,1,0,0,0,0,0 | weapons=OUTRIDER_POWER_WEAPON
+OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | PLASMA_SLOT | Pistol Upgrade | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,1,0,0,0,0,0
-OPTION | PLASMA | Plasma Pistol (1 per 3 models) | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=HEAVY_BOLT_PISTOL",,,,
+OPTION | PLASMA | Plasma Pistol (1 per 3 models) | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,
 PREDATOR_DESTRUCTOR,Predator Destructor,"10""",10,3+,11,6,3,"VEHICLE, SMOKE, IMPERIUM, PREDATOR DESTRUCTOR, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Predator-Destructor,DESTRUCTOR,"DAMAGED_1_4, DEADLY_DEMISE_D3",", 140",,,,,,,,"FIXED | PREDATOR_AUTOCANNON
 FIXED | HEAVY_BOLTERS_X2_PREDATOR
 FIXED | HUNTER_KILLER_MISSILE
@@ -379,8 +379,8 @@ FIXED | BOLT_PISTOL_INTERCESSORS
 FIXED | MASTER_CRAFTED_POWER_WEAPON_CHAMPION
 FIXED | BLACK_KNIGHT_COMBAT_WEAPON_APOTHECARY_ANCIENT",,,,,,
 REDEMPTOR_PLASMA,REDEMPTOR,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought,DUTY_ETERNAL,"DEADLY_DEMISE_D3, DAMAGED_1_4","x1, 170","x2, 340",,,,,,,WEAPON | REDEMPTOR_FIST | order=40 | qty=1,"GROUP | REDEMPTOR_MAIN_GUN | Main Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | REDEMPTOR_HEAVY_ONSLAUGHT | Heavy Onslaught Gatling Cannon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_ONSLAUGHT_GATLING_CANNON | preserve=REDEMPTOR_FIST
-OPTION | REDEMPTOR_MACRO_PLASMA | Macro Plasma Incinerator | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MACRO_PLASMA_INCINERATOR_STANDARD,MACRO_PLASMA_INCINERATOR_SUPERCHARGE | preserve=REDEMPTOR_FIST | cost=10","GROUP | AUX_GUN | Auxiliary Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
+OPTION | REDEMPTOR_HEAVY_ONSLAUGHT | Heavy Onslaught Gatling Cannon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_ONSLAUGHT_GATLING_CANNON
+OPTION | REDEMPTOR_MACRO_PLASMA | Macro Plasma Incinerator | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MACRO_PLASMA_INCINERATOR_STANDARD,MACRO_PLASMA_INCINERATOR_SUPERCHARGE | cost=10","GROUP | AUX_GUN | Auxiliary Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | FRAGSTORM | Fragstorm Grenade Launchers | default=0 | max=1,1,0,0,0,0,0,0 | weapons=FRAGSTORM_GRENADE_LAUNCHER
 OPTION | STORM_BOLTERS | Storm Bolters | default=1 | max=1,1,0,0,0,0,0,0 | weapons=STORM_BOLTERS_X2","GROUP | SECONDARY | Secondary Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | HEAVY_FLAMER | Heavy Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS
@@ -416,7 +416,7 @@ OPTION | MACRO_PLASMA | Macro Plasma Incinerator | default=1 | max=1,0,0,0,0,0,0
 RHINO,Rhino,"12""",9,3+,10,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino,VEILING_SMOKE,"DEADLY_DEMISE_D3, FIRING_DECK_2, TRANSPORT_RHINO",", 70",,,,,,,,"WEAPON | STORM_BOLTER_TERMINATORS | order=10 | qty=1
 WEAPON | ARMOURED_TRACKS | order=20 | qty=1","GROUP | HUNTER_KILLER | Hunter-killer Missile | mode=UNIT | instances=1,0,0,0,0,0,0,0
 OPTION | NONE | No Hunter-killer Missile | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Hunter-killer Missile | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HUNTER_KILLER_MISSILE | preserve=STORM_BOLTER_TERMINATORS,ARMOURED_TRACKS",,,,,
+OPTION | EQUIPPED | Hunter-killer Missile | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HUNTER_KILLER_MISSILE",,,,,
 SCOUTS,Scout Squad,"6""",4,4+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE, SCOUT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad,FLEXIBLE_ASSET,"INFILTRATORS, SCOUTS_6","x5, 65","x10, 120",,,,,,,"LABEL | Scouts | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | SCOUT_BOLTGUN | order=30
@@ -425,17 +425,17 @@ BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | SCOUT_BOLTGUN | order=80 | qty=1","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | BOLTGUN | Boltgun | default=1 | max=1,1,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN | preserve=SCOUT_BOLTGUN
-OPTION | SHOTGUN | Shotgun | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS | preserve=SCOUT_BOLTGUN","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=90 | count=1
-OPTION | KNIFE | Combat Knife | default=1 | max=1,1,0,0,0,0,0,0 | weapons=COMBAT_KNIFE_SCOUTS | preserve=COMBAT_KNIFE_SCOUTS
-OPTION | CHAIN | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_CHAINSWORD_SCOUTS_SGT | preserve=COMBAT_KNIFE_SCOUTS","GROUP | MODEL_RANGED | Scout Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Scouts
+OPTION | BOLTGUN | Boltgun | default=1 | max=1,1,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
+OPTION | SHOTGUN | Shotgun | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=90 | count=1
+OPTION | KNIFE | Combat Knife | default=1 | max=1,1,0,0,0,0,0,0 | weapons=COMBAT_KNIFE_SCOUTS
+OPTION | CHAIN | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_CHAINSWORD_SCOUTS_SGT","GROUP | MODEL_RANGED | Scout Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Scouts
 OPTION | BOLTGUN | Boltgun | default=1 | max=5,10,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
-OPTION | SHOTGUN | Shotgun | default=0 | max=5,10,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS | preserve=SCOUT_BOLTGUN","GROUP | SNIPER_SLOT | Sniper Rifle | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
+OPTION | SHOTGUN | Shotgun | default=0 | max=5,10,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | SNIPER_SLOT | Sniper Rifle | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
 OPTION | NONE | No Sniper Rifle | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | SNIPER | Sniper Rifle (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_SNIPER_RIFLE | preserve=SCOUT_BOLTGUN","GROUP | HEAVY_SLOT | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
+OPTION | SNIPER | Sniper Rifle (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_SNIPER_RIFLE","GROUP | HEAVY_SLOT | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
 OPTION | NONE | No Heavy Weapon | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_SCOUTS | preserve=SCOUT_BOLTGUN
-OPTION | MISSILE | Missile Launcher (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_MISSILE_LAUNCHER_FRAG,SCOUT_MISSILE_LAUNCHER_KRAK | preserve=SCOUT_BOLTGUN",
+OPTION | BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_SCOUTS
+OPTION | MISSILE | Missile Launcher (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_MISSILE_LAUNCHER_FRAG,SCOUT_MISSILE_LAUNCHER_KRAK",
 STERNGUARD_VETS,Sternguard Vets,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Sternguard-Veteran-Squad,VETERAN_MARKSMEN,,"x5, 105","x10, 210",,,,,,,"LABEL | Sternguard Veterans | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | STERNGUARD_BOLT_RIFLE | order=30
@@ -452,8 +452,8 @@ OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=STERNGUA
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_STERNGUARD_SGT
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT","GROUP | SPECIAL_WEAPON | Veteran Special Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Sternguard Veterans
 OPTION | NONE | Artificer Firearm | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | HEAVY_BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_HEAVY_INTERCESSORS | preserve=STERNGUARD_BOLT_RIFLE,STERNGUARD_ARTIFICER_FIREARM_PURGATUS,STERNGUARD_ARTIFICER_FIREARM_DAMNATUS
-OPTION | PYRECANNON | Pyrecannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=STERNGUARD_PYRECANNON | preserve=STERNGUARD_BOLT_RIFLE,STERNGUARD_ARTIFICER_FIREARM_PURGATUS,STERNGUARD_ARTIFICER_FIREARM_DAMNATUS",,,,
+OPTION | HEAVY_BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_HEAVY_INTERCESSORS
+OPTION | PYRECANNON | Pyrecannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=STERNGUARD_PYRECANNON",,,,
 STORM_SPEEDER_HAILSTRIKE,Storm Speeder Hailstrike,"14""",9,3+,11,6+,3,"VEHICLE, FLY, FRAME, IMPERIUM, SPEEDER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Storm-Speeder-Hailstrike,HAILSTRIKE,"DEEP_STRIKE, DEADLY_DEMISE_D3",", 110",,,,,,,,"WEAPON | HAILSTRIKE_FRAGSTORM_GRENADE_LAUNCHERS_X2 | order=10 | qty=1
 WEAPON | HAILSTRIKE_IRONHAIL_HEAVY_STUBBERS_X2 | order=20 | qty=1
 WEAPON | HAILSTRIKE_ONSLAUGHT_GATLING_CANNON | order=30 | qty=1
@@ -490,9 +490,9 @@ OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons
 OPTION | POWER_FIST | Power Fist | default=1 | max=5,10,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
 OPTION | CHAINFIST | Chainfist | default=0 | max=5,10,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER","GROUP | HEAVY_WEAPON | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Terminators | display=35
 OPTION | NONE | No Heavy Weapon | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | ASSAULT_CANNON | Assault Cannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_CANNON_DEATHWING_TERMINATORS | preserve=STORM_BOLTER_TERMINATORS
-OPTION | HEAVY_FLAMER | Heavy Flamer (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS | preserve=STORM_BOLTER_TERMINATORS
-OPTION | CYCLONE | Cyclone Missile Launcher + Storm Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK | preserve=STORM_BOLTER_TERMINATORS | cost=10",,,
+OPTION | ASSAULT_CANNON | Assault Cannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_CANNON_DEATHWING_TERMINATORS
+OPTION | HEAVY_FLAMER | Heavy Flamer (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS
+OPTION | CYCLONE | Cyclone Missile Launcher + Storm Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK | cost=10",,,
 URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, CAPTAIN, URIEL VENTRIS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Uriel-Ventris,"UNORTHODOX_STRATEGIST, MASTER_OF_THE_FLEET",,", 105",,,,,,,,"FIXED | BOLT_PISTOL_LEADERS
 FIXED | INVICTUS
 FIXED | SWORD_OF_IDAEUS",,,,,,
@@ -502,21 +502,21 @@ WEAPON | MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50
 WEAPON | HEAVY_BOLT_PISTOL | order=60 | qty=1","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL | preserve=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=HEAVY_BOLT_PISTOL
-OPTION | SHIELD | Combat Shield | default=0 | max=1,1,0,0,0,0,0,0 | preserve=HEAVY_BOLT_PISTOL | abilities=COMBAT_SHIELD_VANGUARD","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
+OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
+OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
+OPTION | SHIELD | Combat Shield | default=0 | max=1,1,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
 OPTION | RELIC | Relic Blade | default=1 | max=1,1,0,0,0,0,0,0 | weapons=VANGUARD_RELIC_BLADE
 OPTION | FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | VETERAN_RANGED | Veteran Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Vanguard Veterans
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=5,10,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol (up to 2 per 5 models) | default=0 | max=4,4,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED | preserve=HEAVY_BOLT_PISTOL
-OPTION | SHIELD | Combat Shield | default=0 | max=5,10,0,0,0,0,0,0 | preserve=HEAVY_BOLT_PISTOL | abilities=COMBAT_SHIELD_VANGUARD",,,
+OPTION | PLASMA | Plasma Pistol (up to 2 per 5 models) | default=0 | max=4,4,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
+OPTION | SHIELD | Combat Shield | default=0 | max=5,10,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD",,,
 VICTRIX_HONOUR_GUARD,Victrix Honour Guard,"6""",5,2+,3,6+,2,"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES",,"VICTRIX_HONOUR_GUARD_GLORY_OF_ULTRAMAR, VICTRIX_HONOUR_GUARD_HONOUR_GUARD_OF_MACRAGGE, VICTRIX_HONOUR_GUARD_UNIT_COMPOSITION",,"x3, 120","x6, 250",,,,,,,"LABEL | VICTRIX HONOUR GUARD | order=1
 WEAPON | VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE | order=2 | qty=1
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT | order=3 | qty=1
 LABEL | CHAPTER ANCIENT | order=4
 LABEL | CHAPTER CHAMPION | order=5","GROUP | CHAPTER_ANCIENT | Chapter Ancient | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | 0 Chapter Ancient | default=1 | max=1,1,0,0,0,0,0,0 | preserve=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE,MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT | compatible=CHAPTER_CHAMPION=NONE|CHAMPION
+OPTION | NONE | 0 Chapter Ancient | default=1 | max=1,1,0,0,0,0,0,0 | compatible=CHAPTER_CHAMPION=NONE|CHAMPION
 OPTION | ANCIENT | 1 Chapter Ancient | default=0 | max=1,1,0,0,0,0,0,0 | weapons=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE,MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT | abilities=VICTRIX_HONOUR_GUARD_BANNER_OF_MACRAGGE | compatible=CHAPTER_CHAMPION=NONE|CHAMPION | cost=15","GROUP | CHAPTER_CHAMPION | Chapter Champion | mode=UNIT | instances=1,2,0,0,0,0,0,0
 OPTION | NONE | 0 Chapter Champion | default=1 | max=1,1,0,0,0,0,0,0
 OPTION | CHAMPION | 1 Chapter Champion | default=0 | max=1,1,0,0,0,0,0,0 | weapons=VICTRIX_HONOUR_GUARD_BLADES_OF_HONOUR",,,,
@@ -582,8 +582,8 @@ WEAPON | RELICS_OF_BATTLE | order=2 | qty=1",,,,,,
 ANCIENT_IN_TERMINATOR_ARMOUR,Terminator Ancient,"5""",6,2+/4++,5,6+,2,"INFANTRY, ANCIENT, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient-In-Terminator-Armour,NEVER_SHALL_THE_STANDARD_FALL,"DEEP_STRIKE, SUPPORT, RAISE_THE_BANNER",", 75",,,,,,,,"WEAPON | STORM_BOLTER_TERMINATORS | order=1 | qty=1
 WEAPON | ANCIENT_TERMINATOR_MASTER_CRAFTED_POWER_WEAPON | order=2 | qty=1",,,,,,
 FIRESTRIKE_SERVO_TURRETS,Firestrike Turrets,"5""",6,2+,6,6+,2,"VEHICLE, ARTILLERY, IMPERIUM",,SENTINEL_PROTOCOLS,,"x1, 80","x2, 160",,,,,,,WEAPON | FIRESTRIKE_HOVERING_BULK | order=20,"GROUP | MAIN_GUN | Main Gun | mode=PER_MODEL | instances=1,2,0,0,0,0,0,0
-OPTION | LAS_TALON | Twin Firestrike Las-talon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_LAS_TALON | preserve=FIRESTRIKE_HOVERING_BULK
-OPTION | AUTOCANNON | Twin Firestrike Autocannon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_AUTOCANNON | preserve=FIRESTRIKE_HOVERING_BULK",,,,,
+OPTION | LAS_TALON | Twin Firestrike Las-talon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_LAS_TALON
+OPTION | AUTOCANNON | Twin Firestrike Autocannon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_AUTOCANNON",,,,,
 LAND_RAIDER,Land Raider,"10""",12,2+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",,LAND_RAIDER_POWER_OF_MACHINE_SPIRIT,"DEADLY_DEMISE_D6, DAMAGED_1_6, ASSAULT_RAMP, TRANSPORT_LAND_RAIDER",", 245",,,,,,,,"WEAPON | GODHAMMER_LASCANNONS_X2 | order=10 | qty=1
 WEAPON | TWIN_HEAVY_BOLTER | order=20 | qty=1
 WEAPON | ARMORED_TRACKS_LAND_RAIDER | order=30 | qty=1","GROUP | HUNTER_KILLER | Hunter-killer Missile | mode=UNIT | instances=1,0,0,0,0,0,0,0
