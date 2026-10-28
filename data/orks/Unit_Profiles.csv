@@ -110,18 +110,18 @@ WEAPON | BURNA | order=52 | qty=1
 WEAPON | KUSTOM_SHOOTA | order=53 | qty=2
 WEAPON | ROKKIT_LAUNCHA_BLASTA | order=54 | qty=1
 WEAPON | ROKKIT_LAUNCHA_BUSTA | order=55 | qty=1
-WEAPON | BREACHA_RAM | order=56 | qty=1","GROUP | NOB_MELEE | Nob Melee | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Nob | display=10
+WEAPON | BREACHA_RAM | order=56 | qty=1","GROUP | NOB_MELEE | Nob Melee | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Nob
 OPTION | CHOPPA | Choppa | default=1 | max=1,0,0,0,0,0,0,0
 OPTION | BIG_CHOPPA | Big Choppa | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BIG_CHOPPA
-OPTION | POWER_KLAW | Power Klaw | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_KLAW","GROUP | BURNA | Burna | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos | display=20
+OPTION | POWER_KLAW | Power Klaw | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_KLAW","GROUP | BURNA | Burna | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
 OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | BURNA | Burna | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BURNA","GROUP | ROKKIT_LAUNCHA | Rokkit Launcha | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos | display=30
+OPTION | BURNA | Burna | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BURNA","GROUP | ROKKIT_LAUNCHA | Rokkit Launcha | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
 OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | ROKKIT_LAUNCHA | Rokkit Launcha | default=0 | max=9,0,0,0,0,0,0,0 | weapons=ROKKIT_LAUNCHA_BLASTA,ROKKIT_LAUNCHA_BUSTA","GROUP | BREACHA_RAM | Breacha Ram | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos | display=40
+OPTION | ROKKIT_LAUNCHA | Rokkit Launcha | default=0 | max=9,0,0,0,0,0,0,0 | weapons=ROKKIT_LAUNCHA_BLASTA,ROKKIT_LAUNCHA_BUSTA","GROUP | BREACHA_RAM | Breacha Ram | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
 OPTION | CHOPPA | Choppa | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | BREACHA_RAM | Breacha Ram | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BREACHA_RAM","GROUP | KUSTOM_SHOOTA_1 | Kustom Shoota 1 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos | display=50
+OPTION | BREACHA_RAM | Breacha Ram | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BREACHA_RAM","GROUP | KUSTOM_SHOOTA_1 | Kustom Shoota 1 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
 OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=9,0,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA","GROUP | KUSTOM_SHOOTA_2 | Kustom Shoota 2 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos | display=60
+OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=9,0,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA","GROUP | KUSTOM_SHOOTA_2 | Kustom Shoota 2 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
 OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
 OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=9,0,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA"
 LOOTAS,Lootas,"6""",5,5+,1,7,1,"INFANTRY, LOOTAS",https://wahapedia.ru/wh40k11ed/factions/orks/Lootas,DATS_OUR_LOOT,COMPOSITION_LOOTAS,"x5, 50","x10, 100",,,,,,,"FIXED | DEFFGUN

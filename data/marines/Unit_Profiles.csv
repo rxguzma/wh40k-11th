@@ -22,10 +22,10 @@ ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELIN
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
-LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
+LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
+OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON
@@ -34,15 +34,15 @@ ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Jump Intercessors,"12""",5,3+,2,6+,1,"INFAN
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
-LABEL | Sergeant | order=50","GROUP | SQUAD_PLASMA | Assault Intercessors with Jump Packs | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Assault Intercessors with Jump Packs
-OPTION | NONE | Heavy Bolt Pistols | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | PLASMA | Plasma Pistol (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
+LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
+OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON",,,
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON","GROUP | SQUAD_PLASMA | Assault Intercessors with Jump Packs | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Assault Intercessors with Jump Packs
+OPTION | NONE | Heavy Bolt Pistols | default=1 | max=1,2,0,0,0,0,0,0
+OPTION | PLASMA | Plasma Pistol (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,
 AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael,"SUPREME_GRAND_MASTER, THE_LION_HELM","LEADER_AZRAEL, MASTERFUL_TACTICIAN",", 150",,,,,,,,"FIXED | LIONS_WRATH
 FIXED | THE_SWORD_OF_SECRETS",,,,,,
 BALLISTUS,Ballistus Dreadnought,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ballistus-Dreadnought,BALLISTUS_STRIKE,"DAMAGED_1_4, DEADLY_DEMISE_D3",", 150",,,,,,,,"WEAPON | BALLISTUS_LASCANNON | order=10 | qty=1
@@ -57,7 +57,7 @@ WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50
-WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=70 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=60 | count=1
+WEAPON | MASTER_CRAFTED_POWER_WEAPON_BLADEGUARD | order=70 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | NEO_VOLKITE | Neo-volkite Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=BLADEGUARD_NEO_VOLKITE_PISTOL
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,,
@@ -151,9 +151,9 @@ WEAPON | CERAMITE_FISTS_TROOPS | order=40
 BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
-WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","GROUP | MODELS_RIFLE | Eliminator Rifles | mode=PER_MODEL | instances=3,0,0,0,0,0,0,0 | section=Eliminators | display=30
+WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","GROUP | MODELS_RIFLE | Eliminator Rifles | mode=PER_MODEL | instances=3,0,0,0,0,0,0,0 | section=Eliminators
 OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=3,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE
-OPTION | LAS | Las Fusil | default=0 | max=3,0,0,0,0,0,0,0 | weapons=LAS_FUSIL","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
+OPTION | LAS | Las Fusil | default=0 | max=3,0,0,0,0,0,0,0 | weapons=LAS_FUSIL","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | SNIPER | Bolt Sniper Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BOLT_SNIPER_RIFLE
 OPTION | INSTIGATOR | Instigator Bolt Carbine | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ELIMINATOR_INSTIGATOR_BOLT_CARBINE
 OPTION | LAS | Las Fusil | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAS_FUSIL",,,,
@@ -209,7 +209,7 @@ BLANK | order=60
 LABEL | Sergeant | order=70
 WEAPON | PLASMA_INCINERATOR_STANDARD | order=90 | qty=1
 WEAPON | PLASMA_INCINERATOR_SUPERCHARGE | order=100 | qty=1
-WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=80 | count=1
+WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","GROUP | SERGEANT_PISTOL | Sergeant Pistol | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | BOLT | Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_PISTOL
 OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,,
 IMPULSOR_Orbital,Impulsor,"12""",9,3+,11,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Impulsor,RAPID_DISEMBARKATION,"DEADLY_DEMISE_D3, FIRING_DECK_7, TRANSPORT_IMPULSOR",", 70",,,,,,,,WEAPON | ARMOURED_HULL | order=20 | qty=1,"GROUP | AUX_SYSTEM | Auxiliary System | mode=UNIT | instances=1,0,0,0,0,0,0,0
@@ -272,17 +272,17 @@ WEAPON | INTERCESSORS_GRENADE_LAUNCHER_FRAG | order=60
 WEAPON | INTERCESSORS_GRENADE_LAUNCHER_KRAK | order=70
 BLANK | order=80
 LABEL | Sergeant | order=90
-WEAPON | INTERCESSORS_BOLT_PISTOL | order=100 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=130 | count=1
-OPTION | KNIVES_AND_FISTS | Knives and Fists | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
-OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=110 | count=1
+WEAPON | INTERCESSORS_BOLT_PISTOL | order=100 | qty=1","GROUP | SERGEANT_RIFLE | Sergeant Rifle | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
 OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD
 OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
 OPTION | PLASMA_PISTOL | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON",,,,
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
+OPTION | KNIVES_AND_FISTS | Knives and Fists | default=1 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_KNIVES_AND_FISTS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | CHAINSWORD | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_CHAINSWORD | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON
+OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER | compatible=SERGEANT_RIFLE=BOLT_RIFLE|CHAINSWORD|HAND_FLAMER|PLASMA_PISTOL|POWER_WEAPON",,,,
 INVADER_ATV,Invader ATV,"12""",5,3+,8,6,2,"MOUNTED, GRENADES, IMPERIUM, INVADER ATV, RAVENWING, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Invader-ATV,OUTRIDER_ESCORT,,"x1, 65","x2, 130",,,,,,,"FIXED | TWIN_BOLT_RIFLE
 FIXED | BOLT_PISTOL_INTERCESSORS
 FIXED | CLOSE_COMBAT_WEAPON_ATV","GROUP | MAIN_GUN_INVADER_ATV | Main Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
@@ -362,7 +362,7 @@ WEAPON | OUTRIDER_CHAINSWORD | order=40
 BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | HEAVY_BOLT_PISTOL | order=70 | qty=1
-WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant | display=90 | count=1
+WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | CHAIN | Chainsword | default=1 | max=1,1,1,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
 OPTION | POWER | Power Weapon | default=0 | max=1,1,1,0,0,0,0,0 | weapons=OUTRIDER_POWER_WEAPON
 OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | PLASMA_SLOT | Pistol Upgrade | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant
@@ -424,11 +424,11 @@ WEAPON | COMBAT_KNIFE_SCOUTS | order=40
 BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
-WEAPON | SCOUT_BOLTGUN | order=80 | qty=1","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | BOLTGUN | Boltgun | default=1 | max=1,1,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
-OPTION | SHOTGUN | Shotgun | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=90 | count=1
+WEAPON | SCOUT_BOLTGUN | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | KNIFE | Combat Knife | default=1 | max=1,1,0,0,0,0,0,0 | weapons=COMBAT_KNIFE_SCOUTS
-OPTION | CHAIN | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_CHAINSWORD_SCOUTS_SGT","GROUP | MODEL_RANGED | Scout Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Scouts
+OPTION | CHAIN | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_CHAINSWORD_SCOUTS_SGT","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
+OPTION | BOLTGUN | Boltgun | default=1 | max=1,1,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
+OPTION | SHOTGUN | Shotgun | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | MODEL_RANGED | Scout Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Scouts
 OPTION | BOLTGUN | Boltgun | default=1 | max=5,10,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
 OPTION | SHOTGUN | Shotgun | default=0 | max=5,10,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | SNIPER_SLOT | Sniper Rifle | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
 OPTION | NONE | No Sniper Rifle | default=1 | max=1,2,0,0,0,0,0,0
@@ -447,7 +447,7 @@ LABEL | Sergeant | order=80
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=90 | qty=1
 WEAPON | STERNGUARD_BOLT_RIFLE | order=100 | qty=1
 WEAPON | STERNGUARD_ARTIFICER_FIREARM_PURGATUS | order=110 | qty=1
-WEAPON | STERNGUARD_ARTIFICER_FIREARM_DAMNATUS | order=120 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=130 | count=1
+WEAPON | STERNGUARD_ARTIFICER_FIREARM_DAMNATUS | order=120 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=STERNGUARD_CHAINSWORD
 OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_STERNGUARD_SGT
 OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT","GROUP | SPECIAL_WEAPON | Veteran Special Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Sternguard Veterans
@@ -476,23 +476,23 @@ FIXED | CLOSE_COMBAT_WEAPON_INTERCESSORS",,,,,,
 TECHMARINE,Techmarine,"6""",5,2+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Techmarine,BLESSINGS_OF_THE_OMNISSIAH,"LEADER, TECHMARINE_AURA",", 55",,,,,,,,"WEAPON | FORGE_BOLTER | order=1 | qty=1
 WEAPON | GRAV_PISTOL | order=2 | qty=1
 WEAPON | OMNISSIAN_POWER_AXE | order=3 | qty=1",,,,,,
-TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad,TERMINATUS_ASSAULT,"DEEP_STRIKE, Teleport_Homer","x5, 170","x10, 340",,,,,,,LABEL | Terminators | order=10,"GROUP | ASSAULT_TERMINATOR_LOADOUT | Weapon 1 | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators | display=20
+TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad,TERMINATUS_ASSAULT,"DEEP_STRIKE, Teleport_Homer","x5, 170","x10, 340",,,,,,,LABEL | Terminators | order=10,"GROUP | ASSAULT_TERMINATOR_LOADOUT | Weapon 1 | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators
 OPTION | ASSAULT_TERMINATORS_CLAWS | Twin Lightning Claws | default=1 | max=5,10,0,0,0,0,0,0 | weapons=TWIN_LIGHTNING_CLAWS
 OPTION | ASSAULT_TERMINATORS_HAMMER | Thunder Hammer + Storm Shield | default=0 | max=5,10,0,0,0,0,0,0 | weapons=THUNDER_HAMMER_TERMINATORS | abilities=ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS | cost=5",,,,,
 TERMINATOR_SQUAD,Terminator Squad,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Squad,FURY_OF_THE_FIRST,"DEEP_STRIKE, Teleport_Homer","x5, 190","x10, 380",,,,,,,"LABEL | Terminators | order=10
 WEAPON | STORM_BOLTER_TERMINATORS | order=20
 BLANK | order=40
 LABEL | Sergeant | order=50
-WEAPON | STORM_BOLTER_TERMINATORS | order=60 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
-OPTION | POWER_FIST | Power Fist | default=1 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
-OPTION | CHAINFIST | Chainfist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT","GROUP | MODEL_MELEE | Terminator Melee | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators | display=30
+WEAPON | STORM_BOLTER_TERMINATORS | order=60 | qty=1","GROUP | MODEL_MELEE | Terminator Melee | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators
 OPTION | POWER_FIST | Power Fist | default=1 | max=5,10,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
-OPTION | CHAINFIST | Chainfist | default=0 | max=5,10,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER","GROUP | HEAVY_WEAPON | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Terminators | display=35
+OPTION | CHAINFIST | Chainfist | default=0 | max=5,10,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER","GROUP | HEAVY_WEAPON | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Terminators
 OPTION | NONE | No Heavy Weapon | default=1 | max=1,2,0,0,0,0,0,0
 OPTION | ASSAULT_CANNON | Assault Cannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_CANNON_DEATHWING_TERMINATORS
 OPTION | HEAVY_FLAMER | Heavy Flamer (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS
-OPTION | CYCLONE | Cyclone Missile Launcher + Storm Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK | cost=10",,,
+OPTION | CYCLONE | Cyclone Missile Launcher + Storm Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK | cost=10","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
+OPTION | POWER_FIST | Power Fist | default=1 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
+OPTION | CHAINFIST | Chainfist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER
+OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT",,,
 URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, CAPTAIN, URIEL VENTRIS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Uriel-Ventris,"UNORTHODOX_STRATEGIST, MASTER_OF_THE_FLEET",,", 105",,,,,,,,"FIXED | BOLT_PISTOL_LEADERS
 FIXED | INVICTUS
 FIXED | SWORD_OF_IDAEUS",,,,,,
@@ -501,13 +501,13 @@ WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50
-WEAPON | HEAVY_BOLT_PISTOL | order=60 | qty=1","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
-OPTION | SHIELD | Combat Shield | default=0 | max=1,1,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | display=70 | count=1
+WEAPON | HEAVY_BOLT_PISTOL | order=60 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
 OPTION | RELIC | Relic Blade | default=1 | max=1,1,0,0,0,0,0,0 | weapons=VANGUARD_RELIC_BLADE
 OPTION | FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
-OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | VETERAN_RANGED | Veteran Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Vanguard Veterans
+OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
+OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
+OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
+OPTION | SHIELD | Combat Shield | default=0 | max=1,1,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD","GROUP | VETERAN_RANGED | Veteran Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Vanguard Veterans
 OPTION | HBP | Heavy Bolt Pistol | default=1 | max=5,10,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
 OPTION | PLASMA | Plasma Pistol (up to 2 per 5 models) | default=0 | max=4,4,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
 OPTION | SHIELD | Combat Shield | default=0 | max=5,10,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD",,,
