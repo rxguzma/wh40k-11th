@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_W","mode":"remove_column","column":"Affects"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/universal/Tag_Definitions.csv","id_column":"Tag_ID","row_id":"PLUS_1_W","mode":"remove_column","column":"Title"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
