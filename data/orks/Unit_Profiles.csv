@@ -48,14 +48,14 @@ WEAPON | ROKKIT_LAUNCHA_BUSTA | order=1034
 BLANK | order=1040
 LABEL | Nob | order=1050
 WEAPON | KOMBI_SKORCHA_SHOOTA | order=1051 | qty=1
-WEAPON | KOMBI_SKORCHA_SKORCHA | order=1052 | qty=1","GROUP | NOB_MELEE | Nob Weapon 1 | mode=PER_MODEL | instances=1,1,0,0,0,0,0,0
-OPTION | KUSTOM_CHOPPA | Kustom Choppa | default=1 | max=1,1,0,0,0,0,0,0 | weapons=KUSTOM_CHOPPA | compatible=NOB_RANGED=KOMBI_SKORCHA|KOMBI_ROKKIT|KUSTOM_SHOOTA
-OPTION | POWER_KLAW | Power Klaw | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_KLAW | compatible=NOB_RANGED=KOMBI_SKORCHA|KOMBI_ROKKIT|KUSTOM_SHOOTA
-OPTION | BIG_CHOPPA | Big Choppa | default=0 | max=1,1,0,0,0,0,0,0 | weapons=BIG_CHOPPA | compatible=NOB_RANGED=NONE","GROUP | NOB_RANGED | Nob Weapon 2 | mode=PER_MODEL | instances=1,1,0,0,0,0,0,0
-OPTION | KOMBI_SKORCHA | Kombi-skorcha | default=1 | max=1,1,0,0,0,0,0,0 | weapons=KOMBI_SKORCHA_SHOOTA,KOMBI_SKORCHA_SKORCHA
-OPTION | KOMBI_ROKKIT | Kombi-rokkit | default=0 | max=1,1,0,0,0,0,0,0 | weapons=KOMBI_ROKKIT_BUSTA,KOMBI_ROKKIT_SHOOTA
-OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=1,1,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA
-OPTION | NONE | None | default=0 | max=1,1,0,0,0,0,0,0",,,,
+WEAPON | KOMBI_SKORCHA_SKORCHA | order=1052 | qty=1","GROUP | NOB_MELEE | Nob Weapon 1 | mode=PER_MODEL | instances=1,2,0,0,0,0,0,0
+OPTION | KUSTOM_CHOPPA | Kustom Choppa | default=1 | max=1,2,0,0,0,0,0,0 | weapons=KUSTOM_CHOPPA | compatible=NOB_RANGED=KOMBI_SKORCHA|KOMBI_ROKKIT|KUSTOM_SHOOTA
+OPTION | POWER_KLAW | Power Klaw | default=0 | max=1,2,0,0,0,0,0,0 | weapons=POWER_KLAW | compatible=NOB_RANGED=KOMBI_SKORCHA|KOMBI_ROKKIT|KUSTOM_SHOOTA
+OPTION | BIG_CHOPPA | Big Choppa | default=0 | max=1,2,0,0,0,0,0,0 | weapons=BIG_CHOPPA | compatible=NOB_RANGED=NONE","GROUP | NOB_RANGED | Nob Weapon 2 | mode=PER_MODEL | instances=1,2,0,0,0,0,0,0
+OPTION | KOMBI_SKORCHA | Kombi-skorcha | default=1 | max=1,2,0,0,0,0,0,0 | weapons=KOMBI_SKORCHA_SHOOTA,KOMBI_SKORCHA_SKORCHA
+OPTION | KOMBI_ROKKIT | Kombi-rokkit | default=0 | max=1,2,0,0,0,0,0,0 | weapons=KOMBI_ROKKIT_BUSTA,KOMBI_ROKKIT_SHOOTA
+OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=1,2,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA
+OPTION | NONE | None | default=0 | max=1,2,0,0,0,0,0,0",,,,
 BREAKA_BOYZ,Breaka Boyz,"6""",5,4+,2,7+,1,"INFANTRY, EXPLOSIVES, BREAKA BOYZ",https://wahapedia.ru/wh40k11ed/factions/orks/Breaka-Boyz,,"BOMB_SQUIGS_TANKBUSTAS, TROPHY_HUNTERS, COMPOSITION_BREAKA_BOYZ, LED_BY_BREAKA_BOYZ","x6, 120",,,,,,,,"FIXED | ROKKIT_PISTOL
 FIXED | CHOPPA
 FIXED | KNUCKLEBUSTAS
