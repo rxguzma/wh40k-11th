@@ -6,6 +6,8 @@ army,Abilities.csv,4,Long_Description,NO,AUTHORITATIVE,
 army,Abilities.csv,5,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
 army,Abilities.csv,6,Visibility_ID,YES,AUTHORITATIVE,"Sole canonical Ability placement field; valid values are 1, 2, or 3."
 army,Abilities.csv,7,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
+army,Abilities.csv,8,Parent_Rule_ID,NO,AUTHORITATIVE,Optional parent Ability for grouped effects.
+army,Abilities.csv,9,Effect_Order,NO,AUTHORITATIVE,Optional grouped effect order.
 army,Army_Rules.csv,1,Army_Rule_ID,YES,AUTHORITATIVE,Stable unique army-rule key.
 army,Army_Rules.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Army_Rules.csv,3,Rule_Name,YES,AUTHORITATIVE,Visible army-rule name.
@@ -21,28 +23,32 @@ army,Detachment_Definitions.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Detachment_Definitions.csv,3,Detachment_Name,YES,AUTHORITATIVE,Visible detachment name.
 army,Detachment_Definitions.csv,4,Rule_ID,YES,AUTHORITATIVE,Stable unique ID for the detachment rule.
 army,Detachment_Definitions.csv,5,Rule_Name,YES,AUTHORITATIVE,Visible detachment rule name.
-army,Detachment_Definitions.csv,6,DP_Cost,NO,AUTHORITATIVE,Detachment point cost.
-army,Detachment_Definitions.csv,7,Detachment_Disposition,NO,AUTHORITATIVE,Primary allowed disposition.
-army,Detachment_Definitions.csv,8,Detachment_Disposition_2,NO,AUTHORITATIVE,Optional second allowed disposition.
-army,Detachment_Definitions.csv,9,Short_Description,NO,AUTHORITATIVE,
-army,Detachment_Definitions.csv,10,Long_Description,NO,AUTHORITATIVE,
-army,Detachment_Definitions.csv,11,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
-army,Detachment_Definitions.csv,12,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Detachment_Definitions.csv,13,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
-army,Detachment_Definitions.csv,14,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Detachment_Definitions.csv,15,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
+army,Detachment_Definitions.csv,6,Parent_Rule_ID,NO,AUTHORITATIVE,Optional parent for grouped effects.
+army,Detachment_Definitions.csv,7,Effect_Order,NO,AUTHORITATIVE,Optional grouped effect display order.
+army,Detachment_Definitions.csv,8,DP_Cost,NO,AUTHORITATIVE,Detachment point cost.
+army,Detachment_Definitions.csv,9,Detachment_Disposition,NO,AUTHORITATIVE,Primary allowed disposition.
+army,Detachment_Definitions.csv,10,Detachment_Disposition_2,NO,AUTHORITATIVE,Optional second allowed disposition.
+army,Detachment_Definitions.csv,11,Short_Description,NO,AUTHORITATIVE,
+army,Detachment_Definitions.csv,12,Long_Description,NO,AUTHORITATIVE,
+army,Detachment_Definitions.csv,13,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
+army,Detachment_Definitions.csv,14,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
+army,Detachment_Definitions.csv,15,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
+army,Detachment_Definitions.csv,16,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Detachment_Definitions.csv,17,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
 army,Enhancements.csv,1,Enhancement_ID,YES,AUTHORITATIVE,Stable unique enhancement key.
 army,Enhancements.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Enhancements.csv,3,Enhancement_Name,YES,AUTHORITATIVE,Visible enhancement name.
-army,Enhancements.csv,4,Points,NO,AUTHORITATIVE,Enhancement points cost.
-army,Enhancements.csv,5,Repeatable,YES,AUTHORITATIVE,TRUE when this Enhancement may be assigned more than once in the same army; FALSE otherwise.
-army,Enhancements.csv,6,Short_Description,NO,AUTHORITATIVE,
-army,Enhancements.csv,7,Long_Description,NO,AUTHORITATIVE,
-army,Enhancements.csv,8,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
-army,Enhancements.csv,9,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Enhancements.csv,10,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Enhancement.
-army,Enhancements.csv,11,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Enhancements.csv,12,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Enhancement ineligible.
+army,Enhancements.csv,4,Parent_Rule_ID,NO,AUTHORITATIVE,Optional parent for grouped effects.
+army,Enhancements.csv,5,Effect_Order,NO,AUTHORITATIVE,Optional grouped effect display order.
+army,Enhancements.csv,6,Points,NO,AUTHORITATIVE,Enhancement points cost.
+army,Enhancements.csv,7,Repeatable,YES,AUTHORITATIVE,TRUE when this Enhancement may be assigned more than once in the same army; FALSE otherwise.
+army,Enhancements.csv,8,Short_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,9,Long_Description,NO,AUTHORITATIVE,
+army,Enhancements.csv,10,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
+army,Enhancements.csv,11,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
+army,Enhancements.csv,12,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Enhancement.
+army,Enhancements.csv,13,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
+army,Enhancements.csv,14,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Enhancement ineligible.
 army,Loadout_Abilities.csv,1,Loadout_Option_ID,YES,AUTHORITATIVE,Foreign key to Loadout_Options.csv.
 army,Loadout_Abilities.csv,2,Ability_ID,YES,AUTHORITATIVE,Ability granted by selecting this loadout option.
 army,Loadout_Abilities.csv,3,Sort_Order,YES,AUTHORITATIVE,Order within the option ability list.

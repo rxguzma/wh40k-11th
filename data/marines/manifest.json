@@ -1,21 +1,21 @@
 {
-  "dataset_sha256": "2e78547004896e7180a3e3799733657d3f2cad5623654744444c4efd12218acb",
+  "dataset_sha256": "89f394cd530fcbcd7401ed9ae23267cfa50c79f150cfd1d5563d48948afdb3a9",
   "files": {
     "Abilities.csv": {
-      "bytes": 73684,
-      "sha256": "e1b778a0010ee1bbf472753212e087ae86e0f05bcf00bd0f20e566c5360407de"
+      "bytes": 69091,
+      "sha256": "7f52f52ba5f5f1f0ff3e1e4365b24034ec04479006b977ef2de4bc03be5765e2"
     },
     "Army_Rules.csv": {
       "bytes": 2355,
       "sha256": "9933fec335e36ba27299d5cb4767029ff98985436ed9d8bb373834ef033efae2"
     },
     "Detachment_Definitions.csv": {
-      "bytes": 6041,
-      "sha256": "e6bea97a45627ce01484cc7ceb07d60ccdcc11392e57e82e74fbe7fe37fa08dd"
+      "bytes": 6103,
+      "sha256": "2da3f42d7ee3f277cadf2cec3d5b7c42da0770711c4d68e2abb1e9c62573ef5f"
     },
     "Enhancements.csv": {
-      "bytes": 13189,
-      "sha256": "b13b29aabd3db1601c81388881da2671d2fb4036e8f5be827b9c85dda495aaac"
+      "bytes": 13297,
+      "sha256": "fe3cc1712b0e95be4fbdf787c5f631752286fd0d958ad9fc125813915a8a3c63"
     },
     "Loadout_Abilities.csv": {
       "bytes": 902,
@@ -34,8 +34,8 @@
       "sha256": "cfab74033e05aae2dff59fec8faa57042ea1cf86ac5a61eceedaf5b00c5f9b38"
     },
     "Stratagems.csv": {
-      "bytes": 25822,
-      "sha256": "da9fa2fa21334c128ddead6a56b1ac455f0a88075e3a0f1231ecbc974107dab6"
+      "bytes": 24482,
+      "sha256": "69b3fd0ef488fe12289893110a85761e4d9a5acbbe0c886f466d83b2a0992b4c"
     },
     "Unit_Profiles.csv": {
       "bytes": 25902,
@@ -47,13 +47,13 @@
     },
     "Weapon_Abilities.csv": {
       "bytes": 28521,
-      "sha256": "3bd9778b81c3bb3575fd119bae3bb3c23e865abaf231ba899744b2f84132c838"
+      "sha256": "f52526a0f644d30b1c1f189d5bf76b72c54d6a4adecdb0266324eb825507a333"
     },
     "Weapon_Stats.csv": {
       "bytes": 18248,
       "sha256": "b43a8d78a9214ab0323c963a9b4342d134a925a45782356ca6c14a4e07907467"
     }
   },
-  "schema_sha256": "115b781cdd66dc8aa80ed25bdc6ae7c3ae92f774a932320b887e953231f6c4a0",
+  "schema_sha256": "a77333ec2499d4dd6e07061167530fe75fa9cb3615c54fa0e037b3643f2dd597",
   "schema_version": 2
 }

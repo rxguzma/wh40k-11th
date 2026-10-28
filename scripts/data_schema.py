@@ -217,8 +217,22 @@ def validate():
         require_unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
         require_unique(weapon_abilities, ["Weapon_Ability_ID"], f"{army} Weapon_Ability_ID")
         require_unique(abilities, ["Ability_ID"], f"{army} Ability_ID")
-        require_unique(detachment_definitions, ["Detachment_ID"], f"{army} Detachment_ID")
+        # Grouped-effect child rows share the parent's Detachment_ID by design.
+        # Only parent rows own a unique detachment definition; every Rule_ID is unique.
+        detachment_parents = [
+            (line_no, row) for line_no, row in detachment_definitions
+            if not (row.get("Parent_Rule_ID") or "").strip()
+        ]
+        require_unique(detachment_parents, ["Detachment_ID"], f"{army} Detachment_ID")
         require_unique(detachment_definitions, ["Rule_ID"], f"{army} detachment Rule_ID")
+        parent_rules = {
+            (row.get("Rule_ID") or "").strip(): (row.get("Detachment_ID") or "").strip()
+            for _, row in detachment_parents
+        }
+        for line_no, row in detachment_definitions:
+            source_parent = (row.get("Parent_Rule_ID") or "").strip()
+            if source_parent and parent_rules.get(source_parent) != (row.get("Detachment_ID") or "").strip():
+                fail(f"{army} Detachment_Definitions line {line_no}: invalid Parent_Rule_ID {source_parent!r}")
         require_unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
         require_unique(stratagems, ["Stratagem_ID"], f"{army} Stratagem_ID")
         require_unique(army_rules, ["Army_Rule_ID"], f"{army} Army_Rule_ID")
@@ -377,7 +391,7 @@ TAGGED_ARMY_FILES = (
     "Detachment_Definitions.csv",
     "Army_Rules.csv",
 )
-CONTROL_TAGS = {"UNIT", "ACTIVE", "SHOOT", "MELEE", "STATS", "WEAPONS"}
+CONTROL_TAGS = {"UNIT", "ROSTER", "ROSTER_ALL", "ACTIVE", "PERSISTENT", "SHOOT", "MELEE", "STATS", "WEAPONS", "GRANT_IMPERIUM_SWORD"}
 EFFECT_FIELDS = ("Effect_Type", "Target", "Stat", "Operation", "Value")
 
 
