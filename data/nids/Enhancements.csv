@@ -1,4 +1,4 @@
-Enhancement_ID,Detachment_ID,Enhancement_Name,,,Points,Repeatable,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
+Enhancement_ID,Detachment_ID,Enhancement_Name,Parent_Rule_ID,Effect_Order,Points,Repeatable,Short_Description,Long_Description,Tags,Default_Active,Required_Keywords,Any_Keywords,Excluded_Keywords
 tyranids_ambush_predators_enhancement_encircling_horrors,tyranids_ambush_predators,Encircling Horrors,,,20,FALSE,"Reactive Move
 Opponent’s Movement move within 8"" 
 NEUROLICTOR / LICTOR / VON RYAN’S LEAPERS can move up to D3+3"".","NEUROLICTOR/LICTOR/VON RYAN’S LEAPERS unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8"" of this unit, this unit can make a normal move of up to D3+3"".",,,,"NEUROLICTOR, LICTOR, VON RYAN’S LEAPERS",
