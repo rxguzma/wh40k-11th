@@ -111,19 +111,6 @@ universal,Primary_Missions.csv,1,Primary_Mission_ID,YES,AUTHORITATIVE,Stable can
 universal,Primary_Missions.csv,2,Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv; owning Disposition deck.
 universal,Primary_Missions.csv,3,Mission_Name,YES,AUTHORITATIVE,Visible Primary Mission name.
 universal,Primary_Missions.csv,4,Sort_Order,YES,AUTHORITATIVE,Mission order within its Disposition deck.
-universal,Tag_Definitions.csv,1,Tag_ID,YES,AUTHORITATIVE,Stable unique Tag definition key.
-universal,Tag_Definitions.csv,2,Display_Tag,YES,AUTHORITATIVE,"Exact visible Tag text shown in the application; weapon scope is carried by Category/Target, not an (M)/(R) suffix."
-universal,Tag_Definitions.csv,3,Title,NO,AUTHORITATIVE,Human-readable Tag title.
-universal,Tag_Definitions.csv,4,Category,YES,AUTHORITATIVE,"Picker/runtime category such as Unit Stats, Melee - Weapon Stats, Range - Weapon Rules, or Points."
-universal,Tag_Definitions.csv,5,Affects,NO,AUTHORITATIVE,Human-readable scope summary.
-universal,Tag_Definitions.csv,6,Description,NO,AUTHORITATIVE,User-facing explanation of the Tag effect.
-universal,Tag_Definitions.csv,7,Editable,YES,AUTHORITATIVE,TRUE when the Tag can be selected/edited in roster UI.
-universal,Tag_Definitions.csv,8,Effect_Type,NO,AUTHORITATIVE,"Structured effect family such as STAT, WEAPON_STAT, or POINTS_PER_MODEL. Blank is valid for informational Tags with no runtime effect."
-universal,Tag_Definitions.csv,9,Target,NO,AUTHORITATIVE,"Structured scope such as UNIT, MELEE, or RANGE. Blank is valid for informational Tags with no runtime effect."
-universal,Tag_Definitions.csv,10,Stat,NO,AUTHORITATIVE,"Structured characteristic such as M, W, A, S, AP, D, or PTS."
-universal,Tag_Definitions.csv,11,Operation,NO,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE. Blank is valid for informational Tags with no runtime effect."
-universal,Tag_Definitions.csv,12,Value,NO,AUTHORITATIVE,Machine-readable effect value.
-universal,Tag_Definitions.csv,13,Sort_Order,NO,AUTHORITATIVE,Canonical display order within the universal Tag library.
 universal,Universal_Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,
 universal,Universal_Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
@@ -145,3 +132,14 @@ army,Unit_Profiles.csv,24,Loadout_3,NO,AUTHORITATIVE,"Multiline GROUP and OPTION
 army,Unit_Profiles.csv,25,Loadout_4,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
 army,Unit_Profiles.csv,26,Loadout_5,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
 army,Unit_Profiles.csv,27,Loadout_6,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+universal,Tag_Definitions.csv,1,Tag_ID,YES,AUTHORITATIVE,Stable unique Tag definition key.
+universal,Tag_Definitions.csv,2,Display_Tag,YES,AUTHORITATIVE,"Exact visible Tag text shown in the application; weapon scope is carried by Category/Target, not an (M)/(R) suffix."
+universal,Tag_Definitions.csv,3,Category,YES,AUTHORITATIVE,"Picker/runtime category such as Unit Stats, Melee - Weapon Stats, Range - Weapon Rules, or Points."
+universal,Tag_Definitions.csv,4,Description,NO,AUTHORITATIVE,User-facing explanation of the Tag effect.
+universal,Tag_Definitions.csv,5,Editable,YES,AUTHORITATIVE,TRUE when the Tag can be selected/edited in roster UI.
+universal,Tag_Definitions.csv,6,Effect_Type,NO,AUTHORITATIVE,"Structured effect family such as STAT, WEAPON_STAT, or POINTS_PER_MODEL. Blank is valid for informational Tags with no runtime effect."
+universal,Tag_Definitions.csv,7,Target,NO,AUTHORITATIVE,"Structured scope such as UNIT, MELEE, or RANGE. Blank is valid for informational Tags with no runtime effect."
+universal,Tag_Definitions.csv,8,Stat,NO,AUTHORITATIVE,"Structured characteristic such as M, W, A, S, AP, D, or PTS."
+universal,Tag_Definitions.csv,9,Operation,NO,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE. Blank is valid for informational Tags with no runtime effect."
+universal,Tag_Definitions.csv,10,Value,NO,AUTHORITATIVE,Machine-readable effect value.
+universal,Tag_Definitions.csv,11,Sort_Order,NO,AUTHORITATIVE,Canonical display order within the universal Tag library.
