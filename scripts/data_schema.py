@@ -391,7 +391,7 @@ TAGGED_ARMY_FILES = (
     "Detachment_Definitions.csv",
     "Army_Rules.csv",
 )
-CONTROL_TAGS = {"UNIT", "ROSTER", "ROSTER_ALL", "ACTIVE", "PERSISTENT", "SHOOT", "MELEE", "STATS", "WEAPONS"}
+CONTROL_TAGS = {"UNIT", "ROSTER", "ROSTER_ALL", "ACTIVE", "PERSISTENT", "SHOOT", "MELEE", "STATS", "WEAPONS", "GRANT_IMPERIUM_SWORD"}
 EFFECT_FIELDS = ("Effect_Type", "Target", "Stat", "Operation", "Value")
 
 
