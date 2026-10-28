@@ -4,12 +4,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
-ABILITY_TYPES = {"ABILITY", "CORE_ABILITY"}
 
-PROFILE_HEADER = ["Unit_ID", "Unit Name", 'M"', "T", "SV", "W", "LD", "OC", "Keywords", "Hyperlink"]
-UNIT_ABILITIES_HEADER = ["Unit_ID", "Ability_ID", "Ability_Type"]
+PROFILE_HEADER = ["Unit_ID", "Unit Name", 'M"', "T", "SV", "W", "LD", "OC", "Keywords", "Hyperlink", "Abilities", "Other_Abilities", *[f"Point_{i}" for i in range(1, 9)]]
 UNIT_WEAPONS_HEADER = ["Unit_ID", "Layout_Row_ID", "Weapon_ID", "Row_Type", "Row_Label", "Sort_Order", "Quantity"]
-UNIT_POINTS_HEADER = ["Unit_ID", "Point_Option_ID", "Label", "Cost", "Sort_Order"]
 
 
 def fail(message):
@@ -45,9 +42,7 @@ def validate_army(army, universal_ability_ids):
     profiles = read_dicts(directory / "Unit_Profiles.csv", PROFILE_HEADER)
     weapon_stats = read_dicts(directory / "Weapon_Stats.csv")
     army_abilities = read_dicts(directory / "Abilities.csv")
-    unit_abilities = read_dicts(directory / "Unit_Abilities.csv", UNIT_ABILITIES_HEADER)
     unit_weapons = read_dicts(directory / "Unit_Weapons.csv", UNIT_WEAPONS_HEADER)
-    unit_points = read_dicts(directory / "Unit_Points.csv", UNIT_POINTS_HEADER)
 
     require_unique(profiles, ["Unit_ID"], "unit profile", army)
     unit_ids = {(row.get("Unit_ID") or "").strip() for row in profiles}
@@ -58,26 +53,42 @@ def validate_army(army, universal_ability_ids):
         if (row.get("Ability_ID") or "").strip()
     } | universal_ability_ids
 
-    require_unique(unit_abilities, ["Unit_ID", "Ability_Type", "Ability_ID"], "unit ability relationship", army)
     seen_unit_weapon_rows = set()
     for line_no, row in enumerate(unit_weapons, start=2):
         key = tuple((row.get(column) or "").strip() for column in UNIT_WEAPONS_HEADER)
         if key in seen_unit_weapon_rows:
             fail(f"{army}: duplicate Unit_Weapons row at line {line_no}: {key!r}")
         seen_unit_weapon_rows.add(key)
-    require_unique(unit_points, ["Unit_ID", "Point_Option_ID"], "unit point option", army)
-    require_unique(unit_points, ["Unit_ID", "Sort_Order"], "unit point sort order", army)
 
-    for line_no, row in enumerate(unit_abilities, start=2):
-        unit_id = (row.get("Unit_ID") or "").strip()
-        ability_id = (row.get("Ability_ID") or "").strip()
-        ability_type = (row.get("Ability_Type") or "").strip()
-        if unit_id not in unit_ids:
-            fail(f"{army}: Unit_Abilities line {line_no} references missing Unit_Profile {unit_id!r}")
-        if ability_id not in ability_ids:
-            fail(f"{army}: Unit_Abilities line {line_no} references missing Ability_ID {ability_id!r}")
-        if ability_type not in ABILITY_TYPES:
-            fail(f"{army}: Unit_Abilities line {line_no} has invalid Ability_Type {ability_type!r}")
+    ability_count = 0
+    point_count = 0
+    for line_no, row in enumerate(profiles, start=2):
+        core = [part.strip() for part in (row.get("Abilities") or "").split(",") if part.strip()]
+        other = [part.strip() for part in (row.get("Other_Abilities") or "").split(",") if part.strip()]
+        for column, ids in (("Abilities", core), ("Other_Abilities", other)):
+            if len(set(ids)) != len(ids):
+                fail(f"{army}: Unit_Profiles line {line_no} duplicate Ability_ID in {column}")
+            for ability_id in ids:
+                if ability_id not in ability_ids:
+                    fail(f"{army}: Unit_Profiles line {line_no} unknown Ability_ID {ability_id!r} in {column}")
+            ability_count += len(ids)
+        if set(core) & set(other):
+            fail(f"{army}: Unit_Profiles line {line_no} duplicated core/non-core Ability_ID")
+        if not (row.get("Point_1") or "").strip():
+            fail(f"{army}: Unit_Profiles line {line_no} missing Point_1")
+        for slot in range(1, 9):
+            col = f"Point_{slot}"
+            value = (row.get(col) or "").strip()
+            if not value:
+                continue
+            if "," not in value:
+                fail(f"{army}: Unit_Profiles line {line_no} {col} requires label, cost")
+            label, cost = (part.strip() for part in value.rsplit(",", 1))
+            if not label and not cost:
+                fail(f"{army}: Unit_Profiles line {line_no} blank {col}")
+            if cost and (not cost.isascii() or not cost.isdecimal()):
+                fail(f"{army}: Unit_Profiles line {line_no} invalid {col} cost {cost!r}")
+            point_count += 1
 
     for line_no, row in enumerate(unit_weapons, start=2):
         unit_id = (row.get("Unit_ID") or "").strip()
@@ -116,31 +127,9 @@ def validate_army(army, universal_ability_ids):
             if parsed_quantity < 0:
                 fail(f"{army}: Unit_Weapons line {line_no} Quantity must be >= 0")
 
-    for line_no, row in enumerate(unit_points, start=2):
-        unit_id = (row.get("Unit_ID") or "").strip()
-        option_id = (row.get("Point_Option_ID") or "").strip()
-        label = (row.get("Label") or "").strip()
-        cost = (row.get("Cost") or "").strip()
-        sort_text = (row.get("Sort_Order") or "").strip()
-        if unit_id not in unit_ids:
-            fail(f"{army}: Unit_Points line {line_no} references missing Unit_Profile {unit_id!r}")
-        if not label and not cost:
-            fail(f"{army}: Unit_Points line {line_no} has neither Label nor Cost")
-        try:
-            sort_order = int(sort_text)
-        except ValueError:
-            fail(f"{army}: Unit_Points line {line_no} has invalid Sort_Order {sort_text!r}")
-        if sort_order < 1 or sort_order > 8:
-            fail(f"{army}: Unit_Points line {line_no} Sort_Order must be 1-8, got {sort_order}")
-        if option_id != f"point_{sort_order}":
-            fail(
-                f"{army}: Unit_Points line {line_no} Point_Option_ID {option_id!r} "
-                f"does not match Sort_Order {sort_order}"
-            )
-
     print(
         f"{army}: unit relations OK — "
-        f"{len(unit_abilities)} abilities, {len(unit_weapons)} weapons, {len(unit_points)} point options"
+        f"{ability_count} abilities, {len(unit_weapons)} weapons, {point_count} point options"
     )
 
 

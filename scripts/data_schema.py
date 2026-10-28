@@ -200,9 +200,7 @@ def validate():
 
     for army in ARMIES:
         unit_profiles = loaded[(army, "Unit_Profiles.csv")]
-        unit_abilities = loaded[(army, "Unit_Abilities.csv")]
         unit_weapons = loaded[(army, "Unit_Weapons.csv")]
-        unit_points = loaded[(army, "Unit_Points.csv")]
         weapons = loaded[(army, "Weapon_Stats.csv")]
         weapon_abilities = loaded[(army, "Weapon_Abilities.csv")]
         abilities = loaded[(army, "Abilities.csv")]
@@ -234,13 +232,30 @@ def validate():
         detachment_ids = {(row["Detachment_ID"] or "").strip() for _, row in detachment_definitions}
         loadout_option_ids = {(row["Loadout_Option_ID"] or "").strip() for _, row in loadout_options}
 
-        for line_no, row in unit_abilities:
-            unit_id = (row["Unit_ID"] or "").strip()
-            ability_id = (row["Ability_ID"] or "").strip()
-            if unit_id not in unit_ids:
-                fail(f"{army} Unit_Abilities line {line_no}: missing Unit_ID {unit_id!r}")
-            if ability_id not in all_ability_ids:
-                fail(f"{army} Unit_Abilities line {line_no}: missing Ability_ID {ability_id!r}")
+        for line_no, row in unit_profiles:
+            unit_id = (row.get("Unit_ID") or "").strip()
+            core = split_ids(row.get("Abilities"))
+            other = split_ids(row.get("Other_Abilities"))
+            for column, ids in (("Abilities", core), ("Other_Abilities", other)):
+                if len(ids) != len(set(ids)):
+                    fail(f"{army} Unit_Profiles line {line_no}: duplicate Ability_ID in {column}")
+                for ability_id in ids:
+                    if ability_id not in all_ability_ids:
+                        fail(f"{army} Unit_Profiles line {line_no}: unknown Ability_ID {ability_id!r} in {column}")
+            if set(core) & set(other):
+                fail(f"{army} Unit_Profiles line {line_no}: duplicate Ability_ID across Abilities and Other_Abilities")
+            for slot in range(1, 9):
+                column = f"Point_{slot}"
+                value = (row.get(column) or "").strip()
+                if not value:
+                    continue
+                if "," not in value:
+                    fail(f"{army} Unit_Profiles line {line_no}: {column} requires label, cost")
+                label, cost = (part.strip() for part in value.rsplit(",", 1))
+                if not label and not cost:
+                    fail(f"{army} Unit_Profiles line {line_no}: blank {column}")
+                if cost and (not cost.isascii() or not cost.isdecimal()):
+                    fail(f"{army} Unit_Profiles line {line_no}: invalid {column} cost {cost!r}")
 
         for line_no, row in unit_weapons:
             unit_id = (row.get("Unit_ID") or "").strip()
@@ -278,11 +293,6 @@ def validate():
                     fail(f"{army} Unit_Weapons line {line_no}: invalid Quantity {quantity!r}")
                 if parsed_quantity < 0:
                     fail(f"{army} Unit_Weapons line {line_no}: Quantity must be >= 0")
-
-        for line_no, row in unit_points:
-            unit_id = (row["Unit_ID"] or "").strip()
-            if unit_id not in unit_ids:
-                fail(f"{army} Unit_Points line {line_no}: missing Unit_ID {unit_id!r}")
 
         for line_no, row in weapon_abilities:
             weapon_id = (row["Weapon_ID"] or "").strip()
