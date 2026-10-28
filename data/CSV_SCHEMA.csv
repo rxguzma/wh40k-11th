@@ -49,32 +49,6 @@ army,Enhancements.csv,11,Default_Active,NO,AUTHORITATIVE,Optional current activa
 army,Enhancements.csv,12,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Enhancement.
 army,Enhancements.csv,13,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
 army,Enhancements.csv,14,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Enhancement ineligible.
-army,Loadout_Abilities.csv,1,Loadout_Option_ID,YES,AUTHORITATIVE,Foreign key to Loadout_Options.csv.
-army,Loadout_Abilities.csv,2,Ability_ID,YES,AUTHORITATIVE,Ability granted by selecting this loadout option.
-army,Loadout_Abilities.csv,3,Sort_Order,YES,AUTHORITATIVE,Order within the option ability list.
-army,Loadout_Compatibility.csv,1,Loadout_Option_ID,YES,AUTHORITATIVE,Foreign key to Loadout_Options.csv.
-army,Loadout_Compatibility.csv,2,Required_Group_ID,YES,AUTHORITATIVE,Other option group constrained by this rule.
-army,Loadout_Compatibility.csv,3,Compatible_Option_ID,YES,AUTHORITATIVE,Allowed option in Required_Group_ID; multiple rows are OR alternatives.
-army,Loadout_Compatibility.csv,4,Rule_Order,YES,AUTHORITATIVE,Original compatibility rule order.
-army,Loadout_Compatibility.csv,5,Option_Order,YES,AUTHORITATIVE,Original allowed-option order within the rule.
-army,Loadout_Options.csv,1,Loadout_Option_ID,YES,AUTHORITATIVE,Stable unique loadout option key.
-army,Loadout_Options.csv,2,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
-army,Loadout_Options.csv,3,Option_Group_ID,YES,AUTHORITATIVE,Stable option-group key within a unit.
-army,Loadout_Options.csv,4,Group_Label,NO,AUTHORITATIVE,Visible option-group label.
-army,Loadout_Options.csv,5,Option_ID,YES,AUTHORITATIVE,Stable semantic option key within the unit/group.
-army,Loadout_Options.csv,6,Option_Name,YES,AUTHORITATIVE,Visible loadout option name.
-army,Loadout_Options.csv,7,Default,YES,AUTHORITATIVE,Exactly one default option per unit/group.
-army,Loadout_Options.csv,8,Sort_Order,YES,AUTHORITATIVE,Display order within the option group.
-army,Loadout_Options.csv,9,Allocation_Mode,NO,AUTHORITATIVE,UNIT or PER_MODEL. Blank retains the normalized UNIT default.
-army,Loadout_Options.csv,10,Allocation_Count,NO,AUTHORITATIVE,Optional explicit allocation count; blank lets the runtime derive legal count from canonical size/layout data.
-army,Loadout_Options.csv,11,Max_Per_Unit,NO,AUTHORITATIVE,Optional authored option/group limit.
-army,Loadout_Options.csv,12,Points_Per_Model,NO,AUTHORITATIVE,Sole normalized paid loadout/weapon modifier. Blank means +0; base unit costs live only in Unit_Points.csv.
-army,Loadout_Options.csv,13,Display_Section,NO,AUTHORITATIVE,Optional structured Unit_Weapons section reference for presentation only.
-army,Loadout_Options.csv,14,Display_Order,NO,AUTHORITATIVE,Optional presentation order within the target structured section.
-army,Loadout_Weapons.csv,1,Loadout_Option_ID,YES,AUTHORITATIVE,Foreign key to Loadout_Options.csv.
-army,Loadout_Weapons.csv,2,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
-army,Loadout_Weapons.csv,3,Weapon_Role,YES,AUTHORITATIVE,SELECTED adds/replaces the option weapons; PRESERVE retains a base weapon.
-army,Loadout_Weapons.csv,4,Sort_Order,YES,AUTHORITATIVE,Order within the selected or preserved weapon list.
 army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
 army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
@@ -106,13 +80,6 @@ army,Unit_Profiles.csv,17,Point_5,NO,AUTHORITATIVE,"Ordered point option label, 
 army,Unit_Profiles.csv,18,Point_6,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Unit_Profiles.csv,19,Point_7,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Unit_Profiles.csv,20,Point_8,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
-army,Unit_Weapons.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
-army,Unit_Weapons.csv,2,Layout_Row_ID,NO,AUTHORITATIVE,Optional stable layout-row key; presentation metadata only.
-army,Unit_Weapons.csv,3,Weapon_ID,NO,AUTHORITATIVE,Foreign key to Weapon_Stats.csv for WEAPON rows. Selectable weapon ownership belongs to Loadout_Weapons.csv; LABEL/BLANK rows leave this blank.
-army,Unit_Weapons.csv,4,Row_Type,NO,AUTHORITATIVE,"WEAPON, LABEL, or BLANK. Blank is accepted as legacy WEAPON for unstructured always-present relationships."
-army,Unit_Weapons.csv,5,Row_Label,NO,AUTHORITATIVE,Visible section label for LABEL rows; blank for WEAPON/BLANK rows.
-army,Unit_Weapons.csv,6,Sort_Order,NO,AUTHORITATIVE,Optional structured layout order.
-army,Unit_Weapons.csv,7,Quantity,NO,AUTHORITATIVE,Fixed/base submodel quantity for structured WEAPON placement. Size scaling is derived from Unit_Points.csv.
 army,Weapon_Abilities.csv,1,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
 army,Weapon_Abilities.csv,2,Weapon_Ability_ID,YES,AUTHORITATIVE,Stable unique relationship key generated from Weapon_ID and ability order.
 army,Weapon_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,Canonical weapon ability type; NONE preserves an explicit legacy '-' value.
@@ -171,3 +138,10 @@ universal,Universal_Stratagems.csv,6,Points,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,7,CP_Cost,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,8,Short_Description,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,9,Long_Description,NO,AUTHORITATIVE,
+army,Unit_Profiles.csv,21,Weapons,NO,AUTHORITATIVE,Fixed weapons and structured LABEL/BLANK/WEAPON rows; newline-delimited.
+army,Unit_Profiles.csv,22,Loadout_1,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,23,Loadout_2,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,24,Loadout_3,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,25,Loadout_4,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,26,Loadout_5,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,27,Loadout_6,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."

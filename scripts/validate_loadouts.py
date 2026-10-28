@@ -1,146 +1,119 @@
 #!/usr/bin/env python3
+"""Validate Unit_Profiles embedded weapons, loadouts, costs, and cross references."""
 import csv
-from collections import defaultdict
+import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-ARMIES = ("marines", "orks", "nids")
-TRUE_VALUES = {"true", "1", "yes", "y"}
+ROOT=Path(__file__).resolve().parents[1]
+ARMIES=('marines','orks','nids')
+HEAD=['Unit_ID','Unit Name','M"','T','SV','W','LD','OC','Keywords','Hyperlink','Abilities','Other_Abilities']+[f'Point_{i}' for i in range(1,9)]+['Weapons']+[f'Loadout_{i}' for i in range(1,7)]
 
-CANON = {
-    "Loadout_Options.csv": [
-        "Loadout_Option_ID", "Unit_ID", "Option_Group_ID", "Group_Label", "Option_ID",
-        "Option_Name", "Default", "Sort_Order", "Allocation_Mode", "Allocation_Count",
-        "Max_Per_Unit", "Points_Per_Model", "Display_Section", "Display_Order",
-    ],
-    "Loadout_Weapons.csv": ["Loadout_Option_ID", "Weapon_ID", "Weapon_Role", "Sort_Order"],
-    "Loadout_Abilities.csv": ["Loadout_Option_ID", "Ability_ID", "Sort_Order"],
-    "Loadout_Compatibility.csv": [
-        "Loadout_Option_ID", "Required_Group_ID", "Compatible_Option_ID", "Rule_Order", "Option_Order",
-    ],
-}
-
+def read(path):
+    with path.open(encoding='utf-8-sig',newline='') as f:
+        reader=csv.DictReader(f)
+        rows=list(reader)
+        return reader.fieldnames,rows
 
 def fail(message):
     raise SystemExit(message)
 
+def split(line):
+    return [x.strip() for x in re.split(r'\s+\|\s+',line)]
 
-def read_dicts(path, expected_header=None):
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        reader = csv.DictReader(handle)
-        if expected_header is not None and reader.fieldnames != expected_header:
-            fail(
-                f"{path.relative_to(ROOT)} header mismatch\n"
-                f"expected: {expected_header!r}\nactual:   {reader.fieldnames!r}"
-            )
-        return [row for row in reader if any((value or "").strip() for value in row.values())]
+def attrs(parts,where):
+    result={}
+    for part in parts:
+        if '=' not in part:fail(f'{where}: malformed {part!r}')
+        key,value=part.split('=',1)
+        key=key.lower()
+        if key in result:fail(f'{where}: duplicate {key}')
+        result[key]=value
+    return result
 
-
-def clean(value):
-    return (value or "").strip()
-
+def maxes(value,where):
+    parts=(value or '').split(',')
+    if len(parts)!=8 or any(not re.fullmatch(r'\d+',p.strip()) for p in parts):
+        fail(f'{where}: expected 8 explicit nonnegative numeric limits')
+    return [int(p) for p in parts]
 
 def validate_army(army):
-    directory = ROOT / "data" / army
-    canonical = tuple(read_dicts(directory / filename, header) for filename, header in CANON.items())
-    options, weapons, abilities, compatibility = canonical
+    directory=ROOT/'data'/army
+    header,profiles=read(directory/'Unit_Profiles.csv')
+    if header!=HEAD:fail(f'{army}: Unit_Profiles header mismatch')
+    weapons={r['Weapon_ID'].strip() for r in read(directory/'Weapon_Stats.csv')[1]}
+    abilities={r['Ability_ID'].strip() for r in read(directory/'Abilities.csv')[1]}
+    abilities|={r['Ability_ID'].strip() for r in read(ROOT/'data'/'universal'/'Universal_Abilities.csv')[1]}
+    seen_units=set(); weapon_count=0; option_count=0; granted_count=0
+    for profile in profiles:
+        unit=(profile.get('Unit_ID') or '').strip()
+        where=f'{army}/Unit_Profiles/{unit}'
+        if not unit or unit in seen_units:fail(f'{where}: duplicate or missing Unit_ID')
+        seen_units.add(unit)
+        points=[bool((profile.get(f'Point_{i}') or '').strip()) for i in range(1,9)]
+        if not points[0]:fail(f'{where}: missing Point_1')
+        for field in ('Abilities','Other_Abilities'):
+            ids=[x.strip() for x in (profile.get(field) or '').split(',') if x.strip()]
+            if len(ids)!=len(set(ids)) or any(x not in abilities for x in ids):fail(f'{where}: invalid {field} Ability_ID')
+        membership=set();fixed=set()
+        for row in (x.strip() for x in (profile.get('Weapons') or '').splitlines() if x.strip()):
+            p=split(row);kind=p.pop(0).upper()
+            if kind not in ('WEAPON','FIXED','LABEL','BLANK'):fail(f'{where}: invalid weapon row type {kind}')
+            value=p.pop(0) if kind!='BLANK' and p else ''
+            metadata=attrs(p,where)
+            if kind in ('WEAPON','FIXED'):
+                if value not in weapons:fail(f'{where}: unknown Weapon_ID {value}')
+                membership.add(value)
+                if kind=='FIXED':fixed.add(value)
+            elif kind=='LABEL' and not value:fail(f'{where}: empty LABEL')
+            if metadata.get('qty') and not re.fullmatch(r'\d+',metadata['qty']):fail(f'{where}: invalid qty')
+            if metadata.get('order') and not re.fullmatch(r'-?\d+',metadata['order']):fail(f'{where}: invalid order')
+            weapon_count+=1
+        groups={};selected=set()
+        for slot in range(1,7):
+            cell=[x.strip() for x in (profile.get(f'Loadout_{slot}') or '').splitlines() if x.strip()]
+            if not cell:continue
+            header=split(cell.pop(0))
+            if len(header)<3 or header[0]!='GROUP' or not header[1] or not header[2]:fail(f'{where}/Loadout_{slot}: invalid GROUP')
+            group_id=header[1]
+            if group_id in groups:fail(f'{where}: duplicate group {group_id}')
+            meta=attrs(header[3:],where)
+            if meta.get('mode','UNIT') not in ('UNIT','PER_MODEL'):fail(f'{where}/{group_id}: invalid mode')
+            instances=maxes(meta.get('instances'),where)
+            if any(points[i] and instances[i]<1 or not points[i] and instances[i]!=0 for i in range(8)):fail(f'{where}/{group_id}: invalid instances')
+            ids=set();compat=[];defaults=0
+            for item in cell:
+                p=split(item)
+                if len(p)<3 or p[0]!='OPTION' or not p[1] or not p[2]:fail(f'{where}/{group_id}: invalid OPTION')
+                opt_id=p[1]
+                if opt_id in ids:fail(f'{where}/{group_id}: duplicate {opt_id}')
+                ids.add(opt_id);option_count+=1
+                values=attrs(p[3:],where)
+                if values.get('default') not in ('0','1'):fail(f'{where}/{group_id}: missing default')
+                defaults+=int(values['default'])
+                limits=maxes(values.get('max'),where)
+                if any(limits[i]>instances[i] for i in range(8)):fail(f'{where}/{group_id}/{opt_id}: max exceeds instances')
+                if values['default']=='1' and any(points[i] and limits[i]<1 for i in range(8)):fail(f'{where}/{group_id}/{opt_id}: default limit zero')
+                if values.get('cost') and not re.fullmatch(r'\d+(?:\.\d+)?',values['cost']):fail(f'{where}/{group_id}/{opt_id}: invalid cost')
+                for name in (x.strip() for x in values.get('weapons','').split(',') if x.strip()):
+                    if name not in weapons:fail(f'{where}/{group_id}/{opt_id}: unknown Weapon_ID {name}')
+                    selected.add(name)
+                for name in (x.strip() for x in values.get('preserve','').split(',') if x.strip()):
+                    if name not in weapons:fail(f'{where}/{group_id}/{opt_id}: unknown preserved Weapon_ID {name}')
+                for name in (x.strip() for x in values.get('abilities','').split(',') if x.strip()):
+                    if name not in abilities:fail(f'{where}/{group_id}/{opt_id}: unknown Ability_ID {name}')
+                    granted_count+=1
+                for rule in (x for x in values.get('compatible','').split(';') if x):
+                    if '=' not in rule:fail(f'{where}/{group_id}/{opt_id}: invalid compatibility {rule}')
+                    target,allowed=rule.split('=',1)
+                    compat.extend((target,a) for a in allowed.split('|') if a)
+            if defaults!=1:fail(f'{where}/{group_id}: expected one default, found {defaults}')
+            groups[group_id]=(ids,compat)
+        if selected & fixed:fail(f'{where}: duplicate fixed/selectable weapons {sorted(selected&fixed)}')
+        for group_id,(ids,compat) in groups.items():
+            for target,allowed in compat:
+                if target not in groups or allowed not in groups[target][0]:fail(f'{where}/{group_id}: unknown compatible option {target}={allowed}')
+    print(f'{army}: loadouts OK: {len(profiles)} profiles, {weapon_count} weapon rows, {option_count} options, {granted_count} granted abilities')
+    return True
 
-    by_id = {}
-    semantic = set()
-    groups = defaultdict(set)
-    defaults = defaultdict(int)
-    for row in options:
-        lid = clean(row["Loadout_Option_ID"])
-        unit_id = clean(row["Unit_ID"])
-        group_id = clean(row["Option_Group_ID"])
-        option_id = clean(row["Option_ID"])
-        key = (unit_id, group_id, option_id)
-        if not lid:
-            fail(f"{army}: blank Loadout_Option_ID")
-        if lid in by_id:
-            fail(f"{army}: duplicate Loadout_Option_ID {lid!r}")
-        if key in semantic:
-            fail(f"{army}: duplicate semantic loadout option {key!r}")
-        by_id[lid] = row
-        semantic.add(key)
-        groups[(unit_id, group_id)].add(option_id)
-        if clean(row["Default"]).lower() in TRUE_VALUES:
-            defaults[(unit_id, group_id)] += 1
-    for group_key in groups:
-        if defaults[group_key] != 1:
-            fail(f"{army}: {group_key!r} must have exactly one default option")
-
-    for filename, rows in zip(list(CANON)[1:], canonical[1:]):
-        seen = set()
-        for row in rows:
-            lid = clean(row["Loadout_Option_ID"])
-            if lid not in by_id:
-                fail(f"{army}: {filename} references missing Loadout_Option_ID {lid!r}")
-            if filename in {"Loadout_Weapons.csv", "Loadout_Abilities.csv"}:
-                natural = tuple(clean(row[c]) for c in CANON[filename])
-                if natural in seen:
-                    fail(f"{army}: duplicate row in {filename}: {natural!r}")
-                seen.add(natural)
-
-    unit_ids = {clean(row.get("Unit_ID")) for row in read_dicts(directory / "Unit_Profiles.csv")}
-    weapon_ids = {clean(row.get("Weapon_ID")) for row in read_dicts(directory / "Weapon_Stats.csv")}
-    ability_ids = {clean(row.get("Ability_ID")) for row in read_dicts(directory / "Abilities.csv")}
-    universal_ability_ids = {
-        clean(row.get("Ability_ID"))
-        for row in read_dicts(ROOT / "data" / "universal" / "Universal_Abilities.csv")
-    }
-    all_ability_ids = ability_ids | universal_ability_ids
-
-    for lid, row in by_id.items():
-        if clean(row["Unit_ID"]) not in unit_ids:
-            fail(f"{army}: loadout {lid!r} references missing Unit_ID {row['Unit_ID']!r}")
-        allocation_mode = clean(row.get("Allocation_Mode")).upper()
-        if allocation_mode and allocation_mode not in {"UNIT", "PER_MODEL"}:
-            fail(f"{army}: loadout {lid!r} has invalid Allocation_Mode {allocation_mode!r}")
-        points_per_model = clean(row.get("Points_Per_Model"))
-        if points_per_model:
-            try:
-                float(points_per_model)
-            except ValueError:
-                fail(f"{army}: loadout {lid!r} has invalid Points_Per_Model {points_per_model!r}")
-
-    for row in weapons:
-        lid = clean(row["Loadout_Option_ID"])
-        weapon_id = clean(row["Weapon_ID"])
-        role = clean(row["Weapon_Role"])
-        if weapon_id not in weapon_ids:
-            fail(f"{army}: loadout {lid!r} references missing Weapon_ID {weapon_id!r}")
-        if role not in {"SELECTED", "PRESERVE"}:
-            fail(f"{army}: loadout {lid!r} has invalid Weapon_Role {role!r}")
-
-    for row in abilities:
-        lid = clean(row["Loadout_Option_ID"])
-        ability_id = clean(row["Ability_ID"])
-        if ability_id not in all_ability_ids:
-            fail(f"{army}: loadout {lid!r} references missing Ability_ID {ability_id!r}")
-
-    for row in compatibility:
-        lid = clean(row["Loadout_Option_ID"])
-        parent = by_id[lid]
-        required_group = clean(row["Required_Group_ID"])
-        compatible_option = clean(row["Compatible_Option_ID"])
-        if compatible_option not in groups.get((clean(parent["Unit_ID"]), required_group), set()):
-            fail(
-                f"{army}: compatibility for {lid!r} references unknown "
-                f"{required_group}/{compatible_option}"
-            )
-
-    print(
-        f"{army}: loadouts OK — {len(options)} Loadout_Option_IDs, {len(weapons)} weapons, "
-        f"{len(abilities)} abilities, {len(compatibility)} compatibility rows"
-    )
-
-
-def main():
-    for army in ARMIES:
-        validate_army(army)
-    print("canonical Loadout_Option_ID validation: OK")
-
-
-if __name__ == "__main__":
-    main()
+if __name__=='__main__':
+    for army in ARMIES:validate_army(army)
