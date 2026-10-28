@@ -80,14 +80,6 @@ army,Stratagems.csv,8,Default_Active,NO,AUTHORITATIVE,Optional current activatio
 army,Stratagems.csv,9,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Stratagem.
 army,Stratagems.csv,10,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
 army,Stratagems.csv,11,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Stratagem ineligible.
-army,Unit_Abilities.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
-army,Unit_Abilities.csv,2,Ability_ID,YES,AUTHORITATIVE,Foreign key to army or Universal Abilities.
-army,Unit_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,ABILITY or CORE_ABILITY; preserves the source relationship class.
-army,Unit_Points.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
-army,Unit_Points.csv,2,Point_Option_ID,YES,AUTHORITATIVE,Stable point-slot key; currently point_1 through point_8.
-army,Unit_Points.csv,3,Label,NO,AUTHORITATIVE,Exact legacy point label; blank is valid for single-cost units.
-army,Unit_Points.csv,4,Cost,NO,AUTHORITATIVE,Exact legacy point cost; blank is valid when a label is loadout-driven.
-army,Unit_Points.csv,5,Sort_Order,YES,AUTHORITATIVE,Original point-slot order 1 through 8.
 army,Unit_Profiles.csv,1,Unit_ID,YES,AUTHORITATIVE,Stable unique unit key; authoritative parent for unit relationships.
 army,Unit_Profiles.csv,2,Unit Name,YES,AUTHORITATIVE,Visible unit name.
 army,Unit_Profiles.csv,3,"M""",NO,AUTHORITATIVE,Unit movement value in the current HTML-compatible display format.
@@ -98,6 +90,16 @@ army,Unit_Profiles.csv,7,LD,NO,AUTHORITATIVE,Unit Leadership characteristic.
 army,Unit_Profiles.csv,8,OC,NO,AUTHORITATIVE,Unit Objective Control characteristic.
 army,Unit_Profiles.csv,9,Keywords,NO,AUTHORITATIVE,Current HTML-compatible comma-separated unit keywords.
 army,Unit_Profiles.csv,10,Hyperlink,NO,AUTHORITATIVE,Source/reference hyperlink for the unit.
+army,Unit_Profiles.csv,11,Abilities,NO,AUTHORITATIVE,Comma-separated CORE_ABILITY IDs referencing Abilities.csv.
+army,Unit_Profiles.csv,12,Other_Abilities,NO,AUTHORITATIVE,Comma-separated ABILITY (non-core) IDs referencing Abilities.csv.
+army,Unit_Profiles.csv,13,Point_1,YES,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,14,Point_2,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,15,Point_3,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,16,Point_4,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,17,Point_5,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,18,Point_6,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,19,Point_7,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
+army,Unit_Profiles.csv,20,Point_8,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Unit_Weapons.csv,1,Unit_ID,YES,AUTHORITATIVE,Foreign key to Unit_Profiles.csv.
 army,Unit_Weapons.csv,2,Layout_Row_ID,NO,AUTHORITATIVE,Optional stable layout-row key; presentation metadata only.
 army,Unit_Weapons.csv,3,Weapon_ID,NO,AUTHORITATIVE,Foreign key to Weapon_Stats.csv for WEAPON rows. Selectable weapon ownership belongs to Loadout_Weapons.csv; LABEL/BLANK rows leave this blank.
