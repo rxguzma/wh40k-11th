@@ -1,13 +1,13 @@
 {
-  "dataset_sha256": "f55fe5160ca4e376127c2d6ec2fe8ff6186c7b56cda27c49a901774d1bd77a92",
+  "dataset_sha256": "92f45af9f77fb01ee914cd32d775d6ca207debb9dd66cd935197243f480fbf5e",
   "files": {
     "Dispositions.csv": {
       "bytes": 175,
       "sha256": "f7fb83e49bff33ecec4d98b22d6c5b53ea29512dbafc1b12dfa6b41e4663318b"
     },
     "Eligibility_Rules.csv": {
-      "bytes": 169,
-      "sha256": "f94d829339a26487264e09c0d956fbd4b3d97120829a89e4034cb0d0326245fa"
+      "bytes": 96,
+      "sha256": "ed9e6e873735694815bc6dc8b41cc38570dfe2b7cb1953c427307da1d4684404"
     },
     "Primary_Mission_Matchups.csv": {
       "bytes": 1810,
@@ -30,6 +30,6 @@
       "sha256": "0dcec8479fd1119e9e5eae1e617f3d41ae83412e2489d80a0fa394cfd0773c0b"
     }
   },
-  "schema_sha256": "93eff1c345c0523c446fe77bba3fb4f34c9b5cc2aa516c863e11044fb9b34abb",
+  "schema_sha256": "784bfeeae669540feefdc8c173026c1879cbc9f0a83283bc0e85d5f691af64b7",
   "schema_version": 2
 }
