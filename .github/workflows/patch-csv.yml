@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_MELTA_","mode":"replace_text","column":"Ability_Type","from":"CLEAVE","to":"__PRESERVE_ORIGINAL_GROUP_82B1__"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_MELTA_","mode":"replace_text","column":"Ability_Type","from":"MELTA","to":"CLEAVE"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_MELTA_","mode":"merge_value_into_type","ability_type":"CLEAVE","expected_rows":11},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_MELTA_","mode":"replace_text","column":"Ability_Type","from":"CLEAVE","to":"MELTA"},{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_MELTA_","mode":"replace_text","column":"Ability_Type","from":"__PRESERVE_ORIGINAL_GROUP_82B1__","to":"CLEAVE"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_ALL_PENDING_MARINES_","mode":"consolidate_abilities","expected":{"SUSTAINED HITS":27,"BLAST":23,"CLEAVE":8,"DEVASTATING WOUNDS":4,"HUNTER":3,"LETHAL HITS":2},"expected_total":348,"expected_value_cells":58,"expected_condition_cells":14}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -122,17 +122,24 @@ jobs:
                   continue
 
               if mode == 'consolidate_abilities':
-                  if str(path) != 'data/orks/Weapon_Abilities.csv':
-                      sys.exit('consolidate_abilities restricted to Orks')
+                  if str(path) not in ('data/orks/Weapon_Abilities.csv', 'data/marines/Weapon_Abilities.csv'):
+                      sys.exit('consolidate_abilities restricted to Orks and Marines')
                   cols = ('Ability_Type', 'Target', 'Value', 'Condition')
                   if any(c not in header for c in cols):
                       sys.exit('missing required ability columns')
                   idx = {c: header.index(c) for c in cols}
                   expected = op.get('expected')
-                  allowed = {'LETHAL HITS': 32, 'SUSTAINED HITS': 9, 'HUNTER': 5, 'DEVASTATING WOUNDS': 4}
+                  allowed = ({'LETHAL HITS': 32, 'SUSTAINED HITS': 9, 'HUNTER': 5, 'DEVASTATING WOUNDS': 4}
+                             if str(path) == 'data/orks/Weapon_Abilities.csv' else
+                             {'SUSTAINED HITS': 27, 'BLAST': 23, 'CLEAVE': 8, 'DEVASTATING WOUNDS': 4, 'HUNTER': 3, 'LETHAL HITS': 2})
+                  expected_total = op.get('expected_total')
+                  if expected_total is not None and len(rows) - 1 != expected_total:
+                      sys.exit(f'op {i}: expected {expected_total} source rows, found {len(rows)-1}')
                   if expected != allowed:
                       sys.exit('unexpected batch scope')
                   counts = {k: 0 for k in allowed}
+                  value_cells = 0
+                  condition_cells = 0
                   for row in rows[1:]:
                       if len(row) != len(header):
                           sys.exit('invalid weapon ability row width')
@@ -146,16 +153,22 @@ jobs:
                           continue
                       if target:
                           sys.exit(f'unexpected Target for {kind}')
+                      value_cells += bool(value)
+                      condition_cells += bool(condition)
                       row[idx['Ability_Type']] = kind + (' ' + value if value else '') + (': ' + condition if condition else '')
                       row[idx['Value']] = ''
                       row[idx['Condition']] = ''
                       counts[kind] += 1
                   if counts != allowed:
                       sys.exit(f'unexpected migration counts {counts}')
+                  if op.get('expected_value_cells') is not None and value_cells != op.get('expected_value_cells'):
+                      sys.exit(f'op {i}: expected {op.get("expected_value_cells")} numeric values, found {value_cells}')
+                  if op.get('expected_condition_cells') is not None and condition_cells != op.get('expected_condition_cells'):
+                      sys.exit(f'op {i}: expected {op.get("expected_condition_cells")} conditions, found {condition_cells}')
                   if any(row[idx['Target']].strip() or row[idx['Value']].strip() or row[idx['Condition']].strip() for row in rows[1:]):
                       sys.exit('redundant ability fields remain')
                   changed.add(path)
-                  print(f'consolidated {sum(counts.values())} Orks abilities: {counts}')
+                  print(f'consolidated {sum(counts.values())} weapon abilities in {path}: {counts}; values {value_cells}; conditions {condition_cells}')
                   continue
 
               # Migrate Nids weapon ability text without changing its rendering.
