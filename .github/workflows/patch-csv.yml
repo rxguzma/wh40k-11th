@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","value":"UNIT:1/2 [id=PLASMA_SLOT;label=Pistol Upgrade;section=Outriders] | HBP [w=-;name=Heavy Bolt Pistol], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol (1 per 3 models);max=1/2]"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"DEATHWING_TERMINATORS","column":"Weapons","value":"FIXED | STORM_BOLTER_TERMINATORS"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"DEATHWING_TERMINATORS","column":"Loadout_1","mode":"replace_text","from":"name=Cyclone Missile Launcher]","to":"name=Cyclone Missile Launcher;+10]"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"DEATHWING_TERMINATORS","column":"Loadout_2","value":"PER_MODEL:4/9 [id=MELEE_DWT;label=Deathwing Terminator Melee;section=Deathwing Terminators] | DWT_POWER_FIST [w=POWER_FIST_TERMINATORS;name=Power Fist], DWT_CHAINFIST [w=TERMINATOR_CHAINFIST_STANDARD+TERMINATOR_CHAINFIST_HUNTER;name=Chainfist]"},{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"DEATHWING_TERMINATORS","column":"Loadout_3","value":"UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | POWER_FIST [w=POWER_FIST_TERMINATORS;name=Power Fist], CHAINFIST [w=TERMINATOR_CHAINFIST_STANDARD+TERMINATOR_CHAINFIST_HUNTER;name=Chainfist], POWER_WEAPON [w=POWER_WEAPON_TERMINATOR_SERGEANT;name=Power Weapon]"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
