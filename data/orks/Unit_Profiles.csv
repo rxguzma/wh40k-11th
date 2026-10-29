@@ -9,9 +9,10 @@ BEAST_SNAGGA_BOYZ,Beast Snagga Boyz,"6""",5,5+/6++,1*,7+,2,"INFANTRY, BATTLELINE
 LABEL | BEAST SNAGGA BOYZ | order=10
 WEAPON | CHOPPA | order=20 | qty=9
 WEAPON | SLUGGA | order=30 | qty=9
+WEAPON | THUMP_GUN | order=35
 LABEL | NOB | order=40
 WEAPON | POWER_SNAPPA | order=50 | qty=1
-WEAPON | SLUGGA | order=60 | qty=1","UNIT:1/2 [id=THUMP_GUN;label=Thump Gun] | NONE, THUMP_GUN [name=Thump Gun]",,,,,
+WEAPON | SLUGGA | order=60 | qty=1",,,,,,
 BEASTBOSS,Beastboss,"6""",6,4+/5++,6,6+,1,"INFANTRY, BEAST SNAGGA, CHARACTER, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss,DODGE_DIS,"FNP_6, KEEP_HUNTIN, LEADER_BEASTBOSS","x1, 85",,,,,,,,"FIXED | SHOOTA_BEASTBOSS
 FIXED | BEAST_SNAGGA_KLAW_BEASTCHOPPA",,,,,,
 BEASTBOSS_ON_SQUIGOSAUR,Beastboss on Squigosaur,"10""",9,3+/5++,10,6+,3,"MONSTER, BEAST SNAGGA, CHARACTER, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss-on-Squigosaur,THUNDERING_STAMPEDE,"FNP_5, KEEP_HUNTIN, BOSS_OF_DA_HUNT, COMPOSITION_BEASTBOSS_SQUIGOSAUR","x1, 140",,,,,,,,"FIXED | SLUGGA_SQUIGOSAUR
