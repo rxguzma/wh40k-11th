@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 ARMIES=('marines','orks','nids')
-HEAD=['Unit_ID','Unit Name','M"','T','SV','W','LD','OC','Keywords','Hyperlink','Abilities','Other_Abilities']+[f'Point_{i}' for i in range(1,9)]+['Weapons']+[f'Loadout_{i}' for i in range(1,7)]
+HEAD=['Unit_ID','Unit Name','M"','T','SV','W','LD','OC','Keywords','Hyperlink','Abilities','Other_Abilities']+[f'Point_{i}' for i in range(1,6)]+['Weapons']+[f'Loadout_{i}' for i in range(1,6)]
 
 def read(path):
     with path.open(encoding='utf-8-sig',newline='') as f:
@@ -165,7 +165,7 @@ def validate_army(army):
             if metadata.get('order') and not re.fullmatch(r'-?\d+',metadata['order']):fail(f'{where}: invalid order')
             weapon_count+=1
         groups={};selected=set()
-        for slot in range(1,7):
+        for slot in range(1,6):
             raw=(profile.get(f'Loadout_{slot}') or '').strip()
             cell=[x.strip() for x in raw.splitlines() if x.strip()]
             if not cell:continue
