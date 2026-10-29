@@ -1,12 +1,12 @@
 Scope,File,Column_Order,Column_Name,Required,Ownership,Notes
 army,Abilities.csv,1,Ability_ID,YES,AUTHORITATIVE,Stable unique ability key.
 army,Abilities.csv,2,Ability Name,YES,AUTHORITATIVE,Visible ability name.
-army,Abilities.csv,3,Short_Description,NO,AUTHORITATIVE,
-army,Abilities.csv,4,Long_Description,NO,AUTHORITATIVE,
-army,Abilities.csv,5,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
-army,Abilities.csv,6,Visibility_ID,YES,AUTHORITATIVE,"Sole canonical Ability placement field; valid values are 1, 2, or 3."
-army,Abilities.csv,7,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Abilities.csv,8,Effect_IDs,NO,AUTHORITATIVE,Ordered comma-separated child effect IDs declared only on the parent rule.
+army,Abilities.csv,4,Short_Description,NO,AUTHORITATIVE,
+army,Abilities.csv,5,Long_Description,NO,AUTHORITATIVE,
+army,Abilities.csv,6,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
+army,Abilities.csv,7,Visibility_ID,YES,AUTHORITATIVE,"Sole canonical Ability placement field; valid values are 1, 2, or 3."
+army,Abilities.csv,8,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
+army,Abilities.csv,3,Effect_IDs,NO,AUTHORITATIVE,Ordered comma-separated child effect IDs declared only on the parent rule.
 army,Army_Rules.csv,1,Army_Rule_ID,YES,AUTHORITATIVE,Stable unique army-rule key.
 army,Army_Rules.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Army_Rules.csv,3,Rule_Name,YES,AUTHORITATIVE,Visible army-rule name.
@@ -74,9 +74,6 @@ army,Unit_Profiles.csv,14,Point_2,NO,AUTHORITATIVE,"Ordered point option label, 
 army,Unit_Profiles.csv,15,Point_3,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Unit_Profiles.csv,16,Point_4,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Unit_Profiles.csv,17,Point_5,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
-army,Unit_Profiles.csv,18,Point_6,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
-army,Unit_Profiles.csv,19,Point_7,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
-army,Unit_Profiles.csv,20,Point_8,NO,AUTHORITATIVE,"Ordered point option label, cost. Blank label is valid; CSV quote cells containing commas."
 army,Weapon_Abilities.csv,1,Weapon_ID,YES,AUTHORITATIVE,Foreign key to Weapon_Stats.csv.
 army,Weapon_Abilities.csv,2,Weapon_Ability_ID,YES,AUTHORITATIVE,Stable unique relationship key generated from Weapon_ID and ability order.
 army,Weapon_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,Canonical weapon ability type; NONE preserves an explicit legacy '-' value.
@@ -122,13 +119,12 @@ universal,Universal_Stratagems.csv,6,Points,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,7,CP_Cost,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,8,Short_Description,NO,AUTHORITATIVE,
 universal,Universal_Stratagems.csv,9,Long_Description,NO,AUTHORITATIVE,
-army,Unit_Profiles.csv,21,Weapons,NO,AUTHORITATIVE,Fixed weapons and structured LABEL/BLANK/WEAPON rows; newline-delimited.
-army,Unit_Profiles.csv,22,Loadout_1,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
-army,Unit_Profiles.csv,23,Loadout_2,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
-army,Unit_Profiles.csv,24,Loadout_3,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
-army,Unit_Profiles.csv,25,Loadout_4,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
-army,Unit_Profiles.csv,26,Loadout_5,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
-army,Unit_Profiles.csv,27,Loadout_6,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,18,Weapons,NO,AUTHORITATIVE,Fixed weapons and structured LABEL/BLANK/WEAPON rows; newline-delimited.
+army,Unit_Profiles.csv,19,Loadout_1,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,20,Loadout_2,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,21,Loadout_3,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,22,Loadout_4,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
+army,Unit_Profiles.csv,23,Loadout_5,NO,AUTHORITATIVE,"Multiline GROUP and OPTION records, with eight explicit instances/max slots and inline weapon/ability/compatibility/cost links."
 universal,Tag_Definitions.csv,1,Tag_ID,YES,AUTHORITATIVE,Stable unique Tag definition key.
 universal,Tag_Definitions.csv,2,Display_Tag,YES,AUTHORITATIVE,"Exact visible Tag text shown in the application; weapon scope is carried by Category/Target, not an (M)/(R) suffix."
 universal,Tag_Definitions.csv,3,Category,YES,AUTHORITATIVE,"Picker/runtime category such as Unit Stats, Melee - Weapon Stats, Range - Weapon Rules, or Points."
