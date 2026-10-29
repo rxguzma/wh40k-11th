@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARMIES = ("marines", "orks", "nids")
 
-WEAPON_STATS_HEADER = ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D"]
+WEAPON_STATS_HEADER = ["Weapon_ID", "Weapon Name", 'R"', "A", "WS", "St", "AP", "D", "Weapon_Set", "Weapon_Set_Order"]
 WEAPON_ABILITIES_HEADER = [
     "Weapon_ID",
     "Weapon_Ability_ID",
