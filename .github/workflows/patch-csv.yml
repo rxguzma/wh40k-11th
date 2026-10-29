@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Weapon_Set","mode":"insert","sets":{"Scope":"army","File":"Weapon_Stats.csv","Column_Order":"9","Column_Name":"Weapon_Set","Required":"NO","Ownership":"AUTHORITATIVE","Notes":"Optional shared loadout weapon-set key; multiple weapon profiles may be selected as one item."}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Weapon_Set_Order","mode":"insert","sets":{"Scope":"army","File":"Weapon_Stats.csv","Column_Order":"10","Column_Name":"Weapon_Set_Order","Required":"NO","Ownership":"AUTHORITATIVE","Notes":"Optional ordinal ordering of multiple profiles in a Weapon_Set."}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Weapon_Set","mode":"insert","sets":{"Scope":"army","File":"Weapon_Stats.csv","Column_Order":"9","Column_Name":"Weapon_Set","Required":"NO","Ownership":"AUTHORITATIVE","Notes":"Optional stable weapon set key for multiple weapon profiles."}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Weapon_Set_Order","mode":"insert","sets":{"Scope":"army","File":"Weapon_Stats.csv","Column_Order":"10","Column_Name":"Weapon_Set_Order","Required":"NO","Ownership":"AUTHORITATIVE","Notes":"Profile order within Weapon_Set; blank when no set."}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
