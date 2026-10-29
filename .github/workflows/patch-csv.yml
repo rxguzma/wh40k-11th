@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"(?<=;name=Plasma Pistol \\(1 per 3 models\\);)max=1/2(?=\\])","to":"max=1/1/2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BIG_CHOMPAS_JAWS:ability_1","column":"Ability_Type","value":"ANTI-MONSTER/VEHICLE 3+"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
