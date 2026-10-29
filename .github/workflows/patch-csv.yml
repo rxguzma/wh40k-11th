@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"^(\\s*(?:PER_MODEL|UNIT)):1/2(?=\\s|\\[|\\|)","to":"\\g<1>:1/1/2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"(?<=;name=Plasma Pistol \\(1 per 3 models\\);)max=1/2(?=\\])","to":"max=1/1/2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
