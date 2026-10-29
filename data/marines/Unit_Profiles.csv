@@ -11,36 +11,19 @@ BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS | order=70 | qty=1
 WEAPON | FLAMESTORM_GAUNTLETS | order=80 | qty=1
-WEAPON | TWIN_POWER_FISTS | order=90 | qty=1","GROUP | MAIN_WEAPONS | Main Weapons | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Aggressors
-OPTION | FLAMESTORM | Flamestorm Gauntlets | default=1 | max=1,2,0,0,0,0,0,0 | weapons=FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS,FLAMESTORM_GAUNTLETS
-OPTION | BOLTSTORM | Auto Boltstorm Gauntlets + Fragstorm Grenade Launcher | default=0 | max=1,2,0,0,0,0,0,0 | weapons=AUTO_BOLTSTORM_GAUNTLETS,FRAGSTORM_GRENADE_LAUNCHER",,,,,
+WEAPON | TWIN_POWER_FISTS | order=90 | qty=1","UNIT:1/2 [id=MAIN_WEAPONS;label=Main Weapons;section=Aggressors] | FLAMESTORM [w=FLAMESTORM_GAUNTLETS_CLOSE_QUARTERS+FLAMESTORM_GAUNTLETS;name=Flamestorm Gauntlets], BOLTSTORM [w=AUTO_BOLTSTORM_GAUNTLETS+FRAGSTORM_GRENADE_LAUNCHER;name=Auto Boltstorm Gauntlets + Fragstorm Grenade Launcher]",,,,,
 ANCIENT,Ancient,"6""",5,3+,4,6+,2,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient,HONOUR_OF_THE_COMPANY,"SUPPORT, RAISE_THE_BANNER",", 40",,,,,,,,"WEAPON | INTERCESSORS_BOLT_PISTOL | order=1 | qty=1
-WEAPON | WARDENS_OF_ULTRAMAR_CERAMITE_FISTS | order=4 | qty=1","GROUP | ANCIENT_WARGEAR | Bolt Rifle Slot | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | BOLT_RIFLE | Bolt Rifle | default=1 | max=1,0,0,0,0,0,0,0 | weapons=INTERCESSORS_BOLT_RIFLE_FOCUSED,INTERCESSORS_BOLT_RIFLE_SATURATION
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT",,,,,
+WEAPON | WARDENS_OF_ULTRAMAR_CERAMITE_FISTS | order=4 | qty=1","UNIT [id=ANCIENT_WARGEAR;label=Bolt Rifle Slot] | BOLT_RIFLE [w=INTERCESSORS_BOLT_RIFLE_FOCUSED+INTERCESSORS_BOLT_RIFLE_SATURATION;name=Bolt Rifle], POWER_WEAPON [w=POWER_WEAPON_TERMINATOR_SERGEANT]",,,,,
 ASSAULT_INTERCESSORS,Assault Intercessors,"6""",5,3+,2,6+,2,"INFANTRY, BATTLELINE, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessor-Squad,TARGETED_INTERCESSION,,"x5, 85","x10, 170",,,,,,,"LABEL | Assault Intercessors | order=10
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
-LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
-OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON
-OPTION | THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER",,,,
+LABEL | Sergeant | order=50","UNIT [id=SERGEANT_RANGED;label=Sergeant Ranged;section=Sergeant;count=1] | HBP [w=HEAVY_BOLT_PISTOL], HAND_FLAMER [w=INTERCESSORS_HAND_FLAMER], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol]","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | CHAIN [w=ASSAULT_INTERCESSORS_CHAINSWORD], POWER_FIST [w=POWER_FIST_TROOPS], POWER_WEAPON [w=INTERCESSORS_POWER_WEAPON], THUNDER_HAMMER [w=INTERCESSORS_THUNDER_HAMMER]",,,,
 ASSAULT_INTERCESSORS_WITH_JUMP_PACKS,Jump Intercessors,"12""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, FLY, IMPERIUM, JUMP PACK, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs,HAMMER_OF_WRATH,DEEP_STRIKE,"x5, 95","x10, 190",,,,,,,"LABEL | Assault Intercessors with Jump Packs | order=10
 WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | ASSAULT_INTERCESSORS_CHAINSWORD | order=30
 BLANK | order=40
-LABEL | Sergeant | order=50","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | HAND_FLAMER | Hand Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_HAND_FLAMER
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
-OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_POWER_WEAPON","GROUP | SQUAD_PLASMA | Assault Intercessors with Jump Packs | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Assault Intercessors with Jump Packs
+LABEL | Sergeant | order=50","UNIT [id=SERGEANT_RANGED;label=Sergeant Ranged;section=Sergeant;count=1] | HBP [w=HEAVY_BOLT_PISTOL], HAND_FLAMER [w=INTERCESSORS_HAND_FLAMER], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol]","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | CHAIN [w=ASSAULT_INTERCESSORS_CHAINSWORD], POWER_FIST [w=POWER_FIST_TROOPS], POWER_WEAPON [w=INTERCESSORS_POWER_WEAPON]","GROUP | SQUAD_PLASMA | Assault Intercessors with Jump Packs | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Assault Intercessors with Jump Packs
 OPTION | NONE | Heavy Bolt Pistols | default=1 | max=1,2,0,0,0,0,0,0
 OPTION | PLASMA | Plasma Pistol (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,
 AZRAEL,Azrael,"6""",4,2+/4++,6,6,1,"INFANTRY, CHARACTER, EPIC HERO, GRENADES, IMPERIUM, DEATHWING, TACTICUS, CHAPTER MASTER, AZRAEL",https://wahapedia.ru/wh40k11ed/factions/space-marines/Azrael,"SUPREME_GRAND_MASTER, THE_LION_HELM","LEADER_AZRAEL, MASTERFUL_TACTICIAN",", 150",,,,,,,,"FIXED | LIONS_WRATH

@@ -11,9 +11,7 @@ WEAPON | CHOPPA | order=20 | qty=9
 WEAPON | SLUGGA | order=30 | qty=9
 LABEL | NOB | order=40
 WEAPON | POWER_SNAPPA | order=50 | qty=1
-WEAPON | SLUGGA | order=60 | qty=1","GROUP | THUMP_GUN | Thump Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | None | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | THUMP_GUN | Thump Gun | default=0 | max=1,2,0,0,0,0,0,0 | weapons=THUMP_GUN",,,,,
+WEAPON | SLUGGA | order=60 | qty=1","UNIT:1/2 [id=THUMP_GUN;label=Thump Gun] | NONE, THUMP_GUN [name=Thump Gun]",,,,,
 BEASTBOSS,Beastboss,"6""",6,4+/5++,6,6+,1,"INFANTRY, BEAST SNAGGA, CHARACTER, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss,DODGE_DIS,"FNP_6, KEEP_HUNTIN, LEADER_BEASTBOSS","x1, 85",,,,,,,,"FIXED | SHOOTA_BEASTBOSS
 FIXED | BEAST_SNAGGA_KLAW_BEASTCHOPPA",,,,,,
 BEASTBOSS_ON_SQUIGOSAUR,Beastboss on Squigosaur,"10""",9,3+/5++,10,6+,3,"MONSTER, BEAST SNAGGA, CHARACTER, WARBOSS",https://wahapedia.ru/wh40k11ed/factions/orks/Beastboss-on-Squigosaur,THUNDERING_STAMPEDE,"FNP_5, KEEP_HUNTIN, BOSS_OF_DA_HUNT, COMPOSITION_BEASTBOSS_SQUIGOSAUR","x1, 140",,,,,,,,"FIXED | SLUGGA_SQUIGOSAUR
@@ -21,11 +19,7 @@ FIXED | THUMP_GUN_SQUIGOSAUR
 FIXED | BEASTCHOPPA_STANDARD
 FIXED | BEASTCHOPPA_HUNTER
 FIXED | SQUIGOSAURS_JAWS",,,,,,
-BIG_MEK,Big Mek,"6""",5,3+,6,7+,1,"INFANTRY, CHARACTER, EXPLOSIVES, BIG MEK",https://wahapedia.ru/wh40k11ed/factions/orks/Big-Mek,SHOKK_BOOSTA,"MORE_DAKKA, COMPOSITION_BIG_MEK, LEADER_BIG_MEK","x1, 100",,,,,,,,,"GROUP | RANGED_BIG_MEK | Weapon 1 | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | BIG_MEK_KUSTOM_MEGA_BLASTA | Kustom mega-blasta | default=0 | max=1,0,0,0,0,0,0,0 | weapons=KUSTOM_MEGA_BLASTA_MEK | compatible=MELEE_BIG_MEK=BIG_MEK_POWER_KLAW|BIG_MEK_DRILLA
-OPTION | BIG_MEK_TRAKTOR_BLASTA | Traktor blasta | default=1 | max=1,0,0,0,0,0,0,0 | weapons=TRAKTOR_BLASTA | compatible=MELEE_BIG_MEK=BIG_MEK_POWER_KLAW|BIG_MEK_DRILLA","GROUP | MELEE_BIG_MEK | Weapon 2 | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | BIG_MEK_POWER_KLAW | Power klaw | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_KLAW_BIG_MEK
-OPTION | BIG_MEK_DRILLA | Drilla | default=1 | max=1,0,0,0,0,0,0,0 | weapons=DRILLA",,,,
+BIG_MEK,Big Mek,"6""",5,3+,6,7+,1,"INFANTRY, CHARACTER, EXPLOSIVES, BIG MEK",https://wahapedia.ru/wh40k11ed/factions/orks/Big-Mek,SHOKK_BOOSTA,"MORE_DAKKA, COMPOSITION_BIG_MEK, LEADER_BIG_MEK","x1, 100",,,,,,,,,"UNIT [id=RANGED_BIG_MEK;allow=MELEE_BIG_MEK=BIG_MEK_POWER_KLAW/BIG_MEK_DRILLA] | BIG_MEK_KUSTOM_MEGA_BLASTA [w=KUSTOM_MEGA_BLASTA_MEK;name=Kustom mega-blasta], *BIG_MEK_TRAKTOR_BLASTA [w=TRAKTOR_BLASTA;name=Traktor blasta]","UNIT [id=MELEE_BIG_MEK] | BIG_MEK_POWER_KLAW [w=POWER_KLAW_BIG_MEK;name=Power klaw], *BIG_MEK_DRILLA [w=DRILLA]",,,,
 BIG_MEK_DAKKARIG,Big Mek Dakkarig,"8""",8,3+/5++,11,7+,3,"VEHICLE, WALKER, BIG MEK, DAKKARIG",https://wahapedia.ru/wh40k11ed/factions/orks/Big-Mek-Dakkarig,"EVEN_MORE_DAKKA, BLITZ_DEM_GITS",DEADLY_DEMISE_1,"x1, 160","x2, 320",,,,,,,"FIXED | BLITZKANNON
 FIXED | MULTI_BUSTA_LAUNCHA_DAKKA
 FIXED | STOMPY_FEET",,,,,,
@@ -103,20 +97,7 @@ WEAPON | BURNA | order=52 | qty=1
 WEAPON | KUSTOM_SHOOTA | order=53 | qty=2
 WEAPON | ROKKIT_LAUNCHA_BLASTA | order=54 | qty=1
 WEAPON | ROKKIT_LAUNCHA_BUSTA | order=55 | qty=1
-WEAPON | BREACHA_RAM | order=56 | qty=1","GROUP | NOB_MELEE | Nob Melee | mode=UNIT | instances=1,0,0,0,0,0,0,0 | section=Nob
-OPTION | CHOPPA | Choppa | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | BIG_CHOPPA | Big Choppa | default=0 | max=1,0,0,0,0,0,0,0 | weapons=BIG_CHOPPA
-OPTION | POWER_KLAW | Power Klaw | default=0 | max=1,0,0,0,0,0,0,0 | weapons=POWER_KLAW","GROUP | BURNA | Burna | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
-OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | BURNA | Burna | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BURNA","GROUP | ROKKIT_LAUNCHA | Rokkit Launcha | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
-OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | ROKKIT_LAUNCHA | Rokkit Launcha | default=0 | max=9,0,0,0,0,0,0,0 | weapons=ROKKIT_LAUNCHA_BLASTA,ROKKIT_LAUNCHA_BUSTA","GROUP | BREACHA_RAM | Breacha Ram | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
-OPTION | CHOPPA | Choppa | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | BREACHA_RAM | Breacha Ram | default=0 | max=9,0,0,0,0,0,0,0 | weapons=BREACHA_RAM","GROUP | KUSTOM_SHOOTA_1 | Kustom Shoota 1 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
-OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=9,0,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA","GROUP | KUSTOM_SHOOTA_2 | Kustom Shoota 2 | mode=UNIT | instances=9,0,0,0,0,0,0,0 | section=Kommandos
-OPTION | NONE | None | default=1 | max=9,0,0,0,0,0,0,0
-OPTION | KUSTOM_SHOOTA | Kustom Shoota | default=0 | max=9,0,0,0,0,0,0,0 | weapons=KUSTOM_SHOOTA"
+WEAPON | BREACHA_RAM | order=56 | qty=1","UNIT [id=NOB_MELEE;label=Nob Melee;section=Nob] | CHOPPA [w=-;name=Choppa], BIG_CHOPPA, POWER_KLAW","UNIT:9 [id=BURNA;label=Burna;section=Kommandos] | NONE, BURNA","UNIT:9 [id=ROKKIT_LAUNCHA;label=Rokkit Launcha;section=Kommandos] | NONE, ROKKIT_LAUNCHA [w=ROKKIT_LAUNCHA_BLASTA+ROKKIT_LAUNCHA_BUSTA;name=Rokkit Launcha]","UNIT:9 [id=BREACHA_RAM;label=Breacha Ram;section=Kommandos] | CHOPPA [w=-;name=Choppa], BREACHA_RAM [name=Breacha Ram]","UNIT:9 [id=KUSTOM_SHOOTA_1;label=Kustom Shoota 1;section=Kommandos] | NONE, KUSTOM_SHOOTA","UNIT:9 [id=KUSTOM_SHOOTA_2;label=Kustom Shoota 2;section=Kommandos] | NONE, KUSTOM_SHOOTA"
 LOOTAS,Lootas,"6""",5,5+,1,7,1,"INFANTRY, LOOTAS",https://wahapedia.ru/wh40k11ed/factions/orks/Lootas,DATS_OUR_LOOT,COMPOSITION_LOOTAS,"x5, 50","x10, 100",,,,,,,"FIXED | DEFFGUN
 FIXED | KUSTOM_MEGA_BLASTA
 FIXED | CLOSE_COMBAT_WEAPON_BOYZ",,,,,,
@@ -153,9 +134,7 @@ WEAPON | SLUGGA | order=20
 WEAPON | CHOPPA | order=30
 BLANK | order=40
 LABEL | NOB | order=50
-WEAPON | SLUGGA | order=60","GROUP | NOB_MELEE_STORMBOYZ | Nob Melee Weapon | mode=UNIT | instances=1,2,2,0,0,0,0,0 | section=NOB
-OPTION | STORMBOYZ_KUSTOM_CHOPPA | Kustom Choppa | default=1 | max=1,2,2,0,0,0,0,0 | weapons=KUSTOM_CHOPPA
-OPTION | STORMBOYZ_POWER_KLAW | Power Klaw | default=0 | max=1,2,2,0,0,0,0,0 | weapons=POWER_KLAW",,,,,
+WEAPON | SLUGGA | order=60","UNIT:1/2/2 [id=NOB_MELEE_STORMBOYZ;label=Nob Melee Weapon;section=NOB] | STORMBOYZ_KUSTOM_CHOPPA [w=KUSTOM_CHOPPA], STORMBOYZ_POWER_KLAW [w=POWER_KLAW]",,,,,
 TANKBUSTAS,Tankbustas,"6""",5,4+,2,7+,1,"INFANTRY, EXPLOSIVES, TANKBUSTAS",https://wahapedia.ru/wh40k11ed/factions/orks/Tankbustas,"ROKKIT_BARRAGE, PULSA_ROKKIT","BOMB_SQUIGS_TANKBUSTAS, COMPOSITION_TANKBUSTAS, LED_BY_TANKBUSTAS","x6, 160","6x2, 320",,,,,,,"LABEL | TANKBUSTAS | order=10
 WEAPON | BUSTA_ROKKIT_STANDARD | order=20
 WEAPON | BUSTA_ROKKIT_HUNTER | order=30
@@ -165,14 +144,8 @@ LABEL | NOB | order=60
 WEAPON | ROKKIT_PISTOL | order=70
 WEAPON | CHOPPA | order=80
 WEAPON | SMASH_HAMMER_STANDARD | order=90
-WEAPON | SMASH_HAMMER_HUNTER | order=100","GROUP | NOB_ROKKIT_PISTOL | Nob Rokkit Pistol | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | TANKBUSTAS_ROKKIT_PISTOL_X1 | Rokkit Pistol x1 | default=1 | max=1,2,0,0,0,0,0,0 | weapons=ROKKIT_PISTOL
-OPTION | TANKBUSTAS_ROKKIT_PISTOL_X2 | Rokkit Pistol x2 | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ROKKIT_PISTOL_X2_TANKBUSTAS",,,,,
-TRUKK,Trukk,"12""",8,4+/6++,10,7+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, SPEED FREEKS, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/orks/Trukk,PILIN_OUT,"DEADLY_DEMISE_D3, TRANSPORT_TRUKK, FIRING_DECK_12","x1, 60",,,,,,,,FIXED | SPIKED_RAM,"GROUP | RANGED_TRUKK | Weapon 1 | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | TRUKK_DUAL_BIG_SHOOTA | Dual Big Shoota | default=1 | max=1,0,0,0,0,0,0,0 | weapons=DUAL_BIG_SHOOTA | compatible=SIDE_TRUKK=TRUKK_BUZZSAW|TRUKK_GRABBIN_KLAW
-OPTION | TRUKK_ROKKIT_LAUNCHA | Rokkit Launcha | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ROKKIT_LAUNCHA_BLASTA,ROKKIT_LAUNCHA_BUSTA | compatible=SIDE_TRUKK=TRUKK_BUZZSAW|TRUKK_GRABBIN_KLAW","GROUP | SIDE_TRUKK | Weapon 2 | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | TRUKK_BUZZSAW | Buzzsaw | default=1 | max=1,0,0,0,0,0,0,0 | weapons=BUZZSAW
-OPTION | TRUKK_GRABBIN_KLAW | Grabbin' Klaw | default=0 | max=1,0,0,0,0,0,0,0 | weapons=GRABBIN_KLAW",,,,
+WEAPON | SMASH_HAMMER_HUNTER | order=100","UNIT:1/2 [id=NOB_ROKKIT_PISTOL;label=Nob Rokkit Pistol] | TANKBUSTAS_ROKKIT_PISTOL_X1 [w=ROKKIT_PISTOL;name=Rokkit Pistol x1], TANKBUSTAS_ROKKIT_PISTOL_X2 [w=ROKKIT_PISTOL_X2_TANKBUSTAS;name=Rokkit Pistol x2]",,,,,
+TRUKK,Trukk,"12""",8,4+/6++,10,7+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, SPEED FREEKS, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/orks/Trukk,PILIN_OUT,"DEADLY_DEMISE_D3, TRANSPORT_TRUKK, FIRING_DECK_12","x1, 60",,,,,,,,FIXED | SPIKED_RAM,"UNIT [id=RANGED_TRUKK;allow=SIDE_TRUKK=TRUKK_BUZZSAW/TRUKK_GRABBIN_KLAW] | TRUKK_DUAL_BIG_SHOOTA [w=DUAL_BIG_SHOOTA], TRUKK_ROKKIT_LAUNCHA [w=ROKKIT_LAUNCHA_BLASTA+ROKKIT_LAUNCHA_BUSTA;name=Rokkit Launcha]","UNIT [id=SIDE_TRUKK] | TRUKK_BUZZSAW [w=BUZZSAW], TRUKK_GRABBIN_KLAW [w=GRABBIN_KLAW;name=Grabbin' Klaw]",,,,
 WARBIKERS,Warbikers,"12""",6,4+/6++,3,7+,2,"MOUNTED, EXPLOSIVES, SPEED FREEKS, WARBIKERS",https://wahapedia.ru/wh40k11ed/factions/orks/Warbikers,HIGH_SPEED_CARNAGE,"COMPOSITION_WARBIKERS, LED_BY_WARBIKERS","x3, 75","x6, 140",,,,,,,"FIXED | DUAL_KOMBI_ROKKIT_DAKKAGUN
 FIXED | DUAL_KOMBI_ROKKIT_BUSTA
 FIXED | TWIN_DAKKAGUN
@@ -221,10 +194,7 @@ GUNWAGON,Gunwagon,"10""",12,3+/6++,16,7+,5,"VEHICLE, FRAME, TRANSPORT, WAGON",ht
 FIXED | LOBBA
 FIXED | CRUSHIN_BULK
 FIXED | GRABBIN_KLAW
-FIXED | WRECKIN_BALL","GROUP | MAIN_GUN | Main Gun | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | KILLKANNON | Killkannon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=KILLKANNON
-OPTION | ZZAP_GUN | Zzap Gun | default=0 | max=1,0,0,0,0,0,0,0 | weapons=ZZAP_GUN | cost=10
-OPTION | KANNON_FRAG | Kannon - Frag | default=0 | max=1,0,0,0,0,0,0,0 | weapons=KANNON_FRAG,KANNON_SHELL",,,,,
+FIXED | WRECKIN_BALL","UNIT [id=MAIN_GUN;label=Main Gun] | KILLKANNON, ZZAP_GUN [name=Zzap Gun;+10], KANNON_FRAG [w=KANNON_FRAG+KANNON_SHELL;name=Kannon - Frag]",,,,,
 HUNTA_RIG,Hunta Rig,"10""",10,3+/6++,16,7+,5,"MONSTER, BEAST SNAGGA, TRANSPORT, WAGON, HUNTA RIG",https://wahapedia.ru/wh40k11ed/factions/orks/Hunta-Rig,"FULLY_LOADED_BUTCHERY, TRAMPLASAQUIG_CHARGE","DAMAGED_1_6, DEADLY_DEMISE_D6, FNP_5, TRANSPORT_HUNTA_RIG, FIRING_DECK_11","x1, 165",,,,,,,,"FIXED | EAVY_LOBBA
 FIXED | STIKKA_KANNON
 FIXED | BUTCHA_BOYZ
