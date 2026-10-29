@@ -303,23 +303,12 @@ FIXED | CLOSE_COMBAT_WEAPON_INTERCESSORS",,,,,,
 TECHMARINE,Techmarine,"6""",5,2+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Techmarine,BLESSINGS_OF_THE_OMNISSIAH,"LEADER, TECHMARINE_AURA",", 55",,,,,,,,"WEAPON | FORGE_BOLTER | order=1 | qty=1
 WEAPON | GRAV_PISTOL | order=2 | qty=1
 WEAPON | OMNISSIAN_POWER_AXE | order=3 | qty=1",,,,,,
-TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad,TERMINATUS_ASSAULT,"DEEP_STRIKE, Teleport_Homer","x5, 170","x10, 340",,,,,,,LABEL | Terminators | order=10,"GROUP | ASSAULT_TERMINATOR_LOADOUT | Weapon 1 | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators
-OPTION | ASSAULT_TERMINATORS_CLAWS | Twin Lightning Claws | default=1 | max=5,10,0,0,0,0,0,0 | weapons=TWIN_LIGHTNING_CLAWS
-OPTION | ASSAULT_TERMINATORS_HAMMER | Thunder Hammer + Storm Shield | default=0 | max=5,10,0,0,0,0,0,0 | weapons=THUNDER_HAMMER_TERMINATORS | abilities=ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS | cost=5",,,,,
+TERMINATOR_ASSAULT_SQUAD,Assault Terminators,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Assault-Squad,TERMINATUS_ASSAULT,"DEEP_STRIKE, Teleport_Homer","x5, 170","x10, 340",,,,,,,LABEL | Terminators | order=10,"PER_MODEL:5/10 [id=ASSAULT_TERMINATOR_LOADOUT;section=Terminators] | ASSAULT_TERMINATORS_CLAWS [w=TWIN_LIGHTNING_CLAWS;name=Twin Lightning Claws], ASSAULT_TERMINATORS_HAMMER [w=THUNDER_HAMMER_TERMINATORS;name=Thunder Hammer + Storm Shield;+5;ability=ASSAULT_TERMINATORS_THUNDER_HAMMER_POINTS]",,,,,
 TERMINATOR_SQUAD,Terminator Squad,"5""",6,2+/4++,3,6+,1,"INFANTRY, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Terminator-Squad,FURY_OF_THE_FIRST,"DEEP_STRIKE, Teleport_Homer","x5, 190","x10, 380",,,,,,,"LABEL | Terminators | order=10
 WEAPON | STORM_BOLTER_TERMINATORS | order=20
 BLANK | order=40
 LABEL | Sergeant | order=50
-WEAPON | STORM_BOLTER_TERMINATORS | order=60 | qty=1","GROUP | MODEL_MELEE | Terminator Melee | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Terminators
-OPTION | POWER_FIST | Power Fist | default=1 | max=5,10,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
-OPTION | CHAINFIST | Chainfist | default=0 | max=5,10,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER","GROUP | HEAVY_WEAPON | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Terminators
-OPTION | NONE | No Heavy Weapon | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | ASSAULT_CANNON | Assault Cannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=ASSAULT_CANNON_DEATHWING_TERMINATORS
-OPTION | HEAVY_FLAMER | Heavy Flamer (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS
-OPTION | CYCLONE | Cyclone Missile Launcher + Storm Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=CYCLONE_MISSLINE_FRAG,CYCLONE_MISSLINE_KRAK | cost=10","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | POWER_FIST | Power Fist | default=1 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TERMINATORS
-OPTION | CHAINFIST | Chainfist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=TERMINATOR_CHAINFIST_STANDARD,TERMINATOR_CHAINFIST_HUNTER
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT",,,
+WEAPON | STORM_BOLTER_TERMINATORS | order=60 | qty=1","PER_MODEL:5/10 [id=MODEL_MELEE;label=Terminator Melee;section=Terminators] | POWER_FIST [w=POWER_FIST_TERMINATORS;name=Power Fist], CHAINFIST [w=TERMINATOR_CHAINFIST_STANDARD+TERMINATOR_CHAINFIST_HUNTER;name=Chainfist]","UNIT:1/2 [id=HEAVY_WEAPON;label=Heavy Weapon;section=Terminators] | NONE [name=No Heavy Weapon], ASSAULT_CANNON [w=ASSAULT_CANNON_DEATHWING_TERMINATORS;name=Assault Cannon (1 per 5 models)], HEAVY_FLAMER [w=HEAVY_FLAMER_DEATHWING_TERMINATORS;name=Heavy Flamer (1 per 5 models)], CYCLONE [w=CYCLONE_MISSLINE_FRAG+CYCLONE_MISSLINE_KRAK;name=Cyclone Missile Launcher + Storm Bolter (1 per 5 models);+10]","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | POWER_FIST [w=POWER_FIST_TERMINATORS;name=Power Fist], CHAINFIST [w=TERMINATOR_CHAINFIST_STANDARD+TERMINATOR_CHAINFIST_HUNTER;name=Chainfist], POWER_WEAPON [w=POWER_WEAPON_TERMINATOR_SERGEANT]",,,
 URIEL_VENTRIS,Uriel Ventris,"6""",4,3+/4++,5,6,1,"INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, CAPTAIN, URIEL VENTRIS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Uriel-Ventris,"UNORTHODOX_STRATEGIST, MASTER_OF_THE_FLEET",,", 105",,,,,,,,"FIXED | BOLT_PISTOL_LEADERS
 FIXED | INVICTUS
 FIXED | SWORD_OF_IDAEUS",,,,,,
@@ -328,25 +317,12 @@ WEAPON | HEAVY_BOLT_PISTOL | order=20
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_VANGUARD_VETERANS | order=30
 BLANK | order=40
 LABEL | Sergeant | order=50
-WEAPON | HEAVY_BOLT_PISTOL | order=60 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | RELIC | Relic Blade | default=1 | max=1,1,0,0,0,0,0,0 | weapons=VANGUARD_RELIC_BLADE
-OPTION | FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_TROOPS
-OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol | default=0 | max=1,1,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
-OPTION | SHIELD | Combat Shield | default=0 | max=1,1,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD","GROUP | VETERAN_RANGED | Veteran Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Vanguard Veterans
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=5,10,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL
-OPTION | PLASMA | Plasma Pistol (up to 2 per 5 models) | default=0 | max=4,4,0,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED
-OPTION | SHIELD | Combat Shield | default=0 | max=5,10,0,0,0,0,0,0 | abilities=COMBAT_SHIELD_VANGUARD",,,
+WEAPON | HEAVY_BOLT_PISTOL | order=60 | qty=1","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | RELIC [w=VANGUARD_RELIC_BLADE], FIST [w=POWER_FIST_TROOPS], HAMMER [w=INTERCESSORS_THUNDER_HAMMER]","UNIT [id=SERGEANT_RANGED;label=Sergeant Ranged;section=Sergeant] | HBP [w=HEAVY_BOLT_PISTOL], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol], SHIELD [name=Combat Shield;ability=COMBAT_SHIELD_VANGUARD]","PER_MODEL:5/10 [id=VETERAN_RANGED;label=Veteran Ranged;section=Vanguard Veterans] | HBP [w=HEAVY_BOLT_PISTOL], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol (up to 2 per 5 models);max=4/4], SHIELD [name=Combat Shield;ability=COMBAT_SHIELD_VANGUARD]",,,
 VICTRIX_HONOUR_GUARD,Victrix Honour Guard,"6""",5,2+,3,6+,2,"INFANTRY, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, ULTRAMARINES",,"VICTRIX_HONOUR_GUARD_GLORY_OF_ULTRAMAR, VICTRIX_HONOUR_GUARD_HONOUR_GUARD_OF_MACRAGGE, VICTRIX_HONOUR_GUARD_UNIT_COMPOSITION",,"x3, 120","x6, 250",,,,,,,"LABEL | VICTRIX HONOUR GUARD | order=1
 WEAPON | VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE | order=2 | qty=1
 WEAPON | MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT | order=3 | qty=1
 LABEL | CHAPTER ANCIENT | order=4
-LABEL | CHAPTER CHAMPION | order=5","GROUP | CHAPTER_ANCIENT | Chapter Ancient | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | 0 Chapter Ancient | default=1 | max=1,1,0,0,0,0,0,0 | compatible=CHAPTER_CHAMPION=NONE|CHAMPION
-OPTION | ANCIENT | 1 Chapter Ancient | default=0 | max=1,1,0,0,0,0,0,0 | weapons=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE,MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT | abilities=VICTRIX_HONOUR_GUARD_BANNER_OF_MACRAGGE | compatible=CHAPTER_CHAMPION=NONE|CHAMPION | cost=15","GROUP | CHAPTER_CHAMPION | Chapter Champion | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | 0 Chapter Champion | default=1 | max=1,1,0,0,0,0,0,0
-OPTION | CHAMPION | 1 Chapter Champion | default=0 | max=1,1,0,0,0,0,0,0 | weapons=VICTRIX_HONOUR_GUARD_BLADES_OF_HONOUR",,,,
+LABEL | CHAPTER CHAMPION | order=5","UNIT:1/2 [id=CHAPTER_ANCIENT;label=Chapter Ancient;allow=CHAPTER_CHAMPION=NONE/CHAMPION] | NONE [name=0 Chapter Ancient;max=1/1], ANCIENT [w=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE+MASTER_CRAFTED_POWER_WEAPON_LIEUTENANT;name=1 Chapter Ancient;max=1/1;+15;ability=VICTRIX_HONOUR_GUARD_BANNER_OF_MACRAGGE]","UNIT:1/2 [id=CHAPTER_CHAMPION;label=Chapter Champion] | NONE [name=0 Chapter Champion;max=1/1], CHAMPION [w=VICTRIX_HONOUR_GUARD_BLADES_OF_HONOUR;name=1 Chapter Champion;max=1/1]",,,,
 VULKAN_HESTAN,Vulkan He’stan,"6""",5,2+/4++,5,6+,1,"INFANTRY, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, SALAMANDERS",,"FORGEFATHER, SEEKER_OF_THE_UNFOUND, VULKAN_HESTAN_UNIT_COMPOSITION","FNP_6, LEADER",", 105",,,,,,,,"FIXED | BOLT_PISTOL_LEADERS
 FIXED | GAUNTLET_OF_THE_FORGE
 FIXED | SPEAR_OF_VULKAN",,,,,,
@@ -391,16 +367,10 @@ WEAPON | TOR_GARADON_HAND_OF_DEFIANCE | order=2 | qty=1",,,,,,
 KORSARRO_KHAN,Kor’sarro Khan,"6""",5,3+/4++,5,6+,1,"INFANTRY, CAPTAIN, CHARACTER, EPIC HERO, EXPLOSIVES, IMPERIUM, TACTICUS, ADEPTUS ASTARTES, WHITE SCARS",,"KORSARRO_KHAN_TROPHY_TAKER, KORSARRO_KHAN_FOR_THE_KHAN, KORSARRO_KHAN_UNIT_COMPOSITION",LEADER,", 80",,,,,,,,"WEAPON | KORSARRO_KHAN_ANZUQ | order=1 | qty=1
 WEAPON | BOLT_PISTOL_LEADERS | order=2 | qty=1
 WEAPON | KORSARRO_KHAN_MOONFANG | order=3 | qty=1",,,,,,
-CAPTAIN_ON_BIKE,Bike Captain,"12""",6,3+/4++,6,6+,2,"MOUNTED, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, ADEPTUS ASTARTES",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Captain-On-Bike,"CAPTAIN_ON_BIKE_INTO_THE_FRAY, CAPTAIN_ON_BIKE_UNIT_COMPOSITION","LEADER_CAPTAIN_ON_BIKE, CAPTAIN_STRATEGIC_ACUMEN",", 110",,,,,,,,WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=1 | qty=1,"GROUP | COB_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | COB_HBP | Heavy Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_BOLT_PISTOL_CAPTAIN
-OPTION | COB_PLASMA | Plasma Pistol | default=0 | max=1,0,0,0,0,0,0,0 | weapons=PLASMA_PISTOL_STANDARD_LEADER,PLASMA_PISTOL_SUPERCHARGE_LEADER","GROUP | COB_MELEE | Melee Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | COB_POWER_WEAPON | Master-crafted Power Weapon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_MASTER_CRAFTED_POWER_WEAPON
-OPTION | COB_THUNDER_HAMMER | Thunder Hammer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=CAPTAIN_JUMP_THUNDER_HAMMER",,,,
+CAPTAIN_ON_BIKE,Bike Captain,"12""",6,3+/4++,6,6+,2,"MOUNTED, CAPTAIN, CHARACTER, EXPLOSIVES, IMPERIUM, ADEPTUS ASTARTES",https://www.wahapedia.ru/wh40k11ed/factions/space-marines/Captain-On-Bike,"CAPTAIN_ON_BIKE_INTO_THE_FRAY, CAPTAIN_ON_BIKE_UNIT_COMPOSITION","LEADER_CAPTAIN_ON_BIKE, CAPTAIN_STRATEGIC_ACUMEN",", 110",,,,,,,,WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=1 | qty=1,"UNIT [id=COB_RANGED;label=Ranged Weapon] | COB_HBP [w=HEAVY_BOLT_PISTOL_CAPTAIN], COB_PLASMA [w=PLASMA_PISTOL_STANDARD_LEADER+PLASMA_PISTOL_SUPERCHARGE_LEADER;name=Plasma Pistol]","UNIT [id=COB_MELEE;label=Melee Weapon] | COB_POWER_WEAPON [w=CAPTAIN_MASTER_CRAFTED_POWER_WEAPON], COB_THUNDER_HAMMER [w=CAPTAIN_JUMP_THUNDER_HAMMER]",,,,
 CHAPLAIN,Chaplain,"6""",5,3+/4++,4,5+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain,SPIRITUAL_LEADER,"LEADER, LITANY_OF_HATE",", 60",,,,,,,,"WEAPON | ABSOLVOR_BOLT_PISTOL | order=1 | qty=1
 WEAPON | CROZIUS_ARCANUM | order=2 | qty=1",,,,,,
-CHAPLAIN_IN_TERMINATOR_ARMOUR,Terminator Chaplain,"5""",6,2+/4++,5,5+,1,"INFANTRY, CHAPLAIN, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-In-Terminator-Armour,ZEALOUS_FORTITUDE,"DEEP_STRIKE, LEADER, LITANY_OF_HATE",", 75",,,,,,,,WEAPON | CROZIUS_ARCANUM | order=2 | qty=1,"GROUP | TERM_CHAPLAIN_RANGED | Ranged Wargear | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | STORM_BOLTER | Storm Bolter | default=1 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS
-OPTION | RELIC_SHIELD | Relic Shield | default=0 | max=1,0,0,0,0,0,0,0 | abilities=RELIC_SHIELD",,,,,
+CHAPLAIN_IN_TERMINATOR_ARMOUR,Terminator Chaplain,"5""",6,2+/4++,5,5+,1,"INFANTRY, CHAPLAIN, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-In-Terminator-Armour,ZEALOUS_FORTITUDE,"DEEP_STRIKE, LEADER, LITANY_OF_HATE",", 75",,,,,,,,WEAPON | CROZIUS_ARCANUM | order=2 | qty=1,"UNIT [id=TERM_CHAPLAIN_RANGED;label=Ranged Wargear] | STORM_BOLTER [w=STORM_BOLTER_TERMINATORS], RELIC_SHIELD [name=Relic Shield;ability=RELIC_SHIELD]",,,,,
 CHAPLAIN_ON_BIKE,Bike Chaplain,"12""",6,3+/4++,5,5+,2,"MOUNTED, CHAPLAIN, CHARACTER, EXPLOSIVES, IMPERIUM",https://wahapedia.ru/wh40k11ed/factions/space-marines/Chaplain-On-Bike,CATECHISM_OF_FIRE,"LEADER, LITANY_OF_HATE",", 75",,,,,,,,"WEAPON | ABSOLVOR_BOLT_PISTOL | order=1 | qty=1
 WEAPON | TWIN_BOLT_RIFLE | order=2 | qty=1
 WEAPON | CROZIUS_ARCANUM | order=3 | qty=1",,,,,,
@@ -408,24 +378,10 @@ BLADEGUARD_ANCIENT,Bladeguard Ancient,"6""",5,3+/4++,4,6+,3,"INFANTRY, ANCIENT, 
 WEAPON | RELICS_OF_BATTLE | order=2 | qty=1",,,,,,
 ANCIENT_IN_TERMINATOR_ARMOUR,Terminator Ancient,"5""",6,2+/4++,5,6+,2,"INFANTRY, ANCIENT, CHARACTER, IMPERIUM, TERMINATOR",https://wahapedia.ru/wh40k11ed/factions/space-marines/Ancient-In-Terminator-Armour,NEVER_SHALL_THE_STANDARD_FALL,"DEEP_STRIKE, SUPPORT, RAISE_THE_BANNER",", 75",,,,,,,,"WEAPON | STORM_BOLTER_TERMINATORS | order=1 | qty=1
 WEAPON | ANCIENT_TERMINATOR_MASTER_CRAFTED_POWER_WEAPON | order=2 | qty=1",,,,,,
-FIRESTRIKE_SERVO_TURRETS,Firestrike Turrets,"5""",6,2+,6,6+,2,"VEHICLE, ARTILLERY, IMPERIUM",,SENTINEL_PROTOCOLS,,"x1, 80","x2, 160",,,,,,,WEAPON | FIRESTRIKE_HOVERING_BULK | order=20,"GROUP | MAIN_GUN | Main Gun | mode=PER_MODEL | instances=1,2,0,0,0,0,0,0
-OPTION | LAS_TALON | Twin Firestrike Las-talon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_LAS_TALON
-OPTION | AUTOCANNON | Twin Firestrike Autocannon | default=0 | max=1,2,0,0,0,0,0,0 | weapons=TWIN_FIRESTRIKE_AUTOCANNON",,,,,
+FIRESTRIKE_SERVO_TURRETS,Firestrike Turrets,"5""",6,2+,6,6+,2,"VEHICLE, ARTILLERY, IMPERIUM",,SENTINEL_PROTOCOLS,,"x1, 80","x2, 160",,,,,,,WEAPON | FIRESTRIKE_HOVERING_BULK | order=20,"PER_MODEL:1/2 [id=MAIN_GUN;label=Main Gun] | LAS_TALON [w=TWIN_FIRESTRIKE_LAS_TALON], AUTOCANNON [w=TWIN_FIRESTRIKE_AUTOCANNON]",,,,,
 LAND_RAIDER,Land Raider,"10""",12,2+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",,LAND_RAIDER_POWER_OF_MACHINE_SPIRIT,"DEADLY_DEMISE_D6, DAMAGED_1_6, ASSAULT_RAMP, TRANSPORT_LAND_RAIDER",", 245",,,,,,,,"WEAPON | GODHAMMER_LASCANNONS_X2 | order=10 | qty=1
 WEAPON | TWIN_HEAVY_BOLTER | order=20 | qty=1
-WEAPON | ARMORED_TRACKS_LAND_RAIDER | order=30 | qty=1","GROUP | HUNTER_KILLER | Hunter-killer Missile | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Hunter-killer Missile | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Hunter-killer Missile | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HUNTER_KILLER_MISSILE","GROUP | MULTI_MELTA | Multi-melta | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Multi-melta | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Multi-melta | default=0 | max=1,0,0,0,0,0,0,0 | weapons=MULTI_MELTA_ERADICATORS","GROUP | STORM_BOLTER | Storm Bolter | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Storm Bolter | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Storm Bolter | default=0 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS",,,
+WEAPON | ARMORED_TRACKS_LAND_RAIDER | order=30 | qty=1","UNIT [id=HUNTER_KILLER;label=Hunter-killer Missile] | NONE [name=No Hunter-killer Missile], EQUIPPED [w=HUNTER_KILLER_MISSILE]","UNIT [id=MULTI_MELTA;label=Multi-melta] | NONE [name=No Multi-melta], EQUIPPED [w=MULTI_MELTA_ERADICATORS]","UNIT [id=STORM_BOLTER;label=Storm Bolter] | NONE [name=No Storm Bolter], EQUIPPED [w=STORM_BOLTER_TERMINATORS]",,,
 LAND_RAIDER_CRUSADER,Land Raider Crusader,"12""",12,2+,16,6+,5,"VEHICLE, EXPLOSIVES, FRAME, IMPERIUM, SMOKE, TRANSPORT",,LAND_RAIDER_CRUSADER_FURY_MACHINE_SPIRIT,"DEADLY_DEMISE_D6, DAMAGED_1_6, ASSAULT_RAMP, TRANSPORT_LAND_RAIDER_CRUSADER",", 230",,,,,,,,"WEAPON | HURRICANE_BOLTERS_X2 | order=10 | qty=1
 WEAPON | TWIN_ASSAULT_CANNON | order=20 | qty=1
-WEAPON | ARMORED_TRACKS_LAND_RAIDER | order=30 | qty=1","GROUP | HUNTER_KILLER | Hunter-killer Missile | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Hunter-killer Missile | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Hunter-killer Missile | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HUNTER_KILLER_MISSILE","GROUP | MULTI_MELTA | Multi-melta | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Multi-melta | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Multi-melta | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAND_RAIDER_CRUSADER_MULTI_MELTA","GROUP | STORM_BOLTER | Storm Bolter | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Storm Bolter | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Storm Bolter | default=0 | max=1,0,0,0,0,0,0,0 | weapons=STORM_BOLTER_TERMINATORS",,,
+WEAPON | ARMORED_TRACKS_LAND_RAIDER | order=30 | qty=1","UNIT [id=HUNTER_KILLER;label=Hunter-killer Missile] | NONE [name=No Hunter-killer Missile], EQUIPPED [w=HUNTER_KILLER_MISSILE]","UNIT [id=MULTI_MELTA;label=Multi-melta] | NONE [name=No Multi-melta], EQUIPPED [w=LAND_RAIDER_CRUSADER_MULTI_MELTA]","UNIT [id=STORM_BOLTER;label=Storm Bolter] | NONE [name=No Storm Bolter], EQUIPPED [w=STORM_BOLTER_TERMINATORS]",,,
