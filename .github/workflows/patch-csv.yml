@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_COLUMN_","mode":"remove_column","column":"Unit Name"},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Unit Name","mode":"delete_where","where":{"File":"Weapon_Abilities.csv","Column_Name":"Unit Name"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"SMASH_HAMMER","mode":"delete"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"SMASH_HAMMER:ability_1","mode":"delete"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"SMASH_HAMMER:ability_2","mode":"delete"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
