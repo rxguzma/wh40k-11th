@@ -13,7 +13,6 @@ WEAPON_ABILITIES_HEADER = [
     "Target",
     "Value",
     "Condition",
-    "Sort_Order",
 ]
 
 
@@ -62,7 +61,7 @@ def render(row):
 
 
 def render_group(rows, army, weapon_id):
-    return ", ".join(render(row) for _, row in sorted(rows, key=lambda pair: pair[0]))
+    return ", ".join(render(row) for row in rows)
 
 
 def validate_army(army):
@@ -80,7 +79,6 @@ def validate_army(army):
         weapon_ids.add(weapon_id)
 
     relation_ids = set()
-    sort_keys = set()
     grouped = {}
     for line_no, row in enumerate(abilities, start=2):
         weapon_id = (row.get("Weapon_ID") or "").strip()
@@ -92,18 +90,8 @@ def validate_army(army):
         if relation_id in relation_ids:
             fail(f"{army}: duplicate Weapon_Ability_ID {relation_id!r}")
         relation_ids.add(relation_id)
-        try:
-            sort_order = int((row.get("Sort_Order") or "").strip())
-        except ValueError:
-            fail(f"{army}: invalid Sort_Order line {line_no}")
-        if sort_order < 1:
-            fail(f"{army}: Sort_Order must be >= 1 line {line_no}")
-        sort_key = (weapon_id, sort_order)
-        if sort_key in sort_keys:
-            fail(f"{army}: duplicate Sort_Order {sort_order} for {weapon_id!r}")
-        sort_keys.add(sort_key)
         render(row)
-        grouped.setdefault(weapon_id, []).append((sort_order, row))
+        grouped.setdefault(weapon_id, []).append(row)
 
     for weapon_id, rows in grouped.items():
         render_group(rows, army, weapon_id)

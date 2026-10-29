@@ -68,7 +68,6 @@ army,Weapon_Abilities.csv,3,Ability_Type,YES,AUTHORITATIVE,Canonical weapon abil
 army,Weapon_Abilities.csv,4,Target,NO,AUTHORITATIVE,Target class for parameterized abilities such as ANTI; blank otherwise.
 army,Weapon_Abilities.csv,5,Value,NO,AUTHORITATIVE,"Structured parameter such as 2, D3, or 4+; blank for flag abilities."
 army,Weapon_Abilities.csv,6,Condition,NO,AUTHORITATIVE,Optional qualifier rendered after ':' in the canonical ability text.
-army,Weapon_Abilities.csv,7,Sort_Order,YES,AUTHORITATIVE,Ability order within the weapon. Presentation separators are derived and are not source data.
 army,Weapon_Stats.csv,1,Weapon_ID,YES,AUTHORITATIVE,
 army,Weapon_Stats.csv,2,Weapon Name,YES,AUTHORITATIVE,
 army,Weapon_Stats.csv,3,"R""",NO,AUTHORITATIVE,
