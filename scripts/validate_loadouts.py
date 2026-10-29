@@ -36,11 +36,107 @@ def maxes(value,where):
         fail(f'{where}: expected 8 explicit nonnegative numeric limits')
     return [int(p) for p in parts]
 
+
+def compact_to_legacy(value, slot, points, weapon_names, weapon_sets, where):
+    """Expand compact loadout groups into the established strict validation grammar."""
+    from urllib.parse import unquote
+    match = re.fullmatch(r'(PER_MODEL|UNIT)(?::([\d/]+))?\s*(?:\[([^\]]*)\])?\s*\|\s*(.+)', value.strip(), re.S)
+    if not match:fail(f'{where}/Loadout_{slot}: invalid compact group')
+    mode, counts_text, group_text, options_text = match.groups()
+    def metadata(source, location):
+        out = {}
+        for field in filter(None, (item.strip() for item in (source or '').split(';'))):
+            if re.fullmatch(r'\+\d+', field):
+                if 'cost' in out:fail(f'{location}: duplicate cost')
+                out['cost'] = field[1:]
+                continue
+            if '=' not in field:fail(f'{location}: malformed compact metadata {field!r}')
+            key, val = field.split('=', 1)
+            key = key.lower().strip()
+            if key in out:fail(f'{location}: duplicate compact attribute {key}')
+            out[key] = unquote(val.strip())
+        return out
+    active = sum(points)
+    def limits(source, location):
+        tokens = source.split('/')
+        if len(tokens)!=active or any(not re.fullmatch(r'\d+', x) for x in tokens):
+            fail(f'{location}: expected {active} nonnegative limits')
+        numbers = [0]*8
+        it = iter(map(int, tokens))
+        for i,present in enumerate(points):
+            if present:numbers[i] = next(it)
+        return numbers
+    group = metadata(group_text, where)
+    if not group.get('id'):fail(f'{where}/Loadout_{slot}: missing group id')
+    if set(group)-{'id','label','section','count','allow','seq'}:
+        fail(f'{where}/Loadout_{slot}: unknown group attribute {set(group)-{"id","label","section","count","allow","seq"}}')
+    instances = limits(counts_text, where) if counts_text else [int(p) for p in points]
+    if any(points[i] and instances[i]<1 for i in range(8)):
+        fail(f'{where}/Loadout_{slot}: missing instances')
+    group_id = group['id']
+    name = group.get('label') or f'Weapon {slot}'
+    heading = f'GROUP | {group_id} | {name} | mode={mode} | instances={",".join(map(str, instances))}'
+    if group.get('section'):heading += f' | section={group["section"]}'
+    if group.get('count'):heading += f' | count={group["count"]}'
+    values = [heading]
+    raw_options = [item.strip() for item in options_text.split(',') if item.strip()]
+    if not raw_options:fail(f'{where}/Loadout_{slot}: no choices')
+    marked = [v for v in raw_options if v.startswith('*')]
+    if len(marked)>1:fail(f'{where}/Loadout_{slot}: multiple defaults')
+    for n,item in enumerate(raw_options):
+        mo = re.fullmatch(r'(\*)?([A-Za-z0-9_]+)(?:\s+\[([^\]]*)\])?', item)
+        if not mo:fail(f'{where}/Loadout_{slot}: invalid option {item!r}')
+        explicit, option_id, details = mo.groups()
+        opt = metadata(details, where)
+        if set(opt)-{'w','name','max','ability','allow','cost'}:
+            fail(f'{where}/{group_id}/{option_id}: unknown option attribute')
+        if 'w' in opt:
+            weapon_ids = [] if opt['w']=='-' else opt['w'].split('+')
+        elif option_id.upper() in weapon_sets:
+            weapon_ids = weapon_sets[option_id.upper()]
+        elif option_id in weapon_names:
+            weapon_ids = [option_id]
+        else:
+            weapon_ids = []
+            if option_id.upper()!='NONE' and not opt.get('ability'):
+                fail(f'{where}/{group_id}/{option_id}: unknown Weapon_ID without mapping')
+        for weapon_id in weapon_ids:
+            if weapon_id not in weapon_names:
+                fail(f'{where}/{group_id}/{option_id}: unknown Weapon_ID {weapon_id}')
+        default_name = weapon_names.get(weapon_ids[0],option_id) if weapon_ids else ('None' if option_id=='NONE' else option_id.replace('_',' '))
+        visible = opt.get('name') or default_name
+        maximum = limits(opt['max'],where) if 'max' in opt else instances
+        if any(maximum[i]>instances[i] for i in range(8)):
+            fail(f'{where}/{group_id}/{option_id}: maximum exceeds instances')
+        default = '1' if (bool(explicit) or (not marked and n==0)) else '0'
+        value = f'OPTION | {option_id} | {visible} | default={default} | max={",".join(map(str,maximum))}'
+        if weapon_ids:value += f' | weapons={",".join(weapon_ids)}'
+        if opt.get('ability'):value += f' | abilities={opt["ability"].replace("+",",")}'
+        compatibility = opt.get('allow',group.get('allow',''))
+        if compatibility=='-':compatibility=''
+        if compatibility:value += f' | compatible={compatibility.replace("/","|")}'
+        if 'cost' in opt:value += f' | cost={opt["cost"]}'
+        values.append(value)
+    return values
+
 def validate_army(army):
     directory=ROOT/'data'/army
     header,profiles=read(directory/'Unit_Profiles.csv')
     if header!=HEAD:fail(f'{army}: Unit_Profiles header mismatch')
-    weapons={r['Weapon_ID'].strip() for r in read(directory/'Weapon_Stats.csv')[1]}
+    stats_rows=read(directory/'Weapon_Stats.csv')[1]
+    weapon_names={r['Weapon_ID'].strip():r['Weapon Name'].strip() for r in stats_rows}
+    weapons=set(weapon_names)
+    weapon_sets={}
+    for r in stats_rows:
+        key=(r.get('Weapon_Set') or '').strip().upper()
+        if key:
+            raw_order=(r.get('Weapon_Set_Order') or '').strip()
+            if not re.fullmatch(r'\d+',raw_order):fail(f'{army}: invalid Weapon_Set_Order for {r["Weapon_ID"]}')
+            weapon_sets.setdefault(key,[]).append((int(raw_order),r['Weapon_ID'].strip()))
+    for key,vals in weapon_sets.items():
+        if len({n for n,_ in vals})!=len(vals):fail(f'{army}: repeated Weapon_Set_Order for {key}')
+        weapon_sets[key]=[wid for _,wid in sorted(vals)]
+
     abilities={r['Ability_ID'].strip() for r in read(directory/'Abilities.csv')[1]}
     abilities|={r['Ability_ID'].strip() for r in read(ROOT/'data'/'universal'/'Universal_Abilities.csv')[1]}
     seen_units=set(); weapon_count=0; option_count=0; granted_count=0
@@ -70,8 +166,11 @@ def validate_army(army):
             weapon_count+=1
         groups={};selected=set()
         for slot in range(1,7):
-            cell=[x.strip() for x in (profile.get(f'Loadout_{slot}') or '').splitlines() if x.strip()]
+            raw=(profile.get(f'Loadout_{slot}') or '').strip()
+            cell=[x.strip() for x in raw.splitlines() if x.strip()]
             if not cell:continue
+            if not re.match(r'^GROUP\s+\|',cell[0],re.I):
+                cell=compact_to_legacy(raw,slot,points,weapon_names,weapon_sets,where)
             header=split(cell.pop(0))
             if len(header)<3 or header[0]!='GROUP' or not header[1] or not header[2]:fail(f'{where}/Loadout_{slot}: invalid GROUP')
             group_id=header[1]
