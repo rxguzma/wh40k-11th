@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Required_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Army_Rules.csv","Column_Name":"Required_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Any_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Army_Rules.csv","Column_Name":"Any_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Excluded_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Army_Rules.csv","Column_Name":"Excluded_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Required_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Detachment_Definitions.csv","Column_Name":"Required_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Any_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Detachment_Definitions.csv","Column_Name":"Any_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Excluded_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Detachment_Definitions.csv","Column_Name":"Excluded_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Required_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Enhancements.csv","Column_Name":"Required_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Any_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Enhancements.csv","Column_Name":"Any_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Excluded_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Enhancements.csv","Column_Name":"Excluded_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Required_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Stratagems.csv","Column_Name":"Required_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Any_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Stratagems.csv","Column_Name":"Any_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Excluded_Keywords","mode":"delete_where","where":{"Scope":"army","File":"Stratagems.csv","Column_Name":"Excluded_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Required_Keywords","mode":"delete_where","where":{"Scope":"universal","File":"Eligibility_Rules.csv","Column_Name":"Required_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Any_Keywords","mode":"delete_where","where":{"Scope":"universal","File":"Eligibility_Rules.csv","Column_Name":"Any_Keywords"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Excluded_Keywords","mode":"delete_where","where":{"Scope":"universal","File":"Eligibility_Rules.csv","Column_Name":"Excluded_Keywords"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"(?<![A-Za-z0-9_])instances\\s*=\\s*1/2(?![0-9/])","to":"instances=1/1/2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -178,6 +178,39 @@ jobs:
                       sys.exit(f'op {i}: found no blank {col} values where {match_col}={match_value!r}')
                   changed.add(path)
                   print(f'filled {hits} blank {col} values in {path} where {match_col}={match_value!r}')
+                  continue
+
+              # Surgical replacement inside exactly one identified CSV row.
+              # Only the named column in the named row is ever modified.
+              if mode == 'replace_regex_in_row':
+                  import re
+                  col = str(op.get('column') or '').strip()
+                  if col not in header:
+                      sys.exit(f'op {i}: column not in header: {col}')
+                  pattern = str(op.get('pattern') or '')
+                  replacement = decode(op.get('to'))
+                  if not pattern:
+                      sys.exit(f'op {i}: replace_regex_in_row needs pattern')
+                  try:
+                      regex = re.compile(pattern)
+                  except re.error as error:
+                      sys.exit(f'op {i}: invalid regex: {error}')
+                  i_col = header.index(col)
+                  row_hits = 0
+                  for row in rows[1:]:
+                      if not row or len(row) <= i_id or row[i_id] != row_id:
+                          continue
+                      row_hits += 1
+                      while len(row) < len(header):
+                          row.append('')
+                      updated, replacement_hits = regex.subn(lambda match: replacement, row[i_col])
+                      if replacement_hits != 1:
+                          sys.exit(f'op {i}: expected one match in {path} {row_id} {col}, got {replacement_hits}')
+                      row[i_col] = updated
+                  if row_hits != 1:
+                      sys.exit(f'op {i}: expected one row {row_id!r} in {path}, found {row_hits}')
+                  changed.add(path)
+                  print(f'replaced one match in {path} {row_id} {col}')
                   continue
 
               if mode == 'replace_text':
