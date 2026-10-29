@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_ALL_REMAINING_","mode":"consolidate_abilities","expected":{"LETHAL HITS":32,"SUSTAINED HITS":9,"HUNTER":5,"DEVASTATING WOUNDS":4}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/nids/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_CONSOLIDATE_NIDS_","mode":"consolidate_nids_weapon_abilities","expected_rows":81,"expected_anti":10}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -156,6 +156,66 @@ jobs:
                       sys.exit('redundant ability fields remain')
                   changed.add(path)
                   print(f'consolidated {sum(counts.values())} Orks abilities: {counts}')
+                  continue
+
+              # Migrate Nids weapon ability text without changing its rendering.
+              if mode == 'consolidate_nids_weapon_abilities':
+                  if str(path) != 'data/nids/Weapon_Abilities.csv':
+                      sys.exit(f'op {i}: only Nids Weapon_Abilities.csv is permitted')
+                  columns = ('Weapon_ID', 'Weapon_Ability_ID', 'Ability_Type', 'Target', 'Value', 'Condition')
+                  if tuple(header) != columns:
+                      sys.exit(f'op {i}: unexpected Nids Weapon_Abilities header')
+                  data_rows = [row for row in rows[1:] if row]
+                  if len(data_rows) != op.get('expected_rows') or op.get('expected_rows') != 81:
+                      sys.exit(f'op {i}: unexpected Nids weapon ability row count: {len(data_rows)}')
+                  seen = set()
+                  anti_count = 0
+                  moved = 0
+                  value_count = 0
+                  target_count = 0
+                  condition_count = 0
+                  for row in data_rows:
+                      if len(row) != len(columns):
+                          sys.exit(f'op {i}: unexpected row width')
+                      weapon_id, ability_id, kind, target, value, condition = row
+                      if not weapon_id.strip() or not ability_id.strip() or not kind.strip():
+                          sys.exit(f'op {i}: blank weapon id, ability id or ability type')
+                      if ability_id in seen:
+                          sys.exit(f'op {i}: duplicate ability ID {ability_id}')
+                      seen.add(ability_id)
+                      kind = kind.strip()
+                      target = target.strip()
+                      value = value.strip()
+                      condition = condition.strip()
+                      if kind == 'ANTI':
+                          anti_count += 1
+                          if not target or not value:
+                              sys.exit(f'op {i}: ANTI missing Target or Value for {ability_id}')
+                          display = 'ANTI-' + target + ' ' + value
+                      else:
+                          if target:
+                              sys.exit(f'op {i}: non-ANTI ability has Target for {ability_id}')
+                          display = kind + (' ' + value if value else '')
+                      if condition:
+                          display += ': ' + condition
+                      if target or value or condition:
+                          row[2] = display
+                          row[3] = ''
+                          row[4] = ''
+                          row[5] = ''
+                          moved += 1
+                          target_count += bool(target)
+                          value_count += bool(value)
+                          condition_count += bool(condition)
+                  if anti_count != op.get('expected_anti') or anti_count != 10:
+                      sys.exit(f'op {i}: unexpected ANTI count {anti_count}')
+                  if moved < 1:
+                      sys.exit(f'op {i}: no ability fields to consolidate')
+                  if any(any(row[j].strip() for j in (3, 4, 5)) for row in data_rows):
+                      sys.exit(f'op {i}: redundant fields remain')
+                  changed.add(path)
+                  print(f'nids consolidated {moved} of {len(data_rows)} weapon abilities')
+                  print(f'fields cleared: Target {target_count}, Value {value_count}, Condition {condition_count}')
                   continue
 
               if mode == 'add_column':
