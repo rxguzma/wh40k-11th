@@ -72,7 +72,7 @@ LABEL | Sergeant | order=70
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=80 | qty=1
 WEAPON | CASTELLAN_LAUNCHER | order=90 | qty=1
 WEAPON | SUPERFRAG_ROCKET_LAUNCHER | order=100 | qty=1
-WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","UNIT [id=ROCKET_TYPE;label=Rocket Launcher] | SUPERFRAG [w=SUPERFRAG_ROCKET_LAUNCHER], SUPERKRAK [w=SUPERKRAK_ROCKET_LAUNCHER]","UNIT [id=SERGEANT_LAUNCHER;label=Sergeant Launcher;section=Sergeant] | STANDARD [w=-;name=Standard Rocket Launcher], VENGOR [w=VENGOR_LAUNCHER;+5]",,,,
+WEAPON | CERAMITE_FISTS_TROOPS | order=110 | qty=1","PER_MODEL:4 [id=ROCKET_TYPE;label=Desolation Marine Rocket;section=Desolation Marines] | *SUPERFRAG [w=SUPERFRAG_ROCKET_LAUNCHER], SUPERKRAK [w=SUPERKRAK_ROCKET_LAUNCHER]","UNIT [id=SERGEANT_LAUNCHER;label=Sergeant Launcher;section=Sergeant;count=1] | *STANDARD [w=SUPERFRAG_ROCKET_LAUNCHER;name=Superfrag Rocket Launcher], SUPERKRAK [w=SUPERKRAK_ROCKET_LAUNCHER;name=Superkrak Rocket Launcher], VENGOR [w=VENGOR_LAUNCHER;+5]",,,,
 ELIMINATOR_SQUAD,Eliminator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Eliminator-Squad,"CHAMELEOLINE_CLOAKS, SPECIAL_ISSUE_OPTICS_AND_AMMUNITION","INFILTRATORS, STEALTH","x3, 85",,,,,,,,"LABEL | Eliminators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -156,7 +156,7 @@ LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | PYREBLASTER | order=80 | qty=1
 WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1",,,,,,
-INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad,OMNI_SCRAMBLERS,INFILTRATORS,"x5, 85","x10, 150",,,,,,,"LABEL | Infiltrators | order=10
+INFILTRATORS,Infiltrator Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Infiltrator-Squad,"OMNI_SCRAMBLERS, HELIX_GAUNTLET",INFILTRATORS,"x5, 85","x10, 150",,,,,,,"LABEL | Infiltrators | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | MARKSMAN_BOLT_CARBINE | order=30
 WEAPON | CERAMITE_FISTS_TROOPS | order=40
@@ -164,7 +164,7 @@ BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
 WEAPON | MARKSMAN_BOLT_CARBINE | order=80 | qty=1
-WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1","UNIT:1/2 [id=HELIX_GAUNTLET;label=Helix Gauntlet] | NONE [name=No Helix Gauntlet;max=1/1], EQUIPPED [name=Helix Gauntlet;max=1/1;ability=HELIX_GAUNTLET]",,,,,
+WEAPON | CERAMITE_FISTS_TROOPS | order=90 | qty=1",,,,,,
 INNER_CIRCLE_COMPANIONS,Inner Circle Companions,"6""",4,3+,3,6,2,"INFANTRY, IMPERIUM, DEATHWING, TACTICUS, INNER CIRCLE COMPANIONS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Inner-Circle-Companions,"BRAZIERS_OF_JUDGEMENT, ENMITY_FOR_THE_UNWORTHY",,"x3, 90","x6, 180",,,,,,,"FIXED | HEAVY_BOLT_PISTOL
 FIXED | CALIBANITE_GREATSWORD_STRIKE
 FIXED | CALIBANITE_GREATSWORD_SWEEP",,,,,,
@@ -270,7 +270,8 @@ WEAPON | HEAVY_ONSLAUGHT_GATLING_CANNON | order=30 | qty=1
 WEAPON | TWIN_HEAVY_BOLTER | order=40 | qty=1
 WEAPON | ARMOURED_HULL_REPULSOR | order=50 | qty=1","UNIT [id=MAIN_GUN;label=Main Gun] | HEAVY_LASER [w=HEAVY_LASER_DESTROYER;+10], *MACRO_PLASMA [w=MACRO_PLASMA_INCINERATOR_STANDARD+MACRO_PLASMA_INCINERATOR_SUPERCHARGE;name=Macro Plasma Incinerator]",,,,,
 RHINO,Rhino,"12""",9,3+,10,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino,VEILING_SMOKE,"DEADLY_DEMISE_D3, FIRING_DECK_2, TRANSPORT_RHINO",", 70",,,,,,,,"WEAPON | STORM_BOLTER_TERMINATORS | order=10 | qty=1
-WEAPON | ARMOURED_TRACKS | order=20 | qty=1","UNIT [id=HUNTER_KILLER;label=Hunter-killer Missile] | NONE [name=No Hunter-killer Missile], EQUIPPED [w=HUNTER_KILLER_MISSILE]",,,,,
+WEAPON | ARMOURED_TRACKS | order=20 | qty=1
+WEAPON | HUNTER_KILLER_MISSILE | order=30 | qty=1",,,,,,
 SCOUTS,Scout Squad,"6""",4,4+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE, SCOUT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad,FLEXIBLE_ASSET,"INFILTRATORS, SCOUTS_6","x5, 65","x10, 120",,,,,,,"LABEL | Scouts | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | SCOUT_BOLTGUN | order=30
