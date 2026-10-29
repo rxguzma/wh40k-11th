@@ -14,9 +14,6 @@ army,Army_Rules.csv,4,Short_Description,NO,AUTHORITATIVE,
 army,Army_Rules.csv,5,Long_Description,NO,AUTHORITATIVE,
 army,Army_Rules.csv,6,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
 army,Army_Rules.csv,7,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Army_Rules.csv,8,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
-army,Army_Rules.csv,9,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Army_Rules.csv,10,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
 army,Detachment_Definitions.csv,1,Detachment_ID,YES,AUTHORITATIVE,Stable unique detachment key.
 army,Detachment_Definitions.csv,2,Army_Name,YES,AUTHORITATIVE,Owning army name.
 army,Detachment_Definitions.csv,3,Detachment_Name,YES,AUTHORITATIVE,Visible detachment name.
@@ -30,9 +27,6 @@ army,Detachment_Definitions.csv,10,Short_Description,NO,AUTHORITATIVE,
 army,Detachment_Definitions.csv,11,Long_Description,NO,AUTHORITATIVE,
 army,Detachment_Definitions.csv,12,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
 army,Detachment_Definitions.csv,13,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Detachment_Definitions.csv,14,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this rule.
-army,Detachment_Definitions.csv,15,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Detachment_Definitions.csv,16,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this rule ineligible.
 army,Enhancements.csv,1,Enhancement_ID,YES,AUTHORITATIVE,Stable unique enhancement key.
 army,Enhancements.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Enhancements.csv,3,Enhancement_Name,YES,AUTHORITATIVE,Visible enhancement name.
@@ -43,9 +37,6 @@ army,Enhancements.csv,7,Short_Description,NO,AUTHORITATIVE,
 army,Enhancements.csv,8,Long_Description,NO,AUTHORITATIVE,
 army,Enhancements.csv,9,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
 army,Enhancements.csv,10,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Enhancements.csv,11,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Enhancement.
-army,Enhancements.csv,12,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Enhancements.csv,13,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Enhancement ineligible.
 army,Stratagems.csv,1,Stratagem_ID,YES,AUTHORITATIVE,Stable unique stratagem key.
 army,Stratagems.csv,2,Detachment_ID,YES,AUTHORITATIVE,Foreign key to Detachment_Definitions.csv.
 army,Stratagems.csv,3,Stratagem_Name,YES,AUTHORITATIVE,Visible stratagem name.
@@ -54,9 +45,6 @@ army,Stratagems.csv,5,Short_Description,NO,AUTHORITATIVE,
 army,Stratagems.csv,6,Long_Description,NO,AUTHORITATIVE,
 army,Stratagems.csv,7,Tags,NO,AUTHORITATIVE,Bracketed Display_Tag references. Category/scope metadata is owned only by Universal Tag_Definitions.csv.
 army,Stratagems.csv,8,Default_Active,NO,AUTHORITATIVE,Optional current activation default (1/0/blank). Blank means unspecified.
-army,Stratagems.csv,9,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required for this Stratagem.
-army,Stratagems.csv,10,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-army,Stratagems.csv,11,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes this Stratagem ineligible.
 army,Unit_Profiles.csv,1,Unit_ID,YES,AUTHORITATIVE,Stable unique unit key; authoritative parent for unit relationships.
 army,Unit_Profiles.csv,2,Unit Name,YES,AUTHORITATIVE,Visible unit name.
 army,Unit_Profiles.csv,3,"M""",NO,AUTHORITATIVE,Unit movement value in the current HTML-compatible display format.
@@ -94,9 +82,6 @@ universal,Dispositions.csv,2,Disposition_Name,YES,AUTHORITATIVE,Visible Disposit
 universal,Dispositions.csv,3,Sort_Order,YES,AUTHORITATIVE,Canonical Disposition display order.
 universal,Eligibility_Rules.csv,1,Rule_ID,YES,AUTHORITATIVE,Stable global eligibility rule key.
 universal,Eligibility_Rules.csv,2,Item_Type,YES,AUTHORITATIVE,Target item category; matched generically against item type.
-universal,Eligibility_Rules.csv,3,Required_Keywords,NO,AUTHORITATIVE,All listed Unit keywords are required.
-universal,Eligibility_Rules.csv,4,Any_Keywords,NO,AUTHORITATIVE,At least one listed Unit keyword is required when populated.
-universal,Eligibility_Rules.csv,5,Excluded_Keywords,NO,AUTHORITATIVE,Any listed Unit keyword makes the item category ineligible.
 universal,Primary_Mission_Matchups.csv,1,Matchup_ID,YES,AUTHORITATIVE,Stable key YOUR_DISPOSITION__VS__OPPONENT_DISPOSITION.
 universal,Primary_Mission_Matchups.csv,2,Your_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the player Disposition.
 universal,Primary_Mission_Matchups.csv,3,Opponent_Disposition_ID,YES,AUTHORITATIVE,Foreign key to Dispositions.csv for the opposing Disposition.
