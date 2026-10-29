@@ -86,9 +86,6 @@ FIXED | KAN_BLASTA_POINT_BLANK
 FIXED | KAN_KLAW",,,,,,
 KOMMANDOS,Kommandos,"6""",5,5+,1,7+,1,"INFANTRY, EXPLOSIVES, SMOKE, KOMMANDOS",https://wahapedia.ru/wh40k11ed/factions/orks/Kommandos,"FOUND_EM, TACTICAL_KNOW_WOTZ, NOWHERE_TO_HIDE","INFILTRATORS, STEALTH, BOMB_SQUIG, COMPOSITION_KOMMANDOS, LED_BY_KOMMANDOS","x10, 125",,,,,,,,"LABEL | Nob | order=10
 WEAPON | SLUGGA | order=20 | qty=1
-WEAPON | CHOPPA | order=21 | qty=1
-WEAPON | BIG_CHOPPA | order=22 | qty=1
-WEAPON | POWER_KLAW | order=23 | qty=1
 BLANK | order=30
 LABEL | Kommandos | order=40
 WEAPON | SLUGGA | order=50 | qty=9
@@ -97,7 +94,7 @@ WEAPON | BURNA | order=52 | qty=1
 WEAPON | KUSTOM_SHOOTA | order=53 | qty=2
 WEAPON | ROKKIT_LAUNCHA_BLASTA | order=54 | qty=1
 WEAPON | ROKKIT_LAUNCHA_BUSTA | order=55 | qty=1
-WEAPON | BREACHA_RAM | order=56 | qty=1","UNIT [id=NOB_MELEE;label=Nob Melee;section=Nob] | CHOPPA [w=-;name=Choppa], BIG_CHOPPA, POWER_KLAW","UNIT:9 [id=BURNA;label=Burna;section=Kommandos] | NONE, BURNA","UNIT:9 [id=ROKKIT_LAUNCHA;label=Rokkit Launcha;section=Kommandos] | NONE, ROKKIT_LAUNCHA [w=ROKKIT_LAUNCHA_BLASTA+ROKKIT_LAUNCHA_BUSTA;name=Rokkit Launcha]","UNIT:9 [id=BREACHA_RAM;label=Breacha Ram;section=Kommandos] | CHOPPA [w=-;name=Choppa], BREACHA_RAM [name=Breacha Ram]","UNIT:9 [id=KUSTOM_SHOOTA_1;label=Kustom Shoota 1;section=Kommandos] | NONE, KUSTOM_SHOOTA","UNIT:9 [id=KUSTOM_SHOOTA_2;label=Kustom Shoota 2;section=Kommandos] | NONE, KUSTOM_SHOOTA"
+WEAPON | BREACHA_RAM | order=56 | qty=1","UNIT [id=NOB_MELEE;label=Nob Melee;section=Nob] | *POWER_KLAW, BIG_CHOPPA, CHOPPA",,,,,
 LOOTAS,Lootas,"6""",5,5+,1,7,1,"INFANTRY, LOOTAS",https://wahapedia.ru/wh40k11ed/factions/orks/Lootas,DATS_OUR_LOOT,COMPOSITION_LOOTAS,"x5, 50","x10, 100",,,,,,,"FIXED | DEFFGUN
 FIXED | KUSTOM_MEGA_BLASTA
 FIXED | CLOSE_COMBAT_WEAPON_BOYZ",,,,,,
