@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_BLAST_","mode":"merge_value_into_type","ability_type":"BLAST","expected_rows":21},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_CLEAVE_","mode":"merge_value_into_type","ability_type":"CLEAVE","expected_rows":21}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_ALL_REMAINING_","mode":"consolidate_abilities","expected":{"LETHAL HITS":32,"SUSTAINED HITS":9,"HUNTER":5,"DEVASTATING WOUNDS":4}}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -119,6 +119,43 @@ jobs:
                   if migrated:
                       changed.add(path)
                   print(f'{path}: {ability_type}: {matched} rows; {migrated} values moved, {no_value} already blank')
+                  continue
+
+              if mode == 'consolidate_abilities':
+                  if str(path) != 'data/orks/Weapon_Abilities.csv':
+                      sys.exit('consolidate_abilities restricted to Orks')
+                  cols = ('Ability_Type', 'Target', 'Value', 'Condition')
+                  if any(c not in header for c in cols):
+                      sys.exit('missing required ability columns')
+                  idx = {c: header.index(c) for c in cols}
+                  expected = op.get('expected')
+                  allowed = {'LETHAL HITS': 32, 'SUSTAINED HITS': 9, 'HUNTER': 5, 'DEVASTATING WOUNDS': 4}
+                  if expected != allowed:
+                      sys.exit('unexpected batch scope')
+                  counts = {k: 0 for k in allowed}
+                  for row in rows[1:]:
+                      if len(row) != len(header):
+                          sys.exit('invalid weapon ability row width')
+                      kind = row[idx['Ability_Type']].strip()
+                      if kind not in allowed:
+                          continue
+                      target = row[idx['Target']].strip()
+                      value = row[idx['Value']].strip()
+                      condition = row[idx['Condition']].strip()
+                      if not (target or value or condition):
+                          continue
+                      if target:
+                          sys.exit(f'unexpected Target for {kind}')
+                      row[idx['Ability_Type']] = kind + (' ' + value if value else '') + (': ' + condition if condition else '')
+                      row[idx['Value']] = ''
+                      row[idx['Condition']] = ''
+                      counts[kind] += 1
+                  if counts != allowed:
+                      sys.exit(f'unexpected migration counts {counts}')
+                  if any(row[idx['Target']].strip() or row[idx['Value']].strip() or row[idx['Condition']].strip() for row in rows[1:]):
+                      sys.exit('redundant ability fields remain')
+                  changed.add(path)
+                  print(f'consolidated {sum(counts.values())} Orks abilities: {counts}')
                   continue
 
               if mode == 'add_column':
