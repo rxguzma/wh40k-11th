@@ -219,9 +219,7 @@ LIEUTENANT,Lieutenant,"6""",5,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERI
 LIEUTENANT_WITH_COMBI_WEAPON,Combi Lieutenant,"8""",4,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lieutenant-with-Combi-weapon,"PRIORITY_OBJECTIVE_IDENTIFIED, EVADE_AND_SURVIVE","FNP_5, INFILTRATORS, LONE_OPERATIVE, STEALTH",", 85",,,,,,,,"WEAPON | LIEUTENANT_COMBI_WEAPON_BOLTER | order=1 | qty=1
 WEAPON | LIEUTENANT_COMBI_WEAPON_FLAMER | order=2 | qty=1
 WEAPON | PAIRED_COMBAT_BLADES_LIEUTENANT | order=3 | qty=1",,,,,,
-LIEUTENANT_IN_PHOBOS_ARMOUR,Phobos Lieutenant,"8""",4,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lieutenant-In-Phobos-Armour,,"DEEP_STRIKE, INFILTRATORS, SCOUTS_6, SUPPORT, DEMI_COMPANY_COMMANDER, TACTICAL_PRECISION",", 40",,,,,,,,WEAPON | LIEUTENANT_PHOBOS_PAIRED_COMBAT_BLADES | order=3 | qty=1,"GROUP | PHOBOS_RANGED | Ranged Weapon | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | PHOBOS_PISTOL | Special-issue Bolt Pistol | default=1 | max=1,0,0,0,0,0,0,0 | weapons=MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT
-OPTION | PHOBOS_CARBINE | Master-crafted Bolt Carbine | default=0 | max=1,0,0,0,0,0,0,0 | weapons=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE",,,,,
+LIEUTENANT_IN_PHOBOS_ARMOUR,Phobos Lieutenant,"8""",4,3+,4,6+,1,"INFANTRY, CHARACTER, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lieutenant-In-Phobos-Armour,,"DEEP_STRIKE, INFILTRATORS, SCOUTS_6, SUPPORT, DEMI_COMPANY_COMMANDER, TACTICAL_PRECISION",", 40",,,,,,,,WEAPON | LIEUTENANT_PHOBOS_PAIRED_COMBAT_BLADES | order=3 | qty=1,"UNIT [id=PHOBOS_RANGED;label=Ranged Weapon] | PHOBOS_PISTOL [w=MASTER_CRAFTED_SPECIAL_ISSUE_BOLT_PISTOL_REIVER_LT], PHOBOS_CARBINE [w=VICTRIX_HONOUR_GUARD_MASTER_CRAFTED_BOLT_CARBINE]",,,,,
 LION_ELJONSON,Lion El’Jonson,"8""",10,2+/3++,16,5+,4,"MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL’JONSON, MOBILE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Lion-El-jonson,"PRIMARCH_OF_THE_FIRST_LEGION, THE_WATCHERS, THE_EMPERORS_SHIELD, DARK_ANGELS_BODYGUARD, MASTER_STRATEGIST","FIGHTS_FIRST, DEEP_STRIKE",", 415",,,,,,,,"FIXED | ARMA_LUMINIS_BOLT
 FIXED | ARMA_LUMINIS_PLASMA
 FIXED | FEALTY_SWEEP
@@ -233,12 +231,7 @@ WEAPON | OUTRIDER_CHAINSWORD | order=40
 BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | HEAVY_BOLT_PISTOL | order=70 | qty=1
-WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,1,0,0,0,0,0 | weapons=ASSAULT_INTERCESSORS_CHAINSWORD
-OPTION | POWER | Power Weapon | default=0 | max=1,1,1,0,0,0,0,0 | weapons=OUTRIDER_POWER_WEAPON
-OPTION | HAMMER | Thunder Hammer | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_THUNDER_HAMMER","GROUP | PLASMA_SLOT | Pistol Upgrade | mode=UNIT | instances=1,1,1,0,0,0,0,0 | section=Sergeant
-OPTION | HBP | Heavy Bolt Pistol | default=1 | max=1,1,1,0,0,0,0,0
-OPTION | PLASMA | Plasma Pistol (1 per 3 models) | default=0 | max=1,1,1,0,0,0,0,0 | weapons=INTERCESSORS_PLASMA_PISTOL_STANDARD,INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED",,,,
+WEAPON | CAPTAIN_ON_BIKE_TWIN_BOLT_RIFLE | order=80 | qty=1","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | CHAIN [w=ASSAULT_INTERCESSORS_CHAINSWORD], POWER [w=OUTRIDER_POWER_WEAPON], HAMMER [w=INTERCESSORS_THUNDER_HAMMER]","UNIT [id=PLASMA_SLOT;label=Pistol Upgrade;section=Sergeant] | HBP [name=Heavy Bolt Pistol], PLASMA [w=INTERCESSORS_PLASMA_PISTOL_STANDARD+INTERCESSORS_PLASMA_PISTOL_SUPERCHARGED;name=Plasma Pistol (1 per 3 models)]",,,,
 PREDATOR_DESTRUCTOR,Predator Destructor,"10""",10,3+,11,6,3,"VEHICLE, SMOKE, IMPERIUM, PREDATOR DESTRUCTOR, FRAME",https://wahapedia.ru/wh40k11ed/factions/space-marines/Predator-Destructor,DESTRUCTOR,"DAMAGED_1_4, DEADLY_DEMISE_D3",", 140",,,,,,,,"FIXED | PREDATOR_AUTOCANNON
 FIXED | HEAVY_BOLTERS_X2_PREDATOR
 FIXED | HUNTER_KILLER_MISSILE
@@ -249,15 +242,7 @@ FIXED | PLASMA_TALON_SUPERCHARGE
 FIXED | BOLT_PISTOL_INTERCESSORS
 FIXED | MASTER_CRAFTED_POWER_WEAPON_CHAMPION
 FIXED | BLACK_KNIGHT_COMBAT_WEAPON_APOTHECARY_ANCIENT",,,,,,
-REDEMPTOR_PLASMA,REDEMPTOR,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought,DUTY_ETERNAL,"DEADLY_DEMISE_D3, DAMAGED_1_4","x1, 170","x2, 340",,,,,,,WEAPON | REDEMPTOR_FIST | order=40 | qty=1,"GROUP | REDEMPTOR_MAIN_GUN | Main Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | REDEMPTOR_HEAVY_ONSLAUGHT | Heavy Onslaught Gatling Cannon | default=1 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_ONSLAUGHT_GATLING_CANNON
-OPTION | REDEMPTOR_MACRO_PLASMA | Macro Plasma Incinerator | default=0 | max=1,2,0,0,0,0,0,0 | weapons=MACRO_PLASMA_INCINERATOR_STANDARD,MACRO_PLASMA_INCINERATOR_SUPERCHARGE | cost=10","GROUP | AUX_GUN | Auxiliary Gun | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | FRAGSTORM | Fragstorm Grenade Launchers | default=0 | max=1,1,0,0,0,0,0,0 | weapons=FRAGSTORM_GRENADE_LAUNCHER
-OPTION | STORM_BOLTERS | Storm Bolters | default=1 | max=1,1,0,0,0,0,0,0 | weapons=STORM_BOLTERS_X2","GROUP | SECONDARY | Secondary Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | HEAVY_FLAMER | Heavy Flamer | default=0 | max=1,1,0,0,0,0,0,0 | weapons=HEAVY_FLAMER_DEATHWING_TERMINATORS
-OPTION | ONSLAUGHT | Onslaught Gatling Cannon | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ONSLAUGHT_GATLING_CANNON","GROUP | ICARUS | Icarus Rocket Pod | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | No Icarus Rocket Pod | default=0 | max=1,1,0,0,0,0,0,0
-OPTION | EQUIPPED | Icarus Rocket Pod | default=1 | max=1,1,0,0,0,0,0,0 | weapons=ICARUS_ROCKET_POD",,
+REDEMPTOR_PLASMA,REDEMPTOR,"8""",10,2+,12,6+,4,"VEHICLE, DREADNOUGHT, IMPERIUM, WALKER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Redemptor-Dreadnought,DUTY_ETERNAL,"DEADLY_DEMISE_D3, DAMAGED_1_4","x1, 170","x2, 340",,,,,,,WEAPON | REDEMPTOR_FIST | order=40 | qty=1,"UNIT:1/2 [id=REDEMPTOR_MAIN_GUN;label=Main Gun] | REDEMPTOR_HEAVY_ONSLAUGHT [w=HEAVY_ONSLAUGHT_GATLING_CANNON], REDEMPTOR_MACRO_PLASMA [w=MACRO_PLASMA_INCINERATOR_STANDARD+MACRO_PLASMA_INCINERATOR_SUPERCHARGE;name=Macro Plasma Incinerator;+10]","UNIT:1/2 [id=AUX_GUN;label=Auxiliary Gun] | FRAGSTORM [w=FRAGSTORM_GRENADE_LAUNCHER;name=Fragstorm Grenade Launchers;max=1/1], *STORM_BOLTERS [w=STORM_BOLTERS_X2;name=Storm Bolters;max=1/1]","UNIT:1/2 [id=SECONDARY;label=Secondary Weapon] | HEAVY_FLAMER [w=HEAVY_FLAMER_DEATHWING_TERMINATORS;max=1/1], *ONSLAUGHT [w=ONSLAUGHT_GATLING_CANNON;max=1/1]","UNIT:1/2 [id=ICARUS;label=Icarus Rocket Pod] | NONE [name=No Icarus Rocket Pod;max=1/1], *EQUIPPED [w=ICARUS_ROCKET_POD;max=1/1]",,
 REIVERS,Reiver Squad,"8""",4,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, PHOBOS, SMOKE",https://wahapedia.ru/wh40k11ed/factions/space-marines/Reiver-Squad,"TERROR_TROOPS_AURA, FEARSOME_ASSAULT",SCOUTS_6,"x5, 85","x10, 165",,,,,,,"LABEL | Reivers | order=10
 WEAPON | REIVER_BOLT_CARBINE | order=20
 WEAPON | SPECIAL_ISSUE_BOLT_PISTOL_REIVERS | order=30
@@ -266,28 +251,16 @@ BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | REIVER_BOLT_CARBINE | order=70 | qty=1
 WEAPON | SPECIAL_ISSUE_BOLT_PISTOL_REIVERS | order=80 | qty=1
-WEAPON | COMBAT_KNIFE_REIVERS | order=90 | qty=1","GROUP | GRAV_CHUTES | Grav-chutes | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | No Grav-chutes | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | YES | Grav-chutes | default=0 | max=1,2,0,0,0,0,0,0 | abilities=GRAV_CHUTES","GROUP | GRAPNEL | Grapnel Launchers | mode=UNIT | instances=1,2,0,0,0,0,0,0
-OPTION | NONE | No Grapnel Launchers | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | YES | Grapnel Launchers | default=0 | max=1,2,0,0,0,0,0,0 | abilities=GRAPNEL_LAUNCHER",,,,
+WEAPON | COMBAT_KNIFE_REIVERS | order=90 | qty=1","UNIT:1/2 [id=GRAV_CHUTES;label=Grav-chutes] | NONE [name=No Grav-chutes], YES [name=Grav-chutes;ability=GRAV_CHUTES]","UNIT:1/2 [id=GRAPNEL;label=Grapnel Launchers] | NONE [name=No Grapnel Launchers], YES [name=Grapnel Launchers;ability=GRAPNEL_LAUNCHER]",,,,
 REPULSOR,Repulsor,"10""",12,3+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor,COMBAT_EMBARKATION,"DEADLY_DEMISE_D6, DAMAGED_1_6, TRANSPORT_REPULSOR",", 190",,,,,,,,"WEAPON | REPULSOR_DEFENSIVE_ARRAY | order=10 | qty=1
 WEAPON | HUNTER_SLAYER_MISSILE | order=30 | qty=1
-WEAPON | ARMOURED_HULL_REPULSOR | order=50 | qty=1","GROUP | MAIN_GUN | Main Gun | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | HOGC | Heavy Onslaught Gatling Cannon | default=1 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_ONSLAUGHT_GATLING_CANNON
-OPTION | LAS_TALON | Las-talon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=LAS_TALON","GROUP | SECONDARY_GUN | Secondary Gun | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | TWIN_HEAVY_BOLTER | Twin Heavy Bolter | default=1 | max=1,0,0,0,0,0,0,0 | weapons=TWIN_HEAVY_BOLTER
-OPTION | TWIN_LASCANNON | Twin Lascannon | default=0 | max=1,0,0,0,0,0,0,0 | weapons=TWIN_LASCANNON",,,,
+WEAPON | ARMOURED_HULL_REPULSOR | order=50 | qty=1","UNIT [id=MAIN_GUN;label=Main Gun] | HOGC [w=HEAVY_ONSLAUGHT_GATLING_CANNON], LAS_TALON","UNIT [id=SECONDARY_GUN;label=Secondary Gun] | TWIN_HEAVY_BOLTER, TWIN_LASCANNON",,,,
 REPULSOR_EXECUTIONER,Repulsor Executioner,"10""",12,3+,16,6+,5,"VEHICLE, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor-Executioner,EXECUTIONER,"DEADLY_DEMISE_D6, DAMAGED_1_6, TRANSPORT_REPULSOR_EXECUTIONER",", 260",,,,,,,,"WEAPON | REPULSOR_DEFENSIVE_ARRAY | order=10 | qty=1
 WEAPON | HEAVY_ONSLAUGHT_GATLING_CANNON | order=30 | qty=1
 WEAPON | TWIN_HEAVY_BOLTER | order=40 | qty=1
-WEAPON | ARMOURED_HULL_REPULSOR | order=50 | qty=1","GROUP | MAIN_GUN | Main Gun | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | HEAVY_LASER | Heavy Laser Destroyer | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HEAVY_LASER_DESTROYER | cost=10
-OPTION | MACRO_PLASMA | Macro Plasma Incinerator | default=1 | max=1,0,0,0,0,0,0,0 | weapons=MACRO_PLASMA_INCINERATOR_STANDARD,MACRO_PLASMA_INCINERATOR_SUPERCHARGE",,,,,
+WEAPON | ARMOURED_HULL_REPULSOR | order=50 | qty=1","UNIT [id=MAIN_GUN;label=Main Gun] | HEAVY_LASER [w=HEAVY_LASER_DESTROYER;+10], *MACRO_PLASMA [w=MACRO_PLASMA_INCINERATOR_STANDARD+MACRO_PLASMA_INCINERATOR_SUPERCHARGE;name=Macro Plasma Incinerator]",,,,,
 RHINO,Rhino,"12""",9,3+,10,6+,2,"VEHICLE, DEDICATED TRANSPORT, FRAME, IMPERIUM, SMOKE, TRANSPORT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Rhino,VEILING_SMOKE,"DEADLY_DEMISE_D3, FIRING_DECK_2, TRANSPORT_RHINO",", 70",,,,,,,,"WEAPON | STORM_BOLTER_TERMINATORS | order=10 | qty=1
-WEAPON | ARMOURED_TRACKS | order=20 | qty=1","GROUP | HUNTER_KILLER | Hunter-killer Missile | mode=UNIT | instances=1,0,0,0,0,0,0,0
-OPTION | NONE | No Hunter-killer Missile | default=1 | max=1,0,0,0,0,0,0,0
-OPTION | EQUIPPED | Hunter-killer Missile | default=0 | max=1,0,0,0,0,0,0,0 | weapons=HUNTER_KILLER_MISSILE",,,,,
+WEAPON | ARMOURED_TRACKS | order=20 | qty=1","UNIT [id=HUNTER_KILLER;label=Hunter-killer Missile] | NONE [name=No Hunter-killer Missile], EQUIPPED [w=HUNTER_KILLER_MISSILE]",,,,,
 SCOUTS,Scout Squad,"6""",4,4+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, SMOKE, SCOUT",https://wahapedia.ru/wh40k11ed/factions/space-marines/Scout-Squad,FLEXIBLE_ASSET,"INFILTRATORS, SCOUTS_6","x5, 65","x10, 120",,,,,,,"LABEL | Scouts | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | SCOUT_BOLTGUN | order=30
@@ -295,18 +268,7 @@ WEAPON | COMBAT_KNIFE_SCOUTS | order=40
 BLANK | order=50
 LABEL | Sergeant | order=60
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=70 | qty=1
-WEAPON | SCOUT_BOLTGUN | order=80 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | KNIFE | Combat Knife | default=1 | max=1,1,0,0,0,0,0,0 | weapons=COMBAT_KNIFE_SCOUTS
-OPTION | CHAIN | Chainsword | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_CHAINSWORD_SCOUTS_SGT","GROUP | SERGEANT_RANGED | Sergeant Ranged | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant
-OPTION | BOLTGUN | Boltgun | default=1 | max=1,1,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
-OPTION | SHOTGUN | Shotgun | default=0 | max=1,1,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | MODEL_RANGED | Scout Ranged | mode=PER_MODEL | instances=5,10,0,0,0,0,0,0 | section=Scouts
-OPTION | BOLTGUN | Boltgun | default=1 | max=5,10,0,0,0,0,0,0 | weapons=SCOUT_BOLTGUN
-OPTION | SHOTGUN | Shotgun | default=0 | max=5,10,0,0,0,0,0,0 | weapons=ASTARTES_SHOTGUN_SCOUTS","GROUP | SNIPER_SLOT | Sniper Rifle | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
-OPTION | NONE | No Sniper Rifle | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | SNIPER | Sniper Rifle (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_SNIPER_RIFLE","GROUP | HEAVY_SLOT | Heavy Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Scouts
-OPTION | NONE | No Heavy Weapon | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_SCOUTS
-OPTION | MISSILE | Missile Launcher (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=SCOUT_MISSILE_LAUNCHER_FRAG,SCOUT_MISSILE_LAUNCHER_KRAK",
+WEAPON | SCOUT_BOLTGUN | order=80 | qty=1","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | KNIFE [w=COMBAT_KNIFE_SCOUTS], CHAIN [w=ASTARTES_CHAINSWORD_SCOUTS_SGT]","UNIT [id=SERGEANT_RANGED;label=Sergeant Ranged;section=Sergeant] | BOLTGUN [w=SCOUT_BOLTGUN], SHOTGUN [w=ASTARTES_SHOTGUN_SCOUTS]","PER_MODEL:5/10 [id=MODEL_RANGED;label=Scout Ranged;section=Scouts] | BOLTGUN [w=SCOUT_BOLTGUN], SHOTGUN [w=ASTARTES_SHOTGUN_SCOUTS]","UNIT:1/2 [id=SNIPER_SLOT;label=Sniper Rifle;section=Scouts] | NONE [name=No Sniper Rifle], SNIPER [w=SCOUT_SNIPER_RIFLE;name=Sniper Rifle (1 per 5 models)]","UNIT:1/2 [id=HEAVY_SLOT;label=Heavy Weapon;section=Scouts] | NONE [name=No Heavy Weapon], BOLTER [w=HEAVY_BOLTER_SCOUTS;name=Heavy Bolter (1 per 5 models)], MISSILE [w=SCOUT_MISSILE_LAUNCHER_FRAG+SCOUT_MISSILE_LAUNCHER_KRAK;name=Missile Launcher (1 per 5 models)]",
 STERNGUARD_VETS,Sternguard Vets,"6""",5,3+,2,6+,1,"INFANTRY, EXPLOSIVES, IMPERIUM, TACTICUS",https://wahapedia.ru/wh40k11ed/factions/space-marines/Sternguard-Veteran-Squad,VETERAN_MARKSMEN,,"x5, 105","x10, 210",,,,,,,"LABEL | Sternguard Veterans | order=10
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=20
 WEAPON | STERNGUARD_BOLT_RIFLE | order=30
@@ -318,13 +280,7 @@ LABEL | Sergeant | order=80
 WEAPON | INTERCESSORS_BOLT_PISTOL | order=90 | qty=1
 WEAPON | STERNGUARD_BOLT_RIFLE | order=100 | qty=1
 WEAPON | STERNGUARD_ARTIFICER_FIREARM_PURGATUS | order=110 | qty=1
-WEAPON | STERNGUARD_ARTIFICER_FIREARM_DAMNATUS | order=120 | qty=1","GROUP | SERGEANT_MELEE | Sergeant Melee | mode=UNIT | instances=1,1,0,0,0,0,0,0 | section=Sergeant | count=1
-OPTION | CHAIN | Chainsword | default=1 | max=1,1,0,0,0,0,0,0 | weapons=STERNGUARD_CHAINSWORD
-OPTION | POWER_FIST | Power Fist | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_FIST_STERNGUARD_SGT
-OPTION | POWER_WEAPON | Power Weapon | default=0 | max=1,1,0,0,0,0,0,0 | weapons=POWER_WEAPON_TERMINATOR_SERGEANT","GROUP | SPECIAL_WEAPON | Veteran Special Weapon | mode=UNIT | instances=1,2,0,0,0,0,0,0 | section=Sternguard Veterans
-OPTION | NONE | Artificer Firearm | default=1 | max=1,2,0,0,0,0,0,0
-OPTION | HEAVY_BOLTER | Heavy Bolter (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=HEAVY_BOLTER_HEAVY_INTERCESSORS
-OPTION | PYRECANNON | Pyrecannon (1 per 5 models) | default=0 | max=1,2,0,0,0,0,0,0 | weapons=STERNGUARD_PYRECANNON",,,,
+WEAPON | STERNGUARD_ARTIFICER_FIREARM_DAMNATUS | order=120 | qty=1","UNIT [id=SERGEANT_MELEE;label=Sergeant Melee;section=Sergeant;count=1] | CHAIN [w=STERNGUARD_CHAINSWORD], POWER_FIST [w=POWER_FIST_STERNGUARD_SGT], POWER_WEAPON [w=POWER_WEAPON_TERMINATOR_SERGEANT]","UNIT:1/2 [id=SPECIAL_WEAPON;label=Veteran Special Weapon;section=Sternguard Veterans] | NONE [name=Artificer Firearm], HEAVY_BOLTER [w=HEAVY_BOLTER_HEAVY_INTERCESSORS;name=Heavy Bolter (1 per 5 models)], PYRECANNON [w=STERNGUARD_PYRECANNON;name=Pyrecannon (1 per 5 models)]",,,,
 STORM_SPEEDER_HAILSTRIKE,Storm Speeder Hailstrike,"14""",9,3+,11,6+,3,"VEHICLE, FLY, FRAME, IMPERIUM, SPEEDER",https://wahapedia.ru/wh40k11ed/factions/space-marines/Storm-Speeder-Hailstrike,HAILSTRIKE,"DEEP_STRIKE, DEADLY_DEMISE_D3",", 110",,,,,,,,"WEAPON | HAILSTRIKE_FRAGSTORM_GRENADE_LAUNCHERS_X2 | order=10 | qty=1
 WEAPON | HAILSTRIKE_IRONHAIL_HEAVY_STUBBERS_X2 | order=20 | qty=1
 WEAPON | HAILSTRIKE_ONSLAUGHT_GATLING_CANNON | order=30 | qty=1
