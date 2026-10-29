@@ -143,3 +143,5 @@ universal,Tag_Definitions.csv,8,Stat,NO,AUTHORITATIVE,"Structured characteristic
 universal,Tag_Definitions.csv,9,Operation,NO,AUTHORITATIVE,"Structured operation such as ADD, IMPROVE, SET, or REMOVE. Blank is valid for informational Tags with no runtime effect."
 universal,Tag_Definitions.csv,10,Value,NO,AUTHORITATIVE,Machine-readable effect value.
 universal,Tag_Definitions.csv,11,Sort_Order,NO,AUTHORITATIVE,Canonical display order within the universal Tag library.
+army,Weapon_Stats.csv,9,Weapon_Set,NO,AUTHORITATIVE,Optional shared loadout weapon-set key; multiple weapon profiles may be selected as one item.
+army,Weapon_Stats.csv,10,Weapon_Set_Order,NO,AUTHORITATIVE,Optional ordinal ordering of multiple profiles in a Weapon_Set.
