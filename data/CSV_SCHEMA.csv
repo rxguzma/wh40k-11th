@@ -122,3 +122,4 @@ universal,Tag_Definitions.csv,10,Value,NO,AUTHORITATIVE,Machine-readable effect 
 universal,Tag_Definitions.csv,11,Sort_Order,NO,AUTHORITATIVE,Canonical display order within the universal Tag library.
 army,Weapon_Stats.csv,9,Weapon_Set,NO,AUTHORITATIVE,Optional shared loadout weapon-set key; multiple weapon profiles may be selected as one item.
 army,Weapon_Stats.csv,10,Weapon_Set_Order,NO,AUTHORITATIVE,Optional ordinal ordering of multiple profiles in a Weapon_Set.
+army,Weapon_Abilities.csv,7,Unit Name,NO,AUTHORITATIVE,Example unit for ANTI ability testing.
