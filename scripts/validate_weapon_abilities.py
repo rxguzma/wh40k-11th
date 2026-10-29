@@ -10,9 +10,6 @@ WEAPON_ABILITIES_HEADER = [
     "Weapon_ID",
     "Weapon_Ability_ID",
     "Ability_Type",
-    "Target",
-    "Value",
-    "Condition",
 ]
 
 
@@ -34,31 +31,13 @@ def read_dict_rows(path, expected_header):
 
 
 def render(row):
+    """The complete display string is authored in Ability_Type."""
     ability_type = (row.get("Ability_Type") or "").strip()
-    target = (row.get("Target") or "").strip()
-    value = (row.get("Value") or "").strip()
-    condition = (row.get("Condition") or "").strip()
-
     if not ability_type:
         fail(f"blank Ability_Type: {row!r}")
-    if ability_type == "NONE":
-        if target or value or condition:
-            fail(f"NONE cannot have Target/Value/Condition: {row!r}")
-        return "-"
     if ability_type == "ANTI":
-        if not target or not value:
-            fail(f"ANTI requires Target and Value: {row!r}")
-        text = f"ANTI-{target} {value}"
-    else:
-        if target:
-            fail(f"Target is only valid for ANTI: {row!r}")
-        text = ability_type
-        if value:
-            text += f" {value}"
-    if condition:
-        text += f": {condition}"
-    return text
-
+        fail(f"unconsolidated ANTI Ability_Type: {row!r}")
+    return "-" if ability_type == "NONE" else ability_type
 
 def render_group(rows, army, weapon_id):
     return ", ".join(render(row) for row in rows)
