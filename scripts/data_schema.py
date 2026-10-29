@@ -174,6 +174,31 @@ def validate_required(rows, required_columns, path):
                 fail(f"blank required {column} in {path.relative_to(ROOT)} line {line_no}")
 
 
+def validate_effect_groups(rows, key_column, label, detachment_scoped=False):
+    """Validate one parent-owned ordered Effect_IDs list; return all child IDs."""
+    by_id = {(row.get(key_column) or "").strip(): row for _, row in rows}
+    children = set()
+    for line_no, row in rows:
+        parent_id = (row.get(key_column) or "").strip()
+        ids = split_ids(row.get("Effect_IDs"))
+        if len(ids) != len(set(ids)):
+            fail(f"{label} line {line_no}: duplicate Effect_IDs")
+        for child_id in ids:
+            if child_id == parent_id:
+                fail(f"{label} line {line_no}: Effect_IDs cannot include its own ID")
+            child = by_id.get(child_id)
+            if child is None:
+                fail(f"{label} line {line_no}: unknown Effect_ID {child_id!r}")
+            if child_id in children:
+                fail(f"{label} line {line_no}: child Effect_ID {child_id!r} has multiple parents")
+            if split_ids(child.get("Effect_IDs")):
+                fail(f"{label} line {line_no}: nested Effect_IDs not supported: {child_id!r}")
+            if detachment_scoped and (row.get("Detachment_ID") or "").strip() != (child.get("Detachment_ID") or "").strip():
+                fail(f"{label} line {line_no}: child Effect_ID {child_id!r} belongs to another Detachment_ID")
+            children.add(child_id)
+    return children
+
+
 def validate():
     schemas, required = load_schema()
     loaded = {}
@@ -210,23 +235,20 @@ def validate():
         require_unique(weapons, ["Weapon_ID"], f"{army} Weapon_ID")
         require_unique(weapon_abilities, ["Weapon_Ability_ID"], f"{army} Weapon_Ability_ID")
         require_unique(abilities, ["Ability_ID"], f"{army} Ability_ID")
-        # Grouped-effect child rows share the parent's Detachment_ID by design.
-        # Only parent rows own a unique detachment definition; every Rule_ID is unique.
+        require_unique(detachment_definitions, ["Rule_ID"], f"{army} detachment Rule_ID")
+        require_unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
+        validate_effect_groups(abilities, "Ability_ID", f"{army} Abilities")
+        detachment_effect_children = validate_effect_groups(
+            detachment_definitions, "Rule_ID", f"{army} Detachment_Definitions", detachment_scoped=True
+        )
+        validate_effect_groups(enhancements, "Enhancement_ID", f"{army} Enhancements", detachment_scoped=True)
+        # Child detachment-rule rows share their parent's Detachment_ID by design.
+        # Every parent owns one unique detachment definition.
         detachment_parents = [
             (line_no, row) for line_no, row in detachment_definitions
-            if not (row.get("Parent_Rule_ID") or "").strip()
+            if (row.get("Rule_ID") or "").strip() not in detachment_effect_children
         ]
         require_unique(detachment_parents, ["Detachment_ID"], f"{army} Detachment_ID")
-        require_unique(detachment_definitions, ["Rule_ID"], f"{army} detachment Rule_ID")
-        parent_rules = {
-            (row.get("Rule_ID") or "").strip(): (row.get("Detachment_ID") or "").strip()
-            for _, row in detachment_parents
-        }
-        for line_no, row in detachment_definitions:
-            source_parent = (row.get("Parent_Rule_ID") or "").strip()
-            if source_parent and parent_rules.get(source_parent) != (row.get("Detachment_ID") or "").strip():
-                fail(f"{army} Detachment_Definitions line {line_no}: invalid Parent_Rule_ID {source_parent!r}")
-        require_unique(enhancements, ["Enhancement_ID"], f"{army} Enhancement_ID")
         require_unique(stratagems, ["Stratagem_ID"], f"{army} Stratagem_ID")
         require_unique(army_rules, ["Army_Rule_ID"], f"{army} Army_Rule_ID")
 
