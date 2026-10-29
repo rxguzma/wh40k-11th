@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"(?<![A-Za-z0-9_])instances\\s*=\\s*1/2(?![0-9/])","to":"instances=1/1/2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Unit_Profiles.csv","id_column":"Unit_ID","row_id":"OUTRIDER_SQUAD","column":"Loadout_2","mode":"replace_regex_in_row","pattern":"^(\\s*(?:PER_MODEL|UNIT)):1/2(?=\\s|\\[|\\|)","to":"\\g<1>:1/1/2"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -203,7 +203,7 @@ jobs:
                       row_hits += 1
                       while len(row) < len(header):
                           row.append('')
-                      updated, replacement_hits = regex.subn(lambda match: replacement, row[i_col])
+                      updated, replacement_hits = regex.subn(lambda match: match.expand(replacement), row[i_col])
                       if replacement_hits != 1:
                           sys.exit(f'op {i}: expected one match in {path} {row_id} {col}, got {replacement_hits}')
                       row[i_col] = updated
