@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Ability_Type","row_id":"MELTA","mode":"replace_regex_in_row","column":"Value","pattern":"^2$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Ability_Type","row_id":"MELTA","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^MELTA$","to":"MELTA 2"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BURNA:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^1$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"BURNA:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^BLAST$","to":"BLAST 1"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"EAVY_LOBBA:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^2$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"EAVY_LOBBA:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^BLAST$","to":"BLAST 2"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KANNON_FRAG:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^3$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KANNON_FRAG:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^BLAST$","to":"BLAST 3"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"GRABBA_DRAGGA_MELEE:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^2$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"GRABBA_DRAGGA_MELEE:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^CLEAVE$","to":"CLEAVE 2"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KILLA_JET_BURNA:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^1$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KILLA_JET_BURNA:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^CLEAVE$","to":"CLEAVE 1"},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KUSTOM_CHOPPA_WARBOSS:ability_1","mode":"replace_regex_in_row","column":"Value","pattern":"^2$","to":""},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"KUSTOM_CHOPPA_WARBOSS:ability_1","mode":"replace_regex_in_row","column":"Ability_Type","pattern":"^CLEAVE$","to":"CLEAVE 2"}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_BLAST_","mode":"merge_value_into_type","ability_type":"BLAST","expected_rows":21},{"file":"data/orks/Weapon_Abilities.csv","id_column":"Weapon_Ability_ID","row_id":"_BULK_CLEAVE_","mode":"merge_value_into_type","ability_type":"CLEAVE","expected_rows":21}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
@@ -78,6 +78,48 @@ jobs:
               if not row_id:
                   sys.exit(f'op {i}: row_id required')
               mode = str(op.get('mode') or 'update').strip()
+
+              # Fold an ability's numeric Value into its displayed Ability_Type.
+              # Rows without a Value already display correctly and stay unchanged.
+              if mode == 'merge_value_into_type':
+                  if path.name != 'Weapon_Abilities.csv':
+                      sys.exit(f'op {i}: only Weapon_Abilities.csv supports merge_value_into_type')
+                  if 'Ability_Type' not in header or 'Value' not in header:
+                      sys.exit(f'op {i}: expected Ability_Type and Value columns')
+                  ability_type = str(op.get('ability_type') or '').strip()
+                  if ability_type not in ('BLAST', 'CLEAVE'):
+                      sys.exit(f'op {i}: unexpected ability type {ability_type!r}')
+                  expected = op.get('expected_rows')
+                  if type(expected) is not int or expected < 1:
+                      sys.exit(f'op {i}: expected_rows must be a positive integer')
+                  type_col = header.index('Ability_Type')
+                  value_col = header.index('Value')
+                  matched = 0
+                  migrated = 0
+                  no_value = 0
+                  for row in rows[1:]:
+                      if not row:
+                          continue
+                      if len(row) != len(header):
+                          sys.exit(f'op {i}: inconsistent row width in {path}')
+                      if row[type_col].strip() != ability_type:
+                          continue
+                      matched += 1
+                      value = row[value_col].strip()
+                      if not value:
+                          no_value += 1
+                          continue
+                      if not value.isascii() or not value.isdigit() or int(value) < 1:
+                          sys.exit(f'op {i}: invalid {ability_type} Value {value!r}')
+                      row[type_col] = f'{ability_type} {value}'
+                      row[value_col] = ''
+                      migrated += 1
+                  if matched != expected:
+                      sys.exit(f'op {i}: expected {expected} {ability_type} rows, found {matched}')
+                  if migrated:
+                      changed.add(path)
+                  print(f'{path}: {ability_type}: {matched} rows; {migrated} values moved, {no_value} already blank')
+                  continue
 
               if mode == 'add_column':
                   col = str(op.get('column') or '').strip()
