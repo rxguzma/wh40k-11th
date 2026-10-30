@@ -23,7 +23,7 @@ jobs:
 
       - name: Apply patches
         env:
-          PATCHES: ${{ inputs.patches || '[{"file":"data/marines/Army_Rules.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/marines/Stratagems.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/orks/Army_Rules.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/orks/Stratagems.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/nids/Army_Rules.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/nids/Stratagems.csv","id_column":"","row_id":"_REMOVE_DEFAULT_ACTIVE_","mode":"remove_column","column":"Default_Active"},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Default_Active","mode":"delete_where","where":{"Scope":"army","File":"Army_Rules.csv","Column_Name":"Default_Active"}},{"file":"data/CSV_SCHEMA.csv","id_column":"Column_Name","row_id":"Default_Active","mode":"delete_where","where":{"Scope":"army","File":"Stratagems.csv","Column_Name":"Default_Active"}}]' }}
+          PATCHES: ${{ inputs.patches || '[{"file":"data/orks/Weapon_Stats.csv","id_column":"Weapon_ID","row_id":"WURRTOWER","column":"Skill","value":"-"}]' }}
         run: |
           python3 <<'PY'
           import csv, json, os, sys
