@@ -84,7 +84,7 @@ UNIT_COMPOSITION_BURNAS,Unit Composition (Burnas),,1 Spanner to 4 Burnas,"UNIT C
 Every Spanner is equipped with: close combat weapon; big shoota. Every Burna Boy is equipped with: burna; cuttin’ flames.",,3,
 WAAAGH_BANNER,Waaagh! Banner,,[UNIT] ANYTIME: +1 Charge,This unit has +1 to charge rolls.,[UNIT],2,0
 WAAAGH_WAZDAKKA,Waaagh! Wazdakka,,IF WARLORD: WARBIKERS are [BATTLELINE],"If this model is your WARLORD, WARBIKER units from your army have the BATTLELINE keyword.",[BATTLELINE],2,0
-AERIAL_MANOEUVRE,Aerial Manoeuvre,,End opponent turn: if unengaged [STRATEGIC RESERVES],"At the end of your opponent’s turn, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,0
+AERIAL_MANOEUVRE,Aerial Manoeuvre,,End opponent’s FIGHT phase: if unengaged [STRATEGIC RESERVES],"At the end of your opponent’s Fight phase, if this unit is unengaged, you can place this unit in strategic reserves.",[STRATEGIC RESERVES],2,0
 AMMO_RUNTS,Ammo Runts,,Once per battle — RANGE [+1 TO HIT],"Ammo Runts (Once per battle, per unit): In your Shooting phase, when this unit is selected to shoot, you can use this ability. If you do, this unit’s ranged attacks have +1 to hit rolls. Place any number of Ammo Runt tokens next to the unit, removing them when this ability is used.",[ACTIVE] [SHOOT] [WEAPONS] [+1 TO HIT],2,0
 BEASTSCENT,Beastscent (Wurrboy Psychic Lvl 1),,"[Disembark] the [ALL ATTACKS]
  vs MONSTER / VEHICLE [+1 TO WOUND]
@@ -121,7 +121,7 @@ Every Boy is equipped with: 1 Choppa; 1 Shoota; 1 Slugga.",,3,
 COMPOSITION_BREAKA_BOYZ,Unit Composition (Breaka Boyz),,1 Nob + 5 Breaka Boyz.,"UNIT COMPOSITION: 1 Nob model, 5 Breaka Boy models.
 
 The Nob is equipped with: 1 Choppa; 1 Rokkit Pistol; 1 Smash Hammer. Every Breaka Boy is equipped with: 1 Smash Hammer.",,3,
-COMPOSITION_DEFFKOPTAS,Unit Composition (Deffkoptas),,"3-6 Deffkoptas. Choppa, Rokkit Launcha, Slugga, Spinnin’ Blades and 1 Kustom Mega-blasta.","3-6 Deffkopta models.
+COMPOSITION_DEFFKOPTAS,Unit Composition (Deffkoptas),,3-6 Deffkoptas. Rokkit Launcha default; up to 1 Kustom Mega-blasta per 3 models.,"3-6 Deffkopta models.
 
 Every model is equipped with: 1 Choppa; 1 Rokkit Launcha; 1 Slugga; 1 Spinnin' Blades.
 
