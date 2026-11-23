@@ -54,9 +54,7 @@ WEAPON | TANKHAMMER | order=33
 BLANK | order=40
 LABEL | Nob | order=50
 WEAPON | ROKKIT_PISTOL | order=60
-WEAPON | CHOPPA_4A | order=61 | qty=1
-WEAPON | SMASH_HAMMER_STANDARD | order=62
-WEAPON | SMASH_HAMMER_HUNTER | order=63","UNIT [id=BREAKA_KNUCKLE;label=Breaka Boy Weapon 1;section=Breaka Boyz] | SMASH [w=SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer], KNUCKLE [w=KNUCKLEBUSTAS;name=Knucklebustas]","UNIT [id=BREAKA_TANK;label=Breaka Boy Weapon 2;section=Breaka Boyz] | *TANK [w=TANKHAMMER;name=Tankhammer], SMASH [w=SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer]","UNIT [id=BREAKA_NOB;label=Nob Weapon;section=Nob] | SMASH [w=ROKKIT_PISTOL+SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer], ROKKIT [w=ROKKIT_PISTOL+ROKKIT_PISTOL;name=Rokkit Pistol]",,
+WEAPON | CHOPPA_4A | order=61 | qty=1","UNIT [id=BREAKA_KNUCKLE;label=Breaka Boy Weapon 1;section=Breaka Boyz] | SMASH [w=SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer], KNUCKLE [w=KNUCKLEBUSTAS;name=Knucklebustas]","UNIT [id=BREAKA_TANK;label=Breaka Boy Weapon 2;section=Breaka Boyz] | *TANK [w=TANKHAMMER;name=Tankhammer], SMASH [w=SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer]","UNIT [id=BREAKA_NOB;label=Nob Weapon;section=Nob] | SMASH [w=ROKKIT_PISTOL+SMASH_HAMMER_STANDARD+SMASH_HAMMER_HUNTER;name=Smash Hammer], ROKKIT [w=ROKKIT_PISTOL+ROKKIT_PISTOL;name=Rokkit Pistol]",,
 BURNA_BOYZ,Burna Boyz,"6""",5,5+,1,7,1,"INFANTRY, BURNA BOYZ",https://wahapedia.ru/wh40k11ed/factions/orks/Burna-Boyz,PYROMANIAKS,UNIT_COMPOSITION_BURNAS,"x5, 60","x10, 120",,,,"FIXED | BURNA
 FIXED | CLOSE_COMBAT_WEAPON_BOYZ
 FIXED | CUTTIN_FLAMES
