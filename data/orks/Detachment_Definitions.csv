@@ -28,7 +28,7 @@ orks_wreckas,Orks,Wreckas,orks_wreckas_detachment_rule_wreckin_and_lootin,WRECKI
 RANGE of Objective [Re-roll 1s To Hit]","In your Shooting phase, when a friendly BREAKA BOYZ / FLASH GITZ / TANKBUSTAS unit is selected to shoot, if any of the following apply, that unit's attacks can re-roll hit rolls of 1:
 - That unit is within range of an objective.
 - The target of that attack is within range of an objective.","SHOOT, WEAPONS, RE-ROLL 1S TO HIT",0
-orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,,1,Purge the Foe,,BEAST SNAGGAs attacks vs MONSTER / VEHICLE: [+1 AP],Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.,[+1 AP] [+1 AP],0
+orks_da_big_hunt,Orks,Da Big Hunt,orks_da_big_hunt_detachment_rule_da_hunt_is_on,DA HUNT IS ON,,1,Purge the Foe,,BEAST SNAGGAs attacks vs MONSTER / VEHICLE: [+1 AP],Friendly BEAST SNAGGA units' attacks that target a MONSTER / VEHICLE unit have +1 AP.,[ACTIVE] [MELEE] [WEAPONS] [+1 AP],0
 orks_madcap_meks,Orks,Madcap Meks,orks_madcap_meks_detachment_rule_unpredictable_genius,UNPREDICTABLE GENIUS,,1,Disruption,,"When BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET puts all ranged attacks into one enemy, roll D6 table. [+1 TO HIT] [+1 TO HIT] [ENEMY -1 T]","In your Shooting phase, when all of a friendly BIG MEK / MEK GUNZ / MORKANAUT / WAZBOM BLASTAJET unit's ranged attacks target a single enemy unit, roll one D6:
 
 UNPREDICTABLE GENIUS
